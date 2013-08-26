@@ -1875,9 +1875,9 @@
     "weight": 1, 
     "text": "Il me d\u00e9visage, la m\u00e2choire serr\u00e9e, et sort en trombe. Je soupire. Il sait que j'outrepasse mes droits en lui interdisant de d\u00e9fendre son honneur... Si les deux querelleurs veulent vraiment se battre, ils trouveront t\u00f4t ou tard une occasion de le faire.", 
     "image": "events/451_10.jpg", 
-    "on_fire": null, 
+    "on_fire": "\n", 
     "slug": "tuto_facheux_4", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -1903,7 +1903,7 @@
     "weight": 1, 
     "text": "Lorsqu'ils se croisent dans les couloirs, {{folks.1.first_name}} et {{facheux}} s'\u00e9change un regard assassin. Ils sont maintenant ennemis jur\u00e9s, et commencent \u00e0 rassembler des partisans parmi les domestiques et les autres courtisans. Ce n'est qu'une question de temps pour que la situation d\u00e9g\u00e9n\u00e8re en duel ou pire...", 
     "image": "events/325_3.jpg", 
-    "on_fire": "\n", 
+    "on_fire": "param.set_value(\"facheux_5\", True)\n", 
     "slug": "tuto_facheux_5", 
     "condition": "\n"
   }
@@ -4749,8 +4749,8 @@
     "text": "Je ferai mieux de r\u00e9fl\u00e9chir \u00e0  une solution plus fiable qu'un simple interdit.", 
     "message": "", 
     "event": 156, 
-    "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_3\")).start()"
+    "condition": "\n", 
+    "on_fire": "param.set_value(\"come_from\", 4)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_3\")).start()"
   }
 },
 {
@@ -4773,17 +4773,6 @@
     "event": 157, 
     "condition": "\n", 
     "on_fire": "if kingdom.get_folk_in_title(\"maitre_espion\") is None:\n  kingdom.unlock_title(\"maitre_espion\")\n  \nkingdom.unlock_mission(\"compromettre\")\nkingdom.unlock_mission(\"assassiner\")\n\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")\n"
-  }
-},
-{
-  "pk": 224, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "Je dois agir.", 
-    "message": "", 
-    "event": 158, 
-    "condition": "\n", 
-    "on_fire": "passage = param.get_value(\"passage\")\nif 3 in passage:\n  param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_7\")).start()\nelse:\n  passage.append(3)\n  param.pending_event.set_value(\"passage\", passage)\n  param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_3\")).start()"
   }
 },
 {
@@ -5433,6 +5422,28 @@
     "event": 212, 
     "condition": "if param.get_value(\"duelist_lessfight\") == param.get_value(\"facheux\"):\n  status = \"error\"\n", 
     "on_fire": "\n"
+  }
+},
+{
+  "pk": 291, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Je dois agir.", 
+    "message": "", 
+    "event": 158, 
+    "condition": "if param.get_value(\"come_from\") != 2:\n  status = \"ce boutton n'apparait pas\"\n", 
+    "on_fire": "param.set_value(\"come_from\", 5)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_3\")).start()"
+  }
+},
+{
+  "pk": 292, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Je dois agir.", 
+    "message": "", 
+    "event": 158, 
+    "condition": "\n", 
+    "on_fire": "param.set_value(\"come_from\", 5)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_7\")).start()\n"
   }
 }
 ]
