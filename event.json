@@ -1859,7 +1859,7 @@
     "category": null, 
     "name": "Facheux", 
     "weight": 1, 
-    "text": "Une mani\u00e8re d\u2019emp\u00eacher ces deux fous de s\u2019entre-tuer serait de d\u00e9barrasser ma cour de la pr\u00e9sence de {{facheux}}. En tant que seigneur de ces terres, je pourrais l\u00e9galement le bannir, le faire emprisonner ou m\u00eame ex\u00e9cuter! Cependant, il est certains que le reste de mes suivants percevraient de telles mesures comme une terrible injustice.\r\n```\r\nNouvelles missions.\r\n```", 
+    "text": "Une mani\u00e8re d\u2019emp\u00eacher ces deux fous de s\u2019entre-tuer serait de d\u00e9barrasser ma cour de la pr\u00e9sence de {{facheux}}. En tant que seigneur de ces terres, je pourrais l\u00e9galement le bannir, le faire emprisonner ou m\u00eame ex\u00e9cuter! Cependant, il est certains que le reste de mes suivants percevraient de telles mesures comme une terrible injustice.\r\n\r\n    Nouvelles missions.\r\n", 
     "image": "events/325_1.jpg", 
     "on_fire": "kingdom.unlock_mission(\"bannir_folk\")\nkingdom.unlock_mission(\"emprisonner\")\nkingdom.unlock_mission(\"liberer\")\nkingdom.unlock_mission(\"executer\")\n", 
     "slug": "tuto_facheux_3", 
@@ -2731,6 +2731,34 @@
     "image": "", 
     "on_fire": null, 
     "slug": "tuto_firstbattle", 
+    "condition": null
+  }
+},
+{
+  "pk": 223, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Premi\u00e8re escarmouche defense", 
+    "weight": 1, 
+    "text": "(premi\u00e8re attaque subie)", 
+    "image": "", 
+    "on_fire": null, 
+    "slug": "tuto_firstbattle_defense", 
+    "condition": null
+  }
+},
+{
+  "pk": 224, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Rapport d'espion", 
+    "weight": 1, 
+    "text": "(donne la derni\u00e8re mission du tuto)", 
+    "image": "", 
+    "on_fire": null, 
+    "slug": "tuto_rapportespion", 
     "condition": null
   }
 },
@@ -4645,7 +4673,7 @@
     "message": "", 
     "event": 154, 
     "condition": "\n", 
-    "on_fire": "passage = [3]\nparam.pending_event.set_value(\"passage\", passage)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_3\")).start()"
+    "on_fire": "param.set_value(\"come_from\", 2)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_3\")).start()"
   }
 },
 {
@@ -4656,7 +4684,7 @@
     "message": "", 
     "event": 154, 
     "condition": "\n", 
-    "on_fire": "passage = [3]\nparam.pending_event.set_value(\"passage\", passage)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_duel\")).start()"
+    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_duel\")).start()"
   }
 },
 {
@@ -4678,7 +4706,7 @@
     "message": "", 
     "event": 154, 
     "condition": "\n", 
-    "on_fire": "passage = [3]\nparam.pending_event.set_value(\"passage\", passage)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_4\")).start()"
+    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_4\")).start()"
   }
 },
 {
@@ -5096,7 +5124,7 @@
     "message": "Mon fils {{folk.1.first_name}} et le chevalier {{facheux}} se sont disput\u00e9.", 
     "event": 154, 
     "condition": "\n", 
-    "on_fire": "passage = [5]\nparam.pending_event.set_value(\"passage\", passage)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_5\")).start()"
+    "on_fire": "param.set_value(\"come_from\", 2)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_5\")).start()"
   }
 },
 {
@@ -5338,7 +5366,7 @@
     "message": "Mon fils a \u00e9t\u00e9 bless\u00e9 par {{facheux}} en duel. Le chevalier a quitt\u00e9 ma cour, laissant mon fils amer.", 
     "event": 214, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")\n"
   }
 },
 {
@@ -5349,7 +5377,7 @@
     "message": "Mon fils a \u00e9t\u00e9 Bless\u00e9 par {{facheux}} en duel. Le chevalier a quitt\u00e9 ma cour, laissant mon fils amer.", 
     "event": 214, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")\n"
   }
 },
 {
@@ -5405,87 +5433,6 @@
     "event": 212, 
     "condition": "if param.get_value(\"duelist_lessfight\") == param.get_value(\"facheux\"):\n  status = \"error\"\n", 
     "on_fire": "\n"
-  }
-},
-{
-  "pk": 1067, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 58, 
-    "is_started": true, 
-    "created": "2013-08-26T23:48:59.805", 
-    "started": "2013-08-26T23:48:59.826", 
-    "text": "\r\nIl frappe de taille, avec une force qui fait tomber mon fils \u00e0 genoux. Le malheureux serre son \u00e9paule, et je peux voir son sang couler entre ses doigts.\r\n\r\n Mes ongles enfonc\u00e9s dans les paumes de mes mains, je vois le chevalier lever de nouveau son \u00e9p\u00e9e pour ce qui promet d'\u00eatre le coup fatal.", 
-    "event": 212
-  }
-},
-{
-  "pk": 1013, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 1067, 
-    "message": "", 
-    "text": "D\u00e9tourner le regard.", 
-    "folk": null, 
-    "event_action": 280
-  }
-},
-{
-  "pk": 1014, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 1067, 
-    "message": "", 
-    "text": "Se forcer \u00e0 regarder.", 
-    "folk": null, 
-    "event_action": 281
-  }
-},
-{
-  "pk": 1015, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 1067, 
-    "message": "", 
-    "text": "\"ASSEZ!\" Faisant fi des r\u00e8gles du duel, j'avance d'un pas et pointe un doigt furieux sur sire Raoul. \"Chevalier d'Ensign\u00e9, mon fils a vers\u00e9 le premier sang. Je le d\u00e9clare vainqueur de ce duel !\"", 
-    "folk": null, 
-    "event_action": 290
-  }
-},
-{
-  "pk": 1637, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1067, 
-    "name": "duelist_lessfight", 
-    "value": "`Folk`:6680"
-  }
-},
-{
-  "pk": 1638, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1067, 
-    "name": "passage", 
-    "value": "[3]"
-  }
-},
-{
-  "pk": 1639, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1067, 
-    "name": "facheux", 
-    "value": "`Folk`:6683"
-  }
-},
-{
-  "pk": 1640, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1067, 
-    "name": "duelist_maxfight", 
-    "value": "`Folk`:6683"
   }
 }
 ]
