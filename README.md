@@ -1,4 +1,6 @@
-QMRV
+Que mon règne vienne
 ====
 
-Sauvegarde du jeu Que Mon Règne Vienne
+Fichier de sauvegarde pour le jeu Que Mon Règne Vienne.
+
+Consulter [Neamar/Kingdoms](http://github.com/Neamar/Kingdoms) pour le project principal.
