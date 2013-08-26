@@ -2688,7 +2688,7 @@
     "text": "(cour adverse, d\u00e9fense ressources + d\u00e9clenche mission diplomatique pour mariage)", 
     "image": "", 
     "on_fire": null, 
-    "slug": "tuto_espionnage_result", 
+    "slug": "tuto_rapportespionnage", 
     "condition": null
   }
 },
@@ -2702,7 +2702,7 @@
     "text": "(matching + perd un courtisan, gagne un courtisan \u00e0 marier + donne la mission mariage specifique)", 
     "image": "", 
     "on_fire": null, 
-    "slug": "tuto_diplomacy_result", 
+    "slug": "tuto_diplomacy", 
     "condition": null
   }
 },
