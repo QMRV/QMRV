@@ -1,0 +1,233 @@
+[
+{
+  "pk": 1, 
+  "model": "title.title", 
+  "fields": {
+    "name": "Ch\u00e2telain", 
+    "on_defect": "\n", 
+    "on_affect": "\n", 
+    "on_unlock": "# unlock code", 
+    "slug": "chatelain", 
+    "condition": "\n", 
+    "description": "nv"
+  }
+},
+{
+  "pk": 2, 
+  "model": "title.title", 
+  "fields": {
+    "name": "Conn\u00e9table", 
+    "on_defect": "folk.loyalty-=6\nfolk.save()\n", 
+    "on_affect": "folk.loyalty+=5\nfolk.save()", 
+    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un conn\u00e9table.\")\n# AvailableMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"chasse\")).save()\nkingdom.unlock_mission(\"organiser_raid\")", 
+    "slug": "connetable", 
+    "condition": "if folk.sex==\"f\":\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age()>=Constant.objects.get(name=\"Majorite\"):\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"\n", 
+    "description": "Le conn\u00e9table est le responsable de tout ce qui touche de pr\u00e8s ou de loin \u00e0 l'art martial dans v\u00f4tre ch\u00e2teau."
+  }
+},
+{
+  "pk": 3, 
+  "model": "title.title", 
+  "fields": {
+    "name": "Cur\u00e9", 
+    "on_defect": "folk.loyalty-=6\nfolk.save()", 
+    "on_affect": "folk.loyalty+=5\nfolk.save()", 
+    "on_unlock": "# unlock code\nAvailableMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"charite\")).save()\nAvailableMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"soigner_blesse\")).save()", 
+    "slug": "cure", 
+    "condition": "if folk.sex==\"f\":\n  status=\"Un homme est attendu \u00e0 ce poste\"\nif folk.has_quality(\"pretre\")==False:\n  status=\"Un pretre est attendu \u00e0 ce poste\"\n", 
+    "description": "Le cur\u00e9 g\u00e8re la chapelle et tout ce qui touche \u00e0 la religion"
+  }
+},
+{
+  "pk": 4, 
+  "model": "title.title", 
+  "fields": {
+    "name": "Chambellan", 
+    "on_defect": "folk.loyalty-=6\nfolk.save()", 
+    "on_affect": "folk.loyalty+=5\nfolk.save()", 
+    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un chambellan.\")", 
+    "slug": "chambellan", 
+    "condition": "if folk.sex == \"f\":\n  status = \"Un homme est attendu \u00e0 ce poste\"\n", 
+    "description": "Il organise les r\u00e9unions et banquets \u00e0 la cour et conna\u00eet chacun de vos sujets"
+  }
+},
+{
+  "pk": 5, 
+  "model": "title.title", 
+  "fields": {
+    "name": "Maitre espion", 
+    "on_defect": "folk.loyalty-=6\nfolk.save()", 
+    "on_affect": "folk.loyalty+=5\nfolk.save()", 
+    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un ma\u00eetre espion.\")\n\nAvailableMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"espionner\")).save()", 
+    "slug": "maitre_espion", 
+    "condition": "\n", 
+    "description": "Agit dans l'ombre pour prot\u00e9ger votre royaume. G\u00e8re les flux d'information, les assassinats, les actes d'espionnage et de contre-espionnage"
+  }
+},
+{
+  "pk": 6, 
+  "model": "title.title", 
+  "fields": {
+    "name": "Ambassadeur", 
+    "on_defect": "folk.loyalty-=6\nfolk.save()", 
+    "on_affect": "folk.loyalty+=5\nfolk.save()", 
+    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un ambassadeur.\")\n\nkingdom.unlock_mission(\"tuto_recrutement\")\nkingdom.unlock_mission(\"tuto_getaffront_diplomatie\")\n", 
+    "slug": "ambassadeur", 
+    "condition": "if folk.sex==\"f\":\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age()>=Constant.objects.get(name=\"Majorite\"):\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"", 
+    "description": "L'ambassadeur est responsable des relations diplomatiques avec les seigneurs voisins."
+  }
+},
+{
+  "pk": 7, 
+  "model": "title.title", 
+  "fields": {
+    "name": "Tr\u00e9sorier", 
+    "on_defect": "folk.loyalty-=6\nfolk.save()\n", 
+    "on_affect": "folk.loyalty+=5\nfolk.save()\n", 
+    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un tr\u00e9sorier.\")\n\nkingdom.unlock_mission(slug=\"emprunt\")\nkingdom.unlock_mission(slug=\"investir\")\nkingdom.unlock_mission(slug=\"taxepaysanne\")\nkingdom.unlock_mission(slug=\"taxecour\")", 
+    "slug": "tresorier", 
+    "condition": "\n", 
+    "description": "Celui qui g\u00e8re les sousous"
+  }
+},
+{
+  "pk": 149, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 44, 
+    "last_folk": 6619, 
+    "folk": 6619, 
+    "title": 1
+  }
+},
+{
+  "pk": 151, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 44, 
+    "last_folk": 6624, 
+    "folk": 6624, 
+    "title": 3
+  }
+},
+{
+  "pk": 152, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 45, 
+    "last_folk": 6625, 
+    "folk": 6625, 
+    "title": 1
+  }
+},
+{
+  "pk": 153, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 45, 
+    "last_folk": 6628, 
+    "folk": 6628, 
+    "title": 4
+  }
+},
+{
+  "pk": 154, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 45, 
+    "last_folk": 6626, 
+    "folk": 6626, 
+    "title": 2
+  }
+},
+{
+  "pk": 155, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 45, 
+    "last_folk": 6632, 
+    "folk": 6632, 
+    "title": 7
+  }
+},
+{
+  "pk": 156, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 45, 
+    "last_folk": 6630, 
+    "folk": 6630, 
+    "title": 3
+  }
+},
+{
+  "pk": 160, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 45, 
+    "last_folk": 6627, 
+    "folk": 6627, 
+    "title": 5
+  }
+},
+{
+  "pk": 161, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 45, 
+    "last_folk": 6633, 
+    "folk": 6633, 
+    "title": 6
+  }
+},
+{
+  "pk": 162, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 46, 
+    "last_folk": 6634, 
+    "folk": 6634, 
+    "title": 1
+  }
+},
+{
+  "pk": 173, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 57, 
+    "last_folk": 6663, 
+    "folk": 6663, 
+    "title": 1
+  }
+},
+{
+  "pk": 176, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 57, 
+    "last_folk": 6666, 
+    "folk": 6666, 
+    "title": 4
+  }
+},
+{
+  "pk": 187, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 58, 
+    "last_folk": 6679, 
+    "folk": 6679, 
+    "title": 1
+  }
+},
+{
+  "pk": 188, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 58, 
+    "last_folk": 6682, 
+    "folk": 6682, 
+    "title": 2
+  }
+}
+]

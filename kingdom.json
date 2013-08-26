@@ -1,0 +1,2653 @@
+[
+{
+  "pk": 44, 
+  "model": "kingdom.kingdom", 
+  "fields": {
+    "soldiers": 0, 
+    "prestige": 0, 
+    "money": 0, 
+    "user": 39, 
+    "population": 0
+  }
+},
+{
+  "pk": 45, 
+  "model": "kingdom.kingdom", 
+  "fields": {
+    "soldiers": 0, 
+    "prestige": 100, 
+    "money": 1845, 
+    "user": 38, 
+    "population": 0
+  }
+},
+{
+  "pk": 46, 
+  "model": "kingdom.kingdom", 
+  "fields": {
+    "soldiers": 0, 
+    "prestige": 100, 
+    "money": 100, 
+    "user": 12, 
+    "population": 100
+  }
+},
+{
+  "pk": 57, 
+  "model": "kingdom.kingdom", 
+  "fields": {
+    "soldiers": 0, 
+    "prestige": 0, 
+    "money": 15, 
+    "user": 1, 
+    "population": 0
+  }
+},
+{
+  "pk": 58, 
+  "model": "kingdom.kingdom", 
+  "fields": {
+    "soldiers": 0, 
+    "prestige": 0, 
+    "money": 15, 
+    "user": 41, 
+    "population": 0
+  }
+},
+{
+  "pk": 226, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 44, 
+    "name": "adversaire_tuto", 
+    "value": "Tancr\u00e8de de Pompertuzat"
+  }
+},
+{
+  "pk": 227, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 44, 
+    "name": "prestige_pnj", 
+    "value": 100
+  }
+},
+{
+  "pk": 228, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 44, 
+    "name": "population_pnj", 
+    "value": 100
+  }
+},
+{
+  "pk": 229, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 45, 
+    "name": "adversaire_tuto", 
+    "value": "Albald de Bages"
+  }
+},
+{
+  "pk": 230, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 45, 
+    "name": "prestige_pnj", 
+    "value": 100
+  }
+},
+{
+  "pk": 231, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 45, 
+    "name": "population_pnj", 
+    "value": 100
+  }
+},
+{
+  "pk": 233, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 45, 
+    "name": "tuto_banquet", 
+    "value": 1
+  }
+},
+{
+  "pk": 234, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 45, 
+    "name": "tuto_bandits_fantome", 
+    "value": 1
+  }
+},
+{
+  "pk": 235, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 45, 
+    "name": "tuto_caissesvides", 
+    "value": 1
+  }
+},
+{
+  "pk": 237, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 45, 
+    "name": "tuto_forcertitre_random", 
+    "value": 1
+  }
+},
+{
+  "pk": 239, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 45, 
+    "name": "tuto_cour_basse", 
+    "value": 1
+  }
+},
+{
+  "pk": 241, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 45, 
+    "name": "tuto_scandale_fantome", 
+    "value": 1
+  }
+},
+{
+  "pk": 248, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 45, 
+    "name": "tuto_facheux_refus", 
+    "value": 1
+  }
+},
+{
+  "pk": 249, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 45, 
+    "name": "tuto_pop_basse", 
+    "value": 1
+  }
+},
+{
+  "pk": 251, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 45, 
+    "name": "tuto_facheux_fantome", 
+    "value": 1
+  }
+},
+{
+  "pk": 252, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 45, 
+    "name": "tuto_ambition", 
+    "value": 1
+  }
+},
+{
+  "pk": 253, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 46, 
+    "name": "adversaire_tuto", 
+    "value": "Raymond de Heurtevent"
+  }
+},
+{
+  "pk": 254, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 46, 
+    "name": "prestige_pnj", 
+    "value": 100
+  }
+},
+{
+  "pk": 255, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 46, 
+    "name": "population_pnj", 
+    "value": 100
+  }
+},
+{
+  "pk": 271, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 57, 
+    "name": "adversaire_tuto", 
+    "value": "Giefroi de Kertzfeld"
+  }
+},
+{
+  "pk": 272, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 57, 
+    "name": "prestige_pnj", 
+    "value": 100
+  }
+},
+{
+  "pk": 273, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 57, 
+    "name": "population_pnj", 
+    "value": 100
+  }
+},
+{
+  "pk": 275, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 57, 
+    "name": "tuto_banquet", 
+    "value": 1
+  }
+},
+{
+  "pk": 313, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 58, 
+    "name": "adversaire_tuto", 
+    "value": "Ingebald d'Oust\u00e9"
+  }
+},
+{
+  "pk": 314, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 58, 
+    "name": "prestige_pnj", 
+    "value": 100
+  }
+},
+{
+  "pk": 315, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 58, 
+    "name": "population_pnj", 
+    "value": 100
+  }
+},
+{
+  "pk": 316, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 58, 
+    "name": "tuto_recrutement", 
+    "value": 1
+  }
+},
+{
+  "pk": 196, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 14, 
+    "first_name": "Aubert", 
+    "last_name": "de Thiville", 
+    "diplomacy": 8, 
+    "father": null, 
+    "plot": 3, 
+    "scholarship": 8, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-06-14T22:54:15.256", 
+    "mother": null, 
+    "loyalty": 60, 
+    "spouse": null, 
+    "quality_set": [
+      19, 
+      21
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 232, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 5, 
+    "first_name": "Gerloc", 
+    "last_name": "de Prime", 
+    "diplomacy": 8, 
+    "father": null, 
+    "plot": 13, 
+    "scholarship": 9, 
+    "sex": "f", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-14T21:08:54.928", 
+    "mother": null, 
+    "loyalty": 35, 
+    "spouse": null, 
+    "quality_set": [
+      3, 
+      4
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 233, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 5, 
+    "first_name": "Hubert", 
+    "last_name": "d'Ucel", 
+    "diplomacy": 11, 
+    "father": null, 
+    "plot": 9, 
+    "scholarship": 4, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-14T21:08:54.990", 
+    "mother": null, 
+    "loyalty": 65, 
+    "spouse": null, 
+    "quality_set": [
+      23
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 234, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 10, 
+    "first_name": "Guerri", 
+    "last_name": "de Prime", 
+    "diplomacy": 6, 
+    "father": 233, 
+    "plot": 8, 
+    "scholarship": 4, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-14T21:08:55.023", 
+    "mother": 232, 
+    "loyalty": 35, 
+    "spouse": null, 
+    "quality_set": [
+      2
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 235, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 6, 
+    "first_name": "Arambour", 
+    "last_name": "de Prime", 
+    "diplomacy": 2, 
+    "father": 233, 
+    "plot": 1, 
+    "scholarship": 1, 
+    "sex": "f", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-14T21:08:55.056", 
+    "mother": 232, 
+    "loyalty": 75, 
+    "spouse": null, 
+    "quality_set": [
+      21
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 238, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 10, 
+    "first_name": "Olivier", 
+    "last_name": "de Kaysersberg", 
+    "diplomacy": 5, 
+    "father": null, 
+    "plot": 11, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-14T21:41:07.477", 
+    "mother": null, 
+    "loyalty": 50, 
+    "spouse": null, 
+    "quality_set": [
+      1
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 241, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 3, 
+    "first_name": "Madez", 
+    "last_name": "de Numero11", 
+    "diplomacy": 12, 
+    "father": null, 
+    "plot": 10, 
+    "scholarship": 8, 
+    "sex": "f", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-14T21:53:12.819", 
+    "mother": null, 
+    "loyalty": 45, 
+    "spouse": null, 
+    "quality_set": [
+      3, 
+      5
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 242, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 6, 
+    "first_name": "Robert", 
+    "last_name": "de Montoison", 
+    "diplomacy": 7, 
+    "father": null, 
+    "plot": 6, 
+    "scholarship": 10, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-14T21:53:12.893", 
+    "mother": null, 
+    "loyalty": 75, 
+    "spouse": null, 
+    "quality_set": [
+      14
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 243, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 5, 
+    "first_name": "Boniface", 
+    "last_name": "de Numero11", 
+    "diplomacy": 5, 
+    "father": 242, 
+    "plot": 6, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-14T21:53:12.933", 
+    "mother": 241, 
+    "loyalty": 65, 
+    "spouse": null, 
+    "quality_set": [
+      31
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 244, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 7, 
+    "first_name": "Madenn", 
+    "last_name": "de Numero11", 
+    "diplomacy": 1, 
+    "father": 242, 
+    "plot": 1, 
+    "scholarship": 1, 
+    "sex": "f", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-14T21:53:12.975", 
+    "mother": 241, 
+    "loyalty": 65, 
+    "spouse": null, 
+    "quality_set": [
+      45
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 246, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 11, 
+    "first_name": "Gelduin", 
+    "last_name": "de Tiercelet", 
+    "diplomacy": 8, 
+    "father": null, 
+    "plot": 6, 
+    "scholarship": 9, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-14T21:57:06.828", 
+    "mother": null, 
+    "loyalty": 75, 
+    "spouse": null, 
+    "quality_set": [
+      12
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 250, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 10, 
+    "first_name": "Mayeul", 
+    "last_name": "de Quercamps", 
+    "diplomacy": 6, 
+    "father": null, 
+    "plot": 11, 
+    "scholarship": 5, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-14T22:00:45.792", 
+    "mother": null, 
+    "loyalty": 65, 
+    "spouse": null, 
+    "quality_set": [
+      10
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 254, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 10, 
+    "first_name": "Perceval", 
+    "last_name": "d'Orieux", 
+    "diplomacy": 8, 
+    "father": null, 
+    "plot": 8, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-14T22:02:45.701", 
+    "mother": null, 
+    "loyalty": 65, 
+    "spouse": null, 
+    "quality_set": [
+      3
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 290, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 11, 
+    "first_name": "Gr\u00e9goire", 
+    "last_name": "d'Orgeix", 
+    "diplomacy": 8, 
+    "father": null, 
+    "plot": 4, 
+    "scholarship": 6, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-06-20T20:33:42.555", 
+    "mother": null, 
+    "loyalty": 50, 
+    "spouse": null, 
+    "quality_set": [
+      23
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6619, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 44, 
+    "fight": 11, 
+    "first_name": "Garnier", 
+    "last_name": "de michael", 
+    "diplomacy": 9, 
+    "father": null, 
+    "plot": 10, 
+    "scholarship": 10, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-09T19:31:29.919", 
+    "mother": null, 
+    "loyalty": 99, 
+    "spouse": null, 
+    "quality_set": [
+      30
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6620, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 44, 
+    "fight": 8, 
+    "first_name": "Flavien", 
+    "last_name": "de michael", 
+    "diplomacy": 8, 
+    "father": 6619, 
+    "plot": 10, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-27T19:31:30.228", 
+    "mother": null, 
+    "loyalty": 65, 
+    "spouse": null, 
+    "quality_set": [
+      1
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6621, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 44, 
+    "fight": 6, 
+    "first_name": "Aneglie", 
+    "last_name": "de michael", 
+    "diplomacy": 13, 
+    "father": 6619, 
+    "plot": 6, 
+    "scholarship": 8, 
+    "sex": "f", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-28T19:31:30.280", 
+    "mother": null, 
+    "loyalty": 80, 
+    "spouse": null, 
+    "quality_set": [
+      5, 
+      21
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6622, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 44, 
+    "fight": 10, 
+    "first_name": "Ybert", 
+    "last_name": "d'Yronde", 
+    "diplomacy": 8, 
+    "father": null, 
+    "plot": 9, 
+    "scholarship": 6, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-09T19:31:30.362", 
+    "mother": null, 
+    "loyalty": 60, 
+    "spouse": null, 
+    "quality_set": [
+      11, 
+      16
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6624, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 44, 
+    "fight": 7, 
+    "first_name": "Roland", 
+    "last_name": "de Noll\u00e9val", 
+    "diplomacy": 8, 
+    "father": null, 
+    "plot": 5, 
+    "scholarship": 12, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-09T19:39:32.359", 
+    "mother": null, 
+    "loyalty": 65, 
+    "spouse": null, 
+    "quality_set": [
+      10, 
+      36
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6625, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 45, 
+    "fight": 9, 
+    "first_name": "Augier", 
+    "last_name": "de jules", 
+    "diplomacy": 13, 
+    "father": null, 
+    "plot": 3, 
+    "scholarship": 11, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-11T11:32:56.492", 
+    "mother": null, 
+    "loyalty": 100, 
+    "spouse": null, 
+    "quality_set": [
+      9
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6626, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 45, 
+    "fight": 10, 
+    "first_name": "Flavien", 
+    "last_name": "de jules", 
+    "diplomacy": 7, 
+    "father": 6625, 
+    "plot": 7, 
+    "scholarship": 9, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-29T11:32:57.251", 
+    "mother": null, 
+    "loyalty": 95, 
+    "spouse": null, 
+    "quality_set": [
+      21
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6627, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 45, 
+    "fight": 4, 
+    "first_name": "Morgane", 
+    "last_name": "de jules", 
+    "diplomacy": 11, 
+    "father": 6625, 
+    "plot": 9, 
+    "scholarship": 8, 
+    "sex": "f", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-30T11:32:57.297", 
+    "mother": null, 
+    "loyalty": 85, 
+    "spouse": null, 
+    "quality_set": [], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6628, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 45, 
+    "fight": 12, 
+    "first_name": "Ga\u00ebl", 
+    "last_name": "de Qu\u00e9briac", 
+    "diplomacy": 12, 
+    "father": null, 
+    "plot": 11, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-11T11:32:57.325", 
+    "mother": null, 
+    "loyalty": 65, 
+    "spouse": null, 
+    "quality_set": [
+      2, 
+      12
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6629, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 45, 
+    "fight": 4, 
+    "first_name": "Balde", 
+    "last_name": "de Tousson", 
+    "diplomacy": 9, 
+    "father": null, 
+    "plot": 9, 
+    "scholarship": 10, 
+    "sex": "f", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-22T09:30:08.773", 
+    "mother": null, 
+    "loyalty": 50, 
+    "spouse": null, 
+    "quality_set": [], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6630, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 45, 
+    "fight": 4, 
+    "first_name": "Gui", 
+    "last_name": "de Wittisheim", 
+    "diplomacy": 9, 
+    "father": null, 
+    "plot": 6, 
+    "scholarship": 13, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-12T09:53:44.919", 
+    "mother": null, 
+    "loyalty": 65, 
+    "spouse": null, 
+    "quality_set": [
+      36
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6632, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 45, 
+    "fight": 12, 
+    "first_name": "Simonet", 
+    "last_name": "d'Incheville", 
+    "diplomacy": 5, 
+    "father": null, 
+    "plot": 4, 
+    "scholarship": 13, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-12T09:54:50.465", 
+    "mother": null, 
+    "loyalty": 65, 
+    "spouse": null, 
+    "quality_set": [
+      17, 
+      19, 
+      36
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6633, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 45, 
+    "fight": 13, 
+    "first_name": "Guillaume", 
+    "last_name": "d'Estialescq", 
+    "diplomacy": 6, 
+    "father": null, 
+    "plot": 8, 
+    "scholarship": 6, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-12T10:17:19.459", 
+    "mother": null, 
+    "loyalty": 64, 
+    "spouse": null, 
+    "quality_set": [
+      7, 
+      10
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6634, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 46, 
+    "fight": 10, 
+    "first_name": "Amaury", 
+    "last_name": "de le_pnj_du_jeu", 
+    "diplomacy": 10, 
+    "father": null, 
+    "plot": 11, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-12T12:46:36.847", 
+    "mother": null, 
+    "loyalty": 99, 
+    "spouse": null, 
+    "quality_set": [
+      22
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6635, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 46, 
+    "fight": 8, 
+    "first_name": "Jacquemet", 
+    "last_name": "de le_pnj_du_jeu", 
+    "diplomacy": 9, 
+    "father": 6634, 
+    "plot": 9, 
+    "scholarship": 8, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-30T12:46:37.200", 
+    "mother": null, 
+    "loyalty": 90, 
+    "spouse": null, 
+    "quality_set": [
+      17
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6636, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 46, 
+    "fight": 3, 
+    "first_name": "Adelberge", 
+    "last_name": "de le_pnj_du_jeu", 
+    "diplomacy": 14, 
+    "father": 6634, 
+    "plot": 10, 
+    "scholarship": 7, 
+    "sex": "f", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-31T12:46:37.248", 
+    "mother": null, 
+    "loyalty": 80, 
+    "spouse": null, 
+    "quality_set": [
+      13
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6637, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 46, 
+    "fight": 10, 
+    "first_name": "Honor\u00e9", 
+    "last_name": "de Nousse", 
+    "diplomacy": 6, 
+    "father": null, 
+    "plot": 9, 
+    "scholarship": 8, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-07-12T12:46:37.299", 
+    "mother": null, 
+    "loyalty": 80, 
+    "spouse": null, 
+    "quality_set": [
+      3
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6663, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 57, 
+    "fight": 10, 
+    "first_name": "Fulbert", 
+    "last_name": "de matthieu", 
+    "diplomacy": 13, 
+    "father": null, 
+    "plot": 9, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 16, 
+    "birth": "2013-07-20T15:28:46.334", 
+    "mother": null, 
+    "loyalty": 99, 
+    "spouse": null, 
+    "quality_set": [
+      24
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6664, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 57, 
+    "fight": 10, 
+    "first_name": "Haimon", 
+    "last_name": "de matthieu", 
+    "diplomacy": 7, 
+    "father": 6663, 
+    "plot": 5, 
+    "scholarship": 12, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 12, 
+    "birth": "2013-08-07T15:28:46.677", 
+    "mother": null, 
+    "loyalty": 80, 
+    "spouse": null, 
+    "quality_set": [
+      28
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6665, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 57, 
+    "fight": 8, 
+    "first_name": "D\u00e9da", 
+    "last_name": "de matthieu", 
+    "diplomacy": 10, 
+    "father": 6663, 
+    "plot": 9, 
+    "scholarship": 7, 
+    "sex": "f", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 67, 
+    "birth": "2013-08-08T15:28:46.748", 
+    "mother": null, 
+    "loyalty": 90, 
+    "spouse": null, 
+    "quality_set": [
+      12
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6666, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 57, 
+    "fight": 8, 
+    "first_name": "Pierre", 
+    "last_name": "de Herr\u00e9", 
+    "diplomacy": 7, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 10, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 2, 
+    "birth": "2013-07-20T15:28:46.821", 
+    "mother": null, 
+    "loyalty": 85, 
+    "spouse": null, 
+    "quality_set": [
+      10
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6668, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 57, 
+    "fight": 6, 
+    "first_name": "Ermesinde", 
+    "last_name": "de Poc\u00e9", 
+    "diplomacy": 11, 
+    "father": null, 
+    "plot": 9, 
+    "scholarship": 6, 
+    "sex": "f", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 54, 
+    "birth": "2013-07-30T17:10:27.569", 
+    "mother": null, 
+    "loyalty": 50, 
+    "spouse": null, 
+    "quality_set": [
+      7, 
+      15
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6669, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 57, 
+    "fight": 12, 
+    "first_name": "Trotin", 
+    "last_name": "de Hervilly", 
+    "diplomacy": 3, 
+    "father": null, 
+    "plot": 5, 
+    "scholarship": 14, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 6, 
+    "birth": "2013-07-20T17:11:12.865", 
+    "mother": null, 
+    "loyalty": 70, 
+    "spouse": null, 
+    "quality_set": [
+      10, 
+      17
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6679, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 58, 
+    "fight": 11, 
+    "first_name": "Bertrand", 
+    "last_name": "de hugo", 
+    "diplomacy": 7, 
+    "father": null, 
+    "plot": 9, 
+    "scholarship": 10, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 4, 
+    "birth": "2013-07-22T23:35:02.905", 
+    "mother": null, 
+    "loyalty": 99, 
+    "spouse": null, 
+    "quality_set": [], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6680, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 58, 
+    "fight": 6, 
+    "first_name": "Giefroi", 
+    "last_name": "de hugo", 
+    "diplomacy": 10, 
+    "father": 6679, 
+    "plot": 7, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 25, 
+    "birth": "2013-08-09T23:35:02.966", 
+    "mother": null, 
+    "loyalty": 80, 
+    "spouse": null, 
+    "quality_set": [
+      25
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6681, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 58, 
+    "fight": 4, 
+    "first_name": "Gerberte", 
+    "last_name": "de hugo", 
+    "diplomacy": 12, 
+    "father": 6679, 
+    "plot": 10, 
+    "scholarship": 5, 
+    "sex": "f", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 64, 
+    "birth": "2013-08-10T23:35:03.029", 
+    "mother": null, 
+    "loyalty": 80, 
+    "spouse": null, 
+    "quality_set": [
+      15
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6682, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 58, 
+    "fight": 9, 
+    "first_name": "Florentin", 
+    "last_name": "de Poli\u00e9nas", 
+    "diplomacy": 8, 
+    "father": null, 
+    "plot": 8, 
+    "scholarship": 8, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 11, 
+    "birth": "2013-07-22T23:35:03.099", 
+    "mother": null, 
+    "loyalty": 85, 
+    "spouse": null, 
+    "quality_set": [
+      7
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6683, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 58, 
+    "fight": 14, 
+    "first_name": "Raoul", 
+    "last_name": "d'Ensign\u00e9", 
+    "diplomacy": 12, 
+    "father": null, 
+    "plot": 6, 
+    "scholarship": 8, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 6, 
+    "birth": "2013-07-22T23:37:31.826", 
+    "mother": null, 
+    "loyalty": 20, 
+    "spouse": null, 
+    "quality_set": [
+      2
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 1, 
+  "model": "kingdom.qualitycategory", 
+  "fields": {
+    "name": "G\u00e9n\u00e9tique", 
+    "description": "Traits g\u00e9n\u00e9tiques"
+  }
+},
+{
+  "pk": 2, 
+  "model": "kingdom.qualitycategory", 
+  "fields": {
+    "name": "Caract\u00e8re", 
+    "description": "traits de caract\u00e8re"
+  }
+},
+{
+  "pk": 3, 
+  "model": "kingdom.qualitycategory", 
+  "fields": {
+    "name": "Talent", 
+    "description": "sdf"
+  }
+},
+{
+  "pk": 4, 
+  "model": "kingdom.qualitycategory", 
+  "fields": {
+    "name": "\u00c9tat", 
+    "description": "szf"
+  }
+},
+{
+  "pk": 5, 
+  "model": "kingdom.qualitycategory", 
+  "fields": {
+    "name": "Social", 
+    "description": "Traits impos\u00e9 par la soci\u00e9t\u00e9"
+  }
+},
+{
+  "pk": 1, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il tire le maximum des circonstances, souvent au d\u00e9triment d'autrui.\r\n\r\n+1 en Intrigue, -15 en Loyaut\u00e9", 
+    "on_defect": "folk.plot-=1\nfolk.loyalty+=5\nfolk.save()\n", 
+    "female_description": "Elle tire le maximum des circonstances, souvent au d\u00e9triment d'autrui.\r\n\r\n+1 en Intrigue, -15 en Loyaut\u00e9", 
+    "on_affect": "folk.plot+=1\nfolk.loyalty-=15\nfolk.save()\n", 
+    "female_name": "Opportuniste", 
+    "incompatible_qualities": [
+      9, 
+      14
+    ], 
+    "slug": "opportuniste", 
+    "name": "Opportuniste"
+  }
+},
+{
+  "pk": 2, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Un ambitieux se r\u00eave une grande destin\u00e9e, et ne recule devant aucun sacrifice pour la voir s'accomplir.\r\n\r\n+2 en Combat, Diplomatie, Intrigue et \u00c9rudition, -30 en Loyaut\u00e9", 
+    "on_defect": "folk.fight-=2\nfolk.diplomacy-=2\nfolk.plot-=2\nfolk.scholarship-=2\nfolk.loyalty+=15\nfolk.save()\n", 
+    "female_description": "Elle ignore ceux qui lui disent qu'une femme doit savoir rester \u00e0 sa place, et n'h\u00e9site pas \u00e0 se fixer les buts les plus difficiles.\r\n\r\n+2 en Combat, Diplomatie, Intrigue et \u00c9rudition, -30 en Loyaut\u00e9", 
+    "on_affect": "folk.fight+=2\nfolk.diplomacy+=2\nfolk.plot+=2\nfolk.scholarship+=2\nfolk.loyalty-=30\nfolk.save()\n", 
+    "female_name": "Ambitieuse", 
+    "incompatible_qualities": [
+      6, 
+      14, 
+      21, 
+      23, 
+      32
+    ], 
+    "slug": "ambitieux", 
+    "name": "Ambitieux"
+  }
+},
+{
+  "pk": 3, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il ne supporte pas les critiques, et se fait un devoir de r\u00e9pondre au moindre affront.\r\n\r\n+1 en Combat", 
+    "on_defect": "folk.fight-=1\nfolk.save()\n", 
+    "female_description": "Elle ne supporte pas les critiques, et se fait un devoir de r\u00e9pondre au moindre affront.\r\n\r\n+1 en Combat", 
+    "on_affect": "folk.fight+=1\nfolk.save()\n", 
+    "female_name": "Fi\u00e8re", 
+    "incompatible_qualities": [
+      6, 
+      21
+    ], 
+    "slug": "fier", 
+    "name": "Fier"
+  }
+},
+{
+  "pk": 4, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il a renonc\u00e9 aux illusions de la morale, de la pi\u00e9t\u00e9 et de l'honneur.\r\n\r\nIntrigue +2, -20 de Loyaut\u00e9", 
+    "on_defect": "folk.plot-=2\nfolk.loyalty-=10\nfolk.save()\n", 
+    "female_description": "Elle a renonc\u00e9 aux illusions de la morale, de la pi\u00e9t\u00e9 et de l'honneur.\r\n\r\nIntrigue +2, -20 de Loyaut\u00e9", 
+    "on_affect": "folk.plot+=2\nfolk.loyalty-=20\nfolk.save()\n", 
+    "female_name": "Cynique", 
+    "incompatible_qualities": [
+      9, 
+      14, 
+      17, 
+      32
+    ], 
+    "slug": "cynique", 
+    "name": "Cynique"
+  }
+},
+{
+  "pk": 5, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il r\u00e9pugne \u00e0 d\u00e9penser la moindre pi\u00e9cette, pr\u00e9f\u00e9rant accumuler son argent \u00e0 l\u2019abri des regards.\r\n\r\n-10 de Loyaut\u00e9, +2 pour g\u00e9rer la tr\u00e9sorerie.", 
+    "on_defect": "folk.loyalty+=5\nfolk.save()\n", 
+    "female_description": "Elle r\u00e9pugne \u00e0 d\u00e9penser la moindre pi\u00e9cette, pr\u00e9f\u00e9rant accumuler son argent \u00e0 l\u2019abri des regards.\r\n\r\n-10 de Loyaut\u00e9, +2 pour g\u00e9rer la tr\u00e9sorerie.", 
+    "on_affect": "folk.loyalty-=10\nfolk.save()\n", 
+    "female_name": "Avare", 
+    "incompatible_qualities": [
+      7
+    ], 
+    "slug": "avare", 
+    "name": "Avare"
+  }
+},
+{
+  "pk": 6, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "La pr\u00e9sence d'inconnus le met mal \u00e0 l'aise, et il a souvent peur de faire le premier pas.\r\n\r\n-2 en diplomatie +10 en loyaut\u00e9\r\n", 
+    "on_defect": "folk.diplomacy+=2\nfolk.loyalty-=5\nfolk.save()", 
+    "female_description": "Elle n'aime pas que l'on fasse attention \u00e0 elle.\r\n\r\n-2 en diplomatie +10 en loyaut\u00e9", 
+    "on_affect": "folk.diplomacy-=2\nfolk.loyalty+=10\nfolk.save()\n", 
+    "female_name": "Timide", 
+    "incompatible_qualities": [
+      2, 
+      3, 
+      10, 
+      15, 
+      19, 
+      20
+    ], 
+    "slug": "timide", 
+    "name": "Timide"
+  }
+},
+{
+  "pk": 7, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il ressent une compassion r\u00e9elle pour ceux moins fortun\u00e9s que lui, et n'h\u00e9site pas \u00e0 donner de son temps et de son argent pour leur venir en aide.\r\n\r\n+1 en Diplomatie, +2 pour la pr\u00eatrise, -2 pour g\u00e9rer la tr\u00e9sorerie", 
+    "on_defect": "folk.diplomacy-=1\nfolk.save()\n", 
+    "female_description": "Elle est facilement \u00e9mue par le malheur des pauvres, et aime passez du temps \u00e0 soulager leurs maux.\r\n\r\n+1 en Diplomatie, +2 pour la pr\u00eatrise, -2 pour g\u00e9rer la tr\u00e9sorerie", 
+    "on_affect": "folk.diplomacy+=1\nfolk.save()\n", 
+    "female_name": "Charitable", 
+    "incompatible_qualities": [
+      5, 
+      16, 
+      18
+    ], 
+    "slug": "charitable", 
+    "name": "Charitable"
+  }
+},
+{
+  "pk": 8, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Un sens prononc\u00e9 de l'\u00e9quit\u00e9 et de morale, et un refus d'accepter les abus des puissants.\r\n\r\n+2 en diplomatie, -2 en intrigue\r\n", 
+    "on_defect": "folk.diplomacy-=2\nfolk.plot+=2\nfolk.save()\n", 
+    "female_description": "Un sens prononc\u00e9 de l'\u00e9quit\u00e9 et de morale, et un refus d'accepter les abus des puissants.\r\n\r\n+2 en diplomatie, -2 en intrigue", 
+    "on_affect": "folk.diplomacy+=2\nfolk.plot-=2\nfolk.save()\n", 
+    "female_name": "Juste", 
+    "incompatible_qualities": [
+      16, 
+      18
+    ], 
+    "slug": "juste", 
+    "name": "Juste"
+  }
+},
+{
+  "pk": 9, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Ce personnage a suit \u00e0 la lettre les pr\u00e9ceptes de loyaut\u00e9, de bravoure et d'honneur que pr\u00f4ne la chevalerie.\r\n\r\n+1 en Combat, +2 en diplomatie, -4 en intrigue, +30 en loyaut\u00e9.", 
+    "on_defect": "folk.fight-=1\nfolk.diplomacy-=2\nfolk.plot+=4\nfolk.loyalty-=15\nfolk.save() ", 
+    "female_description": "pas possible pour les femmes.", 
+    "on_affect": "folk.fight+=1\nfolk.diplomacy+=2\nfolk.plot-=4\nfolk.loyalty+=30\nfolk.save()\n", 
+    "female_name": "none", 
+    "incompatible_qualities": [
+      1, 
+      4, 
+      18
+    ], 
+    "slug": "honorable", 
+    "name": "Honorable"
+  }
+},
+{
+  "pk": 10, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Pour un rien, elle hausse le ton et frappe du poing sur la table.\r\n\r\n+1 en combat, -1 en diplomatie.", 
+    "on_defect": "folk.fight-=1\nfolk.diplomacy+=1\nfolk.save()\n", 
+    "female_description": "Elle s'emporte souvent et pour un rien.\r\n\r\n+1 en combat, -1 en diplomatie.", 
+    "on_affect": "folk.fight+=1\nfolk.diplomacy-=1\nfolk.save()\n", 
+    "female_name": "Colerique", 
+    "incompatible_qualities": [
+      6, 
+      13, 
+      23
+    ], 
+    "slug": "colerique", 
+    "name": "Colerique"
+  }
+},
+{
+  "pk": 11, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il est particuli\u00e8rement soucieux de la propret\u00e9 de ses cheveux et de la coupe de ses v\u00eatements.\r\n\r\n+1 en Diplomatie.", 
+    "on_defect": "folk.diplomacy-=1\nfolk.save()\n", 
+    "female_description": "Elle passe \u00e9norm\u00e9ment de temps \u00e0 choisir ses robes, et \u00e0 y assortir ses bijoux.\r\n\r\n+1 en Diplomatie.", 
+    "on_affect": "folk.diplomacy+=1\nfolk.save()\n", 
+    "female_name": "Coqu\u00e8te", 
+    "incompatible_qualities": [
+      21
+    ], 
+    "slug": "coquet", 
+    "name": "Coquet"
+  }
+},
+{
+  "pk": 12, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Un guerrier courageux, qui se rue vers le danger sans un instant d'h\u00e9sitation.\r\n\r\n+2 en Combat, +10 de Loyaut\u00e9", 
+    "on_defect": "folk.fight-=2\nfolk.loyalty+=5\nfolk.save()\n", 
+    "female_description": "nope", 
+    "on_affect": "folk.fight+=2\nfolk.loyalty+=10\nfolk.save()\n", 
+    "female_name": "nope", 
+    "incompatible_qualities": [
+      23
+    ], 
+    "slug": "intrepide", 
+    "name": "Intr\u00e9pide"
+  }
+},
+{
+  "pk": 13, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "D'une politesse irr\u00e9prochable, m\u00eame face \u00e0 un ennemi vocif\u00e9rant.\r\n\r\n+2 en Diplomatie.", 
+    "on_defect": "folk.diplomacy-=2\nfolk.save()", 
+    "female_description": "Elle ma\u00eetrise \u00e0 la perfection l'art de \u00e9tiquette.\r\n\r\n+2 en Diplomatie.", 
+    "on_affect": "folk.diplomacy+=2\nfolk.save()\n", 
+    "female_name": "Courtoise", 
+    "incompatible_qualities": [
+      10, 
+      19, 
+      32
+    ], 
+    "slug": "courtois", 
+    "name": "Courtois"
+  }
+},
+{
+  "pk": 14, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il est un brin naif, et a tendance a croire tout ce qu'on lui raconte.\r\n\r\n-1 en Diplomatie, -2 en Intrigue, +10 en Loyaut\u00e9", 
+    "on_defect": "folk.diplomacy+=1\nfolk.plot+=2\nfolk.loyalty-=5\nfolk.save()\n", 
+    "female_description": "Elle est un brin na\u00efve, et a tendance a croire tout ce qu'on lui raconte.\r\n\r\n-1 en Diplomatie, -2 en Intrigue, +10 en Loyaut\u00e9", 
+    "on_affect": "folk.diplomacy-=1\nfolk.plot-=2\nfolk.loyalty+=10\nfolk.save()\n", 
+    "female_name": "Cr\u00e9dule", 
+    "incompatible_qualities": [
+      1, 
+      2, 
+      4
+    ], 
+    "slug": "credule", 
+    "name": "Cr\u00e9dule"
+  }
+},
+{
+  "pk": 15, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Un rien d\u00e9bauch\u00e9, port\u00e9 sur la bonne chair, le vin et les chanson.\r\n\r\n* +1 en Diplomatie,\r\n* -2 en \u00c9rudition.", 
+    "on_defect": "folk.diplomacy-=1\nfolk.scholarship+=2\nfolk.save()\n", 
+    "female_description": "Elle s'\u00e9panouie dans les banquets, o\u00f9 elle ne s'arr\u00eate que rarement au premier verre.\r\n\r\n* +1 en Diplomatie,\r\n* -2 en \u00c9rudition.", 
+    "on_affect": "folk.diplomacy+=1\nfolk.scholarship-=2\nfolk.save()\n", 
+    "female_name": "F\u00eatarde", 
+    "incompatible_qualities": [
+      6, 
+      33
+    ], 
+    "slug": "fetard", 
+    "name": "F\u00eatard"
+  }
+},
+{
+  "pk": 16, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Son int\u00e9r\u00eat personnel est sa toute premi\u00e8re priorit\u00e9, loin devant celui de son ami le plus proche.\r\n\r\n* -20 en Loyaut\u00e9", 
+    "on_defect": "folk.loyalty+=10\nfolk.save()", 
+    "female_description": "Son int\u00e9r\u00eat personnel est sa toute premi\u00e8re priorit\u00e9, loin devant celui quiconque.\r\n\r\n* -20 en Loyaut\u00e9", 
+    "on_affect": "folk.loyalty-=20\nfolk.save()", 
+    "female_name": "Ego\u00efste", 
+    "incompatible_qualities": [
+      7, 
+      8
+    ], 
+    "slug": "egoiste", 
+    "name": "Ego\u00efste"
+  }
+},
+{
+  "pk": 17, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il prie souvent et passe des nuits enti\u00e8res \u00e0 \u00e9tudier les \u00c9critures, anim\u00e9e d'une d\u00e9votion passionn\u00e9e.\r\n\r\n* +2 en \u00c9rudition\r\n* +10 en Loyaut\u00e9", 
+    "on_defect": "folk.scholarship-=2\nfolk.loyalty-=5\nfolk.save()\n", 
+    "female_description": "Elle passe \u00e9norm\u00e9ment de temps \u00e0 l'\u00e9glise et la confesse, et est capable de r\u00e9citer des passages entiers de la Bible.\r\n\r\n* +2 en \u00c9rudition\r\n* +10 en Loyaut\u00e9", 
+    "on_affect": "folk.scholarship+=2\nfolk.loyalty+=10\nfolk.save()\n", 
+    "female_name": "Pieuse", 
+    "incompatible_qualities": [
+      4
+    ], 
+    "slug": "pieux", 
+    "name": "Pieux"
+  }
+},
+{
+  "pk": 18, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il tire satisfaction de la souffrance d'autrui, plus encore s'il est celui qui l'a provoqu\u00e9e.\r\n\r\n* +1 en Combat\r\n* -1 en Diplomatie", 
+    "on_defect": "folk.fight-=1\nfolk.diplomacy+=1\nfolk.save() ", 
+    "female_description": "Elle aime voir les autres ramper devant elle, et souffrir de son importance.\r\n\r\n* +1 en Combat\r\n* -1 en Diplomatie", 
+    "on_affect": "folk.fight+=1\nfolk.diplomacy-=1\nfolk.save()\n", 
+    "female_name": "Cru\u00e8le", 
+    "incompatible_qualities": [
+      7, 
+      8, 
+      9
+    ], 
+    "slug": "cruel", 
+    "name": "Cruel"
+  }
+},
+{
+  "pk": 19, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Un app\u00e9tit f\u00e9roce pour la furie des combats.\r\n\r\n* +2 en Combat\r\n* -1 en Diplomatie\r\n* -1 en Intrigue\r\n", 
+    "on_defect": "folk.fight-=2\nfolk.diplomacy+=1\nfolk.plot+=1\nfolk.save()", 
+    "female_description": "Elle aime l'action, le danger et la confrontation.\r\n\r\n* +2 en Combat\r\n* -1 en Diplomatie\r\n* -1 en Intrigue", 
+    "on_affect": "folk.fight+=2\nfolk.diplomacy-=1\nfolk.plot-=1\nfolk.save()\n", 
+    "female_name": "Violente", 
+    "incompatible_qualities": [
+      6, 
+      13
+    ], 
+    "slug": "violent", 
+    "name": "Violent"
+  }
+},
+{
+  "pk": 20, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Un s\u00e9ducteur exp\u00e9riment\u00e9, souvent entreprenant envers les personnes du sexe oppos\u00e9.\r\n\r\n* +2 en Diplomatie", 
+    "on_defect": "folk.diplomacy-=2\nfolk.save()", 
+    "female_description": "Elle rit souvent aux plaisanteries des hommes, et sait comment les mettre \u00e0 l'aise. Elle semble parfois c\u00e9der \u00e0 leurs avances...\r\n\r\n* +2 en Diplomatie", 
+    "on_affect": "folk.diplomacy+=2\nfolk.save()\n", 
+    "female_name": "Galante", 
+    "incompatible_qualities": [
+      6, 
+      33
+    ], 
+    "slug": "galant", 
+    "name": "Galant"
+  }
+},
+{
+  "pk": 21, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il ne se vante jamais, ne se met jamais en avant.\r\n\r\n* +1 en Diplomatie\r\n* +10 en Loyaut\u00e9", 
+    "on_defect": "folk.diplomacy-=1\nfolk.loyalty-=5\nfolk.save()\n", 
+    "female_description": "Elle ne se vante jamais, ne se met jamais en avant.\r\n\r\n* +1 en Diplomatie\r\n* +10 en Loyaut\u00e9", 
+    "on_affect": "folk.diplomacy+=1\nfolk.loyalty+=10\nfolk.save()\n", 
+    "female_name": "Modeste", 
+    "incompatible_qualities": [
+      2, 
+      3, 
+      11
+    ], 
+    "slug": "modeste", 
+    "name": "Modeste"
+  }
+},
+{
+  "pk": 22, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il ne se laisse brusquer ni par ses d\u00e9sirs ni par les \u00e9v\u00e9nements.\r\n\r\n* +1 en Diplomatie\r\n* +1 en Intrigue\r\n* +1 pour la pr\u00eatrise", 
+    "on_defect": "folk.diplomacy-=1\nfolk.plot-=1\nfolk.save()\n", 
+    "female_description": "Elle ne se laisse brusquer ni par ses d\u00e9sirs ni par les \u00e9v\u00e9nements.\r\n\r\n* +1 en Diplomatie\r\n* +1 en Intrigue\r\n* +1 pour la pr\u00eatrise", 
+    "on_affect": "folk.diplomacy+=1\nfolk.plot+=1\nfolk.save()\n", 
+    "female_name": "Patiente", 
+    "incompatible_qualities": [
+      47
+    ], 
+    "slug": "patient", 
+    "name": "Patient"
+  }
+},
+{
+  "pk": 23, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il tremble et transpire \u00e0 l'approche du danger, et pr\u00e9f\u00e8re prendre ses jambes \u00e0 son cou plut\u00f4t que de l'affronter en face.\r\n\r\n* -2 en Combat\r\n* -1 en Intrigue", 
+    "on_defect": "folk.fight+=2\nfolk.plot+=1\nfolk.save()", 
+    "female_description": "Elle fr\u00e9mit \u00e0 l'id\u00e9e m\u00eame d'une confrontation.\r\n\r\n* -2 en Combat\r\n* -1 en Intrigue", 
+    "on_affect": "folk.fight-=2\nfolk.plot-=1\nfolk.save()", 
+    "female_name": "Couarde", 
+    "incompatible_qualities": [
+      2, 
+      10, 
+      12, 
+      34, 
+      35
+    ], 
+    "slug": "couard", 
+    "name": "Couard"
+  }
+},
+{
+  "pk": 24, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 1, 
+    "description": "Visage harmonieux, cheveux soyeux, dentition compl\u00e8te et \u0153il p\u00e9n\u00e9trant.\r\n\r\n* +2 en diplomatie", 
+    "on_defect": "folk.diplomacy-=2\nfolk.save() ", 
+    "female_description": "Visage harmonieux, cheveux soyeux, dentition compl\u00e8te et \u0153il p\u00e9n\u00e9trant.\r\n\r\n* +2 en diplomatie", 
+    "on_affect": "folk.diplomacy+=2\nfolk.save() ", 
+    "female_name": "Belle", 
+    "incompatible_qualities": [
+      25
+    ], 
+    "slug": "beau", 
+    "name": "Beau"
+  }
+},
+{
+  "pk": 25, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 1, 
+    "description": "Un faci\u00e8s d\u00e9plaisant qui provoque des rires ou des moues de d\u00e9gout\u00e9es.\r\n\r\n* -2 en Diplomatie", 
+    "on_defect": "folk.diplomacy+=2\nfolk.save()", 
+    "female_description": "Un faci\u00e8s d\u00e9plaisant qui provoque des rires ou des moues de d\u00e9gout\u00e9es.\r\n\r\n* -2 en Diplomatie", 
+    "on_affect": "folk.diplomacy-=2\nfolk.save()\n", 
+    "female_name": "Laide", 
+    "incompatible_qualities": [
+      24
+    ], 
+    "slug": "laid", 
+    "name": "Laid"
+  }
+},
+{
+  "pk": 26, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 1, 
+    "description": "Large carrure et muscles d'aciers.\r\n\r\n* +2 en Combat", 
+    "on_defect": "folk.fight-=2\nfolk.save()\n", 
+    "female_description": "Large carrure et muscles d'aciers.\r\n\r\n* +2 en Combat", 
+    "on_affect": "folk.fight+=2\nfolk.save() ", 
+    "female_name": "Costaude", 
+    "incompatible_qualities": [
+      27
+    ], 
+    "slug": "costaud", 
+    "name": "Costaud"
+  }
+},
+{
+  "pk": 27, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 1, 
+    "description": "Il est ch\u00e9tif, faible de ses bras et tombe souvent malade.\r\n\r\n* -2 en Combat", 
+    "on_defect": " ", 
+    "female_description": "Elle est ch\u00e9tive, faible de ses bras et tombe souvent malade.\r\n\r\n* -2 en Combat", 
+    "on_affect": " ", 
+    "female_name": "Fr\u00e8le", 
+    "incompatible_qualities": [
+      26
+    ], 
+    "slug": "frele", 
+    "name": "Fr\u00e8le"
+  }
+},
+{
+  "pk": 28, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 1, 
+    "description": "La d\u00e9marche est souple et silencieuses, les r\u00e9flexes aiguis\u00e9s et le geste pr\u00e9cis.\r\n\r\n* +2 en combat", 
+    "on_defect": "folk.fight-=2\nfolk.save()", 
+    "female_description": "La d\u00e9marche est souple et silencieuses, les r\u00e9flexes aiguis\u00e9s et le geste pr\u00e9cis.\r\n\r\n* +2 en combat", 
+    "on_affect": "folk.fight+=2\nfolk.save()", 
+    "female_name": "F\u00e9line", 
+    "incompatible_qualities": [
+      29, 
+      32
+    ], 
+    "slug": "felin", 
+    "name": "F\u00e9lin"
+  }
+},
+{
+  "pk": 29, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 1, 
+    "description": "Sa lenteur et son manque de coordination lui font souvent manquer sa cible et laisser tomber des objets.\r\n\r\n*-2 Combat", 
+    "on_defect": "folk.fight+=2\nfolk.save()", 
+    "female_description": "Sa lenteur et son manque de coordination lui font souvent reverser des verres et laisser tomber des objets.\r\n\r\n*-2 Combat", 
+    "on_affect": "folk.fight-=2\nfolk.save()\n", 
+    "female_name": "Maladroite", 
+    "incompatible_qualities": [
+      28
+    ], 
+    "slug": "maladroit", 
+    "name": "Maladroit"
+  }
+},
+{
+  "pk": 30, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 1, 
+    "description": "Une bonne m\u00e9moire et un \u0153il per\u00e7ant, qui ne laisse passer aucun d\u00e9tail.\r\n\r\n* +2 en intrigue\r\n* +1 en \u00e9rudition", 
+    "on_defect": "folk.plot-=2\nfolk.scholarship-=1\nfolk.save()\n", 
+    "female_description": "Une bonne m\u00e9moire et un \u0153il per\u00e7ant, qui ne laisse passer aucun d\u00e9tail.\r\n\r\n* +2 en intrigue\r\n* +1 en \u00e9rudition", 
+    "on_affect": "folk.plot+=2\nfolk.scholarship+=1\nfolk.save() ", 
+    "female_name": "Perspicace", 
+    "incompatible_qualities": [
+      32
+    ], 
+    "slug": "perspicace", 
+    "name": "Perspicace"
+  }
+},
+{
+  "pk": 31, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 1, 
+    "description": "Capable d'ordonner ses pens\u00e9es avec vitesse et clart\u00e9.\r\n\r\n*+2 en \u00c9rudition\r\n* +1 en Intrigue", 
+    "on_defect": "folk.plot-=1\nfolk.scholarship-=2\nfolk.save()", 
+    "female_description": "Capable d'ordonner ses pens\u00e9es avec vitesse et clart\u00e9.\r\n\r\n*+2 en \u00c9rudition\r\n* +1 en Intrigue", 
+    "on_affect": "folk.plot+=1\nfolk.scholarship+=2\nfolk.save()", 
+    "female_name": "Esprit vif", 
+    "incompatible_qualities": [
+      32
+    ], 
+    "slug": "esprit_vif", 
+    "name": "Esprit vif"
+  }
+},
+{
+  "pk": 32, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 1, 
+    "description": "Son esprit est lent et malhabile, ses paroles confuses et son regard vitreux.\r\n\r\n* -2 en Combat\r\n* -3 en Intrigue et Diplomatie\r\n* -4 en \u00c9rudition", 
+    "on_defect": "folk.fight+=2\nfolk.diplomacy+=3\nfolk.plot+=3\nfolk.scholarship+=4\nfolk.save()", 
+    "female_description": "Son esprit est lent et malhabile, ses paroles confuses et son regard vitreux.\r\n\r\n* -2 en Combat\r\n* -3 en Intrigue et Diplomatie\r\n* -4 en \u00c9rudition", 
+    "on_affect": "folk.fight-=2\nfolk.diplomacy-=3\nfolk.plot-=3\nfolk.scholarship-=4\nfolk.save()", 
+    "female_name": "Demeur\u00e9e", 
+    "incompatible_qualities": [
+      2, 
+      4, 
+      13, 
+      28, 
+      30, 
+      31
+    ], 
+    "slug": "demeure", 
+    "name": "Demeur\u00e9"
+  }
+},
+{
+  "pk": 33, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il est frugal dans ses repas, et se refuse les exc\u00e8s de la boisson et de la galanterie.\r\n\r\n*+1 en Erudition\r\n*+2 en pr\u00eatrise.", 
+    "on_defect": "folk.scholarship-=1\nfolk.save()", 
+    "female_description": "Elle est frugale dans ses repas, et se refuse toute forme d'exc\u00e8s.\r\n\r\n*+1 en Erudition\r\n*+2 en pr\u00eatrise.", 
+    "on_affect": "folk.scholarship+=1\nfolk.save()", 
+    "female_name": "Ascete", 
+    "incompatible_qualities": [
+      15, 
+      20
+    ], 
+    "slug": "ascete", 
+    "name": "Ascete"
+  }
+},
+{
+  "pk": 34, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 4, 
+    "description": "Les hauts faits qu'il a accomplit sur le champ de bataille lui conf\u00e8re une certaine aura.\r\n\r\n* +1 en Combat\r\n* +1 en Diplomatie", 
+    "on_defect": "folk.fight-=1\nfolk.diplomacy-=1\nfolk.save()", 
+    "female_description": "description f\u00e9minine", 
+    "on_affect": "folk.fight+=1\nfolk.diplomacy+=1\nfolk.save()", 
+    "female_name": "nope", 
+    "incompatible_qualities": [
+      23, 
+      35
+    ], 
+    "slug": "heros", 
+    "name": "H\u00e9ros"
+  }
+},
+{
+  "pk": 35, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 4, 
+    "description": "Les exploits de cet individu sont connus dans toute la r\u00e9gion. Sur son passage, les hommes crient son nom et les femmes lui pr\u00e9sentent leur b\u00e9b\u00e9.\r\n\r\n* +2 en Combat\r\n* +2 en Diplomatie", 
+    "on_defect": "folk.fight-=2\nfolk.diplomacy-=2\nfolk.save()", 
+    "female_description": "description f\u00e9minine", 
+    "on_affect": "folk.fight+=2\nfolk.diplomacy+=2\nfolk.save()\n", 
+    "female_name": "-", 
+    "incompatible_qualities": [
+      23, 
+      34
+    ], 
+    "slug": "legende_locale", 
+    "name": "Legende locale"
+  }
+},
+{
+  "pk": 36, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 4, 
+    "description": "d\u00e9signe ceux qui peuvent recevoir le titre de cur\u00e9", 
+    "on_defect": " ", 
+    "female_description": "description f\u00e9minine", 
+    "on_affect": " ", 
+    "female_name": "nope", 
+    "incompatible_qualities": [], 
+    "slug": "pretre", 
+    "name": "Pr\u00eatre"
+  }
+},
+{
+  "pk": 37, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 4, 
+    "description": "Doit \u00eatre soign\u00e9 au plus t\u00f4t.", 
+    "on_defect": " ", 
+    "female_description": "Doit \u00eatre soign\u00e9e au plus t\u00f4t.", 
+    "on_affect": " ", 
+    "female_name": "Bless\u00e9e", 
+    "incompatible_qualities": [], 
+    "slug": "blesse", 
+    "name": "Bless\u00e9"
+  }
+},
+{
+  "pk": 38, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 3, 
+    "description": "Un lancier a un avantage de +4 en combat contre les cavaliers.", 
+    "on_defect": " ", 
+    "female_description": "description f\u00e9minine", 
+    "on_affect": " ", 
+    "female_name": "-", 
+    "incompatible_qualities": [], 
+    "slug": "piquier", 
+    "name": "Lancier"
+  }
+},
+{
+  "pk": 39, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 3, 
+    "description": "Les cavaliers ont un bonus de plus +1 en combat contre tous, et un bonus suppl\u00e9mentaire +1 contre les archers.", 
+    "on_defect": " ", 
+    "female_description": "description f\u00e9minine", 
+    "on_affect": " ", 
+    "female_name": "nope", 
+    "incompatible_qualities": [], 
+    "slug": "cavalier", 
+    "name": "Cavalier \u00e9m\u00e9rite"
+  }
+},
+{
+  "pk": 40, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 3, 
+    "description": "Les archers ont un bonus de +3 contre les lanciers.", 
+    "on_defect": " ", 
+    "female_description": "description f\u00e9minine", 
+    "on_affect": " ", 
+    "female_name": "Archer", 
+    "incompatible_qualities": [], 
+    "slug": "archer", 
+    "name": "Archer"
+  }
+},
+{
+  "pk": 41, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 4, 
+    "description": "Un de ses membres a \u00e9t\u00e9 amput\u00e9.", 
+    "on_defect": null, 
+    "female_description": "Un de ses membres a \u00e9t\u00e9 amput\u00e9.", 
+    "on_affect": "folk.combat /= 2\nfolk.diplomacy -= 2\nfolk.save()\n", 
+    "female_name": "Estropi\u00e9e", 
+    "incompatible_qualities": [], 
+    "slug": "estropie", 
+    "name": "Estropi\u00e9"
+  }
+},
+{
+  "pk": 42, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 4, 
+    "description": "Aux fers au plus profond de vos cachots.", 
+    "on_defect": "folk.disabled=False\nfolk.save()", 
+    "female_description": "Aux fers au plus profond de vos cachots.", 
+    "on_affect": "folk.loyalty-=30\nfolk.disabled=True\nfolk.save()\nfolk.remove_title()\n", 
+    "female_name": "Prisonni\u00e8re", 
+    "incompatible_qualities": [], 
+    "slug": "prisonnier", 
+    "name": "Prisonnier"
+  }
+},
+{
+  "pk": 43, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 4, 
+    "description": "none", 
+    "on_defect": null, 
+    "female_description": "Elle attend toujours de trouver un mari.\r\n\r\nLes jouvencelles de votre dynastie vous rapportent du prestige si elles se marient avec un homme d'une autre dynastie r\u00e9gnante.", 
+    "on_affect": null, 
+    "female_name": "Jouvencelle", 
+    "incompatible_qualities": [
+      45, 
+      44
+    ], 
+    "slug": "jouvencelle", 
+    "name": "none"
+  }
+},
+{
+  "pk": 44, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 5, 
+    "description": "Ce gar\u00e7on est n\u00e9 d'une union en dehors du cadre du mariage.", 
+    "on_defect": "\n", 
+    "female_description": "Cette fille est n\u00e9e en dehors du cadre du mariage.", 
+    "on_affect": "\n", 
+    "female_name": "B\u00e2tarde", 
+    "incompatible_qualities": [
+      43
+    ], 
+    "slug": "batard", 
+    "name": "B\u00e2tard"
+  }
+},
+{
+  "pk": 45, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Ce gar\u00e7on est loin de pouvoir \u00eatre qualifi\u00e9 de brillant. C'est \u00e0 se demander d'o\u00f9 il tient cela.", 
+    "on_defect": "\n", 
+    "female_description": "Cette fille est loin de pouvoir \u00eatre qualifi\u00e9e de brillante. C'est \u00e0 se demander d'o\u00f9 elle tient cela.", 
+    "on_affect": "\n", 
+    "female_name": "Idiote", 
+    "incompatible_qualities": [
+      43
+    ], 
+    "slug": "idiot", 
+    "name": "Idiot"
+  }
+},
+{
+  "pk": 46, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 5, 
+    "description": " ", 
+    "on_defect": "\n", 
+    "female_description": " ", 
+    "on_affect": "\n", 
+    "female_name": "Sc\u00e9l\u00e9rate", 
+    "incompatible_qualities": [], 
+    "slug": "scelerat", 
+    "name": "Sc\u00e9l\u00e9rat"
+  }
+},
+{
+  "pk": 47, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Le souvenir d'un \u00e9chec le hante, et le rend irritable.\r\n\r\n*-2 en diplomatie\r\n*-5 en Loyaut\u00e9", 
+    "on_defect": "folk.diplomacy-=2\nfolk.loyalty-=5\nfolk.save()", 
+    "female_description": "Le souvenir d'un \u00e9chec le hante, et le rend irritable.\r\n\r\n*-2 en diplomatie\r\n*-5 en Loyaut\u00e9", 
+    "on_affect": "folk.diplomacy-=2\nfolk.loyalty-=5\nfolk.save()", 
+    "female_name": "Am\u00e8re", 
+    "incompatible_qualities": [
+      22
+    ], 
+    "slug": "amer", 
+    "name": "Amer"
+  }
+},
+{
+  "pk": 662, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 44, 
+    "content": "Grace au soutien du Roi de France, ma famille s'est install\u00e9e \u00e0 michael, la demeure de mes anc\u00eatres. J'ai d\u00e9bours\u00e9 85 \u00e9cus pour entamer des r\u00e9parations et recruter des serviteurs.", 
+    "created": "2013-08-13T19:39:32.507", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 663, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 44, 
+    "content": "Le p\u00e8re  a rejoint ma cour, et occupe le titre de [cur\u00e9](title). Il peut superviser la [r\u00e9novation de l'\u00e9glise](mission).", 
+    "created": "2013-08-13T19:39:38.421", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 664, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 44, 
+    "content": "None", 
+    "created": "2013-08-13T19:53:20.105", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 665, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 45, 
+    "content": "Grace au soutien du Roi de France, ma famille s'est install\u00e9e \u00e0 jules, la demeure de mes anc\u00eatres. J'ai d\u00e9bours\u00e9 85 \u00e9cus pour entamer des r\u00e9parations et recruter des serviteurs.", 
+    "created": "2013-08-15T11:56:56.442", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 666, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 45, 
+    "content": "Vous pouvez d\u00e9sormais nommer un chambellan.", 
+    "created": "2013-08-16T09:24:23.555", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 667, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 45, 
+    "content": "Je peux \u00e0 pr\u00e9sent nommer un [chambellan](title) pour s'occuper de mon [banquet](mission).", 
+    "created": "2013-08-16T09:24:23.702", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 668, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 45, 
+    "content": "Balde de Tousson a rejoint ma cour, et le banquets m'a apport\u00e9 la loyaut\u00e9 des paysans.", 
+    "created": "2013-08-16T09:32:10.237", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 669, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 45, 
+    "content": "Vous pouvez d\u00e9sormais nommer un conn\u00e9table.", 
+    "created": "2013-08-16T09:34:03.517", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 670, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 45, 
+    "content": "Je doit nommer un [conn\u00e9table](title) pour bouter les andits hors de mes terres.", 
+    "created": "2013-08-16T09:34:03.591", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 671, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 45, 
+    "content": "J'ai vaincu les bandits. 10 de mes hommes d'armes sont tomb\u00e9s mais Ga\u00ebl de Qu\u00e9briac s'est illustr\u00e9 dans la bataille. ```Gagne le Trait Intrepide.```.", 
+    "created": "2013-08-16T09:53:30.870", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 672, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 45, 
+    "content": "Vous pouvez d\u00e9sormais nommer un tr\u00e9sorier.", 
+    "created": "2013-08-16T09:53:44.874", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 673, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 45, 
+    "content": "Il est urgent de charger un [tr\u00e9sorier](#title) de r\u00e9gler nos probl\u00e8mes d'argent", 
+    "created": "2013-08-16T09:53:45.026", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 674, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 45, 
+    "content": "Le p\u00e8re Gui de Wittisheim a rejoint ma cour en tant que cur\u00e9 du ch\u00e2teau.", 
+    "created": "2013-08-16T09:54:24.218", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 675, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 45, 
+    "content": "Le p\u00e8re  a rejoint ma cour.", 
+    "created": "2013-08-16T09:54:50.653", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 676, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 45, 
+    "content": "None", 
+    "created": "2013-08-16T09:55:13.724", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 677, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 45, 
+    "content": "J'ai pr\u00e9fer\u00e9 refuser \u00e0  la main de ma fille. ```-10 de Loyaut\u00e9.```", 
+    "created": "2013-08-16T10:17:19.580", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 678, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 45, 
+    "content": "Je n'ai pas voulu du chevalier  dans ma cour.", 
+    "created": "2013-08-16T11:03:39.792", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 679, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 45, 
+    "content": "Vous pouvez d\u00e9sormais nommer un ma\u00eetre espion.", 
+    "created": "2013-08-16T11:09:05.312", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 680, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 45, 
+    "content": "Mon fils  et le Guillaume d'Estialescq sont \u00e0 couteaux tir\u00e9s. Je pourrais regler le probl\u00e8me en [d\u00e9barassant](mission) ma cour du chevalier.", 
+    "created": "2013-08-16T11:09:05.438", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 681, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 45, 
+    "content": "J'ai tax\u00e9 ma populace. +{somme_taxe} \u00e9cus, mais -{paysans_perte} paysans.", 
+    "created": "2013-08-16T12:23:01.313", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 682, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 45, 
+    "content": "J'ai tax\u00e9 ma populace. +{somme_taxe} \u00e9cus, mais -{paysans_perte} paysans.", 
+    "created": "2013-08-16T12:23:53.111", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 683, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 45, 
+    "content": "J'ai tax\u00e9 ma populace. +{somme_taxe} \u00e9cus, mais -{paysans_perte} paysans.", 
+    "created": "2013-08-16T12:25:14.010", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 684, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 45, 
+    "content": "Vous pouvez d\u00e9sormais nommer un ambassadeur.", 
+    "created": "2013-08-16T12:25:32.668", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 685, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 45, 
+    "content": "Les r\u00e9parations de jules sont termin\u00e9es, et nous devons au plus t\u00f4t d\u00e9montrer notre puissance militaire. Nommer un [ambassadeur](#title) permettrait de [justifier diplomatiquement](#mission) une attaque sur notre voisin, le seigneur .", 
+    "created": "2013-08-16T12:25:32.873", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 706, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 57, 
+    "content": "Grace au soutien du Roi de France, ma famille s'est install\u00e9e \u00e0 matthieu, la demeure de mes anc\u00eatres. J'ai d\u00e9bours\u00e9 85 \u00e9cus pour entamer des r\u00e9parations et recruter des serviteurs.", 
+    "created": "2013-08-24T15:49:56.919", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 707, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 57, 
+    "content": "Vous pouvez d\u00e9sormais nommer un chambellan.", 
+    "created": "2013-08-24T15:50:07.450", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 708, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 57, 
+    "content": "Je peux \u00e0 pr\u00e9sent nommer un [chambellan](title) pour s'occuper de mon [banquet](mission).", 
+    "created": "2013-08-24T15:50:07.461", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 709, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 57, 
+    "content": "Ermesinde de Poc\u00e9 a rejoint ma cour, et le banquets m'a apport\u00e9 la loyaut\u00e9 des paysans.", 
+    "created": "2013-08-24T17:11:13.005", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 720, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 57, 
+    "content": "Le chevalier  a rejoint ma cour.", 
+    "created": "2013-08-24T18:35:43.466", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 738, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": "Grace au soutien du Roi de France, ma famille s'est install\u00e9e \u00e0 hugo, la demeure de mes anc\u00eatres. J'ai d\u00e9bours\u00e9 85 \u00e9cus pour entamer des r\u00e9parations et recruter des serviteurs.", 
+    "created": "2013-08-26T23:36:58.255", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 739, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": "Vous pouvez d\u00e9sormais nommer un conn\u00e9table.", 
+    "created": "2013-08-26T23:36:59.347", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 740, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": "Nommer un [conn\u00e9table](#title) me permettra de [recruter des hommes d'armes](#mission).", 
+    "created": "2013-08-26T23:36:59.420", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 741, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": "None", 
+    "created": "2013-08-26T23:37:41.725", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 742, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": "J'ai mit sur pied un petit bataillon, et accept\u00e9 l'all\u00e9geance du chevalier . Les gueux me reconnaissent maintenant comme leur seigneur et ma\u00eetre.", 
+    "created": "2013-08-26T23:37:46.815", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 743, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": "Le p\u00e8re  a accept\u00e9 de devenir le [cur\u00e9](title) de ma cour.", 
+    "created": "2013-08-26T23:37:52.662", 
+    "read": null, 
+    "level": 1
+  }
+}
+]
