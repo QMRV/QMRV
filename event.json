@@ -4716,8 +4716,8 @@
     "text": "Peu importe ce qu'ils en pensent, c'est la s\u00e9curit\u00e9 de mon fils qui est en jeu!", 
     "message": "Mon fils {{folk.1.first_name}} et le {{facheux}} sont \u00e0 couteaux tir\u00e9s. Je pourrais regler le probl\u00e8me en [d\u00e9barassant](mission) ma cour du chevalier.", 
     "event": 155, 
-    "condition": "\n", 
-    "on_fire": "passage = param.pending_event.get_value(\"passage\")\nif 5 in passage:\n  param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_7\")).start()\nelse:\n  passage.append(5)\n  param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_5\")).start()\n"
+    "condition": "if param.get_value(\"come_from\") != 5:\n  status = \"ce choix n'apparait pas\"\n", 
+    "on_fire": "param.set_value(\"come_from\", 3)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_7\")).start()\n"
   }
 },
 {
@@ -4728,7 +4728,7 @@
     "message": "", 
     "event": 155, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_6\")).start()"
+    "on_fire": "param.set_value(\"come_from\", 3)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_6\")).start()"
   }
 },
 {
@@ -4738,8 +4738,8 @@
     "text": "Je ne peux pas me permettre de me mettre ma cour \u00e0 dos. Laissons la situation se r\u00e9soudre par elle m\u00eame.", 
     "message": "Mon fils {{folk.1.first_name}} et le {{facheux}} sont \u00e0 couteaux tir\u00e9s.", 
     "event": 155, 
-    "condition": "\n", 
-    "on_fire": "passage = param.pending_event.get_value(\"passage\")\nif 5 in passage:\n  param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_7\")).start()\nelse:\n  passage.append(5)\n  param.pending_event.set_value(\"passage\", passage)\n  param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_5\")).start()"
+    "condition": "if param.get_value(\"come_from\") == 5:\n  status = \"ce choix n'apparait pas\"\n", 
+    "on_fire": "param.set_value(\"come_from\", 3)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_5\")).start()"
   }
 },
 {
