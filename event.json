@@ -5445,5 +5445,46 @@
     "condition": "\n", 
     "on_fire": "param.set_value(\"come_from\", 5)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_7\")).start()\n"
   }
+},
+{
+  "pk": 1073, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 59, 
+    "is_started": true, 
+    "created": "2013-08-27T21:02:55.333", 
+    "started": "2013-08-27T21:02:55.336", 
+    "text": "Sire Charles de Gourville a accept\u00e9 mon invitation, et boit \u00e0 pr\u00e9sent mon vin en compagnie de mes enfants et de Sorin. Il semblait d\u2019abord avoir des r\u00e9serves au sujet de mon nouveau r\u00e8gne, mais le breuvage aidant, mon badinage et mes questions polies ont fini par lui faire baisser sa garde. Nous \u00e9changeons \u00e0 pr\u00e9sent des souvenirs de bataille, et il rit avec moi sans r\u00e9aliser que j\u2019exag\u00e8re copieusement mes exploits pass\u00e9. Un sourire bienveillant aux l\u00e8vres, je lui ressers une coupe de nectar.", 
+    "event": 19
+  }
+},
+{
+  "pk": 1024, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 1073, 
+    "message": "", 
+    "text": "\u00ab D\u00eetes moi, sire , que diriez d\u2019entrer \u00e0 mon service ? \u00bb", 
+    "folk": null, 
+    "event_action": 25
+  }
+},
+{
+  "pk": 1653, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1073, 
+    "name": "knight", 
+    "value": "`Folk`:6688"
+  }
+},
+{
+  "pk": 1654, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1073, 
+    "name": "compagnon", 
+    "value": "`Folk`:6687"
+  }
 }
 ]

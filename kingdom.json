@@ -55,6 +55,17 @@
   }
 },
 {
+  "pk": 59, 
+  "model": "kingdom.kingdom", 
+  "fields": {
+    "soldiers": 10, 
+    "prestige": 150, 
+    "money": 15, 
+    "user": 42, 
+    "population": 300
+  }
+},
+{
   "pk": 226, 
   "model": "kingdom._kingdomvariable", 
   "fields": {
@@ -295,6 +306,33 @@
     "kingdom": 58, 
     "name": "tuto_recrutement", 
     "value": 1
+  }
+},
+{
+  "pk": 317, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 59, 
+    "name": "adversaire_tuto", 
+    "value": "Bartholom\u00e9 de \u00c9vaill\u00e9"
+  }
+},
+{
+  "pk": 318, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 59, 
+    "name": "prestige_pnj", 
+    "value": 100
+  }
+},
+{
+  "pk": 319, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 59, 
+    "name": "population_pnj", 
+    "value": 100
   }
 },
 {
@@ -1391,6 +1429,135 @@
     "spouse": null, 
     "quality_set": [
       2
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6684, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 59, 
+    "fight": 12, 
+    "first_name": "Laurent", 
+    "last_name": "de Belze", 
+    "diplomacy": 9, 
+    "father": null, 
+    "plot": 8, 
+    "scholarship": 8, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 5, 
+    "birth": "2013-07-23T20:41:33.437", 
+    "mother": null, 
+    "loyalty": 99, 
+    "spouse": null, 
+    "quality_set": [
+      19
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6685, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 59, 
+    "fight": 9, 
+    "first_name": "L\u00e9on", 
+    "last_name": "de Belze", 
+    "diplomacy": 12, 
+    "father": 6684, 
+    "plot": 6, 
+    "scholarship": 5, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 11, 
+    "birth": "2013-08-10T20:41:33.878", 
+    "mother": null, 
+    "loyalty": 80, 
+    "spouse": null, 
+    "quality_set": [], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6686, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 59, 
+    "fight": 6, 
+    "first_name": "Arlette,", 
+    "last_name": "de Belze", 
+    "diplomacy": 9, 
+    "father": 6684, 
+    "plot": 11, 
+    "scholarship": 7, 
+    "sex": "f", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 47, 
+    "birth": "2013-08-11T20:41:33.908", 
+    "mother": null, 
+    "loyalty": 85, 
+    "spouse": null, 
+    "quality_set": [
+      3
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6687, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 59, 
+    "fight": 9, 
+    "first_name": "Sorin", 
+    "last_name": "de Nonac", 
+    "diplomacy": 10, 
+    "father": null, 
+    "plot": 8, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 1, 
+    "birth": "2013-07-23T20:41:33.962", 
+    "mother": null, 
+    "loyalty": 80, 
+    "spouse": null, 
+    "quality_set": [
+      20
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6688, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 59, 
+    "fight": 7, 
+    "first_name": "Charles", 
+    "last_name": "de Gourville", 
+    "diplomacy": 8, 
+    "father": null, 
+    "plot": 11, 
+    "scholarship": 8, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 18, 
+    "birth": "2013-07-23T21:02:55.344", 
+    "mother": null, 
+    "loyalty": 20, 
+    "spouse": null, 
+    "quality_set": [
+      4, 
+      5
     ], 
     "mentor": null
   }
@@ -2646,6 +2813,39 @@
     "kingdom": 58, 
     "content": "Le p\u00e8re  a accept\u00e9 de devenir le [cur\u00e9](title) de ma cour.", 
     "created": "2013-08-26T23:37:52.662", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 744, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Grace au soutien du Roi de France, ma famille s'est install\u00e9e \u00e0 Belze, la demeure de mes anc\u00eatres. J'ai d\u00e9bours\u00e9 85 \u00e9cus pour entamer des r\u00e9parations et recruter des serviteurs.", 
+    "created": "2013-08-27T20:50:46.178", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 745, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Vous pouvez d\u00e9sormais nommer un ma\u00eetre espion.", 
+    "created": "2013-08-27T20:51:31.937", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 746, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nommer un <Ma\u00eetre espion> me permettra <d'acheter le soutien de la population>.", 
+    "created": "2013-08-27T20:51:32.074", 
     "read": null, 
     "level": 1
   }
