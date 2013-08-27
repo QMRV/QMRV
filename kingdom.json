@@ -60,9 +60,9 @@
   "fields": {
     "soldiers": 10, 
     "prestige": 150, 
-    "money": 15, 
+    "money": 30, 
     "user": 42, 
-    "population": 300
+    "population": 260
   }
 },
 {

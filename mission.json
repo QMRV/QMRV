@@ -533,12 +533,12 @@
   "model": "mission.mission", 
   "fields": {
     "name": "Faire un raid", 
-    "target_list": "param = Kingdom.objects.filter(offended_set__offender=kingdom)\n", 
+    "target_list": "param = Kingdom.objects.all()\n", 
     "text": "Allons attaquer !", 
     "has_value": false, 
-    "on_resolution": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent ?)\nif kingdom.money >= 10:\n  # Retrieve the claim\n  claim = Claim.objects.get(offender=kingdom, offended=target)\n\n  target.population-=20\n  target.save()\n  kingdom.money+=25\n\n  if claim.level == 0:\n    claim.level = 1\n    claim.save()\n  else:\n    kingdom.prestige-=30\n    \n  kingdom.save() \n  \n  \n  # randomiser un minimum les chutes de pops le gain de monnaie\n  # le prestige de l'attaquant serait reduit en cas de prestige trop haut par rapport \u00e0 \n  # celui du defenseur ( 150 prestige sortie tuto ) \n  \n  # parametrer en fonction des stats de combat \n", 
+    "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": "\n", 
+    "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent ?)\nif kingdom.money >= 10:\n  kingdom.money-=10\n  # Retrieve the claim\n  try:\n    claim = Claim.objects.get(offender=kingdom, offended=target)\n    kingdom.prestige-=30\n    kingdom.save()\n  except:\n    #add claim lvl 1 Claim.objects.set(offender=kingdom, offended=target)\n    #claim.save()\n    pass\n\n  target.population-=20\n  target.save()\n  kingdom.money+=25\n  kingdom.save()\n    \n    \nelse:\n  status=\"vous n'avez pas suffisement d'argent pour lancer cette mission.\"\n  \n  # randomiser un minimum les chutes de pops le gain de monnaie\n  # le prestige de l'attaquant serait reduit en cas de prestige trop haut par rapport \u00e0\n  # celui du defenseur ( 150 prestige sortie tuto )\n  \n  # parametrer en fonction des stats de combat \n", 
     "has_target": true, 
     "is_team": false, 
     "title": null, 
@@ -1293,6 +1293,108 @@
     "allow_empty": false, 
     "slug": "responsables", 
     "condition": "\n"
+  }
+},
+{
+  "pk": 116, 
+  "model": "mission.pendingmission", 
+  "fields": {
+    "kingdom": 45, 
+    "is_started": true, 
+    "target": 59, 
+    "created": "2013-08-27T22:23:36.443", 
+    "started": "2013-08-27T22:30:56.965", 
+    "last_target": 59, 
+    "mission": 26, 
+    "value": 0, 
+    "is_finished": false, 
+    "last_value": 0
+  }
+},
+{
+  "pk": 117, 
+  "model": "mission.pendingmission", 
+  "fields": {
+    "kingdom": 59, 
+    "is_started": true, 
+    "target": 45, 
+    "created": "2013-08-27T22:23:55.881", 
+    "started": "2013-08-27T22:35:03.629", 
+    "last_target": 45, 
+    "mission": 26, 
+    "value": 0, 
+    "is_finished": false, 
+    "last_value": 0
+  }
+},
+{
+  "pk": 118, 
+  "model": "mission.pendingmission", 
+  "fields": {
+    "kingdom": 45, 
+    "is_started": true, 
+    "target": 59, 
+    "created": "2013-08-27T22:32:09.908", 
+    "started": "2013-08-27T22:32:28.190", 
+    "last_target": 59, 
+    "mission": 26, 
+    "value": 0, 
+    "is_finished": false, 
+    "last_value": 0
+  }
+},
+{
+  "pk": 134, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 116, 
+    "folk": 6625, 
+    "mission_grid": 26
+  }
+},
+{
+  "pk": 135, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 116, 
+    "folk": 6626, 
+    "mission_grid": 26
+  }
+},
+{
+  "pk": 136, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 117, 
+    "folk": 6684, 
+    "mission_grid": 26
+  }
+},
+{
+  "pk": 137, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 117, 
+    "folk": 6688, 
+    "mission_grid": 26
+  }
+},
+{
+  "pk": 138, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 118, 
+    "folk": 6630, 
+    "mission_grid": 26
+  }
+},
+{
+  "pk": 139, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 118, 
+    "folk": 6632, 
+    "mission_grid": 26
   }
 },
 {
