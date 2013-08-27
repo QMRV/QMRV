@@ -3531,7 +3531,7 @@
   "pk": 326, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 3, 
     "object_pk": 9, 
     "object_type": "Quality", 
@@ -3559,7 +3559,7 @@
   "pk": 328, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 2, 
     "object_pk": 1, 
     "object_type": "Title", 
@@ -3587,7 +3587,7 @@
   "pk": 330, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 3, 
     "object_pk": 21, 
     "object_type": "Quality", 
@@ -3657,7 +3657,7 @@
   "pk": 335, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 3, 
     "object_pk": 2, 
     "object_type": "Quality", 
@@ -3685,7 +3685,7 @@
   "pk": 337, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 1, 
     "object_type": "Trigger", 
@@ -3699,7 +3699,7 @@
   "pk": 338, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 2, 
     "object_pk": 7, 
     "object_type": "EventAction", 
@@ -3713,7 +3713,7 @@
   "pk": 339, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "EventAction", 
@@ -3727,7 +3727,7 @@
   "pk": 340, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 7, 
     "object_type": "EventAction", 
@@ -3741,7 +3741,7 @@
   "pk": 341, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 10, 
     "object_type": "EventAction", 
@@ -3769,7 +3769,7 @@
   "pk": 343, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "Recurring", 
@@ -3825,7 +3825,7 @@
   "pk": 347, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 7, 
     "object_type": "Recurring", 
@@ -3839,7 +3839,7 @@
   "pk": 348, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 7, 
     "object_type": "Recurring", 
@@ -3895,7 +3895,7 @@
   "pk": 352, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 8, 
     "object_type": "Recurring", 
@@ -3923,7 +3923,7 @@
   "pk": 354, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 2, 
     "object_pk": 4, 
     "object_type": "Title", 
@@ -3937,7 +3937,7 @@
   "pk": 355, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 37, 
     "object_type": "EventAction", 
@@ -3951,7 +3951,7 @@
   "pk": 356, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 4, 
     "object_type": "Title", 
@@ -3965,7 +3965,7 @@
   "pk": 357, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 4, 
     "object_type": "Title", 
@@ -3979,7 +3979,7 @@
   "pk": 358, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 30, 
     "object_type": "MissionGrid", 
@@ -3993,7 +3993,7 @@
   "pk": 360, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 30, 
     "object_type": "MissionGrid", 
@@ -4007,7 +4007,7 @@
   "pk": 361, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 10, 
     "object_type": "Mission", 
@@ -4021,7 +4021,7 @@
   "pk": 362, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 39, 
     "object_type": "EventAction", 
@@ -4063,7 +4063,7 @@
   "pk": 365, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 2, 
     "object_pk": 34, 
     "object_type": "Event", 
@@ -4077,7 +4077,7 @@
   "pk": 366, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 40, 
     "object_type": "EventAction", 
@@ -4091,7 +4091,7 @@
   "pk": 367, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 41, 
     "object_type": "EventAction", 
@@ -4105,7 +4105,7 @@
   "pk": 368, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 233, 
     "object_type": "EventAction", 
@@ -4119,7 +4119,7 @@
   "pk": 369, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 2, 
     "object_pk": 2, 
     "object_type": "Title", 
@@ -4133,7 +4133,7 @@
   "pk": 370, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 235, 
     "object_type": "EventAction", 
@@ -4147,7 +4147,7 @@
   "pk": 371, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 36, 
     "object_type": "MissionGrid", 
@@ -4161,7 +4161,7 @@
   "pk": 372, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 36, 
     "object_type": "MissionGrid", 
@@ -4175,7 +4175,7 @@
   "pk": 373, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 35, 
     "object_type": "Mission", 
@@ -4189,7 +4189,7 @@
   "pk": 374, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 35, 
     "object_type": "Mission", 
@@ -4203,7 +4203,7 @@
   "pk": 375, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 2, 
     "object_pk": 170, 
     "object_type": "Event", 
@@ -4217,7 +4217,7 @@
   "pk": 376, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 236, 
     "object_type": "EventAction", 
@@ -4231,7 +4231,7 @@
   "pk": 377, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 3, 
     "object_pk": 18, 
     "object_type": "Event", 
@@ -4245,7 +4245,7 @@
   "pk": 378, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 3, 
     "object_pk": 116, 
     "object_type": "EventAction", 
@@ -4259,7 +4259,7 @@
   "pk": 379, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 3, 
     "object_pk": 24, 
     "object_type": "EventAction", 
@@ -4287,7 +4287,7 @@
   "pk": 381, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 238, 
     "object_type": "EventAction", 
@@ -4315,7 +4315,7 @@
   "pk": 383, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 2, 
     "object_pk": 130, 
     "object_type": "Event", 
@@ -4329,7 +4329,7 @@
   "pk": 384, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 30, 
     "object_type": "Mission", 
@@ -4385,7 +4385,7 @@
   "pk": 388, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 8, 
     "object_type": "Recurring", 
@@ -4441,7 +4441,7 @@
   "pk": 392, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "Recurring", 
@@ -4497,7 +4497,7 @@
   "pk": 396, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "Recurring", 
@@ -4595,7 +4595,7 @@
   "pk": 403, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 7, 
     "object_type": "Recurring", 
@@ -4609,7 +4609,7 @@
   "pk": 404, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 7, 
     "object_type": "Recurring", 
@@ -4665,7 +4665,7 @@
   "pk": 408, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 8, 
     "object_type": "Recurring", 
@@ -4721,7 +4721,7 @@
   "pk": 412, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "Recurring", 
@@ -4777,7 +4777,7 @@
   "pk": 416, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 8, 
     "object_type": "Recurring", 
@@ -4833,7 +4833,7 @@
   "pk": 420, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "Recurring", 
@@ -4889,7 +4889,7 @@
   "pk": 424, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 8, 
     "object_type": "Recurring", 
@@ -4945,7 +4945,7 @@
   "pk": 428, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "Recurring", 
@@ -5015,7 +5015,7 @@
   "pk": 433, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 8, 
     "object_type": "Recurring", 
@@ -5071,7 +5071,7 @@
   "pk": 437, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "Recurring", 
@@ -6625,7 +6625,7 @@
   "pk": 552, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 8, 
     "object_type": "Recurring", 
@@ -6695,7 +6695,7 @@
   "pk": 557, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "Recurring", 
@@ -6793,7 +6793,7 @@
   "pk": 564, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -6863,7 +6863,7 @@
   "pk": 569, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 3, 
     "object_type": "Recurring", 
@@ -6947,7 +6947,7 @@
   "pk": 575, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "Recurring", 
@@ -7017,7 +7017,7 @@
   "pk": 580, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 8, 
     "object_type": "Recurring", 
@@ -8095,7 +8095,7 @@
   "pk": 659, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "Recurring", 
@@ -8165,7 +8165,7 @@
   "pk": 664, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "Recurring", 
@@ -8235,7 +8235,7 @@
   "pk": 669, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "Recurring", 
@@ -8305,7 +8305,7 @@
   "pk": 674, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "Recurring", 
@@ -8501,7 +8501,7 @@
   "pk": 688, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "Recurring", 
@@ -8571,7 +8571,7 @@
   "pk": 693, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "Recurring", 
@@ -8641,7 +8641,7 @@
   "pk": 698, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "Recurring", 
@@ -8711,7 +8711,7 @@
   "pk": 703, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "Recurring", 
@@ -8781,7 +8781,7 @@
   "pk": 708, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "Recurring", 
@@ -8851,7 +8851,7 @@
   "pk": 713, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 45, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "Recurring", 
@@ -9831,7 +9831,7 @@
   "pk": 783, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 59, 
+    "kingdom": null, 
     "stack_level": 3, 
     "object_pk": 19, 
     "object_type": "Quality", 
@@ -9873,7 +9873,7 @@
   "pk": 786, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 59, 
+    "kingdom": null, 
     "stack_level": 2, 
     "object_pk": 1, 
     "object_type": "Title", 
@@ -9943,7 +9943,7 @@
   "pk": 791, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 59, 
+    "kingdom": null, 
     "stack_level": 3, 
     "object_pk": 3, 
     "object_type": "Quality", 
@@ -9999,7 +9999,7 @@
   "pk": 795, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 59, 
+    "kingdom": null, 
     "stack_level": 3, 
     "object_pk": 20, 
     "object_type": "Quality", 
@@ -10041,7 +10041,7 @@
   "pk": 798, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 59, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 1, 
     "object_type": "Trigger", 
@@ -10055,7 +10055,7 @@
   "pk": 799, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 59, 
+    "kingdom": null, 
     "stack_level": 2, 
     "object_pk": 7, 
     "object_type": "EventAction", 
@@ -10069,7 +10069,7 @@
   "pk": 800, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 59, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "EventAction", 
@@ -10083,7 +10083,7 @@
   "pk": 801, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 59, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 7, 
     "object_type": "EventAction", 
@@ -10097,7 +10097,7 @@
   "pk": 802, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 59, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 9, 
     "object_type": "EventAction", 
@@ -10111,7 +10111,7 @@
   "pk": 803, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 59, 
+    "kingdom": null, 
     "stack_level": 2, 
     "object_pk": 5, 
     "object_type": "Title", 
@@ -10125,7 +10125,7 @@
   "pk": 804, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 59, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 22, 
     "object_type": "EventAction", 
@@ -10139,7 +10139,7 @@
   "pk": 805, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 59, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 5, 
     "object_type": "Title", 
@@ -10153,7 +10153,7 @@
   "pk": 806, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 59, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 6, 
     "object_type": "Mission", 
@@ -10181,7 +10181,7 @@
   "pk": 808, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 59, 
+    "kingdom": null, 
     "stack_level": 4, 
     "object_pk": 4, 
     "object_type": "Quality", 
@@ -10195,7 +10195,7 @@
   "pk": 809, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 59, 
+    "kingdom": null, 
     "stack_level": 4, 
     "object_pk": 5, 
     "object_type": "Quality", 
@@ -10237,7 +10237,7 @@
   "pk": 812, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 59, 
+    "kingdom": null, 
     "stack_level": 2, 
     "object_pk": 19, 
     "object_type": "Event", 
@@ -10251,7 +10251,7 @@
   "pk": 813, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 59, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 23, 
     "object_type": "EventAction", 
@@ -10259,6 +10259,314 @@
     "direct_queries": 12, 
     "time": 173, 
     "queries": 54
+  }
+},
+{
+  "pk": 814, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 25, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 20, 
+    "time": 58, 
+    "queries": 20
+  }
+},
+{
+  "pk": 815, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 45, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 816, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 45, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 817, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 45, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 818, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 45, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 1, 
+    "queries": 0
+  }
+},
+{
+  "pk": 819, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 45, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 820, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 45, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 821, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 45, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "MissionGrid", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 822, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 45, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 823, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 45, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 824, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 45, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 825, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 45, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "MissionGrid", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 2, 
+    "queries": 1
+  }
+},
+{
+  "pk": 826, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 45, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 827, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 45, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 828, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 45, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 829, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 45, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 830, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 45, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 831, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 45, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 832, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 45, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 833, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 45, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 834, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 45, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 835, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 45, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
   }
 }
 ]
