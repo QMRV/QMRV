@@ -1579,11 +1579,11 @@
     "category": null, 
     "name": "Soeurette", 
     "weight": 1, 
-    "text": "Elle prend une profonde inspiration. \"Leur p\u00e8re \u00e9tait un homme bon, mais qui ne savait pas choisir ses amis et encore moins ses ennemis. Il a rejoint le Tr\u00e8s Haut, et nous a laiss\u00e9s tous les trois dans une situation... d\u00e9licate\". Elle pose une main sur l'\u00e9paule de {{mioche}}. \"Ces enfants sont de votre sang, et  je souhaite qu'ils rejoignent votre cour et participent \u00e0 la restauration de notre famille\". Elle attend ma r\u00e9ponse, anxieuse.", 
+    "text": "Elle prend une profonde inspiration. \"Leur p\u00e8re \u00e9tait un homme bon, mais qui ne savait pas choisir ses amis et encore moins ses ennemis. Il a rejoint le Tr\u00e8s Haut, et nous a laiss\u00e9s tous les trois dans une situation... d\u00e9licate\". Elle pose une main sur l'\u00e9paule de {{mioche.First_name}}. \"Ces enfants sont de votre sang, et  je souhaite qu'ils rejoignent votre cour et participent \u00e0 la restauration de notre famille\". Elle attend ma r\u00e9ponse, anxieuse.", 
     "image": "events/361_4.jpg", 
-    "on_fire": null, 
+    "on_fire": "\n", 
     "slug": "tuto_soeurette_4", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -1635,11 +1635,11 @@
     "category": null, 
     "name": "Soeurette", 
     "weight": 1, 
-    "text": "Elle renifle, et opine \u00e0 contre c\u0153ur. \"Je... Nous acceptons\". Elle semble bris\u00e9e, lutant contre la ranc\u0153ur et la d\u00e9ception.\r\n\r\n\r\n```\r\n{{soeur}}, {{mioche}} et {{chiard}} vous ont ont rejoint. {{chiard.first_name}} n'a que 1 ans, et n\u2019appara\u00eetra dans votre cour qu'\u00e0 l'age de 6 ans.\r\n```", 
+    "text": "Elle renifle, et opine \u00e0 contre c\u0153ur. \"Je... Nous acceptons\". Elle semble bris\u00e9e, lutant contre la ranc\u0153ur et la d\u00e9ception.\r\n\r\n\r\n\r\n    {{soeur}}, {{mioche}} et {{chiard}} vous ont ont rejoint. {{chiard.first_name}} n'a que 1 ans, et n\u2019appara\u00eetra dans votre cour qu'\u00e0 l'age de 6 ans.\r\n", 
     "image": "events/361_8.jpg", 
     "on_fire": "soeur = param.get_value(\"soeur\")\nmioche = param.get_value(\"mioche\")\nchiard = param.get_value(\"chiard\")\n\nsoeur.kingdom = kingdom\nmioche.kingdom = kingdom\nchiard.kingdom = kingdom\n\nmioche.last_name = mioche.father.last_name\nchiard.last_name = mioche.father.last_name\n\nsoeur.save()\nmioche.save()\nchiard.save()", 
     "slug": "tuto_soeurette_compromize", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -1705,7 +1705,7 @@
     "category": null, 
     "name": "Tuto demande de mariage", 
     "weight": 1, 
-    "text": "Il se rembrunit, mais ne laisse pas \u00e9chapper sa deception. Dame {{femme.first_name}} semble \u00e9galement d\u00e9sol\u00e9e, mais s'incline tout de m\u00eame devant moi avant qu'ils ne prennent cong\u00e9.\r\n```\r\n-10 de Loyaut\u00e9 pour {{homme}} et {{femme}}.\r\n```", 
+    "text": "Il se rembrunit, mais ne laisse pas \u00e9chapper sa d\u00e9ception. Dame {{mariee.first_name}} semble \u00e9galement d\u00e9sol\u00e9e, mais s'incline tout de m\u00eame devant moi avant qu'ils ne prennent cong\u00e9.\r\n\r\n    -10 de Loyaut\u00e9 pour {{mari}} et {{femme}}.\r\n", 
     "image": "events/362_3.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_demandemariage_3", 
@@ -1943,7 +1943,7 @@
     "category": null, 
     "name": "Facheux", 
     "weight": 1, 
-    "text": "Sur mon ordre, mon fils {{folk.2.first_name}} et le chevalier {{facheux.last_name}} se sont assis dans deux fauteuils de ma chambre. J'ignore les regards venimeux qu'ils se lancent, et sers patiemment trois verres de vin. Voyant que {{folk.2.first_name}} s'appr\u00eate faire une remarque, le l\u00e8ve une main apaisante. \"Je vais d\u2019abord \u00e9couter la version du chevalier\". Il se renfrogne, mais demeure silencieux alors que {{facheux.first_name}} me relate les injures que mon fils lui a lanc\u00e9es \u00e0 la figure. Il ne dissimule rien de sa col\u00e8re, et affirme \u00eatre pr\u00eat  \u00e0 d\u00e9fendre son honneur l'arme \u00e0 la main.\"", 
+    "text": "Sur mon ordre, mon fils {{folk.2.first_name}} et le chevalier {{facheux.last_name}} se sont assis dans deux fauteuils de ma chambre. J'ignore les regards venimeux qu'ils se lancent, et sers patiemment trois verres de vin. Voyant que {{folk.1.first_name}} s'appr\u00eate \u00e0 faire une remarque, le l\u00e8ve une main apaisante. \"Je vais d\u2019abord \u00e9couter la version du chevalier\". Il se renfrogne, mais demeure silencieux alors que {{facheux.first_name}} me relate les injures que mon fils lui a lanc\u00e9es \u00e0 la figure. Il ne dissimule rien de sa col\u00e8re, et affirme \u00eatre pr\u00eat  \u00e0 d\u00e9fendre son honneur l'arme \u00e0 la main.\"", 
     "image": "events/408_6.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_facheux_settle", 
@@ -2139,9 +2139,9 @@
     "category": null, 
     "name": "Mariage", 
     "weight": 1, 
-    "text": "Sire {{mari}} me lance un regard glacial, ses poings sont serr\u00e9s et je peux sentir sa col\u00e8re. \"S'en est finit de mes illusions, messire. Vous n'avez aucune intention de me c\u00e9der la main de dame {{mariee.first_name}}\". Avant que je ne puisse r\u00e9pondre, il se d\u00e9tourne, et sort en claquant la porte.\r\n```\r\n-40 de loyaut\u00e9 pour {{mari}} et {{mariee}}.\r\n```", 
+    "text": "Sire {{mari}} me lance un regard glacial, ses poings sont serr\u00e9s et je peux sentir sa col\u00e8re. \"S'en est finit de mes illusions, messire. Vous n'avez aucune intention de me c\u00e9der la main de dame {{mariee.first_name}}\". Avant que je ne puisse r\u00e9pondre, il se d\u00e9tourne, et sort en claquant la porte.\r\n\r\n    -40 de loyaut\u00e9 pour {{mari}} et {{mariee}}.\r\n", 
     "image": "events/102.jpg", 
-    "on_fire": "\n", 
+    "on_fire": "param.get_value(\"mari\").loyalty-=40\nmari.save()\nparam.get_value(\"mariee\").loyalty-=40\nmariee.save()\n", 
     "slug": "demandemariage_terminated", 
     "condition": "\n"
   }
@@ -2335,11 +2335,11 @@
     "category": null, 
     "name": "Facheux", 
     "weight": 1, 
-    "text": "D'un ton calme, j'entreprends de dresser un portrait impartial de l'incident, insistant sur les tords de chacun.  Je r\u00e9pond \u00e0 leurs objections une par une, avec une patience infinie, et l\u2019atmosph\u00e8re d'abord lourde de tension se rel\u00e2che peu \u00e0 peu alors que chacun reconnait ses fautes. \"Votre sens de l'honneur vous honore tous les deux, mais priver {{dynasty}} d'un de ses meilleurs hommes ne profite qu'\u00e0 nos ennemis. La vraie noblesse r\u00e9side dans le pardon\". Ils c\u00e8dent peu \u00e0 peu \u00e0 mes arguments mesur\u00e9s, et finissent par trinquer avec moi, riant  de s'\u00eatre emport\u00e9s pour  une affaire aussi triviale.  Ils quittent ma  chambre r\u00e9concili\u00e9s, me laissant finir mon verre avec le sourire aux l\u00e8vres.\r\n\r\n```\r\n{{facheux}} perd le Trait Col\u00e9rique.\r\n+5 de Loyaut\u00e9 pour {{folk.2}} et {{facheux}}.\r\n```", 
+    "text": "Doit \u00eatre connect\u00e9 tuto facheux settle 3, affich\u00e9 uniquement si on a suffisemment de diplomacy\r\n\r\nD'un ton calme, j'entreprends de dresser un portrait impartial de l'incident, insistant sur les tords de chacun.  Je r\u00e9pond \u00e0 leurs objections une par une, avec une patience infinie, et l\u2019atmosph\u00e8re d'abord lourde de tension se rel\u00e2che peu \u00e0 peu alors que chacun reconnait ses fautes. \"Votre sens de l'honneur vous honore tous les deux, mais priver {{dynasty}} d'un de ses meilleurs hommes ne profite qu'\u00e0 nos ennemis. La vraie noblesse r\u00e9side dans le pardon\". Ils c\u00e8dent peu \u00e0 peu \u00e0 mes arguments mesur\u00e9s, et finissent par trinquer avec moi, riant  de s'\u00eatre emport\u00e9s pour  une affaire aussi triviale.  Ils quittent ma  chambre r\u00e9concili\u00e9s, me laissant finir mon verre avec le sourire aux l\u00e8vres.\r\n\r\n```\r\n{{facheux}} perd le Trait Col\u00e9rique.\r\n+5 de Loyaut\u00e9 pour {{folk.2}} et {{facheux}}.\r\n```", 
     "image": "events/408_9.jpg", 
-    "on_fire": null, 
+    "on_fire": "\n", 
     "slug": "tuto_facheux_settle_4", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -2575,7 +2575,7 @@
     "weight": 1, 
     "text": "{% if duelist_lessfight == folk.1 %}Agrippant son \u00e9paule bless\u00e9e, {{facheux}} pare faiblement sa premi\u00e8re attaque. Le second coup lui fait l\u00e2cher son \u00e9p\u00e9e.\r\n{% else %}\r\nTrop confiant dans son avantage, {{facheux}} porte un puissant coup de taille. Avec l\u2019\u00e9nergie du d\u00e9sespoir, mon fils se tend et esquive au dernier moment. Profitant du d\u00e9s\u00e9quilibre de son adversaire, il pousse un cris de rage, et lui tranche le bras revers bien plac\u00e9 !\r\n{% endif %}\r\nApr\u00e8s un infime instant d'h\u00e9sitation, {{folks.1.first_name}} se fend, sa lame per\u00e7ant le chevalier de part en part. Une ovation monte imm\u00e9diatement du public, alors que le corps sans vie s'\u00e9croule sur le sol. Laissant son \u00e9p\u00e9e plant\u00e9e en travers du cadavre, il marche sur moi d'un pas d\u00e9cid\u00e9. Il me lance un regard farouche et d\u00e9clare d'une voix forte : \"P\u00e8re, je vous d\u00e9die cette victoire!\" Ma fille se jette dans ses bras, pleurant de soulagement.\r\n\r\n    {{facheux}} a \u00e9t\u00e9 tu\u00e9.\r\n    {{folks.1}} gagne +1 en Combat.", 
     "image": "events/716_9.jpg", 
-    "on_fire": "fils = folks[1]\nfils.fight += 1\nfils.save()\n\n\n", 
+    "on_fire": "fils = folks[1]\nfils.fight += 1\nfils.save()\nfacheux = param.get_value(\"facheux\")\nfacheux.die()\nparam.set_value(\"facheux\", str(facheux))\n", 
     "slug": "tuto_facheux_duel_sonwin", 
     "condition": "\n"
   }
@@ -2773,6 +2773,20 @@
     "image": "", 
     "on_fire": "\n", 
     "slug": "tuto_timewarp", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 226, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Deux amoureux heureux dans la cour", 
+    "weight": 1, 
+    "text": "Les deux amoureux sont dans la cour et sont joyeux.", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "mariagelunedemiel_success", 
     "condition": "\n"
   }
 },
@@ -3510,7 +3524,7 @@
     "message": "Il se pourrait que ma fille {{folk.2.first_name}} et mon ami le chevalier {{folk.3.first_name}} partagent une affection d\u00e9plac\u00e9e. Je ferme les yeux pour l'instant.", 
     "event": 50, 
     "condition": " ", 
-    "on_fire": "#param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fille\")).start()\npe=param.pending_event.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fille\")\npe.start()\n"
+    "on_fire": "#param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fille\")).start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fille\")\npe.start()\n"
   }
 },
 {
@@ -4356,7 +4370,7 @@
     "text": "J'opine. \"Je n'y vois pas d'objection. Soyez les bienvenus dans ma cour\".", 
     "message": "", 
     "event": 135, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_accept\")).start()\n\nsoeur = param.get_value(\"soeur\")\n\nsoeur.loyalty += 10\n\nsoeur.save()\n"
   }
 },
@@ -4367,7 +4381,7 @@
     "text": "\"Voil\u00e0 qui pose probl\u00e8me.  Mon fils {{folks.1.first_name}} est l'h\u00e9ritier de ces terres, et je ne souhaite pas risquer une querelle de succession...\"", 
     "message": "", 
     "event": 135, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "soeur = param.get_value(\"soeur\")\n\nif soeur.loyalty >= 66:\n  param.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_5\")).start()\nelse:\n  param.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_6\")).start()\n\n"
   }
 },
@@ -4378,7 +4392,7 @@
     "text": "\"Ah, nous y voil\u00e0! Maintenant que j'ai remit {{kingdom}} sur pieds, vous voulez que vos rejetons aient leur part du g\u00e2teau!\"", 
     "message": "", 
     "event": 135, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "soeur = param.get_value(\"soeur\")\n\nsoeur.loyalty -= 10\n\nsoeur.save()\n\nif soeur.loyalty >= 66:\n  param.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_5\")).start()\nelse:\n  param.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_6\")).start()\n"
   }
 },
@@ -4455,7 +4469,7 @@
     "text": "Ce qu'il ne faut pas faire pour la famille...", 
     "message": "{{soeur}}, {{mioche}} et {{chiard}} ont rejoint ma cour.", 
     "event": 139, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_education\")).start()"
   }
 },
@@ -4519,7 +4533,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Un mariage d'amour! J'aurai tout entendu...", 
-    "message": "J'ai refus\u00e9 que {{homme}} et {{femme}} ne se marient.```\r\n-10 de Loyaut\u00e9 chacun.\r\n```", 
+    "message": "J'ai refus\u00e9 que {{mari}} et {{mariee}} ne se marient.```\r\n-10 de Loyaut\u00e9 chacun.\r\n```", 
     "event": 144, 
     "condition": "\n", 
     "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_demandemariage\")"
@@ -4940,7 +4954,7 @@
     "message": "", 
     "event": 75, 
     "condition": "\n", 
-    "on_fire": "pe=param.pending_event.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"demandemariage_doublecheck\")\npe.start()"
+    "on_fire": "pe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"demandemariage_doublecheck\")\npe.start()"
   }
 },
 {
@@ -4973,7 +4987,7 @@
     "message": "{{mari}} s'est offusqu\u00e9 de mon refus de l'unir \u00e0 {{mariee}}. ```-40 de Loyaut\u00e9 chacun```", 
     "event": 176, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "pe=param.pending_event.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fille\")\npe.start()\n"
   }
 },
 {
@@ -5179,10 +5193,10 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Une fois encore, mess talents de diplomate m'ont permis d'\u00e9viter le pire.", 
-    "message": "Le chevalier {{facheux}} et mon fils {{folk.1.first_name}} se sont r\u00e9concili\u00e9s.```\r\n{{facheux}} perd le Trait Col\u00e9rique.\r\n+5 de Loyaut\u00e9 chacun.\r\n```", 
+    "message": "Le chevalier {{facheux}} et mon fils {{folk.1.first_name}} se sont r\u00e9concili\u00e9s.\r\n\r\n    {{facheux}} perd le Trait Col\u00e9rique.\r\n    +5 de Loyaut\u00e9 chacun.\r\n", 
     "event": 193, 
-    "condition": null, 
-    "on_fire": null
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 },
 {
@@ -5292,18 +5306,18 @@
     "message": "Mon fils a tu\u00e9 le chevalier {{facheux}} en duel.", 
     "event": 211, 
     "condition": "\n", 
-    "on_fire": "facheux = param.get_value(\"facheux\")\nfacheux.die()\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")"
+    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")"
   }
 },
 {
   "pk": 278, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Je lui sourit. \"Joli coup, pour un blanc bec.\"", 
+    "text": "Je lui souris. \"Joli coup, pour un blanc bec.\"", 
     "message": "Mon fils a tu\u00e9 le chevalier {{facheux}} en duel.", 
     "event": 211, 
     "condition": "\n", 
-    "on_fire": "facheux = param.get_value(\"facheux\")\nfacheux.die()\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")"
+    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")"
   }
 },
 {
@@ -5314,7 +5328,7 @@
     "message": "Mon fils a tu\u00e9 le chevalier {{facheux}} en duel.", 
     "event": 211, 
     "condition": "\n", 
-    "on_fire": "facheux = param.get_value(\"facheux\")\nfacheux.die()\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")"
+    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")"
   }
 },
 {
@@ -5484,18 +5498,6 @@
   }
 },
 {
-  "pk": 1232, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 58, 
-    "is_started": true, 
-    "created": "2013-08-31T19:57:58.427", 
-    "started": "2013-08-31T19:57:58.466", 
-    "text": "Elle franchit le pas de la porte de sa d\u00e9marche fi\u00e8re, qui fait remonter en moi bien des souvenirs. A ma grande surprise, elle n'entre pas seule. Une petite fille d'une dizaine d'ann\u00e9e la suit de quelque pas, serrant dans ses bras un b\u00e9b\u00e9 emmitoufl\u00e9 dans un linge. Ma s\u0153ur Li\u00e9tharde vient se planter devant moi, et m'offre une r\u00e9v\u00e9rence un rien rapide. Elle regarde l'enfant qui, maladroitement, s'incline \u00e0 son tour. \"Mon fr\u00e8re, quelle joie de vous voir une si belle mine. Un fief \u00e0 gouverner a \u00e9t\u00e9 un changement heureux\". Ignorant le sarcasme, je l'examine de la t\u00eate au pied. Elle a vieillit, mais je reconnait toujours la jeune arrogante de jadis. Cette fois ci, cependant, je crois lire une trace de peur dans son regard. Int\u00e9ressant.", 
-    "event": 133
-  }
-},
-{
   "pk": 1242, 
   "model": "event.pendingevent", 
   "fields": {
@@ -5508,15 +5510,27 @@
   }
 },
 {
-  "pk": 1246, 
+  "pk": 1263, 
   "model": "event.pendingevent", 
   "fields": {
-    "kingdom": 66, 
+    "kingdom": 58, 
     "is_started": true, 
-    "created": "2013-08-31T20:18:08.770", 
-    "started": "2013-08-31T20:18:08.800", 
-    "text": "Ayant eut vent de mon projet, le p\u00e8re Philibert, cur\u00e9 du village, s\u2019est pr\u00e9sent\u00e9 \u00e0 la porte du ch\u00e2teau. Je suis all\u00e9 \u00e0 sa rencontre dans la cour, et nous avons \u00e9chang\u00e9 quelques mot sur l\u2019histoire de son \u00e9glise et de la r\u00e9gion. Il m\u2019a pr\u00e9sent\u00e9 sa gratitude pour les travaux \u00e0 venir, et je lui ai propos\u00e9 sans h\u00e9siter de les superviser. Il a sourit, m\u2019a b\u00e9ni d\u2019un geste de la main droite et a d\u00e9clar\u00e9 qu\u2019il serait heureux de m\u2019accompagner dans le travail du Seigneur.\r\n\r\n```Vous avez \u00e9t\u00e9 rejoint par le p\u00e8re Philibert. Le Titre de Cur\u00e9 lui \u00e9choit (voir onglet Titre)```", 
-    "event": 26
+    "created": "2013-08-31T20:25:48.179", 
+    "started": "2013-08-31T20:25:48.183", 
+    "text": "Il y eut un soir, il y eut un matin.\r\nEt ce 30 fois de suite.", 
+    "event": 225
+  }
+},
+{
+  "pk": 1321, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 67, 
+    "is_started": true, 
+    "created": "2013-08-31T20:56:21.097", 
+    "started": "2013-08-31T20:56:21.102", 
+    "text": "Et pourtant, je sais que mon p\u00e9riple ne fait que commencer. Mon h\u00e9ritage ne sera pas \u00e0 l'abri des convoitises tant que je n\u2019aurai pas prouv\u00e9 ma valeur aux yeux du royaume. Mes sujets sont encore si peu nombreux... Nobles ou paysans, le prestige de mon nom les a ralli\u00e9 sous ma banni\u00e8re, et ils attendent encore de moi que je porte ce nom vers la gloire. Mon regard se pose \u00e0 nouveau sur les hommes d\u2019arme qui suent sous ma fen\u00eatre. L'entra\u00eenement de sire Ernaut leur a \u00e9t\u00e9 profitable, mais depuis le passage des brigands, il n\u2019ont pas eut d\u2019occasion de se battre. Il est peut \u00eatre temps qu\u2019ils affrontent un vrai ennemi, sur un vrai champ de bataille.\r\n\r\n```\r\nVotre valeur de Prestige limite le nombre de suivants dans votre cour et la population de votre ville. Une mani\u00e8re s\u00fbre de gagner du Prestige est de gagner des batailles.\r\n```", 
+    "event": 10
   }
 },
 {
@@ -5531,50 +5545,6 @@
   }
 },
 {
-  "pk": 1218, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 1232, 
-    "message": "", 
-    "text": "Mensonge : \"Le plaisir est partag\u00e9, ma soeur. Cela fait bien trop longtemps\".", 
-    "folk": null, 
-    "event_action": 178
-  }
-},
-{
-  "pk": 1219, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 1232, 
-    "message": "", 
-    "text": "Je la fusille du regard \"\u00c9pargnez-moi vos platitudes, Li\u00e9tharde. Que voulez-vous  de  moi cette fois-ci?\".", 
-    "folk": null, 
-    "event_action": 180
-  }
-},
-{
-  "pk": 1220, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 1232, 
-    "message": "", 
-    "text": "Rester silencieux, les mains crois\u00e9es et le visage imp\u00e9n\u00e9trable.", 
-    "folk": null, 
-    "event_action": 179
-  }
-},
-{
-  "pk": 1221, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 1232, 
-    "message": "", 
-    "text": "Sinc\u00e8re : \"Le plaisir est partag\u00e9, ma soeur. Cela fait bien trop longtemps\".", 
-    "folk": null, 
-    "event_action": 177
-  }
-},
-{
   "pk": 1232, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -5583,6 +5553,39 @@
     "text": "Le temps passe...", 
     "folk": null, 
     "event_action": 293
+  }
+},
+{
+  "pk": 1264, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 1263, 
+    "message": "Un mois s'est \u00e9coul\u00e9.", 
+    "text": "Le temps passe...", 
+    "folk": null, 
+    "event_action": 293
+  }
+},
+{
+  "pk": 1337, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 1321, 
+    "message": "Les r\u00e9parations de matthieu sont termin\u00e9e. Un grand jour pour notre famille.", 
+    "text": "Non. Mon ambition n'est pas une raison suffisante pour mettre la vie de mes hommes en danger.", 
+    "folk": null, 
+    "event_action": 269
+  }
+},
+{
+  "pk": 1338, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 1321, 
+    "message": "", 
+    "text": "Reste \u00e0 trouver un adversaire \u00e0 ma mesure.", 
+    "folk": null, 
+    "event_action": 15
   }
 },
 {
@@ -5604,57 +5607,30 @@
   }
 },
 {
-  "pk": 2068, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1232, 
-    "name": "random", 
-    "value": 24
-  }
-},
-{
-  "pk": 2069, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1232, 
-    "name": "chiard", 
-    "value": "`Folk`:6736"
-  }
-},
-{
-  "pk": 2070, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1232, 
-    "name": "slug", 
-    "value": "tuto_soeurette"
-  }
-},
-{
-  "pk": 2071, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1232, 
-    "name": "mioche", 
-    "value": "`Folk`:6735"
-  }
-},
-{
-  "pk": 2072, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1232, 
-    "name": "soeur", 
-    "value": "`Folk`:6733"
-  }
-},
-{
   "pk": 2084, 
   "model": "event._pendingeventvariable", 
   "fields": {
     "pending_event": 1242, 
     "name": "slug", 
     "value": "tuto_scandale_fantome"
+  }
+},
+{
+  "pk": 2153, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1263, 
+    "name": "slug", 
+    "value": "tuto_scandale_fantome"
+  }
+},
+{
+  "pk": 2285, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1321, 
+    "name": "slug", 
+    "value": "tuto_ambition"
   }
 }
 ]
