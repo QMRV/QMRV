@@ -67,7 +67,7 @@
     "category": null, 
     "name": "Au travail", 
     "weight": 1, 
-    "text": "``-85 \u00e9cus``\r\n\r\nAssis sur un tr\u00f4ne fra\u00eechement install\u00e9, je contemple d\u2019un \u0153il satisfait les r\u00e9parations que les ma\u00e7ons ont apport\u00e9 aux murs de la grande salle. Le toit demande encore quelques planches et l\u2019aile ouest du ch\u00e2teau n\u2019a toujours pas \u00e9t\u00e9 d\u00e9blay\u00e9e, mais les travaux avancent \u00e0 grands pas. Les serviteurs qui s\u2019aff\u00e8rent de toute part ont \u00e9t\u00e9 engag\u00e9s par {{compagnon.first_name}} dans le village voisin, qui fr\u00e9mit toujours de la nouvelle du retour de ma famille. Notre argent est presque \u00e9puis\u00e9, et nous allons avoir grand besoin de l\u2019ob\u00e9issance de ces gueux. Notre nom et la lettre du roi seront des atouts pr\u00e9cieux, mais je devrais utiliser les \u00e9cus qui me reste pour mettre toutes les chances de notre c\u00f4t\u00e9...", 
+    "text": "    -85 \u00e9cus\r\n\r\nAssis sur un tr\u00f4ne fra\u00eechement install\u00e9, je contemple d\u2019un \u0153il satisfait les r\u00e9parations que les ma\u00e7ons ont apport\u00e9 aux murs de la grande salle. Le toit demande encore quelques planches et l\u2019aile ouest du ch\u00e2teau n\u2019a toujours pas \u00e9t\u00e9 d\u00e9blay\u00e9e, mais les travaux avancent \u00e0 grands pas. Les serviteurs qui s\u2019aff\u00e8rent de toute part ont \u00e9t\u00e9 engag\u00e9s par {{compagnon.first_name}} dans le village voisin, qui fr\u00e9mit toujours de la nouvelle du retour de ma famille. Notre argent est presque \u00e9puis\u00e9, et nous allons avoir grand besoin de l\u2019ob\u00e9issance de ces gueux. Notre nom et la lettre du roi seront des atouts pr\u00e9cieux, mais je devrais utiliser les \u00e9cus qui me reste pour mettre toutes les chances de notre c\u00f4t\u00e9...", 
     "image": "events/362.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_intro_3", 
@@ -123,7 +123,7 @@
     "category": null, 
     "name": "Soif de gloire !", 
     "weight": 1, 
-    "text": "Pench\u00e9 sur ma table de travail, j\u2019\u00e9tudie cartes de la r\u00e9gion, missives diplomatiques rapports de mes espions. Il en semblerait qu\u2019un seigneur voisin de petite stature, {{ennemi}}, ait ses greniers bien remplis. Si je pouvais trouver un pr\u00e9texte honorable pour l\u2019affronter, je pourrais \u00e0 la fois m\u2019imposer en tant que puissance militaire et remplir mes coffres.\r\n\r\n```\r\nIl est impossible d\u2019attaquer un autre seigneur sans un motif diplomatique (casus belli).\r\n```", 
+    "text": "Pench\u00e9 sur ma table de travail, j\u2019\u00e9tudie cartes de la r\u00e9gion, missives diplomatiques rapports de mes espions. Il en semblerait qu\u2019un seigneur voisin de petite stature, {{ennemi}}, ait ses greniers bien remplis. Si je pouvais trouver un pr\u00e9texte honorable pour l\u2019affronter, je pourrais \u00e0 la fois m\u2019imposer en tant que puissance militaire et remplir mes coffres.\r\n\r\n    Il est impossible d\u2019attaquer un autre seigneur sans un motif diplomatique (casus belli).", 
     "image": "events/900.jpg", 
     "on_fire": "  ", 
     "slug": "tuto_ambition_3", 
@@ -193,7 +193,7 @@
     "category": null, 
     "name": "Pot de vin", 
     "weight": 1, 
-    "text": "{{folks.3}}, mon fils {{folks.1.first_name}} et ma fille {{folks.2.first_name}} se tiennent devant moi, alors que j\u2019ach\u00e8ve de leur exposer mon projet.  \u201c...la seconde moiti\u00e9 du paiement sera vers\u00e9e une fois que le village m\u2019aura publiquement reconnu comme son seigneur l\u00e9gitime. Je vais avoir besoin que l\u2019un de vous trois me serve de ma\u00eetre espion et s\u2019occupe de cette affaire avec doigt\u00e9 et discr\u00e9tion.\u201d\r\n\r\n```\r\nFaites glisser un de vos suivants depuis l\u2019onglet Titre pour le nommer Ma\u00eetre Espion.\r\n```", 
+    "text": "{{folks.3}}, mon fils {{folks.1.first_name}} et ma fille {{folks.2.first_name}} se tiennent devant moi, alors que j\u2019ach\u00e8ve de leur exposer mon projet.  \u201c...la seconde moiti\u00e9 du paiement sera vers\u00e9e une fois que le village m\u2019aura publiquement reconnu comme son seigneur l\u00e9gitime. Je vais avoir besoin que l\u2019un de vous trois me serve de ma\u00eetre espion et s\u2019occupe de cette affaire avec doigt\u00e9 et discr\u00e9tion.\u201d\r\n\r\n    Faites glisser un de vos suivants depuis l\u2019onglet Titre pour le nommer Ma\u00eetre Espion.", 
     "image": "events/451_1.jpg", 
     "on_fire": " ", 
     "slug": "tuto_intro_choixintrigue", 
@@ -333,7 +333,7 @@
     "category": 2, 
     "name": "Introduction", 
     "weight": 1, 
-    "text": "Ayant eut vent de mon projet, le p\u00e8re {{cure.first_name}}, cur\u00e9 du village, s\u2019est pr\u00e9sent\u00e9 \u00e0 la porte du ch\u00e2teau. Je suis all\u00e9 \u00e0 sa rencontre dans la cour, et nous avons \u00e9chang\u00e9 quelques mot sur l\u2019histoire de son \u00e9glise et de la r\u00e9gion. Il m\u2019a pr\u00e9sent\u00e9 sa gratitude pour les travaux \u00e0 venir, et je lui ai propos\u00e9 sans h\u00e9siter de les superviser. Il a sourit, m\u2019a b\u00e9ni d\u2019un geste de la main droite et a d\u00e9clar\u00e9 qu\u2019il serait heureux de m\u2019accompagner dans le travail du Seigneur.\r\n\r\n```Vous avez \u00e9t\u00e9 rejoint par le p\u00e8re {{cure.first_name}}. Le Titre de Cur\u00e9 lui \u00e9choit (voir onglet Titre)```", 
+    "text": "Ayant eut vent de mon projet, le p\u00e8re {{cure.first_name}}, cur\u00e9 du village, s\u2019est pr\u00e9sent\u00e9 \u00e0 la porte du ch\u00e2teau. Je suis all\u00e9 \u00e0 sa rencontre dans la cour, et nous avons \u00e9chang\u00e9 quelques mot sur l\u2019histoire de son \u00e9glise et de la r\u00e9gion. Il m\u2019a pr\u00e9sent\u00e9 sa gratitude pour les travaux \u00e0 venir, et je lui ai propos\u00e9 sans h\u00e9siter de les superviser. Il a sourit, m\u2019a b\u00e9ni d\u2019un geste de la main droite et a d\u00e9clar\u00e9 qu\u2019il serait heureux de m\u2019accompagner dans le travail du Seigneur.\r\n\r\n    Vous avez \u00e9t\u00e9 rejoint par le p\u00e8re {{cure.first_name}}. Le Titre de Cur\u00e9 lui \u00e9choit (voir onglet Titre)", 
     "image": "events/709.jpg", 
     "on_fire": "kingdom.unlock_title(\"cure\")\ncure = call_function(\"creer_folk\", kingdom=kingdom, plot_min=2, fight_min=2, scholarship_min=8, diplomacy_min=6, max_carac =32, sex=\"m\", loyalty=60, birth=(datetime.now() - timedelta(days=35)), trait=\"pretre\")\ncure.add_title(\"cure\")\nparam.set_value(\"cure\", cure)\n", 
     "slug": "tuto_intro_choixerudition", 
@@ -391,7 +391,7 @@
     "weight": 1, 
     "text": "{{folks.3.first_name}} et mon fils {{folks.1.first_name}} se tiennent devant moi, alors que j\u2019ach\u00e8ve de leur exposer mon projet.  \u201c...la nourriture sera grasse et le vin coulera \u00e0 flot. Il s\u2019agit d'impressionner, de d\u00e9montrer notre noblesse. Pour offrir une fa\u00e7ade protocolaire je vais avoir besoin que l\u2019un de vous deux accepte le titre de Chambellan et s\u2019occupe des pr\u00e9paratifs.\u201d\r\n\r\n    Fa\u00eetes glisser un de vos suivants depuis l\u2019onglet Titre pour le nommer Chambellan.", 
     "image": "events/451_2.jpg", 
-    "on_fire": "kingdom.unlock_title(\"chambellan\")\nPendingMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"tuto_banquet\")).save()", 
+    "on_fire": "kingdom.unlock_title(\"chambellan\")\nkingdom.create_pending_mission(\"tuto_banquet\")", 
     "slug": "tuto_intro_choixdiplomatie", 
     "condition": "   "
   }
@@ -503,7 +503,7 @@
     "weight": 1, 
     "text": "Le rapport est formel, le seigneur {{chatelain_ennemi}} a mit ses menaces a ex\u00e9cution. Le d\u00e9tachement qui se dirige vers mes terres est de taille trop modeste pour menacer directement mon ch\u00e2teau, mais ce n'est pas son but. Il esp\u00e8re mettre \u00e0 sac mon domaine, ravageant sans piti\u00e9 les villages p\u00e9riph\u00e9riques et les fermes isol\u00e9s, et se replier avec son butin avant que j'ai le temps de rassembler le gros de mes troupes. Si j'envoie un petit contingent \u00e0 leur rencontre, il aura peut-\u00eatre une chance de les arr\u00eater \u00e0 temps.", 
     "image": "events/451_3.jpg", 
-    "on_fire": "param.set_value(\"chatelain_ennemi\",param.get_value(\"kingdom_attaquant\").get_folk_in_title(\"Ch\u00e2telain\"))\n", 
+    "on_fire": "param.set_value(\"chatelain_ennemi\", param.get_value(\"kingdom_attaquant\").get_folk_in_title(\"Ch\u00e2telain\"))\n", 
     "slug": "escarmouche_warning", 
     "condition": "\n"
   }
@@ -1509,7 +1509,7 @@
     "category": null, 
     "name": "tuto_getafront diplomatie", 
     "weight": 1, 
-    "text": "{{title.ambassadeur}} m\u2019annonce qu\u2019il est parvenu a justifier diplomatiquement une agression de notre part contre {{cible_chatelain}}. Un affront \u00e0 moiti\u00e9 invent\u00e9 et au trois-quarts exag\u00e9r\u00e9, mais qui emp\u00eachera quiconque de nous reprocher d\u2019essayer de \u201claver\u201d notre nom.\r\n```\r\n{{dynasty}} a maintenant un casus belli contre {{cible}}.\r\n```", 
+    "text": "{{title.ambassadeur}} m\u2019annonce qu\u2019il est parvenu a justifier diplomatiquement une agression de notre part contre {{cible_chatelain}}. Un affront \u00e0 moiti\u00e9 invent\u00e9 et au trois-quarts exag\u00e9r\u00e9, mais qui emp\u00eachera quiconque de nous reprocher d\u2019essayer de \u201claver\u201d notre nom.\r\n\r\n    {{dynasty}} a maintenant un casus belli contre {{cible}}.", 
     "image": "events/76_1.jpg", 
     "on_fire": "cible = param.get_value(\"defenseur\")\nparam.set_value(\"cible\", cible.user.username)\nparam.set_value(\"cible_chatelain\", cible.get_folk_in_title(\"chatelain\"))\n\n", 
     "slug": "tuto_getaffront_diplomatie_kingdomsuccess", 
@@ -1971,7 +1971,7 @@
     "category": null, 
     "name": "Tuto bandits", 
     "weight": 1, 
-    "text": "\"Sire!\" {{connetable.first_name}} entre  en trombe dans mes appartements, essouffl\u00e9 apr\u00e8s une longue course dans les couloirs du ch\u00e2teau. \"Des brigands, mon seigneur. Au moins une trentaine. Une sentinelle les a rep\u00e9r\u00e9es \u00e0 la fronti\u00e8re de nos terres...\". Il  prend une inspiration, et se redresse avec un sourire f\u00e9roce sur les l\u00e8vres. \"Avec votre permission, je vais rassembler nos hommes et chevaucher \u00e0 leur rencontre. Les stopper avant qu'ils n'atteignent le premier village\". Je me l\u00e8ve, le  regarde droit dans les yeux, et opine avec gravit\u00e9. \"Je prends le commandement.\" J'attrape mon \u00e9p\u00e9e et sort \u00e0 sa suite.\r\n``` \r\nNouvelle mission.\r\n```", 
+    "text": "\"Sire!\" {{connetable.first_name}} entre  en trombe dans mes appartements, essouffl\u00e9 apr\u00e8s une longue course dans les couloirs du ch\u00e2teau. \"Des brigands, mon seigneur. Au moins une trentaine. Une sentinelle les a rep\u00e9r\u00e9es \u00e0 la fronti\u00e8re de nos terres...\". Il  prend une inspiration, et se redresse avec un sourire f\u00e9roce sur les l\u00e8vres. \"Avec votre permission, je vais rassembler nos hommes et chevaucher \u00e0 leur rencontre. Les stopper avant qu'ils n'atteignent le premier village\". Je me l\u00e8ve, le  regarde droit dans les yeux, et opine avec gravit\u00e9. \"Je prends le commandement.\" J'attrape mon \u00e9p\u00e9e et sort \u00e0 sa suite.\r\n\r\n    Nouvelle mission.", 
     "image": "events/451_11.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_bandits_connetable", 
@@ -2099,7 +2099,7 @@
     "weight": 1, 
     "text": " ", 
     "image": "", 
-    "on_fire": "if kingdom.get_value(\"tuto_facheux_refus\") is not None:\n  PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_facheux_fantome\")).start()\nelse:\n  if kingdom.get_value(\"tuto_ambition\")is None:\n    PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_ambition\")).start()\n  else:\n    PendingMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"tuto_getaffront_diplomacy\")).start()\n\nstatus = \"presque fin fantome\"\n", 
+    "on_fire": "if kingdom.get_value(\"tuto_facheux_refus\") is not None:\n  PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_facheux_fantome\")).start()\nelse:\n  if kingdom.get_value(\"tuto_ambition\")is None:\n    PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_ambition\")).start()\n  else:\n    kingdom.create_pending_mission(\"tuto_getaffront_diplomacy\")\n\nstatus = \"presque fin fantome\"\n", 
     "slug": "tuto_presque_fin", 
     "condition": "\n"
   }
@@ -2799,7 +2799,7 @@
     "weight": 1, 
     "text": "Fant\u00f4me", 
     "image": "", 
-    "on_fire": "if kingdom.get_value(\"tuto_mariage_fait\"):\n  param.next_event(\"mariagelunedemiel_success\").start()\nelse:\n  param.next_event(\"demandemariage_doublecheck\").start()\n", 
+    "on_fire": "if kingdom.get_value(\"tuto_mariage_fait\"):\n  param.next_event(\"mariagelunedemiel_success\").start()\nelse:\n  param.next_event(\"demandemariage_doublecheck\").start()\n  \nstatus=\"fantome\"\n", 
     "slug": "tuto_mariage_fille_accepte_fantome", 
     "condition": "\n"
   }
@@ -2813,7 +2813,7 @@
     "weight": 1, 
     "text": "Second fant\u00f4me du mariage", 
     "image": "", 
-    "on_fire": "if kingdom.get_value(\"tuto_mariage_fait\"):\n  param.next_event(\"mariagelunedemiel_success\").start()\nelse:\n  param.next_event(\"demandemariage_terminated\").start()\n", 
+    "on_fire": "if kingdom.get_value(\"tuto_mariage_fait\"):\n  param.next_event(\"mariagelunedemiel_success\").start()\nelse:\n  param.next_event(\"demandemariage_terminated\").start()\n  \nstatus=\"fantome\"\n", 
     "slug": "tuto_mariage_fille_accepte_fantome_2", 
     "condition": "\n"
   }
@@ -2826,7 +2826,7 @@
     "message": "", 
     "event": 3, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_intro_2\")).start()\n"
+    "on_fire": "param.next_event(\"tuto_intro_2\").start()\n"
   }
 },
 {
@@ -2837,7 +2837,7 @@
     "message": "", 
     "event": 4, 
     "condition": "kingdom.money-=85\nkingdom.save()\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_intro_3\")).start()\n"
+    "on_fire": "param.next_event(\"tuto_intro_3\").start()\n"
   }
 },
 {
@@ -2848,7 +2848,7 @@
     "message": "Grace au soutien du Roi de France, ma famille s'est install\u00e9e \u00e0 {{dynasty}}, la demeure de mes anc\u00eatres. J'ai d\u00e9bours\u00e9 85 \u00e9cus pour entamer des r\u00e9parations et recruter des serviteurs.", 
     "event": 6, 
     "condition": " ", 
-    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchatelain.fight += 1\nchatelain.save()\n\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_intro_choixcombat\")).start()\n"
+    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchatelain.fight += 1\nchatelain.save()\n\nparam.next_event(\"tuto_intro_choixcombat\").start()\n"
   }
 },
 {
@@ -2870,7 +2870,7 @@
     "message": "Grace au soutien du Roi de France, ma famille s'est install\u00e9e \u00e0 {{dynasty}}, la demeure de mes anc\u00eatres. J'ai d\u00e9bours\u00e9 85 \u00e9cus pour entamer des r\u00e9parations et recruter des serviteurs.", 
     "event": 6, 
     "condition": " ", 
-    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchatelain.diplomacy += 1\nchatelain.save()\n\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_intro_choixdiplomatie\")).start()"
+    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchatelain.diplomacy += 1\nchatelain.save()\n\nparam.next_event(\"tuto_intro_choixdiplomatie\").start()"
   }
 },
 {
@@ -2881,7 +2881,7 @@
     "message": "Grace au soutien du Roi de France, ma famille s'est install\u00e9e \u00e0 {{dynasty}}, la demeure de mes anc\u00eatres. J'ai d\u00e9bours\u00e9 85 \u00e9cus pour entamer des r\u00e9parations et recruter des serviteurs.", 
     "event": 6, 
     "condition": " ", 
-    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchatelain.scholarship += 1\nchatelain.save()\n\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_intro_choixerudition\")).start()\n"
+    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchatelain.scholarship += 1\nchatelain.save()\n\nparam.next_event(\"tuto_intro_choixerudition\").start()\n"
   }
 },
 {
@@ -2892,7 +2892,7 @@
     "message": "Nommer un [conn\u00e9table](#title) me permettra de [recruter des hommes d'armes](#mission).", 
     "event": 7, 
     "condition": " ", 
-    "on_fire": "kingdom.unlock_title(\"connetable\")\nPendingMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"tuto_recrutement\")).save()\n"
+    "on_fire": "kingdom.unlock_title(\"connetable\")\nkingdom.create_pending_mission(\"tuto_recrutement\")\n"
   }
 },
 {
@@ -2925,7 +2925,7 @@
     "message": "Les r\u00e9parations de {{dynasty}} sont termin\u00e9es, et nous devons au plus t\u00f4t d\u00e9montrer notre puissance militaire. Nommer un [ambassadeur](#title) permettrait de [justifier diplomatiquement](#mission) une attaque sur notre voisin, le seigneur {{ennemi}}.", 
     "event": 11, 
     "condition": "if kingdom.get_folk_in_title(\"ambassadeur\") is not None:\n  status=\"il n'y a pas d'ambassadeur\"\n", 
-    "on_fire": "kingdom.unlock_title(\"ambassadeur\")\nkingdom.set_value(\"tuto_ambition\", True)\nparam.pending_event.next_event(\"tuto_presque_fin\").start()\n"
+    "on_fire": "kingdom.unlock_title(\"ambassadeur\")\nkingdom.set_value(\"tuto_ambition\", True)\nparam.next_event(\"tuto_presque_fin\").start()\n"
   }
 },
 {
@@ -2936,7 +2936,7 @@
     "message": "Les r\u00e9parations de {{dynasty}} sont termin\u00e9es, et nous devons au plus t\u00f4t d\u00e9montrer notre puissance militaire. Mon ambassadeur peut maintenant [justifier diplomatiquement](#mission) une attaque sur notre voisin, le seigneur {{ennemi}}.", 
     "event": 11, 
     "condition": "if kingdom.get_folk_in_title(\"ambassadeur\") is None:\n  status=\"il n y a un ambassadeur\"", 
-    "on_fire": "kingdom.set_value(\"tuto_ambition\", True)\nparam.pending_event.next_event(\"tuto_presque_fin\").start()"
+    "on_fire": "kingdom.set_value(\"tuto_ambition\", True)\nparam.next_event(\"tuto_presque_fin\").start()"
   }
 },
 {
@@ -2947,7 +2947,7 @@
     "message": "", 
     "event": 12, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_recrutement_2\")).start()\n"
+    "on_fire": "param.next_event(\"tuto_recrutement_2\").start()\n"
   }
 },
 {
@@ -2991,7 +2991,7 @@
     "message": "Nommer un <Ma\u00eetre espion> me permettra <d'acheter le soutien de la population>.", 
     "event": 16, 
     "condition": " ", 
-    "on_fire": "kingdom.unlock_title(\"maitre_espion\")\nPendingMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"tuto_potsdevin\")).save()\n"
+    "on_fire": "kingdom.unlock_title(\"maitre_espion\")\nkingdom.create_pending_mission(\"tuto_potsdevin\")\n"
   }
 },
 {
@@ -3101,7 +3101,7 @@
     "message": "Le p\u00e8re {{cure.firs_name}} a rejoint ma cour, et occupe le titre de [cur\u00e9](title). Il peut superviser la [r\u00e9novation de l'\u00e9glise](mission).", 
     "event": 26, 
     "condition": " ", 
-    "on_fire": "PendingMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"tuto_eglise\")).save()\n"
+    "on_fire": "kingdom.create_pending_mission(\"tuto_eglise\")\n"
   }
 },
 {
@@ -3233,7 +3233,7 @@
     "message": "", 
     "event": 39, 
     "condition": " ", 
-    "on_fire": "pe=PendingMission(mission=Mission.objects.get(slug=\"escarmouche_defense\"),kingdom=kingdom,started=None)\npe.save()\npe.set_value(\"kingdom_attaquant\",param.get_value(\"kingdom_attaquant\"))\npe.set_value(\"mission_attaque\",param.get_value(\"mission_attaque\"))\npe.started=datetime.now()-param.pending_event.created"
+    "on_fire": "pm=kingdom.create_pending_mission(\"escarmouche_defense\")\npm.set_value(\"kingdom_attaquant\", param.get_value(\"kingdom_attaquant\"))\npm.set_value(\"mission_attaque\", param.get_value(\"mission_attaque\"))\npm.started=datetime.now() - param.pending_event.created\npm.save()"
   }
 },
 {
@@ -3618,7 +3618,7 @@
     "message": "J'ai d\u00e9cid\u00e9 que ma fille {{folk.2.first_name}} allait \u00e9pouser mon vieil ami {{folk.3}}. Le cur\u00e9 devra veiller \u00e0 ce que [mariage](mission) se d\u00e9roule au plus t\u00f4t.", 
     "event": 71, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_mariagepreparatifs\")).start()"
+    "on_fire": "pm=kingdom.create_pending_mission(\"marier\")\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mari\"), mission_grid=MissionGrid.objects.get(slug=\"mari\", mission=pm.mission)).save()\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mariee\"), mission_grid=MissionGrid.objects.get(slug=\"femme\", mission=pm.mission)).save()\nif kingdom.availabletitle_set.filter(title__slug=\"cure\").exists():\n  #param.pending_event.next_event(\"tuto_mariage_fille_accepte_fantome\").start()\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_mariage_fille_accepte_fantome\")\n  pe.start()\nelse:\n  param.pending_event.next_event(\"tuto_mariagepreparatifs\").start()\n"
   }
 },
 {
@@ -3717,7 +3717,7 @@
     "message": "Mon vieil ami {{folk.3}} m'a demand\u00e9 la main de ma fille, et je la lui ai accord\u00e9. Le cur\u00e9 devra les [unir devant Dieu](mission).", 
     "event": 56, 
     "condition": "  ", 
-    "on_fire": "param.set_value(\"mari\", folks[3])\nparam.set_value(\"mariee\", folks[2])\nparam.pending_event.next_event(\"tuto_mariagepreparatifs\").start()\n"
+    "on_fire": "param.set_value(\"mari\", folks[3])\nparam.set_value(\"mariee\", folks[2])\npm=kingdom.create_pending_mission(\"marier\")\nkingdom.unlock_mission(\"marier\")\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mari\"), mission_grid=MissionGrid.objects.get(slug=\"mari\", mission=pm.mission)).save()\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mariee\"), mission_grid=MissionGrid.objects.get(slug=\"femme\", mission=pm.mission)).save()\nif kingdom.availabletitle_set.filter(title__slug=\"cure\").exists():\n  #param.pending_event.next_event(\"tuto_mariage_fille_accepte_fantome\").start()\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_mariage_fille_accepte_fantome\")\n  pe.start()\nelse:\n  param.pending_event.next_event(\"tuto_mariagepreparatifs\").start()\n"
   }
 },
 {
@@ -4267,7 +4267,7 @@
     "message": "Les r\u00e9parations de {{dynasty}} sont termin\u00e9e. Un grand jour pour notre famille.", 
     "event": 11, 
     "condition": "\n", 
-    "on_fire": "kingdom.set_value(\"tuto_ambition\", True)\nparam.pending_event.next_event(\"tuto_presque_fin\").start()"
+    "on_fire": "kingdom.set_value(\"tuto_ambition\", True)\nparam.next_event(\"tuto_presque_fin\").start()"
   }
 },
 {
@@ -4289,7 +4289,7 @@
     "message": "Je dispose maintenant d'un casus belli contre {{cible}}.", 
     "event": 130, 
     "condition": "\n", 
-    "on_fire": "PendingMission(mission=Mission.objects.get(slug=\"tuto_escarmouche\"),kingdom=kingdom).save()\n\n"
+    "on_fire": "kingdom.create_pending_mission(\"tuto_escarmouche\")\n"
   }
 },
 {
@@ -4553,7 +4553,7 @@
     "message": "J'ai accept\u00e9 que {{homme}} et {{femme}} se marient.", 
     "event": 143, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_mariagepreparatifs\").start()"
+    "on_fire": "pm=kingdom.create_pending_mission(\"marier\")\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mari\"), mission_grid=MissionGrid.objects.get(slug=\"mari\", mission=pm.mission)).save()\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mariee\"), mission_grid=MissionGrid.objects.get(slug=\"femme\", mission=pm.mission)).save()\nkingdom.unlock_mission(\"marier\")\nif kingdom.availabletitle_set.filter(title__slug=\"cure\").exists():\n  #param.pending_event.next_event(\"tuto_mariage_fille_accepte_fantome\").start()\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_mariage_fille_accepte_fantome\")\n  pe.start()\nelse:\n  param.pending_event.next_event(\"tuto_mariagepreparatifs\").start()"
   }
 },
 {
@@ -4883,7 +4883,7 @@
     "message": "Des bandits s\u2019appr\u00eatent \u00e0 mettre mes terres \u00e0 sac. Je dois [mener mes troupes \u00e0 leur rencontre](mission). ", 
     "event": 164, 
     "condition": "\n", 
-    "on_fire": "pe=PendingMission(mission=Mission.objects.get(slug=\"tuto_bandits_attaque\"),kingdom=kingdom).save()\n"
+    "on_fire": "kingdom.create_pending_mission(\"tuto_bandits_attaque\")\n"
   }
 },
 {
@@ -4971,7 +4971,7 @@
     "message": "Je dois [d\u00e9signer un mentor](mission) pour s'occuper de l'\u00e9ducation de {{mioche}}.", 
     "event": 174, 
     "condition": "\n", 
-    "on_fire": "kingdom.unlock_title(\"chambellan\")\nm = Mission.objects.get(slug=\"tuto_nommer_mentor\")\npe = PendingMission(mission=m, kingdom=kingdom)\npe.save()\nPendingMissionAffectation(pending_mission=pe, folk=param.get_value(\"mioche\"), mission_grid=MissionGrid.objects.get(slug=\"enfant\", mission=m)).save()\n"
+    "on_fire": "kingdom.unlock_title(\"chambellan\")\npm = kingdom.create_pending_mission(\"tuto_nommer_mentor\")\n\n# Pr\u00e9 remplir la mission avec le mioche\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mioche\"), mission_grid=MissionGrid.objects.get(slug=\"enfant\", mission=pm.mission)).save()\n"
   }
 },
 {
@@ -4982,7 +4982,7 @@
     "message": "", 
     "event": 75, 
     "condition": "\n", 
-    "on_fire": "pe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"demandemariage_doublecheck\")\npe.start()"
+    "on_fire": "pe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_mariage_fille_accepte_fantome\")\npe.start()\n#param.pending_event.next_event(\"tuto_mariage_fille_accepte_fantome\").start()"
   }
 },
 {
@@ -4993,7 +4993,7 @@
     "message": "{{mari}} attend impatiemment son mariage avec {{mariee}}.", 
     "event": 175, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"demandemariage_terminated\")).start()"
+    "on_fire": "pe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_mariage_fille_accepte_fantome_2\")\npe.start()\n#param.pending_event.next_event(Event.objects.get(slug=\"demandemariage_terminated\")).start()\n\n"
   }
 },
 {
@@ -5521,7 +5521,7 @@
     "message": "", 
     "event": 226, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_scandale_fantome\")\n"
   }
 },
 {
@@ -5534,18 +5534,6 @@
     "started": "2013-08-27T21:02:55.336", 
     "text": "Sire Charles de Gourville a accept\u00e9 mon invitation, et boit \u00e0 pr\u00e9sent mon vin en compagnie de mes enfants et de Sorin. Il semblait d\u2019abord avoir des r\u00e9serves au sujet de mon nouveau r\u00e8gne, mais le breuvage aidant, mon badinage et mes questions polies ont fini par lui faire baisser sa garde. Nous \u00e9changeons \u00e0 pr\u00e9sent des souvenirs de bataille, et il rit avec moi sans r\u00e9aliser que j\u2019exag\u00e8re copieusement mes exploits pass\u00e9. Un sourire bienveillant aux l\u00e8vres, je lui ressers une coupe de nectar.", 
     "event": 19
-  }
-},
-{
-  "pk": 1242, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 64, 
-    "is_started": true, 
-    "created": "2013-08-31T20:08:28.307", 
-    "started": "2013-08-31T20:08:28.310", 
-    "text": "Il y eut un soir, il y eut un matin.\r\nEt ce 30 fois de suite.", 
-    "event": 225
   }
 },
 {
@@ -5573,6 +5561,18 @@
   }
 },
 {
+  "pk": 1343, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 64, 
+    "is_started": true, 
+    "created": "2013-09-01T01:07:25.049", 
+    "started": "2013-09-01T01:07:25.052", 
+    "text": "Il y eut un soir, il y eut un matin.\r\nEt ce 30 fois de suite.", 
+    "event": 225
+  }
+},
+{
   "pk": 1024, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -5581,17 +5581,6 @@
     "text": "\u00ab D\u00eetes moi, sire , que diriez d\u2019entrer \u00e0 mon service ? \u00bb", 
     "folk": null, 
     "event_action": 25
-  }
-},
-{
-  "pk": 1232, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 1242, 
-    "message": "Un mois s'est \u00e9coul\u00e9.", 
-    "text": "Le temps passe...", 
-    "folk": null, 
-    "event_action": 293
   }
 },
 {
@@ -5628,6 +5617,17 @@
   }
 },
 {
+  "pk": 1363, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 1343, 
+    "message": "Un mois s'est \u00e9coul\u00e9.", 
+    "text": "Le temps passe...", 
+    "folk": null, 
+    "event_action": 293
+  }
+},
+{
   "pk": 1653, 
   "model": "event._pendingeventvariable", 
   "fields": {
@@ -5646,15 +5646,6 @@
   }
 },
 {
-  "pk": 2084, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1242, 
-    "name": "slug", 
-    "value": "tuto_scandale_fantome"
-  }
-},
-{
   "pk": 2153, 
   "model": "event._pendingeventvariable", 
   "fields": {
@@ -5670,6 +5661,15 @@
     "pending_event": 1321, 
     "name": "slug", 
     "value": "tuto_ambition"
+  }
+},
+{
+  "pk": 2332, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1343, 
+    "name": "slug", 
+    "value": "tuto_bandits_fantome"
   }
 }
 ]

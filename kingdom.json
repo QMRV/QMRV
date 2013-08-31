@@ -47,11 +47,11 @@
   "pk": 64, 
   "model": "kingdom.kingdom", 
   "fields": {
-    "soldiers": 3, 
+    "soldiers": 12, 
     "prestige": 0, 
-    "money": 30, 
+    "money": 75, 
     "user": 38, 
-    "population": 20
+    "population": 80
   }
 },
 {
@@ -359,6 +359,24 @@
   "fields": {
     "kingdom": 67, 
     "name": "tuto_facheux_fantome", 
+    "value": 1
+  }
+},
+{
+  "pk": 384, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 64, 
+    "name": "tuto_mariage_fait", 
+    "value": 1
+  }
+},
+{
+  "pk": 385, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 64, 
+    "name": "tuto_scandale_fantome", 
     "value": 1
   }
 },
@@ -1345,7 +1363,7 @@
     "avatar": 10, 
     "birth": "2013-08-14T19:47:02.332", 
     "mother": null, 
-    "loyalty": 70, 
+    "loyalty": 75, 
     "spouse": null, 
     "quality_set": [
       5
@@ -1363,15 +1381,15 @@
     "last_name": "de jules", 
     "diplomacy": 11, 
     "father": 6727, 
-    "plot": 12, 
+    "plot": 14, 
     "scholarship": 8, 
     "sex": "f", 
     "disabled": false, 
     "death": null, 
     "avatar": 58, 
-    "birth": "2013-08-15T19:47:02.429", 
+    "birth": "2013-08-15T19:47:02", 
     "mother": null, 
-    "loyalty": 60, 
+    "loyalty": 44, 
     "spouse": null, 
     "quality_set": [
       4
@@ -1395,9 +1413,9 @@
     "disabled": false, 
     "death": null, 
     "avatar": 24, 
-    "birth": "2013-07-27T19:47:02.523", 
+    "birth": "2013-07-27T19:47:02", 
     "mother": null, 
-    "loyalty": 85, 
+    "loyalty": 90, 
     "spouse": null, 
     "quality_set": [], 
     "mentor": null
@@ -1421,7 +1439,7 @@
     "avatar": 38, 
     "birth": "2013-08-06T19:55:04.757", 
     "mother": null, 
-    "loyalty": 50, 
+    "loyalty": 54, 
     "spouse": null, 
     "quality_set": [], 
     "mentor": null
@@ -1445,7 +1463,7 @@
     "avatar": 11, 
     "birth": "2013-07-27T19:56:10.341", 
     "mother": null, 
-    "loyalty": 55, 
+    "loyalty": 59, 
     "spouse": null, 
     "quality_set": [
       22, 
@@ -3316,6 +3334,127 @@
     "kingdom": 67, 
     "content": "Un mois s'est \u00e9coul\u00e9.", 
     "created": "2013-08-31T20:56:07.226", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 885, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 64, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-01T00:44:42.264", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 886, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 64, 
+    "content": "None", 
+    "created": "2013-09-01T00:44:53.462", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 887, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 64, 
+    "content": "Mon vieil ami  m'a demand\u00e9 la main de ma fille, et je la lui ai accord\u00e9. Le cur\u00e9 devra les [unir devant Dieu](mission).", 
+    "created": "2013-09-01T00:52:15.358", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 888, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 64, 
+    "content": "J'ai eu une agr\u00e9able conversation avec Aimeri de jules. \r\n```\r\n+2 de Loyaut\u00e9\r\n```\r\n ", 
+    "created": "2013-09-01T00:57:46.521", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 889, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 64, 
+    "content": "J'ai bu une coupe avec Fermand d'Asques... ```+1 de Loyaut\u00e9```", 
+    "created": "2013-09-01T00:57:56.953", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 890, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 64, 
+    "content": "...puis une de plus, qui m'a fait tourner la t\u00eate. ```+1 de Loyaut\u00e9```", 
+    "created": "2013-09-01T00:58:10.818", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 891, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 64, 
+    "content": "Le banquet s'est termin\u00e9 dans la bonne humeur. ```+3 de Loyaut\u00e9 g\u00e9n\u00e9rale.```", 
+    "created": "2013-09-01T00:58:16.688", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 892, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 64, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-01T00:58:20.990", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 893, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 64, 
+    "content": "None", 
+    "created": "2013-09-01T01:05:43.115", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 894, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 64, 
+    "content": "Mon vieil ami  m'a demand\u00e9 la main de ma fille, et je la lui ai accord\u00e9. Le cur\u00e9 devra les [unir devant Dieu](mission).", 
+    "created": "2013-09-01T01:07:10.564", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 895, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 64, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-01T01:07:18.970", 
     "read": null, 
     "level": 1
   }
