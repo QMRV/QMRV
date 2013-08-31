@@ -403,7 +403,7 @@
     "category": null, 
     "name": "Pot de vin", 
     "weight": 1, 
-    "text": "Je prononce les paroles d\u2019usage, et il y r\u00e9pond avec ferveur, jurant de me servir avec honneur et de combattre avec bravoure. \u00ab Relevez-vous, sire {{knight.first_name}}. La maison {{dynastie}} accepte votre all\u00e9geance. \u00bb\r\n\r\n\u2018\u2019\u2019{{knight.first_name}} {{knight.last_name}} a ralli\u00e9 ma cour\u2019\u2019\u2019", 
+    "text": "Je prononce les paroles d\u2019usage, et il y r\u00e9pond avec ferveur, jurant de me servir avec honneur et de combattre avec bravoure. \u00ab Relevez-vous, sire {{knight.first_name}}. La maison {{dynastie}} accepte votre all\u00e9geance. \u00bb\r\n\r\n   {{knight.first_name}} {{knight.last_name}} a ralli\u00e9 ma cour.", 
     "image": "events/503_3.jpg", 
     "on_fire": "param.set_value(\"dynastie\",kingdom.user.username)\n", 
     "slug": "tuto_potsdevin_4", 
@@ -459,7 +459,7 @@
     "category": null, 
     "name": "Pot de vin", 
     "weight": 1, 
-    "text": "```\r\n-12 ecus\r\n```\r\n\r\nLes jours suivants, {{title.maitre_espion.first_name}} a rencontr\u00e9 en secret les gueux les plus influents et leur a vers\u00e9  de g\u00e9n\u00e9reux pots de vin en \u00e9change de leur soutien. Sous leur influence, la population m\u2019a accept\u00e9 comme suzerain l\u00e9gitime.", 
+    "text": "    -12 ecus\r\n\r\nLes jours suivants, {{title.maitre_espion.first_name}} a rencontr\u00e9 en secret les gueux les plus influents et leur a vers\u00e9  de g\u00e9n\u00e9reux pots de vin en \u00e9change de leur soutien. Sous leur influence, la population m\u2019a accept\u00e9 comme suzerain l\u00e9gitime.", 
     "image": "", 
     "on_fire": "kingdom.money-=12\nkingdom.save()", 
     "slug": "tuto_potsdevin_5", 
@@ -781,7 +781,7 @@
     "category": null, 
     "name": "Scandale", 
     "weight": 1, 
-    "text": "Marie a \u00e9t\u00e9 brutalement tir\u00e9e du lit, et escort\u00e9e jusqu'au pont levis par deux gardes. Je ne lui ai laiss\u00e9 que ses v\u00eatements sur le dos, et depuis le haut des remparts, je peux la voir frissonner dans froid de la nuit. A mes c\u00f4t\u00e9s, {{folks.1.first_name}} essaye de rester digne malgr\u00e9 les larmes qui perlent dans ses yeux. Il ne dit pas un mot, mais je le sens bouillir de col\u00e8re. Sa s\u0153ur se tient en retrait, et le regard qu'elle me lance est charg\u00e9 de reproches. Le visage ferm\u00e9, je me d\u00e9tourne et laisse mon fils \u00e0 son chagrin imb\u00e9cile.\r\n```\r\n-25 de Loyaut\u00e9 pour {{folks.1.first_name}}.\r\n-5 de Loyaut\u00e9 pour {{folks.2.first_name}}.```", 
+    "text": "Marie a \u00e9t\u00e9 brutalement tir\u00e9e du lit, et escort\u00e9e jusqu'au pont levis par deux gardes. Je ne lui ai laiss\u00e9 que ses v\u00eatements sur le dos, et depuis le haut des remparts, je peux la voir frissonner dans froid de la nuit. A mes c\u00f4t\u00e9s, {{folks.1.first_name}} essaye de rester digne malgr\u00e9 les larmes qui perlent dans ses yeux. Il ne dit pas un mot, mais je le sens bouillir de col\u00e8re. Sa s\u0153ur se tient en retrait, et le regard qu'elle me lance est charg\u00e9 de reproches. Le visage ferm\u00e9, je me d\u00e9tourne et laisse mon fils \u00e0 son chagrin imb\u00e9cile.\r\n\r\n    -25 de Loyaut\u00e9 pour {{folks.1.first_name}}.\r\n    -5 de Loyaut\u00e9 pour {{folks.2.first_name}}.", 
     "image": "events/0.jpg", 
     "on_fire": " ", 
     "slug": "tuto_scandale_fils_choixservante", 
@@ -907,9 +907,9 @@
     "category": null, 
     "name": "La Sainte Eglise vous envoie un pr\u00eatre", 
     "weight": 1, 
-    "text": "Tout sourire, le pr\u00eatre s'incline l\u00e9g\u00e8rement. \"Messire, je suis venu vous annoncer que l\u2019\u00e9v\u00each\u00e9 reconnait la justesse de votre cause. J'ai \u00e9t\u00e9 d\u00e9p\u00each\u00e9 dans votre cour vous conseiller et vous aider \u00e0 guider vos sujets dans les pas du Seigneur\".\r\n\r\n```\r\nVous avez \u00e9t\u00e9 rejoint par le p\u00e8re {{pretre}}. Il occupe le titre de Cur\u00e9.\r\n```", 
+    "text": "Tout sourire, le pr\u00eatre s'incline l\u00e9g\u00e8rement.\r\n\"Messire, je suis venu vous annoncer que l\u2019\u00e9v\u00each\u00e9 reconnait la justesse de votre cause. J'ai \u00e9t\u00e9 d\u00e9p\u00each\u00e9 dans votre cour vous conseiller et vous aider \u00e0 guider vos sujets dans les pas du Seigneur\".\r\n\r\n    Vous avez \u00e9t\u00e9 rejoint par le p\u00e8re {{pretre}}. Il occupe le titre de Cur\u00e9.", 
     "image": "events/463_1.jpg", 
-    "on_fire": "pretre = call_function(\"creer_folk\", kingdom=kingdom, plot_min=2, fight_min=2, scholarship_min=8, diplomacy_min=6, max_carac =32, sex=\"m\", loyalty=60, birth=(datetime.now() - timedelta(days=35)), trait=\"pretre\")\nparam.set_value(\"pretre\", pretre)\nkingdom.unlock_title(\"cure\")\n", 
+    "on_fire": "pretre = call_function(\"creer_folk\", kingdom=kingdom, plot_min=2, fight_min=2, scholarship_min=8, diplomacy_min=6, max_carac =32, sex=\"m\", loyalty=60, birth=(datetime.now() - timedelta(days=35)), trait=\"pretre\")\nparam.set_value(\"pretre\", pretre)\nkingdom.unlock_title(\"cure\")\npretre.set_title(\"cure\")\n\n", 
     "slug": "tuto_pretre_eveche", 
     "condition": "\n"
   }
@@ -1061,7 +1061,7 @@
     "category": null, 
     "name": "Chasse", 
     "weight": 1, 
-    "text": "Apr\u00e8s une longue matin\u00e9e \u00e0 courir les sous-bois, nous n'avons attrap\u00e9 qu'une paire de lapins de garenne. Les chiens comme nos montures commencent \u00e0 montrer des signes de  fatigues, et je d\u00e9cide qu'il est temps de rentrer au ch\u00e2teau. M\u00eame si notre prise est maigre, nous avons pass\u00e9 un moment agr\u00e9able et faisons chemin en discutant avec entrain.\r\n```\r\nTous les chasseurs gagnent +2 de Loyaut\u00e9.\r\n```", 
+    "text": "Apr\u00e8s une longue matin\u00e9e \u00e0 courir les sous-bois, nous n'avons attrap\u00e9 qu'une paire de lapins de garenne. Les chiens comme nos montures commencent \u00e0 montrer des signes de  fatigues, et je d\u00e9cide qu'il est temps de rentrer au ch\u00e2teau. M\u00eame si notre prise est maigre, nous avons pass\u00e9 un moment agr\u00e9able et faisons chemin en discutant avec entrain.\r\n\r\n    Tous les chasseurs gagnent +2 de Loyaut\u00e9.", 
     "image": "events/29_3.jpg", 
     "on_fire": "for chasseur in param.get_value(\"chasseurs\"):\n  chasseur.loyalty+=2\n  chasseur.save()\n", 
     "slug": "chasse_2", 
@@ -1075,7 +1075,7 @@
     "category": null, 
     "name": "Chasse", 
     "weight": 1, 
-    "text": "Alors que {{chasseur}} fonce sur le cerf, ce dernier fait une brusque embard\u00e9e. Le cheval du malheureux se cabre brusquement et l'envoie rouler au sol. Nous suivons ses cris de douleurs, et le d\u00e9couvrons gisant  au milieu des racines, son bras droit tordu dans un angle peu naturel. Je secoue la t\u00eate, d\u00e9pit\u00e9, et ordonne le retour au ch\u00e2teau.\r\n```\r\n{{chasseur}} re\u00e7oit le Trait Bless\u00e9.\r\n```", 
+    "text": "Alors que {{chasseur}} fonce sur le cerf, ce dernier fait une brusque embard\u00e9e. Le cheval du malheureux se cabre brusquement et l'envoie rouler au sol. Nous suivons ses cris de douleurs, et le d\u00e9couvrons gisant  au milieu des racines, son bras droit tordu dans un angle peu naturel. Je secoue la t\u00eate, d\u00e9pit\u00e9, et ordonne le retour au ch\u00e2teau.\r\n\r\n    {{chasseur}} re\u00e7oit le Trait Bless\u00e9.", 
     "image": "events/29_4.jpg", 
     "on_fire": "param.get_value(\"chasseur\").add_quality(\"blesse\")\n", 
     "slug": "chasse_failure", 
@@ -1145,7 +1145,7 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "Je d\u00e9ploie tout mes talents de diplomate pour faire tomber {{convive}} sous mon charme. Mes compliments, plaisanteries et cajoleries allument une lueur d'admiration dans son regard.\r\n```\r\n+5 de Loyaut\u00e9\r\n```", 
+    "text": "Je d\u00e9ploie tout mes talents de diplomate pour faire tomber {{convive}} sous mon charme. Mes compliments, plaisanteries et cajoleries allument une lueur d'admiration dans son regard.\r\n\r\n    +5 de Loyaut\u00e9", 
     "image": "events/88_4.jpg", 
     "on_fire": "\n", 
     "slug": "banquet_conversation_teaching", 
@@ -1159,7 +1159,7 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "{{convive}} et moi{% if chatelain.diplomacy >= 17 %} dissertons sur les tracas du si\u00e8cle.\r\n```\r\n+5 de Loyaut\u00e9\r\n```\r\n{% elif chatelain.diplomacy >= 15 %} parlons haute politique.\r\n```\r\n+4 de Loyaut\u00e9\r\n```\r\n{% elif chatelain.diplomacy >= 13 %} \u00e9changeons des anecdotes amusantes.\r\n```\r\n+3 de Loyaut\u00e9\r\n```\r\n{% elif chatelain.fight >= 15 and convive.fight >= 15 and convive.sex == \"m\" %} \u00e9changeons des souvenirs de bataille.\r\n```\r\n+2 de Loyaut\u00e9\r\n```\r\n{% elif chatelain.scholarship >= 11 and convive.scholarship >= 11 %} parlons \u00e0 b\u00e2ton rompu de st Augustin.\r\n```\r\n+2 de Loyaut\u00e9\r\n```\r\n{% elif chatelain.plot >= 11 and convive.plot >= 11 %} parlons \u00e0 mot couverts des ragots de la cour.\r\n```\r\n+2 de Loyaut\u00e9\r\n```\r\n{% elif chatelain.diplomacy >= 10 %} parlons du temps et des saisons.\r\n```\r\n+2 de Loyaut\u00e9\r\n```\r\n{% else %} parlons de tout et de rien\r\n```\r\n+1 de Loyaut\u00e9\r\n```\r\n{% endif %} ", 
+    "text": "{{convive}} et moi{% if chatelain.diplomacy >= 17 %} dissertons sur les tracas du si\u00e8cle.\r\n\r\n    +5 de Loyaut\u00e9\r\n\r\n{% elif chatelain.diplomacy >= 15 %} parlons haute politique.\r\n    +4 de Loyaut\u00e9\r\n\r\n{% elif chatelain.diplomacy >= 13 %} \u00e9changeons des anecdotes amusantes.\r\n\r\n    +3 de Loyaut\u00e9\r\n\r\n{% elif chatelain.fight >= 15 and convive.fight >= 15 and convive.sex == \"m\" %} \u00e9changeons des souvenirs de bataille.\r\n\r\n    +2 de Loyaut\u00e9\r\n\r\n{% elif chatelain.scholarship >= 11 and convive.scholarship >= 11 %} parlons \u00e0 b\u00e2ton rompu de St Augustin.\r\n\r\n    +2 de Loyaut\u00e9\r\n\r\n{% elif chatelain.plot >= 11 and convive.plot >= 11 %} parlons \u00e0 mot couverts des ragots de la cour.\r\n\r\n   +2 de Loyaut\u00e9\r\n\r\n{% elif chatelain.diplomacy >= 10 %} parlons du temps et des saisons.\r\n\r\n    +2 de Loyaut\u00e9\r\n\r\n{% else %} parlons de tout et de rien\r\n\r\n    +1 de Loyaut\u00e9\r\n\r\n{% endif %}", 
     "image": "events/88_21.jpg", 
     "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nparam.set_value(\"chatelain\", chatelain)\nconvive = param.get_value(\"convive\")\n\nif chatelain.diplomacy >= 17:\n  convive.loyalty += 5\nelif chatelain.diplomacy >= 15:\n  convive.loyalty += 4\nelif chatelain.diplomacy >= 13:\n  convive.loyalty += 3\nelif chatelain.fight >= 11 and convive.fight>11 and convive.sex == \"m\":\n  convive.loyalty += 2\nelif chatelain.scholarship >= 11 and convive.scholarship >= 11:\n  convive.loyalty += 2\nelif chatelain.plot >= 11 and convive.plot >= 11:\n  convive.loyalty += 2\nelif chatelain.diplomacy >= 10:\n  convive.loyalty += 2\nelse:\n  convive.loyalty += 1\nconvive.save()\n", 
     "slug": "banquet_conversation_success", 
@@ -1215,7 +1215,7 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "Avant que j\u2019ai pu l\u2019approcher, {{danseuse}} s\u2019est lev\u00e9e et a choisit un autre danseur.\r\n```\r\n-1 de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n```", 
+    "text": "Avant que j\u2019ai pu l\u2019approcher, {{danseuse}} s\u2019est lev\u00e9e et a choisit un autre danseur.\r\n\r\n    -1 de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n", 
     "image": "events/88_8.jpg", 
     "on_fire": "\n", 
     "slug": "banquet_danse_rateau", 
@@ -1243,7 +1243,7 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "{{soiffard.first_name}} se renfrogne, hoche la t\u00eate et s\u2019\u00e9loigne sans un mot.\r\n```\r\n-1 de Loyaut\u00e9.\r\n```", 
+    "text": "{{soiffard.first_name}} se renfrogne, hoche la t\u00eate et s\u2019\u00e9loigne sans un mot.\r\n\r\n   -1 de Loyaut\u00e9.", 
     "image": "events/88_19.jpg", 
     "on_fire": "\n\n", 
     "slug": "banquet_beuverie_vexe", 
@@ -1257,7 +1257,7 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "Le vin me r\u00e9chauffe les entrailles, et la compagnie de {{soiffard.first_name}} me parait plus agr\u00e9able. Il s'essuie la bouche et souri, alors que le serviteur rempli \u00e0 nouveau nos coupes.\r\n```\r\n+1 de Loyaut\u00e9 pour {{soiffard}}.\r\n```", 
+    "text": "Le vin me r\u00e9chauffe les entrailles, et la compagnie de {{soiffard.first_name}} me parait plus agr\u00e9able. Il s'essuie la bouche et souri, alors que le serviteur rempli \u00e0 nouveau nos coupes.\r\n\r\n   +1 de Loyaut\u00e9 pour {{soiffard}}.", 
     "image": "events/88_18.jpg", 
     "on_fire": "soiffard = param.get_value(\"soiffard\")\nsoiffard.loyalty +=1\nsoiffard.save()\n", 
     "slug": "banquet_beuverie_2", 
@@ -1271,7 +1271,7 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "{{soiffard}} et moi vidons nos coupes de concert, et faisons tinter le m\u00e9tal sur la table. Il s\u2019essuie bruyamment la bouche et fait signe au serviteur de nous en servir une de plus.\r\n```\r\n+1 de Loyaut\u00e9 pour {{soiffard}}.\r\n```", 
+    "text": "{{soiffard}} et moi vidons nos coupes de concert, et faisons tinter le m\u00e9tal sur la table. Il s\u2019essuie bruyamment la bouche et fait signe au serviteur de nous en servir une de plus.\r\n\r\n   +1 de Loyaut\u00e9 pour {{soiffard}}.", 
     "image": "events/88_10.jpg", 
     "on_fire": "soiffard = param.get_value(\"soiffard\")\nsoiffard.loyalty += 1\nsoiffard.save()\n", 
     "slug": "banquet_beuverie_3", 
@@ -1285,7 +1285,7 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "Alors que je repose ma coupe, la salle commence \u00e0 tourner et la musique parait plus lointaine. Je n\u2019aurais peut-\u00eatre pas du boire autant. {{soiffard}}, \u00e9m\u00e9ch\u00e9 lui aussi, regarde avec un sourire b\u00e9at le serviteur qui nous resserre \u00e0 tous deux une rasade.\r\n```\r\n+1 de Loyaut\u00e9 pour {{soiffard}}.\r\n```", 
+    "text": "Alors que je repose ma coupe, la salle commence \u00e0 tourner et la musique parait plus lointaine. Je n\u2019aurais peut-\u00eatre pas du boire autant. {{soiffard}}, \u00e9m\u00e9ch\u00e9 lui aussi, regarde avec un sourire b\u00e9at le serviteur qui nous resserre \u00e0 tous deux une rasade.\r\n\r\n    +1 de Loyaut\u00e9 pour {{soiffard}}.", 
     "image": "events/88_11.jpg", 
     "on_fire": "soiffard = param.get_value(\"soiffard\")\nsoiffard.loyalty += 1\nsoiffard.save() ", 
     "slug": "banquet_beuverie_pompete", 
@@ -1299,7 +1299,7 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "Ma vue se brouille, alors que l\u2019alcool envahi mon cerveau. J'entends au loin les \u00e9chos de la musique et la voix de {{soiffard}} qui me demande si je me sens bien. R\u00e9primant un haut le c\u0153ur, je m\u2019agrippe \u00e0 la table et t\u00e2che de rassembler mes esprits.\r\n```\r\n+1 de Loyaut\u00e9 pour {{soiffard}}.\r\n```", 
+    "text": "Ma vue se brouille, alors que l\u2019alcool envahi mon cerveau. J'entends au loin les \u00e9chos de la musique et la voix de {{soiffard}} qui me demande si je me sens bien. R\u00e9primant un haut le c\u0153ur, je m\u2019agrippe \u00e0 la table et t\u00e2che de rassembler mes esprits.\r\n\r\n   +1 de Loyaut\u00e9 pour {{soiffard}}.", 
     "image": "events/88_12.jpg", 
     "on_fire": "soiffard = param.get_value(\"soiffard\")\nsoiffard.loyalty += 1\nsoiffard.save()", 
     "slug": "banquet_beuverie_ivre", 
@@ -1327,7 +1327,7 @@
     "category": null, 
     "name": "Ch\u00e2telain gagne F\u00eatard", 
     "weight": 1, 
-    "text": "On ne vit qu'une fois!\r\n```\r\n{{title.chatelain}} re\u00e7oit le Trait F\u00eatard.\r\n```", 
+    "text": "On ne vit qu'une fois!\r\n\r\n    {{title.chatelain}} re\u00e7oit le Trait F\u00eatard.", 
     "image": "events/325_4.jpg", 
     "on_fire": "\n", 
     "slug": "chatelain_getfetard", 
@@ -1341,7 +1341,7 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "Ce matin, je me suis r\u00e9veill\u00e9 \u00e9croul\u00e9 sur la table, mes beaux v\u00eatements tach\u00e9s de vin et de vomit. Tout le monde s\u2019est retir\u00e9 en me laissant \u00e0 mon sort, \u00e9chou\u00e9 au milieu des gobelets vides et des autres pochetrons. Ma t\u00eate... ma pauvre t\u00eate...\r\n```\r\n-3 de Loyaut\u00e9 g\u00e9n\u00e9rale\r\n```", 
+    "text": "Ce matin, je me suis r\u00e9veill\u00e9 \u00e9croul\u00e9 sur la table, mes beaux v\u00eatements tach\u00e9s de vin et de vomit. Tout le monde s\u2019est retir\u00e9 en me laissant \u00e0 mon sort, \u00e9chou\u00e9 au milieu des gobelets vides et des autres pochetrons. Ma t\u00eate... ma pauvre t\u00eate...\r\n\r\n   -3 de Loyaut\u00e9 g\u00e9n\u00e9rale.", 
     "image": "events/503_6.jpg", 
     "on_fire": "call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=2, perte_max=4)\n", 
     "slug": "banquet_beuverie_blackout", 
@@ -1411,7 +1411,7 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "{{loyaliste}} se redresse, se racle la gorge, et propose un toast \u00e0 ma sant\u00e9. Dans un bel ensemble, la cour l\u00e8ve son verre et me souhaite une vie longue et heureuse.\r\n```\r\n+1 de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n```", 
+    "text": "{{loyaliste}} se redresse, se racle la gorge, et propose un toast \u00e0 ma sant\u00e9. Dans un bel ensemble, la cour l\u00e8ve son verre et me souhaite une vie longue et heureuse.\r\n\r\n    +1 de Loyaut\u00e9 g\u00e9n\u00e9rale.", 
     "image": "events/88_16.jpg", 
     "on_fire": " ", 
     "slug": "banquet_toast_loyaliste", 
@@ -1425,7 +1425,7 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "Avec un sourire narquois, {{fucker}} l\u00e8ve son verre du bout des doigts et propose un toast \u00e0 ma sant\u00e9. Son ton est lourd d\u2019ironie, et il n\u2019\u00e9chappe \u00e0 personne qu\u2019il s\u2019agit l\u00e0 d\u2019une insulte d\u00e9guis\u00e9e.\r\n```\r\n-1 de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n```", 
+    "text": "Avec un sourire narquois, {{fucker}} l\u00e8ve son verre du bout des doigts et propose un toast \u00e0 ma sant\u00e9. Son ton est lourd d\u2019ironie, et il n\u2019\u00e9chappe \u00e0 personne qu\u2019il s\u2019agit l\u00e0 d\u2019une insulte d\u00e9guis\u00e9e.\r\n\r\n    -1 de Loyaut\u00e9 g\u00e9n\u00e9rale.", 
     "image": "events/88_20.jpg", 
     "on_fire": " ", 
     "slug": "banquet_toast_fucker", 
@@ -1439,7 +1439,7 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "La f\u00eate se poursuit jusque tard dans la nuit, et tout le monde danse, trinque et ripaille \u00e0 sati\u00e9t\u00e9. Ils vont se coucher un \u00e0 un avec le sourire aux l\u00e8vres, apr\u00e8s m\u2019avoir remerci\u00e9 pour mon hospitalit\u00e9.\r\n```\r\n+3 de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n```", 
+    "text": "La f\u00eate se poursuit jusque tard dans la nuit, et tout le monde danse, trinque et ripaille \u00e0 sati\u00e9t\u00e9. Ils vont se coucher un \u00e0 un avec le sourire aux l\u00e8vres, apr\u00e8s m\u2019avoir remerci\u00e9 pour mon hospitalit\u00e9.\r\n\r\n    +3 de Loyaut\u00e9 g\u00e9n\u00e9rale.", 
     "image": "events/88_17.jpg", 
     "on_fire": "\n", 
     "slug": "banquet_ending", 
@@ -1621,11 +1621,11 @@
     "category": null, 
     "name": "Soeurette", 
     "weight": 1, 
-    "text": "Elle sourit, sans se d\u00e9partir air hautain. \"Merci, mon seigneur. Je suis certaine que vous en trouverez votre maison renforc\u00e9e\". Sur un regard de sa part, {{mioche.first_name}} ajoute \"Merci mon oncle\".\r\n\r\n```\r\n{{soeur}}, {{mioche}} et {{chiard}} vous ont ont rejoint. {{chiard.first_name}} n'a que 1 ans, et n\u2019appara\u00eetra dans votre cour qu'\u00e0 l'age de 6 ans.\r\n```", 
+    "text": "Elle sourit, sans se d\u00e9partir de son air hautain. \"Merci, mon seigneur. Je suis certaine que vous en trouverez votre maison renforc\u00e9e\". Sur un regard de sa part, {{mioche.first_name}} ajoute \"Merci mon oncle\".\r\n\r\n    {{soeur}}, {{mioche}} et {{chiard}} vous ont ont rejoint. {{chiard.first_name}} n'a que 1 ans, et n\u2019appara\u00eetra dans votre cour qu'\u00e0 l'age de 6 ans.\r\n", 
     "image": "events/361_7.jpg", 
     "on_fire": "soeur = param.get_value(\"soeur\")\nmioche = param.get_value(\"mioche\")\nchiard = param.get_value(\"chiard\")\n\nsoeur.kingdom = kingdom\nmioche.kingdom = kingdom\nchiard.kingdom = kingdom\n\nsoeur.save()\nmioche.save()\nchiard.save()", 
     "slug": "tuto_soeurette_accept", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -1649,11 +1649,11 @@
     "category": null, 
     "name": "Soeurette", 
     "weight": 1, 
-    "text": "Elle l\u00e8ve vers moi un regard plein de soulagement. \"Je... Merci, {{title.chatelain.first_name}}. Merci mille fois. Sur mon honneur, vous n'aurez pas \u00e0 le regretter\". D'un revers de la main, elle s\u00e8che ses larmes et serre {{mioche.first_name}} contre elle.\r\n\r\n```\r\n{{soeur}}, {{mioche}} et {{chiard}} vous ont ont rejoint. {{chiard.first_name}} n'a que 1 ans, et n\u2019appara\u00eetra dans votre cour qu'\u00e0 l'age de 6 ans.\r\n```", 
+    "text": "Elle l\u00e8ve vers moi un regard plein de soulagement. \"Je... Merci, {{title.chatelain.first_name}}. Merci mille fois. Sur mon honneur, vous n'aurez pas \u00e0 le regretter\". D'un revers de la main, elle s\u00e8che ses larmes et serre {{mioche.first_name}} contre elle.\r\n\r\n\r\n    {{soeur}}, {{mioche}} et {{chiard}} vous ont ont rejoint. {{chiard.first_name}} n'a que 1 ans, et n\u2019appara\u00eetra dans votre cour qu'\u00e0 l'age de 6 ans.\r\n", 
     "image": "events/361_9.jpg", 
     "on_fire": "soeur = param.get_value(\"soeur\")\nmioche = param.get_value(\"mioche\")\nchiard = param.get_value(\"chiard\")\n\nsoeur.kingdom = kingdom\nmioche.kingdom = kingdom\nchiard.kingdom = kingdom\n\nsoeur.save()\nmioche.save()\nchiard.save()", 
     "slug": "tuto_soeurette_surrend", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -1929,7 +1929,7 @@
     "category": null, 
     "name": "Facheux", 
     "weight": 1, 
-    "text": "\"Non! vous n'avez pas le droit!\" Ignorant ses vocif\u00e9rations, les gardes tra\u00eenent sire {{facheux}} jusqu'aux oubliettes. Si les courtisans qui me d\u00e9visagent paraissent choqu\u00e9s, mon fils et ma fille me regardent avec gratitude.\r\n```\r\n{{facheux}} gagne le Trait Prisonnier.\r\n(-15) de Loyaut\u00e9 \u00e0 toute la cour sauf {{folks.1}} et {{folks.2}}\r\n```", 
+    "text": "\"Non! vous n'avez pas le droit!\" Ignorant ses vocif\u00e9rations, les gardes tra\u00eenent sire {{facheux}} jusqu'aux oubliettes. Si les courtisans qui me d\u00e9visagent paraissent choqu\u00e9s, mon fils et ma fille me regardent avec gratitude.\r\n\r\n   {{facheux}} gagne le Trait Prisonnier.\r\n   (-15) de Loyaut\u00e9 \u00e0 toute la cour sauf {{folks.1}} et {{folks.2}}", 
     "image": "events/100.jpg", 
     "on_fire": "facheux = param.get_value(\"facheux\")\nfacheux.add_quality(\"prisonnier\")\nfolks[1].loyalty+=15\nfolks[2].loyalty+=15\nfolks[1].save()\nfolks[2].save()\ncall_function(\"perte_loyaute_general\", kingdom=kingdom, perte_max=16, perte_min=14)\n", 
     "slug": "tuto_facheux_jail", 
@@ -2027,7 +2027,7 @@
     "category": null, 
     "name": "Tuto bandits", 
     "weight": 1, 
-    "text": "La petite troupe a \u00e9t\u00e9 assembl\u00e9e \u00e0 la h\u00e2te, et \u00e9quip\u00e9e du peu d'\u00e9quipement disponible. Des paysans t\u00eatus, qui se sont port\u00e9s volontaire pour apprendre une le\u00e7on \u00e0 ces damn\u00e9s bandits. Ils manquent de discipline, mais je peux voir dans leurs yeux qu'ils ont la rage au ventre. Je me tien devant eux, v\u00eatu de mon armure, {{chevaliers|folks_list:\"short\"}} debout \u00e0 mes c\u00f4t\u00e9s. Je vais nommer l'un d'entre eux mon conn\u00e9table pour s'occuper des derniers pr\u00e9paratifs, puis je prendrai la t\u00eate de mes hommes pour aller \u00e9craser les hors la loi qui croient pouvoir sacquer nos terres.\r\n```\r\nNouveau titre : Conn\u00e9table.\r\nNouvelle mission.\r\n```", 
+    "text": "La petite troupe a \u00e9t\u00e9 assembl\u00e9e \u00e0 la h\u00e2te, et \u00e9quip\u00e9e du peu d'\u00e9quipement disponible. Des paysans t\u00eatus, qui se sont port\u00e9s volontaire pour apprendre une le\u00e7on \u00e0 ces damn\u00e9s bandits. Ils manquent de discipline, mais je peux voir dans leurs yeux qu'ils ont la rage au ventre. Je me tien devant eux, v\u00eatu de mon armure, {{chevaliers|folks_list:\"short\"}} debout \u00e0 mes c\u00f4t\u00e9s. Je vais nommer l'un d'entre eux mon conn\u00e9table pour s'occuper des derniers pr\u00e9paratifs, puis je prendrai la t\u00eate de mes hommes pour aller \u00e9craser les hors la loi qui croient pouvoir sacquer nos terres.\r\n\r\n    Nouveau titre : Conn\u00e9table.\r\n    Nouvelle mission.", 
     "image": "events/716_4.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_bandits_preparatifs", 
@@ -2057,7 +2057,7 @@
     "weight": 1, 
     "text": "Je prends la t\u00eate de l'assaut, et m\u00e8ne mes hommes au c\u0153ur du camp de l'ennemi. Autour du moi, les bandits se saisissent de leurs armes et s'\u00e9lancent \u00e0 notre rencontre, hurlant des chapelets d'injures. \r\n{% if fight_fuzzy >= 14 %}Avec un rictus f\u00e9roce, je fond sur un groupe de forbans et en pourfends trois en quelques moulinets bien plac\u00e9s. Leurs compagnons reculent, et je me d\u00e9lecte de la terreur dans leurs yeux.{% elif fight_fuzzy >= 10 %}Au c\u00f4t\u00e9 de {{title.connetable.first_name}}, je charge un groupe de forbans, et empale le premier sur mon \u00e9p\u00e9e avant de d\u00e9capiter le second.{% elif fight_fuzzy >= 7  %}Au milieu de la m\u00eal\u00e9e, je transperce un forban alors que {{title.connetable.first_name}} tranche la gorge d'un autre qui voulait me prendre \u00e0 revers.{% else %}Je me trouve rapidement etour\u00e9 de forbans. Alors que je ferraille avec le premier, un second me prend \u00e0 revers et me perce de sa lance. {{title.connetable}} vient \u00e0 mon secours, et ordonne qu'on me porte hors du champ de bataille.{% endif %} \r\nMes soldats de fortunes se battent avec courage, et repoussent peu \u00e0 peu les ennemis. Du coin de l\u2019\u0153il, je vois {% if intrepide %}{{combattant.first_name}} fendre les rangs adverse et affronter le chef des bandits en combat singulier. Sa lame d\u00e9vie un coup d'estoc, d\u00e9s\u00e9quilibrant le brigand. {{combattant.first_name}} pivote sur la gauche, et lui tranche la t\u00eate d'un seul revers! Les bandits contemplent, horrifi\u00e9s, le corps sans vie de leur chef s\u2019effondrer sur le sol. Bon nombre d'entre eux l\u00e2chent leurs armes et s'enfuient en courant...{% else %}{{combattant.first_name}} recevoir une fl\u00e8che en pleine poitrine. Il tombe \u00e0 genoux, portant la main \u00e0 sa blessure, alors que les brigands commencent \u00e0 s'enfuir...{% endif %}\r\n\r\n    {% if title.chatelain.fight <= 6 %} recevez le Trait Bless\u00e9.{% endif %}\r\n    {% if intrepide %}{{combattant.first_name}} gagne le trait Intrepide!{% else %}{{combattant.first_name}} re\u00e7oit le Trait Bless\u00e9.{% endif %}\r\n", 
     "image": "events/71.jpg", 
-    "on_fire": "param.set_value(\"fight_fuzzy\",kingdom.get_folk_in_title(\"chatelain\").fight + fuzzy(3))", 
+    "on_fire": "param.set_value(\"fight_fuzzy\", kingdom.get_folk_in_title(\"chatelain\").fight + fuzzy(3))\n\n\nfleche=param.get_value(\"fleche\")\ncombattant=param.get_value(\"combattant\")\nif fleche:\n  combattant.add_quality(\"blesse\")\nelse:\n  combattant.add_quality(\"intrepide\")\n  \nchatelain=kingdom.get_folk_in_title(\"chatelain\")\nif chatelain.fight <= 6:\n  chatelain.add_quality(\"blesse\")", 
     "slug": "tuto_bandits_bataille_2", 
     "condition": "\n"
   }
@@ -2111,11 +2111,11 @@
     "category": null, 
     "name": "Education", 
     "weight": 1, 
-    "text": "Depuis ma table de travail, je peux entendre {{mioche.first_name}} et {{chiard}} jouer dans la cour en contrebas. Je me l\u00e8ve, et vais m'accouder \u00e0 la fen\u00eatre. L'ain\u00e9{{mioche|feminize:\" tient sa petite soeur par les mains,e tient son petit f\u00e8re par les mains\"}}, et l'aide \u00e0 marcher le long des \u00e9curies. Quelques enfants des domestiques les encouragent et rient avec eux. La scene est touchante, mais je songe que {{mioche}} a d\u00e9j\u00e0 dix ans, et qu'il est grand temps qu'{{mioche|feminize:\"il,elle\"}} apprenne \u00e0 se rende utile.\r\n```\r\nNouvelle mission.\r\n```", 
+    "text": "Depuis ma table de travail, je peux entendre {{mioche.first_name}} et {{chiard}} jouer dans la cour en contrebas. Je me l\u00e8ve, et vais m'accouder \u00e0 la fen\u00eatre. L'ain\u00e9{{mioche|feminize:\" tient sa petite soeur par les mains,e tient son petit f\u00e8re par les mains\"}}, et l'aide \u00e0 marcher le long des \u00e9curies. Quelques enfants des domestiques les encouragent et rient avec eux. La scene est touchante, mais je songe que {{mioche}} a d\u00e9j\u00e0 dix ans, et qu'il est grand temps qu'{{mioche|feminize:\"il,elle\"}} apprenne \u00e0 se rende utile.\r\n\r\n    Nouvelle mission.\r\n", 
     "image": "events/709_1.jpg", 
-    "on_fire": null, 
+    "on_fire": "PendingMission(mission=Mission.objects.get(slug=\"tuto_nommer_mentor\"),kingdom=kingdom).save()\n", 
     "slug": "tuto_education", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -2251,11 +2251,11 @@
     "category": null, 
     "name": "Charit\u00e9", 
     "weight": 1, 
-    "text": "Le p\u00e8re {{title.cure.first_name}} a fait porter aux paysans du village {% if random <= 33 %}une douzaine de vache \u00e0 lait achet\u00e9es \u00e0 une foire voisine.{% elif random <= 66 %}une  charette de pains frais cuis dans les fours du chateau.{% else %}une bourse d'\u00e9cus bien remplie, qui a \u00e9t\u00e9 partag\u00e9e entre les misereux.{% endif %}. Les braves gueux ont accept\u00e9 cette aumone avec gratitude,  et {% if random2 <= 33 %}un nouveau n\u00e9 a \u00e9t\u00e9 nomm\u00e9 {{title.chatelain.first_namme}} en mon honneur.{% if random2 <= 66 %}une petite f\u00eate a \u00e9t\u00e9 donn\u00e9e en mon nom.{% else %}une petite d\u00e9l\u00e9gation s'est pr\u00e9sent\u00e9e pour me remercier en personne.{% endif %}. La nouvelle de ma charit\u00e9 s'est rapidement r\u00e9pandue, et davantage de serfs souhaitent profiter de mes largesses et de ma protection.\r\n```\r\n-50 \u00e9cus.\r\n+20 paysans.\r\n```", 
+    "text": "Le p\u00e8re {{title.cure.first_name}} a fait porter aux paysans du village {% if random <= 33 %}une douzaine de vache \u00e0 lait achet\u00e9es \u00e0 une foire voisine.{% elif random <= 66 %}une  charette de pains frais cuis dans les fours du chateau.{% else %}une bourse d'\u00e9cus bien remplie, qui a \u00e9t\u00e9 partag\u00e9e entre les misereux.{% endif %}. Les braves gueux ont accept\u00e9 cette aumone avec gratitude,  et {% if random2 <= 33 %}un nouveau n\u00e9 a \u00e9t\u00e9 nomm\u00e9 {{title.chatelain.first_namme}} en mon honneur.{% if random2 <= 66 %}une petite f\u00eate a \u00e9t\u00e9 donn\u00e9e en mon nom.{% else %}une petite d\u00e9l\u00e9gation s'est pr\u00e9sent\u00e9e pour me remercier en personne.{% endif %}. La nouvelle de ma charit\u00e9 s'est rapidement r\u00e9pandue, et davantage de serfs souhaitent profiter de mes largesses et de ma protection.\r\n\r\n    -50 \u00e9cus.\r\n    +20 paysans.", 
     "image": "events/14_1.jpg", 
-    "on_fire": null, 
+    "on_fire": "\n", 
     "slug": "charite", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -2265,7 +2265,7 @@
     "category": null, 
     "name": "Bannissement", 
     "weight": 1, 
-    "text": "Sire {{title.connetable}} a fait conduire {{banni}} sous bonne escorte jusqu'\u00e0 la fronti\u00e8re de mes terres, et lui a lanc\u00e9 d'un ton ferme de ne jamais revenir. La cour est sous le choc, et ils sont nombreux \u00e0 m\u2019appeler \"tyran\" dans mon dos, en se demandant lequel d'entre eux sera le prochain.\r\n```\r\n{{banni}} a \u00e9t\u00e9 chass\u00e9 de votre cour. Ses possessions ont \u00e9t\u00e9 saisies et vous ont rapport\u00e9 20 \u00e9cus.\r\n-20 de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n```", 
+    "text": "Sire {{title.connetable}} a fait conduire {{banni}} sous bonne escorte jusqu'\u00e0 la fronti\u00e8re de mes terres, et lui a lanc\u00e9 d'un ton ferme de ne jamais revenir. La cour est sous le choc, et ils sont nombreux \u00e0 m\u2019appeler \"tyran\" dans mon dos, en se demandant lequel d'entre eux sera le prochain.\r\n\r\n    {{banni}} a \u00e9t\u00e9 chass\u00e9 de votre cour. Ses possessions ont \u00e9t\u00e9 saisies et vous ont rapport\u00e9 20 \u00e9cus.\r\n-20 de Loyaut\u00e9 g\u00e9n\u00e9rale.", 
     "image": "events/417.jpg", 
     "on_fire": "if banni.has_quality(\"scelerat\") or banni.has_quality(\"taitre\"):\n  pass\n", 
     "slug": "bannissement", 
@@ -3155,7 +3155,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "L\u2019argent ouvre toutes les portes.", 
-    "message": "{{knight}} a rejoint ma cour, et les pots de vin de {{title.maitre_espion.first_name}} ont port\u00e9 leur fruits. Je suis le souverain incontest\u00e9 des gueux de mon {dynastie}.", 
+    "message": "{{knight}} a rejoint ma cour, et les pots de vin de {{title.maitre_espion.first_name}} ont port\u00e9 leur fruits. Je suis le souverain incontest\u00e9 des gueux de {{dynastie}}.", 
     "event": 35, 
     "condition": " ", 
     "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_potsdevin\")\n"
@@ -3257,7 +3257,7 @@
     "message": "Mon fils s'est entich\u00e9 d'une servante. J'ai d\u00e9cid\u00e9 de fermer les yeux.", 
     "event": 47, 
     "condition": " ", 
-    "on_fire": "#param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fils\")).start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fils\")\npe.start()"
+    "on_fire": "#param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fils\")).start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fils\")\npe.start()"
   }
 },
 {
@@ -3265,10 +3265,10 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "\"Cela doit cesser, je lui parlerai d\u00e8s demain.\"", 
-    "message": null, 
+    "message": "", 
     "event": 47, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fils_warning_2\")).start()"
+    "on_fire": "param.next_event(\"tuto_scandale_fils_warning_2\").start()"
   }
 },
 {
@@ -3364,10 +3364,10 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "\"Je ne laisserai pas une vulgaire souillon salir notre nom! Qu'on la mette sur le champ \u00e0 la porte!\"", 
-    "message": null, 
+    "message": "", 
     "event": 47, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fils_choixservante\")).start()"
+    "on_fire": "param.next_event(\"tuto_scandale_fils_choixservante\").start()"
   }
 },
 {
@@ -4444,8 +4444,8 @@
     "text": "\"Les serviteurs vont vous montrer vos quartiers...\"", 
     "message": "{{soeur}}, {{mioche}} et {{chiard}} ont rejoint ma cour.", 
     "event": 138, 
-    "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_education\")).start()"
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_education\").start()"
   }
 },
 {
@@ -4466,7 +4466,7 @@
     "text": "Je le regrette d\u00e9j\u00e0....", 
     "message": "{{soeur}}, {{mioche}} et {{chiard}} ont rejoint ma cour.", 
     "event": 140, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_education\")).start()"
   }
 },
@@ -4676,7 +4676,7 @@
     "message": "", 
     "event": 153, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_2\")).start()"
+    "on_fire": "param.next_event(\"tuto_facheux_2\").start()"
   }
 },
 {
@@ -4687,7 +4687,7 @@
     "message": "", 
     "event": 154, 
     "condition": "\n", 
-    "on_fire": "param.set_value(\"come_from\", 2)\n#param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_3\")).start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_3\")\npe.start()"
+    "on_fire": "param.set_value(\"come_from\", 2)\n#param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_3\")).start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_3\")\npe.start()"
   }
 },
 {
@@ -4698,7 +4698,7 @@
     "message": "", 
     "event": 154, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_duel\")).start()"
+    "on_fire": "param.next_event(\"tuto_facheux_duel\").start()"
   }
 },
 {
@@ -4709,7 +4709,7 @@
     "message": "", 
     "event": 154, 
     "condition": "if kingdom.get_folk_in_title(\"chatelain\").diplomacy<9:\n  status=\"Ce message n'apparaitra pas\"\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_settle\")).start()"
+    "on_fire": "param.next_event(\"tuto_facheux_settle\").start()"
   }
 },
 {
@@ -4720,7 +4720,7 @@
     "message": "", 
     "event": 154, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_4\")).start()"
+    "on_fire": "param.next_event(\"tuto_facheux_4\").start()"
   }
 },
 {
@@ -4882,10 +4882,10 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Que Dieu soutienne mon bras!", 
-    "message": "Je doit nommer un [conn\u00e9table](title) pour bouter les andits hors de mes terres.", 
+    "message": "Je doit nommer un [conn\u00e9table](title) pour bouter les bandits hors de mes terres.", 
     "event": 168, 
     "condition": "\n", 
-    "on_fire": "kingdom.unlock_title(\"connetable\")\npe=PendingMission(mission=Mission.objects.get(slug=\"tuto_bandits_attaque\"),kingdom=kingdom).save()"
+    "on_fire": "kingdom.unlock_title(\"connetable\")\npe=PendingMission(mission=Mission.objects.get(slug=\"tuto_bandits_attaque\"), kingdom=kingdom).save()"
   }
 },
 {
@@ -4907,7 +4907,7 @@
     "message": "", 
     "event": 170, 
     "condition": "\n", 
-    "on_fire": "fleche=param.get_value(\"fleche\")\ncombattant=param.get_value(\"combattant\")\nif fleche:\n  combattant.add_quality(\"blesse\")\nelse:\n  combattant.add_quality(\"intrepide\")\n  \nchatelain=kingdom.get_folk_in_title(\"chatelain\")\nif chatelain.fight <= 6:\n  chatelain.add_quality(\"blesse\")\n\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_bandits_bataille_3\")).start()"
+    "on_fire": "param.next_event(\"tuto_bandits_bataille_3\").start()"
   }
 },
 {
@@ -4928,8 +4928,8 @@
     "text": "Je vais lui trouver un mentor.", 
     "message": "Je dois [d\u00e9signer un mentor](mission) pour s'occuper de l'\u00e9ducation de {{mioche}}.", 
     "event": 174, 
-    "condition": null, 
-    "on_fire": null
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 },
 {
@@ -5104,8 +5104,8 @@
     "text": "Il est bon d'\u00eatre aim\u00e9 de ses gens.", 
     "message": "J'ai fait acte de charit\u00e9 envers mes paysans. ```\r\n-50 \u00e9cus.\r\n+20 paysans.\r\n```", 
     "event": 185, 
-    "condition": null, 
-    "on_fire": null
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 },
 {
@@ -5484,15 +5484,15 @@
   }
 },
 {
-  "pk": 1093, 
+  "pk": 1178, 
   "model": "event.pendingevent", 
   "fields": {
-    "kingdom": 60, 
+    "kingdom": 63, 
     "is_started": true, 
-    "created": "2013-08-31T17:18:08.817", 
-    "started": "2013-08-31T17:18:08.836", 
-    "text": "Elle se crispe sous l'injure, et le sang lui monte aux joues.  Elle reprend d'une voix pinc\u00e9e. \"Permettez-moi de vous pr\u00e9senter mon fils Garnier, ainsi que sa petite soeur Barberine.\" Je contemple les enfants, qui n'en m\u00e8nent pas large, et retrouve dans le visage de l'a\u00een\u00e9 certaines lignes de celui de ma s\u0153ur. \"Ils portent le nom de matthieu\". Son regard semble me d\u00e9fier de pr\u00e9tendre le contraire.\r\n", 
-    "event": 134
+    "created": "2013-08-31T18:17:33.558", 
+    "started": "2013-08-31T18:17:33.581", 
+    "text": "Elle franchit le pas de la porte de sa d\u00e9marche fi\u00e8re, qui fait remonter en moi bien des souvenirs. A ma grande surprise, elle n'entre pas seule. Un petit gar\u00e7on d'une dizaine d'ann\u00e9e la suit de quelque pas, serrant dans ses bras un b\u00e9b\u00e9 emmitoufl\u00e9 dans un linge. Ma s\u0153ur Ageruchia vient se planter devant moi, et m'offre une r\u00e9v\u00e9rence un rien rapide. Elle regarde l'enfant qui, maladroitement, s'incline \u00e0 son tour. \"Mon fr\u00e8re, quelle joie de vous voir une si belle mine. Un fief \u00e0 gouverner a \u00e9t\u00e9 un changement heureux\". Je contemple ma s\u0153ur, et les l\u00e9gers sillons que le temps a trac\u00e9 sur sa peau. Elle n'a rien perdu de son ton imp\u00e9rieux, cependant.", 
+    "event": 133
   }
 },
 {
@@ -5507,36 +5507,36 @@
   }
 },
 {
-  "pk": 1048, 
+  "pk": 1158, 
   "model": "event.pendingeventaction", 
   "fields": {
-    "pending_event": 1093, 
+    "pending_event": 1178, 
     "message": "", 
-    "text": "Moue septique. \"Si vous le d\u00eetes... \"", 
+    "text": "Je la fusille du regard \"\u00c9pargnez-moi vos platitudes, Ageruchia. Que voulez-vous  de  moi cette fois-ci?\".", 
     "folk": null, 
-    "event_action": 182
+    "event_action": 180
   }
 },
 {
-  "pk": 1049, 
+  "pk": 1159, 
   "model": "event.pendingeventaction", 
   "fields": {
-    "pending_event": 1093, 
+    "pending_event": 1178, 
     "message": "", 
-    "text": "Sardonique \"Vraiment? Vous n'arrivez pas \u00e0 savoir qui est leur p\u00e8re? Vous n'avez pas chaum\u00e9e ma s\u0153ur...\"", 
+    "text": "Rester silencieux, les mains crois\u00e9es et le visage imp\u00e9n\u00e9trable.", 
     "folk": null, 
-    "event_action": 183
+    "event_action": 179
   }
 },
 {
-  "pk": 1050, 
+  "pk": 1160, 
   "model": "event.pendingeventaction", 
   "fields": {
-    "pending_event": 1093, 
+    "pending_event": 1178, 
     "message": "", 
-    "text": "Hocher la t\u00eate. \"Heureux de vous conna\u00eetre, les enfants. Je suis votre oncle Jacquemet.\" A B\u00e9atrix, respectueusement : \"Puis-je demander o\u00f9 est leur p\u00e8re?\"", 
+    "text": "Sinc\u00e8re : \"Le plaisir est partag\u00e9, ma soeur. Cela fait bien trop longtemps\".", 
     "folk": null, 
-    "event_action": 181
+    "event_action": 177
   }
 },
 {
@@ -5558,57 +5558,48 @@
   }
 },
 {
-  "pk": 1699, 
+  "pk": 1946, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 1093, 
-    "name": "injure", 
-    "value": 1
-  }
-},
-{
-  "pk": 1700, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1093, 
+    "pending_event": 1178, 
     "name": "random", 
-    "value": 88
+    "value": 70
   }
 },
 {
-  "pk": 1701, 
+  "pk": 1947, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 1093, 
+    "pending_event": 1178, 
     "name": "chiard", 
-    "value": "`Folk`:6699"
+    "value": "`Folk`:6725"
   }
 },
 {
-  "pk": 1702, 
+  "pk": 1948, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 1093, 
-    "name": "mioche", 
-    "value": "`Folk`:6698"
-  }
-},
-{
-  "pk": 1703, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1093, 
-    "name": "soeur", 
-    "value": "`Folk`:6696"
-  }
-},
-{
-  "pk": 1704, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1093, 
+    "pending_event": 1178, 
     "name": "slug", 
     "value": "tuto_soeurette"
+  }
+},
+{
+  "pk": 1949, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1178, 
+    "name": "mioche", 
+    "value": "`Folk`:6724"
+  }
+},
+{
+  "pk": 1950, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1178, 
+    "name": "soeur", 
+    "value": "`Folk`:6722"
   }
 }
 ]

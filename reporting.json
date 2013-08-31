@@ -11847,7 +11847,7 @@
   "pk": 929, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 60, 
+    "kingdom": null, 
     "stack_level": 4, 
     "object_pk": 2, 
     "object_type": "Quality", 
@@ -11889,7 +11889,7 @@
   "pk": 932, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 60, 
+    "kingdom": null, 
     "stack_level": 3, 
     "object_pk": 3, 
     "object_type": "Title", 
@@ -11903,7 +11903,7 @@
   "pk": 933, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 60, 
+    "kingdom": null, 
     "stack_level": 3, 
     "object_pk": 3, 
     "object_type": "Title", 
@@ -11917,7 +11917,7 @@
   "pk": 934, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 60, 
+    "kingdom": null, 
     "stack_level": 3, 
     "object_pk": 3, 
     "object_type": "Title", 
@@ -11931,7 +11931,7 @@
   "pk": 935, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 60, 
+    "kingdom": null, 
     "stack_level": 2, 
     "object_pk": 94, 
     "object_type": "Event", 
@@ -11945,7 +11945,7 @@
   "pk": 936, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 60, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 293, 
     "object_type": "EventAction", 
@@ -11973,7 +11973,7 @@
   "pk": 938, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 60, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 127, 
     "object_type": "EventAction", 
@@ -12253,7 +12253,7 @@
   "pk": 958, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 60, 
+    "kingdom": null, 
     "stack_level": 2, 
     "object_pk": 132, 
     "object_type": "Event", 
@@ -12267,7 +12267,7 @@
   "pk": 959, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 60, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 293, 
     "object_type": "EventAction", 
@@ -12281,7 +12281,7 @@
   "pk": 960, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 60, 
+    "kingdom": null, 
     "stack_level": 2, 
     "object_pk": 178, 
     "object_type": "EventAction", 
@@ -12295,7 +12295,7 @@
   "pk": 961, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 60, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 176, 
     "object_type": "EventAction", 
@@ -12309,7 +12309,7 @@
   "pk": 962, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 60, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 180, 
     "object_type": "EventAction", 
@@ -12317,6 +12317,1686 @@
     "direct_queries": 48, 
     "time": 90, 
     "queries": 48
+  }
+},
+{
+  "pk": 963, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 181, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 43, 
+    "time": 82, 
+    "queries": 43
+  }
+},
+{
+  "pk": 964, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 186, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 44, 
+    "time": 92, 
+    "queries": 44
+  }
+},
+{
+  "pk": 965, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 138, 
+    "object_type": "Event", 
+    "object_attr": "on_fire", 
+    "direct_queries": 19, 
+    "time": 39, 
+    "queries": 19
+  }
+},
+{
+  "pk": 966, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 187, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 34, 
+    "time": 90, 
+    "queries": 53
+  }
+},
+{
+  "pk": 967, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 192, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 34, 
+    "time": 54, 
+    "queries": 34
+  }
+},
+{
+  "pk": 968, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 969, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 30, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 6, 
+    "queries": 3
+  }
+},
+{
+  "pk": 970, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 24, 
+    "queries": 5
+  }
+},
+{
+  "pk": 971, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 15, 
+    "time": 221, 
+    "queries": 23
+  }
+},
+{
+  "pk": 972, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 1, 
+    "object_type": "Title", 
+    "object_attr": "on_unlock", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 973, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 974, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 12, 
+    "queries": 5
+  }
+},
+{
+  "pk": 975, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 8, 
+    "time": 30, 
+    "queries": 13
+  }
+},
+{
+  "pk": 976, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 977, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 4, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 6, 
+    "queries": 3
+  }
+},
+{
+  "pk": 978, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 12, 
+    "queries": 5
+  }
+},
+{
+  "pk": 979, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 18, 
+    "time": 62, 
+    "queries": 26
+  }
+},
+{
+  "pk": 980, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 981, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 24, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 5, 
+    "queries": 3
+  }
+},
+{
+  "pk": 982, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 10, 
+    "queries": 5
+  }
+},
+{
+  "pk": 983, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 16, 
+    "time": 109, 
+    "queries": 24
+  }
+},
+{
+  "pk": 984, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 1, 
+    "object_type": "Trigger", 
+    "object_attr": "on_fire", 
+    "direct_queries": 48, 
+    "time": 527, 
+    "queries": 134
+  }
+},
+{
+  "pk": 985, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 7, 
+    "object_type": "EventAction", 
+    "object_attr": "condition", 
+    "direct_queries": 3, 
+    "time": 9, 
+    "queries": 3
+  }
+},
+{
+  "pk": 986, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 5, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 26, 
+    "time": 57, 
+    "queries": 29
+  }
+},
+{
+  "pk": 987, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 7, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 30, 
+    "time": 52, 
+    "queries": 30
+  }
+},
+{
+  "pk": 988, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 9, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 32, 
+    "time": 55, 
+    "queries": 32
+  }
+},
+{
+  "pk": 989, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 5, 
+    "object_type": "Title", 
+    "object_attr": "on_unlock", 
+    "direct_queries": 3, 
+    "time": 13, 
+    "queries": 3
+  }
+},
+{
+  "pk": 990, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 22, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 6, 
+    "time": 67, 
+    "queries": 9
+  }
+},
+{
+  "pk": 991, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 5, 
+    "object_type": "Title", 
+    "object_attr": "on_affect", 
+    "direct_queries": 4, 
+    "time": 9, 
+    "queries": 4
+  }
+},
+{
+  "pk": 992, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 993, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 8, 
+    "queries": 3
+  }
+},
+{
+  "pk": 994, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 14, 
+    "queries": 5
+  }
+},
+{
+  "pk": 995, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 15, 
+    "time": 72, 
+    "queries": 23
+  }
+},
+{
+  "pk": 996, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 1, 
+    "object_type": "Title", 
+    "object_attr": "on_unlock", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 997, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 998, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 9, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 6, 
+    "queries": 3
+  }
+},
+{
+  "pk": 999, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 13, 
+    "queries": 5
+  }
+},
+{
+  "pk": 1000, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 15, 
+    "time": 61, 
+    "queries": 23
+  }
+},
+{
+  "pk": 1001, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 1002, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 12, 
+    "queries": 5
+  }
+},
+{
+  "pk": 1003, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 8, 
+    "time": 31, 
+    "queries": 13
+  }
+},
+{
+  "pk": 1004, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 1005, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 17, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 7, 
+    "queries": 3
+  }
+},
+{
+  "pk": 1006, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 14, 
+    "queries": 5
+  }
+},
+{
+  "pk": 1007, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 16, 
+    "time": 63, 
+    "queries": 24
+  }
+},
+{
+  "pk": 1008, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 1, 
+    "object_type": "Trigger", 
+    "object_attr": "on_fire", 
+    "direct_queries": 48, 
+    "time": 344, 
+    "queries": 131
+  }
+},
+{
+  "pk": 1009, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 7, 
+    "object_type": "EventAction", 
+    "object_attr": "condition", 
+    "direct_queries": 3, 
+    "time": 8, 
+    "queries": 3
+  }
+},
+{
+  "pk": 1010, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 5, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 26, 
+    "time": 50, 
+    "queries": 29
+  }
+},
+{
+  "pk": 1011, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 7, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 30, 
+    "time": 56, 
+    "queries": 30
+  }
+},
+{
+  "pk": 1012, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 9, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 32, 
+    "time": 64, 
+    "queries": 32
+  }
+},
+{
+  "pk": 1013, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 5, 
+    "object_type": "Title", 
+    "object_attr": "on_unlock", 
+    "direct_queries": 3, 
+    "time": 4, 
+    "queries": 3
+  }
+},
+{
+  "pk": 1014, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 22, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 6, 
+    "time": 15, 
+    "queries": 9
+  }
+},
+{
+  "pk": 1015, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 5, 
+    "object_type": "Title", 
+    "object_attr": "on_affect", 
+    "direct_queries": 4, 
+    "time": 9, 
+    "queries": 4
+  }
+},
+{
+  "pk": 1016, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 6, 
+    "object_type": "Mission", 
+    "object_attr": "on_start", 
+    "direct_queries": 10, 
+    "time": 23, 
+    "queries": 10
+  }
+},
+{
+  "pk": 1017, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 4, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 1018, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 4, 
+    "object_pk": 12, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 6, 
+    "queries": 3
+  }
+},
+{
+  "pk": 1019, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 4, 
+    "object_pk": 47, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 5, 
+    "queries": 3
+  }
+},
+{
+  "pk": 1020, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 4, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 12, 
+    "queries": 5
+  }
+},
+{
+  "pk": 1021, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 23, 
+    "time": 82, 
+    "queries": 34
+  }
+},
+{
+  "pk": 1022, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 19, 
+    "object_type": "Event", 
+    "object_attr": "on_fire", 
+    "direct_queries": 8, 
+    "time": 90, 
+    "queries": 42
+  }
+},
+{
+  "pk": 1023, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 23, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 12, 
+    "time": 121, 
+    "queries": 54
+  }
+},
+{
+  "pk": 1024, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 25, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 20, 
+    "time": 43, 
+    "queries": 20
+  }
+},
+{
+  "pk": 1025, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 31, 
+    "object_type": "Event", 
+    "object_attr": "on_fire", 
+    "direct_queries": 4, 
+    "time": 3, 
+    "queries": 4
+  }
+},
+{
+  "pk": 1026, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 35, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 20, 
+    "time": 46, 
+    "queries": 24
+  }
+},
+{
+  "pk": 1027, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 35, 
+    "object_type": "Event", 
+    "object_attr": "on_fire", 
+    "direct_queries": 3, 
+    "time": 11, 
+    "queries": 3
+  }
+},
+{
+  "pk": 1028, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 38, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 26, 
+    "time": 64, 
+    "queries": 29
+  }
+},
+{
+  "pk": 1029, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 14, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 16, 
+    "time": 24, 
+    "queries": 16
+  }
+},
+{
+  "pk": 1030, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 42, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 27, 
+    "queries": 17
+  }
+},
+{
+  "pk": 1031, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 60, 
+    "object_type": "Event", 
+    "object_attr": "on_fire", 
+    "direct_queries": 15, 
+    "time": 43, 
+    "queries": 15
+  }
+},
+{
+  "pk": 1032, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 293, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 15, 
+    "time": 71, 
+    "queries": 30
+  }
+},
+{
+  "pk": 1033, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 1034, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 9, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 7, 
+    "queries": 3
+  }
+},
+{
+  "pk": 1035, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 14, 
+    "queries": 5
+  }
+},
+{
+  "pk": 1036, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 15, 
+    "time": 69, 
+    "queries": 23
+  }
+},
+{
+  "pk": 1037, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 1, 
+    "object_type": "Title", 
+    "object_attr": "on_unlock", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 1038, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 1039, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 9, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 6, 
+    "queries": 3
+  }
+},
+{
+  "pk": 1040, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 12, 
+    "queries": 5
+  }
+},
+{
+  "pk": 1041, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 20, 
+    "time": 73, 
+    "queries": 28
+  }
+},
+{
+  "pk": 1042, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 1043, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 12, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 6, 
+    "queries": 3
+  }
+},
+{
+  "pk": 1044, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 12, 
+    "queries": 5
+  }
+},
+{
+  "pk": 1045, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 15, 
+    "time": 58, 
+    "queries": 23
+  }
+},
+{
+  "pk": 1046, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 1047, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 13, 
+    "queries": 5
+  }
+},
+{
+  "pk": 1048, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 9, 
+    "time": 36, 
+    "queries": 14
+  }
+},
+{
+  "pk": 1049, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 1, 
+    "object_type": "Trigger", 
+    "object_attr": "on_fire", 
+    "direct_queries": 48, 
+    "time": 334, 
+    "queries": 136
+  }
+},
+{
+  "pk": 1050, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 7, 
+    "object_type": "EventAction", 
+    "object_attr": "condition", 
+    "direct_queries": 3, 
+    "time": 10, 
+    "queries": 3
+  }
+},
+{
+  "pk": 1051, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 5, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 26, 
+    "time": 59, 
+    "queries": 29
+  }
+},
+{
+  "pk": 1052, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 7, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 30, 
+    "time": 68, 
+    "queries": 30
+  }
+},
+{
+  "pk": 1053, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 9, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 32, 
+    "time": 54, 
+    "queries": 32
+  }
+},
+{
+  "pk": 1054, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 4, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 1055, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 4, 
+    "object_pk": 5, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 5, 
+    "queries": 3
+  }
+},
+{
+  "pk": 1056, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 4, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 10, 
+    "queries": 5
+  }
+},
+{
+  "pk": 1057, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 16, 
+    "time": 55, 
+    "queries": 24
+  }
+},
+{
+  "pk": 1058, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 19, 
+    "object_type": "Event", 
+    "object_attr": "on_fire", 
+    "direct_queries": 8, 
+    "time": 62, 
+    "queries": 32
+  }
+},
+{
+  "pk": 1059, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 23, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 12, 
+    "time": 88, 
+    "queries": 44
+  }
+},
+{
+  "pk": 1060, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 25, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 20, 
+    "time": 34, 
+    "queries": 20
+  }
+},
+{
+  "pk": 1061, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 31, 
+    "object_type": "Event", 
+    "object_attr": "on_fire", 
+    "direct_queries": 4, 
+    "time": 3, 
+    "queries": 4
+  }
+},
+{
+  "pk": 1062, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 35, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 20, 
+    "time": 46, 
+    "queries": 24
+  }
+},
+{
+  "pk": 1063, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 35, 
+    "object_type": "Event", 
+    "object_attr": "on_fire", 
+    "direct_queries": 3, 
+    "time": 10, 
+    "queries": 3
+  }
+},
+{
+  "pk": 1064, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 38, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 26, 
+    "time": 63, 
+    "queries": 29
+  }
+},
+{
+  "pk": 1065, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 14, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 19, 
+    "time": 37, 
+    "queries": 19
+  }
+},
+{
+  "pk": 1066, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 108, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 39, 
+    "queries": 20
+  }
+},
+{
+  "pk": 1067, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 3, 
+    "object_type": "Title", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 4, 
+    "queries": 1
+  }
+},
+{
+  "pk": 1068, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 3, 
+    "object_type": "Title", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 7, 
+    "queries": 3
+  }
+},
+{
+  "pk": 1069, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 232, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 13, 
+    "time": 22, 
+    "queries": 13
+  }
+},
+{
+  "pk": 1070, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 232, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 13, 
+    "time": 24, 
+    "queries": 13
+  }
+},
+{
+  "pk": 1071, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Title", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 2, 
+    "queries": 1
+  }
+},
+{
+  "pk": 1072, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Title", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 10, 
+    "queries": 3
+  }
+},
+{
+  "pk": 1074, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 35, 
+    "object_type": "Mission", 
+    "object_attr": "on_start", 
+    "direct_queries": 2, 
+    "time": 7, 
+    "queries": 2
+  }
+},
+{
+  "pk": 1075, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 35, 
+    "object_type": "Mission", 
+    "object_attr": "on_resolution", 
+    "direct_queries": 28, 
+    "time": 46, 
+    "queries": 28
+  }
+},
+{
+  "pk": 1076, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 170, 
+    "object_type": "Event", 
+    "object_attr": "on_fire", 
+    "direct_queries": 4, 
+    "time": 6, 
+    "queries": 4
+  }
+},
+{
+  "pk": 1077, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 236, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 29, 
+    "time": 59, 
+    "queries": 33
+  }
+},
+{
+  "pk": 1078, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 12, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 6, 
+    "queries": 3
+  }
+},
+{
+  "pk": 1079, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 171, 
+    "object_type": "Event", 
+    "object_attr": "on_fire", 
+    "direct_queries": 8, 
+    "time": 13, 
+    "queries": 8
+  }
+},
+{
+  "pk": 1080, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 237, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 43, 
+    "time": 91, 
+    "queries": 54
+  }
+},
+{
+  "pk": 1081, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 163, 
+    "object_type": "Event", 
+    "object_attr": "on_fire", 
+    "direct_queries": 21, 
+    "time": 50, 
+    "queries": 21
+  }
+},
+{
+  "pk": 1082, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 293, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 15, 
+    "time": 78, 
+    "queries": 36
+  }
+},
+{
+  "pk": 1083, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 70, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 15, 
+    "time": 40, 
+    "queries": 15
   }
 }
 ]

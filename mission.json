@@ -99,9 +99,9 @@
     "target_list": " ", 
     "text": "Il faut acheter sa confiance aupr\u00e8s du peuple", 
     "has_value": false, 
-    "on_resolution": "PendingEvent(event=Event.objects.get(slug=\"tuto_potsdevin\"),kingdom=kingdom).save()\n", 
+    "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": " ", 
+    "on_start": "PendingEvent(event=Event.objects.get(slug=\"tuto_potsdevin\"),kingdom=kingdom).save()", 
     "has_target": false, 
     "is_team": false, 
     "title": 5, 
@@ -469,7 +469,7 @@
     "has_value": false, 
     "on_resolution": " ", 
     "value_description": "Valeur :", 
-    "on_start": " ", 
+    "on_start": "grids['enfant'][0].mentor= grids['mentor'][0]\ngrids['enfant'][0].save()\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 4, 
@@ -828,6 +828,29 @@
   }
 },
 {
+  "pk": 39, 
+  "model": "mission.mission", 
+  "fields": {
+    "name": "Nommer un mentor pour un enfant", 
+    "target_list": "\n", 
+    "text": "Donner \u00e0 votre filleul un mentor pour l'\u00e9duquer.", 
+    "has_value": false, 
+    "on_resolution": "AvailableMission(mission=Mission.objects.get(slug=\"nommer_mentor\"), kingdom=kingdom).save()\n", 
+    "value_description": "", 
+    "on_start": "grids['enfant'][0].mentor= grids['mentor'][0]\ngrids['enfant'][0].save()\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_soeurette\")\n", 
+    "has_target": false, 
+    "is_team": false, 
+    "title": 4, 
+    "target_description": "", 
+    "timeout": null, 
+    "is_cancellable": true, 
+    "duration": 1, 
+    "on_cancel": "\n", 
+    "slug": "tuto_nommer_mentor", 
+    "on_init": "\n"
+  }
+},
+{
   "pk": 2, 
   "model": "mission.missiongrid", 
   "fields": {
@@ -1040,12 +1063,12 @@
   "model": "mission.missiongrid", 
   "fields": {
     "allow_disabled": false, 
-    "name": "Le mentor", 
+    "name": "Mentor", 
     "mission": 23, 
     "length": 1, 
     "allow_empty": false, 
-    "slug": "le-mentor", 
-    "condition": "if folk.age()< Constant.objects.get(name=\"Majorite\").value:\n  status = \"Un mentor doit \u00eatre majeur\"\n"
+    "slug": "mentor", 
+    "condition": "if folk.age()< Constant.v(\"Majorite\"):\n  status = \"Un mentor doit \u00eatre majeur\"\n"
   }
 },
 {
@@ -1053,7 +1076,7 @@
   "model": "mission.missiongrid", 
   "fields": {
     "allow_disabled": false, 
-    "name": "L'enfant", 
+    "name": "Enfant", 
     "mission": 23, 
     "length": 1, 
     "allow_empty": false, 
@@ -1296,6 +1319,32 @@
   }
 },
 {
+  "pk": 39, 
+  "model": "mission.missiongrid", 
+  "fields": {
+    "allow_disabled": false, 
+    "name": "Enfant", 
+    "mission": 39, 
+    "length": 1, 
+    "allow_empty": false, 
+    "slug": "enfant", 
+    "condition": "if folk.age() > Constant.objects.get(name=\"Majorite\").value:\n  status = \"L'apprenti doit \u00eatre un enfant\"\n"
+  }
+},
+{
+  "pk": 40, 
+  "model": "mission.missiongrid", 
+  "fields": {
+    "allow_disabled": false, 
+    "name": "Mentor", 
+    "mission": 39, 
+    "length": 1, 
+    "allow_empty": false, 
+    "slug": "mentor", 
+    "condition": "if folk.age()< Constant.v(\"Majorite\"):\n  status = \"Un mentor doit \u00eatre majeur\"\n"
+  }
+},
+{
   "pk": 185, 
   "model": "mission.availablemission", 
   "fields": {
@@ -1328,27 +1377,99 @@
   }
 },
 {
-  "pk": 236, 
+  "pk": 243, 
   "model": "mission.availablemission", 
   "fields": {
-    "kingdom": 60, 
+    "kingdom": 63, 
     "mission": 27
   }
 },
 {
-  "pk": 239, 
+  "pk": 244, 
   "model": "mission.availablemission", 
   "fields": {
-    "kingdom": 60, 
+    "kingdom": 63, 
     "mission": 18
   }
 },
 {
-  "pk": 240, 
+  "pk": 245, 
   "model": "mission.availablemission", 
   "fields": {
-    "kingdom": 60, 
+    "kingdom": 63, 
     "mission": 19
+  }
+},
+{
+  "pk": 246, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 63, 
+    "mission": 26
+  }
+},
+{
+  "pk": 247, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 63, 
+    "mission": 14
+  }
+},
+{
+  "pk": 248, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 63, 
+    "mission": 20
+  }
+},
+{
+  "pk": 249, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 63, 
+    "mission": 21
+  }
+},
+{
+  "pk": 250, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 63, 
+    "mission": 22
+  }
+},
+{
+  "pk": 255, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 63, 
+    "mission": 7
+  }
+},
+{
+  "pk": 256, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 63, 
+    "mission": 24
+  }
+},
+{
+  "pk": 257, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 63, 
+    "mission": 8
+  }
+},
+{
+  "pk": 258, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 63, 
+    "mission": 9
   }
 }
 ]
