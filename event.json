@@ -109,7 +109,7 @@
     "category": null, 
     "name": "Soif de gloire !", 
     "weight": 1, 
-    "text": "Et pourtant, je sais que mon p\u00e9riple ne fait que commencer. Mon h\u00e9ritage ne sera pas \u00e0 l'abri des convoitises tant que je n\u2019aurai pas prouv\u00e9 ma valeur aux yeux du royaume. Mes sujets sont encore si peu nombreux... Nobles ou paysans, le prestige de mon nom les a ralli\u00e9 sous ma banni\u00e8re, et ils attendent encore de moi que je porte ce nom vers la gloire. Mon regard se pose \u00e0 nouveau sur les hommes d\u2019arme qui suent sous ma fen\u00eatre. L'entra\u00eenement de sire {{title.connetable.first_name}} leur a \u00e9t\u00e9 profitable, mais depuis le passage des brigands, il n\u2019ont pas eut d\u2019occasion de se battre. Il est peut \u00eatre temps qu\u2019ils affrontent un vrai ennemi, sur un vrai champ de bataille.\r\n\r\n```\r\nVotre valeur de Prestige limite le nombre de suivants dans votre cour et la population de votre ville. Une mani\u00e8re s\u00fbre de gagner du Prestige est de gagner des batailles.\r\n```", 
+    "text": "Et pourtant, je sais que mon p\u00e9riple ne fait que commencer. Mon h\u00e9ritage ne sera pas \u00e0 l'abri des convoitises tant que je n\u2019aurai pas prouv\u00e9 ma valeur aux yeux du royaume. Mes sujets sont encore si peu nombreux... Nobles ou paysans, le prestige de mon nom les a ralli\u00e9 sous ma banni\u00e8re, et ils attendent encore de moi que je porte ce nom vers la gloire. Mon regard se pose \u00e0 nouveau sur les hommes d\u2019arme qui suent sous ma fen\u00eatre. L'entra\u00eenement de sire {{title.connetable.first_name}} leur a \u00e9t\u00e9 profitable, mais depuis le passage des brigands, il n\u2019ont pas eut d\u2019occasion de se battre. Il est peut \u00eatre temps qu\u2019ils affrontent un vrai ennemi, sur un vrai champ de bataille.\r\n\r\n\r\n    Votre valeur de Prestige limite le nombre de suivants dans votre cour et la population de votre ville. Une mani\u00e8re s\u00fbre de gagner du Prestige est de gagner des batailles.", 
     "image": "events/711_1.jpg", 
     "on_fire": "  \n ", 
     "slug": "tuto_ambition_2", 
@@ -4294,7 +4294,7 @@
     "message": "", 
     "event": 133, 
     "condition": "\n", 
-    "on_fire": "soeur = param.get_value(\"soeur\")\n\nsoeur.loyalty += 10\n\nsoeur.save()\n\nparam.set_value(\"compliment\",True)\nparam.set_value(\"injure\",False)\n\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_3\")).start()\n"
+    "on_fire": "soeur = param.get_value(\"soeur\")\nsoeur.loyalty += 10\nsoeur.save()\n\nparam.set_value(\"compliment\", True)\nparam.set_value(\"injure\", False)\n\nparam.next_event(\"tuto_soeurette_3\").start()\n"
   }
 },
 {
@@ -4305,7 +4305,7 @@
     "message": "", 
     "event": 133, 
     "condition": "if kingdom.get_folk_in_title(\"chatelain\").plot <= 8:\n  status = \"pas assez d'intrigue\"\n", 
-    "on_fire": "soeur = param.get_value(\"soeur\")\n\nsoeur.loyalty += 10\n\nsoeur.save()\n\nparam.set_value(\"compliment\",True)\nparam.set_value(\"injure\",False)\n\n\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_3\")).start()\n"
+    "on_fire": "soeur = param.get_value(\"soeur\")\nsoeur.loyalty += 10\nsoeur.save()\n\nparam.set_value(\"compliment\", True)\nparam.set_value(\"injure\", False)\n\n\nparam.next_event(\"tuto_soeurette_3\").start()\n"
   }
 },
 {
@@ -4316,18 +4316,18 @@
     "message": "", 
     "event": 133, 
     "condition": "\n", 
-    "on_fire": "param.set_value(\"injure\",False)\nparam.set_value(\"compliment\",False)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_3\")).start()"
+    "on_fire": "param.set_value(\"injure\", False)\nparam.set_value(\"compliment\", False)\n\nparam.next_event(\"tuto_soeurette_3\").start()"
   }
 },
 {
   "pk": 180, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Je la fusille du regard \"\u00c9pargnez-moi vos platitudes, {{soeur.first_name}}. Que voulez-vous  de  moi cette fois-ci?\".", 
+    "text": "Je la fusille du regard \"\u00c9pargnez-moi vos platitudes, {{soeur.first_name}}. Que voulez-vous de moi cette fois-ci?\".", 
     "message": "", 
     "event": 133, 
     "condition": "\n", 
-    "on_fire": "soeur = param.get_value(\"soeur\")\n\nsoeur.loyalty -= 10\n\nsoeur.save()\n\nparam.set_value(\"injure\",True)\n\nparam.next_event(\"tuto_soeurette_3\").start()\n"
+    "on_fire": "soeur = param.get_value(\"soeur\")\nsoeur.loyalty -= 10\nsoeur.save()\n\nparam.set_value(\"injure\", True)\n\nparam.next_event(\"tuto_soeurette_3\").start()\n"
   }
 },
 {
@@ -4371,29 +4371,29 @@
     "message": "", 
     "event": 135, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_accept\")).start()\n\nsoeur = param.get_value(\"soeur\")\n\nsoeur.loyalty += 10\n\nsoeur.save()\n"
+    "on_fire": "param.next_event(\"tuto_soeurette_accept\").start()\n\nsoeur = param.get_value(\"soeur\")\nsoeur.loyalty += 10\nsoeur.save()\n"
   }
 },
 {
   "pk": 185, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\"Voil\u00e0 qui pose probl\u00e8me.  Mon fils {{folks.1.first_name}} est l'h\u00e9ritier de ces terres, et je ne souhaite pas risquer une querelle de succession...\"", 
+    "text": "\"Voil\u00e0 qui pose probl\u00e8me. Mon fils {{folks.1.first_name}} est l'h\u00e9ritier de ces terres, et je ne souhaite pas risquer une querelle de succession...\"", 
     "message": "", 
     "event": 135, 
     "condition": "\n", 
-    "on_fire": "soeur = param.get_value(\"soeur\")\n\nif soeur.loyalty >= 66:\n  param.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_5\")).start()\nelse:\n  param.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_6\")).start()\n\n"
+    "on_fire": "soeur = param.get_value(\"soeur\")\n\nif soeur.loyalty >= 66:\n  param.next_event(\"tuto_soeurette_5\").start()\nelse:\n  param.next_event(\"tuto_soeurette_6\").start()\n\n"
   }
 },
 {
   "pk": 186, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\"Ah, nous y voil\u00e0! Maintenant que j'ai remit {{kingdom}} sur pieds, vous voulez que vos rejetons aient leur part du g\u00e2teau!\"", 
+    "text": "\"Ah, nous y voil\u00e0! Maintenant que j'ai remis {{kingdom}} sur pieds, vous voulez que vos rejetons aient leur part du g\u00e2teau!\"", 
     "message": "", 
     "event": 135, 
     "condition": "\n", 
-    "on_fire": "soeur = param.get_value(\"soeur\")\n\nsoeur.loyalty -= 10\n\nsoeur.save()\n\nif soeur.loyalty >= 66:\n  param.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_5\")).start()\nelse:\n  param.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_6\")).start()\n"
+    "on_fire": "soeur = param.get_value(\"soeur\")\nsoeur.loyalty -= 10\nsoeur.save()\n\nif soeur.loyalty >= 66:\n  param.next_event(\"tuto_soeurette_5\").start()\nelse:\n  param.next_event(\"tuto_soeurette_6\").start()\n"
   }
 },
 {
@@ -4987,7 +4987,7 @@
     "message": "{{mari}} s'est offusqu\u00e9 de mon refus de l'unir \u00e0 {{mariee}}. ```-40 de Loyaut\u00e9 chacun```", 
     "event": 176, 
     "condition": "\n", 
-    "on_fire": "pe=param.pending_event.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fille\")\npe.start()\n"
+    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_scandale_fantome\")\n"
   }
 },
 {
@@ -5217,8 +5217,8 @@
     "text": "Non. Mon ambition n'est pas une raison suffisante pour mettre la vie de mes hommes en danger.", 
     "message": "Les r\u00e9parations de {{dynasty}} sont termin\u00e9e. Un grand jour pour notre famille.", 
     "event": 10, 
-    "condition": null, 
-    "on_fire": null
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 },
 {

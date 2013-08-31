@@ -327,7 +327,7 @@
   "fields": {
     "name": "Marier", 
     "target_list": "grids['mari'][0].spouse = grids['femme'][0]\ngrids['femme'][0].spouse = grids['mari'][0]\ngrids['mari'][0].save()\ngrids['femme'][0].save()\n", 
-    "text": "Je souhaite marier deux membres de ma cour", 
+    "text": "marier deux membres de ma cour", 
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "Valeur :", 
@@ -340,7 +340,7 @@
     "is_cancellable": true, 
     "duration": 5, 
     "on_cancel": "\n", 
-    "slug": "marier", 
+    "slug": "tuto_marier", 
     "on_init": " "
   }
 },
