@@ -327,18 +327,18 @@
   "fields": {
     "name": "Marier", 
     "target_list": "\n", 
-    "text": "marier deux membres de ma cour", 
+    "text": "Si une personne de votre dynastie est mari\u00e9e, le banquet qui s'ensuit est \u00e0 votre charge et coute 5 \u00e9cus par personne pr\u00e9sente dans votre cour au moment o\u00f9 le mariage est c\u00e9l\u00e9br\u00e9.", 
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": "grids['mari'][0].spouse = grids['femme'][0]\ngrids['femme'][0].spouse = grids['mari'][0]\ngrids['mari'][0].save()\ngrids['femme'][0].save()\nif grids['mari'][0]==folks[3] and grids['femme'][0]==folks[2]:\n  kingdom.set_value(\"tuto_mariage_fait\",\"True\")\n", 
+    "on_start": "if (grids['mari'][0].last_name==kingdom.user.username or grids['femme'][0].last_name==kingdom.user.username):\n  prix=5*kingdom.folk_set.filter(mission__isnull=True).count()\n  if kingdom.money<prix:\n    status=\"Vous n'avez pas assez d'argent pour payer le banquet\"\n    stop()\n  else:\n    kingdom.money-=prix\n    kingdom.save()\ngrids['mari'][0].spouse = grids['femme'][0]\ngrids['femme'][0].spouse = grids['mari'][0]\ngrids['mari'][0].save()\ngrids['femme'][0].save()\nif grids['mari'][0]==folks[3] and grids['femme'][0]==folks[2]:\n  kingdom.set_value(\"tuto_mariage_fait\",True)\n  PendingEvent(event=Event.objects.get(slug=\"banquet\"), kingdom=kingdom).save()\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 3, 
     "target_description": "Cible", 
     "timeout": null, 
     "is_cancellable": true, 
-    "duration": 2, 
+    "duration": 0, 
     "on_cancel": "\n", 
     "slug": "marier", 
     "on_init": " "
@@ -990,7 +990,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "mari", 
-    "condition": "if folk.age < Constant.objects.get(name=\"Majorite\").value : \n  status = \"Cette personne est trop jeune pour \u00eatre mari\u00e9e\"\nelif folk.sex == \"f\" :\n  status = \"Le mari doit \u00eatre un homme\"\nelif folk.has_quality(\"pretre\") :\n  status = \"Un p\u00eatre ne peut pas se marier\"\nelif kingdom.in_tuto == True and folk.last_name == kingdom.get_folk_in_title(\"chatelain\").last_name:\n  status = \"Il est encore trop tot pour songer \u00e0 marier quelqu'un de votre dynastie\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
+    "condition": "if folk.age < Constant.objects.get(name=\"Majorite\").value : \n  status = \"Cette personne est trop jeune pour \u00eatre mari\u00e9e\"\nelif folk.sex == \"f\" :\n  status = \"Le mari doit \u00eatre un homme\"\nelif folk.has_quality(\"pretre\") :\n  status = \"Un p\u00eatre ne peut pas se marier\"\nelif (kingdom.get_value(\"in_tuto\") == True and folk==folk[0]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre chatelain\"\nelif (kingdom.get_value(\"passage_proposition_marriage\",False) and  folk==folk[1]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre fils\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
   }
 },
 {
@@ -1003,7 +1003,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "femme", 
-    "condition": "if folk.age < Constant.objects.get(name=\"Majorite\").value :\n  status = \"Cette personne est trop jeune pour \u00eatre mari\u00e9e\"\nelif folk.sex == \"m\" :\n  status = \"La femme doit \u00eatre une femme\"\nelif kingdom.in_tuto == True and folk.last_name == kingdom.get_folk_in_title(\"chatelain\").last_name:\n  status = \"Il est encore trop tot pour songer \u00e0 marier quelqu'un de votre dynastie\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
+    "condition": "if folk.age < Constant.objects.get(name=\"Majorite\").value :\n  status = \"Cette personne est trop jeune pour \u00eatre mari\u00e9e\"\nelif folk.sex == \"m\":\n  status = \"La femme doit \u00eatre une femme\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
   }
 },
 {

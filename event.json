@@ -81,7 +81,7 @@
     "category": null, 
     "name": "Baston", 
     "weight": 1, 
-    "text": "{{folks.3.first_name}} et mon fils {{folks.1.first_name}} se tiennent devant moi, alors que j\u2019ach\u00e8ve de leur exposer mon projet. \r\n\u201c...un casque, un tabard et une \u00e9p\u00e9e par homme d\u2019arme, le reste de l\u2019\u00e9quipement sera \u00e0 leur charge. Je vais avoir besoin que l\u2019un de vous deux accepte le titre de Conn\u00e9table et supervise leur recrutement et leur entra\u00eenement.\u201d\r\n\r\n\u2019\u2019\u2019Fa\u00eetes glisser un de vos suivants depuis l\u2019onglet Titre pour le nommer Conn\u00e9table.\u2019\u2019\u2019", 
+    "text": "{{folks.3.first_name}} et mon fils {{folks.1.first_name}} se tiennent devant moi, alors que j\u2019ach\u00e8ve de leur exposer mon projet. \r\n\u201c...un casque, un tabard et une \u00e9p\u00e9e par homme d\u2019arme, le reste de l\u2019\u00e9quipement sera \u00e0 leur charge. Je vais avoir besoin que l\u2019un de vous deux accepte le titre de Conn\u00e9table et supervise leur recrutement et leur entra\u00eenement.\u201d\r\n\r\n    Fa\u00eetes glisser un de vos suivants depuis l\u2019onglet Titre pour le nommer Conn\u00e9table.", 
     "image": "events/451.jpg", 
     "on_fire": " ", 
     "slug": "tuto_intro_choixcombat", 
@@ -109,7 +109,7 @@
     "category": null, 
     "name": "Soif de gloire !", 
     "weight": 1, 
-    "text": "Et pourtant, je sais que mon p\u00e9riple ne fait que commencer. Mon h\u00e9ritage ne sera pas \u00e0 l'abri des convoitises tant que je n\u2019aurai pas prouv\u00e9 ma valeur aux yeux du royaume. Mes sujets sont encore si peu nombreux... Nobles ou paysans, le prestige de mon nom les a ralli\u00e9 sous ma banni\u00e8re, et ils attendent encore de moi que je porte ce nom vers la gloire. Mon regard se pose \u00e0 nouveau sur les hommes d\u2019arme qui suent sous ma fen\u00eatre. L'entra\u00eenement de sire {{title.connetable.first_name}} leur a \u00e9t\u00e9 profitable, mais depuis le passage des brigands, il n\u2019ont pas eut d\u2019occasion de se battre. Il est peut \u00eatre temps qu\u2019ils affrontent un vrai ennemi, sur un vrai champ de bataille.\r\n\r\n\r\n    Votre valeur de Prestige limite le nombre de suivants dans votre cour et la population de votre ville. Une mani\u00e8re s\u00fbre de gagner du Prestige est de gagner des batailles.", 
+    "text": "Et pourtant, je sais que mon p\u00e9riple ne fait que commencer. Mon h\u00e9ritage ne sera pas \u00e0 l'abri des convoitises tant que je n\u2019aurai pas prouv\u00e9 ma valeur aux yeux du royaume. Mes sujets sont encore si peu nombreux... Nobles ou paysans, le prestige de mon nom les a ralli\u00e9 sous ma banni\u00e8re, et ils attendent encore de moi que je porte ce nom vers la gloire. Mon regard se pose \u00e0 nouveau sur les hommes d\u2019arme qui suent sous ma fen\u00eatre. L'entra\u00eenement de sire {{title.connetable.first_name}} leur a \u00e9t\u00e9 profitable, mais depuis le passage des brigands, il n\u2019ont pas eu d\u2019occasion de se battre. Il est peut \u00eatre temps qu\u2019ils affrontent un vrai ennemi, sur un vrai champ de bataille.\r\n\r\n    Votre valeur de Prestige limite le nombre de suivants dans votre cour et la population de votre ville. Une mani\u00e8re s\u00fbre de gagner du Prestige est de gagner des batailles.", 
     "image": "events/711_1.jpg", 
     "on_fire": "  \n ", 
     "slug": "tuto_ambition_2", 
@@ -153,7 +153,7 @@
     "weight": 1, 
     "text": "Il s\u2019incline respectueusement. \u201c {{knight}}, pour vous servir.\u201d Je jette un regard \u00e0  {{title.connetable.first_name}}, qui reste de marbre. \u201cVous me semblez homme aguerri. Seriez-vous d\u2019aventure chevalier?\u201d Il se redresse, et me regarde droit dans les yeux. \u201c En effet je le suis. Un chevalier fatigu\u00e9 par une longue errance, qui cherche un seigneur au c\u0153ur noble \u00e0 qui pr\u00eater son bras.\u201d J\u2019opine gravement, et pose une main ferme sur son \u00e9paule. \u201cVotre errance est termin\u00e9e, sire {{knight.first_name}}. A genoux.\u201d", 
     "image": "events/716_1.jpg", 
-    "on_fire": "#Cr\u00e9ation du chevalier\nknight = call_function(\"creer_folk\", sex=\"m\", birth=(datetime.now() - timedelta(days=35)), fight_min=9, diplomacy_min=2, plot_min=2, scholarship_min=2, loyalty=50, max_carac=32, kingdom=kingdom, )\nparam.set_value(\"knight\", knight)\n", 
+    "on_fire": "#Cr\u00e9ation du chevalier\nknight = call_function(\"creer_folk\", sex=\"m\", birth=(datetime.now() - timedelta(days=35)), fight_min=9, diplomacy_min=2, plot_min=2, scholarship_min=2, loyalty=50, max_carac=32, kingdom=kingdom)\nparam.set_value(\"knight\", knight)\n", 
     "slug": "tuto_recrutement_2", 
     "condition": " "
   }
@@ -991,7 +991,7 @@
     "category": null, 
     "name": "Tuto too much ecus", 
     "weight": 1, 
-    "text": "Les paysans ont rempli leur r\u00f4le et pay\u00e9 leurs taxes. Mes caisses sont assez pleines pour que je songe \u00e0 faire  fructifier mes \u00e9cus. Je vais devoir nommer un tr\u00e9sorier pour s'occuper des registres et \u00e9tudier la question...\r\n```\r\nNouveau titre : tr\u00e9sorier.\r\n```", 
+    "text": "Les paysans ont rempli leur r\u00f4le et pay\u00e9 leurs taxes. Mes caisses sont assez pleines pour que je songe \u00e0 faire  fructifier mes \u00e9cus. Je vais devoir nommer un tr\u00e9sorier pour s'occuper des registres et \u00e9tudier la question...\r\n\r\n    Nouveau titre : tr\u00e9sorier.", 
     "image": "events/66_2.jpg", 
     "on_fire": "kingdom.unlock_title(\"tresorier\")\n", 
     "slug": "tuto_toomuchecus", 
@@ -1693,9 +1693,9 @@
     "weight": 1, 
     "text": "Sire {{homme.first_name}} s'incline bien bas, une joie non dissimul\u00e9e sur son visage. Sa promise, rouge de plaisir, me sourit avec reconnaissance.", 
     "image": "events/362_2.jpg", 
-    "on_fire": null, 
+    "on_fire": "\n", 
     "slug": "tuto_demandemariage_2", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -1931,7 +1931,7 @@
     "weight": 1, 
     "text": "\"Non! vous n'avez pas le droit!\" Ignorant ses vocif\u00e9rations, les gardes tra\u00eenent sire {{facheux}} jusqu'aux oubliettes. Si les courtisans qui me d\u00e9visagent paraissent choqu\u00e9s, mon fils et ma fille me regardent avec gratitude.\r\n\r\n   {{facheux}} gagne le Trait Prisonnier.\r\n   (-15) de Loyaut\u00e9 \u00e0 toute la cour sauf {{folks.1}} et {{folks.2}}", 
     "image": "events/100.jpg", 
-    "on_fire": "facheux = param.get_value(\"facheux\")\nfacheux.add_quality(\"prisonnier\")\nfolks[1].loyalty+=15\nfolks[2].loyalty+=15\nfolks[1].save()\nfolks[2].save()\ncall_function(\"perte_loyaute_general\", kingdom=kingdom, perte_max=16, perte_min=14)\n", 
+    "on_fire": "facheux = param.get_value(\"facheux\")\nfacheux.add_quality(\"prisonnier\")\n\ncall_function(\"perte_loyaute_general\", kingdom=kingdom, perte_max=16, perte_min=14)\nfolks[1].loyalty+=15\nfolks[2].loyalty+=15\nfolks[1].save()\nfolks[2].save()\n", 
     "slug": "tuto_facheux_jail", 
     "condition": "\n"
   }
@@ -1959,7 +1959,7 @@
     "weight": 1, 
     "text": " ", 
     "image": "", 
-    "on_fire": "if kingdom.get_folk_in_title(\"maitre_espion\") is None:\n  PendingEvent(event=Event.objects.get(slug=\"tuto_scandale_fille\"),kingdom=kingdom).save()\nelse:\n  if kingdom.get_folk_in_title(\"maitre_espion\")==folks[2] or kingdom.get_folk_in_title(\"maitre_espion\")==folks[3]:\n    PendingEvent(event=Event.objects.get(slug=\"tuto_scandale_fils_warning\"),kingdom=kingdom).save()\n  else:\n    PendingEvent(event=Event.objects.get(slug=\"tuto_scandale_fille_warning\"),kingdom=kingdom).save()\nstatus = \"scandalel fantome\"\n", 
+    "on_fire": "if kingdom.get_folk_in_title(\"maitre_espion\") is None:\n  PendingEvent(event=Event.objects.get(slug=\"tuto_scandale_fille\"),kingdom=kingdom).save()\nelse:\n  if kingdom.get_folk_in_title(\"maitre_espion\")==folks[2] or kingdom.get_folk_in_title(\"maitre_espion\")==folks[3]:\n    PendingEvent(event=Event.objects.get(slug=\"tuto_scandale_fils_warning\"), kingdom=kingdom).save()\n  else:\n    PendingEvent(event=Event.objects.get(slug=\"tuto_scandale_fille_warning\"), kingdom=kingdom).save()\nstatus = \"scandale fantome\"\n", 
     "slug": "tuto_scandale_fantome", 
     "condition": "\n"
   }
@@ -1987,9 +1987,9 @@
     "weight": 1, 
     "text": "{{title.maitre_espion.first_name}}, mon nouveau ma\u00eetre espion, a demand\u00e9 une audience. Je l'ai rencontr\u00e9{{title.maitre_espion|feminize}} dans la grande salle. \"Mon seigneur, mes agents m'ont rapport\u00e9s une nouvelle inqui\u00e9tante. Une troupe de bandits s\u00e9vie dans la r\u00e9gion. Ils attaquent les fermes isol\u00e9es et les convoits, et parfois un village mal d\u00e9fendu. Ils frappent, et s'en vont vers leur prochaine cible avant d'\u00eatre rattrap\u00e9s par les autorit\u00e9s. Ma source affirme qu'ils ont entendu parler de la fragilit\u00e9 de {{dynasty}} et ont d\u00e9cid\u00e9 de faire rapine sur nos terres\". Je reste un instant pensif, puis lui r\u00e9pond d'une voix autoritaire. \"Tenez-vous inform\u00e9{{title.maitre_espion|feminize}} de leurs mouvements. Nous allons former un petit contingent et les contrer d\u00e8s qu'ils poseront le pied dans mon domaine\".", 
     "image": "events/503_5.jpg", 
-    "on_fire": null, 
+    "on_fire": "\n", 
     "slug": "tuto_bandits_maitre_espion", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -2505,9 +2505,9 @@
     "weight": 1, 
     "text": "Mon fils {{folks.2.first_name}} s'avance d'un pas rapide. Il semble agit\u00e9, et tient une missive dans sa main. \"Sire, je... Notre voisin le seigneur {{ennemi.last_name}} clame que nous l'avons offens\u00e9, et qu'il entend laver  l'affront dans le sang\". Je me redresse, stup\u00e9fait. \"Il ose!?\" J'arrache le courier de ses mains, et sens ma col\u00e8re monter au fil de ma lecture. \"Le miserable! Ces mensonges n'ont qu'un seul but. Il esp\u00e8re piller nos terres en toute impunit\u00e9\". Je froisse la missive. \"S'il nous prend pour une cible facile, il va vite d\u00e9chanter!\"\r\n\r\n     Le seigneur {{ennemi}} a obtenu un cassus belli envers {{dynasty}}.", 
     "image": "events/407_11.jpg", 
-    "on_fire": null, 
+    "on_fire": "\n", 
     "slug": "tuto_ennemi_cassusbelli", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -2892,7 +2892,7 @@
     "message": "Nommer un [conn\u00e9table](#title) me permettra de [recruter des hommes d'armes](#mission).", 
     "event": 7, 
     "condition": " ", 
-    "on_fire": "kingdom.unlock_title(\"connetable\")\nPendingMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"tuto_recrutement\"), started = None).save()\n"
+    "on_fire": "kingdom.unlock_title(\"connetable\")\nPendingMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"tuto_recrutement\")).save()\n"
   }
 },
 {
@@ -2914,7 +2914,7 @@
     "message": "", 
     "event": 10, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_ambition_3\")).start()\n"
+    "on_fire": "param.next_event(\"tuto_ambition_3\").start()\n"
   }
 },
 {
@@ -2955,10 +2955,10 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Il s'ex\u00e9cute, et me pr\u00e9sente son \u00e9p\u00e9e.", 
-    "message": null, 
+    "message": "", 
     "event": 13, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_recrutement_3\")).start()"
+    "on_fire": "param.next_event(\"tuto_recrutement_3\").start()"
   }
 },
 {
@@ -3020,11 +3020,11 @@
   "pk": 25, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\u00ab D\u00eetes moi, sire {{knight.fistr_name}}, que diriez d\u2019entrer \u00e0 mon service ? \u00bb", 
+    "text": "\u00ab D\u00eetes moi, sire {{knight.first_name}}, que diriez d\u2019entrer \u00e0 mon service ? \u00bb", 
     "message": "", 
     "event": 19, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_potsdevin_3\")).start()\n"
+    "on_fire": "param.next_event(\"tuto_potsdevin_3\").start()\n"
   }
 },
 {
@@ -3288,7 +3288,7 @@
     "message": "Ma fille et le chevalier {{folks.3.first_name}} semble avoir un peu trop d'affection l'un pour l'autre. J'ai d\u00e9cid\u00e9 de fermer les yeux.", 
     "event": 48, 
     "condition": " ", 
-    "on_fire": "#param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fille\")).start()\npe=param.pending_event.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fille\")\npe.start()\n"
+    "on_fire": "#param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fille\")).start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fille\")\npe.start()\n"
   }
 },
 {
@@ -3530,7 +3530,7 @@
     "message": "", 
     "event": 48, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fille_warning_2\")).start()\n"
+    "on_fire": "param.next_event(\"tuto_scandale_fille_warning_2\").start()\n"
   }
 },
 {
@@ -3596,7 +3596,7 @@
     "message": "", 
     "event": 70, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fille_warning_6\")).start() "
+    "on_fire": "param.next_event(\"tuto_scandale_fille_warning_6\").start() "
   }
 },
 {
@@ -3607,7 +3607,7 @@
     "message": "", 
     "event": 70, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fille_4\")).start()"
+    "on_fire": "param.next_event(\"tuto_scandale_fille_4\").start()"
   }
 },
 {
@@ -3746,7 +3746,7 @@
   "pk": 125, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Je ferai mieu de nommer un \u00e9rudit qui sache lire et compter.", 
+    "text": "Je ferai mieux de nommer un \u00e9rudit qui sache lire et compter.", 
     "message": "Je peux maintenant nommer un [tr\u00e9sorier](title).", 
     "event": 92, 
     "condition": " ", 
@@ -4552,8 +4552,8 @@
     "text": "Il faudra songer aux pr\u00e9paratifs...", 
     "message": "J'ai accept\u00e9 que {{homme}} et {{femme}} se marient.", 
     "event": 143, 
-    "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_mariagepreparatifs\")).start()"
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_mariagepreparatifs\").start()"
   }
 },
 {
@@ -4773,7 +4773,7 @@
     "message": "Mon fils {{folk.1.first_name}} et le {{facheux}} sont \u00e0 couteaux tir\u00e9s. Je pourrais regler le probl\u00e8me en [d\u00e9barassant](mission) ma cour du chevalier.", 
     "event": 155, 
     "condition": "if param.get_value(\"come_from\") != 5:\n  status = \"ce choix n'apparait pas\"\n", 
-    "on_fire": "param.set_value(\"come_from\", 3)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_7\")).start()\n"
+    "on_fire": "param.set_value(\"come_from\", 3)\nparam.next_event(\"tuto_facheux_7\").start()\n"
   }
 },
 {
@@ -4784,7 +4784,7 @@
     "message": "", 
     "event": 155, 
     "condition": "\n", 
-    "on_fire": "param.set_value(\"come_from\", 3)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_6\")).start()"
+    "on_fire": "param.set_value(\"come_from\", 3)\nparam.next_event(\"tuto_facheux_6\").start()"
   }
 },
 {
@@ -4795,7 +4795,7 @@
     "message": "Mon fils {{folk.1.first_name}} et le {{facheux}} sont \u00e0 couteaux tir\u00e9s.", 
     "event": 155, 
     "condition": "if param.get_value(\"come_from\") == 5:\n  status = \"ce choix n'apparait pas\"\n", 
-    "on_fire": "param.set_value(\"come_from\", 3)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_5\")).start()"
+    "on_fire": "param.set_value(\"come_from\", 3)\nparam.next_event(\"tuto_facheux_5\").start()"
   }
 },
 {
@@ -4893,8 +4893,8 @@
     "text": "\"Bon travail, {{title.maitre_espion.first_name}}.\"", 
     "message": "", 
     "event": 165, 
-    "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_bandits_preparatifs\")).start()"
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_bandits_preparatifs\").start()"
   }
 },
 {
@@ -5088,11 +5088,11 @@
   "pk": 251, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Je rit de bon coeur. \"Vous me plaisez, mon ami! soyez le bienvenu \u00e0 {{dynasty}}.\" `Sire {{chevalier.first_name}} rejoint votre cour`", 
+    "text": "Je ris de bon coeur. \"Vous me plaisez, mon ami ! soyez le bienvenu \u00e0 {{dynasty}}.\" `Sire {{chevalier.first_name}} rejoint votre cour`", 
     "message": "Le chevalier {{chevalier}} a rejoint ma cour.", 
     "event": 181, 
     "condition": "\n", 
-    "on_fire": "facheux = param.get_value(\"facheux\")\nfacheux.kingdom = kingdom\nfacheux.save()\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"Aucun_event_fini_moteur\")"
+    "on_fire": "facheux = param.get_value(\"facheux\")\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"Aucun_event_fini_moteur\")"
   }
 },
 {
@@ -5125,7 +5125,7 @@
     "message": "Je n'ai pas voulu du chevalier {{chevalier}} dans ma cour.", 
     "event": 181, 
     "condition": "\n", 
-    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")\nkingdom.set_value(\"tuto_facheux_refus\", True)\n"
+    "on_fire": "facheux.delete()\nkingdom.set_value(\"tuto_facheux_refus\", True)\n\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")\n"
   }
 },
 {
@@ -5289,8 +5289,8 @@
     "text": "Nous devons nous pr\u00e9parer \u00e0 le recevoir...", 
     "message": "Le seigneur {{ennemi}} a obtenu un cassus belli envers {{dynasty}}.", 
     "event": 206, 
-    "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_ennemi_cassusbelli_2\")).start()"
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_ennemi_cassusbelli_2\").start()"
   }
 },
 {
@@ -5400,7 +5400,7 @@
     "message": "", 
     "event": 213, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_duel_sonloose_3\")).start()"
+    "on_fire": "param.next_event(\"tuto_facheux_duel_sonloose_3\").start()"
   }
 },
 {
@@ -5511,6 +5511,17 @@
     "event": 225, 
     "condition": "\n", 
     "on_fire": "# Simuler un mois de temps sur le Kingdom\nkingdom.money += 15\nkingdom.population += 20\nkingdom.soldiers += 3\nkingdom.save()\n\n# Lancer l'\u00e9v\u00e8nement en next_event\n# Les variables seront automatiquement transmises aussi.\nparam.next_event(param.get_value('slug')).start()\n\n"
+  }
+},
+{
+  "pk": 294, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Ok", 
+    "message": "", 
+    "event": 226, 
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 },
 {
