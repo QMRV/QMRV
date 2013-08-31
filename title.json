@@ -111,76 +111,6 @@
   }
 },
 {
-  "pk": 152, 
-  "model": "title.availabletitle", 
-  "fields": {
-    "kingdom": 45, 
-    "last_folk": 6625, 
-    "folk": 6625, 
-    "title": 1
-  }
-},
-{
-  "pk": 153, 
-  "model": "title.availabletitle", 
-  "fields": {
-    "kingdom": 45, 
-    "last_folk": 6628, 
-    "folk": 6628, 
-    "title": 4
-  }
-},
-{
-  "pk": 154, 
-  "model": "title.availabletitle", 
-  "fields": {
-    "kingdom": 45, 
-    "last_folk": 6626, 
-    "folk": 6626, 
-    "title": 2
-  }
-},
-{
-  "pk": 155, 
-  "model": "title.availabletitle", 
-  "fields": {
-    "kingdom": 45, 
-    "last_folk": 6632, 
-    "folk": 6632, 
-    "title": 7
-  }
-},
-{
-  "pk": 156, 
-  "model": "title.availabletitle", 
-  "fields": {
-    "kingdom": 45, 
-    "last_folk": 6630, 
-    "folk": 6630, 
-    "title": 3
-  }
-},
-{
-  "pk": 160, 
-  "model": "title.availabletitle", 
-  "fields": {
-    "kingdom": 45, 
-    "last_folk": 6627, 
-    "folk": 6627, 
-    "title": 5
-  }
-},
-{
-  "pk": 161, 
-  "model": "title.availabletitle", 
-  "fields": {
-    "kingdom": 45, 
-    "last_folk": 6633, 
-    "folk": 6633, 
-    "title": 6
-  }
-},
-{
   "pk": 162, 
   "model": "title.availabletitle", 
   "fields": {
@@ -188,26 +118,6 @@
     "last_folk": 6634, 
     "folk": 6634, 
     "title": 1
-  }
-},
-{
-  "pk": 173, 
-  "model": "title.availabletitle", 
-  "fields": {
-    "kingdom": 57, 
-    "last_folk": 6663, 
-    "folk": 6663, 
-    "title": 1
-  }
-},
-{
-  "pk": 176, 
-  "model": "title.availabletitle", 
-  "fields": {
-    "kingdom": 57, 
-    "last_folk": 6666, 
-    "folk": 6666, 
-    "title": 4
   }
 },
 {
@@ -248,6 +158,36 @@
     "last_folk": 6686, 
     "folk": 6686, 
     "title": 5
+  }
+},
+{
+  "pk": 191, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 60, 
+    "last_folk": 6689, 
+    "folk": 6689, 
+    "title": 1
+  }
+},
+{
+  "pk": 192, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 60, 
+    "last_folk": 6690, 
+    "folk": 6690, 
+    "title": 5
+  }
+},
+{
+  "pk": 194, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 60, 
+    "last_folk": 6695, 
+    "folk": 6695, 
+    "title": 3
   }
 }
 ]

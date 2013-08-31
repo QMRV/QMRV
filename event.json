@@ -769,8 +769,8 @@
     "weight": 1, 
     "text": "Votre cour est presque vide", 
     "image": "", 
-    "on_fire": "choose_event = random_value(1,3)\nfacheux = folks.filter(sex=\"m\", birth__lte=datetime.now()-timedelta(days=Constant.objects.get(name=\"Majorite\").value))\nfacheux = facheux.exclude(id__in=[folks[0].id, folks[1].id, folks[3].id])\nfacheux = facheux.exclude(quality_set__slug=\"pretre\")\nfacheux = facheux.order_by('?')\nif not facheux:\n  choose_event = random_value(2,3)\nif choose_event == 1:\n  pe = PendingEvent(event = Event.objects.get(slug=\"tuto_allegeance_dame\"), kingdom=kingdom)\n  pe.param.set_value(\"chevalier\",facheux[0])\n  pe.start()\nelif choose_event == 2:\n  PendingEvent(event = Event.objects.get(slug=\"tuto_allegeance_pretre\"),kingdom=kingdom).start()\nelse:\n  PendingEvent(event = Event.objects.get(slug=\"tuto_allegeance_chevalier\"), kingdom=kingdom).start()\n\nstatus = \"cour basse fantome\"\n", 
-    "slug": "tuto_cour_basse", 
+    "on_fire": "choose_event = random_value(1,3)\n\n# R\u00e9cup\u00e9rer un homme majeur qui n'est pas de ma famille et n'est pas un pr\u00eatre.\n# Optimiser pour faire en sorte qu'on puisse ensuite r\u00e9cup\u00e9rer le type cr\u00e9e pour le tuto facheux.\nfacheux = folks.filter(sex=\"m\", birth__lte=datetime.now()-timedelta(days=Constant.objects.get(name=\"Majorite\").value))\nfacheux = facheux.exclude(id__in=[folks[0].id, folks[1].id, folks[3].id])\nfacheux = facheux.exclude(quality_set__slug=\"pretre\")\nfacheux = facheux.order_by('?')\nif not facheux:\n  choose_event = 3\n\nif choose_event == 1:\n  pe = PendingEvent(event = Event.objects.get(slug=\"tuto_allegeance_dame\"), kingdom=kingdom, started=None)\n  pe.save()\n  pe.param.set_value(\"chevalier\",facheux[0])\n  pe.start()\nelif choose_event == 2:\n  PendingEvent(event = Event.objects.get(slug=\"tuto_allegeance_pretre\"), kingdom=kingdom).start()\nelse:\n  PendingEvent(event = Event.objects.get(slug=\"tuto_allegeance_chevalier\"), kingdom=kingdom).start()\n\nstatus = \"cour basse fantome\"\n", 
+    "slug": "tuto_cour_basse_fantome", 
     "condition": "\n"
   }
 },
@@ -1019,9 +1019,9 @@
     "category": null, 
     "name": "Tuto too few pop", 
     "weight": 1, 
-    "text": "Ma cour se peuple peu \u00e0 peu mais il y a trop peu de paysans sur mes terres pour esperer lever des impots satisfaisants. Pour fid\u00e9liser mes serfs et les faire travailler plus dur, j'aurais besoin de leur insufler une ferveur religieuse nouvelle. Pour convaincre de nouveaux paysans de s'installer sur mes terres, j'ai besoin de convaincre la populace de ma pi\u00e9t\u00e9 et de ma bienveillance. Pour m'aider dans cette tache, j'ai persuad\u00e9 le p\u00e8re {{title.cure}}, un cur\u00e9  respect\u00e9 de la r\u00e9gion, de se mettre \u00e0 mon service pour m'aider \u00e0 d\u00e9montrer ma charit\u00e9 par des aum\u00f4nes aux plus d\u00e9munis.\r\n\r\n    Le p\u00e8re {{cure.first_name}} a rejoint ma cour, et occupe le titre de Cur\u00e9\r\n", 
+    "text": "Ma cour se peuple peu \u00e0 peu mais il y a trop peu de paysans sur mes terres pour esperer lever des impots satisfaisants. Pour fid\u00e9liser mes serfs et les faire travailler plus dur, j'aurais besoin de leur insufler une ferveur religieuse nouvelle. Pour convaincre de nouveaux paysans de s'installer sur mes terres, j'ai besoin de convaincre la populace de ma pi\u00e9t\u00e9 et de ma bienveillance. Pour m'aider dans cette t\u00e2che, j'ai persuad\u00e9 le p\u00e8re {{title.cure}}, un cur\u00e9  respect\u00e9 de la r\u00e9gion, de se mettre \u00e0 mon service pour m'aider \u00e0 d\u00e9montrer ma charit\u00e9 par des aum\u00f4nes aux plus d\u00e9munis.\r\n\r\n    Le p\u00e8re {{cure.first_name}} a rejoint ma cour, et occupe le titre de Cur\u00e9\r\n", 
     "image": "events/703_1.jpg", 
-    "on_fire": "cure = call_function(\"creer_folk\", kingdom=kingdom, fight_min=1, plot_min=1, diplomacy_min=1, scholarship_min=1, max_carac=32, loyalty=50, sex=\"m\", birth=datetime.now() - timedelta(days=35), trait=\"pretre\")\nparam.set_value(\"cure\", cure)\nkingdom.unlock_title(\"cure\")\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_toofewpopulation\")\n", 
+    "on_fire": "cure = call_function(\"creer_folk\", kingdom=kingdom, fight_min=1, plot_min=1, diplomacy_min=1, scholarship_min=1, max_carac=32, loyalty=50, sex=\"m\", birth=datetime.now() - timedelta(days=35), trait=\"pretre\")\nparam.set_value(\"cure\", cure)\nkingdom.unlock_title(\"cure\")\ncure.add_title(\"cure\")\n\n", 
     "slug": "tuto_toofewpopulation", 
     "condition": " "
   }
@@ -1555,7 +1555,7 @@
     "image": "events/361_2.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_soeurette_2", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -2323,9 +2323,9 @@
     "weight": 1, 
     "text": "Le r\u00e9cit de mon fils est plein de morgue, et aussi partial que celui du chevalier. Il d\u00e9clare \u00eatre pr\u00eat \u00e0  relever le d\u00e9fi, et \u00e0 apprendre \u00e0 \"ce pourceau\" la \"politesse\". Je me laisse aller dans le dossier de mon fauteuil, et prends le temps de r\u00e9fl\u00e9chir avant de r\u00e9torquer.", 
     "image": "events/408_8.jpg", 
-    "on_fire": null, 
+    "on_fire": "\n", 
     "slug": "tuto_facheux_settle_2", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -2760,6 +2760,20 @@
     "on_fire": null, 
     "slug": "tuto_rapportespion", 
     "condition": null
+  }
+},
+{
+  "pk": 225, 
+  "model": "event.event", 
+  "fields": {
+    "category": 2, 
+    "name": "Le temps passe...", 
+    "weight": 1, 
+    "text": "Il y eut un soir, il y eut un matin.\r\nEt ce 30 fois de suite.", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "tuto_timewarp", 
+    "condition": "\n"
   }
 },
 {
@@ -3232,7 +3246,7 @@
     "message": "Ma fille et le chevalier {{folks.3.first_name}} semble avoir un peu trop d'affection l'un pour l'autre. J'ai d\u00e9cid\u00e9 de fermer les yeux.", 
     "event": 48, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fille\")).start()"
+    "on_fire": "#param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fille\")).start()\npe=param.pending_event.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fille\")\npe.start()\n"
   }
 },
 {
@@ -3243,7 +3257,7 @@
     "message": "Mon fils s'est entich\u00e9 d'une servante. J'ai d\u00e9cid\u00e9 de fermer les yeux.", 
     "event": 47, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fils\")).start()"
+    "on_fire": "#param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fils\")).start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fils\")\npe.start()"
   }
 },
 {
@@ -3306,10 +3320,10 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "\"Poursuivez\".", 
-    "message": null, 
+    "message": "", 
     "event": 51, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fille_2\")).start()"
+    "on_fire": "param.next_event(\"tuto_scandale_fille_2\").start()"
   }
 },
 {
@@ -3485,7 +3499,7 @@
     "message": "", 
     "event": 50, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fille_warning_3\")).start() "
+    "on_fire": "param.pending_event.next_event(slug=\"tuto_scandale_fille_warning_3\").start()\n"
   }
 },
 {
@@ -3496,7 +3510,7 @@
     "message": "Il se pourrait que ma fille {{folk.2.first_name}} et mon ami le chevalier {{folk.3.first_name}} partagent une affection d\u00e9plac\u00e9e. Je ferme les yeux pour l'instant.", 
     "event": 50, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(slug=\"tuto_scandale_fille\").start()\n"
+    "on_fire": "#param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fille\")).start()\npe=param.pending_event.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fille\")\npe.start()\n"
   }
 },
 {
@@ -3716,7 +3730,7 @@
     "message": "Le p\u00e8re {{title.cure}} a accept\u00e9 de devenir le [cur\u00e9](titre) de ma cour.", 
     "event": 94, 
     "condition": " ", 
-    "on_fire": "\n"
+    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_toofewpopulation\")\n"
   }
 },
 {
@@ -4265,7 +4279,7 @@
     "text": "Sinc\u00e8re : \"Le plaisir est partag\u00e9, ma soeur. Cela fait bien trop longtemps\".", 
     "message": "", 
     "event": 133, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "soeur = param.get_value(\"soeur\")\n\nsoeur.loyalty += 10\n\nsoeur.save()\n\nparam.set_value(\"compliment\",True)\nparam.set_value(\"injure\",False)\n\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_3\")).start()\n"
   }
 },
@@ -4287,7 +4301,7 @@
     "text": "Rester silencieux, les mains crois\u00e9es et le visage imp\u00e9n\u00e9trable.", 
     "message": "", 
     "event": 133, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "param.set_value(\"injure\",False)\nparam.set_value(\"compliment\",False)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_3\")).start()"
   }
 },
@@ -4298,8 +4312,8 @@
     "text": "Je la fusille du regard \"\u00c9pargnez-moi vos platitudes, {{soeur.first_name}}. Que voulez-vous  de  moi cette fois-ci?\".", 
     "message": "", 
     "event": 133, 
-    "condition": null, 
-    "on_fire": "soeur = param.get_value(\"soeur\")\n\nsoeur.loyalty -= 10\n\nsoeur.save()\n\nparam.set_value(\"injure\",True)\n\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_3\")).start()\n"
+    "condition": "\n", 
+    "on_fire": "soeur = param.get_value(\"soeur\")\n\nsoeur.loyalty -= 10\n\nsoeur.save()\n\nparam.set_value(\"injure\",True)\n\nparam.next_event(\"tuto_soeurette_3\").start()\n"
   }
 },
 {
@@ -4673,7 +4687,7 @@
     "message": "", 
     "event": 154, 
     "condition": "\n", 
-    "on_fire": "param.set_value(\"come_from\", 2)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_3\")).start()"
+    "on_fire": "param.set_value(\"come_from\", 2)\n#param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_3\")).start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_3\")\npe.start()"
   }
 },
 {
@@ -4750,7 +4764,7 @@
     "message": "", 
     "event": 156, 
     "condition": "\n", 
-    "on_fire": "param.set_value(\"come_from\", 4)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_3\")).start()"
+    "on_fire": "param.set_value(\"come_from\", 4)\n#param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_3\")).start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_3\")\npe.start()"
   }
 },
 {
@@ -4761,7 +4775,7 @@
     "message": "Mon fils {{folk.1.first_name}} et le {{facheux}} sont \u00e0 couteaux tir\u00e9s. Je pourrais regler le probl\u00e8me en [d\u00e9barassant](mission) ma cour du chevalier.", 
     "event": 157, 
     "condition": "\n", 
-    "on_fire": "passage=param.get_value(\"passage\")\nif 5 in passage:\n  passage.append(5)\n  param.pending_event.set_value(\"passage\", passage)\n  param.pending_event.next_event(\"tuto_facheux_5\").start()\nelse:\n  param.pending_event.next_event(\"tuto_facheux_7\").start()\n\nif kingdom.get_folk_in_title(\"maitre_espion\") in None:\n  kingdom.unlock_title(\"maitre_espion\")\n\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")"
+    "on_fire": "passage=param.get_value(\"passage\")\nif 5 in passage:\n  passage.append(5)\n  param.pending_event.set_value(\"passage\", passage)\n  #param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_5\")).start()\n  pe=param.next_event(slug=\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_facheux_5\")\n  pe.start()\nelse:\n  param.pending_event.next_event(\"tuto_facheux_7\").start()\n\nif kingdom.get_folk_in_title(\"maitre_espion\") in None:\n  kingdom.unlock_title(\"maitre_espion\")\n\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")"
   }
 },
 {
@@ -5113,7 +5127,7 @@
     "message": "Mon fils {{folk.1.first_name}} et le chevalier {{facheux}} se sont disput\u00e9.", 
     "event": 154, 
     "condition": "\n", 
-    "on_fire": "param.set_value(\"come_from\", 2)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_5\")).start()"
+    "on_fire": "param.set_value(\"come_from\", 2)\n#param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_5\")).start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_5\")\npe.start()"
   }
 },
 {
@@ -5123,7 +5137,7 @@
     "text": "\"Vous allez tous deux oublier l'incident et renoncer \u00e0 ce projet insens\u00e9. Ceci est un ordre direct!\"", 
     "message": "", 
     "event": 192, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_settle_3\")).start()"
   }
 },
@@ -5134,7 +5148,7 @@
     "text": "Je soupire. \"Si votre honneur demande r\u00e9paration, il n'y a pas d'alternative... Le duel aura lieu \u00e0 l'aube\".", 
     "message": "", 
     "event": 192, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_duel\")).start()"
   }
 },
@@ -5145,8 +5159,8 @@
     "text": "\"Bien. Sortez, je dois r\u00e9fl\u00e9chir\".", 
     "message": "", 
     "event": 192, 
-    "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_3\")).start()"
+    "condition": "\n", 
+    "on_fire": "#param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_3\")).start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_3\")\npe.start()"
   }
 },
 {
@@ -5447,6 +5461,17 @@
   }
 },
 {
+  "pk": 293, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Le temps passe...", 
+    "message": "Un mois s'est \u00e9coul\u00e9.", 
+    "event": 225, 
+    "condition": "\n", 
+    "on_fire": "# Simuler un mois de temps sur le Kingdom\nkingdom.money += 15\nkingdom.population += 20\nkingdom.soldiers += 3\nkingdom.save()\n\n# Lancer l'\u00e9v\u00e8nement en next_event\n# Les variables seront automatiquement transmises aussi.\nparam.next_event(param.get_value('slug')).start()\n\n"
+  }
+},
+{
   "pk": 1073, 
   "model": "event.pendingevent", 
   "fields": {
@@ -5459,6 +5484,18 @@
   }
 },
 {
+  "pk": 1093, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 60, 
+    "is_started": true, 
+    "created": "2013-08-31T17:18:08.817", 
+    "started": "2013-08-31T17:18:08.836", 
+    "text": "Elle se crispe sous l'injure, et le sang lui monte aux joues.  Elle reprend d'une voix pinc\u00e9e. \"Permettez-moi de vous pr\u00e9senter mon fils Garnier, ainsi que sa petite soeur Barberine.\" Je contemple les enfants, qui n'en m\u00e8nent pas large, et retrouve dans le visage de l'a\u00een\u00e9 certaines lignes de celui de ma s\u0153ur. \"Ils portent le nom de matthieu\". Son regard semble me d\u00e9fier de pr\u00e9tendre le contraire.\r\n", 
+    "event": 134
+  }
+},
+{
   "pk": 1024, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -5467,6 +5504,39 @@
     "text": "\u00ab D\u00eetes moi, sire , que diriez d\u2019entrer \u00e0 mon service ? \u00bb", 
     "folk": null, 
     "event_action": 25
+  }
+},
+{
+  "pk": 1048, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 1093, 
+    "message": "", 
+    "text": "Moue septique. \"Si vous le d\u00eetes... \"", 
+    "folk": null, 
+    "event_action": 182
+  }
+},
+{
+  "pk": 1049, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 1093, 
+    "message": "", 
+    "text": "Sardonique \"Vraiment? Vous n'arrivez pas \u00e0 savoir qui est leur p\u00e8re? Vous n'avez pas chaum\u00e9e ma s\u0153ur...\"", 
+    "folk": null, 
+    "event_action": 183
+  }
+},
+{
+  "pk": 1050, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 1093, 
+    "message": "", 
+    "text": "Hocher la t\u00eate. \"Heureux de vous conna\u00eetre, les enfants. Je suis votre oncle Jacquemet.\" A B\u00e9atrix, respectueusement : \"Puis-je demander o\u00f9 est leur p\u00e8re?\"", 
+    "folk": null, 
+    "event_action": 181
   }
 },
 {
@@ -5485,6 +5555,60 @@
     "pending_event": 1073, 
     "name": "compagnon", 
     "value": "`Folk`:6687"
+  }
+},
+{
+  "pk": 1699, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1093, 
+    "name": "injure", 
+    "value": 1
+  }
+},
+{
+  "pk": 1700, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1093, 
+    "name": "random", 
+    "value": 88
+  }
+},
+{
+  "pk": 1701, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1093, 
+    "name": "chiard", 
+    "value": "`Folk`:6699"
+  }
+},
+{
+  "pk": 1702, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1093, 
+    "name": "mioche", 
+    "value": "`Folk`:6698"
+  }
+},
+{
+  "pk": 1703, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1093, 
+    "name": "soeur", 
+    "value": "`Folk`:6696"
+  }
+},
+{
+  "pk": 1704, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1093, 
+    "name": "slug", 
+    "value": "tuto_soeurette"
   }
 }
 ]

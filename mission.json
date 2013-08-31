@@ -191,9 +191,9 @@
     "target_list": " ", 
     "text": " ", 
     "has_value": false, 
-    "on_resolution": "pe = PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_banquet\"))\npe.save()  \n", 
+    "on_resolution": "  \n", 
     "value_description": "Valeur :", 
-    "on_start": " ", 
+    "on_start": "pe = PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_banquet\"))\npe.save()", 
     "has_target": false, 
     "is_team": false, 
     "title": 4, 
@@ -214,9 +214,9 @@
     "target_list": " ", 
     "text": "  ", 
     "has_value": false, 
-    "on_resolution": "pe = PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_eglise\"))\npe.save() \n", 
+    "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": "kingdom.money-=15\nkingdom.save() ", 
+    "on_start": "kingdom.money-=15\nkingdom.save()\npe = PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_eglise\"))\npe.save()                                                      \n", 
     "has_target": false, 
     "is_team": false, 
     "title": 3, 
@@ -1312,134 +1312,6 @@
   }
 },
 {
-  "pk": 187, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 45, 
-    "mission": 26
-  }
-},
-{
-  "pk": 188, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 45, 
-    "mission": 7
-  }
-},
-{
-  "pk": 189, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 45, 
-    "mission": 24
-  }
-},
-{
-  "pk": 190, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 45, 
-    "mission": 8
-  }
-},
-{
-  "pk": 191, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 45, 
-    "mission": 9
-  }
-},
-{
-  "pk": 192, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 45, 
-    "mission": 18
-  }
-},
-{
-  "pk": 193, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 45, 
-    "mission": 19
-  }
-},
-{
-  "pk": 194, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 45, 
-    "mission": 14
-  }
-},
-{
-  "pk": 195, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 45, 
-    "mission": 20
-  }
-},
-{
-  "pk": 196, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 45, 
-    "mission": 21
-  }
-},
-{
-  "pk": 197, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 45, 
-    "mission": 22
-  }
-},
-{
-  "pk": 198, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 45, 
-    "mission": 27
-  }
-},
-{
-  "pk": 199, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 45, 
-    "mission": 28
-  }
-},
-{
-  "pk": 200, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 45, 
-    "mission": 33
-  }
-},
-{
-  "pk": 201, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 45, 
-    "mission": 4
-  }
-},
-{
-  "pk": 202, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 45, 
-    "mission": 30
-  }
-},
-{
   "pk": 234, 
   "model": "mission.availablemission", 
   "fields": {
@@ -1453,6 +1325,30 @@
   "fields": {
     "kingdom": 59, 
     "mission": 27
+  }
+},
+{
+  "pk": 236, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 60, 
+    "mission": 27
+  }
+},
+{
+  "pk": 239, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 60, 
+    "mission": 18
+  }
+},
+{
+  "pk": 240, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 60, 
+    "mission": 19
   }
 }
 ]
