@@ -1211,7 +1211,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "organisateurs", 
-    "condition": "if folk.age() <= Constant.objects.get(name=\"Majorite\").value:\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"\n"
+    "condition": "if folk.age() < Constant.objects.get(name=\"Majorite\").value:\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"\n"
   }
 },
 {
@@ -1377,107 +1377,91 @@
   }
 },
 {
-  "pk": 243, 
+  "pk": 263, 
   "model": "mission.availablemission", 
   "fields": {
-    "kingdom": 63, 
-    "mission": 27
-  }
-},
-{
-  "pk": 244, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 63, 
+    "kingdom": 64, 
     "mission": 18
   }
 },
 {
-  "pk": 245, 
+  "pk": 264, 
   "model": "mission.availablemission", 
   "fields": {
-    "kingdom": 63, 
+    "kingdom": 64, 
     "mission": 19
   }
 },
 {
-  "pk": 246, 
+  "pk": 265, 
   "model": "mission.availablemission", 
   "fields": {
-    "kingdom": 63, 
-    "mission": 26
-  }
-},
-{
-  "pk": 247, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 63, 
+    "kingdom": 58, 
     "mission": 14
   }
 },
 {
-  "pk": 248, 
+  "pk": 266, 
   "model": "mission.availablemission", 
   "fields": {
-    "kingdom": 63, 
+    "kingdom": 58, 
     "mission": 20
   }
 },
 {
-  "pk": 249, 
+  "pk": 267, 
   "model": "mission.availablemission", 
   "fields": {
-    "kingdom": 63, 
+    "kingdom": 58, 
     "mission": 21
   }
 },
 {
-  "pk": 250, 
+  "pk": 268, 
   "model": "mission.availablemission", 
   "fields": {
-    "kingdom": 63, 
+    "kingdom": 58, 
     "mission": 22
   }
 },
 {
-  "pk": 255, 
+  "pk": 269, 
   "model": "mission.availablemission", 
   "fields": {
-    "kingdom": 63, 
-    "mission": 7
+    "kingdom": 58, 
+    "mission": 27
   }
 },
 {
-  "pk": 256, 
+  "pk": 270, 
   "model": "mission.availablemission", 
   "fields": {
-    "kingdom": 63, 
-    "mission": 24
+    "kingdom": 58, 
+    "mission": 28
   }
 },
 {
-  "pk": 257, 
+  "pk": 271, 
   "model": "mission.availablemission", 
   "fields": {
-    "kingdom": 63, 
-    "mission": 8
+    "kingdom": 58, 
+    "mission": 33
   }
 },
 {
-  "pk": 258, 
+  "pk": 274, 
   "model": "mission.availablemission", 
   "fields": {
-    "kingdom": 63, 
-    "mission": 9
+    "kingdom": 66, 
+    "mission": 18
   }
 },
 {
-  "pk": 260, 
+  "pk": 275, 
   "model": "mission.availablemission", 
   "fields": {
-    "kingdom": 63, 
-    "mission": 23
+    "kingdom": 66, 
+    "mission": 19
   }
 }
 ]

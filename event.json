@@ -389,9 +389,9 @@
     "category": null, 
     "name": "Introduction", 
     "weight": 1, 
-    "text": "{{folks.3.first_name}} et mon fils {{folks.1.first_name}} se tiennent devant moi, alors que j\u2019ach\u00e8ve de leur exposer mon projet.  \u201c...la nourriture sera grasse et le vin coulera \u00e0 flot. Il s\u2019agit d'impressionner, de d\u00e9montrer notre noblesse. Pour offrir une fa\u00e7ade protocolaire je vais avoir besoin que l\u2019un de vous deux accepte le titre de Chambellan et s\u2019occupe des pr\u00e9paratifs.\u201d\r\n\r\n```Fa\u00eetes glisser un de vos suivants depuis l\u2019onglet Titre pour le nommer Chambellan.```", 
+    "text": "{{folks.3.first_name}} et mon fils {{folks.1.first_name}} se tiennent devant moi, alors que j\u2019ach\u00e8ve de leur exposer mon projet.  \u201c...la nourriture sera grasse et le vin coulera \u00e0 flot. Il s\u2019agit d'impressionner, de d\u00e9montrer notre noblesse. Pour offrir une fa\u00e7ade protocolaire je vais avoir besoin que l\u2019un de vous deux accepte le titre de Chambellan et s\u2019occupe des pr\u00e9paratifs.\u201d\r\n\r\n    Fa\u00eetes glisser un de vos suivants depuis l\u2019onglet Titre pour le nommer Chambellan.", 
     "image": "events/451_2.jpg", 
-    "on_fire": " ", 
+    "on_fire": "kingdom.unlock_title(\"chambellan\")\nPendingMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"tuto_banquet\")).save()", 
     "slug": "tuto_intro_choixdiplomatie", 
     "condition": "   "
   }
@@ -697,7 +697,7 @@
     "category": 2, 
     "name": "Scandale", 
     "weight": 1, 
-    "text": "Son ton est des plus s\u00e9rieux, et je sens qu'il a longtemps r\u00e9p\u00e9t\u00e9 les mots qu'il prononce. \"Sire, je demande humblement la main de votre fille. Dame {{folks.2.first_name}} et moi nous aimons depuis longtemps d'un amour chaste et sinc\u00e8re, et...\" Il s\u2019interrompt et d\u00e9gluti, les yeux dans le vague. \"Vous savez que je suis tout entier loyal \u00e0 la maison {{folks.0.last_name}}, et que jamais je n'agirai contre elle ou contre son honneur. Refusez et vous n'entendrez plus jamais parler de l'affaire ; acceptez et vous ne pourrez pas r\u00eaver d'un gendre plus d\u00e9vou\u00e9.\".\r\n\r\n```Marier votre fille \u00e0 un simple chevalier vous fait perdre du prestige, mais vous \u00e9vite de payer une dot. De plus, ses enfants seront de votre nom si vous le d\u00e9sirez.```", 
+    "text": "Son ton est des plus s\u00e9rieux, et je sens qu'il a longtemps r\u00e9p\u00e9t\u00e9 les mots qu'il prononce. \"Sire, je demande humblement la main de votre fille. Dame {{folks.2.first_name}} et moi nous aimons depuis longtemps d'un amour chaste et sinc\u00e8re, et...\" Il s\u2019interrompt et d\u00e9gluti, les yeux dans le vague. \"Vous savez que je suis tout entier loyal \u00e0 la maison {{folks.0.last_name}}, et que jamais je n'agirai contre elle ou contre son honneur. Refusez et vous n'entendrez plus jamais parler de l'affaire ; acceptez et vous ne pourrez pas r\u00eaver d'un gendre plus d\u00e9vou\u00e9.\".\r\n\r\n    Marier votre fille \u00e0 un simple chevalier vous fait perdre du prestige, mais vous \u00e9vite de payer une dot. De plus, ses enfants seront de votre nom si vous le d\u00e9sirez.", 
     "image": "events/407_1.jpg", 
     "on_fire": "   \n", 
     "slug": "tuto_scandale_fille_2", 
@@ -879,7 +879,7 @@
     "category": null, 
     "name": "Pr\u00e9paratifs de mariage", 
     "weight": 1, 
-    "text": "Je marche dans la cour au c\u00f4t\u00e9 du p\u00e8re {{title.cure}}, le cur\u00e9 du village voisin, et lui expose mes plans pour le mariage de {{mari.first_name}} et {{mariee.first_name}}. \"...la c\u00e9r\u00e9monie aura lieu dans votre \u00e9glise, mais le banquet se d\u00e9roulera dans la grande salle\". L'homme d'\u00e9glise sourit et hoche la t\u00eate. Je le sais honor\u00e9 d'\u00eatre celui prononcera l'union de deux membres distingu\u00e9s de la noblesse de France.\r\n```\r\nLe p\u00e8re {{title.cure}} a rejoint votre cour, et occupe le titre de Cur\u00e9.\r\n```", 
+    "text": "Je marche dans la cour au c\u00f4t\u00e9 du p\u00e8re {{title.cure}}, le cur\u00e9 du village voisin, et lui expose mes plans pour le mariage de {{mari.first_name}} et {{mariee.first_name}}. \"...la c\u00e9r\u00e9monie aura lieu dans votre \u00e9glise, mais le banquet se d\u00e9roulera dans la grande salle\". L'homme d'\u00e9glise sourit et hoche la t\u00eate. Je le sais honor\u00e9 d'\u00eatre celui prononcera l'union de deux membres distingu\u00e9s de la noblesse de France.\r\n\r\n    Le p\u00e8re {{title.cure}} a rejoint votre cour, et occupe le titre de Cur\u00e9.\r\n", 
     "image": "events/716_3.jpg", 
     "on_fire": " ", 
     "slug": "tuto_mariagepreparatifs", 
@@ -2127,9 +2127,9 @@
     "weight": 1, 
     "text": "{{mari}} s'est pr\u00e9sent\u00e9 dans la grande salle {% if mari == folks.3 %}, apr\u00e8s le repas du soir.{% else %}avec {{mariee}}{% endif  %} Apr\u00e8s un silence un rien embarrass\u00e9, il me sourit aimablement. \"Messire, pardonnez-moi si ma remarque semble abrupt, mais le temps passe et ma promise et moi attendons avec impatience le jour de notre union\".", 
     "image": "events/361_12.jpg", 
-    "on_fire": null, 
+    "on_fire": "\n", 
     "slug": "demandemariage_doublecheck", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -3103,7 +3103,7 @@
     "message": "Je peux \u00e0 pr\u00e9sent nommer un [chambellan](title) pour s'occuper de mon [banquet](mission).", 
     "event": 30, 
     "condition": " ", 
-    "on_fire": "kingdom.unlock_title(\"chambellan\")\nPendingMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"tuto_banquet\")).save()\n"
+    "on_fire": "\n"
   }
 },
 {
@@ -4940,7 +4940,7 @@
     "message": "", 
     "event": 75, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(\"demandemariage_doublecheck\").start()\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_scandale_fantome\")"
+    "on_fire": "pe=param.pending_event.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"demandemariage_doublecheck\")\npe.start()"
   }
 },
 {
@@ -4950,7 +4950,7 @@
     "text": "\"N'ayez pas d'inqui\u00e9tude, sire {{mari.first_name}}. Vous serez mari et femme d\u00e8s que les pr\u00e9paratifs seront achev\u00e9s\".", 
     "message": "{{mari}} attend impatiemment son mariage avec {{mariee}}.", 
     "event": 175, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"demandemariage_terminated\")).start()"
   }
 },
@@ -4961,8 +4961,8 @@
     "text": "\"Je suis d\u00e9sol\u00e9, mon ami, mais mes plans ont chang\u00e9. Vous devez renoncer \u00e0 ce mariage\".", 
     "message": "", 
     "event": 175, 
-    "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"demandemariage_3\")).start()"
+    "condition": "\n", 
+    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_demandemariage_3\")).start()"
   }
 },
 {
@@ -5484,15 +5484,39 @@
   }
 },
 {
-  "pk": 1203, 
+  "pk": 1232, 
   "model": "event.pendingevent", 
   "fields": {
-    "kingdom": 63, 
+    "kingdom": 58, 
     "is_started": true, 
-    "created": "2013-08-31T18:37:17.109", 
-    "started": "2013-08-31T18:37:17.113", 
-    "text": "Aujourd\u2019hui, les travaux ont prit fin. Mon ch\u00e2teau \u00e0 \u00e9t\u00e9 r\u00e9par\u00e9 jusqu\u2019\u00e0 la derni\u00e8re pierre, et l\u2019\u00e9tendard de ma famille claque fi\u00e8rement dans la brise du matin, perch\u00e9 au sommet de la plus haute tour. Ma cour est nombreuse et la ville sous mes remparts se d\u00e9veloppe peu \u00e0 peu. Accoud\u00e9 \u00e0 ma fen\u00eatre, j\u2019observe l'entra\u00eenement de mes fiers soldats dans la cour, sire None marchant parmi eux et beuglant ses instructions. Pour la premi\u00e8re fois depuis mon arriv\u00e9e, je me sens pleinement assur\u00e9 de la stabilit\u00e9 de ma position. Malgr\u00e9 tous les obstacles, je suis maintenant le souverain incontest\u00e9 de ces terres, et le nom de ma famille est de nouveau prononc\u00e9 avec respect.", 
-    "event": 9
+    "created": "2013-08-31T19:57:58.427", 
+    "started": "2013-08-31T19:57:58.466", 
+    "text": "Elle franchit le pas de la porte de sa d\u00e9marche fi\u00e8re, qui fait remonter en moi bien des souvenirs. A ma grande surprise, elle n'entre pas seule. Une petite fille d'une dizaine d'ann\u00e9e la suit de quelque pas, serrant dans ses bras un b\u00e9b\u00e9 emmitoufl\u00e9 dans un linge. Ma s\u0153ur Li\u00e9tharde vient se planter devant moi, et m'offre une r\u00e9v\u00e9rence un rien rapide. Elle regarde l'enfant qui, maladroitement, s'incline \u00e0 son tour. \"Mon fr\u00e8re, quelle joie de vous voir une si belle mine. Un fief \u00e0 gouverner a \u00e9t\u00e9 un changement heureux\". Ignorant le sarcasme, je l'examine de la t\u00eate au pied. Elle a vieillit, mais je reconnait toujours la jeune arrogante de jadis. Cette fois ci, cependant, je crois lire une trace de peur dans son regard. Int\u00e9ressant.", 
+    "event": 133
+  }
+},
+{
+  "pk": 1242, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 64, 
+    "is_started": true, 
+    "created": "2013-08-31T20:08:28.307", 
+    "started": "2013-08-31T20:08:28.310", 
+    "text": "Il y eut un soir, il y eut un matin.\r\nEt ce 30 fois de suite.", 
+    "event": 225
+  }
+},
+{
+  "pk": 1246, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 66, 
+    "is_started": true, 
+    "created": "2013-08-31T20:18:08.770", 
+    "started": "2013-08-31T20:18:08.800", 
+    "text": "Ayant eut vent de mon projet, le p\u00e8re Philibert, cur\u00e9 du village, s\u2019est pr\u00e9sent\u00e9 \u00e0 la porte du ch\u00e2teau. Je suis all\u00e9 \u00e0 sa rencontre dans la cour, et nous avons \u00e9chang\u00e9 quelques mot sur l\u2019histoire de son \u00e9glise et de la r\u00e9gion. Il m\u2019a pr\u00e9sent\u00e9 sa gratitude pour les travaux \u00e0 venir, et je lui ai propos\u00e9 sans h\u00e9siter de les superviser. Il a sourit, m\u2019a b\u00e9ni d\u2019un geste de la main droite et a d\u00e9clar\u00e9 qu\u2019il serait heureux de m\u2019accompagner dans le travail du Seigneur.\r\n\r\n```Vous avez \u00e9t\u00e9 rejoint par le p\u00e8re Philibert. Le Titre de Cur\u00e9 lui \u00e9choit (voir onglet Titre)```", 
+    "event": 26
   }
 },
 {
@@ -5507,14 +5531,58 @@
   }
 },
 {
-  "pk": 1184, 
+  "pk": 1218, 
   "model": "event.pendingeventaction", 
   "fields": {
-    "pending_event": 1203, 
+    "pending_event": 1232, 
     "message": "", 
-    "text": "Et pourtant...", 
+    "text": "Mensonge : \"Le plaisir est partag\u00e9, ma soeur. Cela fait bien trop longtemps\".", 
     "folk": null, 
-    "event_action": 14
+    "event_action": 178
+  }
+},
+{
+  "pk": 1219, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 1232, 
+    "message": "", 
+    "text": "Je la fusille du regard \"\u00c9pargnez-moi vos platitudes, Li\u00e9tharde. Que voulez-vous  de  moi cette fois-ci?\".", 
+    "folk": null, 
+    "event_action": 180
+  }
+},
+{
+  "pk": 1220, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 1232, 
+    "message": "", 
+    "text": "Rester silencieux, les mains crois\u00e9es et le visage imp\u00e9n\u00e9trable.", 
+    "folk": null, 
+    "event_action": 179
+  }
+},
+{
+  "pk": 1221, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 1232, 
+    "message": "", 
+    "text": "Sinc\u00e8re : \"Le plaisir est partag\u00e9, ma soeur. Cela fait bien trop longtemps\".", 
+    "folk": null, 
+    "event_action": 177
+  }
+},
+{
+  "pk": 1232, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 1242, 
+    "message": "Un mois s'est \u00e9coul\u00e9.", 
+    "text": "Le temps passe...", 
+    "folk": null, 
+    "event_action": 293
   }
 },
 {
@@ -5536,12 +5604,57 @@
   }
 },
 {
-  "pk": 2020, 
+  "pk": 2068, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 1203, 
+    "pending_event": 1232, 
+    "name": "random", 
+    "value": 24
+  }
+},
+{
+  "pk": 2069, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1232, 
+    "name": "chiard", 
+    "value": "`Folk`:6736"
+  }
+},
+{
+  "pk": 2070, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1232, 
     "name": "slug", 
-    "value": "tuto_ambition"
+    "value": "tuto_soeurette"
+  }
+},
+{
+  "pk": 2071, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1232, 
+    "name": "mioche", 
+    "value": "`Folk`:6735"
+  }
+},
+{
+  "pk": 2072, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1232, 
+    "name": "soeur", 
+    "value": "`Folk`:6733"
+  }
+},
+{
+  "pk": 2084, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1242, 
+    "name": "slug", 
+    "value": "tuto_scandale_fantome"
   }
 }
 ]
