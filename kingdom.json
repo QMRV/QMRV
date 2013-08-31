@@ -1448,8 +1448,8 @@
     "loyalty": 55, 
     "spouse": null, 
     "quality_set": [
-      36, 
-      22
+      22, 
+      36
     ], 
     "mentor": null
   }
@@ -1475,8 +1475,8 @@
     "loyalty": 55, 
     "spouse": null, 
     "quality_set": [
-      27, 
-      3
+      3, 
+      27
     ], 
     "mentor": null
   }
@@ -1606,8 +1606,8 @@
     "loyalty": 95, 
     "spouse": null, 
     "quality_set": [
-      33, 
-      17
+      17, 
+      33
     ], 
     "mentor": null
   }
@@ -1657,8 +1657,8 @@
     "loyalty": 95, 
     "spouse": null, 
     "quality_set": [
-      26, 
-      12
+      12, 
+      26
     ], 
     "mentor": null
   }
@@ -1684,8 +1684,8 @@
     "loyalty": 44, 
     "spouse": null, 
     "quality_set": [
-      36, 
-      16
+      16, 
+      36
     ], 
     "mentor": null
   }
@@ -1711,9 +1711,9 @@
     "loyalty": 50, 
     "spouse": null, 
     "quality_set": [
+      47, 
       8, 
-      36, 
-      47
+      36
     ], 
     "mentor": null
   }
