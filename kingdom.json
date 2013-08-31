@@ -47,11 +47,11 @@
   "pk": 63, 
   "model": "kingdom.kingdom", 
   "fields": {
-    "soldiers": 30, 
+    "soldiers": 33, 
     "prestige": 0, 
-    "money": 153, 
+    "money": 168, 
     "user": 1, 
-    "population": 194
+    "population": 214
   }
 },
 {
@@ -267,6 +267,15 @@
   "fields": {
     "kingdom": 63, 
     "name": "tuto_cour_basse", 
+    "value": 1
+  }
+},
+{
+  "pk": 353, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 63, 
+    "name": "tuto_soeurette", 
     "value": 1
   }
 },
@@ -1125,8 +1134,8 @@
     "loyalty": 20, 
     "spouse": null, 
     "quality_set": [
-      5, 
-      4
+      4, 
+      5
     ], 
     "mentor": null
   }
@@ -1280,9 +1289,9 @@
     "loyalty": 3, 
     "spouse": null, 
     "quality_set": [
-      42, 
+      5, 
       12, 
-      5
+      42
     ], 
     "mentor": null
   }
@@ -1308,8 +1317,8 @@
     "loyalty": 24, 
     "spouse": null, 
     "quality_set": [
-      36, 
-      16
+      16, 
+      36
     ], 
     "mentor": null
   }
@@ -1335,8 +1344,8 @@
     "loyalty": 41, 
     "spouse": null, 
     "quality_set": [
-      36, 
-      22
+      22, 
+      36
     ], 
     "mentor": null
   }
@@ -1362,8 +1371,8 @@
     "loyalty": 75, 
     "spouse": null, 
     "quality_set": [
-      9, 
       47, 
+      9, 
       36
     ], 
     "mentor": null
@@ -1413,7 +1422,7 @@
     "avatar": 2, 
     "birth": "2013-07-27T18:17:24.320", 
     "mother": null, 
-    "loyalty": 50, 
+    "loyalty": 55, 
     "spouse": null, 
     "quality_set": [
       19, 
@@ -1426,7 +1435,7 @@
   "pk": 6722, 
   "model": "kingdom.folk", 
   "fields": {
-    "kingdom": null, 
+    "kingdom": 63, 
     "fight": 5, 
     "first_name": "Ageruchia", 
     "last_name": "de matthieu", 
@@ -1440,7 +1449,7 @@
     "avatar": 57, 
     "birth": "2013-07-27T18:17:26.520", 
     "mother": null, 
-    "loyalty": 65, 
+    "loyalty": 85, 
     "spouse": null, 
     "quality_set": [
       45, 
@@ -1479,7 +1488,7 @@
   "pk": 6724, 
   "model": "kingdom.folk", 
   "fields": {
-    "kingdom": null, 
+    "kingdom": 63, 
     "fight": 5, 
     "first_name": "Olivier", 
     "last_name": "de matthieu", 
@@ -1498,14 +1507,14 @@
     "quality_set": [
       47
     ], 
-    "mentor": null
+    "mentor": 6710
   }
 },
 {
   "pk": 6725, 
   "model": "kingdom.folk", 
   "fields": {
-    "kingdom": null, 
+    "kingdom": 63, 
     "fight": 2, 
     "first_name": "Hermine", 
     "last_name": "de matthieu", 
@@ -2833,6 +2842,50 @@
     "kingdom": 63, 
     "content": "Un mois s'est \u00e9coul\u00e9.", 
     "created": "2013-08-31T18:17:26.826", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 813, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 63, 
+    "content": "Ageruchia de matthieu, Olivier de matthieu et Hermine de matthieu ont rejoint ma cour.", 
+    "created": "2013-08-31T18:36:35.098", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 814, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 63, 
+    "content": "Vous pouvez d\u00e9sormais nommer un chambellan.", 
+    "created": "2013-08-31T18:36:36.738", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 815, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 63, 
+    "content": "Je dois [d\u00e9signer un mentor](mission) pour s'occuper de l'\u00e9ducation de Olivier de matthieu.", 
+    "created": "2013-08-31T18:36:36.851", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 816, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 63, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-08-31T18:37:17.153", 
     "read": null, 
     "level": 1
   }

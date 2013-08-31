@@ -727,7 +727,7 @@
     "weight": 1, 
     "text": "Le chevalier est arriv\u00e9 aux premi\u00e8res lueurs du jour, envelopp\u00e9 dans sa cape trou\u00e9e pour se prot\u00e9ger du froid. Refusant une miche de pain et un verre de lait que {{folks.3.first_name}} lui a offert, il a demand\u00e9 \u00e0 \u00eatre re\u00e7ut sur le champ par le seigneur {{title.chatelain.last_name}}. A pr\u00e9sent, il est agenouill\u00e9 devant mon tr\u00f4ne, la main droite sur le pommeau de son \u00e9p\u00e9e. \"Messire. Je me nomme {{chevalier}}, chevalier \u00e0 la recherche d'une cause et d'un toit. J'ai entendu la nouvelle du retour de votre famille...\" Il rel\u00e8ve la t\u00eate, et me jette un regard d\u00e9termin\u00e9. \"Mon \u00e9p\u00e9e est votre si vous la voulez.\"\r\n\r\n", 
     "image": "events/361.jpg", 
-    "on_fire": "folk = call_function(\"creer_folk\", fight_min=9, plot_min=1, diplomacy_min=1, scholarship_min=1, max_carac=32, loyalty=50, sex=\"m\",\nbirth=datetime.now() -  timedelta(days=25))\nfolk.save()\nparam.set_value(\"chevalier\", folk)", 
+    "on_fire": "folk = call_function(\"creer_folk\", fight_min=9, plot_min=1, diplomacy_min=1, scholarship_min=1, max_carac=32, loyalty=50, kingdom=kingdom, sex=\"m\",\nbirth=datetime.now() -  timedelta(days=25))\nfolk.save()\nparam.set_value(\"chevalier\", folk)", 
     "slug": "tuto_allegeance_chevalier", 
     "condition": " "
   }
@@ -2113,7 +2113,7 @@
     "weight": 1, 
     "text": "Depuis ma table de travail, je peux entendre {{mioche.first_name}} et {{chiard}} jouer dans la cour en contrebas. Je me l\u00e8ve, et vais m'accouder \u00e0 la fen\u00eatre. L'ain\u00e9{{mioche|feminize:\" tient sa petite soeur par les mains,e tient son petit f\u00e8re par les mains\"}}, et l'aide \u00e0 marcher le long des \u00e9curies. Quelques enfants des domestiques les encouragent et rient avec eux. La scene est touchante, mais je songe que {{mioche}} a d\u00e9j\u00e0 dix ans, et qu'il est grand temps qu'{{mioche|feminize:\"il,elle\"}} apprenne \u00e0 se rende utile.\r\n\r\n    Nouvelle mission.\r\n", 
     "image": "events/709_1.jpg", 
-    "on_fire": "PendingMission(mission=Mission.objects.get(slug=\"tuto_nommer_mentor\"),kingdom=kingdom).save()\n", 
+    "on_fire": "\n", 
     "slug": "tuto_education", 
     "condition": "\n"
   }
@@ -3279,7 +3279,7 @@
     "message": "Le chevalier {{chevalier}} a rejoint ma cour.", 
     "event": 57, 
     "condition": " ", 
-    "on_fire": "folk = param.get_value(\"chevalier\")\nfolk.kingdom=kingdom\nfolk.save()\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_cour_basse\")\n"
+    "on_fire": "folk = param.get_value(\"chevalier\")\nfolk.kingdom=kingdom\nfolk.save()\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_cour_basse_fantome\")\n"
   }
 },
 {
@@ -3301,7 +3301,7 @@
     "message": "Le p\u00e8re {{pretre}} a rejoint ma cour.", 
     "event": 59, 
     "condition": " ", 
-    "on_fire": "pretre = call_function(\"creer_folk\", kingdom=kingdom, fight_min=1, plot_min=1, diplomacy_min=1, scholarship_min=1, max_carac=32, loyalty=50, sex=\"m\", birth=datetime.now() - timedelta(days=35), trait=\"pretre\")\nparam.set_value(\"pretre\", pretre)\nkingdom.unlock_title(\"cure\")\npretre = param.get_value(\"pretre\")\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_cour_basse\")\n"
+    "on_fire": "pretre = call_function(\"creer_folk\", kingdom=kingdom, fight_min=1, plot_min=1, diplomacy_min=1, scholarship_min=1, max_carac=32, loyalty=50, sex=\"m\", birth=datetime.now() - timedelta(days=35), trait=\"pretre\")\nparam.set_value(\"pretre\", pretre)\nkingdom.unlock_title(\"cure\")\npretre = param.get_value(\"pretre\")\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_cour_basse_fantome\")\n"
   }
 },
 {
@@ -3312,7 +3312,7 @@
     "message": "", 
     "event": 59, 
     "condition": " ", 
-    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_cour_basse\")"
+    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_cour_basse_fantome\")"
   }
 },
 {
@@ -3345,7 +3345,7 @@
     "message": "", 
     "event": 57, 
     "condition": " ", 
-    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_cour_basse\")"
+    "on_fire": "folk.delete()\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_cour_basse_fantome\")"
   }
 },
 {
@@ -4929,7 +4929,7 @@
     "message": "Je dois [d\u00e9signer un mentor](mission) pour s'occuper de l'\u00e9ducation de {{mioche}}.", 
     "event": 174, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "kingdom.unlock_title(\"chambellan\")\nm = Mission.objects.get(slug=\"tuto_nommer_mentor\")\npe = PendingMission(mission=m, kingdom=kingdom)\npe.save()\nPendingMissionAffectation(pending_mission=pe, folk=param.get_value(\"mioche\"), mission_grid=MissionGrid.objects.get(slug=\"enfant\", mission=m)).save()\n"
   }
 },
 {
@@ -5028,7 +5028,7 @@
     "message": "Dame {{dame}} a rejoint ma cour.", 
     "event": 180, 
     "condition": "\n", 
-    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_cour_basse\")"
+    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_cour_basse_fantome\")"
   }
 },
 {
@@ -5484,15 +5484,15 @@
   }
 },
 {
-  "pk": 1178, 
+  "pk": 1203, 
   "model": "event.pendingevent", 
   "fields": {
     "kingdom": 63, 
     "is_started": true, 
-    "created": "2013-08-31T18:17:33.558", 
-    "started": "2013-08-31T18:17:33.581", 
-    "text": "Elle franchit le pas de la porte de sa d\u00e9marche fi\u00e8re, qui fait remonter en moi bien des souvenirs. A ma grande surprise, elle n'entre pas seule. Un petit gar\u00e7on d'une dizaine d'ann\u00e9e la suit de quelque pas, serrant dans ses bras un b\u00e9b\u00e9 emmitoufl\u00e9 dans un linge. Ma s\u0153ur Ageruchia vient se planter devant moi, et m'offre une r\u00e9v\u00e9rence un rien rapide. Elle regarde l'enfant qui, maladroitement, s'incline \u00e0 son tour. \"Mon fr\u00e8re, quelle joie de vous voir une si belle mine. Un fief \u00e0 gouverner a \u00e9t\u00e9 un changement heureux\". Je contemple ma s\u0153ur, et les l\u00e9gers sillons que le temps a trac\u00e9 sur sa peau. Elle n'a rien perdu de son ton imp\u00e9rieux, cependant.", 
-    "event": 133
+    "created": "2013-08-31T18:37:17.109", 
+    "started": "2013-08-31T18:37:17.113", 
+    "text": "Aujourd\u2019hui, les travaux ont prit fin. Mon ch\u00e2teau \u00e0 \u00e9t\u00e9 r\u00e9par\u00e9 jusqu\u2019\u00e0 la derni\u00e8re pierre, et l\u2019\u00e9tendard de ma famille claque fi\u00e8rement dans la brise du matin, perch\u00e9 au sommet de la plus haute tour. Ma cour est nombreuse et la ville sous mes remparts se d\u00e9veloppe peu \u00e0 peu. Accoud\u00e9 \u00e0 ma fen\u00eatre, j\u2019observe l'entra\u00eenement de mes fiers soldats dans la cour, sire None marchant parmi eux et beuglant ses instructions. Pour la premi\u00e8re fois depuis mon arriv\u00e9e, je me sens pleinement assur\u00e9 de la stabilit\u00e9 de ma position. Malgr\u00e9 tous les obstacles, je suis maintenant le souverain incontest\u00e9 de ces terres, et le nom de ma famille est de nouveau prononc\u00e9 avec respect.", 
+    "event": 9
   }
 },
 {
@@ -5507,36 +5507,14 @@
   }
 },
 {
-  "pk": 1158, 
+  "pk": 1184, 
   "model": "event.pendingeventaction", 
   "fields": {
-    "pending_event": 1178, 
+    "pending_event": 1203, 
     "message": "", 
-    "text": "Je la fusille du regard \"\u00c9pargnez-moi vos platitudes, Ageruchia. Que voulez-vous  de  moi cette fois-ci?\".", 
+    "text": "Et pourtant...", 
     "folk": null, 
-    "event_action": 180
-  }
-},
-{
-  "pk": 1159, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 1178, 
-    "message": "", 
-    "text": "Rester silencieux, les mains crois\u00e9es et le visage imp\u00e9n\u00e9trable.", 
-    "folk": null, 
-    "event_action": 179
-  }
-},
-{
-  "pk": 1160, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 1178, 
-    "message": "", 
-    "text": "Sinc\u00e8re : \"Le plaisir est partag\u00e9, ma soeur. Cela fait bien trop longtemps\".", 
-    "folk": null, 
-    "event_action": 177
+    "event_action": 14
   }
 },
 {
@@ -5558,48 +5536,12 @@
   }
 },
 {
-  "pk": 1946, 
+  "pk": 2020, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 1178, 
-    "name": "random", 
-    "value": 70
-  }
-},
-{
-  "pk": 1947, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1178, 
-    "name": "chiard", 
-    "value": "`Folk`:6725"
-  }
-},
-{
-  "pk": 1948, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1178, 
+    "pending_event": 1203, 
     "name": "slug", 
-    "value": "tuto_soeurette"
-  }
-},
-{
-  "pk": 1949, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1178, 
-    "name": "mioche", 
-    "value": "`Folk`:6724"
-  }
-},
-{
-  "pk": 1950, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1178, 
-    "name": "soeur", 
-    "value": "`Folk`:6722"
+    "value": "tuto_ambition"
   }
 }
 ]
