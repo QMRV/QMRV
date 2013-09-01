@@ -2477,9 +2477,9 @@
     "weight": 1, 
     "text": "{{title.ambassadeur.first_name}}, mon ambassadeur, s'avance tout sourire. \"Bonne nouvelle, mon seigneur. Nos tractations diplomatiques ont port\u00e9 leurs fruits. Je suis parvenu \u00e0 justifier une attaque sur les terres du seigneur {{ennemi.last_name}} aux yeux du reste du royaume \". J'opine, satisfait. \"Bon travail\".\r\n\r\n    Vous avez obtenu un cassus belli envers le seigneur {{ennemi}}.", 
     "image": "events/464_5.jpg", 
-    "on_fire": null, 
-    "slug": "tuto_cassusbelli_success", 
-    "condition": null
+    "on_fire": "\n", 
+    "slug": "tuto_casusbelli_success", 
+    "condition": "\n"
   }
 },
 {
@@ -2491,9 +2491,9 @@
     "weight": 1, 
     "text": "{{title.connetable.first_name}} et moi m\u00eame sommes pench\u00e9s sur ma table de travail, sur laquelle s'\u00e9talent les cartes et les rapports de troupe.\"...sur le plan diplomatique, nous ne pouvons pas nous permettre une attaque de grande envergure. Vous allez  mettre sur pied un petit contingent, et faire rapine sur les fermes isol\u00e9es et les villages frontaliers, en \u00e9vitant de vous approcher du ch\u00e2teau. Il est probable qu'il essaye de vous contrer\". Je m'interromps, la mine grave. \"Il ne s'agit plus de vulgaires bandits. Etes-vous certains que les hommes sont pr\u00eats?\" Il soutien mon regard, s\u00fbr de lui. \"Fin pr\u00eats, mon seigneur. Je m'en porte garant\".  Je me d\u00e9tourne, et rassemble les cartes. \"Bien. Commencez les pr\u00e9paratifs\".\r\n\r\n    Nouvelle mission.", 
     "image": "events/76_2.jpg", 
-    "on_fire": null, 
-    "slug": "tuto_cassusbelli_success_2", 
-    "condition": null
+    "on_fire": "\n", 
+    "slug": "tuto_casusbelli_success_2", 
+    "condition": "\n"
   }
 },
 {
@@ -2519,9 +2519,9 @@
     "weight": 1, 
     "text": " (explication sur la d\u00e9fense)", 
     "image": "", 
-    "on_fire": null, 
-    "slug": "tuto_ennemi_cassusbelli_2", 
-    "condition": null
+    "on_fire": "\n", 
+    "slug": "tuto_ennemi_casusbelli_2", 
+    "condition": "\n"
   }
 },
 {
@@ -2533,9 +2533,9 @@
     "weight": 1, 
     "text": "{{title.connetable.first_name}} se tient devant moi, les bras crois\u00e9s sur la poitrine. \"Le seigneur {{ennemi.last_name}} a lach\u00e9 ses chiens, mon seigneur. Ses troupes atteindront bient\u00f4t la fronti\u00e8re de nos terres. Elles metront \u00e0 sac tous les villages sur leurs chemin\". Je soupire. \"Nous savions qu'il n'en resterait pas l\u00e0\". Je me tourne vers lui, et le regarde droit dans les yeux. \"Il est encore temps, mon ami. Rassemblez les hommes disponibles, nous devons les arr\u00eater par tous les moyens.\"", 
     "image": "events/76_3.jpg", 
-    "on_fire": null, 
-    "slug": "tuto_firstattack", 
-    "condition": null
+    "on_fire": "\n", 
+    "slug": "tuto_premiere_bataille", 
+    "condition": "\n"
   }
 },
 {
@@ -5267,7 +5267,7 @@
     "text": "Je vais devoir convoquer mon conn\u00e9table...", 
     "message": "J'ai obtenu un cassus belli envers le seigneur {{ennemi}}.", 
     "event": 204, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_cassusbelli_success_2\")).start()"
   }
 },
@@ -5278,8 +5278,8 @@
     "text": "Alea jacta est.", 
     "message": "Je peux maintenant [attaquer](#mission) le seigneur {{ennemi}}.", 
     "event": 205, 
-    "condition": null, 
-    "on_fire": null
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 },
 {
@@ -5300,8 +5300,8 @@
     "text": "On ne marche pas sur {{dynasty}} sans en payer le prix.", 
     "message": "", 
     "event": 208, 
-    "condition": null, 
-    "on_fire": null
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 },
 {
@@ -5510,7 +5510,7 @@
     "message": "Un mois s'est \u00e9coul\u00e9.", 
     "event": 225, 
     "condition": "\n", 
-    "on_fire": "# Simuler un mois de temps sur le Kingdom\nkingdom.money += 15\nkingdom.population += 20\nkingdom.soldiers += 3\nkingdom.save()\n\n# Lancer l'\u00e9v\u00e8nement en next_event\n# Les variables seront automatiquement transmises aussi.\nparam.next_event(param.get_value('slug')).start()\n\n"
+    "on_fire": "# Terminer les missions en cours\npending_missions = kingdom.pendingmission_set.filter(started__isnull=False)\nfor pending_mission in pending_missions:\n  pending_mission.resolve()\n\n# Simuler un mois de temps sur le Kingdom\nkingdom.money += 15\nkingdom.population += 20\nkingdom.soldiers += 3\nkingdom.save()\n\n# Lancer l'\u00e9v\u00e8nement en next_event\n# Les variables seront automatiquement transmises aussi.\nparam.next_event(param.get_value('slug')).start()\n\n"
   }
 },
 {
@@ -5549,18 +5549,6 @@
   }
 },
 {
-  "pk": 1321, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 67, 
-    "is_started": true, 
-    "created": "2013-08-31T20:56:21.097", 
-    "started": "2013-08-31T20:56:21.102", 
-    "text": "Et pourtant, je sais que mon p\u00e9riple ne fait que commencer. Mon h\u00e9ritage ne sera pas \u00e0 l'abri des convoitises tant que je n\u2019aurai pas prouv\u00e9 ma valeur aux yeux du royaume. Mes sujets sont encore si peu nombreux... Nobles ou paysans, le prestige de mon nom les a ralli\u00e9 sous ma banni\u00e8re, et ils attendent encore de moi que je porte ce nom vers la gloire. Mon regard se pose \u00e0 nouveau sur les hommes d\u2019arme qui suent sous ma fen\u00eatre. L'entra\u00eenement de sire Ernaut leur a \u00e9t\u00e9 profitable, mais depuis le passage des brigands, il n\u2019ont pas eut d\u2019occasion de se battre. Il est peut \u00eatre temps qu\u2019ils affrontent un vrai ennemi, sur un vrai champ de bataille.\r\n\r\n```\r\nVotre valeur de Prestige limite le nombre de suivants dans votre cour et la population de votre ville. Une mani\u00e8re s\u00fbre de gagner du Prestige est de gagner des batailles.\r\n```", 
-    "event": 10
-  }
-},
-{
   "pk": 1343, 
   "model": "event.pendingevent", 
   "fields": {
@@ -5570,6 +5558,18 @@
     "started": "2013-09-01T01:07:25.052", 
     "text": "Il y eut un soir, il y eut un matin.\r\nEt ce 30 fois de suite.", 
     "event": 225
+  }
+},
+{
+  "pk": 1353, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 68, 
+    "is_started": true, 
+    "created": "2013-09-01T12:17:43.001", 
+    "started": "2013-09-01T12:17:43.005", 
+    "text": "\r\nDurandet de matthieu\r\n est venu me voir ce matin pour m\u2019annoncer ce que je redoutais depuis un moment d\u00e9j\u00e0 : mes coffres sont presque vides. Les rapports \u00e9tal\u00e9s devant moi contiennent les chiffres des taxes que me payent les paysans, ainsi que ceux des d\u00e9penses du ch\u00e2teau, hommes d\u2019armes, domestiques, repas, entretien... Remplir mes caisses prendra trop de temps, et j\u2019ai besoin de solutions.", 
+    "event": 18
   }
 },
 {
@@ -5595,28 +5595,6 @@
   }
 },
 {
-  "pk": 1337, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 1321, 
-    "message": "Les r\u00e9parations de matthieu sont termin\u00e9e. Un grand jour pour notre famille.", 
-    "text": "Non. Mon ambition n'est pas une raison suffisante pour mettre la vie de mes hommes en danger.", 
-    "folk": null, 
-    "event_action": 269
-  }
-},
-{
-  "pk": 1338, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 1321, 
-    "message": "", 
-    "text": "Reste \u00e0 trouver un adversaire \u00e0 ma mesure.", 
-    "folk": null, 
-    "event_action": 15
-  }
-},
-{
   "pk": 1363, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -5625,6 +5603,17 @@
     "text": "Le temps passe...", 
     "folk": null, 
     "event_action": 293
+  }
+},
+{
+  "pk": 1376, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 1353, 
+    "message": "Il est urgent de charger un [tr\u00e9sorier](#title) de r\u00e9gler nos probl\u00e8mes d'argent", 
+    "text": "Je vais nommer un tr\u00e9sorier pour optimiser mes d\u00e9penses et trouver de nouvelles sources de revenu.", 
+    "folk": null, 
+    "event_action": 116
   }
 },
 {
@@ -5655,21 +5644,30 @@
   }
 },
 {
-  "pk": 2285, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1321, 
-    "name": "slug", 
-    "value": "tuto_ambition"
-  }
-},
-{
   "pk": 2332, 
   "model": "event._pendingeventvariable", 
   "fields": {
     "pending_event": 1343, 
     "name": "slug", 
     "value": "tuto_bandits_fantome"
+  }
+},
+{
+  "pk": 2348, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1353, 
+    "name": "slug", 
+    "value": "tuto_caissesvides"
+  }
+},
+{
+  "pk": 2349, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1353, 
+    "name": "fils", 
+    "value": "`Folk`:6754"
   }
 }
 ]

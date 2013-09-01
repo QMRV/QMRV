@@ -1449,91 +1449,11 @@
   }
 },
 {
-  "pk": 276, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 67, 
-    "mission": 18
-  }
-},
-{
-  "pk": 277, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 67, 
-    "mission": 19
-  }
-},
-{
   "pk": 278, 
   "model": "mission.availablemission", 
   "fields": {
     "kingdom": 58, 
     "mission": 23
-  }
-},
-{
-  "pk": 279, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 67, 
-    "mission": 26
-  }
-},
-{
-  "pk": 280, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 67, 
-    "mission": 4
-  }
-},
-{
-  "pk": 281, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 67, 
-    "mission": 30
-  }
-},
-{
-  "pk": 283, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 67, 
-    "mission": 23
-  }
-},
-{
-  "pk": 284, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 67, 
-    "mission": 7
-  }
-},
-{
-  "pk": 285, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 67, 
-    "mission": 24
-  }
-},
-{
-  "pk": 286, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 67, 
-    "mission": 8
-  }
-},
-{
-  "pk": 287, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 67, 
-    "mission": 9
   }
 }
 ]
