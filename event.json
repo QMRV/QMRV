@@ -2100,7 +2100,7 @@
     "text": " ", 
     "image": "", 
     "on_fire": "if kingdom.get_value(\"tuto_facheux_refus\") is not None:\n  PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_facheux_fantome\")).start()\nelse:\n  if kingdom.get_value(\"tuto_ambition\")is None:\n    PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_ambition\")).start()\n  else:\n    kingdom.create_pending_mission(\"tuto_getaffront_diplomacy\")\n\nstatus = \"presque fin fantome\"\n", 
-    "slug": "tuto_presque_fin", 
+    "slug": "dumb_tuto_presque_fin", 
     "condition": "\n"
   }
 },
@@ -2531,7 +2531,7 @@
     "category": null, 
     "name": "Tuto attacked", 
     "weight": 1, 
-    "text": "{{title.connetable.first_name}} se tient devant moi, les bras crois\u00e9s sur la poitrine. \"Le seigneur {{ennemi.last_name}} a lach\u00e9 ses chiens, mon seigneur. Ses troupes atteindront bient\u00f4t la fronti\u00e8re de nos terres. Elles metront \u00e0 sac tous les villages sur leurs chemin\". Je soupire. \"Nous savions qu'il n'en resterait pas l\u00e0\". Je me tourne vers lui, et le regarde droit dans les yeux. \"Il est encore temps, mon ami. Rassemblez les hommes disponibles, nous devons les arr\u00eater par tous les moyens.\"", 
+    "text": "C'est la premi\u00e8re escarmouche (provoqu\u00e9e ou subie) sur mon royaume !", 
     "image": "events/76_3.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_premiere_escarmouche", 
@@ -2935,22 +2935,11 @@
   "pk": 16, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Je vais devoir nommer un ambassadeur pour r\u00e9gler ce d\u00e9tail. `nouveau titre : Ambassadeur`", 
-    "message": "Les r\u00e9parations de {{dynasty}} sont termin\u00e9es, et nous devons au plus t\u00f4t d\u00e9montrer notre puissance militaire. Nommer un [ambassadeur](#title) permettrait de [justifier diplomatiquement](#mission) une attaque sur notre voisin, le seigneur {{ennemi}}.", 
+    "text": "Je vais mettre mes meilleurs diplomates sur le coup.", 
+    "message": "Les r\u00e9parations de {{dynasty}} sont termin\u00e9es et il est temps de r\u00e9fl\u00e9chir \u00e0 s'agrandir. Je vais charger mes diplomates de [justifier diplomatiquement](#mission) une attaque sur notre voisin, le seigneur {{ennemi}}.", 
     "event": 11, 
-    "condition": "if kingdom.get_folk_in_title(\"ambassadeur\") is not None:\n  status=\"il n'y a pas d'ambassadeur\"\n", 
-    "on_fire": "kingdom.unlock_title(\"ambassadeur\")\nkingdom.set_value(\"tuto_ambition\", True)\nparam.next_event(\"tuto_presque_fin\").start()\n"
-  }
-},
-{
-  "pk": 17, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "Je vais charger mon ambassadeur de s\u2019en occuper.", 
-    "message": "Les r\u00e9parations de {{dynasty}} sont termin\u00e9es, et nous devons au plus t\u00f4t d\u00e9montrer notre puissance militaire. Mon ambassadeur peut maintenant [justifier diplomatiquement](#mission) une attaque sur notre voisin, le seigneur {{ennemi}}.", 
-    "event": 11, 
-    "condition": "if kingdom.get_folk_in_title(\"ambassadeur\") is None:\n  status=\"il n y a un ambassadeur\"", 
-    "on_fire": "kingdom.set_value(\"tuto_ambition\", True)\nparam.next_event(\"tuto_presque_fin\").start()"
+    "condition": "\n", 
+    "on_fire": "kingdom.create_pending_mission(\"tuto_claim\")\n"
   }
 },
 {
@@ -4281,7 +4270,7 @@
     "message": "Les r\u00e9parations de {{dynasty}} sont termin\u00e9e. Un grand jour pour notre famille.", 
     "event": 11, 
     "condition": "\n", 
-    "on_fire": "kingdom.set_value(\"tuto_ambition\", True)\nparam.next_event(\"tuto_presque_fin\").start()"
+    "on_fire": "#param.pending_event.next_event(Event.objects.get(slug=\"tuto_ennemi_casusbelli\")).start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_ennemi_casusbelli\")\npe.start()\n"
   }
 },
 {
@@ -5311,11 +5300,11 @@
   "pk": 274, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "On ne marche pas sur {{dynasty}} sans en payer le prix.", 
+    "text": "Mais que va-t-il se passer ?", 
     "message": "", 
     "event": 208, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "param.next_event(param.get_value('slug')).start()\n"
   }
 },
 {
