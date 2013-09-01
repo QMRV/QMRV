@@ -653,7 +653,7 @@
     "has_value": false, 
     "on_resolution": "pe = PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"banquet\"), started=None)\npe.save()\npe.set_value(\"raison\", \"initiative\")\npe.start()\n", 
     "value_description": "Valeur :", 
-    "on_start": "nb_convives = Folk.objects.filter(kingdom=kingdom, mission=None).count()\nif kingdom.money < nb_convives * 2:\n  status = \"Vous n'avez pas les moyens d'organiser un banquet de cette envergure\"\n  if sum_folks(folks, \"diplomacy\") <= 10:\n    status = \"Les convives ne seront pas disponibles, il manquent probablement de motivation\"\nif status != \"ok\":\n  kingdom.money -= nb_convives * 2\n  kingdom.save()\n", 
+    "on_start": "nb_convives = Folk.objects.filter(kingdom=kingdom, mission=None).count()\nif kingdom.money < nb_convives * 2:\n  status = \"Vous n'avez pas les moyens d'organiser un banquet de cette envergure\"\n  if sum_folks(affected, \"diplomacy\") <= 10:\n    status = \"Les convives ne seront pas disponibles, il manquent probablement de motivation\"\nif status != \"ok\":\n  kingdom.money -= nb_convives * 2\n  kingdom.save()\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 4, 
@@ -791,7 +791,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "POURCENTAGE_MAX_MISSION_RECRUTEMENT = 5\ndelta = call_function(folks=folks, stat='fight') / 3\n\n# On ne peut pas d\u00e9passer le max de troupes possible\nmax_troupes = call_function('get_max_soldats', kingdom=kingdom)\ndelta = min(delta, max_troupes - kingdom.soldiers)\n\n# On ne peut pas gagner plus de 5% de la population maximale en une fois\nmax_population = call_function('get_max_population', kingdom=kingdom)\nmax_gain_soldats = max_population * POURCENTAGE_MAX_MISSION_RECRUTEMENT / 100\ndelta = min(delta, max_gain_soldats)\n\n# On ne peut pas avoir un nombre n\u00e9gatif de paysans !\ndelta = min(delta, kingdom.population)\n\n# On ne peut perdre plus d'argents que notre tr\u00e9sorerie actuelle\ndelta = min(delta, kingdom.money)\n\nkingdom.money -= delta\nkingdom.soldiers += delta\nkingdom.population -= delta\nkingdom.save()\n\nkingdom.message_set.add(Message(\n  content=\"%s soldats ont rejoint votre cour. Vous \u00eates maintenant \u00e0 la t\u00eate d'une arm\u00e9e de %s soldats.\" % (delta, kingdom.soldiers)\n))\n", 
+    "on_start": "POURCENTAGE_MAX_MISSION_RECRUTEMENT = 5\ndelta = call_function('somme_stat_folks', folks=affected, stat='fight') / 3\n\n# On ne peut pas d\u00e9passer le max de troupes possible\nmax_troupes = call_function('get_max_soldats', kingdom=kingdom)\ndelta = min(delta, max_troupes - kingdom.soldiers)\n\n# On ne peut pas gagner plus de 5% de la population maximale en une fois\nmax_population = call_function('get_max_population', kingdom=kingdom)\nmax_gain_soldats = max_population * POURCENTAGE_MAX_MISSION_RECRUTEMENT / 100\ndelta = min(delta, max_gain_soldats)\n\n# On ne peut pas avoir un nombre n\u00e9gatif de paysans !\ndelta = min(delta, kingdom.population)\n\n# On ne peut perdre plus d'argents que notre tr\u00e9sorerie actuelle\ndelta = min(delta, kingdom.money)\n\nkingdom.money -= delta\nkingdom.soldiers += delta\nkingdom.population -= delta\nkingdom.save()\n\nkingdom.message_set.add(Message(\n  content=\"%s soldats ont rejoint votre cour. Vous \u00eates maintenant \u00e0 la t\u00eate d'une arm\u00e9e de %s soldats.\" % (delta, kingdom.soldiers)\n))\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 2, 
@@ -814,7 +814,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "POURCENTAGE_MAX_MISSION_RECRUTEMENT = 5\ndelta = call_function('somme_stat_folks', folks=folks, stat='scholarship') / 3\n\n# On ne peut pas avoir un nombre n\u00e9gatif de soldats !\ndelta = min(delta, kingdom.soldiers)\n\nkingdom.soldiers -= delta\nkingdom.population += delta\nkingdom.save()\n\nkingdom.message_set.add(Message(\n  content=\"%s soldats ont l\u00e2ch\u00e9s leurs armes pour se reconvertir en paysans. Vous \u00eates maintenant \u00e0 la t\u00eate d'une arm\u00e9e de %s soldats.\" % (delta, kingdom.soldiers)\n))\n\n", 
+    "on_start": "POURCENTAGE_MAX_MISSION_RECRUTEMENT = 5\ndelta = call_function('somme_stat_folks', folks=affected, stat='scholarship') / 3\n\n# On ne peut pas avoir un nombre n\u00e9gatif de soldats !\ndelta = min(delta, kingdom.soldiers)\n\nkingdom.soldiers -= delta\nkingdom.population += delta\nkingdom.save()\n\nkingdom.message_set.add(Message(\n  content=\"%s soldats ont l\u00e2ch\u00e9s leurs armes pour se reconvertir en paysans. Vous \u00eates maintenant \u00e0 la t\u00eate d'une arm\u00e9e de %s soldats.\" % (delta, kingdom.soldiers)\n))\n\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 2, 
@@ -847,6 +847,29 @@
     "duration": 1, 
     "on_cancel": "\n", 
     "slug": "tuto_nommer_mentor", 
+    "on_init": "\n"
+  }
+},
+{
+  "pk": 40, 
+  "model": "mission.mission", 
+  "fields": {
+    "name": "R\u00e9cup\u00e9rer un casus belli", 
+    "target_list": "\n", 
+    "text": "R\u00e9cup\u00e9rer un casus belli sur mon adversaire.", 
+    "has_value": false, 
+    "on_resolution": "\n", 
+    "value_description": "", 
+    "on_start": "if call_function('somme_stat_folks', folks=affected, stat='diplomacy') < 20:\n  status=\"Il va falloir \u00eatre un peu plus diplomate\"\n  stop()\n\nkingdom.set_value(\"tuto_has_claim\", True)\nkingdom.create_pending_event(\"tuto_casusbelli_success\").start()\n", 
+    "has_target": false, 
+    "is_team": false, 
+    "title": null, 
+    "target_description": "", 
+    "timeout": null, 
+    "is_cancellable": false, 
+    "duration": 5, 
+    "on_cancel": "\n", 
+    "slug": "tuto_claim", 
     "on_init": "\n"
   }
 },
@@ -1342,6 +1365,19 @@
     "allow_empty": false, 
     "slug": "mentor", 
     "condition": "if folk.age()< Constant.v(\"Majorite\"):\n  status = \"Un mentor doit \u00eatre majeur\"\n"
+  }
+},
+{
+  "pk": 41, 
+  "model": "mission.missiongrid", 
+  "fields": {
+    "allow_disabled": false, 
+    "name": "Diplomates", 
+    "mission": 40, 
+    "length": 20, 
+    "allow_empty": false, 
+    "slug": "diplomates", 
+    "condition": "\n"
   }
 },
 {

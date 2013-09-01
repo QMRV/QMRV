@@ -2534,7 +2534,7 @@
     "text": "{{title.connetable.first_name}} se tient devant moi, les bras crois\u00e9s sur la poitrine. \"Le seigneur {{ennemi.last_name}} a lach\u00e9 ses chiens, mon seigneur. Ses troupes atteindront bient\u00f4t la fronti\u00e8re de nos terres. Elles metront \u00e0 sac tous les villages sur leurs chemin\". Je soupire. \"Nous savions qu'il n'en resterait pas l\u00e0\". Je me tourne vers lui, et le regarde droit dans les yeux. \"Il est encore temps, mon ami. Rassemblez les hommes disponibles, nous devons les arr\u00eater par tous les moyens.\"", 
     "image": "events/76_3.jpg", 
     "on_fire": "\n", 
-    "slug": "tuto_premiere_bataille", 
+    "slug": "tuto_premiere_escarmouche", 
     "condition": "\n"
   }
 },
@@ -2815,6 +2815,20 @@
     "image": "", 
     "on_fire": "if kingdom.get_value(\"tuto_mariage_fait\"):\n  param.next_event(\"mariagelunedemiel_success\").start()\nelse:\n  param.next_event(\"demandemariage_terminated\").start()\n  \nstatus=\"fantome\"\n", 
     "slug": "tuto_mariage_fille_accepte_fantome_2", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 229, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Votre casus belli est effectif !", 
+    "weight": 1, 
+    "text": "Votre casus belli est effectif.\r\n\r\n\r\n\r\n    Nouvelle mission", 
+    "image": "", 
+    "on_fire": "kingdom.unlockmission(\"tuto_escarmouche\")\n", 
+    "slug": "tuto_casusbelli_effective", 
     "condition": "\n"
   }
 },
@@ -5279,7 +5293,7 @@
     "message": "Je peux maintenant [attaquer](#mission) le seigneur {{ennemi}}.", 
     "event": 205, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "#param.pending_event.next_event(Event.objects.get(slug=\"tuto_casusbelli_effective\")).start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_casusbelli_effective\")\npe.start()\n"
   }
 },
 {
@@ -5522,6 +5536,17 @@
     "event": 226, 
     "condition": "\n", 
     "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_scandale_fantome\")\n"
+  }
+},
+{
+  "pk": 295, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "OK", 
+    "message": "", 
+    "event": 229, 
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 },
 {
