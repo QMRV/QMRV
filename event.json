@@ -5630,7 +5630,7 @@
     "message": "", 
     "event": 230, 
     "condition": "\n", 
-    "on_fire": "#si conflit\n#envoyer sur event fantome\n#si pas conflit\n#declenche conflit puis donne le groupe de d\u00e9fense\n\n"
+    "on_fire": "#si prestige > 150\nif kingdom.prestige>150:\n  kingdom.create_pending_mission(\"tuto_achever_voisin\")\n#si conflit\nelif kingdom.get_value(\"tuto_conflit\",False)==True:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(slug=\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n#si pas conflit\nelse:\n  kingdom.create_pending_event(\"tuto_pnjescaladeconflit\")\n"
   }
 },
 {
