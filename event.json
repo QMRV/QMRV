@@ -487,9 +487,9 @@
     "category": null, 
     "name": "Escarmouche", 
     "weight": 1, 
-    "text": "Le petit bataillon a atteint les terres du seigneur {%if tuto%}  {{adversaire_tuto}} {%else%} {{chatelain_defenseur}} {%endif%}\u00e0 la tomb\u00e9e de la nuit, profitant  de l'obscurit\u00e9 pour traverser la rivi\u00e8re glac\u00e9e sans attirer l'attention des sentinelles. Rassembl\u00e9s autour de leurs maigres feux de camp, les hommes ont dormi quelques heures avant d'\u00eatre r\u00e9veill\u00e9s par leurs officiers. Il se sont mit rapidement en formation, leurs mains crisp\u00e9es sur leurs armes. \r\n{% if chatelain_in_mission_attaquant %}Levant bien haut mon \u00e9p\u00e9e, j'ai\r\n{% elif connetable_in_mission_attaquant %}Le soleil du matin brillant sur son heaume, sire{\r\n{title.Conn\u00e9table}} a\r\n{% else %}D'une d\u00e9marche martiale, sire {{general_attaquant}} a{% endif %}\r\n march\u00e9 devant eux et d\u00e9clar\u00e9 d'une voix forte que l'ennemi avait \u00e9t\u00e9 rep\u00e9r\u00e9 \u00e0 quelque lieues d'ici, et que le combat \u00e9tait imminent. Apr\u00e8s un discours bref mais plein de morgue, les soldats ont cri\u00e9 mon nom \u00e0 pleins poumons et se sont mit en mouvement.", 
+    "text": "Le petit bataillon a atteint les terres du seigneur {%if tuto%}  {{tuto_adversaire}} {%else%} {{chatelain_defenseur}} {%endif%}\u00e0 la tomb\u00e9e de la nuit, profitant  de l'obscurit\u00e9 pour traverser la rivi\u00e8re glac\u00e9e sans attirer l'attention des sentinelles. Rassembl\u00e9s autour de leurs maigres feux de camp, les hommes ont dormi quelques heures avant d'\u00eatre r\u00e9veill\u00e9s par leurs officiers. Il se sont mit rapidement en formation, leurs mains crisp\u00e9es sur leurs armes. \r\n{% if chatelain_in_mission_attaquant %}Levant bien haut mon \u00e9p\u00e9e, j'ai\r\n{% elif connetable_in_mission_attaquant %}Le soleil du matin brillant sur son heaume, sire{\r\n{title.Conn\u00e9table}} a\r\n{% else %}D'une d\u00e9marche martiale, sire {{general_attaquant}} a{% endif %}\r\n march\u00e9 devant eux et d\u00e9clar\u00e9 d'une voix forte que l'ennemi avait \u00e9t\u00e9 rep\u00e9r\u00e9 \u00e0 quelque lieues d'ici, et que le combat \u00e9tait imminent. Apr\u00e8s un discours bref mais plein de morgue, les soldats ont cri\u00e9 mon nom \u00e0 pleins poumons et se sont mit en mouvement.", 
     "image": "events/117.jpg", 
-    "on_fire": "param.set_value(\"adversaire_tuto\",kingdom.get_value(\"adversaire_tuto\"))\ntuto=False\ntry:\n  tuto=kingdom.get_value(\"tuto_fini\")\nexcept:\n  pass\nparam.set_value(\"tuto\",not tuto)\n", 
+    "on_fire": "param.set_value(\"tuto_adversaire\", kingdom.get_value(\"tuto_adversaire\"))\n", 
     "slug": "escarmouche_attaque", 
     "condition": " "
   }
@@ -529,7 +529,7 @@
     "category": null, 
     "name": "Escarmouche", 
     "weight": 1, 
-    "text": "La bataille \u00e9tait termin\u00e9e, et les corbeaux apparaissaient un \u00e0 un dans le ciel, poussant leurs  cris affam\u00e9s sans  parvenir \u00e0 couvrir le r\u00e2le des bless\u00e9s et des mourants. {{title.chatelain}} avait vaincu. Sur mes {{pop_envoyee_gagnant}} hommes d'arme, {{pop_pertes_vainqueur}} \u00e9taient tomb\u00e9s l'arme \u00e0 la main, emportant avec eux {{pop_pertes_perdant}} ennemis vocif\u00e9rants et faisant fuir le reste.\r\n{% if morts_gagnant|length >= 1 %}\r\nNous avions remport\u00e9 une victoire, mais \u00e0 quel prix? {{ morts_gagnant|folks_list}} \r\n{% if morts_gagnant|length == 1 %}\r\ngisait aux milieu des cadavres, serrant encore son \u00e9p\u00e9e.\r\n{% else %}\r\n\u00e9taient tomb\u00e9s sans que les n\u00f4tres ne puissent leur porter secours.\r\n{% endif %}\r\n{% endif %}\r\n{% if blesses_gagnant|length >= 1 %}\r\n{{blesses_gagnant|folks_list}} avai{{blesses_gagnant|pluralize:\"t,ent\" }} \u00e9t\u00e9 bless\u00e9{{blesses_gagnant|pluralize}} dans la bataille, et devrai{{blesses_gagnant|pluralize:\"t,ent\" }} \u00eatre ramen\u00e9{{blesses_gagnant|pluralize}} au ch\u00e2teau sur {{blesses_gagnant|pluralize:\"une,des\"}} liti\u00e8re{{blesses_gagnant|pluralize}}.\r\n{% endif %}\r\n{% if morts_perdants|length >= 1 %}\r\nChez l'adversaire, {{ morts_perdants|folks_list}} avai{{mort_perdants|pluralize:\"t,ent\" }} \u00e9t\u00e9 terrass\u00e9.{{mort_perdants|pluralize}}\r\n{% endif %} \r\n{% if blesses_perdants|length >= 1 %}\r\n{% if morts_gagnant|length >= 1 %}\r\nDe plus,\r\n{% endif %} \r\n{{ blesses_perdants|folks_list}} avaient \u00e9t\u00e9 bless\u00e9s et garderaient des cicatrice de cette bataille.\r\n{% endif %}\r\n\r\n{% if chatelain_in_mission_vainqueur %}\r\nChassant la fatigue qui me tenaillait, je rassemblai mes hommes valides pour{% elif connetable_in_mission_vainqueur %}\r\nSire {{general_vainqueur.first_name}} essuya son \u00e9p\u00e9e, et cria aux hommes de se regrouper pour\r\n{% else %}\r\n{{general_vainqueur}} entreprit de rallier les n\u00f4tres  pour \r\n{% endif %}\r\n{% if vainqueur_est_attaquant %} proc\u00e9der au pillage de {% if tuto %}  {{adversaire_tuto}} {% else %} {{perdant}} {% endif %}{% else %} entamer le repli vers le ch\u00e2teau.{% endif %}", 
+    "text": "La bataille \u00e9tait termin\u00e9e, et les corbeaux apparaissaient un \u00e0 un dans le ciel, poussant leurs  cris affam\u00e9s sans  parvenir \u00e0 couvrir le r\u00e2le des bless\u00e9s et des mourants. {{title.chatelain}} avait vaincu. Sur mes {{pop_envoyee_gagnant}} hommes d'arme, {{pop_pertes_vainqueur}} \u00e9taient tomb\u00e9s l'arme \u00e0 la main, emportant avec eux {{pop_pertes_perdant}} ennemis vocif\u00e9rants et faisant fuir le reste.\r\n{% if morts_gagnant|length >= 1 %}\r\nNous avions remport\u00e9 une victoire, mais \u00e0 quel prix? {{ morts_gagnant|folks_list}} \r\n{% if morts_gagnant|length == 1 %}\r\ngisait aux milieu des cadavres, serrant encore son \u00e9p\u00e9e.\r\n{% else %}\r\n\u00e9taient tomb\u00e9s sans que les n\u00f4tres ne puissent leur porter secours.\r\n{% endif %}\r\n{% endif %}\r\n{% if blesses_gagnant|length >= 1 %}\r\n{{blesses_gagnant|folks_list}} avai{{blesses_gagnant|pluralize:\"t,ent\" }} \u00e9t\u00e9 bless\u00e9{{blesses_gagnant|pluralize}} dans la bataille, et devrai{{blesses_gagnant|pluralize:\"t,ent\" }} \u00eatre ramen\u00e9{{blesses_gagnant|pluralize}} au ch\u00e2teau sur {{blesses_gagnant|pluralize:\"une,des\"}} liti\u00e8re{{blesses_gagnant|pluralize}}.\r\n{% endif %}\r\n{% if morts_perdants|length >= 1 %}\r\nChez l'adversaire, {{ morts_perdants|folks_list}} avai{{mort_perdants|pluralize:\"t,ent\" }} \u00e9t\u00e9 terrass\u00e9.{{mort_perdants|pluralize}}\r\n{% endif %} \r\n{% if blesses_perdants|length >= 1 %}\r\n{% if morts_gagnant|length >= 1 %}\r\nDe plus,\r\n{% endif %} \r\n{{ blesses_perdants|folks_list}} avaient \u00e9t\u00e9 bless\u00e9s et garderaient des cicatrice de cette bataille.\r\n{% endif %}\r\n\r\n{% if chatelain_in_mission_vainqueur %}\r\nChassant la fatigue qui me tenaillait, je rassemblai mes hommes valides pour{% elif connetable_in_mission_vainqueur %}\r\nSire {{general_vainqueur.first_name}} essuya son \u00e9p\u00e9e, et cria aux hommes de se regrouper pour\r\n{% else %}\r\n{{general_vainqueur}} entreprit de rallier les n\u00f4tres  pour \r\n{% endif %}\r\n{% if vainqueur_est_attaquant %} proc\u00e9der au pillage de {% if tuto %}  {{tuto_adversaire}} {% else %} {{perdant}} {% endif %}{% else %} entamer le repli vers le ch\u00e2teau.{% endif %}", 
     "image": "events/69.jpg", 
     "on_fire": "\n", 
     "slug": "escarmouche_victoire", 
@@ -571,7 +571,7 @@
     "category": null, 
     "name": "Escarmouche", 
     "weight": 1, 
-    "text": "Sur les {{pop_envoyee_perdant}} hommes d'armes qui s'\u00e9taient \u00e9lanc\u00e9s dans la bataille, seuls {{pop_envoyee_perdant - pop_pertes_perdant }} avait r\u00e9ussir \u00e0 s'enfuir, laissant le champ de bataille aux mains de l'ennemi. {{dynasty}} avait \u00e9t\u00e9 battu\r\n{% if morts_gagnant|length == 1 %}\r\net le corps de {{morts_perdants|folks_list}}, tomb\u00e9 au milieu des combats, avait du \u00eatre laiss\u00e9 au main de l'ennemi.\r\n{% elif morts_perdants|length >= 2 %}\r\n, et {{morts_perdants|folks_list}} l'avaient pay\u00e9s de leur vie.\r\n{% else %}.{% endif %}\r\n{% if blesses_gagnant|length == 1 %}\r\n{{blesses_perdants|folks_list}} avait \u00e9t\u00e9 gravement touch\u00e9, mais avait pu \u00eatre port\u00e9 hors des combats avant que le morale de mes troupes ne se brise.\r\n{% elif morts_perdants|length >= 2 %}\r\n{{morts_perdants|folks_list}} avaient encaiss\u00e9 plusieurs blessures, mais avaient r\u00e9ussit \u00e0 suivre mes troupes en d\u00e9route.\r\n{% endif %}{% if blesses_gagnant|length >= 1 %}Chez l'adversaire, {{blesses_perdants|folks_list}} avai{{blesses_gagnant|pluralize:\"t,ent\"}} \u00e9t\u00e9 cruellement bless\u00e9s d\u00e8s le premier assaut. {% endif %}Les {{pop_pertes_gagnant}} soldats ennemis tu\u00e9s {% if morts_perdants|length >= 1 %}et la mort de {{mort_perdants|folks_list}}{% endif %} ne suffisaient pas \u00e0 att\u00e9nuer l'amertume de la d\u00e9faite...\r\n{% if chatelain_in_mission_perdant %}\r\nRavalant ma col\u00e8re, je ralliai mes hommes en fuite{% elif connetable_in_mission_perdant %}\r\n{{general_perdant.first_name}}, surmontant la fatigue qui le tenaillait, se redressa sur sa selle pour hurler aux hommes en fuite de se rassembler\r\n{% endif %} pour entamer le retour au ch\u00e2teau.\r\n{% if vainqueur_est_attaquant %} {% if tuto %}{{adversaire_tuto}}{% else %}{{gagnant}}{% endif %} allait pouvoir mettre mes terres \u00e0 sac en toute impunit\u00e9.{% endif %}", 
+    "text": "Sur les {{pop_envoyee_perdant}} hommes d'armes qui s'\u00e9taient \u00e9lanc\u00e9s dans la bataille, seuls {{pop_envoyee_perdant - pop_pertes_perdant }} avait r\u00e9ussir \u00e0 s'enfuir, laissant le champ de bataille aux mains de l'ennemi. {{dynasty}} avait \u00e9t\u00e9 battu\r\n{% if morts_gagnant|length == 1 %}\r\net le corps de {{morts_perdants|folks_list}}, tomb\u00e9 au milieu des combats, avait du \u00eatre laiss\u00e9 au main de l'ennemi.\r\n{% elif morts_perdants|length >= 2 %}\r\n, et {{morts_perdants|folks_list}} l'avaient pay\u00e9s de leur vie.\r\n{% else %}.{% endif %}\r\n{% if blesses_gagnant|length == 1 %}\r\n{{blesses_perdants|folks_list}} avait \u00e9t\u00e9 gravement touch\u00e9, mais avait pu \u00eatre port\u00e9 hors des combats avant que le morale de mes troupes ne se brise.\r\n{% elif morts_perdants|length >= 2 %}\r\n{{morts_perdants|folks_list}} avaient encaiss\u00e9 plusieurs blessures, mais avaient r\u00e9ussit \u00e0 suivre mes troupes en d\u00e9route.\r\n{% endif %}{% if blesses_gagnant|length >= 1 %}Chez l'adversaire, {{blesses_perdants|folks_list}} avai{{blesses_gagnant|pluralize:\"t,ent\"}} \u00e9t\u00e9 cruellement bless\u00e9s d\u00e8s le premier assaut. {% endif %}Les {{pop_pertes_gagnant}} soldats ennemis tu\u00e9s {% if morts_perdants|length >= 1 %}et la mort de {{mort_perdants|folks_list}}{% endif %} ne suffisaient pas \u00e0 att\u00e9nuer l'amertume de la d\u00e9faite...\r\n{% if chatelain_in_mission_perdant %}\r\nRavalant ma col\u00e8re, je ralliai mes hommes en fuite{% elif connetable_in_mission_perdant %}\r\n{{general_perdant.first_name}}, surmontant la fatigue qui le tenaillait, se redressa sur sa selle pour hurler aux hommes en fuite de se rassembler\r\n{% endif %} pour entamer le retour au ch\u00e2teau.\r\n{% if vainqueur_est_attaquant %} {% if tuto %}{{tuto_adversaire}}{% else %}{{gagnant}}{% endif %} allait pouvoir mettre mes terres \u00e0 sac en toute impunit\u00e9.{% endif %}", 
     "image": "events/69_1.jpg", 
     "on_fire": " ", 
     "slug": "escarmouche_defaite", 
@@ -2517,7 +2517,7 @@
     "category": null, 
     "name": "Cassus belli", 
     "weight": 1, 
-    "text": " (explication sur la d\u00e9fense)", 
+    "text": " (explication sur la d\u00e9fense)\r\n\r\npeut venir de tuto_pnjescaladeconflit ou tuto_ennemi_casusbelli", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "tuto_ennemi_casusbelli_2", 
@@ -2829,6 +2829,90 @@
     "image": "", 
     "on_fire": "kingdom.unlockmission(\"tuto_escarmouche\")\n", 
     "slug": "tuto_casusbelli_effective", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 230, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "resultat de bataille", 
+    "weight": 1, 
+    "text": "J'ai perdu ouiiiinn", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "tuto_escarmouche_defaite", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 231, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "resultat de bataille", 
+    "weight": 1, 
+    "text": "J'ai gagn\u00e9 wouhou !", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "tuto_escarmouche_victoire", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 232, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "LA FIN DU TUTO !", 
+    "weight": 1, 
+    "text": "F\u00e9licitations, vous avez termin\u00e9 le tuto.", 
+    "image": "", 
+    "on_fire": "\"\"\"\nHERE BE DRAGONS.\nNe pas copier coller ce code qui va toucher les m\u00e9caniques internes du jeu...\n\"\"\"\n\n# Title to unlock\ntitles = ('chatelain', 'cure', 'chambellan', 'tresorier', 'ambassadeur', 'maitre_espion', 'connetable', )\n# Missions to manually unlock\nmissions = ('escarmouche', )\n\n# Unlock titles\nfor title in titles:\n  kingdom.unlock_title(title)\n\n# Unlock PVP missions\nfor mission in missions:\n  kingdom.unlock_mission(mission)\n\n# First, resolve all current pending mission\npending_missions = kingdom.pendingmission_set.filter(started__isnull=False)\nfor pending_mission in pending_missions:\n  pending_mission.resolve()\n\n# Remove \"tuto_\" missions from AvailableMission and PendingMission\nkingdom.availablemission_set.filter(mission__slug__startswith=\"tuto_\").delete()\nkingdom.pendingmission_set.filter(mission__slug__startswith=\"tuto_\").delete()\n\n# Remove \"tuto_\" variables set on the kingdom\nkingdom._kingdomvariable_set.filter(key__startswith=\"tuto_\")\nkingdom.set_value(\"in_tuto\", False)", 
+    "slug": "tuto_fin_tuto", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 233, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Le voisin d\u00e9g\u00e9n\u00e8re cette attaque en conflit", 
+    "weight": 1, 
+    "text": "Le voisin le prend personnellement et d\u00e9g\u00e9n\u00e8re cette attaque en conflit.", 
+    "image": "", 
+    "on_fire": "kingdom.set_value(\"tuto_conflit\",True)", 
+    "slug": "tuto_pnjescaladeconflit", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 234, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Le PNJ vous attaque", 
+    "weight": 1, 
+    "text": "le PNJ vous attaque", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "tuto_attaque_par_pnj", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 235, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "tuto scanjoueur fantome", 
+    "weight": 1, 
+    "text": "check si le joueur peut subir une attaque si oui il se fait attaquer sinon on lui donne des ressources", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "tuto_scanjoueur_fantome", 
     "condition": "\n"
   }
 },
@@ -4820,7 +4904,7 @@
     "message": "Mon fils {{folk.1.first_name}} et le {{facheux}} sont \u00e0 couteaux tir\u00e9s. Je pourrais regler le probl\u00e8me en [d\u00e9barassant](mission) ma cour du chevalier.", 
     "event": 157, 
     "condition": "\n", 
-    "on_fire": "passage=param.get_value(\"passage\")\nif 5 in passage:\n  passage.append(5)\n  param.pending_event.set_value(\"passage\", passage)\n  #param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_5\")).start()\n  pe=param.next_event(slug=\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_facheux_5\")\n  pe.start()\nelse:\n  param.pending_event.next_event(\"tuto_facheux_7\").start()\n\nif kingdom.get_folk_in_title(\"maitre_espion\") in None:\n  kingdom.unlock_title(\"maitre_espion\")\n\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")"
+    "on_fire": "passage=param.get_value(\"passage\")\nif 5 in passage:\n  passage.append(5)\n  param.pending_event.set_value(\"passage\", passage)\n  #param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_5\")).start()\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_facheux_5\")\n  pe.start()\nelse:\n  param.pending_event.next_event(\"tuto_facheux_7\").start()\n\nif kingdom.get_folk_in_title(\"maitre_espion\") in None:\n  kingdom.unlock_title(\"maitre_espion\")\n\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")"
   }
 },
 {
@@ -5304,7 +5388,7 @@
     "message": "", 
     "event": 208, 
     "condition": "\n", 
-    "on_fire": "param.next_event(param.get_value('slug')).start()\n"
+    "on_fire": "if param.get_value('is_victory'):\n  kingdom.create_pending_event(\"tuto_escarmouche_victoire\").start()\nelse:\n  kingdom.create_pending_event(\"tuto_escarmouche_defaite\").start()\n"
   }
 },
 {
@@ -5534,6 +5618,83 @@
     "text": "OK", 
     "message": "", 
     "event": 229, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 296, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "OK", 
+    "message": "", 
+    "event": 230, 
+    "condition": "\n", 
+    "on_fire": "#si conflit\n#envoyer sur event fantome\n#si pas conflit\n#declenche conflit puis donne le groupe de d\u00e9fense\n\n"
+  }
+},
+{
+  "pk": 297, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "OK", 
+    "message": "", 
+    "event": 231, 
+    "condition": "\n", 
+    "on_fire": "#si prestige > 150\nif kingdom.prestige>150:\n  kingdom.create_pending_mission(\"tuto_achever_voisin\")\n#si conflit\nelif kingdom.get_value(\"tuto_conflit\",False)==True:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(slug=\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n#si pas conflit\nelse:\n  kingdom.create_pending_event(\"tuto_pnjescaladeconflit\")\n"
+  }
+},
+{
+  "pk": 298, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "ok", 
+    "message": "", 
+    "event": 207, 
+    "condition": "\n", 
+    "on_fire": "pe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_attaque_par_pnj\")\npe.start()\n\n\n"
+  }
+},
+{
+  "pk": 299, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Il est maintenant temps d'aller affronter le monde... Mon r\u00e8gne viendra.", 
+    "message": "", 
+    "event": 232, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 300, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "OK", 
+    "message": "", 
+    "event": 233, 
+    "condition": "\n", 
+    "on_fire": "#param.next_event(\"tuto_ennemi_casusbelli_2\")\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_ennemi_casusbelli_2\")\npe.start()\n\n\n"
+  }
+},
+{
+  "pk": 301, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Ok", 
+    "message": "", 
+    "event": 234, 
+    "condition": "\n", 
+    "on_fire": "#decleche event rapport d'espion si c'est la premiere attaque du PNJ\n\n\nis_victory=random_value(0,1)\n  # Brancher vers la suite.\n  \nif kingdom.get_value(\"tuto_premiere_escarmouche\"):\n  pe = kingdom.create_pending_event(\"tuto_premiere_escarmouche\")\n  pe.set_value(\"slug\", \"tuto_escarmouche_attaque\")\n  pe.set_value(\"is_victory\", is_victory)\n  pe.start()\nelse:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_attaque\")\n  pe.set_value(\"is_victory\", is_victory)\n  pe.start()    \n"
+  }
+},
+{
+  "pk": 302, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "OK", 
+    "message": "", 
+    "event": 235, 
     "condition": "\n", 
     "on_fire": "\n"
   }
