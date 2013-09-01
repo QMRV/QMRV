@@ -616,7 +616,7 @@
     "is_cancellable": true, 
     "duration": 60, 
     "on_cancel": "\n", 
-    "slug": "tuto_escarmouche", 
+    "slug": "tuto_dummy_escarmouche", 
     "on_init": "\n"
   }
 },
@@ -870,6 +870,29 @@
     "duration": 5, 
     "on_cancel": "\n", 
     "slug": "tuto_claim", 
+    "on_init": "\n"
+  }
+},
+{
+  "pk": 41, 
+  "model": "mission.mission", 
+  "fields": {
+    "name": "Lancer le combat contre le PNJ", 
+    "target_list": "\n", 
+    "text": "Cocorico.\r\nTabasser mon PNJ \u00e0 la batte.", 
+    "has_value": false, 
+    "on_resolution": "\n", 
+    "value_description": "", 
+    "on_start": "def next_event(is_victory):\n  # Brancher vers la suite.\n  \n  if kingdom.get_value(\"tuto_premiere_escarmouche\"):\n    pe = kingdom.create_pending_event(\"tuto_premiere_escarmouche\")\n    pe.set_value(\"slug\", \"tuto_escarmouche_attaque\")\n    pe.set_value(\"is_victory\", is_victory)\n    pe.start()\n  else:\n    pe = kingdom.create_pending_event(\"tuto_escarmouche_attaque\")\n    pe.set_value(\"is_victory\", is_victory)\n    pe.start()    \n\n\n# R\u00e9cuperer les cinq meilleurs combattants et comparer leurs stats avec ceux qui ont \u00e9t\u00e9 envoy\u00e9s\ncinq_meilleurs = kingdom.folk_set.all().order_by('fight')[0:5]\nmoyenne_meilleurs_fight = call_function('somme_stat_folks', folks=cinq_meilleurs, stat='fight') / len(cinq_meilleurs)\nmoyenne_affected_fight = call_function('somme_stat_folks', folks=affected, stat='fight') / 3\nif moyenne_affected_fight >= moyenne_meilleurs_fight:\n  next_event(is_victory=True)\nelse:\n  next_event(is_victory=False)\n", 
+    "has_target": false, 
+    "is_team": false, 
+    "title": null, 
+    "target_description": "", 
+    "timeout": null, 
+    "is_cancellable": false, 
+    "duration": 5, 
+    "on_cancel": "\n", 
+    "slug": "tuto_escarmouche", 
     "on_init": "\n"
   }
 },
@@ -1377,6 +1400,19 @@
     "length": 20, 
     "allow_empty": false, 
     "slug": "diplomates", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 42, 
+  "model": "mission.missiongrid", 
+  "fields": {
+    "allow_disabled": false, 
+    "name": "Combattants", 
+    "mission": 41, 
+    "length": 3, 
+    "allow_empty": false, 
+    "slug": "combattants", 
     "condition": "\n"
   }
 },
