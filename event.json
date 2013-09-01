@@ -2911,7 +2911,7 @@
     "weight": 1, 
     "text": "check si le joueur peut subir une attaque si oui il se fait attaquer sinon on lui donne des ressources", 
     "image": "", 
-    "on_fire": "\n", 
+    "on_fire": "status=\"fantome\"\n", 
     "slug": "tuto_scanjoueur_fantome", 
     "condition": "\n"
   }
@@ -5686,17 +5686,6 @@
     "event": 234, 
     "condition": "\n", 
     "on_fire": "#decleche event rapport d'espion si c'est la premiere attaque du PNJ\n\n\nis_victory=random_value(0,1)\n  # Brancher vers la suite.\n  \nif kingdom.get_value(\"tuto_premiere_escarmouche\"):\n  pe = kingdom.create_pending_event(\"tuto_premiere_escarmouche\")\n  pe.set_value(\"slug\", \"tuto_escarmouche_attaque\")\n  pe.set_value(\"is_victory\", is_victory)\n  pe.start()\nelse:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_attaque\")\n  pe.set_value(\"is_victory\", is_victory)\n  pe.start()    \n"
-  }
-},
-{
-  "pk": 302, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "OK", 
-    "message": "", 
-    "event": 235, 
-    "condition": "\n", 
-    "on_fire": "\n"
   }
 },
 {
