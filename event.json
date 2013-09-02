@@ -2506,7 +2506,7 @@
     "text": "Mon fils {{folks.2.first_name}} s'avance d'un pas rapide. Il semble agit\u00e9, et tient une missive dans sa main. \"Sire, je... Notre voisin le seigneur {{ennemi.last_name}} clame que nous l'avons offens\u00e9, et qu'il entend laver  l'affront dans le sang\". Je me redresse, stup\u00e9fait. \"Il ose!?\" J'arrache le courier de ses mains, et sens ma col\u00e8re monter au fil de ma lecture. \"Le miserable! Ces mensonges n'ont qu'un seul but. Il esp\u00e8re piller nos terres en toute impunit\u00e9\". Je froisse la missive. \"S'il nous prend pour une cible facile, il va vite d\u00e9chanter!\"\r\n\r\n     Le seigneur {{ennemi}} a obtenu un cassus belli envers {{dynasty}}.", 
     "image": "events/407_11.jpg", 
     "on_fire": "\n", 
-    "slug": "tuto_ennemi_cassusbelli", 
+    "slug": "tuto_ennemi_casusbelli", 
     "condition": "\n"
   }
 },
@@ -2533,7 +2533,7 @@
     "weight": 1, 
     "text": "C'est la premi\u00e8re escarmouche (provoqu\u00e9e ou subie) sur mon royaume !", 
     "image": "events/76_3.jpg", 
-    "on_fire": "\n", 
+    "on_fire": "kingdom.set_value(\"tuto_premiere_escarmouche\",True)\n", 
     "slug": "tuto_premiere_escarmouche", 
     "condition": "\n"
   }
@@ -2679,20 +2679,6 @@
   }
 },
 {
-  "pk": 219, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "Espionnage tuto resultat", 
-    "weight": 1, 
-    "text": "(cour adverse, d\u00e9fense ressources + d\u00e9clenche mission diplomatique pour mariage)", 
-    "image": "", 
-    "on_fire": null, 
-    "slug": "tuto_rapportespionnage", 
-    "condition": null
-  }
-},
-{
   "pk": 220, 
   "model": "event.event", 
   "fields": {
@@ -2729,9 +2715,9 @@
     "weight": 1, 
     "text": "(premi\u00e8re escarmouche)", 
     "image": "", 
-    "on_fire": null, 
+    "on_fire": "kingdom.set_value(\"tuto_firstbattle_attack\",True)", 
     "slug": "tuto_firstbattle_attack", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -2743,23 +2729,9 @@
     "weight": 1, 
     "text": "(premi\u00e8re attaque subie)", 
     "image": "", 
-    "on_fire": null, 
+    "on_fire": "kingdom.set_value(\"tuto_firstbattle_defense\",True)", 
     "slug": "tuto_firstbattle_defense", 
-    "condition": null
-  }
-},
-{
-  "pk": 224, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "Rapport d'espion", 
-    "weight": 1, 
-    "text": "(donne la derni\u00e8re mission du tuto)", 
-    "image": "", 
-    "on_fire": null, 
-    "slug": "tuto_rapportespion", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -2941,6 +2913,34 @@
     "image": "", 
     "on_fire": "kingdom.money+=10\nkingdom.save()", 
     "slug": "tuto_escarmouche_pillage", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 238, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Rapport d'espionnage", 
+    "weight": 1, 
+    "text": "Le voisin a des fils et filles \u00e0 marier,  il est possible que nous puissions r\u00e9soudre la guerre par un mariage.", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "tuto_rapport_espion", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 239, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Terminer le conflit", 
+    "weight": 1, 
+    "text": "Pr\u00e9sentation de la mission pour aller tuer le seigneur voisin", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "tuto_achever_voisin", 
     "condition": "\n"
   }
 },
@@ -5383,7 +5383,7 @@
     "message": "J'ai obtenu un cassus belli envers le seigneur {{ennemi}}.", 
     "event": 204, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_cassusbelli_success_2\")).start()"
+    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_casusbelli_success_2\")).start()"
   }
 },
 {
@@ -5405,7 +5405,7 @@
     "message": "Le seigneur {{ennemi}} a obtenu un cassus belli envers {{dynasty}}.", 
     "event": 206, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_ennemi_cassusbelli_2\").start()"
+    "on_fire": "param.next_event(\"tuto_ennemi_casusbelli_2\").start()"
   }
 },
 {
@@ -5658,7 +5658,7 @@
     "message": "", 
     "event": 230, 
     "condition": "\n", 
-    "on_fire": "if (param.get_value(\"attaquant\")==False and param.get_value(\"is_victory\")==False):\n  pe=param.next_event(slug=\"tuto_escarouche_misasac\")\nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_premiere_defense\",None)==None):\n  pe=param.next_event(slug=\"rapport_espion_a_lancer\")\nelif (param.get_value(\"attaquant\")==True and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(slug=\"tuto_pnjescaladeconflit\")\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_mission(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(slug=\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n\n\n"
+    "on_fire": "if (param.get_value(\"attaquant\")==False):\n  pe=param.next_event(\"tuto_escarmouche_misasac\").start()\nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\")==True and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n\n\n"
   }
 },
 {
@@ -5669,7 +5669,7 @@
     "message": "", 
     "event": 231, 
     "condition": "\n", 
-    "on_fire": "if (param.get_value(\"attaquant\")==True and param.get_value(\"is_victory\")==True):\n  pe=param.next_event(slug=\"tuto_escarouche_pillage\")  \nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_premiere_defense\",None)==None):\n  pe=param.next_event(slug=\"rapport_espion_a_lancer\")\nelif (param.get_value(\"attaquant\")==True and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(slug=\"tuto_pnjescaladeconflit\")\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_mission(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(slug=\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n\n\n"
+    "on_fire": "if param.get_value(\"attaquant\")==True:\n  pe=param.next_event(\"tuto_escarmouche_pillage\").start()  \nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\")==True and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n\n\n"
   }
 },
 {
@@ -5713,7 +5713,7 @@
     "message": "", 
     "event": 234, 
     "condition": "\n", 
-    "on_fire": "is_victory=random_value(0,1)\n\nif kingdom.get_value(\"tuto_premiere_defense\",None)==None:\n  rapport_espion_a_lancer=True\n  kingdom.set_value(\"tuto_premiere_defense\",True)\nelse:\n  rapport_espion_a_lancer=False\n\nif kingdom.get_value(\"tuto_premiere_escarmouche\"):\n  pe = kingdom.create_pending_event(\"tuto_premiere_escarmouche\")\n  pe.set_value(\"slug\", \"tuto_escarmouche_attaque\")\nelif is_victory==True:  \n  pe=kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe=kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\",False)\npe.start()\n  \n"
+    "on_fire": "is_victory=random_value(0,1)\n\nif kingdom.get_value(\"tuto_firstbattle_defense\"):\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_defense\")\nelif is_victory==True:  \n  pe=kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe=kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\",False)\npe.start()\n  \n"
   }
 },
 {
@@ -5724,7 +5724,7 @@
     "message": "", 
     "event": 236, 
     "condition": "\n", 
-    "on_fire": "if (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_premiere_defense\",None)==None):\n  pe=param.next_event(slug=\"rapport_espion_a_lancer\")\nelif (param.get_value(\"attaquant\")==True and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(slug=\"tuto_pnjescaladeconflit\")\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_mission(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(slug=\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()"
+    "on_fire": "if (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\")==True and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()"
   }
 },
 {
@@ -5735,7 +5735,51 @@
     "message": "", 
     "event": 237, 
     "condition": "\n", 
-    "on_fire": "if (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_premiere_defense\",None)==None):\n  pe=param.next_event(slug=\"rapport_espion_a_lancer\")\nelif (param.get_value(\"attaquant\")==True and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(slug=\"tuto_pnjescaladeconflit\")\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_mission(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(slug=\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()"
+    "on_fire": "if (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\")==True and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()"
+  }
+},
+{
+  "pk": 305, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "ok", 
+    "message": "", 
+    "event": 238, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 306, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "ok", 
+    "message": "", 
+    "event": 223, 
+    "condition": "\n", 
+    "on_fire": "if param.get_value('is_victory'):\n  kingdom.create_pending_event(\"tuto_escarmouche_victoire\").start()\nelse:\n  kingdom.create_pending_event(\"tuto_escarmouche_defaite\").start()"
+  }
+},
+{
+  "pk": 307, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Ok", 
+    "message": "", 
+    "event": 222, 
+    "condition": "\n", 
+    "on_fire": "if param.get_value('is_victory'):\n  kingdom.create_pending_event(\"tuto_escarmouche_victoire\").start()\nelse:\n  kingdom.create_pending_event(\"tuto_escarmouche_defaite\").start()"
+  }
+},
+{
+  "pk": 308, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "ok", 
+    "message": "", 
+    "event": 239, 
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 },
 {
