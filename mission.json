@@ -1527,5 +1527,37 @@
     "kingdom": 58, 
     "mission": 23
   }
+},
+{
+  "pk": 288, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 68, 
+    "mission": 7
+  }
+},
+{
+  "pk": 289, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 68, 
+    "mission": 24
+  }
+},
+{
+  "pk": 290, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 68, 
+    "mission": 8
+  }
+},
+{
+  "pk": 291, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 68, 
+    "mission": 9
+  }
 }
 ]

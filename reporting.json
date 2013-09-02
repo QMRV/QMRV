@@ -17722,5 +17722,47 @@
     "time": 147, 
     "queries": 40
   }
+},
+{
+  "pk": 1354, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 68, 
+    "stack_level": 2, 
+    "object_pk": 7, 
+    "object_type": "Title", 
+    "object_attr": "on_unlock", 
+    "direct_queries": 17, 
+    "time": 118, 
+    "queries": 17
+  }
+},
+{
+  "pk": 1355, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 14, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 16, 
+    "time": 157, 
+    "queries": 16
+  }
+},
+{
+  "pk": 1356, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 68, 
+    "stack_level": 1, 
+    "object_pk": 116, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 367, 
+    "queries": 38
+  }
 }
 ]

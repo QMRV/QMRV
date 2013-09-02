@@ -229,5 +229,15 @@
     "folk": 6754, 
     "title": 4
   }
+},
+{
+  "pk": 229, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 68, 
+    "last_folk": null, 
+    "folk": null, 
+    "title": 7
+  }
 }
 ]
