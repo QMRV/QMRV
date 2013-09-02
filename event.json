@@ -2931,6 +2931,20 @@
   }
 },
 {
+  "pk": 240, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Arm\u00e9e a nouveau sur pied", 
+    "weight": 1, 
+    "text": "Votre arm\u00e9e s'est reform\u00e9e correctement.", 
+    "image": "", 
+    "on_fire": "#if nb_chevaliers_dispo<3\n#    if kingdom.money<thune_mini:\n#     \n#    if nb_troupes<0.8*0.07*float(kingdom.prestige*2)\n#    gain troupes\n#    envoi event warning pas assez de chevaliers\n#    warning=true\n#  else\n#    envoi event gain troupes\n#  timewarp=>scanjoueur_fantome", 
+    "slug": "tuto_regeneration_armee", 
+    "condition": "\n"
+  }
+},
+{
   "pk": 5, 
   "model": "event.eventaction", 
   "fields": {
@@ -5753,6 +5767,17 @@
     "text": "ok", 
     "message": "", 
     "event": 239, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 309, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "ok", 
+    "message": "", 
+    "event": 240, 
     "condition": "\n", 
     "on_fire": "\n"
   }
