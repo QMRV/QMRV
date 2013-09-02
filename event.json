@@ -2917,6 +2917,34 @@
   }
 },
 {
+  "pk": 236, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Escarmouche", 
+    "weight": 1, 
+    "text": "Je n'ai pas r\u00e9ussi \u00e0 les prot\u00e9ger, 10 de mes paysans sont morts :(", 
+    "image": "", 
+    "on_fire": "kingdom.population-=10\nkingdom.save()\n", 
+    "slug": "tuto_escarmouche_misasac", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 237, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Escarmouche", 
+    "weight": 1, 
+    "text": "Je lui ai fait les fesses ! Je lui ai pill\u00e9 10 \u00e9cus :)", 
+    "image": "", 
+    "on_fire": "kingdom.money+=10\nkingdom.save()", 
+    "slug": "tuto_escarmouche_pillage", 
+    "condition": "\n"
+  }
+},
+{
   "pk": 5, 
   "model": "event.eventaction", 
   "fields": {
@@ -5630,7 +5658,7 @@
     "message": "", 
     "event": 230, 
     "condition": "\n", 
-    "on_fire": "#si prestige > 150\nif kingdom.prestige>150:\n  kingdom.create_pending_mission(\"tuto_achever_voisin\")\n#si conflit\nelif kingdom.get_value(\"tuto_conflit\",False)==True:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(slug=\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n#si pas conflit\nelse:\n  kingdom.create_pending_event(\"tuto_pnjescaladeconflit\")\n"
+    "on_fire": "if (param.get_value(\"attaquant\")==False and param.get_value(\"is_victory\")==False):\n  pe=param.next_event(slug=\"tuto_escarouche_misasac\")\nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_premiere_defense\",None)==None):\n  pe=param.next_event(slug=\"rapport_espion_a_lancer\")\nelif (param.get_value(\"attaquant\")==True and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(slug=\"tuto_pnjescaladeconflit\")\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_mission(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(slug=\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n\n\n"
   }
 },
 {
@@ -5641,7 +5669,7 @@
     "message": "", 
     "event": 231, 
     "condition": "\n", 
-    "on_fire": "#si prestige > 150\nif kingdom.prestige>150:\n  kingdom.create_pending_mission(\"tuto_achever_voisin\")\n#si conflit\nelif kingdom.get_value(\"tuto_conflit\",False)==True:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(slug=\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n#si pas conflit\nelse:\n  kingdom.create_pending_event(\"tuto_pnjescaladeconflit\")\n"
+    "on_fire": "if (param.get_value(\"attaquant\")==True and param.get_value(\"is_victory\")==True):\n  pe=param.next_event(slug=\"tuto_escarouche_pillage\")  \nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_premiere_defense\",None)==None):\n  pe=param.next_event(slug=\"rapport_espion_a_lancer\")\nelif (param.get_value(\"attaquant\")==True and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(slug=\"tuto_pnjescaladeconflit\")\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_mission(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(slug=\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n\n\n"
   }
 },
 {
@@ -5685,7 +5713,29 @@
     "message": "", 
     "event": 234, 
     "condition": "\n", 
-    "on_fire": "#decleche event rapport d'espion si c'est la premiere attaque du PNJ\n\n\nis_victory=random_value(0,1)\n  # Brancher vers la suite.\n  \nif kingdom.get_value(\"tuto_premiere_escarmouche\"):\n  pe = kingdom.create_pending_event(\"tuto_premiere_escarmouche\")\n  pe.set_value(\"slug\", \"tuto_escarmouche_attaque\")\n  pe.set_value(\"is_victory\", is_victory)\n  pe.start()\nelse:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_attaque\")\n  pe.set_value(\"is_victory\", is_victory)\n  pe.start()    \n"
+    "on_fire": "is_victory=random_value(0,1)\n\nif kingdom.get_value(\"tuto_premiere_defense\",None)==None:\n  rapport_espion_a_lancer=True\n  kingdom.set_value(\"tuto_premiere_defense\",True)\nelse:\n  rapport_espion_a_lancer=False\n\nif kingdom.get_value(\"tuto_premiere_escarmouche\"):\n  pe = kingdom.create_pending_event(\"tuto_premiere_escarmouche\")\n  pe.set_value(\"slug\", \"tuto_escarmouche_attaque\")\nelif is_victory==True:  \n  pe=kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe=kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\",False)\npe.start()\n  \n"
+  }
+},
+{
+  "pk": 303, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "ok", 
+    "message": "", 
+    "event": 236, 
+    "condition": "\n", 
+    "on_fire": "if (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_premiere_defense\",None)==None):\n  pe=param.next_event(slug=\"rapport_espion_a_lancer\")\nelif (param.get_value(\"attaquant\")==True and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(slug=\"tuto_pnjescaladeconflit\")\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_mission(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(slug=\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()"
+  }
+},
+{
+  "pk": 304, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "ok", 
+    "message": "", 
+    "event": 237, 
+    "condition": "\n", 
+    "on_fire": "if (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_premiere_defense\",None)==None):\n  pe=param.next_event(slug=\"rapport_espion_a_lancer\")\nelif (param.get_value(\"attaquant\")==True and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(slug=\"tuto_pnjescaladeconflit\")\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_mission(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(slug=\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()"
   }
 },
 {
