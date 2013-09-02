@@ -883,7 +883,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "def next_event(is_victory):\n  # Brancher vers la suite.\n  \n  if kingdom.get_value(\"tuto_premiere_escarmouche\"):\n    pe = kingdom.create_pending_event(\"tuto_premiere_escarmouche\")\n    pe.set_value(\"slug\", \"tuto_escarmouche_attaque\")\n    pe.set_value(\"is_victory\", is_victory)\n    pe.start()\n  else:\n    pe = kingdom.create_pending_event(\"tuto_escarmouche_attaque\")\n    pe.set_value(\"is_victory\", is_victory)\n    pe.start()    \n\n\n# R\u00e9cuperer les cinq meilleurs combattants et comparer leurs stats avec ceux qui ont \u00e9t\u00e9 envoy\u00e9s\ncinq_meilleurs = kingdom.folk_set.all().order_by('fight')[0:5]\nmoyenne_meilleurs_fight = call_function('somme_stat_folks', folks=cinq_meilleurs, stat='fight') / len(cinq_meilleurs)\nmoyenne_affected_fight = call_function('somme_stat_folks', folks=affected, stat='fight') / 3\nif moyenne_affected_fight >= moyenne_meilleurs_fight:\n  next_event(is_victory=True)\nelse:\n  next_event(is_victory=False)\n", 
+    "on_start": "def next_event(is_victory):\n  # Brancher vers la suite.\n\n  if kingdom.get_value(\"tuto_firstbattle_defense\"):\n    pe = kingdom.create_pending_event(\"tuto_firstbattle_attack\")\n  elif is_victory==True:  \n    pe=kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\n  else:\n    pe=kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \n  pe.set_value(\"is_victory\", is_victory)\n  pe.set_value(\"attaquant\",False)\n  pe.start()\n    \n\n\n# R\u00e9cuperer les cinq meilleurs combattants et comparer leurs stats avec ceux qui ont \u00e9t\u00e9 envoy\u00e9s\ncinq_meilleurs = kingdom.folk_set.all().order_by('fight')[0:5]\nmoyenne_meilleurs_fight = call_function('somme_stat_folks', folks=cinq_meilleurs, stat='fight') / len(cinq_meilleurs)\nmoyenne_affected_fight = call_function('somme_stat_folks', folks=affected, stat='fight') / 3\nif moyenne_affected_fight >= moyenne_meilleurs_fight:\n  next_event(is_victory=True)\nelse:\n  next_event(is_victory=False)\n", 
     "has_target": false, 
     "is_team": false, 
     "title": null, 
@@ -893,6 +893,29 @@
     "duration": 5, 
     "on_cancel": "\n", 
     "slug": "tuto_escarmouche", 
+    "on_init": "\n"
+  }
+},
+{
+  "pk": 42, 
+  "model": "mission.mission", 
+  "fields": {
+    "name": "Achever votre adversaire", 
+    "target_list": "\n", 
+    "text": "On a localis\u00e9 les toilettes favorites du seigneur adverse !\r\nOn se cache derri\u00e8re la porte avec une hache....\r\n\r\n\r\n\r\n... ET BIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIM", 
+    "has_value": false, 
+    "on_resolution": "\n", 
+    "value_description": "", 
+    "on_start": "#ne part pas si pas le chatelain dans la mission\nkingdom.create_pending_mission(\"tuto_fin_tuto\")\n", 
+    "has_target": false, 
+    "is_team": false, 
+    "title": null, 
+    "target_description": "", 
+    "timeout": null, 
+    "is_cancellable": true, 
+    "duration": 5, 
+    "on_cancel": "\n", 
+    "slug": "tuto_achever_voisin", 
     "on_init": "\n"
   }
 },
@@ -1413,6 +1436,19 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "combattants", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 43, 
+  "model": "mission.missiongrid", 
+  "fields": {
+    "allow_disabled": false, 
+    "name": "sneaky bitches", 
+    "mission": 42, 
+    "length": 20, 
+    "allow_empty": false, 
+    "slug": "attaquants", 
     "condition": "\n"
   }
 },
