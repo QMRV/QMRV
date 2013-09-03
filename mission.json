@@ -1460,7 +1460,7 @@
     "is_started": true, 
     "target": null, 
     "created": "2013-09-03T21:15:27.457", 
-    "started": "2013-09-03T21:15:35.135", 
+    "started": "2013-09-03T22:17:03.446", 
     "last_target": null, 
     "mission": 41, 
     "value": 0, 
@@ -1469,11 +1469,11 @@
   }
 },
 {
-  "pk": 207, 
+  "pk": 208, 
   "model": "mission.pendingmissionaffectation", 
   "fields": {
     "pending_mission": 149, 
-    "folk": 6729, 
+    "folk": 6727, 
     "mission_grid": 42
   }
 },

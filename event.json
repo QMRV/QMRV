@@ -5771,7 +5771,7 @@
     "message": "", 
     "event": 222, 
     "condition": "\n", 
-    "on_fire": "if param.get_value('is_victory'):\n  kingdom.create_pending_event(\"tuto_escarmouche_victoire\").start()\nelse:\n  kingdom.create_pending_event(\"tuto_escarmouche_defaite\").start()"
+    "on_fire": "if param.get_value('is_victory'):\n  param.next_event(\"tuto_escarmouche_victoire\").start()\nelse:\n  param.next_event(\"tuto_escarmouche_defaite\").start()"
   }
 },
 {
@@ -5844,15 +5844,15 @@
   }
 },
 {
-  "pk": 1402, 
+  "pk": 1403, 
   "model": "event.pendingevent", 
   "fields": {
     "kingdom": 64, 
     "is_started": true, 
-    "created": "2013-09-03T21:15:41.824", 
-    "started": "2013-09-03T21:15:41.825", 
-    "text": "J'ai perdu ouiiiinn\r\n\r\ntest 0\r\nattaquant 0", 
-    "event": 230
+    "created": "2013-09-03T22:17:03.477", 
+    "started": "2013-09-03T22:17:03.482", 
+    "text": "(premi\u00e8re escarmouche)", 
+    "event": 222
   }
 },
 {
@@ -5889,14 +5889,14 @@
   }
 },
 {
-  "pk": 1419, 
+  "pk": 1420, 
   "model": "event.pendingeventaction", 
   "fields": {
-    "pending_event": 1402, 
+    "pending_event": 1403, 
     "message": "", 
-    "text": "OK", 
+    "text": "Ok", 
     "folk": null, 
-    "event_action": 296
+    "event_action": 307
   }
 },
 {
@@ -5936,21 +5936,21 @@
   }
 },
 {
-  "pk": 2428, 
+  "pk": 2430, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 1402, 
-    "name": "test", 
+    "pending_event": 1403, 
+    "name": "is_victory", 
     "value": 0
   }
 },
 {
-  "pk": 2429, 
+  "pk": 2431, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 1402, 
+    "pending_event": 1403, 
     "name": "attaquant", 
-    "value": 0
+    "value": 1
   }
 }
 ]
