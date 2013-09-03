@@ -743,9 +743,9 @@
     "target_list": "\n", 
     "text": "Envoyez tous vos hommes valides pour optimiser vos chances. Vos gens ne bougeront m\u00eame pas le petit doigt si vous et votre conn\u00e9table ne partez pas en combat.", 
     "has_value": false, 
-    "on_resolution": "combattants = grids['defenseurs'][0:]\ncombattants.remove(folks[0])\ncombattant=random_in(combattants)\nif combattant.fight>8:\n  intrepide=True\n  fleche=False\nelse:\n  intrepide=False  \n  fleche=True\n\npe=PendingEvent(event=Event.objects.get(slug=\"tuto_bandits_bataille\"),kingdom=kingdom,started=None)\npe.save()\npe.set_value(\"somme_fight\",sum_folks(grids['defenseurs'],\"fight\"))\npe.set_value(\"combattant\",combattant)\npe.set_value(\"intrepide\",intrepide)\npe.set_value(\"fleche\",fleche)\npe.start()\n", 
+    "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "if kingdom.get_folk_in_title(\"chatelain\") not in grids['defenseurs'] or kingdom.get_folk_in_title(\"connetable\") not in grids['defenseurs']:\n  status = \"Le ch\u00e2telain et le conn\u00e9table se doivent de participer \u00e0 cette mission\"\n", 
+    "on_start": "if kingdom.get_folk_in_title(\"chatelain\") not in grids['defenseurs'] or kingdom.get_folk_in_title(\"connetable\") not in grids['defenseurs']:\n  status = \"Le ch\u00e2telain et le conn\u00e9table se doivent de participer \u00e0 cette mission\"\n  \ncombattants = grids['defenseurs'][0:]\ncombattants.remove(folks[0])\ncombattant=random_in(combattants)\nif combattant.fight>8:\n  intrepide=True\n  fleche=False\nelse:\n  intrepide=False  \n  fleche=True\n\npe=PendingEvent(event=Event.objects.get(slug=\"tuto_bandits_bataille\"),kingdom=kingdom,started=None)\npe.save()\npe.set_value(\"somme_fight\",sum_folks(grids['defenseurs'],\"fight\"))\npe.set_value(\"combattant\",combattant)\npe.set_value(\"intrepide\",intrepide)\npe.set_value(\"fleche\",fleche)\npe.start()\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 2, 
@@ -883,7 +883,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "#def next_event(is_victory):\n  # Brancher vers la suite.\n#is_victory=random_value(0,1)\nis_victory=0\n\nif kingdom.get_value(\"tuto_firstbattle_attack\",False)==False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_attack\")\nelif is_victory==True:  \n  pe=kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe=kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n\npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\",True)\npe.start()\n    \n\n\n# R\u00e9cuperer les cinq meilleurs combattants et comparer leurs stats avec ceux qui ont \u00e9t\u00e9 envoy\u00e9s\n\n#pose un YSOD :\n#cinq_meilleurs = kingdom.folk_set.all().order_by('fight')[0:5]\n#moyenne_meilleurs_fight = call_function('somme_stat_folks', folks=cinq_meilleurs, stat='fight') / len(cinq_meilleurs)\n#moyenne_affected_fight = call_function('somme_stat_folks', folks=affected, stat='fight') / 3\n#if moyenne_affected_fight >= moyenne_meilleurs_fight:\n#  next_event(is_victory=True)\n#else:\n#  next_event(is_victory=False)\n\n\n", 
+    "on_start": "# R\u00e9cuperer les cinq meilleurs combattants et comparer leurs stats avec ceux qui ont \u00e9t\u00e9 envoy\u00e9s\n\n#pose un YSOD :\n#cinq_meilleurs = kingdom.folk_set.all().order_by('fight')[0:5]\n#moyenne_meilleurs_fight = call_function('somme_stat_folks', folks=cinq_meilleurs, stat='fight') / len(cinq_meilleurs)\n#moyenne_affected_fight = call_function('somme_stat_folks', folks=affected, stat='fight') / 3\n#if moyenne_affected_fight >= moyenne_meilleurs_fight:\n#  next_event(is_victory=True)\n#else:\n#  next_event(is_victory=False)\n\n\nis_victory=random_value(0,1)\n\nif is_victory==True:\n  kingdom.prestige+=20\n  kingdom.save()\nelse:\n  kingdom.prestige-=15\n  kingdom.save()\n  \nif kingdom.get_value(\"tuto_firstbattle_attack\",False)==False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_attack\")\nelif is_victory==True:  \n  pe=kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe=kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n\npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\",True)\npe.start()\n    \n\n\n\n\n\n", 
     "has_target": false, 
     "is_team": false, 
     "title": null, 
@@ -1453,31 +1453,6 @@
   }
 },
 {
-  "pk": 149, 
-  "model": "mission.pendingmission", 
-  "fields": {
-    "kingdom": 64, 
-    "is_started": true, 
-    "target": null, 
-    "created": "2013-09-03T21:15:27.457", 
-    "started": "2013-09-03T22:17:03.446", 
-    "last_target": null, 
-    "mission": 41, 
-    "value": 0, 
-    "is_finished": false, 
-    "last_value": 0
-  }
-},
-{
-  "pk": 208, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 149, 
-    "folk": 6727, 
-    "mission_grid": 42
-  }
-},
-{
   "pk": 185, 
   "model": "mission.availablemission", 
   "fields": {
@@ -1507,22 +1482,6 @@
   "fields": {
     "kingdom": 59, 
     "mission": 27
-  }
-},
-{
-  "pk": 263, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 64, 
-    "mission": 18
-  }
-},
-{
-  "pk": 264, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 64, 
-    "mission": 19
   }
 },
 {
@@ -1622,11 +1581,27 @@
   }
 },
 {
-  "pk": 292, 
+  "pk": 311, 
   "model": "mission.availablemission", 
   "fields": {
-    "kingdom": 64, 
-    "mission": 41
+    "kingdom": 69, 
+    "mission": 26
+  }
+},
+{
+  "pk": 316, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 69, 
+    "mission": 18
+  }
+},
+{
+  "pk": 317, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 69, 
+    "mission": 19
   }
 }
 ]

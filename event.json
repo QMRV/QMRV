@@ -97,7 +97,7 @@
     "weight": 1, 
     "text": "Aujourd\u2019hui, les travaux ont pris fin. Mon ch\u00e2teau \u00e0 \u00e9t\u00e9 r\u00e9par\u00e9 jusqu\u2019\u00e0 la derni\u00e8re pierre, et l\u2019\u00e9tendard de ma famille claque fi\u00e8rement dans la brise du matin, perch\u00e9 au sommet de la plus haute tour. Ma cour est nombreuse et la ville sous mes remparts se d\u00e9veloppe peu \u00e0 peu. Accoud\u00e9 \u00e0 ma fen\u00eatre, j\u2019observe l'entra\u00eenement de mes fiers soldats dans la cour{% if title.connetable %}, sire {{title.connetable}} marchant parmi eux et beuglant ses instructions{% endif %}. Pour la premi\u00e8re fois depuis mon arriv\u00e9e, je me sens pleinement assur\u00e9 de la stabilit\u00e9 de ma position. Malgr\u00e9 tous les obstacles, je suis maintenant le souverain incontest\u00e9 de ces terres, et le nom de ma famille est de nouveau prononc\u00e9 avec respect.", 
     "image": "events/711.jpg", 
-    "on_fire": " \n", 
+    "on_fire": "kingdom.prestige=100\nkingdom.save()\n", 
     "slug": "tuto_ambition", 
     "condition": "\n"
   }
@@ -179,9 +179,9 @@
     "category": null, 
     "name": "Rassembler l'arm\u00e9e", 
     "weight": 1, 
-    "text": "J\u2019ai envoy\u00e9 {{title.connetable.first_name}} et ses hommes, arm\u00e9s de pieds en cap, parcourir la campagne et porter la nouvelle du renouveau de {{dynastie}}. Il a fait savoir aux paysans qu\u2019ils sont sous ma protection tant qu\u2019ils m\u2019offriront l\u2019ob\u00e9issance due \u00e0 leur suzerain l\u00e9gitime.", 
+    "text": "J\u2019ai envoy\u00e9 {{title.connetable.first_name}} et ses hommes, arm\u00e9s de pieds en cap, parcourir la campagne et porter la nouvelle du renouveau de {{dynastie}}. Il a fait savoir aux paysans qu\u2019ils sont sous ma protection tant qu\u2019ils m\u2019offriront l\u2019ob\u00e9issance due \u00e0 leur suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eatre d\u00e9sormais le seigneur de 90 paysans et 10 soldats.", 
     "image": "events/17.jpg", 
-    "on_fire": "\n", 
+    "on_fire": "kingdom.population=90\nkingdom.soldiers=10\nkingdom.save()\n", 
     "slug": "tuto_recrutement_4", 
     "condition": " "
   }
@@ -375,9 +375,9 @@
     "category": null, 
     "name": "R\u00e9parer l'\u00e9glise", 
     "weight": 1, 
-    "text": "La messe termin\u00e9e, le p\u00e8re {{title.cure.first_name}} s'approche, un sourire bienveillant aux l\u00e8vres. Il me remercie \u00e0 nouveau pour mon patronage, et m'affirme que les paysans seront reconnaissant de servir un seigneur qui a ainsi d\u00e9montr\u00e9 sa pi\u00e9t\u00e9. Il m'invite \u00e0 visiter son \u00e9glise  aussi souvent que je le souhaite, et me promet de venir officier au ch\u00e2teau si j'en ressent le besoin.", 
+    "text": "La messe termin\u00e9e, le p\u00e8re {{title.cure.first_name}} s'approche, un sourire bienveillant aux l\u00e8vres. Il me remercie \u00e0 nouveau pour mon patronage, et m'affirme que les paysans seront reconnaissant de servir un seigneur qui a ainsi d\u00e9montr\u00e9 sa pi\u00e9t\u00e9. Il m'invite \u00e0 visiter son \u00e9glise  aussi souvent que je le souhaite, et me promet de venir officier au ch\u00e2teau si j'en ressent le besoin.\r\n\r\n    Vous \u00eatre d\u00e9sormais le seigneur de 90 paysans et 10 soldats.", 
     "image": "events/89_1.jpg", 
-    "on_fire": " ", 
+    "on_fire": "kingdom.population=90\nkingdom.soldiers=10\nkingdom.save()", 
     "slug": "tuto_eglise_2", 
     "condition": " "
   }
@@ -459,9 +459,9 @@
     "category": null, 
     "name": "Pot de vin", 
     "weight": 1, 
-    "text": "    -12 ecus\r\n\r\nLes jours suivants, {{title.maitre_espion.first_name}} a rencontr\u00e9 en secret les gueux les plus influents et leur a vers\u00e9  de g\u00e9n\u00e9reux pots de vin en \u00e9change de leur soutien. Sous leur influence, la population m\u2019a accept\u00e9 comme suzerain l\u00e9gitime.", 
+    "text": "    -12 ecus\r\n\r\nLes jours suivants, {{title.maitre_espion.first_name}} a rencontr\u00e9 en secret les gueux les plus influents et leur a vers\u00e9 de g\u00e9n\u00e9reux pots de vin en \u00e9change de leur soutien. Sous leur influence, la population m\u2019a accept\u00e9 comme suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eatre d\u00e9sormais le seigneur de 90 paysans et 10 soldats.", 
     "image": "", 
-    "on_fire": "kingdom.money-=12\nkingdom.save()", 
+    "on_fire": "kingdom.money-=12\nkingdom.population=90\nkingdom.soldiers=10\nkingdom.save()", 
     "slug": "tuto_potsdevin_5", 
     "condition": " "
   }
@@ -473,9 +473,9 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "La f\u00eate s\u2019est termin\u00e9e dans la gaiet\u00e9, et les paysans ont \u00e9t\u00e9 h\u00e9berg\u00e9s dans les chambres vides du ch\u00e2teau. Il sont repartit au matin, titubant mais ravis, et ont rependu sur mes terre le r\u00e9cit de ma bienveillance. Ces braves gueux m\u2019ont accept\u00e9 sans r\u00e9serve pour leur souverain l\u00e9gitime.", 
+    "text": "La f\u00eate s\u2019est termin\u00e9e dans la gaiet\u00e9, et les paysans ont \u00e9t\u00e9 h\u00e9berg\u00e9s dans les chambres vides du ch\u00e2teau. Il sont repartit au matin, titubant mais ravis, et ont rependu sur mes terre le r\u00e9cit de ma bienveillance. Ces braves gueux m\u2019ont accept\u00e9 sans r\u00e9serve pour leur souverain l\u00e9gitime.\r\n\r\n    Vous \u00eatre d\u00e9sormais le seigneur de 90 paysans et 10 soldats.", 
     "image": "events/127.jpg", 
-    "on_fire": " ", 
+    "on_fire": "kingdom.population=90\nkingdom.soldiers=10\nkingdom.save()\n", 
     "slug": "tuto_banquet_4", 
     "condition": " "
   }
@@ -769,7 +769,7 @@
     "weight": 1, 
     "text": "Votre cour est presque vide", 
     "image": "", 
-    "on_fire": "choose_event = random_value(1,3)\n\n# R\u00e9cup\u00e9rer un homme majeur qui n'est pas de ma famille et n'est pas un pr\u00eatre.\n# Optimiser pour faire en sorte qu'on puisse ensuite r\u00e9cup\u00e9rer le type cr\u00e9e pour le tuto facheux.\nfacheux = folks.filter(sex=\"m\", birth__lte=datetime.now()-timedelta(days=Constant.objects.get(name=\"Majorite\").value))\nfacheux = facheux.exclude(id__in=[folks[0].id, folks[1].id, folks[3].id])\nfacheux = facheux.exclude(quality_set__slug=\"pretre\")\nfacheux = facheux.order_by('?')\nif not facheux:\n  choose_event = 3\n\nif choose_event == 1:\n  pe = PendingEvent(event = Event.objects.get(slug=\"tuto_allegeance_dame\"), kingdom=kingdom, started=None)\n  pe.save()\n  pe.param.set_value(\"chevalier\",facheux[0])\n  pe.start()\nelif choose_event == 2:\n  PendingEvent(event = Event.objects.get(slug=\"tuto_allegeance_pretre\"), kingdom=kingdom).start()\nelse:\n  PendingEvent(event = Event.objects.get(slug=\"tuto_allegeance_chevalier\"), kingdom=kingdom).start()\n\nstatus = \"cour basse fantome\"\n", 
+    "on_fire": "choose_event = random_value(1,3)\n\n# R\u00e9cup\u00e9rer un homme majeur qui n'est pas de ma famille et n'est pas un pr\u00eatre.\n# Optimiser pour faire en sorte qu'on puisse ensuite r\u00e9cup\u00e9rer le type cr\u00e9e pour le tuto facheux.\nfacheux = folks.filter(sex=\"m\", birth__lte=datetime.now()-timedelta(days=Constant.objects.get(name=\"Majorite\").value))\nfacheux = facheux.exclude(id__in=[folks[0].id, folks[1].id, folks[3].id])\nfacheux = facheux.exclude(quality_set__slug=\"pretre\")\nfacheux = facheux.order_by('?')\nif not facheux:\n  choose_event = 3\n\nif choose_event == 1:\n  kingdom.create_pending_event(\"tuto_allegeance_dame\")\n  pe.set_value(\"chevalier\",facheux[0])\n  pe.start()\nelif choose_event == 2:\n  kingdom.create_pending_event(\"tuto_allegeance_pretre\").start()\nelse:\n  kingdom.create_pending_event(\"tuto_allegeance_chevalier\").start()\n\nstatus = \"cour basse fantome\"\n", 
     "slug": "tuto_cour_basse_fantome", 
     "condition": "\n"
   }
@@ -909,7 +909,7 @@
     "weight": 1, 
     "text": "Tout sourire, le pr\u00eatre s'incline l\u00e9g\u00e8rement.\r\n\"Messire, je suis venu vous annoncer que l\u2019\u00e9v\u00each\u00e9 reconnait la justesse de votre cause. J'ai \u00e9t\u00e9 d\u00e9p\u00each\u00e9 dans votre cour vous conseiller et vous aider \u00e0 guider vos sujets dans les pas du Seigneur\".\r\n\r\n    Vous avez \u00e9t\u00e9 rejoint par le p\u00e8re {{pretre}}. Il occupe le titre de Cur\u00e9.", 
     "image": "events/463_1.jpg", 
-    "on_fire": "pretre = call_function(\"creer_folk\", kingdom=kingdom, plot_min=2, fight_min=2, scholarship_min=8, diplomacy_min=6, max_carac =32, sex=\"m\", loyalty=60, birth=(datetime.now() - timedelta(days=35)), trait=\"pretre\")\nparam.set_value(\"pretre\", pretre)\nkingdom.unlock_title(\"cure\")\npretre.set_title(\"cure\")\n\n", 
+    "on_fire": "pretre = call_function(\"creer_folk\", kingdom=kingdom, plot_min=2, fight_min=2, scholarship_min=8, diplomacy_min=6, max_carac =32, sex=\"m\", loyalty=60, birth=(datetime.now() - timedelta(days=35)), trait=\"pretre\")\nparam.set_value(\"pretre\", pretre)\nkingdom.unlock_title(\"cure\")\npretre.add_title(\"cure\")\n\n", 
     "slug": "tuto_pretre_eveche", 
     "condition": "\n"
   }
@@ -1973,7 +1973,7 @@
     "weight": 1, 
     "text": "\"Sire!\" {{connetable.first_name}} entre  en trombe dans mes appartements, essouffl\u00e9 apr\u00e8s une longue course dans les couloirs du ch\u00e2teau. \"Des brigands, mon seigneur. Au moins une trentaine. Une sentinelle les a rep\u00e9r\u00e9es \u00e0 la fronti\u00e8re de nos terres...\". Il  prend une inspiration, et se redresse avec un sourire f\u00e9roce sur les l\u00e8vres. \"Avec votre permission, je vais rassembler nos hommes et chevaucher \u00e0 leur rencontre. Les stopper avant qu'ils n'atteignent le premier village\". Je me l\u00e8ve, le  regarde droit dans les yeux, et opine avec gravit\u00e9. \"Je prends le commandement.\" J'attrape mon \u00e9p\u00e9e et sort \u00e0 sa suite.\r\n\r\n    Nouvelle mission.", 
     "image": "events/451_11.jpg", 
-    "on_fire": "\n", 
+    "on_fire": "kingdom.create_pending_mission(\"tuto_bandits_attaque\")\n", 
     "slug": "tuto_bandits_connetable", 
     "condition": "\n"
   }
@@ -1999,11 +1999,11 @@
     "category": null, 
     "name": "Tuto bandits", 
     "weight": 1, 
-    "text": "Mon chambellan {{title.chambellan.first_name}} a conduit les gueux devant mon tr\u00f4ne. Ils sont sales, \u00e9puis\u00e9s, et je peux lire le d\u00e9sespoir sur leur visage. Le plus vieux d'entre eux s'avance, serrant son couvre-chef entre ses mains. \"M'ssire\". Il s'incline. \"Je... Nous...\". Le voyant trop affect\u00e9 pour poursuivre, {{title.chambellan.first_name}} prend la parole. \"Des brigands, mon seigneurs. Ils ont attaqu\u00e9 leur village, ont pill\u00e9 toutes leurs r\u00e9serves et ont br\u00fbl\u00e9 leurs maisons. Les six que voyez ici sont les seuls survivants\". J'encaisse la nouvelle avec tout le calme dont je suis capable. Les mis\u00e9rables ont entendu parler de la faiblesse de {{dynastie}}, et se sont offert un butin facile... Serrant les poings, je me l\u00e8ve et regarde le vieillard droit dans les yeux. \"Je ne peux vous rendre ni vos fermes ni vos morts, mais je peux vous promettre une chose. Ils paieront. Tous, jusqu'au dernier\".\r\n```\r\n-20 de population.\r\n```", 
+    "text": "Mon chambellan {{title.chambellan.first_name}} a conduit les gueux devant mon tr\u00f4ne. Ils sont sales, \u00e9puis\u00e9s, et je peux lire le d\u00e9sespoir sur leur visage. Le plus vieux d'entre eux s'avance, serrant son couvre-chef entre ses mains. \"M'ssire\". Il s'incline. \"Je... Nous...\". Le voyant trop affect\u00e9 pour poursuivre, {{title.chambellan.first_name}} prend la parole. \"Des brigands, mon seigneurs. Ils ont attaqu\u00e9 leur village, ont pill\u00e9 toutes leurs r\u00e9serves et ont br\u00fbl\u00e9 leurs maisons. Les six que voyez ici sont les seuls survivants\". J'encaisse la nouvelle avec tout le calme dont je suis capable. Les mis\u00e9rables ont entendu parler de la faiblesse de {{dynastie}}, et se sont offert un butin facile... Serrant les poings, je me l\u00e8ve et regarde le vieillard droit dans les yeux. \"Je ne peux vous rendre ni vos fermes ni vos morts, mais je peux vous promettre une chose. Ils paieront. Tous, jusqu'au dernier\".\r\n\r\n    -20 de population.\r\n", 
     "image": "events/362_4.jpg", 
-    "on_fire": "kingdom.population -= 20\nkingdom.save()", 
+    "on_fire": "\nkingdom.population -= 20\nkingdom.save()", 
     "slug": "tuto_bandits_chambellan", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -2013,11 +2013,11 @@
     "category": null, 
     "name": "Tuto bandits", 
     "weight": 1, 
-    "text": "Dans sa h\u00e2te, le p\u00e8re {{title.cure.first_name}} manque de tr\u00e9bucher alors qu'il se pr\u00e9cipite dans la grande salle. \"Sire {{dynasty}}! Oh Seigneur, donne moi la force!\" Il s'appuie sur l'\u00e9paule d'un serviteur, et me lance un regard d\u00e9sesp\u00e9r\u00e9. \"C'est une trag\u00e9die! Les... les brigands! Il ont attaqu\u00e9 le village de... Oh mon Dieu aies pit\u00e9 de nous, ils ont m\u00eame tu\u00e9s les femmes et les enfants!\". Je me redresse brusquement. \"Comment?!\". Il semble au bord des larmes. \"Vous devez les aider!  Vos gens ont besoin de la force de leur seigneur!\". Je serre les dents, soutien son regard, et opine avec gravit\u00e9. Sans un mot, je sors de la grande salle pour r\u00e9unir mes suivants.\r\n```\r\n-20 de population.\r\n```", 
+    "text": "Dans sa h\u00e2te, le p\u00e8re {{title.cure.first_name}} manque de tr\u00e9bucher alors qu'il se pr\u00e9cipite dans la grande salle. \"Sire {{dynasty}}! Oh Seigneur, donne moi la force!\" Il s'appuie sur l'\u00e9paule d'un serviteur, et me lance un regard d\u00e9sesp\u00e9r\u00e9. \"C'est une trag\u00e9die! Les... les brigands! Il ont attaqu\u00e9 le village de... Oh mon Dieu aies pit\u00e9 de nous, ils ont m\u00eame tu\u00e9s les femmes et les enfants!\". Je me redresse brusquement. \"Comment?!\". Il semble au bord des larmes. \"Vous devez les aider!  Vos gens ont besoin de la force de leur seigneur!\". Je serre les dents, soutien son regard, et opine avec gravit\u00e9. Sans un mot, je sors de la grande salle pour r\u00e9unir mes suivants.\r\n\r\n    -20 de population.\r\n", 
     "image": "events/362_5.jpg", 
     "on_fire": "kingdom.population -= 20\nkingdom.save()", 
     "slug": "tuto_bandits_cure", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -2029,7 +2029,7 @@
     "weight": 1, 
     "text": "La petite troupe a \u00e9t\u00e9 assembl\u00e9e \u00e0 la h\u00e2te, et \u00e9quip\u00e9e du peu d'\u00e9quipement disponible. Des paysans t\u00eatus, qui se sont port\u00e9s volontaire pour apprendre une le\u00e7on \u00e0 ces damn\u00e9s bandits. Ils manquent de discipline, mais je peux voir dans leurs yeux qu'ils ont la rage au ventre. Je me tien devant eux, v\u00eatu de mon armure, {{chevaliers|folks_list:\"short\"}} debout \u00e0 mes c\u00f4t\u00e9s. Je vais nommer l'un d'entre eux mon conn\u00e9table pour s'occuper des derniers pr\u00e9paratifs, puis je prendrai la t\u00eate de mes hommes pour aller \u00e9craser les hors la loi qui croient pouvoir sacquer nos terres.\r\n\r\n    Nouveau titre : Conn\u00e9table.\r\n    Nouvelle mission.", 
     "image": "events/716_4.jpg", 
-    "on_fire": "\n", 
+    "on_fire": "kingdom.unlock_title(\"connetable\")\nkingdom.create_pending_mission(\"tuto_bandits_attaque\")\n", 
     "slug": "tuto_bandits_preparatifs", 
     "condition": "\n"
   }
@@ -2069,9 +2069,9 @@
     "category": null, 
     "name": "Tuto bandits", 
     "weight": 1, 
-    "text": "L'ennemi est en d\u00e9route. Nous occupons \u00e0 pr\u00e9sent leur path\u00e9tique campement, dont le sol  est jonch\u00e9 de cadavres. J'ai envoy\u00e9 un petit groupe \u00e0 leur poursuite, en leur ordonnant de traquer les bandits jusqu'\u00e0 la limite de mes terres. {{pertes}} de mes braves gueux sont tomb\u00e9s aux mains de l'ennemi, mais leurs noms ne seront pas oubli\u00e9s. {% if title.chatelain.fight <= 6 %} Depuis ma civi\u00e8re, j{% else %}J{% endif %}e contemple, fatigu\u00e9, {% if intrepide %}le sourire joyeux qui barre le visage de {{combattant.first_name}}.{% else %}{{combattant.first_name}} qui s'est adoss\u00e9 \u00e0 un arbre, le torse band\u00e9.{% endif %} {% if pertes <= 10 %} Nous avons remport\u00e9 une  belle victoire. L{% else %} Cette victoire me laisse un go\u00fbt am\u00e8re, trop des notre sont tomb\u00e9s. N\u00e9anmoins, l{% endif %}es paysans {{title.chatelain.last_name}} se souviendront que je me suis battu pour eux.\r\n\r\n```\r\n-{{pertes}} de population.\r\n```", 
+    "text": "L'ennemi est en d\u00e9route. Nous occupons \u00e0 pr\u00e9sent leur path\u00e9tique campement, dont le sol  est jonch\u00e9 de cadavres. J'ai envoy\u00e9 un petit groupe \u00e0 leur poursuite, en leur ordonnant de traquer les bandits jusqu'\u00e0 la limite de mes terres. {{pertes}} de mes braves gueux sont tomb\u00e9s aux mains de l'ennemi, mais leurs noms ne seront pas oubli\u00e9s. {% if title.chatelain.fight <= 6 %} Depuis ma civi\u00e8re, j{% else %}J{% endif %}e contemple, fatigu\u00e9, {% if intrepide %}le sourire joyeux qui barre le visage de {{combattant.first_name}}.{% else %}{{combattant.first_name}} qui s'est adoss\u00e9 \u00e0 un arbre, le torse band\u00e9.{% endif %} {% if pertes <= 5 %} Nous avons remport\u00e9 une  belle victoire. L{% else %} Cette victoire me laisse un go\u00fbt am\u00e8re, trop des notre sont tomb\u00e9s. N\u00e9anmoins, l{% endif %}es paysans {{title.chatelain.last_name}} se souviendront que je me suis battu pour eux.\r\n\r\n\r\n    -{{pertes}}soldats.\r\n", 
     "image": "events/85.jpg", 
-    "on_fire": "intrepide=param.get_value(\"intrepide\")\nsomme_fight=param.get_value(\"somme_fight\")\nif intrepide:\n  pertes=min(8,max(40-(somme_fight),0))+2\nelse:\n  pertes=min(20,max(50-(somme_fight),0))+5\nparam.set_value(\"pertes\",pertes)\nkingdom.population-=pertes\nkingdom.save()\n", 
+    "on_fire": "intrepide=param.get_value(\"intrepide\")\nsomme_fight=param.get_value(\"somme_fight\")\nif intrepide:\n  pertes=min(4,max(25-(somme_fight),0))+3\nelse:\n  pertes=min(7,max(25-(somme_fight),0))+3\nparam.set_value(\"pertes\",pertes)\nkingdom.troupes-=pertes\nkingdom.save()\n", 
     "slug": "tuto_bandits_bataille_3", 
     "condition": "\n"
   }
@@ -5012,7 +5012,7 @@
     "message": "Des bandits s\u2019appr\u00eatent \u00e0 mettre mes terres \u00e0 sac. Je dois [mener mes troupes \u00e0 leur rencontre](mission). ", 
     "event": 164, 
     "condition": "\n", 
-    "on_fire": "kingdom.create_pending_mission(\"tuto_bandits_attaque\")\n"
+    "on_fire": "\n"
   }
 },
 {
@@ -5033,8 +5033,8 @@
     "text": "Je vais avoir besoin de tous les bras valides...", 
     "message": "", 
     "event": 166, 
-    "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_bandits_preparatifs\")).start()"
+    "condition": "\n", 
+    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_bandits_preparatifs\")).start()\n"
   }
 },
 {
@@ -5044,8 +5044,8 @@
     "text": "Il faut rassembler tous les hommes disponibles...", 
     "message": "", 
     "event": 167, 
-    "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_bandits_preparatifs\")).start()"
+    "condition": "\n", 
+    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_bandits_preparatifs\")).start()\n"
   }
 },
 {
@@ -5056,7 +5056,7 @@
     "message": "Je doit nommer un [conn\u00e9table](title) pour bouter les bandits hors de mes terres.", 
     "event": 168, 
     "condition": "\n", 
-    "on_fire": "kingdom.unlock_title(\"connetable\")\npe=PendingMission(mission=Mission.objects.get(slug=\"tuto_bandits_attaque\"), kingdom=kingdom).save()"
+    "on_fire": "\n"
   }
 },
 {
@@ -5683,7 +5683,7 @@
     "message": "", 
     "event": 207, 
     "condition": "\n", 
-    "on_fire": "pe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_attaque_par_pnj\")\npe.start()\n\n\n"
+    "on_fire": "pe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_attaque_par_pnj\")\npe.start()\n\n\n"
   }
 },
 {
@@ -5716,7 +5716,7 @@
     "message": "", 
     "event": 234, 
     "condition": "\n", 
-    "on_fire": "is_victory=random_value(0,1)\n\nif kingdom.get_value(\"tuto_firstbattle_defense\"):\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_defense\")\nelif is_victory==True:  \n  pe=kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe=kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\",False)\npe.start()\n  \n"
+    "on_fire": "is_victory=random_value(0,1)\nif is_victory==True:\n  kingdom.prestige+=20\n  kingdom.save()\nelse:\n  kingdom.prestige-=15\n  kingdom.save()\n\nif kingdom.get_value(\"tuto_firstbattle_defense\",False)==False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_defense\")\nelif is_victory==True:  \n  pe=kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe=kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\",False)\npe.start()\n  \n"
   }
 },
 {
@@ -5844,15 +5844,15 @@
   }
 },
 {
-  "pk": 1403, 
+  "pk": 1442, 
   "model": "event.pendingevent", 
   "fields": {
-    "kingdom": 64, 
+    "kingdom": 69, 
     "is_started": true, 
-    "created": "2013-09-03T22:17:03.477", 
-    "started": "2013-09-03T22:17:03.482", 
-    "text": "(premi\u00e8re escarmouche)", 
-    "event": 222
+    "created": "2013-09-03T23:14:24.367", 
+    "started": "2013-09-03T23:14:24.371", 
+    "text": "Il y eut un soir, il y eut un matin.\r\nEt ce 30 fois de suite.", 
+    "event": 225
   }
 },
 {
@@ -5889,14 +5889,14 @@
   }
 },
 {
-  "pk": 1420, 
+  "pk": 1457, 
   "model": "event.pendingeventaction", 
   "fields": {
-    "pending_event": 1403, 
-    "message": "", 
-    "text": "Ok", 
+    "pending_event": 1442, 
+    "message": "Un mois s'est \u00e9coul\u00e9.", 
+    "text": "Le temps passe...", 
     "folk": null, 
-    "event_action": 307
+    "event_action": 293
   }
 },
 {
@@ -5936,21 +5936,12 @@
   }
 },
 {
-  "pk": 2430, 
+  "pk": 2531, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 1403, 
-    "name": "is_victory", 
-    "value": 0
-  }
-},
-{
-  "pk": 2431, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1403, 
-    "name": "attaquant", 
-    "value": 1
+    "pending_event": 1442, 
+    "name": "slug", 
+    "value": "tuto_cour_basse_fantome"
   }
 }
 ]

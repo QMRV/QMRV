@@ -4,7 +4,7 @@
   "model": "title.title", 
   "fields": {
     "name": "Ch\u00e2telain", 
-    "on_defect": "\n", 
+    "on_defect": "status=\"Ola ! On se calme. D'abord c'est mon tr\u00f4ne et ensuite c'est MON ch\u00e2teau !\"\n", 
     "on_affect": "\n", 
     "on_unlock": "# unlock code", 
     "slug": "chatelain", 
@@ -161,36 +161,6 @@
   }
 },
 {
-  "pk": 212, 
-  "model": "title.availabletitle", 
-  "fields": {
-    "kingdom": 64, 
-    "last_folk": 6727, 
-    "folk": 6727, 
-    "title": 1
-  }
-},
-{
-  "pk": 213, 
-  "model": "title.availabletitle", 
-  "fields": {
-    "kingdom": 64, 
-    "last_folk": 6730, 
-    "folk": 6730, 
-    "title": 4
-  }
-},
-{
-  "pk": 214, 
-  "model": "title.availabletitle", 
-  "fields": {
-    "kingdom": 64, 
-    "last_folk": 6732, 
-    "folk": 6732, 
-    "title": 3
-  }
-},
-{
   "pk": 215, 
   "model": "title.availabletitle", 
   "fields": {
@@ -238,6 +208,46 @@
     "last_folk": null, 
     "folk": null, 
     "title": 7
+  }
+},
+{
+  "pk": 244, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 69, 
+    "last_folk": 6758, 
+    "folk": 6758, 
+    "title": 1
+  }
+},
+{
+  "pk": 245, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 69, 
+    "last_folk": 6759, 
+    "folk": 6759, 
+    "title": 4
+  }
+},
+{
+  "pk": 246, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 69, 
+    "last_folk": 6761, 
+    "folk": 6761, 
+    "title": 2
+  }
+},
+{
+  "pk": 249, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 69, 
+    "last_folk": 6766, 
+    "folk": 6766, 
+    "title": 3
   }
 }
 ]
