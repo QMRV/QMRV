@@ -5735,7 +5735,7 @@
     "message": "", 
     "event": 238, 
     "condition": "\n", 
-    "on_fire": "kingdom.create_pending_mission(\"tuto_achever_voisin\")\n"
+    "on_fire": "\n"
   }
 },
 {
@@ -5768,7 +5768,7 @@
     "message": "", 
     "event": 239, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "kingdom.create_pending_mission(\"tuto_achever_voisin\")\n"
   }
 },
 {
