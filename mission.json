@@ -628,7 +628,7 @@
     "target_list": "\n", 
     "text": "Aller chercher des noises \u00e0 votre voisin.\r\n\r\nTUTO\r\n[co\u00fbt 25 ecus pour lancer la mission]", 
     "has_value": false, 
-    "on_resolution": "a = 0\nfor folk in grids['chercheurs_merde']:\n  a += folk.diplomacy\ncible=Kingdom.objects.get(user__username=\"le_pnj_du_jeu\")\nnb_def=random_value(3,6)\nd = sum_folks(Folk.objects.filter(kingdom=cible).order_by('?')[0:nb_def], \"diplomacy\")\nd *= 0.3\n\n\nif a>d:\n  #kingdom.add_claim(cible, Claim.REACHABLE)\n  pe = PendingEvent(event=Event.objects.get(slug=\"tuto_getaffront_diplomatie_kingdomsuccess\"),kingdom=kingdom,started=None)\n  pe.save()\n  pe.set_value(\"defenseur\",cible)\n  pe.start()\n  \n\n  \n   \nelse:\n  pe = PendingEvent(Event.objects.get(slug=\"tuto_getaffront_diplomatie_kingdomfailure\"),kingdom=kingdom,started=None)\n  pe.save()\n  pe.set_value(\"attaquant\",kingdom)\n  pe.start()\n\nkingdom.money-=25;  \n\n\n", 
+    "on_resolution": "#a = 0\n#for folk in grids['chercheurs_merde']:\n#  a += folk.diplomacy\n#cible=Kingdom.objects.get(user__username=\"le_pnj_du_jeu\")\n#nb_def=random_value(3,6)\n#d = sum_folks(Folk.objects.filter(kingdom=cible).order_by('?')[0:nb_def], \"diplomacy\")\n#d *= 0.3\n\n\n#if a>d:\n  #kingdom.add_claim(cible, Claim.REACHABLE)\npe = PendingEvent(event=Event.objects.get(slug=\"tuto_getaffront_diplomatie_kingdomsuccess\"),kingdom=kingdom,started=None)\npe.save()\npe.set_value(\"defenseur\",cible)\npe.start()\n  \n\n  \n   \n#else:\n#  pe = PendingEvent(Event.objects.get(slug=\"tuto_getaffront_diplomatie_kingdomfailure\"),kingdom=kingdom,started=None)\n#  pe.save()\n#  pe.set_value(\"attaquant\",kingdom)\n#  pe.start()\n\nkingdom.money-=25\nkingdom.save()\n", 
     "value_description": "Valeur :", 
     "on_start": "\n", 
     "has_target": false, 
@@ -860,7 +860,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "if call_function('somme_stat_folks', folks=affected, stat='diplomacy') < 20:\n  status=\"Il va falloir \u00eatre un peu plus diplomate\"\n  stop()\n\nkingdom.set_value(\"tuto_has_claim\", True)\nkingdom.create_pending_event(\"tuto_casusbelli_success\").start()\n", 
+    "on_start": "#A modifier, pose un YSOD :\n#if call_function('somme_stat_folks', folks=affected, stat=\"Diplomacy\") < 20:\n#  status=\"Il va falloir \u00eatre un peu plus diplomate\"\n#  stop()\n\nkingdom.set_value(\"tuto_has_claim\", True)\nkingdom.create_pending_event(\"tuto_casusbelli_success\").start()\n", 
     "has_target": false, 
     "is_team": false, 
     "title": null, 
@@ -1450,6 +1450,58 @@
     "allow_empty": false, 
     "slug": "attaquants", 
     "condition": "\n"
+  }
+},
+{
+  "pk": 140, 
+  "model": "mission.pendingmission", 
+  "fields": {
+    "kingdom": 64, 
+    "is_started": true, 
+    "target": null, 
+    "created": "2013-09-03T20:07:47.772", 
+    "started": "2013-09-03T20:17:39.977", 
+    "last_target": null, 
+    "mission": 40, 
+    "value": 0, 
+    "is_finished": false, 
+    "last_value": 0
+  }
+},
+{
+  "pk": 176, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 140, 
+    "folk": 6728, 
+    "mission_grid": 41
+  }
+},
+{
+  "pk": 177, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 140, 
+    "folk": 6727, 
+    "mission_grid": 41
+  }
+},
+{
+  "pk": 178, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 140, 
+    "folk": 6730, 
+    "mission_grid": 41
+  }
+},
+{
+  "pk": 179, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 140, 
+    "folk": 6732, 
+    "mission_grid": 41
   }
 },
 {

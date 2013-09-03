@@ -318,6 +318,15 @@
   }
 },
 {
+  "pk": 392, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 64, 
+    "name": "tuto_has_claim", 
+    "value": 1
+  }
+},
+{
   "pk": 196, 
   "model": "kingdom.folk", 
   "fields": {
@@ -3007,6 +3016,28 @@
     "kingdom": 68, 
     "content": "Il est urgent de charger un [tr\u00e9sorier](#title) de r\u00e9gler nos probl\u00e8mes d'argent", 
     "created": "2013-09-02T01:30:25.012", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 903, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 64, 
+    "content": "Les r\u00e9parations de jules sont termin\u00e9es et il est temps de r\u00e9fl\u00e9chir \u00e0 s'agrandir. Je vais charger mes diplomates de [justifier diplomatiquement](#mission) une attaque sur notre voisin, le seigneur .", 
+    "created": "2013-09-03T20:07:47.978", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 904, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 64, 
+    "content": "J'ai obtenu un cassus belli envers le seigneur .", 
+    "created": "2013-09-03T20:17:49.839", 
     "read": null, 
     "level": 1
   }

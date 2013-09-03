@@ -2937,10 +2937,24 @@
     "category": null, 
     "name": "Arm\u00e9e a nouveau sur pied", 
     "weight": 1, 
-    "text": "Votre arm\u00e9e s'est reform\u00e9e correctement.", 
+    "text": "Votre arm\u00e9e s'est reform\u00e9e correctement.\r\n\r\n{{ if gain_thune }} Et en plus on t'a donne de la thune !! si on est pas sympa...  {{ endif }}\r\n{{ if gain_soldiers }} Et en plus on t'a donne des soldats !! si on est pas TROP sympa...  {{ endif }}", 
     "image": "", 
-    "on_fire": "#if nb_chevaliers_dispo<3\n#    if kingdom.money<thune_mini:\n#     \n#    if nb_troupes<0.8*0.07*float(kingdom.prestige*2)\n#    gain troupes\n#    envoi event warning pas assez de chevaliers\n#    warning=true\n#  else\n#    envoi event gain troupes\n#  timewarp=>scanjoueur_fantome", 
+    "on_fire": "if nb_chevaliers_dispo<3:\n  if kingdom.money<thune_mini:\n    kingdom.money+=10\n    param.set_value(\"gain_thune\",True)\n  else:\n    param.set_value(\"gain_thune\",False)\n  if nb_troupes<0.8*0.07*float(kingdom.prestige*2):\n    kingdom.soldiers=0.8*0.07*float(kingdom.prestige*2)\n    param.set_value(\"gain_soldiers\",True)\n  else:\n    param.set_value(\"gain_soldiers\",False)\n  param.next_event(\"tuto_warning_incapable_subir_attaque\")\nelse:\n  kingdom.soldiers=0.8*0.07*float(kingdom.prestige*2)\n  param.set_value(\"gain_soldiers\",True)\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()  \n", 
     "slug": "tuto_regeneration_armee", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 241, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Recrute !", 
+    "weight": 1, 
+    "text": "Attention, tu ferais bien de recruter des chevaliers dans ton ch\u00e2teau ! Sinon ton voisin pourrait bien s'abroger tes terres...", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "tuto_warning_incapable_subir_attaque", 
     "condition": "\n"
   }
 },
@@ -5783,6 +5797,17 @@
   }
 },
 {
+  "pk": 310, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "ok", 
+    "message": "", 
+    "event": 241, 
+    "condition": "\n", 
+    "on_fire": "#kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scanjoueur_fantome\")\npe.start()"
+  }
+},
+{
   "pk": 1073, 
   "model": "event.pendingevent", 
   "fields": {
@@ -5831,6 +5856,18 @@
   }
 },
 {
+  "pk": 1357, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 64, 
+    "is_started": true, 
+    "created": "2013-09-03T20:17:49.802", 
+    "started": "2013-09-03T20:17:49.806", 
+    "text": " et moi m\u00eame sommes pench\u00e9s sur ma table de travail, sur laquelle s'\u00e9talent les cartes et les rapports de troupe.\"...sur le plan diplomatique, nous ne pouvons pas nous permettre une attaque de grande envergure. Vous allez  mettre sur pied un petit contingent, et faire rapine sur les fermes isol\u00e9es et les villages frontaliers, en \u00e9vitant de vous approcher du ch\u00e2teau. Il est probable qu'il essaye de vous contrer\". Je m'interromps, la mine grave. \"Il ne s'agit plus de vulgaires bandits. Etes-vous certains que les hommes sont pr\u00eats?\" Il soutien mon regard, s\u00fbr de lui. \"Fin pr\u00eats, mon seigneur. Je m'en porte garant\".  Je me d\u00e9tourne, et rassemble les cartes. \"Bien. Commencez les pr\u00e9paratifs\".\r\n\r\n    Nouvelle mission.", 
+    "event": 205
+  }
+},
+{
   "pk": 1024, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -5872,6 +5909,17 @@
     "text": "Le temps passe...", 
     "folk": null, 
     "event_action": 293
+  }
+},
+{
+  "pk": 1381, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 1357, 
+    "message": "Je peux maintenant [attaquer](#mission) le seigneur .", 
+    "text": "Alea jacta est.", 
+    "folk": null, 
+    "event_action": 272
   }
 },
 {
