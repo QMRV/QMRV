@@ -883,7 +883,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "def next_event(is_victory):\n  # Brancher vers la suite.\n\n  if kingdom.get_value(\"tuto_firstbattle_defense\"):\n    pe = kingdom.create_pending_event(\"tuto_firstbattle_attack\")\n  elif is_victory==True:  \n    pe=kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\n  else:\n    pe=kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \n  pe.set_value(\"is_victory\", is_victory)\n  pe.set_value(\"attaquant\",False)\n  pe.start()\n    \n\n\n# R\u00e9cuperer les cinq meilleurs combattants et comparer leurs stats avec ceux qui ont \u00e9t\u00e9 envoy\u00e9s\ncinq_meilleurs = kingdom.folk_set.all().order_by('fight')[0:5]\nmoyenne_meilleurs_fight = call_function('somme_stat_folks', folks=cinq_meilleurs, stat='fight') / len(cinq_meilleurs)\nmoyenne_affected_fight = call_function('somme_stat_folks', folks=affected, stat='fight') / 3\nif moyenne_affected_fight >= moyenne_meilleurs_fight:\n  next_event(is_victory=True)\nelse:\n  next_event(is_victory=False)\n", 
+    "on_start": "#def next_event(is_victory):\n  # Brancher vers la suite.\n#is_victory=random_value(0,1)\nis_victory=0\n\nif kingdom.get_value(\"tuto_firstbattle_attack\",False)==False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_attack\")\nelif is_victory==True:  \n  pe=kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe=kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n\npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\",True)\npe.start()\n    \n\n\n# R\u00e9cuperer les cinq meilleurs combattants et comparer leurs stats avec ceux qui ont \u00e9t\u00e9 envoy\u00e9s\n\n#pose un YSOD :\n#cinq_meilleurs = kingdom.folk_set.all().order_by('fight')[0:5]\n#moyenne_meilleurs_fight = call_function('somme_stat_folks', folks=cinq_meilleurs, stat='fight') / len(cinq_meilleurs)\n#moyenne_affected_fight = call_function('somme_stat_folks', folks=affected, stat='fight') / 3\n#if moyenne_affected_fight >= moyenne_meilleurs_fight:\n#  next_event(is_victory=True)\n#else:\n#  next_event(is_victory=False)\n\n\n", 
     "has_target": false, 
     "is_team": false, 
     "title": null, 
@@ -1453,55 +1453,28 @@
   }
 },
 {
-  "pk": 140, 
+  "pk": 149, 
   "model": "mission.pendingmission", 
   "fields": {
     "kingdom": 64, 
     "is_started": true, 
     "target": null, 
-    "created": "2013-09-03T20:07:47.772", 
-    "started": "2013-09-03T20:17:39.977", 
+    "created": "2013-09-03T21:15:27.457", 
+    "started": "2013-09-03T21:15:35.135", 
     "last_target": null, 
-    "mission": 40, 
+    "mission": 41, 
     "value": 0, 
     "is_finished": false, 
     "last_value": 0
   }
 },
 {
-  "pk": 176, 
+  "pk": 207, 
   "model": "mission.pendingmissionaffectation", 
   "fields": {
-    "pending_mission": 140, 
-    "folk": 6728, 
-    "mission_grid": 41
-  }
-},
-{
-  "pk": 177, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 140, 
-    "folk": 6727, 
-    "mission_grid": 41
-  }
-},
-{
-  "pk": 178, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 140, 
-    "folk": 6730, 
-    "mission_grid": 41
-  }
-},
-{
-  "pk": 179, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 140, 
-    "folk": 6732, 
-    "mission_grid": 41
+    "pending_mission": 149, 
+    "folk": 6729, 
+    "mission_grid": 42
   }
 },
 {
@@ -1646,6 +1619,14 @@
   "fields": {
     "kingdom": 68, 
     "mission": 9
+  }
+},
+{
+  "pk": 292, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 64, 
+    "mission": 41
   }
 }
 ]

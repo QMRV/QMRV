@@ -2097,9 +2097,9 @@
     "category": null, 
     "name": "tuto presque fin", 
     "weight": 1, 
-    "text": " ", 
+    "text": "trololo\r\n", 
     "image": "", 
-    "on_fire": "if kingdom.get_value(\"tuto_facheux_refus\") is not None:\n  PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_facheux_fantome\")).start()\nelse:\n  if kingdom.get_value(\"tuto_ambition\")is None:\n    PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_ambition\")).start()\n  else:\n    kingdom.create_pending_mission(\"tuto_getaffront_diplomacy\")\n\nstatus = \"presque fin fantome\"\n", 
+    "on_fire": "kingdom.set_value(\"tuto_conflit\",False)\nkingdom.set_value(\"tuto_firstbattle_attack\",False)\nkingdom.set_value(\"test\",False)\n\n\n\n#if kingdom.get_value(\"tuto_facheux_refus\") is not None:\n#  PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_facheux_fantome\")).start()\n#else:\n#  if kingdom.get_value(\"tuto_ambition\")is None:\n#    PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_ambition\")).start()\n#  else:\n#    kingdom.create_pending_mission(\"tuto_getaffront_diplomacy\")\n#\nstatus = \"presque fin fantome\"\n", 
     "slug": "dumb_tuto_presque_fin", 
     "condition": "\n"
   }
@@ -2785,7 +2785,7 @@
     "weight": 1, 
     "text": "Votre casus belli est effectif.\r\n\r\n\r\n\r\n    Nouvelle mission", 
     "image": "", 
-    "on_fire": "kingdom.unlockmission(\"tuto_escarmouche\")\n", 
+    "on_fire": "kingdom.unlock_mission(\"tuto_escarmouche\")\nkingdom.create_pending_mission(\"tuto_escarmouche\").start()\n", 
     "slug": "tuto_casusbelli_effective", 
     "condition": "\n"
   }
@@ -2797,9 +2797,9 @@
     "category": null, 
     "name": "resultat de bataille", 
     "weight": 1, 
-    "text": "J'ai perdu ouiiiinn", 
+    "text": "J'ai perdu ouiiiinn\r\n\r\ntest {{ test }}\r\nattaquant {{ attaquant }}", 
     "image": "", 
-    "on_fire": "\n", 
+    "on_fire": "param.set_value(\"test\",kingdom.get_value(\"tuto_conflit\",False))\nparam.set_value(\"attaquant\",param.get_value(\"attaquant\",False))\n", 
     "slug": "tuto_escarmouche_defaite", 
     "condition": "\n"
   }
@@ -2811,9 +2811,9 @@
     "category": null, 
     "name": "resultat de bataille", 
     "weight": 1, 
-    "text": "J'ai gagn\u00e9 wouhou !", 
+    "text": "J'ai gagn\u00e9 wouhou !\r\n\r\n{{ attaquant }}\r\n{{ tuto_rapport_espion }}\r\n{{ tuto_conflit }}", 
     "image": "", 
-    "on_fire": "\n", 
+    "on_fire": "param.set_value(\"tuto_rapport_espion\",kingdom.get_value(\"tuto_rapport_espion\",False))\nparam.set_value(\"tuto_conflit\",kingdom.get_value(\"tuto_conflit\",False))\n\n", 
     "slug": "tuto_escarmouche_victoire", 
     "condition": "\n"
   }
@@ -2827,7 +2827,7 @@
     "weight": 1, 
     "text": "F\u00e9licitations, vous avez termin\u00e9 le tuto.", 
     "image": "", 
-    "on_fire": "\"\"\"\nHERE BE DRAGONS.\nNe pas copier coller ce code qui va toucher les m\u00e9caniques internes du jeu...\n\"\"\"\n\n# Title to unlock\ntitles = ('chatelain', 'cure', 'chambellan', 'tresorier', 'ambassadeur', 'maitre_espion', 'connetable', )\n# Missions to manually unlock\nmissions = ('escarmouche', )\n\n# Unlock titles\nfor title in titles:\n  kingdom.unlock_title(title)\n\n# Unlock PVP missions\nfor mission in missions:\n  kingdom.unlock_mission(mission)\n\n# First, resolve all current pending mission\npending_missions = kingdom.pendingmission_set.filter(started__isnull=False)\nfor pending_mission in pending_missions:\n  pending_mission.resolve()\n\n# Remove \"tuto_\" missions from AvailableMission and PendingMission\nkingdom.availablemission_set.filter(mission__slug__startswith=\"tuto_\").delete()\nkingdom.pendingmission_set.filter(mission__slug__startswith=\"tuto_\").delete()\n\n# Remove \"tuto_\" variables set on the kingdom\nkingdom._kingdomvariable_set.filter(key__startswith=\"tuto_\")\nkingdom.set_value(\"in_tuto\", False)", 
+    "on_fire": "\"\"\"\nHERE BE DRAGONS.\nNe pas copier coller ce code qui va toucher les m\u00e9caniques internes du jeu...\n\"\"\"\n\n# Title to unlock\n#titles = ('chatelain', 'cure', 'chambellan', 'tresorier', 'ambassadeur', 'maitre_espion', 'connetable', )\n# Missions to manually unlock\n#missions = ('escarmouche', )\n\n# Unlock titles\n#for title in titles:\n#  kingdom.unlock_title(title)\n\n# Unlock PVP missions\n#for mission in missions:\n#  kingdom.unlock_mission(mission)\n\n# First, resolve all current pending mission\n#pending_missions = kingdom.pendingmission_set.filter(started__isnull=False)\n#for pending_mission in pending_missions:\n#  pending_mission.resolve()\n\n# Remove \"tuto_\" missions from AvailableMission and PendingMission\n#kingdom.availablemission_set.filter(mission__slug__startswith=\"tuto_\").delete()\n#kingdom.pendingmission_set.filter(mission__slug__startswith=\"tuto_\").delete()\n\n# Remove \"tuto_\" variables set on the kingdom\nkingdom._kingdomvariable_set.filter(key__startswith=\"tuto_\")\nkingdom.set_value(\"in_tuto\", False)", 
     "slug": "tuto_fin_tuto", 
     "condition": "\n"
   }
@@ -5408,7 +5408,7 @@
     "message": "Je peux maintenant [attaquer](#mission) le seigneur {{ennemi}}.", 
     "event": 205, 
     "condition": "\n", 
-    "on_fire": "#param.pending_event.next_event(Event.objects.get(slug=\"tuto_casusbelli_effective\")).start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_casusbelli_effective\")\npe.start()\n"
+    "on_fire": "#param.pending_event.next_event(Event.objects.get(slug=\"tuto_casusbelli_effective\")).start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_casusbelli_effective\")\npe.start()\n"
   }
 },
 {
@@ -5661,7 +5661,7 @@
     "message": "", 
     "event": 230, 
     "condition": "\n", 
-    "on_fire": "if (param.get_value(\"attaquant\")==False):\n  pe=param.next_event(\"tuto_escarmouche_misasac\").start()\nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\")==True and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n\n\n"
+    "on_fire": "if (param.get_value(\"attaquant\")==False):\n  pe=param.next_event(\"tuto_escarmouche_misasac\").start()\nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",False)==False):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\")==True and kingdom.get_value(\"tuto_conflit\",False)==False):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n\n\n"
   }
 },
 {
@@ -5832,18 +5832,6 @@
   }
 },
 {
-  "pk": 1343, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 64, 
-    "is_started": true, 
-    "created": "2013-09-01T01:07:25.049", 
-    "started": "2013-09-01T01:07:25.052", 
-    "text": "Il y eut un soir, il y eut un matin.\r\nEt ce 30 fois de suite.", 
-    "event": 225
-  }
-},
-{
   "pk": 1354, 
   "model": "event.pendingevent", 
   "fields": {
@@ -5856,15 +5844,15 @@
   }
 },
 {
-  "pk": 1357, 
+  "pk": 1402, 
   "model": "event.pendingevent", 
   "fields": {
     "kingdom": 64, 
     "is_started": true, 
-    "created": "2013-09-03T20:17:49.802", 
-    "started": "2013-09-03T20:17:49.806", 
-    "text": " et moi m\u00eame sommes pench\u00e9s sur ma table de travail, sur laquelle s'\u00e9talent les cartes et les rapports de troupe.\"...sur le plan diplomatique, nous ne pouvons pas nous permettre une attaque de grande envergure. Vous allez  mettre sur pied un petit contingent, et faire rapine sur les fermes isol\u00e9es et les villages frontaliers, en \u00e9vitant de vous approcher du ch\u00e2teau. Il est probable qu'il essaye de vous contrer\". Je m'interromps, la mine grave. \"Il ne s'agit plus de vulgaires bandits. Etes-vous certains que les hommes sont pr\u00eats?\" Il soutien mon regard, s\u00fbr de lui. \"Fin pr\u00eats, mon seigneur. Je m'en porte garant\".  Je me d\u00e9tourne, et rassemble les cartes. \"Bien. Commencez les pr\u00e9paratifs\".\r\n\r\n    Nouvelle mission.", 
-    "event": 205
+    "created": "2013-09-03T21:15:41.824", 
+    "started": "2013-09-03T21:15:41.825", 
+    "text": "J'ai perdu ouiiiinn\r\n\r\ntest 0\r\nattaquant 0", 
+    "event": 230
   }
 },
 {
@@ -5890,17 +5878,6 @@
   }
 },
 {
-  "pk": 1363, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 1343, 
-    "message": "Un mois s'est \u00e9coul\u00e9.", 
-    "text": "Le temps passe...", 
-    "folk": null, 
-    "event_action": 293
-  }
-},
-{
   "pk": 1377, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -5912,14 +5889,14 @@
   }
 },
 {
-  "pk": 1381, 
+  "pk": 1419, 
   "model": "event.pendingeventaction", 
   "fields": {
-    "pending_event": 1357, 
-    "message": "Je peux maintenant [attaquer](#mission) le seigneur .", 
-    "text": "Alea jacta est.", 
+    "pending_event": 1402, 
+    "message": "", 
+    "text": "OK", 
     "folk": null, 
-    "event_action": 272
+    "event_action": 296
   }
 },
 {
@@ -5950,21 +5927,30 @@
   }
 },
 {
-  "pk": 2332, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1343, 
-    "name": "slug", 
-    "value": "tuto_bandits_fantome"
-  }
-},
-{
   "pk": 2350, 
   "model": "event._pendingeventvariable", 
   "fields": {
     "pending_event": 1354, 
     "name": "slug", 
     "value": "tuto_scandale_fantome"
+  }
+},
+{
+  "pk": 2428, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1402, 
+    "name": "test", 
+    "value": 0
+  }
+},
+{
+  "pk": 2429, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1402, 
+    "name": "attaquant", 
+    "value": 0
   }
 }
 ]
