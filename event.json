@@ -2785,7 +2785,7 @@
     "weight": 1, 
     "text": "Votre casus belli est effectif.\r\n\r\n\r\n\r\n    Nouvelle mission", 
     "image": "", 
-    "on_fire": "kingdom.unlock_mission(\"tuto_escarmouche\")\nkingdom.create_pending_mission(\"tuto_escarmouche\").start()\n", 
+    "on_fire": "kingdom.unlock_mission(\"tuto_escarmouche\")\nkingdom.create_pending_mission(\"tuto_escarmouche\")\n", 
     "slug": "tuto_casusbelli_effective", 
     "condition": "\n"
   }
@@ -2911,7 +2911,7 @@
     "weight": 1, 
     "text": "Le voisin a des fils et filles \u00e0 marier,  il est possible que nous puissions r\u00e9soudre la guerre par un mariage.", 
     "image": "", 
-    "on_fire": "\n", 
+    "on_fire": "kingdom.set_value(\"tuto_rapport_espion\",True)\n", 
     "slug": "tuto_rapport_espion", 
     "condition": "\n"
   }
@@ -5841,6 +5841,18 @@
     "started": "2013-09-02T01:30:24.892", 
     "text": "Il y eut un soir, il y eut un matin.\r\nEt ce 30 fois de suite.", 
     "event": 225
+  }
+},
+{
+  "pk": 1546, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 69, 
+    "is_started": false, 
+    "created": "2013-09-04T17:47:57.412", 
+    "started": null, 
+    "text": "", 
+    "event": 232
   }
 },
 {

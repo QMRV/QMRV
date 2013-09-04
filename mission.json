@@ -906,7 +906,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "#ne part pas si pas le chatelain dans la mission\nkingdom.create_pending_event(\"tuto_fin_tuto\")\n", 
+    "on_start": "#ne part pas si pas le chatelain dans la mission\nkingdom.create_pending_event(\"tuto_fin_tuto\").start()\n", 
     "has_target": false, 
     "is_team": false, 
     "title": null, 
@@ -1650,6 +1650,14 @@
   "fields": {
     "kingdom": 69, 
     "mission": 17
+  }
+},
+{
+  "pk": 329, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 69, 
+    "mission": 41
   }
 }
 ]

@@ -58,11 +58,11 @@
   "pk": 69, 
   "model": "kingdom.kingdom", 
   "fields": {
-    "soldiers": 34, 
-    "prestige": 0, 
-    "money": 135, 
+    "soldiers": 73, 
+    "prestige": 170, 
+    "money": 350, 
     "user": 38, 
-    "population": 205
+    "population": 425
   }
 },
 {
@@ -369,6 +369,69 @@
     "kingdom": 69, 
     "name": "tuto_mariage_fait", 
     "value": 1
+  }
+},
+{
+  "pk": 438, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 69, 
+    "name": "tuto_scandale_fantome", 
+    "value": 1
+  }
+},
+{
+  "pk": 439, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 69, 
+    "name": "tuto_has_claim", 
+    "value": 1
+  }
+},
+{
+  "pk": 440, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 69, 
+    "name": "tuto_firstbattle_attack", 
+    "value": 1
+  }
+},
+{
+  "pk": 441, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 69, 
+    "name": "tuto_conflit", 
+    "value": 1
+  }
+},
+{
+  "pk": 442, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 69, 
+    "name": "tuto_firstbattle_defense", 
+    "value": 1
+  }
+},
+{
+  "pk": 446, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 69, 
+    "name": "tuto_rapport_espion", 
+    "value": 1
+  }
+},
+{
+  "pk": 460, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 69, 
+    "name": "tuto_warning_incapable_subir_attaque", 
+    "value": 0
   }
 },
 {
@@ -3284,6 +3347,193 @@
     "kingdom": 69, 
     "content": "Le banquet s'est termin\u00e9 dans la bonne humeur. ```+3 de Loyaut\u00e9 g\u00e9n\u00e9rale.```", 
     "created": "2013-09-03T23:33:58.997", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 946, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 69, 
+    "content": "J'ai renonc\u00e9 \u00e0 mes habitudes de F\u00eatard.", 
+    "created": "2013-09-04T17:38:33.544", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 947, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 69, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-04T17:38:54.016", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 948, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 69, 
+    "content": "Les r\u00e9parations de jules sont termin\u00e9es et il est temps de r\u00e9fl\u00e9chir \u00e0 s'agrandir. Je vais charger mes diplomates de [justifier diplomatiquement](#mission) une attaque sur notre voisin, le seigneur .", 
+    "created": "2013-09-04T17:39:31.113", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 949, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 69, 
+    "content": "J'ai obtenu un cassus belli envers le seigneur .", 
+    "created": "2013-09-04T17:39:45.572", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 950, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 69, 
+    "content": "Je peux maintenant [attaquer](#mission) le seigneur .", 
+    "created": "2013-09-04T17:39:47.649", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 951, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 69, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-04T17:39:49.727", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 952, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 69, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-04T17:40:56.925", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 953, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 69, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-04T17:41:01.289", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 954, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 69, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-04T17:44:35.842", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 955, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 69, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-04T17:46:40.576", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 956, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 69, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-04T17:47:03.225", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 957, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 69, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-04T17:47:08.217", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 958, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 69, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-04T17:47:14.870", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 959, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 69, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-04T17:47:20.446", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 960, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 69, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-04T17:47:24.897", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 961, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 69, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-04T17:47:29.088", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 962, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 69, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-04T17:47:37.020", 
     "read": null, 
     "level": 1
   }
