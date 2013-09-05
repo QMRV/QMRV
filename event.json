@@ -5844,15 +5844,15 @@
   }
 },
 {
-  "pk": 1568, 
+  "pk": 1574, 
   "model": "event.pendingevent", 
   "fields": {
     "kingdom": 70, 
     "is_started": true, 
-    "created": "2013-09-05T13:49:10.732", 
-    "started": "2013-09-05T13:49:10.731", 
-    "text": "Tard le soir, Flodoberte a frapp\u00e9 \u00e0 ma porte. \"...En tant que votre ma\u00eetre espion, vous avez ordonn\u00e9 que je garde un oeil sur les affaires du ch\u00e2teau. J'en ai le c\u0153ur serr\u00e9, mais le devoir m'oblige \u00e0 vous r\u00e9v\u00e9ler que votre fils Girart a commit un... \u00e9cart.\" Je me l\u00e8ve de ma table de travail et fronce les sourcils. \"Un \"\u00e9cart\"?.\"\r\n\r\nElle rougit un peu, et tire sur une m\u00e8che de cheveux comme elle le fait depuis qu'elle n'est qu'une enfant. Je ne me laisse pas attendrir, et sous mon regard autoritaire elle se d\u00e9cide \u00e0 poursuivre. \"Mon fr\u00e8re... je veux dire sire Girart est tomb\u00e9 en affection de Marie, une des nouvelles servantes. Il l'a... euh... fr\u00e9quent\u00e9 en plusieurs occasion, \u00e0 la nuit tomb\u00e9.\" Elle me jette un regard suppliant? \"Je vous en prie, ne soyez pas trop dur.\"\r\n", 
-    "event": 47
+    "created": "2013-09-05T15:01:57.996", 
+    "started": "2013-09-05T15:01:58.006", 
+    "text": "Il me d\u00e9visage, la m\u00e2choire serr\u00e9e, et sort en trombe. Je soupire. Il sait que j'outrepasse mes droits en lui interdisant de d\u00e9fendre son honneur... Si les deux querelleurs veulent vraiment se battre, ils trouveront t\u00f4t ou tard une occasion de le faire.", 
+    "event": 156
   }
 },
 {
@@ -5889,36 +5889,14 @@
   }
 },
 {
-  "pk": 1593, 
+  "pk": 1604, 
   "model": "event.pendingeventaction", 
   "fields": {
-    "pending_event": 1568, 
+    "pending_event": 1574, 
     "message": "", 
-    "text": "\"Je ne laisserai pas une vulgaire souillon salir notre nom! Qu'on la mette sur le champ \u00e0 la porte!\"", 
+    "text": "Je ferai mieux de r\u00e9fl\u00e9chir \u00e0  une solution plus fiable qu'un simple interdit.", 
     "folk": null, 
-    "event_action": 70
-  }
-},
-{
-  "pk": 1594, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 1568, 
-    "message": "Mon fils s'est entich\u00e9 d'une servante. J'ai d\u00e9cid\u00e9 de fermer les yeux.", 
-    "text": "Je hausse les \u00e9paule. \"A son age, il est bien normal qu'il s'amuse. Il se lassera de cette gueuse bien assez t\u00f4t.\"", 
-    "folk": null, 
-    "event_action": 58
-  }
-},
-{
-  "pk": 1595, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 1568, 
-    "message": "", 
-    "text": "\"Cela doit cesser, je lui parlerai d\u00e8s demain.\"", 
-    "folk": null, 
-    "event_action": 59
+    "event_action": 221
   }
 },
 {
@@ -5955,6 +5933,24 @@
     "pending_event": 1354, 
     "name": "slug", 
     "value": "tuto_scandale_fantome"
+  }
+},
+{
+  "pk": 2918, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1574, 
+    "name": "slug", 
+    "value": "tuto_facheux_fantome"
+  }
+},
+{
+  "pk": 2919, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 1574, 
+    "name": "facheux", 
+    "value": "`Folk`:6775"
   }
 }
 ]

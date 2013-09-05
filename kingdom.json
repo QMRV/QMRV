@@ -58,11 +58,11 @@
   "pk": 70, 
   "model": "kingdom.kingdom", 
   "fields": {
-    "soldiers": 19, 
+    "soldiers": 22, 
     "prestige": 0, 
-    "money": 48, 
+    "money": 63, 
     "user": 38, 
-    "population": 150
+    "population": 170
   }
 },
 {
@@ -314,6 +314,15 @@
   "fields": {
     "kingdom": 70, 
     "name": "tuto_cour_basse", 
+    "value": 1
+  }
+},
+{
+  "pk": 468, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 70, 
+    "name": "tuto_scandale_fantome", 
     "value": 1
   }
 },
@@ -3088,6 +3097,28 @@
     "kingdom": 70, 
     "content": "Un mois s'est \u00e9coul\u00e9.", 
     "created": "2013-09-05T13:49:10.794", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 975, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 70, 
+    "content": "J'ai banni la servante dont mon fils  s'\u00e9tait entich\u00e9. ```-25 de Loyaut\u00e9 pour Girart.-5 de Loyaut\u00e9 pour Flodoberte.```", 
+    "created": "2013-09-05T15:01:47.442", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 976, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 70, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-05T15:01:49.269", 
     "read": null, 
     "level": 1
   }
