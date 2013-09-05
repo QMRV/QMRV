@@ -1595,5 +1595,109 @@
     "kingdom": 70, 
     "mission": 23
   }
+},
+{
+  "pk": 332, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 70, 
+    "mission": 14
+  }
+},
+{
+  "pk": 333, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 70, 
+    "mission": 20
+  }
+},
+{
+  "pk": 334, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 70, 
+    "mission": 21
+  }
+},
+{
+  "pk": 335, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 70, 
+    "mission": 22
+  }
+},
+{
+  "pk": 336, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 70, 
+    "mission": 28
+  }
+},
+{
+  "pk": 337, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 70, 
+    "mission": 33
+  }
+},
+{
+  "pk": 338, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 70, 
+    "mission": 18
+  }
+},
+{
+  "pk": 339, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 70, 
+    "mission": 19
+  }
+},
+{
+  "pk": 340, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 70, 
+    "mission": 7
+  }
+},
+{
+  "pk": 341, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 70, 
+    "mission": 24
+  }
+},
+{
+  "pk": 342, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 70, 
+    "mission": 8
+  }
+},
+{
+  "pk": 343, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 70, 
+    "mission": 9
+  }
+},
+{
+  "pk": 344, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 70, 
+    "mission": 26
+  }
 }
 ]

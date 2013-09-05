@@ -58,11 +58,11 @@
   "pk": 70, 
   "model": "kingdom.kingdom", 
   "fields": {
-    "soldiers": 22, 
-    "prestige": 0, 
-    "money": 63, 
+    "soldiers": 37, 
+    "prestige": 100, 
+    "money": 153, 
     "user": 38, 
-    "population": 170
+    "population": 290
   }
 },
 {
@@ -309,7 +309,25 @@
   }
 },
 {
-  "pk": 467, 
+  "pk": 468, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 70, 
+    "name": "tuto_scandale_fantome", 
+    "value": 1
+  }
+},
+{
+  "pk": 469, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 70, 
+    "name": "tuto_facheux_fantome", 
+    "value": 1
+  }
+},
+{
+  "pk": 471, 
   "model": "kingdom._kingdomvariable", 
   "fields": {
     "kingdom": 70, 
@@ -318,11 +336,29 @@
   }
 },
 {
-  "pk": 468, 
+  "pk": 472, 
   "model": "kingdom._kingdomvariable", 
   "fields": {
     "kingdom": 70, 
-    "name": "tuto_scandale_fantome", 
+    "name": "tuto_forcertitre_random", 
+    "value": 1
+  }
+},
+{
+  "pk": 473, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 70, 
+    "name": "tuto_caissesvides", 
+    "value": 1
+  }
+},
+{
+  "pk": 474, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 70, 
+    "name": "tuto_bandits_fantome", 
     "value": 1
   }
 },
@@ -1595,7 +1631,7 @@
     "avatar": 4, 
     "birth": "2013-08-19T13:41:26.566", 
     "mother": null, 
-    "loyalty": 60, 
+    "loyalty": 64, 
     "spouse": null, 
     "quality_set": [
       4
@@ -1781,8 +1817,8 @@
     "loyalty": 45, 
     "spouse": null, 
     "quality_set": [
-      16, 
-      3
+      3, 
+      16
     ], 
     "mentor": null
   }
@@ -1809,6 +1845,60 @@
     "spouse": null, 
     "quality_set": [
       9
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6781, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 70, 
+    "fight": 6, 
+    "first_name": "H\u00e9lits", 
+    "last_name": "de Bujaleuf", 
+    "diplomacy": 8, 
+    "father": null, 
+    "plot": 9, 
+    "scholarship": 9, 
+    "sex": "f", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 43, 
+    "birth": "2013-09-05T15:31:36.635", 
+    "mother": null, 
+    "loyalty": 30, 
+    "spouse": null, 
+    "quality_set": [
+      18, 
+      16
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6782, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 70, 
+    "fight": 7, 
+    "first_name": "Aur\u00e8le", 
+    "last_name": "de Trelly", 
+    "diplomacy": 9, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 11, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 24, 
+    "birth": "2013-08-01T15:32:06.786", 
+    "mother": null, 
+    "loyalty": 65, 
+    "spouse": null, 
+    "quality_set": [
+      26, 
+      36
     ], 
     "mentor": null
   }
@@ -3119,6 +3209,149 @@
     "kingdom": 70, 
     "content": "Un mois s'est \u00e9coul\u00e9.", 
     "created": "2013-09-05T15:01:49.269", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 977, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 70, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-05T15:31:25.836", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 978, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 70, 
+    "content": "Mon fils  et le Geoffroy d'Imbleville sont \u00e0 couteaux tir\u00e9s. Je pourrais regler le probl\u00e8me en [d\u00e9barassant](mission) ma cour du chevalier.", 
+    "created": "2013-09-05T15:31:34.700", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 979, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 70, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-05T15:31:37", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 980, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 70, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-05T15:32:06.986", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 981, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 70, 
+    "content": "Le p\u00e8re Aur\u00e8le de Trelly a rejoint ma cour en tant que cur\u00e9 du ch\u00e2teau.", 
+    "created": "2013-09-05T15:32:09.073", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 982, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 70, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-05T15:32:10.839", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 983, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 70, 
+    "content": "Vous pouvez d\u00e9sormais nommer un tr\u00e9sorier.", 
+    "created": "2013-09-05T15:32:12.516", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 984, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 70, 
+    "content": "Il est urgent de charger un [tr\u00e9sorier](#title) de r\u00e9gler nos probl\u00e8mes d'argent", 
+    "created": "2013-09-05T15:32:12.573", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 985, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 70, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-05T15:32:13.959", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 986, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 70, 
+    "content": "Vous pouvez d\u00e9sormais nommer un conn\u00e9table.", 
+    "created": "2013-09-05T15:32:16.285", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 987, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 70, 
+    "content": "Je doit nommer un [conn\u00e9table](title) pour bouter les bandits hors de mes terres.", 
+    "created": "2013-09-05T15:32:20.023", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 988, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 70, 
+    "content": "J'ai vaincu les bandits. 3 de mes hommes d'armes sont tomb\u00e9s mais Giefroi de Mirambeau s'est illustr\u00e9 dans la bataille. ```Gagne le Trait Intrepide.```.", 
+    "created": "2013-09-05T15:36:32.638", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 989, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 70, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-05T15:36:35.316", 
     "read": null, 
     "level": 1
   }

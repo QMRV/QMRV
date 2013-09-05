@@ -239,5 +239,35 @@
     "folk": 6774, 
     "title": 4
   }
+},
+{
+  "pk": 255, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 70, 
+    "last_folk": 6782, 
+    "folk": 6782, 
+    "title": 3
+  }
+},
+{
+  "pk": 256, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 70, 
+    "last_folk": null, 
+    "folk": null, 
+    "title": 7
+  }
+},
+{
+  "pk": 257, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 70, 
+    "last_folk": 6772, 
+    "folk": 6772, 
+    "title": 2
+  }
 }
 ]
