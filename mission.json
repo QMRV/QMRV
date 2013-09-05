@@ -1581,83 +1581,19 @@
   }
 },
 {
-  "pk": 311, 
+  "pk": 330, 
   "model": "mission.availablemission", 
   "fields": {
-    "kingdom": 69, 
-    "mission": 26
+    "kingdom": 70, 
+    "mission": 27
   }
 },
 {
-  "pk": 316, 
+  "pk": 331, 
   "model": "mission.availablemission", 
   "fields": {
-    "kingdom": 69, 
-    "mission": 18
-  }
-},
-{
-  "pk": 317, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 69, 
-    "mission": 19
-  }
-},
-{
-  "pk": 318, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 69, 
-    "mission": 7
-  }
-},
-{
-  "pk": 319, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 69, 
-    "mission": 24
-  }
-},
-{
-  "pk": 320, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 69, 
-    "mission": 8
-  }
-},
-{
-  "pk": 321, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 69, 
-    "mission": 9
-  }
-},
-{
-  "pk": 322, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 69, 
+    "kingdom": 70, 
     "mission": 23
-  }
-},
-{
-  "pk": 328, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 69, 
-    "mission": 17
-  }
-},
-{
-  "pk": 329, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 69, 
-    "mission": 41
   }
 }
 ]

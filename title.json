@@ -211,53 +211,33 @@
   }
 },
 {
-  "pk": 244, 
+  "pk": 252, 
   "model": "title.availabletitle", 
   "fields": {
-    "kingdom": 69, 
-    "last_folk": 6758, 
-    "folk": 6758, 
+    "kingdom": 70, 
+    "last_folk": 6771, 
+    "folk": 6771, 
     "title": 1
   }
 },
 {
-  "pk": 245, 
+  "pk": 253, 
   "model": "title.availabletitle", 
   "fields": {
-    "kingdom": 69, 
-    "last_folk": 6759, 
-    "folk": 6759, 
+    "kingdom": 70, 
+    "last_folk": 6773, 
+    "folk": 6773, 
+    "title": 5
+  }
+},
+{
+  "pk": 254, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 70, 
+    "last_folk": 6774, 
+    "folk": 6774, 
     "title": 4
-  }
-},
-{
-  "pk": 246, 
-  "model": "title.availabletitle", 
-  "fields": {
-    "kingdom": 69, 
-    "last_folk": 6761, 
-    "folk": 6761, 
-    "title": 2
-  }
-},
-{
-  "pk": 249, 
-  "model": "title.availabletitle", 
-  "fields": {
-    "kingdom": 69, 
-    "last_folk": 6766, 
-    "folk": 6766, 
-    "title": 3
-  }
-},
-{
-  "pk": 250, 
-  "model": "title.availabletitle", 
-  "fields": {
-    "kingdom": 69, 
-    "last_folk": null, 
-    "folk": null, 
-    "title": 7
   }
 }
 ]
