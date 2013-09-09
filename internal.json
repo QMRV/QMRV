@@ -71,9 +71,9 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 1440, 
+    "kingdom_list": "", 
     "on_fire": "for blesse in Folk.objects.filter(kingdom=kingdom, quality_set__name=\"blesse\"):\n  if random_value(1,20) == 1 :\n    blesse.die()\n", 
     "name": "Les bless\u00e9s peuvent mourir", 
-    "condition": "if Folk.objects.filter(kingdom=kingdom, quality_set__name=\"blesse\").count() == 0:\n  status= \"personne n'est bless\u00e9\"\n", 
     "description": "Fais mourir (ou pas) les bless\u00e9s"
   }
 },
@@ -82,9 +82,9 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 1440, 
+    "kingdom_list": "", 
     "on_fire": "#on r\u00e9cup\u00e8re le ch\u00e2telain\nc = kingdom.get_folk_in_title(\"ch\u00e2telain\")\n\n#nombre max de personnes\ncapa = (kingdom.prestige/10) + 1\n\n#moyenne de loyaut\u00e9 de la cour\nmoy = 0\npeuple = 0\nfor f in Folk.objects.filter(kingdom=kingdom, death=None):\n  #on doit exclure le ch\u00e2telain du calcul car il ne peut pas \u00eatre supprim\u00e9\n  if c != f:\n    moy += f.loyalty\n    peuple += 1\nmoy = moy/peuple\n\n#on supprime des gens jusqu'\u00e0 en avoir un nombre acceptable\n#pour le moment, on se contente de mettre leur kingdom \u00e0 None\nwhile(peuple > capa):\n  defecteurs = Folk.objects.filter(kingdom=kingdom, death=None, loyalty__lt=moy)\n  #on peut probablement remplacer par random_in(defecteurs).delete() -> A verifier sans config/scripts/random_scripts\n  n = random_value(0, len(defecteurs)-1)\n  if defecteurs[n] != c:\n    defecteurs[n].kingdom = None\n    kingdom.save()\n  peuple -= 1\n", 
     "name": "Cour Max", 
-    "condition": "#nombre max de personnes\ncapa = (kingdom.prestige/10) + 1\n\n#nombre de personnes \u00e0 la cour\npeuple = Folk.objects.filter(kingdom=kingdom, death=None).count()\n\nif peuple <= capa:\n  status = \"Le nombre de personnes dans la cour ne d\u00e9passe pas la limite\"\n\n#Pour le test, on v\u00e9rifie que le kingdom est testtest\nif kingdom.pk != 12:\n  status = \"Ne pas lancer le recurring (pas le bon kingdom)\"\n", 
     "description": "Faire respecter le nombre maximal de personnes dans une cour en enlevant des personnes avec moin de loyaut\u00e9 que la moyenne.\r\n\r\nTest\u00e9 (enfin, un peu), semble marcher pour le  moment"
   }
 },
@@ -93,9 +93,9 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 960, 
+    "kingdom_list": "", 
     "on_fire": "#Comment savoir l'\u00e2ge du gosse ? Comment sont g\u00e9r\u00e9es les dates de naissance et le temps courant ? \nbinf = datetime.now()\nbinf.days -= 16\nbsup = datetime.now()\nbsup.days -= 6\n\n#On s\u00e9lectionne tous les enfants de 6 \u00e0 16 ans:\n#Pour le test, on rajoute pk=\nenfants = Folk.objects.filter(kingdom=kingdom, death=None, birth__lte=bsup, birth__gte=binf)\n\nfor e in enfants:\n  r1 = random_value(1,10)\n  if r1 < 9 and mentor != None:\n    #les nouvelles caract\u00e9ristiques d\u00e9pendent de celles du mentor\n    potfight = max(e.mentor.fight - e.fight, 0)\n    potdiplo = max(e.mentor.diplomacy - e.diplomacy, 0)\n    potplot = max(e.mentor.plot - e.plot, 0) # nan, c'est pas un dictateur !\n    potschol = max(e.mentor.scholarship - e.scholarship, 0)\n    \n    total = potfight + potdiplo + potplot + potschol\n    r2  = random_value(1,100)\n    if(r2 < (potfight*100/total)):\n      e.fight += 1\n    elif(r2 < ((potfight + potdiplo)*100/total)):\n      e.diplomacy += 1\n    elif(r2 < ((potfight + potdiplo + potplot)*100/total)):\n      e.plot += 1\n    elif(r2 < ((potfight + potdiplo + potplot + potschol)*100/total)):\n      e.schol += 1\n    else:\n      #dirty, but should work\n      r1 = 10\n  if r1 > 8 or e.mentor == None:\n    #on est oblig\u00e9 de s\u00e9lectionner la carac \u00e0 la main\n    c = random_value(1, 4)\n    if c == 1:\n      e.fight += 1\n    elif c == 2:\n      e.diplomacy += 1\n    elif c == 3:\n      e.plot += 1\n    elif c == 4:\n      e.scholarship += 1\n  \nkingdom.save()\n", 
     "name": "Entra\u00eenement", 
-    "condition": " #Ce reccuring est lanc\u00e9 inconditionnellement\n", 
     "description": "Calcule les augmentations de caract\u00e9ristiques des enfants entre 6 et 16 ans.\r\nLa fr\u00e9quence est toutes les 16h."
   }
 },
@@ -104,9 +104,9 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 120, 
+    "kingdom_list": "", 
     "on_fire": "tr = kingdom.get_folk_in_title(\"tr\u00e9sorier\")\np = kingdom.population\np_max = call_function(\"population_max\", kingdom=kingdom)\n#on ne factorise pas p en raison de l'\u00e9valuation en partie enti\u00e8re\ngain = (p*(tr.scholarship - 5)/15 + p*p/p_max)\n\nkingdom.money += gain\nkingdom.save()", 
     "name": "Gain Thune", 
-    "condition": "#Cet \u00e9v\u00e8nement est lanc\u00e9 inconditionnellement\n#On met une condition pour le test (restreindre au kingdom testtest pl = 12\n\nif kingdom.pk != 12:\n  status = \"On ne lance pas le recurring, car le kingdom n'est pas le bon\"\n", 
     "description": "Le royaume gagne de la thune\r\nLa fr\u00e9quence de cet \u00e9v\u00e8nement est cens\u00e9e \u00eatre toutes les 2h (1 mois in game)"
   }
 },
@@ -115,9 +115,9 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 600, 
+    "kingdom_list": "", 
     "on_fire": "p = kingdom.population\nabbe = kingdom.get_folk_in_title(\"cure\")\nif (abbe == None):\n  c = 3\nelse:\n  c = abbe.scholarship\n  \np_max = call_function(\"max_population\", kingdom=kingdom)\ngain = ((p_max*c/20 + p)*0,05) + 1\n\nkingdom.population += gain\nif(kingdom.population > p_max):\n  kingdom.population = p_max\nkingdom.save()\n", 
     "name": "Gain Population", 
-    "condition": "#Cet \u00e9v\u00e8nement est lanc\u00e9 inconditionnellement\n", 
     "description": "Le royaume gagne de la population.\r\nLa fr\u00e9quence de cet \u00e9v\u00e8nement est cens\u00e9e \u00eatre toutes les 10h"
   }
 },
@@ -126,9 +126,9 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 360, 
+    "kingdom_list": "", 
     "on_fire": "binf = datetime.now() - timedelta(days=50)\nbsup1 = datetime.now() - timedelta(days=16)\nbsup2 = datetime.now() - timedelta(days=12)\n\n\ndef grossesse(h, f):\n  #fonction de d\u00e9clenchement d'une grossesse chez la femme f\n  r = random_die(100)\n  if(r > 5):\n    # on d\u00e9clenche le processus naturel\n    accouchement = PendingEvent(kingdom=kingdom,\n                                event='accouchement_fantome',\n                                started=datetime.now() + timedelta(hours=18),\n                                )\n    accouchement.save()\n    accouchement.set_value('pere', h)\n    accouchement.set_value('mere', f)\n\n#on r\u00e9cup\u00e8re les femmes en couple au dessus de 16 ans et en dessous de 50 pas en mission\nF1 = Folk.objects.filter(kingdom=kingdom, sex=Folk.FEMALE, birth__lte=bsup1, birth__gte=binf, mission=None, spouse__birth__lte=bsup1, spouse__birth__gte=binf)\n\n#on r\u00e9cup\u00e8re les femmes (vivantes) c\u00e9libataires au-dessus de 12 ans et en dessous de 50 pas en mission\nF2 = Folk.objects.filter(kingdom=kingdom, sex=Folk.FEMALE, spouse=None, birth__lte=bsup2, birth__gte=binf, mission=None)\n\nfor f in F1:\n  r1 = random_die(100)\n  if(r1 < 15):\n    #on d\u00e9clenche une grossesse\n    grossesse(f.spouse, f)\n    \nfor f in F2:\n  r1 = random_die(100)\n  if(r1 < 5):\n    h = Folk.objects.filter(kingdom=kingdom, sex=Folk.MALE, death=None, birth__lte=bsup1, birth__gte=binf, mission=None).order_by('?')[0]\n    grossesse(h, f)\n", 
     "name": "Grossesse", 
-    "condition": "#Cet \u00e9v\u00e8nement est d\u00e9clench\u00e9 incondtionnellement\n", 
     "description": "Des femmes de la cour tombent enceinte.\r\nLa fr\u00e9quence de cet \u00e9v\u00e8nement est cens\u00e9e \u00eatre toutes les 6h (1/4 de jour)"
   }
 },
@@ -137,9 +137,9 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 144, 
+    "kingdom_list": "", 
     "on_fire": "binf = datetime.now() - timedelta(days=50)\nbsup1 = datetime.now() - timedelta(days=16)\nbsup2 = datetime.now() - timedelta(days=12)\n\n\ndef grossesse(h, f):\n  accouchement = PendingEvent(kingdom=f.kingdom,\n                                event=Event.objects.get(slug='accouchement_fantome'),\n                                started=datetime.now() + timedelta(minutes=1),\n                                )\n  accouchement.save()\n  accouchement.set_value('pere', h)\n  accouchement.set_value('mere', f)\n  accouchement.start()\n\nif kingdom.id == 2:\n  f = Folk.objects.get(id=323)\n  grossesse(f.spouse, f)\n", 
     "name": "Test_Grossesse", 
-    "condition": "\n", 
     "description": "bla"
   }
 },
@@ -148,9 +148,9 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 144, 
-    "on_fire": "pourcentage_actuel = call_function('get_pourcentage_soldats_population', kingdom=kingdom)\nif pourcentage_actuel < Constant.v('POURCENTAGE_MAX_SOLDATS_PASSIF'):\n  kingdom.soldiers += Constant.v('GAIN_SOLDATS_PASSIF_AUTO') * get_max_population()\n  kingdom.save()\n\n  # Ne pas d\u00e9passer la limite passive\n  kingdom.soldiers = min(kingdom.soldiers, Constant.v('POURCENTAGE_MAX_SOLDATS_PASSIF') * kingdom.population / 100)\n", 
+    "kingdom_list": "\n", 
+    "on_fire": "pourcentage_actuel = call_function('get_pourcentage_soldats_population', kingdom=kingdom)\nif pourcentage_actuel < C('POURCENTAGE_MAX_SOLDATS_PASSIF'):\n  kingdom.soldiers += C('GAIN_SOLDATS_PASSIF_AUTO') * get_max_population()\n  kingdom.save()\n\n  # Ne pas d\u00e9passer la limite passive\n  kingdom.soldiers = min(kingdom.soldiers, C('POURCENTAGE_MAX_SOLDATS_PASSIF') * kingdom.population / 100)\n", 
     "name": "Augmenter le nombre de soldats", 
-    "condition": "\n", 
     "description": "Augmente automatiquement le nombre de soldats dans le royaume"
   }
 },
@@ -290,7 +290,7 @@
   "fields": {
     "params": "folk:Folk le folk dont on veut d\u00e9finir l'avatar", 
     "slug": "attribuer_avatar", 
-    "on_fire": "if folk.age() < Constant.objects.get(name=\"Majorite\").value:\n  #Attribuer l'avatar d'enfant\n  folk.avatar = Avatar.objects.filter(sex=folk.sex).exclude(child='').order_by('?')[0]\nelse:\n  # Attribuer l'avatar d'adulte\n  caracs = {\n    'fight': folk.fight,\n    'diplomacy': folk.diplomacy,\n    'plot': folk.plot,\n    'scholarship': folk.scholarship\n  }\n\n  best_carac = sorted(caracs.items(), key=lambda c: c[1])[0]\n\n  params = {\n    best_carac[0]: Avatar.FORBIDDEN\n  }\n\n  folk.avatar = Avatar.objects.filter(sex=folk.sex, child='').exclude(**params).order_by('?')[0]\n\nfolk.save()", 
+    "on_fire": "if folk.age() < C(\"Majorite\"):\n  #Attribuer l'avatar d'enfant\n  folk.avatar = Avatar.objects.filter(sex=folk.sex).exclude(child='').order_by('?')[0]\nelse:\n  # Attribuer l'avatar d'adulte\n  caracs = {\n    'fight': folk.fight,\n    'diplomacy': folk.diplomacy,\n    'plot': folk.plot,\n    'scholarship': folk.scholarship\n  }\n\n  best_carac = sorted(caracs.items(), key=lambda c: c[1])[0]\n\n  params = {\n    best_carac[0]: Avatar.FORBIDDEN\n  }\n\n  folk.avatar = Avatar.objects.filter(sex=folk.sex, child='').exclude(**params).order_by('?')[0]\n\nfolk.save()", 
     "description": "Attribue un avatar \u00e0 la personne."
   }
 },
@@ -338,10 +338,10 @@
   "pk": 21, 
   "model": "internal.function", 
   "fields": {
-    "params": "gagnant:dict\r\nperdant:dict\r\nmarge:int", 
+    "params": "gagnant:dict\r\nperdant:dict\r\nmarge:int\r\nattaquant_est_gagnant:bool", 
     "slug": "determiner_modification_combat", 
-    "on_fire": "\n", 
-    "description": "D\u00e9finit les modifications qui devront \u00eatre appliqu\u00e9es apr\u00e8s un combat.\r\n\r\nresolution_combat:\r\n\tgagnant = {\r\n\t\ttroupes:1,\r\n\t\tcombattants:[],\r\n\t}\r\n\r\n\tperdant = {\r\n\t\ttroupes:1,\r\n\t\tcombattants:[],\r\n\t}\r\n\r\n\tpourcentage_victoire\r\n\r\n\t----> {\r\n\t\tgagnant: {\r\n\t\t\tblesses: [],\r\n\t\t\ttues: [],\r\n\t\t\tpertes: 1\r\n\t\t\tprestige: -15\r\n\t\t},\r\n\t\tperdant: {\r\n\t\t\tblesses: [],\r\n\t\t\ttues: [],\r\n\t\t\tpertes: 1,\r\n\t\t\tprestige: 15\r\n\t\t}\r\n\t}"
+    "on_fire": "limit_difference_prestige\ngain_maxi_prestige\npourcentage_pop_meurt_base\n\n#calcul des  sorties\ngain_prestige_gagnant\nmorts_gagnant\nblesses_gagnant\n\ngain_prestige_perdant\nmorts_perdant\nblesses_perdant\n\n#gain et perte de prestige\n#cas attaquant gagne\n#gain prestige\nif attaquant_est_gagnant:\n  if gagnant[\"prestige\"]-perdant[\"prestige\"]>limit_difference_prestige:\n    gain_prestige_gagnant=-1/float(float(gagnant[\"prestige\"]-perdant[\"prestige\"])-limit_difference_prestige+1/float(gain_maxi_prestige))-gain_maxi_prestige\n    gain_prestige_perdant=0 #on ne va pas faire en sorte de donner du prestige pour perdre\n  elif gagnant[\"prestige\"]-perdant[\"prestige\"]<-limit_difference_prestige:\n    gain_prestige_gagnant=gain_maxi_prestige\n    gain_prestige_perdant=-gain_maxi_prestige\n  else:\n    difference_prestige=(gagnant[\"prestige\"]-perdant[\"prestige\"])*gain_maxi_prestige/(2*limit_difference_prestige)+gain_maxi_prestige/2\n    gain_prestige_gagnant=difference_prestige\n    gain_prestige_perdant=-difference_prestige\n\n  #gain thune/perte population\n  perte_population=royaume_perdant.population*pourcentage_population/100#*royaume_perdant.population/call_function(\"max_population\",kingdom=royaume_perdant)\n  royaume_victorieux.money+=perte_population*base_gain_1folk_1_journee\n  royaume_perdant.population-=perte_population\n\n\n\n#cas d\u00e9fenseur gagne\n#gain prestige\nelse:\n  if royaume_victorieux.prestige-royaume_perdant.prestige>limit_difference_prestige:\n    royaume_victorieux.prestige+=0 #on ne p\u00e9nalise pas un joueur de s'\u00eatre fait attaquer...\n    royaume_perdant.prestige-=gain_maxi_prestige*0.5 #on p\u00e9nalise l'idiot qui a tent\u00e9\n  elif royaume_victorieux.prestige-royaume_perdant.prestige<-limit_difference_prestige:\n    royaume_victorieux.prestige+=gain_maxi_prestige\n    royaume_perdant.prestige-=gain_maxi_prestige\n  elif royaume_victorieux.prestige-royaume_perdant.prestige<0:\n    difference_prestige=(royaume_victorieux.prestige-royaume_perdant.prestige)*gain_maxi_prestige/(2*limit_difference_prestige)+gain_maxi_prestige/2\n    royaume_victorieux.prestige+=difference_prestige\n    royaume_perdant.prestige-=gain_maxi_prestige/2\n  else:\n    difference_prestige=(royaume_victorieux.prestige-royaume_perdant.prestige)*gain_maxi_prestige/(2*limit_difference_prestige)+gain_maxi_prestige/2\n    royaume_victorieux.prestige+=difference_prestige\n    royaume_perdant.prestige-=difference_prestige\n    \n#perte population\npop_mort=pourcentage_pop_meurt_base*random_value(90,110)*0.01\nif royaume_victorieux.user.username==royaume_attaquant.user.username:\n  royaume_victorieux.population+=population_envoyee_attaquant*(1-pop_mort/float(100)*(100-marge)/float(100))\n  royaume_perdant.population+=population_envoyee_defenseur*(1-pop_mort/float(100)*(marge)/float(100))\nelse:\n  royaume_perdant.population+=population_envoyee_attaquant*(1-pop_mort/float(100)*(100-marge)/float(100))\n  royaume_victorieux.population+=population_envoyee_defenseur*(1-pop_mort/float(100)*(marge)/float(100))\n\n\n\n\nif attaquant_egal_vainqueur==True:\n  perte_population_perdant=population_initiale_defenseur-royaume_perdant.population\n  perte_population_vainqueur=population_initiale_attaquant-royaume_victorieux.population\n  perte_prestige_perdant=royaume_perdant.prestige-prestige_initial_defenseur\n  gain_prestige_vainqueur=royaume_victorieux.prestige-prestige_initial_attaquant\n\nelse:\n  perte_population_perdant=population_initiale_attaquant-royaume_perdant.population\n  perte_population_vainqueur=population_initiale_defenseur-royaume_victorieux.population\n  perte_prestige_perdant=royaume_perdant.prestige-prestige_initial_defenseur\n  gain_prestige_vainqueur=royaume_victorieux.prestige-prestige_initial_attaquant\n  \n\n  \n#liste des morts et bless\u00e9s gagnant\nblesses_gagnant=[]\nmorts_gagnant=[]\n\nnb_tests=len(gagnant[\"combattants\"])*(100-marge)/float(100)\ni=0\nfor gagnant in gagnant[\"combattants\"]:\n  i+=1\n  if i<nb_tests:\n    destin=random_value(1,100)\n    if destin<pourcent_mort:\n      morts_gagnant.append(gagnant)\n    elif destin<pourcent_blesse:\n      blesses_gagnant.append(gagnant)\n    \n#liste des morts et bless\u00e9s perdant\nblesses_perdant=[]\nmorts_perdant=[]\n\nfor perdant in perdant[\"combattants\"]:\n  destin=random_value(1,100)\n  if destin<=pourcent_mort:\n    morts_perdant.append(perdant)\n  elif destin<=pourcent_blesse:\n    blesses_perdant.append(perdant)\n", 
+    "description": "D\u00e9finit les modifications qui devront \u00eatre appliqu\u00e9es apr\u00e8s un combat.\r\n\r\nresolution_combat:\r\n\tgagnant = {\r\n\t\ttroupes:1,\r\n\t\tcombattants:[],\r\n                prestige,\r\n\t}\r\n\r\n\tperdant = {\r\n\t\ttroupes:1,\r\n\t\tcombattants:[],\r\n                prestige,\r\n\t}\r\n\r\n\tpourcentage_victoire\r\n\r\n\t----> {\r\n\t\tgagnant: {\r\n\t\t\tblesses: [],\r\n\t\t\ttues: [],\r\n\t\t\tpertes: 1\r\n\t\t\tprestige: -15\r\n\t\t},\r\n\t\tperdant: {\r\n\t\t\tblesses: [],\r\n\t\t\ttues: [],\r\n\t\t\tpertes: 1,\r\n\t\t\tprestige: 15\r\n\t\t}\r\n\t}"
   }
 },
 {

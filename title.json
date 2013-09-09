@@ -21,7 +21,7 @@
     "on_affect": "folk.loyalty+=5\nfolk.save()", 
     "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un conn\u00e9table.\")\n# AvailableMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"chasse\")).save()\nkingdom.unlock_mission(\"organiser_raid\")", 
     "slug": "connetable", 
-    "condition": "if folk.sex==\"f\":\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age()>=Constant.objects.get(name=\"Majorite\"):\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"\n", 
+    "condition": "if folk.sex==\"f\":\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age()>=C(\"Majorite\"):\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"\n", 
     "description": "Le conn\u00e9table est le responsable de tout ce qui touche de pr\u00e8s ou de loin \u00e0 l'art martial dans v\u00f4tre ch\u00e2teau."
   }
 },
@@ -73,7 +73,7 @@
     "on_affect": "folk.loyalty+=5\nfolk.save()", 
     "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un ambassadeur.\")\n\nkingdom.unlock_mission(\"tuto_recrutement\")\nkingdom.unlock_mission(\"tuto_getaffront_diplomatie\")\n", 
     "slug": "ambassadeur", 
-    "condition": "if folk.sex==\"f\":\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age()>=Constant.objects.get(name=\"Majorite\"):\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"", 
+    "condition": "if folk.sex==\"f\":\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age()>=C(\"Majorite\"):\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"", 
     "description": "L'ambassadeur est responsable des relations diplomatiques avec les seigneurs voisins."
   }
 },
