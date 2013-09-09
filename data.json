@@ -43276,7 +43276,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "enfant", 
-    "condition": "if folk.age() > Constant.objects.get(name=\"Majorite\").value:\n  status = \"L'apprenti doit \u00eatre un enfant\"\n"
+    "condition": "if folk.age() > C(\"Majorite\"):\n  status = \"L'apprenti doit \u00eatre un enfant\"\n"
   }
 },
 {
@@ -43289,7 +43289,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "mentor", 
-    "condition": "if folk.age()< Constant.v(\"Majorite\"):\n  status = \"Un mentor doit \u00eatre majeur\"\n"
+    "condition": "if folk.age()< C(\"Majorite\"):\n  status = \"Un mentor doit \u00eatre majeur\"\n"
   }
 },
 {
@@ -44349,7 +44349,7 @@
     "weight": 1, 
     "text": "Votre cour est presque vide", 
     "image": "", 
-    "on_fire": "choose_event = random_value(1,3)\n\n# R\u00e9cup\u00e9rer un homme majeur qui n'est pas de ma famille et n'est pas un pr\u00eatre.\n# Optimiser pour faire en sorte qu'on puisse ensuite r\u00e9cup\u00e9rer le type cr\u00e9e pour le tuto facheux.\nfacheux = folks.filter(sex=\"m\", birth__lte=datetime.now()-timedelta(days=Constant.objects.get(name=\"Majorite\").value))\nfacheux = facheux.exclude(id__in=[folks[0].id, folks[1].id, folks[3].id])\nfacheux = facheux.exclude(quality_set__slug=\"pretre\")\nfacheux = facheux.order_by('?')\nif not facheux:\n  choose_event = 3\n\nif choose_event == 1:\n  pe=kingdom.create_pending_event(\"tuto_allegeance_dame\")\n  pe.set_value(\"chevalier\",facheux[0])\n  pe.start()\nelif choose_event == 2:\n  kingdom.create_pending_event(\"tuto_allegeance_pretre\").start()\nelse:\n  kingdom.create_pending_event(\"tuto_allegeance_chevalier\").start()\n\nstatus = \"cour basse fantome\"\n", 
+    "on_fire": "choose_event = random_value(1,3)\n\n# R\u00e9cup\u00e9rer un homme majeur qui n'est pas de ma famille et n'est pas un pr\u00eatre.\n# Optimiser pour faire en sorte qu'on puisse ensuite r\u00e9cup\u00e9rer le type cr\u00e9e pour le tuto facheux.\nfacheux = folks.filter(sex=\"m\", birth__lte=datetime.now()-timedelta(days=C(\"Majorite\")))\nfacheux = facheux.exclude(id__in=[folks[0].id, folks[1].id, folks[3].id])\nfacheux = facheux.exclude(quality_set__slug=\"pretre\")\nfacheux = facheux.order_by('?')\nif not facheux:\n  choose_event = 3\n\nif choose_event == 1:\n  pe=kingdom.create_pending_event(\"tuto_allegeance_dame\")\n  pe.set_value(\"chevalier\",facheux[0])\n  pe.start()\nelif choose_event == 2:\n  kingdom.create_pending_event(\"tuto_allegeance_pretre\").start()\nelse:\n  kingdom.create_pending_event(\"tuto_allegeance_chevalier\").start()\n\nstatus = \"cour basse fantome\"\n", 
     "slug": "tuto_cour_basse_fantome", 
     "condition": "\n"
   }
@@ -44685,7 +44685,7 @@
     "weight": 1, 
     "text": "La nourriture est riche et abondante, et le vin la fait descendre sans effort. Autour de moi, les convives mangent, discutent et s\u2019esclaffent.", 
     "image": "events/88_1.jpg", 
-    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nconvives = list(Folk.objects.filter(mission = None,\n                               kingdom=kingdom, \n                               birth__lte=datetime.now()-timedelta(days=Constant.objects.get(name=\"Majorite\").value)).exclude(id=chatelain.id).order_by('?')[0:2])\nparam.set_value(\"convive1\", convives[0])\nparam.set_value(\"convive2\", convives[1])\n", 
+    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nconvives = list(Folk.objects.filter(mission = None,\n                               kingdom=kingdom, \n                               birth__lte=datetime.now()-timedelta(days=C(\"Majorite\")).exclude(id=chatelain.id).order_by('?')[0:2]))\nparam.set_value(\"convive1\", convives[0])\nparam.set_value(\"convive2\", convives[1])\n", 
     "slug": "banquet_conversation", 
     "condition": " "
   }
@@ -44811,7 +44811,7 @@
     "weight": 1, 
     "text": "Alors que la f\u00eate bat son plein, {{soiffard}} se laisse tomber \u00e0 c\u00f4t\u00e9 de moi et fait signe \u00e0 un serviteur de remplir nos coupes. Il a l\u2019intention manifeste de boire un coup avec moi.", 
     "image": "events/88_9.jpg", 
-    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nsoiffard = Folk.objects.filter(kingdom=kingdom,\n                             sex=\"m\",\n                             birth__lte=datetime.now()-timedelta(days=Constant.objects.get(name=\"Majorite\").value)).exclude(id=chatelain.id).order_by('?')[0]\nparam.set_value(\"soiffard\", soiffard)\n", 
+    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nsoiffard = Folk.objects.filter(kingdom=kingdom,\n                             sex=\"m\",\n                             birth__lte=datetime.now()-timedelta(days=C(\"Majorite\"))).exclude(id=chatelain.id).order_by('?')[0]\nparam.set_value(\"soiffard\", soiffard)\n", 
     "slug": "banquet_beuverie", 
     "condition": " "
   }
@@ -45077,7 +45077,7 @@
     "weight": 1, 
     "text": " ", 
     "image": "", 
-    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchoose_banquet = random_value(1,3)\ndanseuses = Folk.objects.filter(mission = None,\n                                kingdom=kingdom,\n                                sex=\"f\",\n                                birth__lte=datetime.now() - timedelta(days=Constant.objects.get(name=\"Majorite\").value)).count()\n#recherche des possibilit\u00e9s de suite\nchatelain=kingdom.get_folk_in_title(\"chatelain\")\ntoast = False\nfuckers = Folk.objects.filter(kingdom=kingdom,\n                              mission=None,\n                              birth__lte=datetime.now() - timedelta(days=Constant.objects.get(name=\"Majorite\").value),\n                              sex=\"m\",\n                              loyalty__lte=20).order_by('?')\nloyaux = Folk.objects.filter(kingdom=kingdom,\n                             mission=None,\n                             birth__lte=datetime.now() - timedelta(days=Constant.objects.get(name=\"Majorite\").value),\n                             sex=\"m\",\n                             loyalty__gte=80).exclude(id=chatelain.id)\n\nif chatelain.diplomacy >=9 or fuckers.count() >= 1 or loyaux.count() >= 1:\n  toast = True\n\nif choose_banquet == 1 and danseuses != 0:\n  pe = PendingEvent (kingdom=kingdom, event=Event.objects.get(slug=\"banquet_danse\"), started=None)\n  pe.save()\n  pe.start()\nelif choose_banquet <= 2 and toast == True:\n  nb_folk_actuels = Folk.objects.filter(kingdom=kingdom,\n                                     mission=None,\n                                     birth__lte=datetime.now() - timedelta(days=Constant.objects.get(name=\"Majorite\").value),\n                                     ).count()\n  choose_toast = random_value (1, nb_folk_actuels)\n  if choose_toast > fuckers and choose_toast < loyaux:\n    pe = PendingEvent (kingdom=kingdom, event=Event.objects.get(slug=\"banquet_toast_chatelain\"), started=None)\n    pe.save()\n    pe.start()\n  elif choose_toast <= fuckers.count():\n    pe = PendingEvent (kingdom=kingdom, event=Event.objects.get(slug=\"banquet_toast_fucker\"), started=None)\n    pe.save()\n    pe.set_value(\"fucker\", fuckers[0])\n    pe.start()\n  else:\n    pe = PendingEvent (kingdom=kingdom, event=Event.objects.get(slug=\"banquet_toast_loyaliste\"), started=None)\n    pe.save()\n    pe.set_value(\"loyaliste\", loyaux[0])\n    pe.start()           \nelse:\n  pe = PendingEvent (kingdom=kingdom, event=Event.objects.get(slug=\"banquet_beuverie\"), started=None)\n  pe.save()\n  pe.start()\nstatus = \"ghost event\"\n", 
+    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchoose_banquet = random_value(1,3)\ndanseuses = Folk.objects.filter(mission = None,\n                                kingdom=kingdom,\n                                sex=\"f\",\n                                birth__lte=datetime.now() - timedelta(days=C(\"Majorite\"))).count()\n#recherche des possibilit\u00e9s de suite\nchatelain=kingdom.get_folk_in_title(\"chatelain\")\ntoast = False\nfuckers = Folk.objects.filter(kingdom=kingdom,\n                              mission=None,\n                              birth__lte=datetime.now() - timedelta(days=C(\"Majorite\")),\n                              sex=\"m\",\n                              loyalty__lte=20).order_by('?')\nloyaux = Folk.objects.filter(kingdom=kingdom,\n                             mission=None,\n                             birth__lte=datetime.now() - timedelta(days=C(\"Majorite\")),\n                             sex=\"m\",\n                             loyalty__gte=80).exclude(id=chatelain.id)\n\nif chatelain.diplomacy >=9 or fuckers.count() >= 1 or loyaux.count() >= 1:\n  toast = True\n\nif choose_banquet == 1 and danseuses != 0:\n  pe = PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"banquet_danse\"), started=None)\n  pe.save()\n  pe.start()\nelif choose_banquet <= 2 and toast == True:\n  nb_folk_actuels = Folk.objects.filter(kingdom=kingdom,\n                                     mission=None,\n                                     birth__lte=datetime.now() - timedelta(days=Constant.objects.get(name=\"Majorite\").value),\n                                     ).count()\n  choose_toast = random_value (1, nb_folk_actuels)\n  if choose_toast > fuckers and choose_toast < loyaux:\n    pe = PendingEvent (kingdom=kingdom, event=Event.objects.get(slug=\"banquet_toast_chatelain\"), started=None)\n    pe.save()\n    pe.start()\n  elif choose_toast <= fuckers.count():\n    pe = PendingEvent (kingdom=kingdom, event=Event.objects.get(slug=\"banquet_toast_fucker\"), started=None)\n    pe.save()\n    pe.set_value(\"fucker\", fuckers[0])\n    pe.start()\n  else:\n    pe = PendingEvent (kingdom=kingdom, event=Event.objects.get(slug=\"banquet_toast_loyaliste\"), started=None)\n    pe.save()\n    pe.set_value(\"loyaliste\", loyaux[0])\n    pe.start()           \nelse:\n  pe = PendingEvent (kingdom=kingdom, event=Event.objects.get(slug=\"banquet_beuverie\"), started=None)\n  pe.save()\n  pe.start()\nstatus = \"ghost event\"\n", 
     "slug": "banquet_fantome", 
     "condition": " "
   }
@@ -45665,7 +45665,7 @@
     "weight": 1, 
     "text": " ", 
     "image": "", 
-    "on_fire": "facheux = folks.filter(sex=\"m\", birth__lte=datetime.now()-timedelta(days=Constant.objects.get(name=\"Majorite\").value))\nfacheux = facheux.exclude(id__in=[folks[0].id, folks[1].id, folks[3].id])\nfacheux = facheux.exclude(quality_set__slug=\"pretre\")\nfacheux = facheux.order_by('?')\nif not facheux:\n  \n  PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_facheux_chevalier\")).start()\n  \n  \nelse:\n  param.set_value(\"facheux\", facheux[0])\n  param.next_event(\"tuto_facheux\").start()\n\nstatus = \"facheux fantome\"\n", 
+    "on_fire": "facheux = folks.filter(sex=\"m\", birth__lte=datetime.now()-timedelta(days=C(\"Majorite\")))\nfacheux = facheux.exclude(id__in=[folks[0].id, folks[1].id, folks[3].id])\nfacheux = facheux.exclude(quality_set__slug=\"pretre\")\nfacheux = facheux.order_by('?')\nif not facheux:\n  \n  PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_facheux_chevalier\")).start()\n  \n  \nelse:\n  param.set_value(\"facheux\", facheux[0])\n  param.next_event(\"tuto_facheux\").start()\n\nstatus = \"facheux fantome\"\n", 
     "slug": "tuto_facheux_fantome", 
     "condition": "\n"
   }
@@ -99979,6 +99979,84 @@
     "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0tuto_contre_attaque_PNJ [Defenseurs_tuto (4)]\u00a0\u00bb.", 
     "user": 1, 
     "content_type": 23
+  }
+},
+{
+  "pk": 6915, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:18:38.537", 
+    "object_repr": "tuto_nommer_mentor", 
+    "object_id": "39", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0tuto_nommer_mentor [Enfant (1)]\u00a0\u00bb. condition modifi\u00e9 pour mission grid \u00ab\u00a0tuto_nommer_mentor [Mentor (1)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6916, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:19:00.154", 
+    "object_repr": "tuto_cour_basse_fantome", 
+    "object_id": "60", 
+    "change_message": "Modifi\u00e9 condition et on_fire.", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 6917, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:20:35.032", 
+    "object_repr": "banquet_conversation", 
+    "object_id": "100", 
+    "change_message": "Modifi\u00e9 on_fire. on_fire modifi\u00e9 pour event action \u00ab\u00a0Je pr\u00e9f\u00e8re me concentrer sur le contenu de mon ass [banquet_conversation]\u00a0\u00bb. on_fire modifi\u00e9 pour event action \u00ab\u00a0Parler avec mon voisin de gauche, {{convive1}}. [banquet_conversation]\u00a0\u00bb. on_fire modifi\u00e9 pour event action \u00ab\u00a0Parler avec mon voisin de droite, {{convive2}} [banquet_conversation]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 6918, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:21:50.523", 
+    "object_repr": "banquet_beuverie", 
+    "object_id": "109", 
+    "change_message": "Modifi\u00e9 on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0L\u2019arr\u00eater tout net. [banquet_beuverie]\u00a0\u00bb. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Refuser avec tact. [banquet_beuverie]\u00a0\u00bb. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Sourire, trinquer et vider une coupe. [banquet_beuverie]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 6919, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:22:42.652", 
+    "object_repr": "banquet_fantome", 
+    "object_id": "128", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 6920, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:23:05.742", 
+    "object_repr": "tuto_facheux_fantome", 
+    "object_id": "172", 
+    "change_message": "Modifi\u00e9 condition et on_fire.", 
+    "user": 1, 
+    "content_type": 29
   }
 },
 {
