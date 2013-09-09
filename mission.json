@@ -1397,7 +1397,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "enfant", 
-    "condition": "if folk.age() > Constant.objects.get(name=\"Majorite\").value:\n  status = \"L'apprenti doit \u00eatre un enfant\"\n"
+    "condition": "if folk.age() > C(\"Majorite\"):\n  status = \"L'apprenti doit \u00eatre un enfant\"\n"
   }
 },
 {
@@ -1410,7 +1410,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "mentor", 
-    "condition": "if folk.age()< Constant.v(\"Majorite\"):\n  status = \"Un mentor doit \u00eatre majeur\"\n"
+    "condition": "if folk.age()< C(\"Majorite\"):\n  status = \"Un mentor doit \u00eatre majeur\"\n"
   }
 },
 {
