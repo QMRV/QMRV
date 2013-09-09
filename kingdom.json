@@ -47,8 +47,8 @@
   "pk": 68, 
   "model": "kingdom.kingdom", 
   "fields": {
-    "soldiers": 3, 
-    "prestige": 0, 
+    "soldiers": 20, 
+    "prestige": 120, 
     "money": 30, 
     "user": 1, 
     "population": 20
@@ -1899,6 +1899,318 @@
     "quality_set": [
       26, 
       36
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6810, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 9, 
+    "first_name": "Amaury", 
+    "last_name": "d'Orto", 
+    "diplomacy": 7, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-09-09T20:57:07.638", 
+    "mother": null, 
+    "loyalty": 0, 
+    "spouse": null, 
+    "quality_set": [
+      38
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6811, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 9, 
+    "first_name": "Roland", 
+    "last_name": "de Nurlu", 
+    "diplomacy": 7, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-09-09T20:57:07.638", 
+    "mother": null, 
+    "loyalty": 0, 
+    "spouse": null, 
+    "quality_set": [
+      38
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6812, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 9, 
+    "first_name": "Fermand", 
+    "last_name": "de La Gu\u00e9rini\u00e8re", 
+    "diplomacy": 7, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-09-09T20:57:07.638", 
+    "mother": null, 
+    "loyalty": 0, 
+    "spouse": null, 
+    "quality_set": [
+      40
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6813, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 9, 
+    "first_name": "Helgaud", 
+    "last_name": "d'Anais", 
+    "diplomacy": 7, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-09-09T20:58:58.483", 
+    "mother": null, 
+    "loyalty": 0, 
+    "spouse": null, 
+    "quality_set": [
+      38
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6814, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 9, 
+    "first_name": "Genson", 
+    "last_name": "de Rocquemont", 
+    "diplomacy": 7, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-09-09T20:58:58.483", 
+    "mother": null, 
+    "loyalty": 0, 
+    "spouse": null, 
+    "quality_set": [
+      38
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6815, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 9, 
+    "first_name": "Astier", 
+    "last_name": "de Matha", 
+    "diplomacy": 7, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-09-09T20:58:58.483", 
+    "mother": null, 
+    "loyalty": 0, 
+    "spouse": null, 
+    "quality_set": [
+      40
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6816, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 9, 
+    "first_name": "Garin", 
+    "last_name": "de Lachapelle", 
+    "diplomacy": 7, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-09-09T20:59:37.685", 
+    "mother": null, 
+    "loyalty": 0, 
+    "spouse": null, 
+    "quality_set": [
+      38
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6817, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 9, 
+    "first_name": "B\u00e9ranger\u00a0", 
+    "last_name": "de Peipin", 
+    "diplomacy": 7, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-09-09T20:59:37.685", 
+    "mother": null, 
+    "loyalty": 0, 
+    "spouse": null, 
+    "quality_set": [
+      38
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6818, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 9, 
+    "first_name": "Sigismond", 
+    "last_name": "de Bellegarde", 
+    "diplomacy": 7, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-09-09T20:59:37.686", 
+    "mother": null, 
+    "loyalty": 0, 
+    "spouse": null, 
+    "quality_set": [
+      40
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6819, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 9, 
+    "first_name": "Hagrold", 
+    "last_name": "de Lormaison", 
+    "diplomacy": 7, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-09-09T21:04:45.394", 
+    "mother": null, 
+    "loyalty": 0, 
+    "spouse": null, 
+    "quality_set": [
+      38
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6820, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 9, 
+    "first_name": "Aur\u00e8le", 
+    "last_name": "de Roquecor", 
+    "diplomacy": 7, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-09-09T21:04:45.394", 
+    "mother": null, 
+    "loyalty": 0, 
+    "spouse": null, 
+    "quality_set": [
+      38
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 6821, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 9, 
+    "first_name": "L\u00e9on", 
+    "last_name": "de H\u00e9milly", 
+    "diplomacy": 7, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": null, 
+    "birth": "2013-09-09T21:04:45.394", 
+    "mother": null, 
+    "loyalty": 0, 
+    "spouse": null, 
+    "quality_set": [
+      40
     ], 
     "mentor": null
   }
