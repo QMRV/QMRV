@@ -2223,6 +2223,15 @@
   }
 },
 {
+  "pk": 111, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-09-09T22:07:27.028", 
+    "app_name": "internal", 
+    "migration": "0006_auto__del_field_recurring_condition__add_field_recurring_kingdom_list"
+  }
+},
+{
   "pk": 226, 
   "model": "kingdom._kingdomvariable", 
   "fields": {
@@ -5847,7 +5856,7 @@
     "on_affect": "folk.loyalty+=5\nfolk.save()", 
     "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un conn\u00e9table.\")\n# AvailableMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"chasse\")).save()\nkingdom.unlock_mission(\"organiser_raid\")", 
     "slug": "connetable", 
-    "condition": "if folk.sex==\"f\":\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age()>=Constant.objects.get(name=\"Majorite\"):\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"\n", 
+    "condition": "if folk.sex==\"f\":\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age()>=C(\"Majorite\"):\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"\n", 
     "description": "Le conn\u00e9table est le responsable de tout ce qui touche de pr\u00e8s ou de loin \u00e0 l'art martial dans v\u00f4tre ch\u00e2teau."
   }
 },
@@ -5899,7 +5908,7 @@
     "on_affect": "folk.loyalty+=5\nfolk.save()", 
     "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un ambassadeur.\")\n\nkingdom.unlock_mission(\"tuto_recrutement\")\nkingdom.unlock_mission(\"tuto_getaffront_diplomatie\")\n", 
     "slug": "ambassadeur", 
-    "condition": "if folk.sex==\"f\":\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age()>=Constant.objects.get(name=\"Majorite\"):\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"", 
+    "condition": "if folk.sex==\"f\":\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age()>=C(\"Majorite\"):\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"", 
     "description": "L'ambassadeur est responsable des relations diplomatiques avec les seigneurs voisins."
   }
 },
@@ -6168,9 +6177,9 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 1440, 
+    "kingdom_list": "", 
     "on_fire": "for blesse in Folk.objects.filter(kingdom=kingdom, quality_set__name=\"blesse\"):\n  if random_value(1,20) == 1 :\n    blesse.die()\n", 
     "name": "Les bless\u00e9s peuvent mourir", 
-    "condition": "if Folk.objects.filter(kingdom=kingdom, quality_set__name=\"blesse\").count() == 0:\n  status= \"personne n'est bless\u00e9\"\n", 
     "description": "Fais mourir (ou pas) les bless\u00e9s"
   }
 },
@@ -6179,9 +6188,9 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 1440, 
+    "kingdom_list": "", 
     "on_fire": "#on r\u00e9cup\u00e8re le ch\u00e2telain\nc = kingdom.get_folk_in_title(\"ch\u00e2telain\")\n\n#nombre max de personnes\ncapa = (kingdom.prestige/10) + 1\n\n#moyenne de loyaut\u00e9 de la cour\nmoy = 0\npeuple = 0\nfor f in Folk.objects.filter(kingdom=kingdom, death=None):\n  #on doit exclure le ch\u00e2telain du calcul car il ne peut pas \u00eatre supprim\u00e9\n  if c != f:\n    moy += f.loyalty\n    peuple += 1\nmoy = moy/peuple\n\n#on supprime des gens jusqu'\u00e0 en avoir un nombre acceptable\n#pour le moment, on se contente de mettre leur kingdom \u00e0 None\nwhile(peuple > capa):\n  defecteurs = Folk.objects.filter(kingdom=kingdom, death=None, loyalty__lt=moy)\n  #on peut probablement remplacer par random_in(defecteurs).delete() -> A verifier sans config/scripts/random_scripts\n  n = random_value(0, len(defecteurs)-1)\n  if defecteurs[n] != c:\n    defecteurs[n].kingdom = None\n    kingdom.save()\n  peuple -= 1\n", 
     "name": "Cour Max", 
-    "condition": "#nombre max de personnes\ncapa = (kingdom.prestige/10) + 1\n\n#nombre de personnes \u00e0 la cour\npeuple = Folk.objects.filter(kingdom=kingdom, death=None).count()\n\nif peuple <= capa:\n  status = \"Le nombre de personnes dans la cour ne d\u00e9passe pas la limite\"\n\n#Pour le test, on v\u00e9rifie que le kingdom est testtest\nif kingdom.pk != 12:\n  status = \"Ne pas lancer le recurring (pas le bon kingdom)\"\n", 
     "description": "Faire respecter le nombre maximal de personnes dans une cour en enlevant des personnes avec moin de loyaut\u00e9 que la moyenne.\r\n\r\nTest\u00e9 (enfin, un peu), semble marcher pour le  moment"
   }
 },
@@ -6190,9 +6199,9 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 960, 
+    "kingdom_list": "", 
     "on_fire": "#Comment savoir l'\u00e2ge du gosse ? Comment sont g\u00e9r\u00e9es les dates de naissance et le temps courant ? \nbinf = datetime.now()\nbinf.days -= 16\nbsup = datetime.now()\nbsup.days -= 6\n\n#On s\u00e9lectionne tous les enfants de 6 \u00e0 16 ans:\n#Pour le test, on rajoute pk=\nenfants = Folk.objects.filter(kingdom=kingdom, death=None, birth__lte=bsup, birth__gte=binf)\n\nfor e in enfants:\n  r1 = random_value(1,10)\n  if r1 < 9 and mentor != None:\n    #les nouvelles caract\u00e9ristiques d\u00e9pendent de celles du mentor\n    potfight = max(e.mentor.fight - e.fight, 0)\n    potdiplo = max(e.mentor.diplomacy - e.diplomacy, 0)\n    potplot = max(e.mentor.plot - e.plot, 0) # nan, c'est pas un dictateur !\n    potschol = max(e.mentor.scholarship - e.scholarship, 0)\n    \n    total = potfight + potdiplo + potplot + potschol\n    r2  = random_value(1,100)\n    if(r2 < (potfight*100/total)):\n      e.fight += 1\n    elif(r2 < ((potfight + potdiplo)*100/total)):\n      e.diplomacy += 1\n    elif(r2 < ((potfight + potdiplo + potplot)*100/total)):\n      e.plot += 1\n    elif(r2 < ((potfight + potdiplo + potplot + potschol)*100/total)):\n      e.schol += 1\n    else:\n      #dirty, but should work\n      r1 = 10\n  if r1 > 8 or e.mentor == None:\n    #on est oblig\u00e9 de s\u00e9lectionner la carac \u00e0 la main\n    c = random_value(1, 4)\n    if c == 1:\n      e.fight += 1\n    elif c == 2:\n      e.diplomacy += 1\n    elif c == 3:\n      e.plot += 1\n    elif c == 4:\n      e.scholarship += 1\n  \nkingdom.save()\n", 
     "name": "Entra\u00eenement", 
-    "condition": " #Ce reccuring est lanc\u00e9 inconditionnellement\n", 
     "description": "Calcule les augmentations de caract\u00e9ristiques des enfants entre 6 et 16 ans.\r\nLa fr\u00e9quence est toutes les 16h."
   }
 },
@@ -6201,9 +6210,9 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 120, 
+    "kingdom_list": "", 
     "on_fire": "tr = kingdom.get_folk_in_title(\"tr\u00e9sorier\")\np = kingdom.population\np_max = call_function(\"population_max\", kingdom=kingdom)\n#on ne factorise pas p en raison de l'\u00e9valuation en partie enti\u00e8re\ngain = (p*(tr.scholarship - 5)/15 + p*p/p_max)\n\nkingdom.money += gain\nkingdom.save()", 
     "name": "Gain Thune", 
-    "condition": "#Cet \u00e9v\u00e8nement est lanc\u00e9 inconditionnellement\n#On met une condition pour le test (restreindre au kingdom testtest pl = 12\n\nif kingdom.pk != 12:\n  status = \"On ne lance pas le recurring, car le kingdom n'est pas le bon\"\n", 
     "description": "Le royaume gagne de la thune\r\nLa fr\u00e9quence de cet \u00e9v\u00e8nement est cens\u00e9e \u00eatre toutes les 2h (1 mois in game)"
   }
 },
@@ -6212,9 +6221,9 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 600, 
+    "kingdom_list": "", 
     "on_fire": "p = kingdom.population\nabbe = kingdom.get_folk_in_title(\"cure\")\nif (abbe == None):\n  c = 3\nelse:\n  c = abbe.scholarship\n  \np_max = call_function(\"max_population\", kingdom=kingdom)\ngain = ((p_max*c/20 + p)*0,05) + 1\n\nkingdom.population += gain\nif(kingdom.population > p_max):\n  kingdom.population = p_max\nkingdom.save()\n", 
     "name": "Gain Population", 
-    "condition": "#Cet \u00e9v\u00e8nement est lanc\u00e9 inconditionnellement\n", 
     "description": "Le royaume gagne de la population.\r\nLa fr\u00e9quence de cet \u00e9v\u00e8nement est cens\u00e9e \u00eatre toutes les 10h"
   }
 },
@@ -6223,9 +6232,9 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 360, 
+    "kingdom_list": "", 
     "on_fire": "binf = datetime.now() - timedelta(days=50)\nbsup1 = datetime.now() - timedelta(days=16)\nbsup2 = datetime.now() - timedelta(days=12)\n\n\ndef grossesse(h, f):\n  #fonction de d\u00e9clenchement d'une grossesse chez la femme f\n  r = random_die(100)\n  if(r > 5):\n    # on d\u00e9clenche le processus naturel\n    accouchement = PendingEvent(kingdom=kingdom,\n                                event='accouchement_fantome',\n                                started=datetime.now() + timedelta(hours=18),\n                                )\n    accouchement.save()\n    accouchement.set_value('pere', h)\n    accouchement.set_value('mere', f)\n\n#on r\u00e9cup\u00e8re les femmes en couple au dessus de 16 ans et en dessous de 50 pas en mission\nF1 = Folk.objects.filter(kingdom=kingdom, sex=Folk.FEMALE, birth__lte=bsup1, birth__gte=binf, mission=None, spouse__birth__lte=bsup1, spouse__birth__gte=binf)\n\n#on r\u00e9cup\u00e8re les femmes (vivantes) c\u00e9libataires au-dessus de 12 ans et en dessous de 50 pas en mission\nF2 = Folk.objects.filter(kingdom=kingdom, sex=Folk.FEMALE, spouse=None, birth__lte=bsup2, birth__gte=binf, mission=None)\n\nfor f in F1:\n  r1 = random_die(100)\n  if(r1 < 15):\n    #on d\u00e9clenche une grossesse\n    grossesse(f.spouse, f)\n    \nfor f in F2:\n  r1 = random_die(100)\n  if(r1 < 5):\n    h = Folk.objects.filter(kingdom=kingdom, sex=Folk.MALE, death=None, birth__lte=bsup1, birth__gte=binf, mission=None).order_by('?')[0]\n    grossesse(h, f)\n", 
     "name": "Grossesse", 
-    "condition": "#Cet \u00e9v\u00e8nement est d\u00e9clench\u00e9 incondtionnellement\n", 
     "description": "Des femmes de la cour tombent enceinte.\r\nLa fr\u00e9quence de cet \u00e9v\u00e8nement est cens\u00e9e \u00eatre toutes les 6h (1/4 de jour)"
   }
 },
@@ -6234,9 +6243,9 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 144, 
+    "kingdom_list": "", 
     "on_fire": "binf = datetime.now() - timedelta(days=50)\nbsup1 = datetime.now() - timedelta(days=16)\nbsup2 = datetime.now() - timedelta(days=12)\n\n\ndef grossesse(h, f):\n  accouchement = PendingEvent(kingdom=f.kingdom,\n                                event=Event.objects.get(slug='accouchement_fantome'),\n                                started=datetime.now() + timedelta(minutes=1),\n                                )\n  accouchement.save()\n  accouchement.set_value('pere', h)\n  accouchement.set_value('mere', f)\n  accouchement.start()\n\nif kingdom.id == 2:\n  f = Folk.objects.get(id=323)\n  grossesse(f.spouse, f)\n", 
     "name": "Test_Grossesse", 
-    "condition": "\n", 
     "description": "bla"
   }
 },
@@ -6245,9 +6254,9 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 144, 
-    "on_fire": "pourcentage_actuel = call_function('get_pourcentage_soldats_population', kingdom=kingdom)\nif pourcentage_actuel < Constant.v('POURCENTAGE_MAX_SOLDATS_PASSIF'):\n  kingdom.soldiers += Constant.v('GAIN_SOLDATS_PASSIF_AUTO') * get_max_population()\n  kingdom.save()\n\n  # Ne pas d\u00e9passer la limite passive\n  kingdom.soldiers = min(kingdom.soldiers, Constant.v('POURCENTAGE_MAX_SOLDATS_PASSIF') * kingdom.population / 100)\n", 
+    "kingdom_list": "\n", 
+    "on_fire": "pourcentage_actuel = call_function('get_pourcentage_soldats_population', kingdom=kingdom)\nif pourcentage_actuel < C('POURCENTAGE_MAX_SOLDATS_PASSIF'):\n  kingdom.soldiers += C('GAIN_SOLDATS_PASSIF_AUTO') * get_max_population()\n  kingdom.save()\n\n  # Ne pas d\u00e9passer la limite passive\n  kingdom.soldiers = min(kingdom.soldiers, C('POURCENTAGE_MAX_SOLDATS_PASSIF') * kingdom.population / 100)\n", 
     "name": "Augmenter le nombre de soldats", 
-    "condition": "\n", 
     "description": "Augmente automatiquement le nombre de soldats dans le royaume"
   }
 },
@@ -6387,7 +6396,7 @@
   "fields": {
     "params": "folk:Folk le folk dont on veut d\u00e9finir l'avatar", 
     "slug": "attribuer_avatar", 
-    "on_fire": "if folk.age() < Constant.objects.get(name=\"Majorite\").value:\n  #Attribuer l'avatar d'enfant\n  folk.avatar = Avatar.objects.filter(sex=folk.sex).exclude(child='').order_by('?')[0]\nelse:\n  # Attribuer l'avatar d'adulte\n  caracs = {\n    'fight': folk.fight,\n    'diplomacy': folk.diplomacy,\n    'plot': folk.plot,\n    'scholarship': folk.scholarship\n  }\n\n  best_carac = sorted(caracs.items(), key=lambda c: c[1])[0]\n\n  params = {\n    best_carac[0]: Avatar.FORBIDDEN\n  }\n\n  folk.avatar = Avatar.objects.filter(sex=folk.sex, child='').exclude(**params).order_by('?')[0]\n\nfolk.save()", 
+    "on_fire": "if folk.age() < C(\"Majorite\"):\n  #Attribuer l'avatar d'enfant\n  folk.avatar = Avatar.objects.filter(sex=folk.sex).exclude(child='').order_by('?')[0]\nelse:\n  # Attribuer l'avatar d'adulte\n  caracs = {\n    'fight': folk.fight,\n    'diplomacy': folk.diplomacy,\n    'plot': folk.plot,\n    'scholarship': folk.scholarship\n  }\n\n  best_carac = sorted(caracs.items(), key=lambda c: c[1])[0]\n\n  params = {\n    best_carac[0]: Avatar.FORBIDDEN\n  }\n\n  folk.avatar = Avatar.objects.filter(sex=folk.sex, child='').exclude(**params).order_by('?')[0]\n\nfolk.save()", 
     "description": "Attribue un avatar \u00e0 la personne."
   }
 },
@@ -6435,10 +6444,10 @@
   "pk": 21, 
   "model": "internal.function", 
   "fields": {
-    "params": "gagnant:dict\r\nperdant:dict\r\nmarge:int", 
+    "params": "gagnant:dict\r\nperdant:dict\r\nmarge:int\r\nattaquant_est_gagnant:bool", 
     "slug": "determiner_modification_combat", 
-    "on_fire": "\n", 
-    "description": "D\u00e9finit les modifications qui devront \u00eatre appliqu\u00e9es apr\u00e8s un combat.\r\n\r\nresolution_combat:\r\n\tgagnant = {\r\n\t\ttroupes:1,\r\n\t\tcombattants:[],\r\n\t}\r\n\r\n\tperdant = {\r\n\t\ttroupes:1,\r\n\t\tcombattants:[],\r\n\t}\r\n\r\n\tpourcentage_victoire\r\n\r\n\t----> {\r\n\t\tgagnant: {\r\n\t\t\tblesses: [],\r\n\t\t\ttues: [],\r\n\t\t\tpertes: 1\r\n\t\t\tprestige: -15\r\n\t\t},\r\n\t\tperdant: {\r\n\t\t\tblesses: [],\r\n\t\t\ttues: [],\r\n\t\t\tpertes: 1,\r\n\t\t\tprestige: 15\r\n\t\t}\r\n\t}"
+    "on_fire": "limit_difference_prestige\ngain_maxi_prestige\npourcentage_pop_meurt_base\n\n#calcul des  sorties\ngain_prestige_gagnant\nmorts_gagnant\nblesses_gagnant\n\ngain_prestige_perdant\nmorts_perdant\nblesses_perdant\n\n#gain et perte de prestige\n#cas attaquant gagne\n#gain prestige\nif attaquant_est_gagnant:\n  if gagnant[\"prestige\"]-perdant[\"prestige\"]>limit_difference_prestige:\n    gain_prestige_gagnant=-1/float(float(gagnant[\"prestige\"]-perdant[\"prestige\"])-limit_difference_prestige+1/float(gain_maxi_prestige))-gain_maxi_prestige\n    gain_prestige_perdant=0 #on ne va pas faire en sorte de donner du prestige pour perdre\n  elif gagnant[\"prestige\"]-perdant[\"prestige\"]<-limit_difference_prestige:\n    gain_prestige_gagnant=gain_maxi_prestige\n    gain_prestige_perdant=-gain_maxi_prestige\n  else:\n    difference_prestige=(gagnant[\"prestige\"]-perdant[\"prestige\"])*gain_maxi_prestige/(2*limit_difference_prestige)+gain_maxi_prestige/2\n    gain_prestige_gagnant=difference_prestige\n    gain_prestige_perdant=-difference_prestige\n\n  #gain thune/perte population\n  perte_population=royaume_perdant.population*pourcentage_population/100#*royaume_perdant.population/call_function(\"max_population\",kingdom=royaume_perdant)\n  royaume_victorieux.money+=perte_population*base_gain_1folk_1_journee\n  royaume_perdant.population-=perte_population\n\n\n\n#cas d\u00e9fenseur gagne\n#gain prestige\nelse:\n  if royaume_victorieux.prestige-royaume_perdant.prestige>limit_difference_prestige:\n    royaume_victorieux.prestige+=0 #on ne p\u00e9nalise pas un joueur de s'\u00eatre fait attaquer...\n    royaume_perdant.prestige-=gain_maxi_prestige*0.5 #on p\u00e9nalise l'idiot qui a tent\u00e9\n  elif royaume_victorieux.prestige-royaume_perdant.prestige<-limit_difference_prestige:\n    royaume_victorieux.prestige+=gain_maxi_prestige\n    royaume_perdant.prestige-=gain_maxi_prestige\n  elif royaume_victorieux.prestige-royaume_perdant.prestige<0:\n    difference_prestige=(royaume_victorieux.prestige-royaume_perdant.prestige)*gain_maxi_prestige/(2*limit_difference_prestige)+gain_maxi_prestige/2\n    royaume_victorieux.prestige+=difference_prestige\n    royaume_perdant.prestige-=gain_maxi_prestige/2\n  else:\n    difference_prestige=(royaume_victorieux.prestige-royaume_perdant.prestige)*gain_maxi_prestige/(2*limit_difference_prestige)+gain_maxi_prestige/2\n    royaume_victorieux.prestige+=difference_prestige\n    royaume_perdant.prestige-=difference_prestige\n    \n#perte population\npop_mort=pourcentage_pop_meurt_base*random_value(90,110)*0.01\nif royaume_victorieux.user.username==royaume_attaquant.user.username:\n  royaume_victorieux.population+=population_envoyee_attaquant*(1-pop_mort/float(100)*(100-marge)/float(100))\n  royaume_perdant.population+=population_envoyee_defenseur*(1-pop_mort/float(100)*(marge)/float(100))\nelse:\n  royaume_perdant.population+=population_envoyee_attaquant*(1-pop_mort/float(100)*(100-marge)/float(100))\n  royaume_victorieux.population+=population_envoyee_defenseur*(1-pop_mort/float(100)*(marge)/float(100))\n\n\n\n\nif attaquant_egal_vainqueur==True:\n  perte_population_perdant=population_initiale_defenseur-royaume_perdant.population\n  perte_population_vainqueur=population_initiale_attaquant-royaume_victorieux.population\n  perte_prestige_perdant=royaume_perdant.prestige-prestige_initial_defenseur\n  gain_prestige_vainqueur=royaume_victorieux.prestige-prestige_initial_attaquant\n\nelse:\n  perte_population_perdant=population_initiale_attaquant-royaume_perdant.population\n  perte_population_vainqueur=population_initiale_defenseur-royaume_victorieux.population\n  perte_prestige_perdant=royaume_perdant.prestige-prestige_initial_defenseur\n  gain_prestige_vainqueur=royaume_victorieux.prestige-prestige_initial_attaquant\n  \n\n  \n#liste des morts et bless\u00e9s gagnant\nblesses_gagnant=[]\nmorts_gagnant=[]\n\nnb_tests=len(gagnant[\"combattants\"])*(100-marge)/float(100)\ni=0\nfor gagnant in gagnant[\"combattants\"]:\n  i+=1\n  if i<nb_tests:\n    destin=random_value(1,100)\n    if destin<pourcent_mort:\n      morts_gagnant.append(gagnant)\n    elif destin<pourcent_blesse:\n      blesses_gagnant.append(gagnant)\n    \n#liste des morts et bless\u00e9s perdant\nblesses_perdant=[]\nmorts_perdant=[]\n\nfor perdant in perdant[\"combattants\"]:\n  destin=random_value(1,100)\n  if destin<=pourcent_mort:\n    morts_perdant.append(perdant)\n  elif destin<=pourcent_blesse:\n    blesses_perdant.append(perdant)\n", 
+    "description": "D\u00e9finit les modifications qui devront \u00eatre appliqu\u00e9es apr\u00e8s un combat.\r\n\r\nresolution_combat:\r\n\tgagnant = {\r\n\t\ttroupes:1,\r\n\t\tcombattants:[],\r\n                prestige,\r\n\t}\r\n\r\n\tperdant = {\r\n\t\ttroupes:1,\r\n\t\tcombattants:[],\r\n                prestige,\r\n\t}\r\n\r\n\tpourcentage_victoire\r\n\r\n\t----> {\r\n\t\tgagnant: {\r\n\t\t\tblesses: [],\r\n\t\t\ttues: [],\r\n\t\t\tpertes: 1\r\n\t\t\tprestige: -15\r\n\t\t},\r\n\t\tperdant: {\r\n\t\t\tblesses: [],\r\n\t\t\ttues: [],\r\n\t\t\tpertes: 1,\r\n\t\t\tprestige: 15\r\n\t\t}\r\n\t}"
   }
 },
 {
@@ -42429,7 +42438,7 @@
     "target_list": "param = Kingdom.objects.filter(offended_set__offender=kingdom)", 
     "text": "Je suis quelqu'un de suspicieux. Je veux les espionner", 
     "has_value": false, 
-    "on_resolution": "a = 0\nfor folk in grids['espion']:\n  a += folk.plot\nd = 0\ntry :\n  d += target.get_folk_in_title(\"maitre_espion\").plot *3\nexcept:\n  pass \nd += sum_folks(Folk.objects.filter(kingdom=kingdom, mission = None, birth__gte= datetime.now() - timedelta(days=Constant.objects.get(name=\"Majorite\").value)), \"plot\")\nd *= 0.7\n\nmarge = min(100, 100 * 4/float(3) * 1/float(2) * ( 1 + ( (a-d) / float((a+d)) ) ) )\n\nmoney = target.money + max(-target.money, target.money * random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100)))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\nfolk = max(5, min(target.folk_set.count() * incertitude, target.prestige/10))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\npopulation =  max(5, min(target.population * incertitude, call_function(\"population_max\",kingdom=target)))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\narchers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"archer\").count() * incertitude, folk * 2/3))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\npiquiers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"piquier\").count() * incertitude, folk * 2/3))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\ncavaliers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"cavalier\").count() * incertitude, folk * 2/3))\n\npe = PendingEvent(event = Event.objects.get(slug=\"rapport_espionnage\"), kingdom=kingdom, started=None)\npe.save()\npe.set_value(\"money\", money)\npe.set_value(\"folk\", folk)\npe.set_value(\"population\", population)\npe.set_value(\"piquiers\", piquiers)\npe.set_value(\"cavaliers\", cavaliers)\npe.set_value(\"archers\", archers)\npe.set_value(\"target\", target)\npe.start()\n", 
+    "on_resolution": "a = 0\nfor folk in grids['espion']:\n  a += folk.plot\nd = 0\ntry :\n  d += target.get_folk_in_title(\"maitre_espion\").plot *3\nexcept:\n  pass \nd += sum_folks(Folk.objects.filter(kingdom=kingdom, mission = None, birth__gte= datetime.now() - timedelta(days=C(\"Majorite\"))), \"plot\")\nd *= 0.7\n\nmarge = min(100, 100 * 4/float(3) * 1/float(2) * ( 1 + ( (a-d) / float((a+d)) ) ) )\n\nmoney = target.money + max(-target.money, target.money * random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100)))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\nfolk = max(5, min(target.folk_set.count() * incertitude, target.prestige/10))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\npopulation =  max(5, min(target.population * incertitude, call_function(\"population_max\",kingdom=target)))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\narchers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"archer\").count() * incertitude, folk * 2/3))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\npiquiers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"piquier\").count() * incertitude, folk * 2/3))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\ncavaliers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"cavalier\").count() * incertitude, folk * 2/3))\n\npe = PendingEvent(event = Event.objects.get(slug=\"rapport_espionnage\"), kingdom=kingdom, started=None)\npe.save()\npe.set_value(\"money\", money)\npe.set_value(\"folk\", folk)\npe.set_value(\"population\", population)\npe.set_value(\"piquiers\", piquiers)\npe.set_value(\"cavaliers\", cavaliers)\npe.set_value(\"archers\", archers)\npe.set_value(\"target\", target)\npe.start()\n", 
     "value_description": " ", 
     "on_start": "\n", 
     "has_target": true, 
@@ -42753,7 +42762,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "\nattaquant = {\n  'troupes': Constant.v(\"POURCENTAGE_SOLDATS_ESCARMOUCHE\") * kingdom.soldiers / 100,\n  'combattants': affected,\n  'prestige': kingdom.prestige,\n}\n\n# R\u00e9cuperer les cinq meilleurs combattants de l'attaquant\ndate_majorite = datetime.now() - timedelta(days=Constant.v(\"Majorite\"))\ncinq_meilleurs = kingdom.folk_set.filter(sex=Folk.MALE, disabled=False, birth__lte=date_majorite).order_by('fight')[0:5]\nmoyenne_meilleurs_fight = call_function('somme_stat_folks', folks=list(cinq_meilleurs), stat='fight') / len(cinq_meilleurs)\n\ncombattants = [Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight)]\nmap(lambda f: f.save(), combattants)\ncombattants[0].add_quality('piquier')\ncombattants[1].add_quality('piquier')\ncombattants[2].add_quality('archer')\n\ndefenseur = {\n  # Dans le cadre du tuto,\n  # Les troupes du d\u00e9fenseur correspondent \u00e0 80% des troupes maximales disponibles pour ce Kingdom\n  'troupes': Constant.v(\"POURCENTAGE_SOLDATS_ESCARMOUCHE\") * 0.8 * Constant.v(\"POURCENTAGE_MAX_SOLDATS_PASSIF\") * call_function(\"get_max_population\", kingdom=kingdom) / (100 * 100),\n  'combattants': combattants,\n  'prestige': 1,\n}\n\ngagnant, perdant, marge = call_function(\"determiner_vainqueur_combat\", attaquant=attaquant, defenseur=defenseur)\nis_victory = gagnant == attaquant\n\nif is_victory:\n  kingdom.prestige += 20\nelse:\n  kingdom.prestige -= 20\nkingdom.save()\n\nif kingdom.get_value(\"tuto_firstbattle_attack\", False) == False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_attack\")\nelif is_victory:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \n  pe.set_value(\"is_victory\", is_victory)\n  pe.set_value(\"attaquant\", True)\n  pe.start()\n  \nmap(lambda f: f.delete(), combattants)", 
+    "on_start": "\nattaquant = {\n  'troupes': C(\"POURCENTAGE_SOLDATS_ESCARMOUCHE\") * kingdom.soldiers / 100,\n  'combattants': affected,\n  'prestige': kingdom.prestige,\n}\n\n# R\u00e9cuperer les cinq meilleurs combattants de l'attaquant\ndate_majorite = datetime.now() - timedelta(days=Constant.v(\"Majorite\"))\ncinq_meilleurs = kingdom.folk_set.filter(sex=Folk.MALE, disabled=False, birth__lte=date_majorite).order_by('fight')[0:5]\nmoyenne_meilleurs_fight = call_function('somme_stat_folks', folks=list(cinq_meilleurs), stat='fight') / len(cinq_meilleurs)\n\ncombattants = [Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight)]\nmap(lambda f: f.save(), combattants)\ncombattants[0].add_quality('piquier')\ncombattants[1].add_quality('piquier')\ncombattants[2].add_quality('archer')\n\ndefenseur = {\n  # Dans le cadre du tuto,\n  # Les troupes du d\u00e9fenseur correspondent \u00e0 80% des troupes maximales disponibles pour ce Kingdom\n  'troupes': C(\"POURCENTAGE_SOLDATS_ESCARMOUCHE\") * 0.8 * C(\"POURCENTAGE_MAX_SOLDATS_PASSIF\") * call_function(\"get_max_population\", kingdom=kingdom) / (100 * 100),\n  'combattants': combattants,\n  'prestige': 1,\n}\n\ngagnant, perdant, marge = call_function(\"determiner_vainqueur_combat\", attaquant=attaquant, defenseur=defenseur)\nis_victory = gagnant == attaquant\n\nif is_victory:\n  kingdom.prestige += 20\nelse:\n  kingdom.prestige -= 20\nkingdom.save()\n\nif kingdom.get_value(\"tuto_firstbattle_attack\", False) == False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_attack\")\nelif is_victory:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \n  pe.set_value(\"is_victory\", is_victory)\n  pe.set_value(\"attaquant\", True)\n  pe.start()\n  \nmap(lambda f: f.delete(), combattants)", 
     "has_target": false, 
     "is_team": false, 
     "title": null, 
@@ -42799,7 +42808,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "defenseurs", 
-    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()<=Constant.objects.get(name=\"Majorite\").value:\n  status=\"La guerre, c'est une histoire d'adultes !\"\n"
+    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()<=C(\"Majorite\"):\n  status=\"La guerre, c'est une histoire d'adultes !\"\n"
   }
 },
 {
@@ -42825,7 +42834,7 @@
     "length": 4, 
     "allow_empty": false, 
     "slug": "combattants", 
-    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()<=Constant.objects.get(name=\"Majorite\").value:\n  status=\"La guerre, c'est une histoire d'adultes !\"\n"
+    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()<=C(\"Majorite\"):\n  status=\"La guerre, c'est une histoire d'adultes !\"\n"
   }
 },
 {
@@ -42877,7 +42886,7 @@
     "length": 4, 
     "allow_empty": false, 
     "slug": "defenseurs", 
-    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()>=Constant.objects.get(name=\"Majorite\"):\n  status=\"La guerre, c'est une histoire d'adultes !\""
+    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()>=C(\"Majorite\"):\n  status=\"La guerre, c'est une histoire d'adultes !\""
   }
 },
 {
@@ -42903,7 +42912,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "recruteur", 
-    "condition": "if folk.age() < Constant.objects.get(name=\"Majorite\").value or folk.has_quality(\"pretre\") :\n  status = \"Cette personne ne peut pas effectuer cette mission\"\n"
+    "condition": "if folk.age() < C(\"Majorite\") or folk.has_quality(\"pretre\") :\n  status = \"Cette personne ne peut pas effectuer cette mission\"\n"
   }
 },
 {
@@ -42929,7 +42938,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "mari", 
-    "condition": "if folk.age < Constant.objects.get(name=\"Majorite\").value : \n  status = \"Cette personne est trop jeune pour \u00eatre mari\u00e9e\"\nelif folk.sex == \"f\" :\n  status = \"Le mari doit \u00eatre un homme\"\nelif folk.has_quality(\"pretre\") :\n  status = \"Un p\u00eatre ne peut pas se marier\"\nelif (kingdom.get_value(\"in_tuto\") == True and folk==folks[0]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre chatelain\"\nelif (kingdom.get_value(\"passage_proposition_marriage\",False) and  folk==folks[1]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre fils\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
+    "condition": "if folk.age < C(\"Majorite\") : \n  status = \"Cette personne est trop jeune pour \u00eatre mari\u00e9e\"\nelif folk.sex == \"f\" :\n  status = \"Le mari doit \u00eatre un homme\"\nelif folk.has_quality(\"pretre\") :\n  status = \"Un p\u00eatre ne peut pas se marier\"\nelif (kingdom.get_value(\"in_tuto\") == True and folk==folks[0]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre chatelain\"\nelif (kingdom.get_value(\"passage_proposition_marriage\",False) and  folk==folks[1]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre fils\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
   }
 },
 {
@@ -42942,7 +42951,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "femme", 
-    "condition": "if folk.age < Constant.objects.get(name=\"Majorite\").value :\n  status = \"Cette personne est trop jeune pour \u00eatre mari\u00e9e\"\nelif folk.sex == \"m\":\n  status = \"La femme doit \u00eatre une femme\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
+    "condition": "if folk.age < C(\"Majorite\"):\n  status = \"Cette personne est trop jeune pour \u00eatre mari\u00e9e\"\nelif folk.sex == \"m\":\n  status = \"La femme doit \u00eatre une femme\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
   }
 },
 {
@@ -43007,7 +43016,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "mentor", 
-    "condition": "if folk.age()< Constant.v(\"Majorite\"):\n  status = \"Un mentor doit \u00eatre majeur\"\n"
+    "condition": "if folk.age()< C(\"Majorite\"):\n  status = \"Un mentor doit \u00eatre majeur\"\n"
   }
 },
 {
@@ -43020,7 +43029,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "enfant", 
-    "condition": "if folk.age() > Constant.objects.get(name=\"Majorite\").value:\n  status = \"L'apprenti doit \u00eatre un enfant\"\n"
+    "condition": "if folk.age() > C(\"Majorite\"):\n  status = \"L'apprenti doit \u00eatre un enfant\"\n"
   }
 },
 {
@@ -43059,7 +43068,7 @@
     "length": 200, 
     "allow_empty": false, 
     "slug": "espion", 
-    "condition": "if PendingMissionAffectation.objects.filter(pending_mission=param.pending_mission, mission_grid=param.mission_grid).count() > kingdom.prestige / 10:\n  status = \"Vous ne pouvez plus rajouter de personne \u00e0 cette mission\"\nif folk.age < Constant.objects.get(name=\"Majorite\"):\n  status = \"Un enfant ne peut pas effectuer cette mission\"\n\n"
+    "condition": "if PendingMissionAffectation.objects.filter(pending_mission=param.pending_mission, mission_grid=param.mission_grid).count() > kingdom.prestige / 10:\n  status = \"Vous ne pouvez plus rajouter de personne \u00e0 cette mission\"\nif folk.age < C(\"Majorite\"):\n  status = \"Un enfant ne peut pas effectuer cette mission\"\n\n"
   }
 },
 {
@@ -43098,7 +43107,7 @@
     "length": 4, 
     "allow_empty": false, 
     "slug": "attaquants", 
-    "condition": "if folk.age() < Constant.objects.get(name=\"Majorite\").value:\n  status = \"Vous ne pouvez pas affecter un enfant \u00e0 cette mission.\"\nelif folk.sex == \"f\":\n  status = \"Vous ne pouvez pas affecter de femme \u00e0 cette mission\"\n"
+    "condition": "if folk.age() < C(\"Majorite\"):\n  status = \"Vous ne pouvez pas affecter un enfant \u00e0 cette mission.\"\nelif folk.sex == \"f\":\n  status = \"Vous ne pouvez pas affecter de femme \u00e0 cette mission\"\n"
   }
 },
 {
@@ -43111,7 +43120,7 @@
     "length": 4, 
     "allow_empty": false, 
     "slug": "combattants_tuto", 
-    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()>=Constant.objects.get(name=\"Majorite\"):\n  status=\"La guerre, c'est une histoire d'adultes !\""
+    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()>=C(\"Majorite\"):\n  status=\"La guerre, c'est une histoire d'adultes !\""
   }
 },
 {
@@ -43124,7 +43133,7 @@
     "length": 20, 
     "allow_empty": false, 
     "slug": "chercheurs_merde", 
-    "condition": "if folk.age()>=Constant.objects.get(name=\"Majorite\"):\n  status=\"Laisse les grands jouer \u00e0 ce jeu\"\nelif folk.sex==\"f\":\n  status = \"Une femme ne peut pas aller se battre\"\n"
+    "condition": "if folk.age()>=C(\"Majorite\"):\n  status=\"Laisse les grands jouer \u00e0 ce jeu\"\nelif folk.sex==\"f\":\n  status = \"Une femme ne peut pas aller se battre\"\n"
   }
 },
 {
@@ -43150,7 +43159,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "organisateurs", 
-    "condition": "if folk.age() < Constant.objects.get(name=\"Majorite\").value:\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"\n"
+    "condition": "if folk.age() < C(\"Majorite\"):\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"\n"
   }
 },
 {
@@ -43176,7 +43185,7 @@
     "length": 10, 
     "allow_empty": false, 
     "slug": "chasseurs", 
-    "condition": "if folk.sex==\"f\" or folk.has_quality(\"pretre\")==True or folk.age()<Constant.objects.get(name=\"Majorite\").value:\n  status = \"Le chasseur doit etre un chevalier adulte\"\n"
+    "condition": "if folk.sex==\"f\" or folk.has_quality(\"pretre\")==True or folk.age()<C(\"Majorite\"):\n  status = \"Le chasseur doit etre un chevalier adulte\"\n"
   }
 },
 {
@@ -43189,7 +43198,7 @@
     "length": 20, 
     "allow_empty": false, 
     "slug": "chercheur", 
-    "condition": "if folk.age() < Constant.objects.get(name=\"Majorite\").value: \n  status = \"Cette personne est trop jeune pour cette t\u00e2che\"\n"
+    "condition": "if folk.age() < C(\"Majorite\"): \n  status = \"Cette personne est trop jeune pour cette t\u00e2che\"\n"
   }
 },
 {
@@ -43215,7 +43224,7 @@
     "length": 4, 
     "allow_empty": false, 
     "slug": "defenseurs_tuto", 
-    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()<=Constant.objects.get(name=\"Majorite\").value:\n  status=\"La guerre, c'est une histoire d'adultes !\"\n"
+    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()<=C(\"Majorite\"):\n  status=\"La guerre, c'est une histoire d'adultes !\"\n"
   }
 },
 {
@@ -99695,6 +99704,279 @@
     "object_repr": "tuto_escarmouche", 
     "object_id": "41", 
     "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0tuto_escarmouche [Combattants (3)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6894, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:08:23.401", 
+    "object_repr": "Conn\u00e9table", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 on_unlock, condition, on_affect et on_defect.", 
+    "user": 1, 
+    "content_type": 15
+  }
+},
+{
+  "pk": 6895, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:08:43.427", 
+    "object_repr": "Ambassadeur", 
+    "object_id": "6", 
+    "change_message": "Modifi\u00e9 on_unlock, condition, on_affect et on_defect.", 
+    "user": 1, 
+    "content_type": 15
+  }
+},
+{
+  "pk": 6896, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:09:10.749", 
+    "object_repr": "Augmenter le nombre de soldats", 
+    "object_id": "9", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 1, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 6897, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:09:31.267", 
+    "object_repr": "determiner_modification_combat()", 
+    "object_id": "21", 
+    "change_message": "Modifi\u00e9 description, params et on_fire.", 
+    "user": 38, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 6898, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:09:40.624", 
+    "object_repr": "attribuer_avatar()", 
+    "object_id": "16", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 1, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 6899, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:11:30.379", 
+    "object_repr": "espionner", 
+    "object_id": "27", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionner [Espion (200)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6900, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:11:55.766", 
+    "object_repr": "tuto_escarmouche", 
+    "object_id": "41", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0tuto_escarmouche [Combattants (3)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6901, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:12:18.524", 
+    "object_repr": "dummy_tuto_brigand_defense", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0dummy_tuto_brigand_defense [D\u00e9fenseurs (3)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6902, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:12:48.493", 
+    "object_repr": "escarmouche", 
+    "object_id": "5", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0escarmouche [combattants (4)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6903, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:13:03.668", 
+    "object_repr": "escarmouche_defense", 
+    "object_id": "13", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0escarmouche_defense [Defenseurs (4)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6904, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:13:21.668", 
+    "object_repr": "trouver_pretre", 
+    "object_id": "15", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0trouver_pretre [Recruteur (1)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6905, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:13:52.724", 
+    "object_repr": "marier", 
+    "object_id": "17", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0marier [Le mari (1)]\u00a0\u00bb. condition modifi\u00e9 pour mission grid \u00ab\u00a0marier [La femme (1)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6906, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:14:15.593", 
+    "object_repr": "nommer_mentor", 
+    "object_id": "23", 
+    "change_message": "Modifi\u00e9 on_start et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0nommer_mentor [Mentor (1)]\u00a0\u00bb. condition modifi\u00e9 pour mission grid \u00ab\u00a0nommer_mentor [Enfant (1)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6907, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:14:37.178", 
+    "object_repr": "espionner", 
+    "object_id": "27", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionner [Espion (200)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6908, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:15:40.520", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6909, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:16:00.310", 
+    "object_repr": "tuto_dummy_escarmouche", 
+    "object_id": "29", 
+    "change_message": "Modifi\u00e9 on_init, on_start et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0tuto_dummy_escarmouche [combattants_tuto (4)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6910, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:16:16.834", 
+    "object_repr": "tuto_getaffront_diplomatie", 
+    "object_id": "30", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0tuto_getaffront_diplomatie [chercheurs de merde (20)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6911, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:16:36.096", 
+    "object_repr": "tuto_banquet", 
+    "object_id": "10", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0tuto_banquet [organisateurs (3)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6912, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:16:59.665", 
+    "object_repr": "chasse", 
+    "object_id": "32", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0chasse [Ch\u00e2telain (1)]\u00a0\u00bb. condition modifi\u00e9 pour mission grid \u00ab\u00a0chasse [Chasseurs (10)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6913, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:17:32.170", 
+    "object_repr": "chercher_cibles", 
+    "object_id": "25", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0chercher_cibles [chercheur (20)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6914, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-09T22:18:05.895", 
+    "object_repr": "tuto_contre_attaque_PNJ", 
+    "object_id": "34", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0tuto_contre_attaque_PNJ [Defenseurs_tuto (4)]\u00a0\u00bb.", 
     "user": 1, 
     "content_type": 23
   }
