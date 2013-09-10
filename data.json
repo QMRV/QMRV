@@ -6129,15 +6129,15 @@
     "description": "Initialise les comptes", 
     "prestige_threshold": 0, 
     "fired": [
+      68, 
+      70, 
       44, 
       46, 
       58, 
-      59, 
-      70, 
-      68
+      59
     ], 
     "money_threshold": 0, 
-    "on_fire": "# Cr\u00e9ation du ch\u00e2telain\nseigneur = call_function(\"creer_folk\", kingdom=kingdom, fight_min=7, plot_min=7, diplomacy_min=7, scholarship_min=7, max_carac=36, loyalty=99, sex=\"m\", last_name=kingdom.user.username, birth=datetime.now() - timedelta(days=35))\n\nkingdom.unlock_title(\"chatelain\")\nseigneur.add_title(\"chatelain\")\n\n# Son fils\nfils = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=\"m\", last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=17))\n\n# Sa fille\nfille = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=\"f\", last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=16))\n\n# Compagnon\ncompagnon = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=\"m\",birth=datetime.now() - timedelta(days=35))\n\n# Lancement de l'event\npe = PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_intro\"), started=None)\npe.save()\npe.set_value(\"fils\", fils)\npe.set_value(\"fille\", fille)\npe.set_value(\"compagnon\", compagnon)\nkingdom.set_value(\"adversaire_tuto\", FirstName.objects.filter(sex='m').order_by('?')[0].name+\" \"+LastName.objects.all().order_by('?')[0].name)\nkingdom.set_value(\"prestige_pnj\",100)\nkingdom.set_value(\"population_pnj\",100)\npe.start()\n\n# Kingdom init\nkingdom.money = 100\nkingdom.save()\n\nkingdom.set_value(\"in_tuto\", True)\n\n\n", 
+    "on_fire": "# Cr\u00e9ation du ch\u00e2telain\nseigneur = call_function(\"creer_folk\", kingdom=kingdom, fight_min=7, plot_min=7, diplomacy_min=7, scholarship_min=7, max_carac=36, loyalty=99, sex=\"m\", last_name=kingdom.user.username, birth=datetime.now() - timedelta(days=35))\n\nkingdom.unlock_title(\"chatelain\")\nseigneur.add_title(\"chatelain\")\n\n# Son fils\nfils = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=\"m\", last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=17))\n\n# Sa fille\nfille = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=\"f\", last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=16))\n\n# Compagnon\ncompagnon = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=\"m\",birth=datetime.now() - timedelta(days=35))\n\n# Lancement de l'event\npe = kingdom.create_pending_event(\"tuto_intro\")\npe.set_value(\"fils\", fils)\npe.set_value(\"fille\", fille)\npe.set_value(\"compagnon\", compagnon)\nkingdom.set_value(\"adversaire_tuto\", FirstName.objects.filter(sex='m').order_by('?')[0].name+\" \"+LastName.objects.all().order_by('?')[0].name)\nkingdom.set_value(\"prestige_pnj\",100)\nkingdom.set_value(\"population_pnj\",100)\npe.start()\n\n# Kingdom init\nkingdom.money = 100\nkingdom.save()\n\nkingdom.set_value(\"in_tuto\", True)\n\n\n", 
     "slug": "initialisation", 
     "condition": "\n", 
     "name": "Initialisation"
@@ -6392,7 +6392,7 @@
   "fields": {
     "params": "kingdom:Kingdom le kingdom sur lequel tourne ce tuto\r\nslug_event:str l'\u00e9v\u00e8nement qui vient d'\u00eatre d\u00e9clench\u00e9.", 
     "slug": "tuto_moteur", 
-    "on_fire": "try:\n  kingdom.set_value(slug_event, True)\nexcept:\n  pass\n\nevents = {\n  'tuto_scandale_fantome': lambda k: True,\n  'tuto_bandits_fantome': lambda k: k.get_folk_in_title(\"cure\") is not None or k.get_folk_in_title(\"maitre_espion\") is not None or k.get_folk_in_title(\"chambellan\") is not None or k.get_folk_in_title(\"connetable\") is not None,\n  'tuto_soeurette': lambda k: True,\n  'tuto_facheux_fantome': lambda k: True,\n  'tuto_caissesvides': lambda k: k.get_folk_in_title(\"tresorier\") is None,\n  'tuto_forcertitre_random': lambda k: True,\n  'tuto_toofewpopulation': lambda k: True,\n  'tuto_cour_basse_fantome': lambda k: True,\n}\n\nalready_done = [key for key in kingdom.get_values().keys() if key.startswith('tuto_')]\n\n# Doit-on lancer l'\u00e9v\u00e8nement final du tuto ?\nmandatories = (u'tuto_scandale_fantome', u'tuto_facheux_fantome', u'tuto_soeurette', u'tuto_bandits_fantome')\nif set(mandatories) <= set(already_done):\n  # La liste already_done contient toutes les entr\u00e9es du tableau mandatories (l'op\u00e9rateur <= correspond \u00e0 \"est un sous ensemble\")\n  # On va maintenant rentrer dans la seconde partie du tuto.\n  pe = PendingEvent(kingdom=kingdom, event=Event.objects.get(slug='tuto_timewarp'), started=None)\n  pe.save()\n  pe.set_value('slug', 'tuto_ambition')\n  pe.start()\nelse:\n  # S\u00e9lectionner un \u00e9v\u00e8nement au hasard et le lancer.\n  import random\n  all_event_slugs = events.keys()\n  events_slugs = [slug for slug in all_event_slugs if slug not in already_done]\n  random.shuffle(events_slugs)\n\n  for event_slug in events_slugs:\n    if events[event_slug](kingdom):\n      pe = PendingEvent(kingdom=kingdom, event=Event.objects.get(slug='tuto_timewarp'), started=None)\n      pe.save()\n      pe.set_value('slug', event_slug)\n      pe.start()\n      break\n", 
+    "on_fire": "try:\n  kingdom.set_value(slug_event, True)\nexcept:\n  pass\n\nevents = {\n  'tuto_scandale_fantome': lambda k: True,\n  'tuto_bandits_fantome': lambda k: k.get_folk_in_title(\"cure\") is not None or k.get_folk_in_title(\"maitre_espion\") is not None or k.get_folk_in_title(\"chambellan\") is not None or k.get_folk_in_title(\"connetable\") is not None,\n  'tuto_soeurette': lambda k: True,\n  'tuto_facheux_fantome': lambda k: True,\n  'tuto_caissesvides': lambda k: k.get_folk_in_title(\"tresorier\") is None,\n  'tuto_forcertitre_random': lambda k: True,\n  'tuto_toofewpopulation': lambda k: True,\n  'tuto_cour_basse_fantome': lambda k: True,\n}\n\nalready_done = [key for key in kingdom.get_values().keys() if key.startswith('tuto_')]\n\n# Doit-on lancer l'\u00e9v\u00e8nement final du tuto ?\nmandatories = (u'tuto_scandale_fantome', u'tuto_facheux_fantome', u'tuto_soeurette', u'tuto_bandits_fantome')\nif set(mandatories) <= set(already_done):\n  # La liste already_done contient toutes les entr\u00e9es du tableau mandatories (l'op\u00e9rateur <= correspond \u00e0 \"est un sous ensemble\")\n  # On va maintenant rentrer dans la seconde partie du tuto.\n  pe = kingdom.create_pending_event(\"tuto_timewarp\")\n  pe.set_value('slug', 'tuto_ambition')\n  pe.start()\nelse:\n  # S\u00e9lectionner un \u00e9v\u00e8nement au hasard et le lancer.\n  import random\n  all_event_slugs = events.keys()\n  events_slugs = [slug for slug in all_event_slugs if slug not in already_done]\n  random.shuffle(events_slugs)\n\n  for event_slug in events_slugs:\n    if events[event_slug](kingdom):\n      pe = kingdom.create_pending_event(\"tuto_timewarp\")\n      pe.set_value('slug', event_slug)\n      pe.start()\n      break\n", 
     "description": "Moteur de la premi\u00e8re partie du tutoriel (avant l'attaque du PNJ)."
   }
 },
@@ -42398,7 +42398,7 @@
     "target_list": " ", 
     "text": "Qui veut la paix pr\u00e9pare la guerre. Il me faut conna\u00eetre mes ennemis.", 
     "has_value": false, 
-    "on_resolution": "# Similar prestige\nks = Kingdom.objects.filter(prestige__gte=kingdom.prestige*0.9, prestige__lte=kingdom.prestige*1.1)\n\n# Exclude myself\nks = ks.exclude(id=kingdom.id)\n\n# Exclude people i already have Claim\nks = ks.exclude(offended_set__offender=kingdom)\n\nfor k in ks:\n  kingdom.add_claim(k, Claim.REACHABLE)\n\n#Appel de l'\u00e9v\u00e8nement pour afficher le r\u00e9sultat\npe = PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"resultat_recherche_claim\"), started=None)\npe.save()\npe.set_value(\"results\", ks)\npe.start()\n", 
+    "on_resolution": "# Similar prestige\nks = Kingdom.objects.filter(prestige__gte=kingdom.prestige*0.9, prestige__lte=kingdom.prestige*1.1)\n\n# Exclude myself\nks = ks.exclude(id=kingdom.id)\n\n# Exclude people i already have Claim\nks = ks.exclude(offended_set__offender=kingdom)\n\nfor k in ks:\n  kingdom.add_claim(k, Claim.REACHABLE)\n\n#Appel de l'\u00e9v\u00e8nement pour afficher le r\u00e9sultat\npe = kingdom.create_pending_event(\"resultat_recherche_claim\")\npe.set_value(\"results\", ks)\npe.start()\n", 
     "value_description": "Valeur :", 
     "on_start": " ", 
     "has_target": false, 
@@ -42559,7 +42559,7 @@
     "target_list": "\n", 
     "text": " ", 
     "has_value": false, 
-    "on_resolution": "pe = PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"chasse\"), started=None)\npe.save() \npe.set_value(\"chasseurs\", grids['chasseurs'])\npe.start()\n", 
+    "on_resolution": "pe = kingdom.create_pending_event(\"chasse\")\npe.set_value(\"chasseurs\", grids['chasseurs'])\npe.start()\n", 
     "value_description": "Valeur :", 
     "on_start": "\n", 
     "has_target": false, 
@@ -45083,7 +45083,7 @@
     "weight": 1, 
     "text": " ", 
     "image": "", 
-    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchoose_banquet = random_value(1,3)\ndanseuses = Folk.objects.filter(mission = None,\n                                kingdom=kingdom,\n                                sex=\"f\",\n                                birth__lte=datetime.now() - timedelta(days=C(\"MAJORITE\"))).count()\n#recherche des possibilit\u00e9s de suite\nchatelain=kingdom.get_folk_in_title(\"chatelain\")\ntoast = False\nfuckers = Folk.objects.filter(kingdom=kingdom,\n                              mission=None,\n                              birth__lte=datetime.now() - timedelta(days=C(\"MAJORITE\")),\n                              sex=\"m\",\n                              loyalty__lte=20).order_by('?')\nloyaux = Folk.objects.filter(kingdom=kingdom,\n                             mission=None,\n                             birth__lte=datetime.now() - timedelta(days=C(\"MAJORITE\")),\n                             sex=\"m\",\n                             loyalty__gte=80).exclude(id=chatelain.id)\n\nif chatelain.diplomacy >=9 or fuckers.count() >= 1 or loyaux.count() >= 1:\n  toast = True\n\nif choose_banquet == 1 and danseuses != 0:\n  pe = PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"banquet_danse\"), started=None)\n  pe.save()\n  pe.start()\nelif choose_banquet <= 2 and toast == True:\n  nb_folk_actuels = Folk.objects.filter(kingdom=kingdom,\n                                     mission=None,\n                                     birth__lte=datetime.now() - timedelta(days=C(\"MAJORITE\")),\n                                     ).count()\n  choose_toast = random_value (1, nb_folk_actuels)\n  if choose_toast > fuckers and choose_toast < loyaux:\n    pe = PendingEvent (kingdom=kingdom, event=Event.objects.get(slug=\"banquet_toast_chatelain\"), started=None)\n    pe.save()\n    pe.start()\n  elif choose_toast <= fuckers.count():\n    pe = PendingEvent (kingdom=kingdom, event=Event.objects.get(slug=\"banquet_toast_fucker\"), started=None)\n    pe.save()\n    pe.set_value(\"fucker\", fuckers[0])\n    pe.start()\n  else:\n    pe = PendingEvent (kingdom=kingdom, event=Event.objects.get(slug=\"banquet_toast_loyaliste\"), started=None)\n    pe.save()\n    pe.set_value(\"loyaliste\", loyaux[0])\n    pe.start()           \nelse:\n  pe = PendingEvent (kingdom=kingdom, event=Event.objects.get(slug=\"banquet_beuverie\"), started=None)\n  pe.save()\n  pe.start()\nstatus = \"ghost event\"\n", 
+    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchoose_banquet = random_value(1,3)\ndanseuses = Folk.objects.filter(mission = None,\n                                kingdom=kingdom,\n                                sex=\"f\",\n                                birth__lte=datetime.now() - timedelta(days=C(\"MAJORITE\"))).count()\n#recherche des possibilit\u00e9s de suite\nchatelain=kingdom.get_folk_in_title(\"chatelain\")\ntoast = False\nfuckers = Folk.objects.filter(kingdom=kingdom,\n                              mission=None,\n                              birth__lte=datetime.now() - timedelta(days=C(\"MAJORITE\")),\n                              sex=\"m\",\n                              loyalty__lte=20).order_by('?')\nloyaux = Folk.objects.filter(kingdom=kingdom,\n                             mission=None,\n                             birth__lte=datetime.now() - timedelta(days=C(\"MAJORITE\")),\n                             sex=\"m\",\n                             loyalty__gte=80).exclude(id=chatelain.id)\n\nif chatelain.diplomacy >=9 or fuckers.count() >= 1 or loyaux.count() >= 1:\n  toast = True\n\nif choose_banquet == 1 and danseuses != 0:\n  kingdom.create_pending_event(\"banquet_danse\").start()\nelif choose_banquet <= 2 and toast == True:\n  nb_folk_actuels = Folk.objects.filter(kingdom=kingdom,\n                                     mission=None,\n                                     birth__lte=datetime.now() - timedelta(days=C(\"MAJORITE\")),\n                                     ).count()\n  choose_toast = random_value (1, nb_folk_actuels)\n  if choose_toast > fuckers and choose_toast < loyaux:\n    kingdom.create_pending_event(\"banquet_toast_chatelain\").start()\n  elif choose_toast <= fuckers.count():\n    pe = kingdom.create_pending_event(\"banquet_toast_fucker\")\n    pe.set_value(\"fucker\", fuckers[0])\n    pe.start()\n  else:\n    kingdom.create_pending_event(\"banquet_toast_loyaliste\")\n    pe.set_value(\"loyaliste\", loyaux[0])\n    pe.start()           \nelse:\n  kingdom.create_pending_event(\"banquet_beuverie\").start()\nstatus = \"ghost event\"\n", 
     "slug": "banquet_fantome", 
     "condition": " "
   }
@@ -46728,7 +46728,7 @@
     "message": "", 
     "event": 18, 
     "condition": "if kingdom.get_folk_in_title(\"tresorier\") is None:\n  status =\"n'a pas de tr\u00e9sorier\"\n", 
-    "on_fire": "\npe = PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_caissesvides_2\"), started=None)\npe.started = datetime.now() + timedelta(minutes=2)\npe.start()\n"
+    "on_fire": "\npe = kingdom.create_pending_event(\"tuto_caissesvides_2\")\npe.started = datetime.now() + timedelta(minutes=2)\npe.start()\n"
   }
 },
 {
@@ -47498,7 +47498,7 @@
     "message": "", 
     "event": 95, 
     "condition": " ", 
-    "on_fire": "fight = param.get_value(\"fight\")\nchasseur = param.get_value(\"chasseur\")\nchasseurs = param.get_value(\"chasseurs\")\n\nif fight>16:\n  pe = PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"chasse_success\"), started=None)\n  pe.save()\n  pe.set_value(\"chasseur\", chasseur)\n  pe.set_value(\"chasseurs\", chasseurs)\n  pe.start()\nelif fight>10:\n  pe = PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"chasse_2\"), started=None)\n  pe.save()\n  pe.set_value(\"chasseurs\", chasseurs)\n  pe.start() \nelse:\n  pe = PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"chasse_failure\"), started=None)\n  pe.save()\n  pe.set_value(\"chasseur\", chasseur)\n  pe.start()\n"
+    "on_fire": "fight = param.get_value(\"fight\")\nchasseur = param.get_value(\"chasseur\")\nchasseurs = param.get_value(\"chasseurs\")\n\nif fight>16:\n  pe = kingdom.create_pending_event(\"chasse_success\")\n  pe.save()\n  pe.set_value(\"chasseur\", chasseur)\n  pe.set_value(\"chasseurs\", chasseurs)\n  pe.start()\nelif fight>10:\n  pe = kingdom.create_pending_event(\"chasse_2\")\n  pe.save()\n  pe.set_value(\"chasseurs\", chasseurs)\n  pe.start() \nelse:\n  pe = kingdom.create_pending_event(\"chasse_failure\")\n  pe.save()\n  pe.set_value(\"chasseur\", chasseur)\n  pe.start()\n"
   }
 },
 {
@@ -100589,6 +100589,71 @@
     "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0marier [La femme (1)]\u00a0\u00bb. condition modifi\u00e9 pour mission grid \u00ab\u00a0marier [Le mari (1)]\u00a0\u00bb.", 
     "user": 1, 
     "content_type": 23
+  }
+},
+{
+  "pk": 6955, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-10T18:23:30.528", 
+    "object_repr": "tuto_moteur()", 
+    "object_id": "14", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 1, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 6956, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-10T18:23:56.354", 
+    "object_repr": "chasse", 
+    "object_id": "32", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0chasse [Ch\u00e2telain (1)]\u00a0\u00bb. condition modifi\u00e9 pour mission grid \u00ab\u00a0chasse [Chasseurs (10)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6957, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-10T18:24:10.346", 
+    "object_repr": "chercher_cibles", 
+    "object_id": "25", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0chercher_cibles [chercheur (20)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6958, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-10T18:24:27.259", 
+    "object_repr": "Initialisation", 
+    "object_id": "1", 
+    "change_message": "Modifi\u00e9 condition et on_fire.", 
+    "user": 1, 
+    "content_type": 17
+  }
+},
+{
+  "pk": 6959, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-10T18:26:11.978", 
+    "object_repr": "banquet_fantome", 
+    "object_id": "128", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 1, 
+    "content_type": 29
   }
 },
 {
