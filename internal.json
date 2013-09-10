@@ -1287,7 +1287,7 @@
   "pk": 1, 
   "model": "internal.constant", 
   "fields": {
-    "name": "Majorite", 
+    "name": "MAJORITE", 
     "value": 16, 
     "description": "Passage \u00e0 la majorit\u00e9"
   }
