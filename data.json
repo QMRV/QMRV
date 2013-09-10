@@ -6147,7 +6147,7 @@
   "pk": 1, 
   "model": "internal.constant", 
   "fields": {
-    "name": "Majorite", 
+    "name": "MAJORITE", 
     "value": 16, 
     "description": "Passage \u00e0 la majorit\u00e9"
   }
@@ -41915,7 +41915,7 @@
     "target_list": "param = Kingdom.objects.filter(offended_set__offender=kingdom)", 
     "text": "Aller chercher des noises \u00e0 votre voisin.\r\n\r\n\r\n[co\u00fbt 25 ecus pour lancer la mission]", 
     "has_value": false, 
-    "on_resolution": "a = 0\nfor folk in grids['chercheurs_noises']:\n  a += folk.diplomacy\nd = 0\ntry :\n  d += target.get_folk_in_title(\"diplomate\").diplomacy *3\nexcept:\n  pass\nd += sum_folks(Folk.objects.filter(kingdom=kingdom, mission = None, birth__gte= datetime.now() - timedelta(days=C(\"MAJORITE\"))), \"diplomacy\")\nd *= 0.3\n\n\nif a>d:\n  kingdom.add_claim(target, Claim.REACHABLE)\n  pe = PendingEvent(event=Event.objects.get(slug=\"getaffront_diplomatie_kingdomsuccess\"),kingdom=kingdom,started=None)\n  pe.save()\n  pe.set_value(\"defenseur\", target)\n  pe.start()\n  pe = PendingEvent(event=Event.objects.get(slug=\"getaffront_diplomatie_targetsuccess\"),kingdom=target,started=None)\n  pe.save()\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\n  #evenement attaquer\n  kingdom.create_pending_mission(\"escarmouche\")\n\n  \n   \nelse:\n  pe = PendingEvent(Event.objects.get(slug=\"getaffront_diplomatie_kingdomfailure\"),kingdom=kingdom,started=None)\n  pe.save()\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\n  pe = PendingEvent(Event.objects.get(slug=\"getaffront_diplomatie_targetfailure\"),kingdom=target,started=None)\n  pe.save()\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\nkingdom.money-=25;  ", 
+    "on_resolution": "a = 0\nfor folk in grids['chercheurs_noises']:\n  a += folk.diplomacy\nd = 0\ntry :\n  d += target.get_folk_in_title(\"diplomate\").diplomacy *3\nexcept:\n  pass\nd += sum_folks(folks.filter(mission=None, birth__gte=datetime.now() - timedelta(days=C(\"MAJORITE\"))), \"diplomacy\")\nd *= 0.3\n\n\nif a>d:\n  kingdom.add_claim(target, Claim.REACHABLE)\n  pe = PendingEvent(event=Event.objects.get(slug=\"getaffront_diplomatie_kingdomsuccess\"),kingdom=kingdom,started=None)\n  pe.save()\n  pe.set_value(\"defenseur\", target)\n  pe.start()\n  pe = PendingEvent(event=Event.objects.get(slug=\"getaffront_diplomatie_targetsuccess\"),kingdom=target,started=None)\n  pe.save()\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\n  #evenement attaquer\n  kingdom.create_pending_mission(\"escarmouche\")\n\n  \n   \nelse:\n  pe = PendingEvent(Event.objects.get(slug=\"getaffront_diplomatie_kingdomfailure\"),kingdom=kingdom,started=None)\n  pe.save()\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\n  pe = PendingEvent(Event.objects.get(slug=\"getaffront_diplomatie_targetfailure\"),kingdom=target,started=None)\n  pe.save()\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\nkingdom.money-=25;  ", 
     "value_description": "Valeur :", 
     "on_start": " ", 
     "has_target": true, 
@@ -42216,7 +42216,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": "if (grids['mari'][0].last_name==kingdom.user.username or grids['femme'][0].last_name==kingdom.user.username):\n  prix=5*kingdom.folk_set.filter(mission__isnull=True).count()\n  if kingdom.money<prix:\n    status=\"Vous n'avez pas assez d'argent pour payer le banquet\"\n    stop()\n  else:\n    kingdom.money-=prix\n    kingdom.save()\ngrids['mari'][0].spouse = grids['femme'][0]\ngrids['femme'][0].spouse = grids['mari'][0]\ngrids['mari'][0].save()\ngrids['femme'][0].save()\nif grids['mari'][0]==folks[3] and grids['femme'][0]==folks[2]:\n  kingdom.set_value(\"tuto_mariage_fait\",True)\n  pe=kingdom.create_pending_event(\"banquet\")\n  pe.set_value(\"banquet_marriage_tuto\",True)\n  pe.start()\n  \n", 
+    "on_start": "if (grids['mari'][0].last_name == kingdom.user.username or grids['femme'][0].last_name == kingdom.user.username):\n  prix = 5*folks.filter(mission__isnull=True).count()\n  if kingdom.money < prix:\n    status=\"Vous n'avez pas assez d'argent pour payer le banquet\"\n    stop()\n  else:\n    kingdom.money -= prix\n    kingdom.save()\ngrids['mari'][0].spouse = grids['femme'][0]\ngrids['femme'][0].spouse = grids['mari'][0]\ngrids['mari'][0].save()\ngrids['femme'][0].save()\nif grids['mari'][0]==folks[3] and grids['femme'][0]==folks[2]:\n  kingdom.set_value(\"tuto_mariage_fait\",True)\n  pe=kingdom.create_pending_event(\"banquet\")\n  pe.set_value(\"banquet_marriage_tuto\",True)\n  pe.start()\n  \n", 
     "has_target": false, 
     "is_team": false, 
     "title": 3, 
@@ -42444,7 +42444,7 @@
     "target_list": "param = Kingdom.objects.filter(offended_set__offender=kingdom)", 
     "text": "Je suis quelqu'un de suspicieux. Je veux les espionner", 
     "has_value": false, 
-    "on_resolution": "a = 0\nfor folk in grids['espion']:\n  a += folk.plot\nd = 0\ntry :\n  d += target.get_folk_in_title(\"maitre_espion\").plot *3\nexcept:\n  pass \nd += sum_folks(Folk.objects.filter(kingdom=kingdom, mission = None, birth__gte= datetime.now() - timedelta(days=C(\"MAJORITE\"))), \"plot\")\nd *= 0.7\n\nmarge = min(100, 100 * 4/float(3) * 1/float(2) * ( 1 + ( (a-d) / float((a+d)) ) ) )\n\nmoney = target.money + max(-target.money, target.money * random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100)))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\nfolk = max(5, min(target.folk_set.count() * incertitude, target.prestige/10))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\npopulation =  max(5, min(target.population * incertitude, call_function(\"population_max\",kingdom=target)))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\narchers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"archer\").count() * incertitude, folk * 2/3))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\npiquiers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"piquier\").count() * incertitude, folk * 2/3))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\ncavaliers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"cavalier\").count() * incertitude, folk * 2/3))\n\npe = PendingEvent(event = Event.objects.get(slug=\"rapport_espionnage\"), kingdom=kingdom, started=None)\npe.save()\npe.set_value(\"money\", money)\npe.set_value(\"folk\", folk)\npe.set_value(\"population\", population)\npe.set_value(\"piquiers\", piquiers)\npe.set_value(\"cavaliers\", cavaliers)\npe.set_value(\"archers\", archers)\npe.set_value(\"target\", target)\npe.start()\n", 
+    "on_resolution": "a = 0\nfor folk in grids['espion']:\n  a += folk.plot\nd = 0\ntry :\n  d += target.get_folk_in_title(\"maitre_espion\").plot *3\nexcept:\n  pass \nd += sum_folks(folks.filter(mission = None, birth__gte= datetime.now() - timedelta(days=C(\"MAJORITE\"))), \"plot\")\nd *= 0.7\n\nmarge = min(100, 100 * 4/float(3) * 1/float(2) * ( 1 + ( (a-d) / float((a+d)) ) ) )\n\nmoney = target.money + max(-target.money, target.money * random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100)))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\nfolk = max(5, min(target.folk_set.count() * incertitude, target.prestige/10))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\npopulation =  max(5, min(target.population * incertitude, call_function(\"population_max\",kingdom=target)))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\narchers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"archer\").count() * incertitude, folk * 2/3))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\npiquiers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"piquier\").count() * incertitude, folk * 2/3))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\ncavaliers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"cavalier\").count() * incertitude, folk * 2/3))\n\npe = PendingEvent(event = Event.objects.get(slug=\"rapport_espionnage\"), kingdom=kingdom, started=None)\npe.save()\npe.set_value(\"money\", money)\npe.set_value(\"folk\", folk)\npe.set_value(\"population\", population)\npe.set_value(\"piquiers\", piquiers)\npe.set_value(\"cavaliers\", cavaliers)\npe.set_value(\"archers\", archers)\npe.set_value(\"target\", target)\npe.start()\n", 
     "value_description": " ", 
     "on_start": "\n", 
     "has_target": true, 
@@ -42536,9 +42536,9 @@
     "target_list": "\n", 
     "text": "Organisons un joyeux \u00e9v\u00e9nement !", 
     "has_value": false, 
-    "on_resolution": "pe = PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"banquet\"), started=None)\npe.save()\npe.set_value(\"raison\", \"initiative\")\npe.start()\n", 
+    "on_resolution": "kingdom.create_pending_event(\"banquet\")\npe.set_value(\"raison\", \"initiative\")\npe.start()\n", 
     "value_description": "Valeur :", 
-    "on_start": "nb_convives = Folk.objects.filter(kingdom=kingdom, mission=None).count()\nif kingdom.money < nb_convives * 2:\n  status = \"Vous n'avez pas les moyens d'organiser un banquet de cette envergure\"\n  if sum_folks(affected, \"diplomacy\") <= 10:\n    status = \"Les convives ne seront pas disponibles, il manquent probablement de motivation\"\nif status != \"ok\":\n  kingdom.money -= nb_convives * 2\n  kingdom.save()\n", 
+    "on_start": "nb_convives = folks.filter(mission=None).count()\nif kingdom.money < nb_convives * 2:\n  status = \"Vous n'avez pas les moyens d'organiser un banquet de cette envergure\"\n  if sum_folks(affected, \"diplomacy\") <= 10:\n    status = \"Les convives ne seront pas disponibles, il manquent probablement de motivation\"\nif status != \"ok\":\n  kingdom.money -= nb_convives * 2\n  kingdom.save()\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 4, 
@@ -46585,7 +46585,7 @@
     "message": "Grace au soutien du Roi de France, ma famille s'est install\u00e9e \u00e0 {{dynasty}}, la demeure de mes anc\u00eatres. J'ai d\u00e9bours\u00e9 85 \u00e9cus pour entamer des r\u00e9parations et recruter des serviteurs.", 
     "event": 6, 
     "condition": " ", 
-    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchatelain.plot += 1\nchatelain.save()\n\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_intro_choixintrigue\")).start()"
+    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchatelain.plot += 1\nchatelain.save()\n\nparam.next_event(\"tuto_intro_choixintrigue\").start()"
   }
 },
 {
@@ -46684,7 +46684,7 @@
     "message": "", 
     "event": 14, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_recrutement_4\")).start()\n"
+    "on_fire": "param.next_event(\"tuto_recrutement_4\").start()\n"
   }
 },
 {
@@ -46717,7 +46717,7 @@
     "message": "", 
     "event": 17, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_potsdevin_2\")).start()\n"
+    "on_fire": "param.next_event(\"tuto_potsdevin_2\").start()\n"
   }
 },
 {
@@ -46761,7 +46761,7 @@
     "message": "J'ai emprunt\u00e9 100 \u00e9cus. Dans deux ans, 125 devront \u00eatre rembours\u00e9s.", 
     "event": 21, 
     "condition": " ", 
-    "on_fire": "kingdom.money += 100\nkingdom.save()\nparam.pending_event.next_event(Event.objects.get(slug=\"emprunt_due\"))\nparam.started = datetime.now() + timedelta(days=2)\nparam.save()"
+    "on_fire": "kingdom.money += 100\nkingdom.save()\nparam.next_event(\"emprunt_due\")\nparam.started = datetime.now() + timedelta(days=2)\nparam.save()"
   }
 },
 {
@@ -46772,7 +46772,7 @@
     "message": "{% if kingdom.money >= 125 %} J'ai rembours\u00e9 ma dette. -125 \u00e9cus{% else %}Incapable de rembourser ma dette, j'ai promis de payer 150 \u00e9cus comptant dans un an jour pour jour. {% endif %}", 
     "event": 22, 
     "condition": " ", 
-    "on_fire": "if kingdom.money >= 125:\n  kingdom.money -= 125\n  kingdom.save()\nelse:\n  param.pending_event.next_event(Event.objects.get(slug=\"emprunt_overdue\"))\n  param.started = datetime.now() + timedelta(days=2)\n  param.save()\n"
+    "on_fire": "if kingdom.money >= 125:\n  kingdom.money -= 125\n  kingdom.save()\nelse:\n  param.next_event(\"emprunt_overdue\")\n  param.started = datetime.now() + timedelta(days=2)\n  param.save()\n"
   }
 },
 {
@@ -46827,7 +46827,7 @@
     "message": null, 
     "event": 27, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_eglise_2\")).start()"
+    "on_fire": "param.next_event(\"tuto_eglise_2\").start()"
   }
 },
 {
@@ -46838,7 +46838,7 @@
     "message": null, 
     "event": 28, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_potsdevin_4\")).start()"
+    "on_fire": "param.next_event(\"tuto_potsdevin_4\").start()"
   }
 },
 {
@@ -46871,7 +46871,7 @@
     "message": "", 
     "event": 31, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_potsdevin_5\")).start()"
+    "on_fire": "param.next_event(\"tuto_potsdevin_5\").start()"
   }
 },
 {
@@ -46882,7 +46882,7 @@
     "message": "", 
     "event": 32, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_banquet_2\")).start() "
+    "on_fire": "param.next_event(\"tuto_banquet_2\").start() "
   }
 },
 {
@@ -46893,7 +46893,7 @@
     "message": "", 
     "event": 33, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_banquet_3\")).start()  "
+    "on_fire": "param.next_event(\"tuto_banquet_3\").start()  "
   }
 },
 {
@@ -46904,7 +46904,7 @@
     "message": "", 
     "event": 34, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_banquet_4\")).start()  "
+    "on_fire": "param.next_event(\"tuto_banquet_4\").start()  "
   }
 },
 {
@@ -46937,7 +46937,7 @@
     "message": "", 
     "event": 38, 
     "condition": "  ", 
-    "on_fire": "if param.get_value(\"vainqueur_est_attaquant\"):\n  param.pending_event.next_event(Event.objects.get(slug=\"escarmouche_victoire\")).start()\nelse:\n  param.pending_event.next_event(Event.objects.get(slug=\"escarmouche_defaite\")).start()"
+    "on_fire": "if param.get_value(\"vainqueur_est_attaquant\"):\n  param.next_event(\"escarmouche_victoire\").start()\nelse:\n  param.next_event(\"escarmouche_defaite\").start()"
   }
 },
 {
@@ -46959,7 +46959,7 @@
     "message": "", 
     "event": 40, 
     "condition": " ", 
-    "on_fire": "if param.get_value(\"vainqueur_est_attaquant\"):\n  param.pending_event.next_event(Event.objects.get(slug=\"escarmouche_defaite\")).start()\nelse:\n  param.pending_event.next_event(Event.objects.get(slug=\"escarmouche_victoire\")).start()"
+    "on_fire": "if param.get_value(\"vainqueur_est_attaquant\"):\n  param.next_event(\"escarmouche_defaite\").start()\nelse:\n  param.next_event(\"escarmouche_victoire\").start()"
   }
 },
 {
@@ -46970,7 +46970,7 @@
     "message": "", 
     "event": 41, 
     "condition": " ", 
-    "on_fire": "if param.get_value(\"vainqueur_est_attaquant\"):\n  param.pending_event.next_event(Event.objects.get(slug=\"escarmouche_pillage\")).start()\n"
+    "on_fire": "if param.get_value(\"vainqueur_est_attaquant\"):\n  param.next_event(\"escarmouche_pillage\").start()\n"
   }
 },
 {
@@ -47003,7 +47003,7 @@
     "message": "Ma fille et le chevalier {{folks.3.first_name}} semble avoir un peu trop d'affection l'un pour l'autre. J'ai d\u00e9cid\u00e9 de fermer les yeux.", 
     "event": 48, 
     "condition": " ", 
-    "on_fire": "#param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fille\")).start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fille\")\npe.start()\n"
+    "on_fire": "#param.next_event(\"tuto_scandale_fille\").start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fille\")\npe.start()\n"
   }
 },
 {
@@ -47014,7 +47014,7 @@
     "message": "Mon fils s'est entich\u00e9 d'une servante. J'ai d\u00e9cid\u00e9 de fermer les yeux.", 
     "event": 47, 
     "condition": " ", 
-    "on_fire": "#param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fils\")).start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fils\")\npe.start()"
+    "on_fire": "#param.next_event(\"tuto_scandale_fils\").start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fils\")\npe.start()"
   }
 },
 {
@@ -47091,7 +47091,7 @@
     "message": null, 
     "event": 52, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fils_2\")).start()"
+    "on_fire": "param.next_event(\"tuto_scandale_fils_2\").start()"
   }
 },
 {
@@ -47157,7 +47157,7 @@
     "message": null, 
     "event": 55, 
     "condition": "  ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fille_3\")).start()  "
+    "on_fire": "param.next_event(\"tuto_scandale_fille_3\").start()  "
   }
 },
 {
@@ -47168,7 +47168,7 @@
     "message": null, 
     "event": 53, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fils_3\")).start()  "
+    "on_fire": "param.next_event(\"tuto_scandale_fils_3\").start()  "
   }
 },
 {
@@ -47179,7 +47179,7 @@
     "message": "", 
     "event": 53, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fils_4\")).start()  "
+    "on_fire": "param.next_event(\"tuto_scandale_fils_4\").start()  "
   }
 },
 {
@@ -47190,7 +47190,7 @@
     "message": null, 
     "event": 54, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fils_5\")).start()"
+    "on_fire": "param.next_event(\"tuto_scandale_fils_5\").start()"
   }
 },
 {
@@ -47201,7 +47201,7 @@
     "message": null, 
     "event": 54, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fils_choixservante\")).start()"
+    "on_fire": "param.next_event(\"tuto_scandale_fils_choixservante\").start()"
   }
 },
 {
@@ -47212,7 +47212,7 @@
     "message": "J'ai convaincu mon fils de garder secr\u00e8te sa liaison avec une des servante du ch\u00e2teau.", 
     "event": 62, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_bastard_revenge\")).start()\n"
+    "on_fire": "param.next_event(\"tuto_bastard_revenge\").start()\n"
   }
 },
 {
@@ -47234,7 +47234,7 @@
     "message": null, 
     "event": 63, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fils_choixservante\")).start() "
+    "on_fire": "param.next_event(\"tuto_scandale_fils_choixservante\").start() "
   }
 },
 {
@@ -47267,7 +47267,7 @@
     "message": "Il se pourrait que ma fille {{folk.2.first_name}} et mon ami le chevalier {{folk.3.first_name}} partagent une affection d\u00e9plac\u00e9e. Je ferme les yeux pour l'instant.", 
     "event": 50, 
     "condition": " ", 
-    "on_fire": "#param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fille\")).start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fille\")\npe.start()\n"
+    "on_fire": "#param.next_event(\"tuto_scandale_fille\").start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fille\")\npe.start()\n"
   }
 },
 {
@@ -47278,7 +47278,7 @@
     "message": "", 
     "event": 67, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fille_warning_4\")).start()\n"
+    "on_fire": "param.next_event(\"tuto_scandale_fille_warning_4\").start()\n"
   }
 },
 {
@@ -47289,7 +47289,7 @@
     "message": "", 
     "event": 67, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fille_warning_5\")).start()\n"
+    "on_fire": "param.next_event(\"tuto_scandale_fille_warning_5\").start()\n"
   }
 },
 {
@@ -47399,7 +47399,7 @@
     "message": "", 
     "event": 55, 
     "condition": "  ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_scandale_fille_4\")).start()  \n"
+    "on_fire": "param.next_event(\"tuto_scandale_fille_4\").start()  \n"
   }
 },
 {
@@ -47553,7 +47553,7 @@
     "message": "", 
     "event": 100, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"banquet_fantome\")).start()\n"
+    "on_fire": "param.next_event(\"banquet_fantome\").start()\n"
   }
 },
 {
@@ -47564,7 +47564,7 @@
     "message": "", 
     "event": 100, 
     "condition": " ", 
-    "on_fire": "convive = param.pending_event.get_value(\"convive1\")\nparam.pending_event.set_value(\"convive\", convive)\nchatelain = kingdom.get_folk_in_title(\"chatelain\")\n\nif convive.diplomacy - chatelain.diplomacy >= 7:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_conversation_learning\")).start()\nelif convive.loyalty <= 30 or chatelain.diplomacy <= 5 :\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_conversation_failure\")).start()\nelif chatelain.diplomacy - convive.diplomacy >= 7:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_conversation_teaching\")).start()\nelse:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_conversation_success\")).start()\n"
+    "on_fire": "convive = param.get_value(\"convive1\")\nparam.set_value(\"convive\", convive)\nchatelain = kingdom.get_folk_in_title(\"chatelain\")\n\nif convive.diplomacy - chatelain.diplomacy >= 7:\n  param.next_event(\"banquet_conversation_learning\").start()\nelif convive.loyalty <= 30 or chatelain.diplomacy <= 5 :\n  param.next_event(\"banquet_conversation_failure\").start()\nelif chatelain.diplomacy - convive.diplomacy >= 7:\n  param.next_event(\"banquet_conversation_teaching\").start()\nelse:\n  param.next_event(\"banquet_conversation_success\").start()\n"
   }
 },
 {
@@ -47575,7 +47575,7 @@
     "message": "", 
     "event": 100, 
     "condition": " ", 
-    "on_fire": "convive = param.pending_event.get_value(\"convive2\")\nparam.pending_event.set_value(\"convive\", convive)\nchatelain = kingdom.get_folk_in_title(\"chatelain\")\n\nif convive.diplomacy - chatelain.diplomacy >= 7:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_conversation_learning\")).start()\nelif convive.loyalty <= 30 or chatelain.diplomacy <= 5 :\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_conversation_failure\")).start()\nelif chatelain.diplomacy - convive.diplomacy >= 7:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_conversation_teaching\")).start()\nelse:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_conversation_success\")).start()"
+    "on_fire": "convive = param.get_value(\"convive2\")\nparam.set_value(\"convive\", convive)\nchatelain = kingdom.get_folk_in_title(\"chatelain\")\n\nif convive.diplomacy - chatelain.diplomacy >= 7:\n  param.next_event(\"banquet_conversation_learning\").start()\nelif convive.loyalty <= 30 or chatelain.diplomacy <= 5 :\n  param.next_event(\"banquet_conversation_failure\").start()\nelif chatelain.diplomacy - convive.diplomacy >= 7:\n  param.next_event(\"banquet_conversation_teaching\").start()\nelse:\n  param.next_event(\"banquet_conversation_success\").start()"
   }
 },
 {
@@ -47586,7 +47586,7 @@
     "message": "", 
     "event": 101, 
     "condition": "convive = param.get_value(\"convive\")\nchatelain = kingdom.get_folk_in_title(\"chatelain\")\nif convive.loyalty <= 30 or chatelain.diplomacy <= 3:\n  status = \"trop d'estime pour faire ca\"\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"banquet_fantome\")).start()"
+    "on_fire": "param.next_event(\"banquet_fantome\").start()"
   }
 },
 {
@@ -47597,7 +47597,7 @@
     "message": "{{convive}} n'a aucune intention de parler avec moi. ```-2 de Loyaut\u00e9```", 
     "event": 101, 
     "condition": "convive = param.get_value(\"convive\")\nchatelain = kingdom.get_folk_in_title(\"chatelain\")\nif convive.loyalty > 30 and chatelain.diplomacy < 3:\n  status = \"Il ne m\u00e9rite pas tant\"\n", 
-    "on_fire": "convive = param.pending_event.get_value(\"convive\")\nconvive.loyalty -= 2\nconvive.save()\nparam.pending_event.next_event(Event.objects.get(slug=\"banquet_fantome\")).start()"
+    "on_fire": "convive = param.get_value(\"convive\")\nconvive.loyalty -= 2\nconvive.save()\nparam.next_event(\"banquet_fantome\").start()"
   }
 },
 {
@@ -47608,7 +47608,7 @@
     "message": "J'ai beaucoup apprit de ma conversation avec {{convive}}. ```+1 de Dimploatie```", 
     "event": 102, 
     "condition": " ", 
-    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchatelain.diplomacy += 1\nchatelain.save()\nparam.pending_event.next_event(Event.objects.get(slug=\"banquet_fantome\")).start()\n"
+    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchatelain.diplomacy += 1\nchatelain.save()\nparam.next_event(\"banquet_fantome\").start()\n"
   }
 },
 {
@@ -47619,7 +47619,7 @@
     "message": "J'ai mystifi\u00e9 {{convive}} gr\u00e2ce \u00e0 mes talents d'orateur. ```+5 en Loyaut\u00e9, et +1 en Diplomatie.```", 
     "event": 103, 
     "condition": " ", 
-    "on_fire": "convive.loyalty += 5\nconvive.diplomacy += 1\nconvive.save()\nparam.pending_event.next_event(Event.objects.get(slug=\"banquet_fantome\")).start()"
+    "on_fire": "convive.loyalty += 5\nconvive.diplomacy += 1\nconvive.save()\nparam.next_event(\"banquet_fantome\").start()"
   }
 },
 {
@@ -47641,7 +47641,7 @@
     "message": "", 
     "event": 105, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"banquet_ending\")).start()\n"
+    "on_fire": "param.next_event(\"banquet_ending\").start()\n"
   }
 },
 {
@@ -47652,7 +47652,7 @@
     "message": "", 
     "event": 105, 
     "condition": "try:\n  param.get_value(\"danseuse1\")\nexcept:\n  status =\"il n'y a pas de deuxi\u00e8me danseuse\"", 
-    "on_fire": "danseuse = param.pending_event.get_value(\"danseuse1\")\nparam.pending_event.set_value(\"danseuse\", danseuse)\nchatelain = kingdom.get_folk_in_title(\"chatelain\")\n\nif danseuse.loyalty <= 30 :\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_danse_rateau\")).start()\nelif chatelain.diplomacy <= 7:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_danse_failure\")).start()\nelse:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_danse_success\")).start()"
+    "on_fire": "danseuse = param.get_value(\"danseuse1\")\nparam.set_value(\"danseuse\", danseuse)\nchatelain = kingdom.get_folk_in_title(\"chatelain\")\n\nif danseuse.loyalty <= 30 :\n  param.next_event(\"banquet_danse_rateau\").start()\nelif chatelain.diplomacy <= 7:\n  param.next_event(\"banquet_danse_failure\").start()\nelse:\n  param.next_event(\"banquet_danse_success\").start()"
   }
 },
 {
@@ -47663,7 +47663,7 @@
     "message": "", 
     "event": 105, 
     "condition": "try:\n  param.get_value(\"danseuse2\")\nexcept:\n  status =\"il n'y a pas de deuxi\u00e8me danseuse\"\n", 
-    "on_fire": "danseuse = param.pending_event.get_value(\"danseuse2\")\nparam.pending_event.set_value(\"danseuse\", danseuse)\nchatelain = kingdom.get_folk_in_title(\"chatelain\")\n\nif danseuse.loyalty <= 30 :\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_danse_rateau\")).start()\nelif chatelain.diplomacy <= 7:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_danse_failure\")).start()\nelse:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_danse_success\")).start()\n"
+    "on_fire": "danseuse = param.get_value(\"danseuse2\")\nparam.set_value(\"danseuse\", danseuse)\nchatelain = kingdom.get_folk_in_title(\"chatelain\")\n\nif danseuse.loyalty <= 30 :\n  param.next_event(\"banquet_danse_rateau\").start()\nelif chatelain.diplomacy <= 7:\n  param.next_event(\"banquet_danse_failure\").start()\nelse:\n  param.next_event(\"banquet_danse_success\").start()\n"
   }
 },
 {
@@ -47674,7 +47674,7 @@
     "message": "Je me suis ridiculis\u00e9 en essayant de danser avec {{danseuse}}.{% if title.chatelain.diplomacy >= 5 %}\r\n```\r\n-2 en Loyaut\u00e9\r\n``` \r\n{% else %}\r\n```\r\n-3 en Loyaut\u00e9, -1 en Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n``` \r\n{% endif %}", 
     "event": 106, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"banquet_ending\")).start()\n"
+    "on_fire": "param.next_event(\"banquet_ending\").start()\n"
   }
 },
 {
@@ -47685,7 +47685,7 @@
     "message": "J'ai dans\u00e9 avec {{danseuse}}.{% if title.chatelain.diplomacy >= 15 %}\r\n```\r\n+4 en Loyaut\u00e9, +1 en Loyaut\u00e9 g\u00e9n\u00e9rale\r\n``` \r\n{% else %}\r\n```\r\n+2 en Loyaut\u00e9\r\n``` \r\n{% endif %}", 
     "event": 107, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"banquet_ending\")).start()\n"
+    "on_fire": "param.next_event(\"banquet_ending\").start()\n"
   }
 },
 {
@@ -47707,7 +47707,7 @@
     "message": "", 
     "event": 109, 
     "condition": "if kingdom.get_folk_in_title(\"chatelain\").diplomacy > 10:\n  status=\"pas assez de diplomatie pour ne pas le vexer\"\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"banquet_beuverie_vexe\")).start()\n"
+    "on_fire": "param.next_event(\"banquet_beuverie_vexe\").start()\n"
   }
 },
 {
@@ -47718,7 +47718,7 @@
     "message": "", 
     "event": 109, 
     "condition": "if kingdom.get_folk_in_title(\"chatelain\").diplomacy <= 10:\n  status=\"trop de diplomatie pour le vexer\"\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"banquet_ending\")).start()\n"
+    "on_fire": "param.next_event(\"banquet_ending\").start()\n"
   }
 },
 {
@@ -47729,7 +47729,7 @@
     "message": "J'ai refus\u00e9 de boire avec {{soiffard}}.```\r\n-1 de Loyaut\u00e9.\r\n```", 
     "event": 110, 
     "condition": " ", 
-    "on_fire": "soiffard = param.pending_event.get_value(\"soiffard\")\nsoiffard.loyalty -= 1\nsoiffard.save()\nparam.pending_event.next_event(Event.objects.get(slug=\"banquet_ending\")).start()\n"
+    "on_fire": "soiffard = param.get_value(\"soiffard\")\nsoiffard.loyalty -= 1\nsoiffard.save()\nparam.next_event(\"banquet_ending\").start()\n"
   }
 },
 {
@@ -47740,7 +47740,7 @@
     "message": "J'ai bu une coupe avec {{soiffard}}. ```+1 de Loyaut\u00e9```", 
     "event": 111, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"banquet_ending\")).start()"
+    "on_fire": "param.next_event(\"banquet_ending\").start()"
   }
 },
 {
@@ -47751,7 +47751,7 @@
     "message": "J'ai bu une coupe avec {{soiffard}}... ```+1 de Loyaut\u00e9```", 
     "event": 111, 
     "condition": " ", 
-    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nsoiffard = param.get_value(\"soiffard\")\nif chatelain.fight <= 9:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_beuverie_pompete\")).start()\nelif soiffard.fight <=9:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_beuverie_success\")).start()\nelse:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_beuverie_3\")).start()\n"
+    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nsoiffard = param.get_value(\"soiffard\")\nif chatelain.fight <= 9:\n  param.next_event(\"banquet_beuverie_pompete\").start()\nelif soiffard.fight <=9:\n  param.next_event(\"banquet_beuverie_success\").start()\nelse:\n  param.next_event(\"banquet_beuverie_3\").start()\n"
   }
 },
 {
@@ -47762,7 +47762,7 @@
     "message": "...puis une deuxi\u00e8me. ```+1 de Loyaut\u00e9```", 
     "event": 112, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"banquet_ending\")).start()\n"
+    "on_fire": "param.next_event(\"banquet_ending\").start()\n"
   }
 },
 {
@@ -47773,7 +47773,7 @@
     "message": "...puis une deuxi\u00e8me... ```+1 de Loyaut\u00e9```", 
     "event": 112, 
     "condition": " ", 
-    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nsoiffard = param.get_value(\"soiffard\")\nif soiffard.fight <=10:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_beuverie_success\")).start()\nelse:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_beuverie_pompete\")).start()\n"
+    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nsoiffard = param.get_value(\"soiffard\")\nif soiffard.fight <=10:\n  param.next_event(\"banquet_beuverie_success\").start()\nelse:\n  param.next_event(\"banquet_beuverie_pompete\").start()\n"
   }
 },
 {
@@ -47784,7 +47784,7 @@
     "message": "...puis une de plus, qui m'a fait tourner la t\u00eate. ```+1 de Loyaut\u00e9```", 
     "event": 113, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"banquet_ending\")).start()"
+    "on_fire": "param.next_event(\"banquet_ending\").start()"
   }
 },
 {
@@ -47795,7 +47795,7 @@
     "message": "...puis une de plus, qui m'a fait tourner la t\u00eate... ```+1 de Loyaut\u00e9```", 
     "event": 113, 
     "condition": " ", 
-    "on_fire": "soiffard = param.pending_event.get_value(\"soiffard\")\nif soiffard.fight <= 11:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_beuverie_success\")).start()\nelse:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_beuverie_ivre\")).start()\n"
+    "on_fire": "soiffard = param.get_value(\"soiffard\")\nif soiffard.fight <= 11:\n  param.next_event(\"banquet_beuverie_success\").start()\nelse:\n  param.next_event(\"banquet_beuverie_ivre\").start()\n"
   }
 },
 {
@@ -47806,7 +47806,7 @@
     "message": "...et une derni\u00e8re qui a eut raison de moi. Je suis all\u00e9 me coucher. ```+1 de Loyaut\u00e9```", 
     "event": 114, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"banquet_beuverie_out\")).start()\n"
+    "on_fire": "param.next_event(\"banquet_beuverie_out\").start()\n"
   }
 },
 {
@@ -47817,7 +47817,7 @@
     "message": "...et une derni\u00e8re qui est tout ce dont je me souviens. ```+1 de Loyaut\u00e9```", 
     "event": 114, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"banquet_beuverie_blackout\")).start()\n"
+    "on_fire": "param.next_event(\"banquet_beuverie_blackout\").start()\n"
   }
 },
 {
@@ -47839,7 +47839,7 @@
     "message": "Le banquet s'est termin\u00e9 sans moi.", 
     "event": 115, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"chatelain_getfetard\")).start()\n"
+    "on_fire": "param.next_event(\"chatelain_getfetard\").start()\n"
   }
 },
 {
@@ -47916,7 +47916,7 @@
     "message": "J'ai port\u00e9 un toast. {% if chatelain.diplomacy >= 13 %}\r\n```\r\n+2 de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n```\r\n{% else %}\r\n```\r\n+1 de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n```\r\n{% endif %}", 
     "event": 121, 
     "condition": " ", 
-    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nif chatelain.diplomacy >= 13:\n  call_function(\"gain_loyaute_general\", kingdom=kingdom, gain_min=1, gain_max=3)\nelse:\n  call_function(\"gain_loyaute_general\", kingdom=kingdom, gain_min=0, gain_max=2)\nparam.pending_event.next_event(Event.objects.get(slug=\"banquet_ending\")).start()\n"
+    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nif chatelain.diplomacy >= 13:\n  call_function(\"gain_loyaute_general\", kingdom=kingdom, gain_min=1, gain_max=3)\nelse:\n  call_function(\"gain_loyaute_general\", kingdom=kingdom, gain_min=0, gain_max=2)\nparam.next_event(\"banquet_ending\").start()\n"
   }
 },
 {
@@ -47927,7 +47927,7 @@
     "message": "{{loyaliste}} a port\u00e9 un toast en ma faveur. ```+1 de loyaut\u00e9 g\u00e9n\u00e9rale```", 
     "event": 122, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"banquet_ending\")).start()"
+    "on_fire": "param.next_event(\"banquet_ending\").start()"
   }
 },
 {
@@ -47938,7 +47938,7 @@
     "message": "{{fucker}} m'a raill\u00e9 devant toute ma cour. ```-1 de Loyaut\u00e9 g\u00e9n\u00e9rale```", 
     "event": 123, 
     "condition": " ", 
-    "on_fire": "call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=0, perte_max=2)\nparam.pending_event.next_event(Event.objects.get(slug=\"banquet_ending\")).start()\n"
+    "on_fire": "call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=0, perte_max=2)\nparam.next_event(\"banquet_ending\").start()\n"
   }
 },
 {
@@ -47971,7 +47971,7 @@
     "message": "", 
     "event": 105, 
     "condition": "if kingdom.get_folk_in_title(\"chatelain\").spouse == None:\n  status = \"Le chatelain n'a pas d'\u00e9pouse\"\n", 
-    "on_fire": "danseuse = title.chatelain.spouse\nparam.pending_event.set_value(\"danseuse\", danseuse)\nchatelain = kingdom.get_folk_in_title(\"chatelain\")\n\nif danseuse.loyalty <= 30 :\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_danse_rateau\")).start()\nelif chatelain.diplomacy <= 7:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_danse_failure\")).start()\nelse:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_danse_success\")).start()\n\n\n"
+    "on_fire": "danseuse = title.chatelain.spouse\nparam.set_value(\"danseuse\", danseuse)\nchatelain = kingdom.get_folk_in_title(\"chatelain\")\n\nif danseuse.loyalty <= 30 :\n  param.next_event(\"banquet_danse_rateau\").start()\nelif chatelain.diplomacy <= 7:\n  param.next_event(\"banquet_danse_failure\").start()\nelse:\n  param.next_event(\"banquet_danse_success\").start()\n\n\n"
   }
 },
 {
@@ -47982,7 +47982,7 @@
     "message": "Les r\u00e9parations de {{dynasty}} sont termin\u00e9e. Un grand jour pour notre famille.", 
     "event": 11, 
     "condition": "\n", 
-    "on_fire": "#param.pending_event.next_event(Event.objects.get(slug=\"tuto_ennemi_casusbelli\")).start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_ennemi_casusbelli\")\npe.start()\n"
+    "on_fire": "#param.next_event(\"tuto_ennemi_casusbelli\").start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_ennemi_casusbelli\")\npe.start()\n"
   }
 },
 {
@@ -47993,7 +47993,7 @@
     "message": "", 
     "event": 109, 
     "condition": "\n", 
-    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nsoiffard = param.pending_event.get_value(\"soiffard\")\nif soiffard.fight <= 6:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_beuverie_success\")).start() \nelif chatelain.fight <= 6:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_beuverie_pompete\")).start()\nelse:\n  param.pending_event.next_event(Event.objects.get(slug=\"banquet_beuverie_2\")).start()"
+    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nsoiffard = param.get_value(\"soiffard\")\nif soiffard.fight <= 6:\n  param.next_event(\"banquet_beuverie_success\").start() \nelif chatelain.fight <= 6:\n  param.next_event(\"banquet_beuverie_pompete\").start()\nelse:\n  param.next_event(\"banquet_beuverie_2\").start()"
   }
 },
 {
@@ -48026,7 +48026,7 @@
     "message": "", 
     "event": 132, 
     "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_2\")).start()"
+    "on_fire": "param.next_event(\"tuto_soeurette_2\").start()"
   }
 },
 {
@@ -48081,7 +48081,7 @@
     "message": "", 
     "event": 134, 
     "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_4\")).start()\n\nsoeur = param.get_value(\"soeur\")\n\nsoeur.loyalty += 10\n\nsoeur.save()\n"
+    "on_fire": "param.next_event(\"tuto_soeurette_4\").start()\n\nsoeur = param.get_value(\"soeur\")\n\nsoeur.loyalty += 10\n\nsoeur.save()\n"
   }
 },
 {
@@ -48092,7 +48092,7 @@
     "message": "", 
     "event": 134, 
     "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_4\")).start()\nsoeur = param.get_value(\"soeur\")\n\nsoeur.loyalty -= 10\n\nsoeur.save()\n"
+    "on_fire": "param.next_event(\"tuto_soeurette_4\").start()\nsoeur = param.get_value(\"soeur\")\n\nsoeur.loyalty -= 10\n\nsoeur.save()\n"
   }
 },
 {
@@ -48103,7 +48103,7 @@
     "message": "", 
     "event": 134, 
     "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_4\")).start()\nsoeur = param.get_value(\"soeur\")\n\nsoeur.loyalty -= 20\n\nsoeur.save()\n"
+    "on_fire": "param.next_event(\"tuto_soeurette_4\").start()\nsoeur = param.get_value(\"soeur\")\n\nsoeur.loyalty -= 20\n\nsoeur.save()\n"
   }
 },
 {
@@ -48147,7 +48147,7 @@
     "message": "", 
     "event": 136, 
     "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_accept\")).start()"
+    "on_fire": "param.next_event(\"tuto_soeurette_accept\").start()"
   }
 },
 {
@@ -48158,7 +48158,7 @@
     "message": "", 
     "event": 136, 
     "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_6\")).start()\nsoeur = param.get_value(\"soeur\")\n\nsoeur.loyalty -= 10\n\nsoeur.save()\n"
+    "on_fire": "param.next_event(\"tuto_soeurette_6\").start()\nsoeur = param.get_value(\"soeur\")\n\nsoeur.loyalty -= 10\n\nsoeur.save()\n"
   }
 },
 {
@@ -48169,7 +48169,7 @@
     "message": "", 
     "event": 137, 
     "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_surrend\")).start()"
+    "on_fire": "param.next_event(\"tuto_soeurette_surrend\").start()"
   }
 },
 {
@@ -48180,7 +48180,7 @@
     "message": "", 
     "event": 137, 
     "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_compromize\")).start()"
+    "on_fire": "param.next_event(\"tuto_soeurette_compromize\").start()"
   }
 },
 {
@@ -48191,7 +48191,7 @@
     "message": "", 
     "event": 137, 
     "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_soeurette_castout\")).start()"
+    "on_fire": "param.next_event(\"tuto_soeurette_castout\").start()"
   }
 },
 {
@@ -48213,7 +48213,7 @@
     "message": "{{soeur}}, {{mioche}} et {{chiard}} ont rejoint ma cour.", 
     "event": 139, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_education\")).start()"
+    "on_fire": "param.next_event(\"tuto_education\").start()"
   }
 },
 {
@@ -48224,7 +48224,7 @@
     "message": "{{soeur}}, {{mioche}} et {{chiard}} ont rejoint ma cour.", 
     "event": 140, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_education\")).start()"
+    "on_fire": "param.next_event(\"tuto_education\").start()"
   }
 },
 {
@@ -48235,7 +48235,7 @@
     "message": "J'ai fait mettre ma soeur {{soeur.first_name}} et ses enfants \u00e0 la porte.", 
     "event": 141, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"bastard_revenge\")).start()"
+    "on_fire": "param.next_event(\"bastard_revenge\").start()"
   }
 },
 {
@@ -48246,7 +48246,7 @@
     "message": "", 
     "event": 142, 
     "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_demandemariage_2\")).start()"
+    "on_fire": "param.next_event(\"tuto_demandemariage_2\").start()"
   }
 },
 {
@@ -48257,7 +48257,7 @@
     "message": "", 
     "event": 142, 
     "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_demandemariage_3\")).start()"
+    "on_fire": "param.next_event(\"tuto_demandemariage_3\").start()"
   }
 },
 {
@@ -48301,7 +48301,7 @@
     "message": "", 
     "event": 146, 
     "condition": "\n", 
-    "on_fire": "duelist_maxfight = param.pending_event.get_value(\"duelist_maxfight\")\nduelist_lessfight = param.pending_event.get_value(\"duelist_lessfight\")\nwinner = param.pending_event.get_value(\"winner\")\nloser = param.pending_event.get_value(\"loser\")\n\nif winner == duelist_maxfight:\n  param.pending_event.next_event(Event.objects.get(slug=\"duel_domestique_3\")).start()\nelse:\n  param.pending_event.next_event(Event.objects.get(slug=\"duel_domestique_4\")).start()\n"
+    "on_fire": "duelist_maxfight = param.get_value(\"duelist_maxfight\")\nduelist_lessfight = param.get_value(\"duelist_lessfight\")\nwinner = param.get_value(\"winner\")\nloser = param.get_value(\"loser\")\n\nif winner == duelist_maxfight:\n  param.next_event(\"duel_domestique_3\").start()\nelse:\n  param.next_event(\"duel_domestique_4\").start()\n"
   }
 },
 {
@@ -48312,7 +48312,7 @@
     "message": "", 
     "event": 147, 
     "condition": "\n", 
-    "on_fire": "mort = random_value(1,100)\nif mort<=40:\n  param.pending_event.next_event(Event.objects.get(slug=\"duel_domestique_kill\")).start()\nelse:\n  param.pending_event.next_event(Event.objects.get(slug=\"duel_domestique_disarm\")).start()\n"
+    "on_fire": "mort = random_value(1,100)\nif mort<=40:\n  param.next_event(\"duel_domestique_kill\").start()\nelse:\n  param.next_event(\"duel_domestique_disarm\").start()\n"
   }
 },
 {
@@ -48323,7 +48323,7 @@
     "message": "", 
     "event": 147, 
     "condition": "\n", 
-    "on_fire": "mort = random_value(1,100)\nif mort<=80:\n  param.pending_event.next_event(Event.objects.get(slug=\"duel_domestique_kill\")).start()\nelse:\n  param.pending_event.next_event(Event.objects.get(slug=\"duel_domestique_disarm\")).start()\n"
+    "on_fire": "mort = random_value(1,100)\nif mort<=80:\n  param.next_event(\"duel_domestique_kill\").start()\nelse:\n  param.next_event(\"duel_domestique_disarm\").start()\n"
   }
 },
 {
@@ -48334,7 +48334,7 @@
     "message": "", 
     "event": 147, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"duel_domestique_interrupt\")).start()"
+    "on_fire": "param.next_event(\"duel_domestique_interrupt\").start()"
   }
 },
 {
@@ -48345,7 +48345,7 @@
     "message": "", 
     "event": 148, 
     "condition": "\n", 
-    "on_fire": "mort = random_value(1,100)\nif mort<=40:\n  param.pending_event.next_event(Event.objects.get(slug=\"duel_domestique_kill\")).start()\nelse:\n  param.pending_event.next_event(Event.objects.get(slug=\"duel_domestique_disarm\")).start()"
+    "on_fire": "mort = random_value(1,100)\nif mort<=40:\n  param.next_event(\"duel_domestique_kill\").start()\nelse:\n  param.next_event(\"duel_domestique_disarm\").start()"
   }
 },
 {
@@ -48356,7 +48356,7 @@
     "message": "", 
     "event": 148, 
     "condition": "\n", 
-    "on_fire": "mort = random_value(1,100)\nif mort<=80:\n  param.pending_event.next_event(Event.objects.get(slug=\"duel_domestique_kill\")).start()\nelse:\n  param.pending_event.next_event(Event.objects.get(slug=\"duel_domestique_disarm\")).start()"
+    "on_fire": "mort = random_value(1,100)\nif mort<=80:\n  param.next_event(\"duel_domestique_kill\").start()\nelse:\n  param.next_event(\"duel_domestique_disarm\").start()"
   }
 },
 {
@@ -48367,7 +48367,7 @@
     "message": "", 
     "event": 148, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"duel_domestique_interrupt\")).start()"
+    "on_fire": "param.next_event(\"duel_domestique_interrupt\").start()"
   }
 },
 {
@@ -48444,7 +48444,7 @@
     "message": "", 
     "event": 154, 
     "condition": "\n", 
-    "on_fire": "param.set_value(\"come_from\", 2)\n#param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_3\")).start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_3\")\npe.start()"
+    "on_fire": "param.set_value(\"come_from\", 2)\n#param.next_event(\"tuto_facheux_3\").start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_3\")\npe.start()"
   }
 },
 {
@@ -48521,7 +48521,7 @@
     "message": "", 
     "event": 156, 
     "condition": "\n", 
-    "on_fire": "param.set_value(\"come_from\", 4)\n#param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_3\")).start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_3\")\npe.start()"
+    "on_fire": "param.set_value(\"come_from\", 4)\n#param.next_event(\"tuto_facheux_3\").start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_3\")\npe.start()"
   }
 },
 {
@@ -48532,7 +48532,7 @@
     "message": "Mon fils {{folk.1.first_name}} et le {{facheux}} sont \u00e0 couteaux tir\u00e9s. Je pourrais regler le probl\u00e8me en [d\u00e9barassant](mission) ma cour du chevalier.", 
     "event": 157, 
     "condition": "\n", 
-    "on_fire": "passage=param.get_value(\"passage\")\nif 5 in passage:\n  passage.append(5)\n  param.pending_event.set_value(\"passage\", passage)\n  #param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_5\")).start()\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_facheux_5\")\n  pe.start()\nelse:\n  param.pending_event.next_event(\"tuto_facheux_7\").start()\n\nif kingdom.get_folk_in_title(\"maitre_espion\") in None:\n  kingdom.unlock_title(\"maitre_espion\")\n\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")"
+    "on_fire": "passage=param.get_value(\"passage\")\nif 5 in passage:\n  passage.append(5)\n  param.set_value(\"passage\", passage)\n  #param.next_event(\"tuto_facheux_5\").start()\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_facheux_5\")\n  pe.start()\nelse:\n  param.pending_event.next_event(\"tuto_facheux_7\").start()\n\nif kingdom.get_folk_in_title(\"maitre_espion\") in None:\n  kingdom.unlock_title(\"maitre_espion\")\n\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")"
   }
 },
 {
@@ -48554,7 +48554,7 @@
     "message": "", 
     "event": 159, 
     "condition": "\n", 
-    "on_fire": "dueliste_1 = param.get_value(\"fils\")\ndueliste_2 = param.get_value(\"facheux\")\nparam.pending_event.set_value(\"dueliste_1\", dueliste_1)\nparam.pending_event.set_value(\"dueliste_2\", dueliste_2)\nparam.pending_event.next_event(Event.objects.get(slug=\"duel_domestique\")).start()"
+    "on_fire": "dueliste_1 = param.get_value(\"fils\")\ndueliste_2 = param.get_value(\"facheux\")\nparam.set_value(\"dueliste_1\", dueliste_1)\nparam.set_value(\"dueliste_2\", dueliste_2)\nparam.next_event(\"duel_domestique\").start()"
   }
 },
 {
@@ -48565,7 +48565,7 @@
     "message": "", 
     "event": 159, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_jail\")).start()"
+    "on_fire": "param.next_event(\"tuto_facheux_jail\").start()"
   }
 },
 {
@@ -48587,7 +48587,7 @@
     "message": "", 
     "event": 161, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_settle_2\")).start()"
+    "on_fire": "param.next_event(\"tuto_facheux_settle_2\").start()"
   }
 },
 {
@@ -48620,7 +48620,7 @@
     "message": "", 
     "event": 166, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_bandits_preparatifs\")).start()\n"
+    "on_fire": "param.next_event(\"tuto_bandits_preparatifs\").start()\n"
   }
 },
 {
@@ -48631,7 +48631,7 @@
     "message": "", 
     "event": 167, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_bandits_preparatifs\")).start()\n"
+    "on_fire": "param.next_event(\"tuto_bandits_preparatifs\").start()\n"
   }
 },
 {
@@ -48708,7 +48708,7 @@
     "message": "{{mari}} attend impatiemment son mariage avec {{mariee}}.", 
     "event": 175, 
     "condition": "\n", 
-    "on_fire": "pe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_mariage_fille_accepte_fantome_2\")\npe.start()\n#param.pending_event.next_event(Event.objects.get(slug=\"demandemariage_terminated\")).start()\n\n"
+    "on_fire": "pe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_mariage_fille_accepte_fantome_2\")\npe.start()\n#param.next_event(\"demandemariage_terminated\").start()\n\n"
   }
 },
 {
@@ -48719,7 +48719,7 @@
     "message": "", 
     "event": 175, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_demandemariage_3\")).start()"
+    "on_fire": "param.next_event(\"tuto_demandemariage_3\").start()"
   }
 },
 {
@@ -48741,7 +48741,7 @@
     "message": "{{mari}} et {{mariee}} ont \u00e9t\u00e9 unis devant Dieu.", 
     "event": 177, 
     "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"banquet\")).start()"
+    "on_fire": "param.next_event(\"banquet\").start()"
   }
 },
 {
@@ -48884,7 +48884,7 @@
     "message": "Mon fils {{folk.1.first_name}} et le chevalier {{facheux}} se sont disput\u00e9.", 
     "event": 154, 
     "condition": "\n", 
-    "on_fire": "param.set_value(\"come_from\", 2)\n#param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_5\")).start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_5\")\npe.start()"
+    "on_fire": "param.set_value(\"come_from\", 2)\n#param.next_event(\"tuto_facheux_5\").start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_5\")\npe.start()"
   }
 },
 {
@@ -48895,7 +48895,7 @@
     "message": "", 
     "event": 192, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_settle_3\")).start()"
+    "on_fire": "param.next_event(\"tuto_facheux_settle_3\").start()"
   }
 },
 {
@@ -48906,7 +48906,7 @@
     "message": "", 
     "event": 192, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_duel\")).start()"
+    "on_fire": "param.next_event(\"tuto_facheux_duel\").start()"
   }
 },
 {
@@ -48917,7 +48917,7 @@
     "message": "", 
     "event": 192, 
     "condition": "\n", 
-    "on_fire": "#param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_3\")).start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_3\")\npe.start()"
+    "on_fire": "#param.next_event(\"tuto_facheux_3\").start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_3\")\npe.start()"
   }
 },
 {
@@ -48928,7 +48928,7 @@
     "message": "", 
     "event": 192, 
     "condition": "if kingdom.get_folk_in_title(\"chatelain\").diplomacy<12:\n  status=\"Ce message n'apparaitra pas\"", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_settle_3\")).start()"
+    "on_fire": "param.next_event(\"tuto_facheux_settle_3\").start()"
   }
 },
 {
@@ -48950,7 +48950,7 @@
     "message": "", 
     "event": 194, 
     "condition": null, 
-    "on_fire": "passage = [3]\nparam.pending_event.set_value(\"passage\", passage)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_3\")).start()"
+    "on_fire": "passage = [3]\nparam.set_value(\"passage\", passage)\nparam.next_event(\"tuto_facheux_3\").start()"
   }
 },
 {
@@ -48983,7 +48983,7 @@
     "message": "J'ai obtenu un cassus belli envers le seigneur {{ennemi}}.", 
     "event": 204, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_casusbelli_success_2\")).start()"
+    "on_fire": "param.next_event(\"tuto_casusbelli_success_2\").start()"
   }
 },
 {
@@ -48994,7 +48994,7 @@
     "message": "Je peux maintenant [attaquer](#mission) le seigneur {{ennemi}}.", 
     "event": 205, 
     "condition": "\n", 
-    "on_fire": "#param.pending_event.next_event(Event.objects.get(slug=\"tuto_casusbelli_effective\")).start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_casusbelli_effective\")\npe.start()\n"
+    "on_fire": "#param.next_event(\"tuto_casusbelli_effective\").start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_casusbelli_effective\")\npe.start()\n"
   }
 },
 {
@@ -49016,7 +49016,7 @@
     "message": "", 
     "event": 209, 
     "condition": null, 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_duel_2\")).start()"
+    "on_fire": "param.next_event(\"tuto_facheux_duel_2\").start()"
   }
 },
 {
@@ -49027,7 +49027,7 @@
     "message": "", 
     "event": 210, 
     "condition": "\n", 
-    "on_fire": "if folks[1].fight - param.get_value(\"facheux\").fight + fuzzy(7) >= 0  :\n  param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_duel_sonwin\")).start()\nelse :\n  param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_duel_sonloose\")).start()\n"
+    "on_fire": "if folks[1].fight - param.get_value(\"facheux\").fight + fuzzy(7) >= 0  :\n  param.next_event(\"tuto_facheux_duel_sonwin\").start()\nelse :\n  param.next_event(\"tuto_facheux_duel_sonloose\").start()\n"
   }
 },
 {
@@ -49071,7 +49071,7 @@
     "message": "", 
     "event": 212, 
     "condition": "\n", 
-    "on_fire": "param.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_duel_sonloose_2\")).start()"
+    "on_fire": "param.next_event(\"tuto_facheux_duel_sonloose_2\").start()"
   }
 },
 {
@@ -49082,7 +49082,7 @@
     "message": "", 
     "event": 212, 
     "condition": "\n", 
-    "on_fire": "param.set_value(\"detourne\", False)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_duel_sonloose_2\")).start()"
+    "on_fire": "param.set_value(\"detourne\", False)\nparam.next_event(\"tuto_facheux_duel_sonloose_2\").start()"
   }
 },
 {
@@ -49093,7 +49093,7 @@
     "message": "", 
     "event": 212, 
     "condition": "if param.get_value(\"duelist_lessfight\") == folks[1]:\n  status = \"error\"\n", 
-    "on_fire": "param.set_value(\"detourne\", True)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_duel_interrupt\")).start()"
+    "on_fire": "param.set_value(\"detourne\", True)\nparam.next_event(\"tuto_facheux_duel_interrupt\").start()"
   }
 },
 {
@@ -49192,7 +49192,7 @@
     "message": "", 
     "event": 158, 
     "condition": "if param.get_value(\"come_from\") != 2:\n  status = \"ce boutton n'apparait pas\"\n", 
-    "on_fire": "param.set_value(\"come_from\", 5)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_3\")).start()"
+    "on_fire": "param.set_value(\"come_from\", 5)\nparam.next_event(\"tuto_facheux_3\").start()"
   }
 },
 {
@@ -49203,7 +49203,7 @@
     "message": "", 
     "event": 158, 
     "condition": "\n", 
-    "on_fire": "param.set_value(\"come_from\", 5)\nparam.pending_event.next_event(Event.objects.get(slug=\"tuto_facheux_7\")).start()\n"
+    "on_fire": "param.set_value(\"come_from\", 5)\nparam.next_event(\"tuto_facheux_7\").start()\n"
   }
 },
 {
@@ -100498,6 +100498,97 @@
     "change_message": "Modifi\u00e9 on_fire.", 
     "user": 38, 
     "content_type": 34
+  }
+},
+{
+  "pk": 6948, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-10T18:01:48.200", 
+    "object_repr": "MAJORITE", 
+    "object_id": "1", 
+    "change_message": "Modifi\u00e9 name.", 
+    "user": 1, 
+    "content_type": 18
+  }
+},
+{
+  "pk": 6949, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-10T18:09:06.728", 
+    "object_repr": "espionner", 
+    "object_id": "27", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionner [Espion (200)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6950, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-10T18:09:47.561", 
+    "object_repr": "getaffront_diplomatie", 
+    "object_id": "3", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0getaffront_diplomatie [chercheurs de noises (20)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6951, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-10T18:11:08.245", 
+    "object_repr": "organiser_banquet", 
+    "object_id": "31", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_banquet [Organisateurs (20)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6952, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-10T18:11:19.029", 
+    "object_repr": "getaffront_diplomatie", 
+    "object_id": "3", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0getaffront_diplomatie [chercheurs de noises (20)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6953, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-10T18:11:30.069", 
+    "object_repr": "espionner", 
+    "object_id": "27", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionner [Espion (200)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6954, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-10T18:13:04.155", 
+    "object_repr": "marier", 
+    "object_id": "17", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0marier [La femme (1)]\u00a0\u00bb. condition modifi\u00e9 pour mission grid \u00ab\u00a0marier [Le mari (1)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
   }
 },
 {
