@@ -290,7 +290,7 @@
   "fields": {
     "params": "folk:Folk le folk dont on veut d\u00e9finir l'avatar", 
     "slug": "attribuer_avatar", 
-    "on_fire": "if folk.age() < C(\"Majorite\"):\n  #Attribuer l'avatar d'enfant\n  folk.avatar = Avatar.objects.filter(sex=folk.sex).exclude(child='').order_by('?')[0]\nelse:\n  # Attribuer l'avatar d'adulte\n  caracs = {\n    'fight': folk.fight,\n    'diplomacy': folk.diplomacy,\n    'plot': folk.plot,\n    'scholarship': folk.scholarship\n  }\n\n  best_carac = sorted(caracs.items(), key=lambda c: c[1])[0]\n\n  params = {\n    best_carac[0]: Avatar.FORBIDDEN\n  }\n\n  folk.avatar = Avatar.objects.filter(sex=folk.sex, child='').exclude(**params).order_by('?')[0]\n\nfolk.save()", 
+    "on_fire": "if folk.age() < C(\"MAJORITE\"):\n  #Attribuer l'avatar d'enfant\n  folk.avatar = Avatar.objects.filter(sex=folk.sex).exclude(child='').order_by('?')[0]\nelse:\n  # Attribuer l'avatar d'adulte\n  caracs = {\n    'fight': folk.fight,\n    'diplomacy': folk.diplomacy,\n    'plot': folk.plot,\n    'scholarship': folk.scholarship\n  }\n\n  best_carac = sorted(caracs.items(), key=lambda c: c[1])[0]\n\n  params = {\n    best_carac[0]: Avatar.FORBIDDEN\n  }\n\n  folk.avatar = Avatar.objects.filter(sex=folk.sex, child='').exclude(**params).order_by('?')[0]\n\nfolk.save()", 
     "description": "Attribue un avatar \u00e0 la personne."
   }
 },

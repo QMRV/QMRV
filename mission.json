@@ -30,7 +30,7 @@
     "target_list": "param = Kingdom.objects.filter(offended_set__offender=kingdom)", 
     "text": "Aller chercher des noises \u00e0 votre voisin.\r\n\r\n\r\n[co\u00fbt 25 ecus pour lancer la mission]", 
     "has_value": false, 
-    "on_resolution": "a = 0\nfor folk in grids['chercheurs_noises']:\n  a += folk.diplomacy\nd = 0\ntry :\n  d += target.get_folk_in_title(\"diplomate\").diplomacy *3\nexcept:\n  pass\nd += sum_folks(Folk.objects.filter(kingdom=kingdom, mission = None, birth__gte= datetime.now() - timedelta(days=C(\"Majorite\"))), \"diplomacy\")\nd *= 0.3\n\n\nif a>d:\n  kingdom.add_claim(target, Claim.REACHABLE)\n  pe = PendingEvent(event=Event.objects.get(slug=\"getaffront_diplomatie_kingdomsuccess\"),kingdom=kingdom,started=None)\n  pe.save()\n  pe.set_value(\"defenseur\", target)\n  pe.start()\n  pe = PendingEvent(event=Event.objects.get(slug=\"getaffront_diplomatie_targetsuccess\"),kingdom=target,started=None)\n  pe.save()\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\n  #evenement attaquer\n  kingdom.create_pending_mission(\"escarmouche\")\n\n  \n   \nelse:\n  pe = PendingEvent(Event.objects.get(slug=\"getaffront_diplomatie_kingdomfailure\"),kingdom=kingdom,started=None)\n  pe.save()\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\n  pe = PendingEvent(Event.objects.get(slug=\"getaffront_diplomatie_targetfailure\"),kingdom=target,started=None)\n  pe.save()\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\nkingdom.money-=25;  ", 
+    "on_resolution": "a = 0\nfor folk in grids['chercheurs_noises']:\n  a += folk.diplomacy\nd = 0\ntry :\n  d += target.get_folk_in_title(\"diplomate\").diplomacy *3\nexcept:\n  pass\nd += sum_folks(Folk.objects.filter(kingdom=kingdom, mission = None, birth__gte= datetime.now() - timedelta(days=C(\"MAJORITE\"))), \"diplomacy\")\nd *= 0.3\n\n\nif a>d:\n  kingdom.add_claim(target, Claim.REACHABLE)\n  pe = PendingEvent(event=Event.objects.get(slug=\"getaffront_diplomatie_kingdomsuccess\"),kingdom=kingdom,started=None)\n  pe.save()\n  pe.set_value(\"defenseur\", target)\n  pe.start()\n  pe = PendingEvent(event=Event.objects.get(slug=\"getaffront_diplomatie_targetsuccess\"),kingdom=target,started=None)\n  pe.save()\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\n  #evenement attaquer\n  kingdom.create_pending_mission(\"escarmouche\")\n\n  \n   \nelse:\n  pe = PendingEvent(Event.objects.get(slug=\"getaffront_diplomatie_kingdomfailure\"),kingdom=kingdom,started=None)\n  pe.save()\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\n  pe = PendingEvent(Event.objects.get(slug=\"getaffront_diplomatie_targetfailure\"),kingdom=target,started=None)\n  pe.save()\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\nkingdom.money-=25;  ", 
     "value_description": "Valeur :", 
     "on_start": " ", 
     "has_target": true, 
@@ -559,7 +559,7 @@
     "target_list": "param = Kingdom.objects.filter(offended_set__offender=kingdom)", 
     "text": "Je suis quelqu'un de suspicieux. Je veux les espionner", 
     "has_value": false, 
-    "on_resolution": "a = 0\nfor folk in grids['espion']:\n  a += folk.plot\nd = 0\ntry :\n  d += target.get_folk_in_title(\"maitre_espion\").plot *3\nexcept:\n  pass \nd += sum_folks(Folk.objects.filter(kingdom=kingdom, mission = None, birth__gte= datetime.now() - timedelta(days=C(\"Majorite\"))), \"plot\")\nd *= 0.7\n\nmarge = min(100, 100 * 4/float(3) * 1/float(2) * ( 1 + ( (a-d) / float((a+d)) ) ) )\n\nmoney = target.money + max(-target.money, target.money * random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100)))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\nfolk = max(5, min(target.folk_set.count() * incertitude, target.prestige/10))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\npopulation =  max(5, min(target.population * incertitude, call_function(\"population_max\",kingdom=target)))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\narchers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"archer\").count() * incertitude, folk * 2/3))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\npiquiers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"piquier\").count() * incertitude, folk * 2/3))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\ncavaliers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"cavalier\").count() * incertitude, folk * 2/3))\n\npe = PendingEvent(event = Event.objects.get(slug=\"rapport_espionnage\"), kingdom=kingdom, started=None)\npe.save()\npe.set_value(\"money\", money)\npe.set_value(\"folk\", folk)\npe.set_value(\"population\", population)\npe.set_value(\"piquiers\", piquiers)\npe.set_value(\"cavaliers\", cavaliers)\npe.set_value(\"archers\", archers)\npe.set_value(\"target\", target)\npe.start()\n", 
+    "on_resolution": "a = 0\nfor folk in grids['espion']:\n  a += folk.plot\nd = 0\ntry :\n  d += target.get_folk_in_title(\"maitre_espion\").plot *3\nexcept:\n  pass \nd += sum_folks(Folk.objects.filter(kingdom=kingdom, mission = None, birth__gte= datetime.now() - timedelta(days=C(\"MAJORITE\"))), \"plot\")\nd *= 0.7\n\nmarge = min(100, 100 * 4/float(3) * 1/float(2) * ( 1 + ( (a-d) / float((a+d)) ) ) )\n\nmoney = target.money + max(-target.money, target.money * random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100)))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\nfolk = max(5, min(target.folk_set.count() * incertitude, target.prestige/10))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\npopulation =  max(5, min(target.population * incertitude, call_function(\"population_max\",kingdom=target)))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\narchers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"archer\").count() * incertitude, folk * 2/3))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\npiquiers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"piquier\").count() * incertitude, folk * 2/3))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\ncavaliers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"cavalier\").count() * incertitude, folk * 2/3))\n\npe = PendingEvent(event = Event.objects.get(slug=\"rapport_espionnage\"), kingdom=kingdom, started=None)\npe.save()\npe.set_value(\"money\", money)\npe.set_value(\"folk\", folk)\npe.set_value(\"population\", population)\npe.set_value(\"piquiers\", piquiers)\npe.set_value(\"cavaliers\", cavaliers)\npe.set_value(\"archers\", archers)\npe.set_value(\"target\", target)\npe.start()\n", 
     "value_description": " ", 
     "on_start": "\n", 
     "has_target": true, 
@@ -883,7 +883,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "\nattaquant = {\n  'troupes': C(\"POURCENTAGE_SOLDATS_ESCARMOUCHE\") * kingdom.soldiers / 100,\n  'combattants': affected,\n  'population': kingdom.population,\n  'prestige': kingdom.prestige,\n}\n\n# R\u00e9cuperer les cinq meilleurs combattants de l'attaquant\ndate_majorite = datetime.now() - timedelta(days=C(\"Majorite\"))\ncinq_meilleurs = kingdom.folk_set.filter(sex=Folk.MALE, disabled=False, birth__lte=date_majorite).order_by('fight')[0:5]\nmoyenne_meilleurs_fight = call_function('somme_stat_folks', folks=list(cinq_meilleurs), stat='fight') / len(cinq_meilleurs)\n\ncombattants = [Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight)]\nmap(lambda f: f.save(), combattants)\ncombattants[0].add_quality('piquier')\ncombattants[1].add_quality('piquier')\ncombattants[2].add_quality('archer')\n\ndefenseur = {\n  # Dans le cadre du tuto,\n  # Les troupes du d\u00e9fenseur correspondent \u00e0 80% des troupes maximales disponibles pour ce Kingdom\n  'troupes': C(\"POURCENTAGE_SOLDATS_ESCARMOUCHE\") * 0.8 * C(\"POURCENTAGE_MAX_SOLDATS_PASSIF\") * call_function(\"get_max_population\", kingdom=kingdom) / (100 * 100),\n  'combattants': combattants,\n  'population': 200,\n  'prestige': kingdom.prestige,\n}\n\ngagnant, perdant, marge = f(\"determiner_vainqueur_combat\", attaquant=attaquant, defenseur=defenseur)\nis_victory = gagnant == attaquant\n\nprint \"GP\", gagnant, perdant, marge\ndelta = f(\"determiner_modifications_combat\", gagnant=gagnant, perdant=perdant, marge=marge, attaquant_est_gagnant=is_victory)\nprint \"DELTA\", delta\n\nif is_victory:\n  kingdom.prestige += 20\nelse:\n  kingdom.prestige -= 20\nkingdom.save()\n\nif kingdom.get_value(\"tuto_firstbattle_attack\", False) == False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_attack\")\nelif is_victory:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \n  pe.set_value(\"is_victory\", is_victory)\n  pe.set_value(\"attaquant\", True)\n  pe.start()\n  \nmap(lambda f: f.delete(), combattants)", 
+    "on_start": "\nattaquant = {\n  'troupes': C(\"POURCENTAGE_SOLDATS_ESCARMOUCHE\") * kingdom.soldiers / 100,\n  'combattants': affected,\n  'population': kingdom.population,\n  'prestige': kingdom.prestige,\n}\n\n# R\u00e9cuperer les cinq meilleurs combattants de l'attaquant\ndate_majorite = datetime.now() - timedelta(days=C(\"MAJORITE\"))\ncinq_meilleurs = kingdom.folk_set.filter(sex=Folk.MALE, disabled=False, birth__lte=date_majorite).order_by('fight')[0:5]\nmoyenne_meilleurs_fight = call_function('somme_stat_folks', folks=list(cinq_meilleurs), stat='fight') / len(cinq_meilleurs)\n\ncombattants = [Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight)]\nmap(lambda f: f.save(), combattants)\ncombattants[0].add_quality('piquier')\ncombattants[1].add_quality('piquier')\ncombattants[2].add_quality('archer')\n\ndefenseur = {\n  # Dans le cadre du tuto,\n  # Les troupes du d\u00e9fenseur correspondent \u00e0 80% des troupes maximales disponibles pour ce Kingdom\n  'troupes': C(\"POURCENTAGE_SOLDATS_ESCARMOUCHE\") * 0.8 * C(\"POURCENTAGE_MAX_SOLDATS_PASSIF\") * call_function(\"get_max_population\", kingdom=kingdom) / (100 * 100),\n  'combattants': combattants,\n  'population': 200,\n  'prestige': kingdom.prestige,\n}\n\ngagnant, perdant, marge = f(\"determiner_vainqueur_combat\", attaquant=attaquant, defenseur=defenseur)\nis_victory = gagnant == attaquant\n\nprint \"GP\", gagnant, perdant, marge\ndelta = f(\"determiner_modifications_combat\", gagnant=gagnant, perdant=perdant, marge=marge, attaquant_est_gagnant=is_victory)\nprint \"DELTA\", delta\n\nif is_victory:\n  kingdom.prestige += 20\nelse:\n  kingdom.prestige -= 20\nkingdom.save()\n\nif kingdom.get_value(\"tuto_firstbattle_attack\", False) == False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_attack\")\nelif is_victory:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \n  pe.set_value(\"is_victory\", is_victory)\n  pe.set_value(\"attaquant\", True)\n  pe.start()\n  \nmap(lambda f: f.delete(), combattants)", 
     "has_target": false, 
     "is_team": false, 
     "title": null, 
@@ -929,7 +929,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "defenseurs", 
-    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()<=C(\"Majorite\"):\n  status=\"La guerre, c'est une histoire d'adultes !\"\n"
+    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()<=C(\"MAJORITE\"):\n  status=\"La guerre, c'est une histoire d'adultes !\"\n"
   }
 },
 {
@@ -942,7 +942,7 @@
     "length": 20, 
     "allow_empty": false, 
     "slug": "chercheurs_noises", 
-    "condition": "if folk.age()>=C(\"Majorite\"):\n  status=\"Laisse les grands jouer \u00e0 ce jeu\""
+    "condition": "if folk.age()>=C(\"MAJORITE\"):\n  status=\"Laisse les grands jouer \u00e0 ce jeu\""
   }
 },
 {
@@ -955,7 +955,7 @@
     "length": 4, 
     "allow_empty": false, 
     "slug": "combattants", 
-    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()<=C(\"Majorite\"):\n  status=\"La guerre, c'est une histoire d'adultes !\"\n"
+    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()<=C(\"MAJORITE\"):\n  status=\"La guerre, c'est une histoire d'adultes !\"\n"
   }
 },
 {
@@ -1007,7 +1007,7 @@
     "length": 4, 
     "allow_empty": false, 
     "slug": "defenseurs", 
-    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()>=C(\"Majorite\"):\n  status=\"La guerre, c'est une histoire d'adultes !\""
+    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()>=C(\"MAJORITE\"):\n  status=\"La guerre, c'est une histoire d'adultes !\""
   }
 },
 {
@@ -1033,7 +1033,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "recruteur", 
-    "condition": "if folk.age() < C(\"Majorite\") or folk.has_quality(\"pretre\") :\n  status = \"Cette personne ne peut pas effectuer cette mission\"\n"
+    "condition": "if folk.age() < C(\"MAJORITE\") or folk.has_quality(\"pretre\") :\n  status = \"Cette personne ne peut pas effectuer cette mission\"\n"
   }
 },
 {
@@ -1059,7 +1059,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "mari", 
-    "condition": "if folk.age < C(\"Majorite\") : \n  status = \"Cette personne est trop jeune pour \u00eatre mari\u00e9e\"\nelif folk.sex == \"f\" :\n  status = \"Le mari doit \u00eatre un homme\"\nelif folk.has_quality(\"pretre\") :\n  status = \"Un p\u00eatre ne peut pas se marier\"\nelif (kingdom.get_value(\"in_tuto\") == True and folk==folks[0]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre chatelain\"\nelif (kingdom.get_value(\"passage_proposition_marriage\",False) and  folk==folks[1]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre fils\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
+    "condition": "if folk.age < C(\"MAJORITE\") : \n  status = \"Cette personne est trop jeune pour \u00eatre mari\u00e9e\"\nelif folk.sex == \"f\" :\n  status = \"Le mari doit \u00eatre un homme\"\nelif folk.has_quality(\"pretre\") :\n  status = \"Un p\u00eatre ne peut pas se marier\"\nelif (kingdom.get_value(\"in_tuto\") == True and folk==folks[0]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre chatelain\"\nelif (kingdom.get_value(\"passage_proposition_marriage\",False) and  folk==folks[1]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre fils\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
   }
 },
 {
@@ -1072,7 +1072,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "femme", 
-    "condition": "if folk.age < C(\"Majorite\"):\n  status = \"Cette personne est trop jeune pour \u00eatre mari\u00e9e\"\nelif folk.sex == \"m\":\n  status = \"La femme doit \u00eatre une femme\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
+    "condition": "if folk.age < C(\"MAJORITE\"):\n  status = \"Cette personne est trop jeune pour \u00eatre mari\u00e9e\"\nelif folk.sex == \"m\":\n  status = \"La femme doit \u00eatre une femme\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
   }
 },
 {
@@ -1137,7 +1137,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "mentor", 
-    "condition": "if folk.age()< C(\"Majorite\"):\n  status = \"Un mentor doit \u00eatre majeur\"\n"
+    "condition": "if folk.age()< C(\"MAJORITE\"):\n  status = \"Un mentor doit \u00eatre majeur\"\n"
   }
 },
 {
@@ -1150,7 +1150,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "enfant", 
-    "condition": "if folk.age() > C(\"Majorite\"):\n  status = \"L'apprenti doit \u00eatre un enfant\"\n"
+    "condition": "if folk.age() > C(\"MAJORITE\"):\n  status = \"L'apprenti doit \u00eatre un enfant\"\n"
   }
 },
 {
@@ -1189,7 +1189,7 @@
     "length": 200, 
     "allow_empty": false, 
     "slug": "espion", 
-    "condition": "if PendingMissionAffectation.objects.filter(pending_mission=param.pending_mission, mission_grid=param.mission_grid).count() > kingdom.prestige / 10:\n  status = \"Vous ne pouvez plus rajouter de personne \u00e0 cette mission\"\nif folk.age < C(\"Majorite\"):\n  status = \"Un enfant ne peut pas effectuer cette mission\"\n\n"
+    "condition": "if PendingMissionAffectation.objects.filter(pending_mission=param.pending_mission, mission_grid=param.mission_grid).count() > kingdom.prestige / 10:\n  status = \"Vous ne pouvez plus rajouter de personne \u00e0 cette mission\"\nif folk.age < C(\"MAJORITE\"):\n  status = \"Un enfant ne peut pas effectuer cette mission\"\n\n"
   }
 },
 {
@@ -1228,7 +1228,7 @@
     "length": 4, 
     "allow_empty": false, 
     "slug": "attaquants", 
-    "condition": "if folk.age() < C(\"Majorite\"):\n  status = \"Vous ne pouvez pas affecter un enfant \u00e0 cette mission.\"\nelif folk.sex == \"f\":\n  status = \"Vous ne pouvez pas affecter de femme \u00e0 cette mission\"\n"
+    "condition": "if folk.age() < C(\"MAJORITE\"):\n  status = \"Vous ne pouvez pas affecter un enfant \u00e0 cette mission.\"\nelif folk.sex == \"f\":\n  status = \"Vous ne pouvez pas affecter de femme \u00e0 cette mission\"\n"
   }
 },
 {
@@ -1241,7 +1241,7 @@
     "length": 4, 
     "allow_empty": false, 
     "slug": "combattants_tuto", 
-    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()>=C(\"Majorite\"):\n  status=\"La guerre, c'est une histoire d'adultes !\""
+    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()>=C(\"MAJORITE\"):\n  status=\"La guerre, c'est une histoire d'adultes !\""
   }
 },
 {
@@ -1254,7 +1254,7 @@
     "length": 20, 
     "allow_empty": false, 
     "slug": "chercheurs_merde", 
-    "condition": "if folk.age()>=C(\"Majorite\"):\n  status=\"Laisse les grands jouer \u00e0 ce jeu\"\nelif folk.sex==\"f\":\n  status = \"Une femme ne peut pas aller se battre\"\n"
+    "condition": "if folk.age()>=C(\"MAJORITE\"):\n  status=\"Laisse les grands jouer \u00e0 ce jeu\"\nelif folk.sex==\"f\":\n  status = \"Une femme ne peut pas aller se battre\"\n"
   }
 },
 {
@@ -1280,7 +1280,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "organisateurs", 
-    "condition": "if folk.age() < C(\"Majorite\"):\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"\n"
+    "condition": "if folk.age() < C(\"MAJORITE\"):\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"\n"
   }
 },
 {
@@ -1306,7 +1306,7 @@
     "length": 10, 
     "allow_empty": false, 
     "slug": "chasseurs", 
-    "condition": "if folk.sex==\"f\" or folk.has_quality(\"pretre\")==True or folk.age()<C(\"Majorite\"):\n  status = \"Le chasseur doit etre un chevalier adulte\"\n"
+    "condition": "if folk.sex==\"f\" or folk.has_quality(\"pretre\")==True or folk.age()<C(\"MAJORITE\"):\n  status = \"Le chasseur doit etre un chevalier adulte\"\n"
   }
 },
 {
@@ -1319,7 +1319,7 @@
     "length": 20, 
     "allow_empty": false, 
     "slug": "chercheur", 
-    "condition": "if folk.age() < C(\"Majorite\"): \n  status = \"Cette personne est trop jeune pour cette t\u00e2che\"\n"
+    "condition": "if folk.age() < C(\"MAJORITE\"): \n  status = \"Cette personne est trop jeune pour cette t\u00e2che\"\n"
   }
 },
 {
@@ -1345,7 +1345,7 @@
     "length": 4, 
     "allow_empty": false, 
     "slug": "defenseurs_tuto", 
-    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()<=C(\"Majorite\"):\n  status=\"La guerre, c'est une histoire d'adultes !\"\n"
+    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()<=C(\"MAJORITE\"):\n  status=\"La guerre, c'est une histoire d'adultes !\"\n"
   }
 },
 {
@@ -1397,7 +1397,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "enfant", 
-    "condition": "if folk.age() > C(\"Majorite\"):\n  status = \"L'apprenti doit \u00eatre un enfant\"\n"
+    "condition": "if folk.age() > C(\"MAJORITE\"):\n  status = \"L'apprenti doit \u00eatre un enfant\"\n"
   }
 },
 {
@@ -1410,7 +1410,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "mentor", 
-    "condition": "if folk.age()< C(\"Majorite\"):\n  status = \"Un mentor doit \u00eatre majeur\"\n"
+    "condition": "if folk.age()< C(\"MAJORITE\"):\n  status = \"Un mentor doit \u00eatre majeur\"\n"
   }
 },
 {
