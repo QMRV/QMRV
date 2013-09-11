@@ -41938,7 +41938,7 @@
     "target_list": "   ", 
     "text": "Il faut recruter une arm\u00e9e", 
     "has_value": false, 
-    "on_resolution": "PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_recrutement\")).save() \n", 
+    "on_resolution": "kingdom.start_pending_event(\"tuto_recrutement\") \n", 
     "value_description": "Valeur :", 
     "on_start": "  ", 
     "has_target": false, 
@@ -41986,7 +41986,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": "PendingEvent(event=Event.objects.get(slug=\"tuto_potsdevin\"),kingdom=kingdom).save()", 
+    "on_start": "kingdom.start_pending_event(\"tuto_potsdevin\")", 
     "has_target": false, 
     "is_team": false, 
     "title": 5, 
@@ -45069,7 +45069,7 @@
     "weight": 1, 
     "text": " ", 
     "image": "", 
-    "on_fire": "titres = [vs.title.slug for vs in AvailableTitle.objects.filter(kingdom=kingdom)]\n\nif \"cure\" not in titres:\n  PendingEvent(event=Event.objects.get(slug=\"tuto_pretre_eveche\"),kingdom=kingdom).save()\nelif \"ambassadeur\" not in titres:\n  PendingEvent(event=Event.objects.get(slug=\"tuto_toofewcourtisants\"),kingdom=kingdom).save()\nelif \"tresorier\" not in titres:\n  PendingEvent(event=Event.objects.get(slug=\"tuto_toomuchecus\"),kingdom=kingdom).save()\nelse:\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_forcertitre_random\")\n  \nstatus=\"forcer titre fantome\"\n", 
+    "on_fire": "titres = [vs.title.slug for vs in AvailableTitle.objects.filter(kingdom=kingdom)]\n\nif \"cure\" not in titres:\n  kingdom.start_pending_event(\"tuto_pretre_eveche\")\nelif \"ambassadeur\" not in titres:\n  kingdom.start_pending_event(\"tuto_toofewcourtisants\")\nelif \"tresorier\" not in titres:\n  kingdom.start_pending_event(\"tuto_toomuchecus\")\nelse:\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_forcertitre_random\")\n  \nstatus=\"forcer titre fantome\"\n", 
     "slug": "tuto_forcertitre_random", 
     "condition": " "
   }
@@ -45545,7 +45545,7 @@
     "weight": 1, 
     "text": " ", 
     "image": "", 
-    "on_fire": "if kingdom.get_folk_in_title(\"maitre_espion\") is None:\n  PendingEvent(event=Event.objects.get(slug=\"tuto_scandale_fille\"),kingdom=kingdom).save()\nelse:\n  if kingdom.get_folk_in_title(\"maitre_espion\")==folks[2] or kingdom.get_folk_in_title(\"maitre_espion\")==folks[3]:\n    PendingEvent(event=Event.objects.get(slug=\"tuto_scandale_fils_warning\"), kingdom=kingdom).save()\n  else:\n    PendingEvent(event=Event.objects.get(slug=\"tuto_scandale_fille_warning\"), kingdom=kingdom).save()\nstatus = \"scandale fantome\"\n", 
+    "on_fire": "if kingdom.get_folk_in_title(\"maitre_espion\") is None:\n  kingdom.start_pending_event(\"tuto_scandale_fille\")\nelse:\n  if kingdom.get_folk_in_title(\"maitre_espion\")==folks[2] or kingdom.get_folk_in_title(\"maitre_espion\")==folks[3]:\n    kingdom.start_pending_event(\"tuto_scandale_fils_warning\")\n  else:\n    kingdom.start_pending_event(\"tuto_scandale_fille_warning\")\nstatus = \"scandale fantome\"\n", 
     "slug": "tuto_scandale_fantome", 
     "condition": "\n"
   }
@@ -45671,7 +45671,7 @@
     "weight": 1, 
     "text": " ", 
     "image": "", 
-    "on_fire": "facheux = folks.filter(sex=\"m\", birth__lte=datetime.now()-timedelta(days=C(\"MAJORITE\")))\nfacheux = facheux.exclude(id__in=[folks[0].id, folks[1].id, folks[3].id])\nfacheux = facheux.exclude(quality_set__slug=\"pretre\")\nfacheux = facheux.order_by('?')\nif not facheux:\n  \n  PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_facheux_chevalier\")).start()\n  \n  \nelse:\n  param.set_value(\"facheux\", facheux[0])\n  param.next_event(\"tuto_facheux\").start()\n\nstatus = \"facheux fantome\"\n", 
+    "on_fire": "facheux = folks.filter(sex=\"m\", birth__lte=datetime.now()-timedelta(days=C(\"MAJORITE\")))\nfacheux = facheux.exclude(id__in=[folks[0].id, folks[1].id, folks[3].id])\nfacheux = facheux.exclude(quality_set__slug=\"pretre\")\nfacheux = facheux.order_by('?')\nif not facheux:\n  \n  kingdom.start_pending_event(\"tuto_facheux_chevalier\")\n  \n  \nelse:\n  param.set_value(\"facheux\", facheux[0])\n  param.next_event(\"tuto_facheux\").start()\n\nstatus = \"facheux fantome\"\n", 
     "slug": "tuto_facheux_fantome", 
     "condition": "\n"
   }
@@ -45685,7 +45685,7 @@
     "weight": 1, 
     "text": "trololo\r\n", 
     "image": "", 
-    "on_fire": "kingdom.set_value(\"tuto_conflit\",False)\nkingdom.set_value(\"tuto_firstbattle_attack\",False)\nkingdom.set_value(\"test\",False)\n\n\n\n#if kingdom.get_value(\"tuto_facheux_refus\") is not None:\n#  PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_facheux_fantome\")).start()\n#else:\n#  if kingdom.get_value(\"tuto_ambition\")is None:\n#    PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"tuto_ambition\")).start()\n#  else:\n#    kingdom.create_pending_mission(\"tuto_getaffront_diplomacy\")\n#\nstatus = \"presque fin fantome\"\n", 
+    "on_fire": "kingdom.set_value(\"tuto_conflit\",False)\nkingdom.set_value(\"tuto_firstbattle_attack\",False)\nkingdom.set_value(\"test\",False)\n\n\n\n#if kingdom.get_value(\"tuto_facheux_refus\") is not None:\n#  kingdom.start_pending_event(\"tuto_facheux_fantome\")\n#else:\n#  if kingdom.get_value(\"tuto_ambition\")is None:\n#    kingdom.start_pending_event(\"tuto_ambition\")\n#  else:\n#    kingdom.create_pending_mission(\"tuto_getaffront_diplomacy\")\n#\nstatus = \"presque fin fantome\"\n", 
     "slug": "dumb_tuto_presque_fin", 
     "condition": "\n"
   }
@@ -47872,7 +47872,7 @@
     "message": "Je me suis reveill\u00e9 au milieu de la grande salle, avec une migraine carabin\u00e9e.```\r\n-3 de Loyaut\u00e9 g\u00e9n\u00e9rale\r\n```", 
     "event": 117, 
     "condition": " ", 
-    "on_fire": "if kingdom.get_folk_in_title(\"chateain\").has_quality(\"fetard\"):\n  PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"chatelain_losefetard\")).start()\nelse: \n  PendingEvent(kingdom=kingdom, event=Event.objects.get(slug=\"chatelain_getascete\")).start()\n"
+    "on_fire": "if kingdom.get_folk_in_title(\"chateain\").has_quality(\"fetard\"):\n  kingdom.start_pending_event(\"chatelain_losefetard\")\nelse: \n  kingdom.start_pending_event(\"chatelain_getascete\")\n"
   }
 },
 {
