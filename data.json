@@ -43129,6 +43129,29 @@
   }
 },
 {
+  "pk": 43, 
+  "model": "mission.mission", 
+  "fields": {
+    "name": "D\u00e9finir sa d\u00e9fense", 
+    "target_list": "\n", 
+    "text": "D\u00e9finir les personnes qui prendront la d\u00e9fense de mon ch\u00e2teau en cas de besoin", 
+    "has_value": false, 
+    "on_resolution": "\n", 
+    "value_description": "", 
+    "on_start": "\n", 
+    "has_target": false, 
+    "is_team": true, 
+    "title": 2, 
+    "target_description": "", 
+    "timeout": null, 
+    "is_cancellable": false, 
+    "duration": 5, 
+    "on_cancel": "\n", 
+    "slug": "ligne_defense", 
+    "on_init": "\n"
+  }
+},
+{
   "pk": 2, 
   "model": "mission.missiongrid", 
   "fields": {
@@ -43659,6 +43682,19 @@
     "allow_empty": false, 
     "slug": "attaquants", 
     "condition": "\n"
+  }
+},
+{
+  "pk": 44, 
+  "model": "mission.missiongrid", 
+  "fields": {
+    "allow_disabled": true, 
+    "name": "D\u00e9fenseurs", 
+    "mission": 43, 
+    "length": 1000, 
+    "allow_empty": false, 
+    "slug": "defenseurs", 
+    "condition": "if folk.age()< C(\"MAJORITE\"):\n  status = \"Cette personne est trop jeune pour se battre.\"\nif folk.sex == Folk.FEMALE:\n  status = \"Seul un homme peut \u00eatre choisi pour d\u00e9fendre la cit\u00e9.\"\n"
   }
 },
 {
@@ -102009,6 +102045,19 @@
     "change_message": "Modifi\u00e9 on_unlock, condition, on_affect et on_defect.", 
     "user": 41, 
     "content_type": 15
+  }
+},
+{
+  "pk": 6961, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-12T20:09:25.907", 
+    "object_repr": "ligne_defense", 
+    "object_id": "43", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 23
   }
 },
 {
