@@ -740,8 +740,8 @@
   "pk": "d4q1rn0nlasowi8yj5d6is7xx7u25ybx", 
   "model": "sessions.session", 
   "fields": {
-    "expire_date": "2013-09-17T22:20:41.222", 
-    "session_data": "MTQ5ZjM4Y2UwYWNhYjE5YTFiODNjYmU2Nzg3OWFiMzEzMDg4MGYzYzqAAn1xAShYCgAAAHRlc3Rjb29raWVxAlgGAAAAd29ya2VkcQNVEl9hdXRoX3VzZXJfYmFja2VuZFUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmRVDV9hdXRoX3VzZXJfaWRLJnUu"
+    "expire_date": "2013-09-26T22:00:25.491", 
+    "session_data": "MWFkMjc4ZjViY2VkNDkxNTlmOGRlNTA3OTc4NTI3Y2Q1NWQxYTA3YzqAAn1xAShVDV9hdXRoX3VzZXJfaWRLJlUSX2F1dGhfdXNlcl9iYWNrZW5kVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHECdS4="
   }
 },
 {
@@ -6858,6 +6858,16 @@
     "m2m_datas": "{\"eventcategory_set\": [], \"offended_set\": [], \"offender_set\": [], \"trigger_set\": [1]}", 
     "datas": "[\n{\n  \"pk\": 68, \n  \"model\": \"kingdom.kingdom\", \n  \"fields\": {\n    \"soldiers\": 20, \n    \"prestige\": 140, \n    \"money\": 30, \n    \"user\": 1, \n    \"population\": 20\n  }\n},\n{\n  \"pk\": 386, \n  \"model\": \"kingdom._kingdomvariable\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"name\": \"adversaire_tuto\", \n    \"value\": \"Sigefroi d'Incheville\"\n  }\n},\n{\n  \"pk\": 387, \n  \"model\": \"kingdom._kingdomvariable\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"name\": \"prestige_pnj\", \n    \"value\": 100\n  }\n},\n{\n  \"pk\": 388, \n  \"model\": \"kingdom._kingdomvariable\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"name\": \"population_pnj\", \n    \"value\": 100\n  }\n},\n{\n  \"pk\": 389, \n  \"model\": \"kingdom._kingdomvariable\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"name\": \"in_tuto\", \n    \"value\": 1\n  }\n},\n{\n  \"pk\": 390, \n  \"model\": \"kingdom._kingdomvariable\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"name\": \"tuto_banquet\", \n    \"value\": 1\n  }\n},\n{\n  \"pk\": 391, \n  \"model\": \"kingdom._kingdomvariable\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"name\": \"tuto_caissesvides\", \n    \"value\": 1\n  }\n},\n{\n  \"pk\": 6753, \n  \"model\": \"kingdom.folk\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"fight\": 9, \n    \"first_name\": \"Yv\", \n    \"last_name\": \"de matthieu\", \n    \"diplomacy\": 9, \n    \"father\": null, \n    \"plot\": 9, \n    \"scholarship\": 8, \n    \"sex\": \"m\", \n    \"disabled\": false, \n    \"death\": null, \n    \"avatar\": 11, \n    \"birth\": \"2013-07-28T12:16:42.789\", \n    \"mother\": null, \n    \"loyalty\": 100, \n    \"spouse\": null, \n    \"quality_set\": [\n      6\n    ], \n    \"mentor\": null\n  }\n},\n{\n  \"pk\": 6754, \n  \"model\": \"kingdom.folk\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"fight\": 8, \n    \"first_name\": \"Durandet\", \n    \"last_name\": \"de matthieu\", \n    \"diplomacy\": 10, \n    \"father\": 6753, \n    \"plot\": 8, \n    \"scholarship\": 7, \n    \"sex\": \"m\", \n    \"disabled\": false, \n    \"death\": null, \n    \"avatar\": 24, \n    \"birth\": \"2013-08-15T12:16:44.256\", \n    \"mother\": null, \n    \"loyalty\": 85, \n    \"spouse\": null, \n    \"quality_set\": [\n      7\n    ], \n    \"mentor\": null\n  }\n},\n{\n  \"pk\": 6755, \n  \"model\": \"kingdom.folk\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"fight\": 5, \n    \"first_name\": \"Mathilde\", \n    \"last_name\": \"de matthieu\", \n    \"diplomacy\": 10, \n    \"father\": 6753, \n    \"plot\": 11, \n    \"scholarship\": 6, \n    \"sex\": \"f\", \n    \"disabled\": false, \n    \"death\": null, \n    \"avatar\": 48, \n    \"birth\": \"2013-08-16T12:16:44.313\", \n    \"mother\": null, \n    \"loyalty\": 70, \n    \"spouse\": null, \n    \"quality_set\": [\n      5\n    ], \n    \"mentor\": null\n  }\n},\n{\n  \"pk\": 6756, \n  \"model\": \"kingdom.folk\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"fight\": 10, \n    \"first_name\": \"Rodolphe\", \n    \"last_name\": \"de Nomdieu\", \n    \"diplomacy\": 8, \n    \"father\": null, \n    \"plot\": 6, \n    \"scholarship\": 8, \n    \"sex\": \"m\", \n    \"disabled\": false, \n    \"death\": null, \n    \"avatar\": 5, \n    \"birth\": \"2013-07-28T12:16:44.370\", \n    \"mother\": null, \n    \"loyalty\": 80, \n    \"spouse\": null, \n    \"quality_set\": [\n      19\n    ], \n    \"mentor\": null\n  }\n},\n{\n  \"pk\": 6757, \n  \"model\": \"kingdom.folk\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"fight\": 3, \n    \"first_name\": \"Gris\\u00e9lidis\", \n    \"last_name\": \"de Pl\\u00e9d\\u00e9liac\", \n    \"diplomacy\": 10, \n    \"father\": null, \n    \"plot\": 12, \n    \"scholarship\": 7, \n    \"sex\": \"f\", \n    \"disabled\": false, \n    \"death\": null, \n    \"avatar\": 62, \n    \"birth\": \"2013-08-07T12:17:34.961\", \n    \"mother\": null, \n    \"loyalty\": 50, \n    \"spouse\": null, \n    \"quality_set\": [], \n    \"mentor\": null\n  }\n},\n{\n  \"pk\": 896, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"content\": \"Vous pouvez d\\u00e9sormais nommer un chambellan.\", \n    \"created\": \"2013-09-01T12:17:13.030\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 897, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"content\": \"Grace au soutien du Roi de France, ma famille s'est install\\u00e9e \\u00e0 matthieu, la demeure de mes anc\\u00eatres. J'ai d\\u00e9bours\\u00e9 85 \\u00e9cus pour entamer des r\\u00e9parations et recruter des serviteurs.\", \n    \"created\": \"2013-09-01T12:17:13.153\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 899, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"content\": \"Gris\\u00e9lidis de Pl\\u00e9d\\u00e9liac a rejoint ma cour, et le banquets m'a apport\\u00e9 la loyaut\\u00e9 des paysans.\", \n    \"created\": \"2013-09-01T12:17:39.728\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 901, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"content\": \"Vous pouvez d\\u00e9sormais nommer un tr\\u00e9sorier.\", \n    \"created\": \"2013-09-02T01:30:24.666\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 902, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"content\": \"Il est urgent de charger un [tr\\u00e9sorier](#title) de r\\u00e9gler nos probl\\u00e8mes d'argent\", \n    \"created\": \"2013-09-02T01:30:25.012\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 898, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"content\": \"Je peux \\u00e0 pr\\u00e9sent nommer un [chambellan](title) pour s'occuper de mon [banquet](mission).\", \n    \"created\": \"2013-09-01T12:17:14.390\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 900, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"content\": \"Un mois s'est \\u00e9coul\\u00e9.\", \n    \"created\": \"2013-09-01T12:17:43.055\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 288, \n  \"model\": \"mission.availablemission\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"mission\": 7\n  }\n},\n{\n  \"pk\": 289, \n  \"model\": \"mission.availablemission\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"mission\": 24\n  }\n},\n{\n  \"pk\": 290, \n  \"model\": \"mission.availablemission\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"mission\": 8\n  }\n},\n{\n  \"pk\": 291, \n  \"model\": \"mission.availablemission\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"mission\": 9\n  }\n},\n{\n  \"pk\": 227, \n  \"model\": \"title.availabletitle\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"last_folk\": 6753, \n    \"folk\": 6753, \n    \"title\": 1\n  }\n},\n{\n  \"pk\": 228, \n  \"model\": \"title.availabletitle\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"last_folk\": 6754, \n    \"folk\": 6754, \n    \"title\": 4\n  }\n},\n{\n  \"pk\": 229, \n  \"model\": \"title.availabletitle\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"last_folk\": null, \n    \"folk\": null, \n    \"title\": 7\n  }\n},\n{\n  \"pk\": 1597, \n  \"model\": \"event.pendingevent\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"is_started\": false, \n    \"created\": \"2013-09-09T20:38:54.306\", \n    \"started\": null, \n    \"text\": \"\", \n    \"event\": 222\n  }\n},\n{\n  \"pk\": 1354, \n  \"model\": \"event.pendingevent\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"is_started\": true, \n    \"created\": \"2013-09-02T01:30:24.828\", \n    \"started\": \"2013-09-02T01:30:24.892\", \n    \"text\": \"Il y eut un soir, il y eut un matin.\\r\\nEt ce 30 fois de suite.\", \n    \"event\": 225\n  }\n},\n{\n  \"pk\": 1377, \n  \"model\": \"event.pendingeventaction\", \n  \"fields\": {\n    \"pending_event\": 1354, \n    \"message\": \"Un mois s'est \\u00e9coul\\u00e9.\", \n    \"text\": \"Le temps passe...\", \n    \"folk\": null, \n    \"event_action\": 293\n  }\n},\n{\n  \"pk\": 2350, \n  \"model\": \"event._pendingeventvariable\", \n  \"fields\": {\n    \"pending_event\": 1354, \n    \"name\": \"slug\", \n    \"value\": \"tuto_scandale_fantome\"\n  }\n},\n{\n  \"pk\": 1603, \n  \"model\": \"event.pendingevent\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"is_started\": false, \n    \"created\": \"2013-09-09T21:04:45.562\", \n    \"started\": null, \n    \"text\": \"\", \n    \"event\": 222\n  }\n},\n{\n  \"pk\": 171, \n  \"model\": \"mission.pendingmission\", \n  \"fields\": {\n    \"kingdom\": 68, \n    \"is_started\": false, \n    \"target\": null, \n    \"created\": \"2013-09-09T21:07:53.500\", \n    \"started\": null, \n    \"last_target\": null, \n    \"mission\": 41, \n    \"value\": 0, \n    \"is_finished\": false, \n    \"last_value\": 0\n  }\n},\n{\n  \"pk\": 274, \n  \"model\": \"mission.pendingmissionaffectation\", \n  \"fields\": {\n    \"pending_mission\": 171, \n    \"folk\": 6755, \n    \"mission_grid\": 42\n  }\n},\n{\n  \"pk\": 273, \n  \"model\": \"mission.pendingmissionaffectation\", \n  \"fields\": {\n    \"pending_mission\": 171, \n    \"folk\": 6754, \n    \"mission_grid\": 42\n  }\n},\n{\n  \"pk\": 272, \n  \"model\": \"mission.pendingmissionaffectation\", \n  \"fields\": {\n    \"pending_mission\": 171, \n    \"folk\": 6753, \n    \"mission_grid\": 42\n  }\n}\n]\n", 
     "created": "2013-09-09T23:03:53.797"
+  }
+},
+{
+  "pk": 88, 
+  "model": "internal.freeze", 
+  "fields": {
+    "kingdom": 70, 
+    "m2m_datas": "{\"eventcategory_set\": [], \"offended_set\": [], \"offender_set\": [], \"trigger_set\": [1]}", 
+    "datas": "[\n{\n  \"pk\": 70, \n  \"model\": \"kingdom.kingdom\", \n  \"fields\": {\n    \"soldiers\": 37, \n    \"prestige\": 100, \n    \"money\": 153, \n    \"user\": 38, \n    \"population\": 290\n  }\n},\n{\n  \"pk\": 461, \n  \"model\": \"kingdom._kingdomvariable\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"name\": \"adversaire_tuto\", \n    \"value\": \"Herbert de Toury\"\n  }\n},\n{\n  \"pk\": 462, \n  \"model\": \"kingdom._kingdomvariable\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"name\": \"prestige_pnj\", \n    \"value\": 100\n  }\n},\n{\n  \"pk\": 463, \n  \"model\": \"kingdom._kingdomvariable\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"name\": \"population_pnj\", \n    \"value\": 100\n  }\n},\n{\n  \"pk\": 464, \n  \"model\": \"kingdom._kingdomvariable\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"name\": \"in_tuto\", \n    \"value\": 1\n  }\n},\n{\n  \"pk\": 465, \n  \"model\": \"kingdom._kingdomvariable\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"name\": \"tuto_potsdevin\", \n    \"value\": 1\n  }\n},\n{\n  \"pk\": 466, \n  \"model\": \"kingdom._kingdomvariable\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"name\": \"tuto_soeurette\", \n    \"value\": 1\n  }\n},\n{\n  \"pk\": 468, \n  \"model\": \"kingdom._kingdomvariable\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"name\": \"tuto_scandale_fantome\", \n    \"value\": 1\n  }\n},\n{\n  \"pk\": 469, \n  \"model\": \"kingdom._kingdomvariable\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"name\": \"tuto_facheux_fantome\", \n    \"value\": 1\n  }\n},\n{\n  \"pk\": 471, \n  \"model\": \"kingdom._kingdomvariable\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"name\": \"tuto_cour_basse\", \n    \"value\": 1\n  }\n},\n{\n  \"pk\": 472, \n  \"model\": \"kingdom._kingdomvariable\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"name\": \"tuto_forcertitre_random\", \n    \"value\": 1\n  }\n},\n{\n  \"pk\": 473, \n  \"model\": \"kingdom._kingdomvariable\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"name\": \"tuto_caissesvides\", \n    \"value\": 1\n  }\n},\n{\n  \"pk\": 474, \n  \"model\": \"kingdom._kingdomvariable\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"name\": \"tuto_bandits_fantome\", \n    \"value\": 1\n  }\n},\n{\n  \"pk\": 6771, \n  \"model\": \"kingdom.folk\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"fight\": 9, \n    \"first_name\": \"Philibert\", \n    \"last_name\": \"de jules\", \n    \"diplomacy\": 10, \n    \"father\": null, \n    \"plot\": 10, \n    \"scholarship\": 8, \n    \"sex\": \"m\", \n    \"disabled\": false, \n    \"death\": null, \n    \"avatar\": 26, \n    \"birth\": \"2013-08-01T13:41:26.256\", \n    \"mother\": null, \n    \"loyalty\": 99, \n    \"spouse\": null, \n    \"quality_set\": [\n      18\n    ], \n    \"mentor\": null\n  }\n},\n{\n  \"pk\": 6772, \n  \"model\": \"kingdom.folk\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"fight\": 8, \n    \"first_name\": \"Girart\", \n    \"last_name\": \"de jules\", \n    \"diplomacy\": 6, \n    \"father\": 6771, \n    \"plot\": 10, \n    \"scholarship\": 10, \n    \"sex\": \"m\", \n    \"disabled\": false, \n    \"death\": null, \n    \"avatar\": 4, \n    \"birth\": \"2013-08-19T13:41:26.566\", \n    \"mother\": null, \n    \"loyalty\": 64, \n    \"spouse\": null, \n    \"quality_set\": [\n      4\n    ], \n    \"mentor\": null\n  }\n},\n{\n  \"pk\": 6773, \n  \"model\": \"kingdom.folk\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"fight\": 3, \n    \"first_name\": \"Flodoberte\", \n    \"last_name\": \"de jules\", \n    \"diplomacy\": 7, \n    \"father\": 6771, \n    \"plot\": 14, \n    \"scholarship\": 8, \n    \"sex\": \"f\", \n    \"disabled\": false, \n    \"death\": null, \n    \"avatar\": 67, \n    \"birth\": \"2013-08-20T13:41:26.623\", \n    \"mother\": null, \n    \"loyalty\": 85, \n    \"spouse\": null, \n    \"quality_set\": [\n      27\n    ], \n    \"mentor\": null\n  }\n},\n{\n  \"pk\": 6774, \n  \"model\": \"kingdom.folk\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"fight\": 13, \n    \"first_name\": \"Giefroi\", \n    \"last_name\": \"de Mirambeau\", \n    \"diplomacy\": 11, \n    \"father\": null, \n    \"plot\": 9, \n    \"scholarship\": 9, \n    \"sex\": \"m\", \n    \"disabled\": false, \n    \"death\": null, \n    \"avatar\": 7, \n    \"birth\": \"2013-08-01T13:41:26.685\", \n    \"mother\": null, \n    \"loyalty\": 65, \n    \"spouse\": null, \n    \"quality_set\": [\n      2, \n      12\n    ], \n    \"mentor\": null\n  }\n},\n{\n  \"pk\": 6775, \n  \"model\": \"kingdom.folk\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"fight\": 8, \n    \"first_name\": \"Geoffroy\", \n    \"last_name\": \"d'Imbleville\", \n    \"diplomacy\": 7, \n    \"father\": null, \n    \"plot\": 10, \n    \"scholarship\": 7, \n    \"sex\": \"m\", \n    \"disabled\": false, \n    \"death\": null, \n    \"avatar\": 12, \n    \"birth\": \"2013-08-01T13:43:05.724\", \n    \"mother\": null, \n    \"loyalty\": 40, \n    \"spouse\": null, \n    \"quality_set\": [\n      5\n    ], \n    \"mentor\": null\n  }\n},\n{\n  \"pk\": 6776, \n  \"model\": \"kingdom.folk\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"fight\": 5, \n    \"first_name\": \"Elbore\", \n    \"last_name\": \"de jules\", \n    \"diplomacy\": 6, \n    \"father\": null, \n    \"plot\": 9, \n    \"scholarship\": 13, \n    \"sex\": \"f\", \n    \"disabled\": false, \n    \"death\": null, \n    \"avatar\": 31, \n    \"birth\": \"2013-08-01T13:43:16.954\", \n    \"mother\": null, \n    \"loyalty\": 65, \n    \"spouse\": null, \n    \"quality_set\": [\n      3\n    ], \n    \"mentor\": null\n  }\n},\n{\n  \"pk\": 6778, \n  \"model\": \"kingdom.folk\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"fight\": 2, \n    \"first_name\": \"Al\\u00e9ide\", \n    \"last_name\": \"de jules\", \n    \"diplomacy\": 8, \n    \"father\": 6777, \n    \"plot\": 3, \n    \"scholarship\": 7, \n    \"sex\": \"f\", \n    \"disabled\": false, \n    \"death\": null, \n    \"avatar\": 43, \n    \"birth\": \"2013-08-26T13:43:17.087\", \n    \"mother\": 6776, \n    \"loyalty\": 65, \n    \"spouse\": null, \n    \"quality_set\": [\n      8\n    ], \n    \"mentor\": 6774\n  }\n},\n{\n  \"pk\": 6779, \n  \"model\": \"kingdom.folk\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"fight\": 2, \n    \"first_name\": \"Roland\", \n    \"last_name\": \"de jules\", \n    \"diplomacy\": 1, \n    \"father\": 6777, \n    \"plot\": 1, \n    \"scholarship\": 1, \n    \"sex\": \"m\", \n    \"disabled\": false, \n    \"death\": null, \n    \"avatar\": 44, \n    \"birth\": \"2013-09-04T13:43:17.155\", \n    \"mother\": 6776, \n    \"loyalty\": 45, \n    \"spouse\": null, \n    \"quality_set\": [\n      3, \n      16\n    ], \n    \"mentor\": null\n  }\n},\n{\n  \"pk\": 6780, \n  \"model\": \"kingdom.folk\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"fight\": 6, \n    \"first_name\": \"Adalasinde\", \n    \"last_name\": \"de \\u00c9preville\", \n    \"diplomacy\": 10, \n    \"father\": null, \n    \"plot\": 3, \n    \"scholarship\": 12, \n    \"sex\": \"f\", \n    \"disabled\": false, \n    \"death\": null, \n    \"avatar\": 43, \n    \"birth\": \"2013-09-05T13:44:15.967\", \n    \"mother\": null, \n    \"loyalty\": 80, \n    \"spouse\": null, \n    \"quality_set\": [\n      9\n    ], \n    \"mentor\": null\n  }\n},\n{\n  \"pk\": 6781, \n  \"model\": \"kingdom.folk\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"fight\": 6, \n    \"first_name\": \"H\\u00e9lits\", \n    \"last_name\": \"de Bujaleuf\", \n    \"diplomacy\": 8, \n    \"father\": null, \n    \"plot\": 9, \n    \"scholarship\": 9, \n    \"sex\": \"f\", \n    \"disabled\": false, \n    \"death\": null, \n    \"avatar\": 43, \n    \"birth\": \"2013-09-05T15:31:36.635\", \n    \"mother\": null, \n    \"loyalty\": 30, \n    \"spouse\": null, \n    \"quality_set\": [\n      16, \n      18\n    ], \n    \"mentor\": null\n  }\n},\n{\n  \"pk\": 6782, \n  \"model\": \"kingdom.folk\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"fight\": 7, \n    \"first_name\": \"Aur\\u00e8le\", \n    \"last_name\": \"de Trelly\", \n    \"diplomacy\": 9, \n    \"father\": null, \n    \"plot\": 7, \n    \"scholarship\": 11, \n    \"sex\": \"m\", \n    \"disabled\": false, \n    \"death\": null, \n    \"avatar\": 24, \n    \"birth\": \"2013-08-01T15:32:06.786\", \n    \"mother\": null, \n    \"loyalty\": 65, \n    \"spouse\": null, \n    \"quality_set\": [\n      26, \n      36\n    ], \n    \"mentor\": null\n  }\n},\n{\n  \"pk\": 963, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Grace au soutien du Roi de France, ma famille s'est install\\u00e9e \\u00e0 jules, la demeure de mes anc\\u00eatres. J'ai d\\u00e9bours\\u00e9 85 \\u00e9cus pour entamer des r\\u00e9parations et recruter des serviteurs.\", \n    \"created\": \"2013-09-05T13:42:39.708\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 966, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"None\", \n    \"created\": \"2013-09-05T13:43:10.109\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 967, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Geoffroy d'Imbleville a rejoint ma cour, et les pots de vin de Flodoberte ont port\\u00e9 leur fruits. Je suis le souverain incontest\\u00e9 des gueux de jules.\", \n    \"created\": \"2013-09-05T13:43:15.299\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 969, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Elbore de jules, Al\\u00e9ide de jules et Roland de jules ont rejoint ma cour.\", \n    \"created\": \"2013-09-05T13:43:34.981\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 972, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Un mois s'est \\u00e9coul\\u00e9.\", \n    \"created\": \"2013-09-05T13:44:16.069\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 973, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Dame Adalasinde de \\u00c9preville a rejoint ma cour.\", \n    \"created\": \"2013-09-05T13:44:32.357\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 974, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Un mois s'est \\u00e9coul\\u00e9.\", \n    \"created\": \"2013-09-05T13:49:10.794\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 975, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"J'ai banni la servante dont mon fils  s'\\u00e9tait entich\\u00e9. ```-25 de Loyaut\\u00e9 pour Girart.-5 de Loyaut\\u00e9 pour Flodoberte.```\", \n    \"created\": \"2013-09-05T15:01:47.442\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 977, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Un mois s'est \\u00e9coul\\u00e9.\", \n    \"created\": \"2013-09-05T15:31:25.836\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 978, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Mon fils  et le Geoffroy d'Imbleville sont \\u00e0 couteaux tir\\u00e9s. Je pourrais regler le probl\\u00e8me en [d\\u00e9barassant](mission) ma cour du chevalier.\", \n    \"created\": \"2013-09-05T15:31:34.700\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 980, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Un mois s'est \\u00e9coul\\u00e9.\", \n    \"created\": \"2013-09-05T15:32:06.986\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 982, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Un mois s'est \\u00e9coul\\u00e9.\", \n    \"created\": \"2013-09-05T15:32:10.839\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 985, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Un mois s'est \\u00e9coul\\u00e9.\", \n    \"created\": \"2013-09-05T15:32:13.959\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 987, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Je doit nommer un [conn\\u00e9table](title) pour bouter les bandits hors de mes terres.\", \n    \"created\": \"2013-09-05T15:32:20.023\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 964, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Vous pouvez d\\u00e9sormais nommer un ma\\u00eetre espion.\", \n    \"created\": \"2013-09-05T13:42:42.133\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 965, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Nommer un <Ma\\u00eetre espion> me permettra <d'acheter le soutien de la population>.\", \n    \"created\": \"2013-09-05T13:42:42.305\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 968, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Un mois s'est \\u00e9coul\\u00e9.\", \n    \"created\": \"2013-09-05T13:43:17.279\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 970, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Vous pouvez d\\u00e9sormais nommer un chambellan.\", \n    \"created\": \"2013-09-05T13:43:38.293\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 971, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Je dois [d\\u00e9signer un mentor](mission) pour s'occuper de l'\\u00e9ducation de Al\\u00e9ide de jules.\", \n    \"created\": \"2013-09-05T13:43:38.324\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 976, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Un mois s'est \\u00e9coul\\u00e9.\", \n    \"created\": \"2013-09-05T15:01:49.269\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 979, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Un mois s'est \\u00e9coul\\u00e9.\", \n    \"created\": \"2013-09-05T15:31:37\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 981, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Le p\\u00e8re Aur\\u00e8le de Trelly a rejoint ma cour en tant que cur\\u00e9 du ch\\u00e2teau.\", \n    \"created\": \"2013-09-05T15:32:09.073\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 983, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Vous pouvez d\\u00e9sormais nommer un tr\\u00e9sorier.\", \n    \"created\": \"2013-09-05T15:32:12.516\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 984, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Il est urgent de charger un [tr\\u00e9sorier](#title) de r\\u00e9gler nos probl\\u00e8mes d'argent\", \n    \"created\": \"2013-09-05T15:32:12.573\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 986, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Vous pouvez d\\u00e9sormais nommer un conn\\u00e9table.\", \n    \"created\": \"2013-09-05T15:32:16.285\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 989, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"Un mois s'est \\u00e9coul\\u00e9.\", \n    \"created\": \"2013-09-05T15:36:35.316\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 988, \n  \"model\": \"kingdom.message\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"content\": \"J'ai vaincu les bandits. 3 de mes hommes d'armes sont tomb\\u00e9s mais Giefroi de Mirambeau s'est illustr\\u00e9 dans la bataille. ```Gagne le Trait Intrepide.```.\", \n    \"created\": \"2013-09-05T15:36:32.638\", \n    \"read\": null, \n    \"level\": 1\n  }\n},\n{\n  \"pk\": 330, \n  \"model\": \"mission.availablemission\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"mission\": 27\n  }\n},\n{\n  \"pk\": 331, \n  \"model\": \"mission.availablemission\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"mission\": 23\n  }\n},\n{\n  \"pk\": 332, \n  \"model\": \"mission.availablemission\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"mission\": 14\n  }\n},\n{\n  \"pk\": 333, \n  \"model\": \"mission.availablemission\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"mission\": 20\n  }\n},\n{\n  \"pk\": 334, \n  \"model\": \"mission.availablemission\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"mission\": 21\n  }\n},\n{\n  \"pk\": 335, \n  \"model\": \"mission.availablemission\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"mission\": 22\n  }\n},\n{\n  \"pk\": 336, \n  \"model\": \"mission.availablemission\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"mission\": 28\n  }\n},\n{\n  \"pk\": 337, \n  \"model\": \"mission.availablemission\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"mission\": 33\n  }\n},\n{\n  \"pk\": 338, \n  \"model\": \"mission.availablemission\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"mission\": 18\n  }\n},\n{\n  \"pk\": 339, \n  \"model\": \"mission.availablemission\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"mission\": 19\n  }\n},\n{\n  \"pk\": 340, \n  \"model\": \"mission.availablemission\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"mission\": 7\n  }\n},\n{\n  \"pk\": 341, \n  \"model\": \"mission.availablemission\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"mission\": 24\n  }\n},\n{\n  \"pk\": 342, \n  \"model\": \"mission.availablemission\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"mission\": 8\n  }\n},\n{\n  \"pk\": 343, \n  \"model\": \"mission.availablemission\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"mission\": 9\n  }\n},\n{\n  \"pk\": 344, \n  \"model\": \"mission.availablemission\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"mission\": 26\n  }\n},\n{\n  \"pk\": 252, \n  \"model\": \"title.availabletitle\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"last_folk\": 6771, \n    \"folk\": 6771, \n    \"title\": 1\n  }\n},\n{\n  \"pk\": 253, \n  \"model\": \"title.availabletitle\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"last_folk\": 6773, \n    \"folk\": 6773, \n    \"title\": 5\n  }\n},\n{\n  \"pk\": 254, \n  \"model\": \"title.availabletitle\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"last_folk\": 6774, \n    \"folk\": 6774, \n    \"title\": 4\n  }\n},\n{\n  \"pk\": 255, \n  \"model\": \"title.availabletitle\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"last_folk\": 6782, \n    \"folk\": 6782, \n    \"title\": 3\n  }\n},\n{\n  \"pk\": 256, \n  \"model\": \"title.availabletitle\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"last_folk\": null, \n    \"folk\": null, \n    \"title\": 7\n  }\n},\n{\n  \"pk\": 257, \n  \"model\": \"title.availabletitle\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"last_folk\": 6772, \n    \"folk\": 6772, \n    \"title\": 2\n  }\n},\n{\n  \"pk\": 1596, \n  \"model\": \"event.pendingevent\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"is_started\": true, \n    \"created\": \"2013-09-05T15:36:35.274\", \n    \"started\": \"2013-09-05T15:36:35.277\", \n    \"text\": \"Aujourd\\u2019hui, les travaux ont pris fin. Mon ch\\u00e2teau \\u00e0 \\u00e9t\\u00e9 r\\u00e9par\\u00e9 jusqu\\u2019\\u00e0 la derni\\u00e8re pierre, et l\\u2019\\u00e9tendard de ma famille claque fi\\u00e8rement dans la brise du matin, perch\\u00e9 au sommet de la plus haute tour. Ma cour est nombreuse et la ville sous mes remparts se d\\u00e9veloppe peu \\u00e0 peu. Accoud\\u00e9 \\u00e0 ma fen\\u00eatre, j\\u2019observe l'entra\\u00eenement de mes fiers soldats dans la cour, sire Girart de jules marchant parmi eux et beuglant ses instructions. Pour la premi\\u00e8re fois depuis mon arriv\\u00e9e, je me sens pleinement assur\\u00e9 de la stabilit\\u00e9 de ma position. Malgr\\u00e9 tous les obstacles, je suis maintenant le souverain incontest\\u00e9 de ces terres, et le nom de ma famille est de nouveau prononc\\u00e9 avec respect.\", \n    \"event\": 9\n  }\n},\n{\n  \"pk\": 1625, \n  \"model\": \"event.pendingeventaction\", \n  \"fields\": {\n    \"pending_event\": 1596, \n    \"message\": \"\", \n    \"text\": \"Et pourtant...\", \n    \"folk\": null, \n    \"event_action\": 14\n  }\n},\n{\n  \"pk\": 2977, \n  \"model\": \"event._pendingeventvariable\", \n  \"fields\": {\n    \"pending_event\": 1596, \n    \"name\": \"slug\", \n    \"value\": \"tuto_ambition\"\n  }\n},\n{\n  \"pk\": 178, \n  \"model\": \"mission.pendingmission\", \n  \"fields\": {\n    \"kingdom\": 70, \n    \"is_started\": false, \n    \"target\": null, \n    \"created\": \"2013-09-12T22:00:13.966\", \n    \"started\": null, \n    \"last_target\": null, \n    \"mission\": 43, \n    \"value\": 0, \n    \"is_finished\": false, \n    \"last_value\": 0\n  }\n},\n{\n  \"pk\": 289, \n  \"model\": \"mission.pendingmissionaffectation\", \n  \"fields\": {\n    \"pending_mission\": 178, \n    \"folk\": 6772, \n    \"mission_grid\": 44\n  }\n},\n{\n  \"pk\": 290, \n  \"model\": \"mission.pendingmissionaffectation\", \n  \"fields\": {\n    \"pending_mission\": 178, \n    \"folk\": 6771, \n    \"mission_grid\": 44\n  }\n},\n{\n  \"pk\": 291, \n  \"model\": \"mission.pendingmissionaffectation\", \n  \"fields\": {\n    \"pending_mission\": 178, \n    \"folk\": 6774, \n    \"mission_grid\": 44\n  }\n},\n{\n  \"pk\": 292, \n  \"model\": \"mission.pendingmissionaffectation\", \n  \"fields\": {\n    \"pending_mission\": 178, \n    \"folk\": 6775, \n    \"mission_grid\": 44\n  }\n}\n]\n", 
+    "created": "2013-09-12T22:00:53.788"
   }
 },
 {
@@ -43159,7 +43169,7 @@
     "target_list": "\n", 
     "text": "Aller qu\u00e9rir des informations sur la force de bataille !", 
     "has_value": false, 
-    "on_resolution": "attack = 0\nfor folk in grids['espions']:\n  attack += folk.plot\nA = 0\ntry :\n  A += target.get_folk_in_title(\"maitre_espion\").plot * 4\nexcept:\n  pass \ntry :\n  A += target.get_folk_in_title(\"chatelain\").plot\nexcept:\n  pass\nA /= 5\ndef_folks = Folk.filter(kingdom = target, mission = None, birth__gte= datetime.now() - timedelta(days=C(\"MAJORITE\")))\nB = f(\"somme_stat_folks\", \"plot\") / def_folks.count()\ndefense = float(0.3*float(A) + 0.7*float(B))\nif defense < attack * 2:\n  pe = kingdom.create_pending_event(\"resultat_espionnage_echec\")\n  pe.set_value(\"target\", target)\n  pe.start()\nelse:\n  marge = min(100, 100 * 4/float(3) * 1/float(2) * ( 1 + ( (attack-defense) / float((attack+defense)) ) ) )\n  soliers = int(target.soldiers*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  cavaliers = int(Folk.objects.filter(kingdom=target, quality_set__name=\"cavalier\").count()*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  archers = int(Folk.objects.filter(kingdom=target, quality_set__name=\"archer\").count()*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  piquiers = int(Folk.objects.filter(kingdom=target, quality_set__name=\"piquier\").count()*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  choice_folks = random_value(1,10)\n  defenseurs = []\n  if choice_folks < 6 :\n    defenseurs = PendingMission.objects.get(kingdom = target, slug=\"ligne_defense\").grids[\"defenseurs\"]\n    import random\n    random.shuffle(defenseurs)\n    defenseurs = defenseurs[0]\n  elif choice_folks < 8:\n    defenseurs = PendingMission.objects.get(kingdom = target, slug=\"ligne_defense\").grids[\"defenseurs\"]\n    import random\n    random.shuffle(defenseurs)\n    defenseurs = defenseurs[0:2]\n  pe = kingdom.create_pending_mission(\"resultat_espionnage_troupes\")\n  pe.set_value(\"marge\", marge)\n  pe.set_value(\"soldiers\",soldiers)\n  pe.set_value(\"archers\",archers)\n  pe.set_value(\"piquiers\",piquiers)\n  pe.set_value(\"defenseurs\",defenseurs)\n  pe.start()\n", 
+    "on_resolution": "attack = 0\nfor folk in grids['espions']:\n  attack += folk.plot\nA = 0\ntry :\n  A += target.get_folk_in_title(\"maitre_espion\").plot * 4\nexcept:\n  pass \ntry :\n  A += target.get_folk_in_title(\"chatelain\").plot\nexcept:\n  pass\nA /= 5\ndef_folks = Folk.objects.filter(kingdom = target, mission = None, birth__gte= datetime.now() - timedelta(days=C(\"MAJORITE\")), sex = \"m\")\nB = f(\"somme_stat_folks\", folks=def_folks, stat=\"plot\") / def_folks.count()\ndefense = float(0.3*float(A) + 0.7*float(B))\nif defense < attack * 2:\n  pe = kingdom.create_pending_event(\"resultat_espionnage_echec\")\n  pe.set_value(\"target\", target)\n  pe.start()\nelse:\n  marge = min(100, 100 * 4/float(3) * 1/float(2) * ( 1 + ( (attack-defense) / float((attack+defense)) ) ) )\n  soliers = int(target.soldiers*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  cavaliers = int(Folk.objects.filter(kingdom=target, quality_set__name=\"cavalier\").count()*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  archers = int(Folk.objects.filter(kingdom=target, quality_set__name=\"archer\").count()*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  piquiers = int(Folk.objects.filter(kingdom=target, quality_set__name=\"piquier\").count()*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  choice_folks = random_value(1,10)\n  defenseurs = []\n  if choice_folks < 6 :\n    defenseurs = PendingMission.objects.get(kingdom = target, slug=\"ligne_defense\").grids[\"defenseurs\"]\n    import random\n    random.shuffle(defenseurs)\n    defenseurs = defenseurs[0]\n  elif choice_folks < 8:\n    defenseurs = PendingMission.objects.get(kingdom = target, slug=\"ligne_defense\").grids[\"defenseurs\"]\n    import random\n    random.shuffle(defenseurs)\n    defenseurs = defenseurs[0:2]\n  pe = kingdom.create_pending_mission(\"resultat_espionnage_troupes\")\n  pe.set_value(\"marge\", marge)\n  pe.set_value(\"soldiers\",soldiers)\n  pe.set_value(\"archers\",archers)\n  pe.set_value(\"piquiers\",piquiers)\n  pe.set_value(\"defenseurs\",defenseurs)\n  pe.start()\n", 
     "value_description": "", 
     "on_start": "\n", 
     "has_target": true, 
@@ -43750,6 +43760,135 @@
   }
 },
 {
+  "pk": 176, 
+  "model": "mission.pendingmission", 
+  "fields": {
+    "kingdom": 58, 
+    "is_started": true, 
+    "target": 70, 
+    "created": "2013-09-12T21:43:57.156", 
+    "started": "2013-09-12T21:44:24.801", 
+    "last_target": 70, 
+    "mission": 44, 
+    "value": 0, 
+    "is_finished": false, 
+    "last_value": 0
+  }
+},
+{
+  "pk": 177, 
+  "model": "mission.pendingmission", 
+  "fields": {
+    "kingdom": 58, 
+    "is_started": false, 
+    "target": null, 
+    "created": "2013-09-12T21:59:56.283", 
+    "started": null, 
+    "last_target": null, 
+    "mission": 43, 
+    "value": 0, 
+    "is_finished": false, 
+    "last_value": 0
+  }
+},
+{
+  "pk": 178, 
+  "model": "mission.pendingmission", 
+  "fields": {
+    "kingdom": 70, 
+    "is_started": false, 
+    "target": null, 
+    "created": "2013-09-12T22:00:13.966", 
+    "started": null, 
+    "last_target": null, 
+    "mission": 43, 
+    "value": 0, 
+    "is_finished": false, 
+    "last_value": 0
+  }
+},
+{
+  "pk": 285, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 176, 
+    "folk": 6681, 
+    "mission_grid": 45
+  }
+},
+{
+  "pk": 286, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 176, 
+    "folk": 6682, 
+    "mission_grid": 45
+  }
+},
+{
+  "pk": 287, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 176, 
+    "folk": 6679, 
+    "mission_grid": 45
+  }
+},
+{
+  "pk": 289, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 178, 
+    "folk": 6772, 
+    "mission_grid": 44
+  }
+},
+{
+  "pk": 290, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 178, 
+    "folk": 6771, 
+    "mission_grid": 44
+  }
+},
+{
+  "pk": 291, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 178, 
+    "folk": 6774, 
+    "mission_grid": 44
+  }
+},
+{
+  "pk": 292, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 178, 
+    "folk": 6775, 
+    "mission_grid": 44
+  }
+},
+{
+  "pk": 294, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 177, 
+    "folk": 6683, 
+    "mission_grid": 44
+  }
+},
+{
+  "pk": 295, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 177, 
+    "folk": 6868, 
+    "mission_grid": 44
+  }
+},
+{
   "pk": 185, 
   "model": "mission.availablemission", 
   "fields": {
@@ -44051,6 +44190,22 @@
   "fields": {
     "kingdom": 58, 
     "mission": 41
+  }
+},
+{
+  "pk": 352, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 58, 
+    "mission": 44
+  }
+},
+{
+  "pk": 353, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 58, 
+    "mission": 43
   }
 },
 {
@@ -68906,6 +69061,48 @@
   }
 },
 {
+  "pk": 1553, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 45, 
+    "object_type": "MissionGrid", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 15, 
+    "queries": 1
+  }
+},
+{
+  "pk": 1554, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 45, 
+    "object_type": "MissionGrid", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 2, 
+    "queries": 1
+  }
+},
+{
+  "pk": 1555, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 45, 
+    "object_type": "MissionGrid", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 2, 
+    "queries": 1
+  }
+},
+{
   "pk": 1, 
   "model": "auth.permission", 
   "fields": {
@@ -70058,7 +70255,7 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-09-09T19:24:43.073", 
+    "last_login": "2013-09-12T22:00:25.475", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$10000$SlRZsPYEixZ4$74mKi8WFqceBKTSlwQ9w1eOPPeLya7SJQz0igVPzZKQ=", 
@@ -102220,6 +102417,136 @@
     "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Malheureusement, je n'ai que faire de ces informat [resultat_espionnage_troupes]\u00a0\u00bb. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ces donn\u00e9es sont primordiales, je vais les noter s [resultat_espionnage_troupes]\u00a0\u00bb.", 
     "user": 41, 
     "content_type": 29
+  }
+},
+{
+  "pk": 6967, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-12T21:43:23.817", 
+    "object_repr": "resultat_espionnage_troupes", 
+    "object_id": "243", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Malheureusement, je n'ai que faire de ces informat [resultat_espionnage_troupes]\u00a0\u00bb. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ces donn\u00e9es sont primordiales, je vais les noter s [resultat_espionnage_troupes]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 6968, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-12T21:43:41.579", 
+    "object_repr": "Espionnage des troupes [hugo]", 
+    "object_id": "352", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 27
+  }
+},
+{
+  "pk": 6969, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-12T21:47:03.713", 
+    "object_repr": "espionnage_troupes", 
+    "object_id": "44", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionnage_troupes [Espions (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6970, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-12T21:48:34.749", 
+    "object_repr": "espionnage_troupes", 
+    "object_id": "44", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionnage_troupes [Espions (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6971, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-12T21:49:20.412", 
+    "object_repr": "espionnage_troupes", 
+    "object_id": "44", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionnage_troupes [Espions (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6972, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-12T21:54:27.457", 
+    "object_repr": "espionnage_troupes", 
+    "object_id": "44", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionnage_troupes [Espions (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6973, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-12T21:59:45.063", 
+    "object_repr": "D\u00e9finir sa d\u00e9fense [hugo]", 
+    "object_id": "353", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 27
+  }
+},
+{
+  "pk": 6974, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-12T22:00:13.978", 
+    "object_repr": "D\u00e9finir sa d\u00e9fense [jules]", 
+    "object_id": "178", 
+    "change_message": "", 
+    "user": 38, 
+    "content_type": 25
+  }
+},
+{
+  "pk": 6975, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-12T22:00:33.994", 
+    "object_repr": "ligne_defense", 
+    "object_id": "43", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. name et condition modifi\u00e9 pour mission grid \u00ab\u00a0ligne_defense [Defenseurs (1000)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6976, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-12T22:00:44.302", 
+    "object_repr": "ligne_defense", 
+    "object_id": "43", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. name et condition modifi\u00e9 pour mission grid \u00ab\u00a0ligne_defense [D\u00e9fenseurs (1000)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
   }
 },
 {
