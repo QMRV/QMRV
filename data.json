@@ -2589,6 +2589,24 @@
   }
 },
 {
+  "pk": 479, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 58, 
+    "name": "tuto_bandits_fantome", 
+    "value": 1
+  }
+},
+{
+  "pk": 480, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 58, 
+    "name": "tuto_has_claim", 
+    "value": 1
+  }
+},
+{
   "pk": 196, 
   "model": "kingdom.folk", 
   "fields": {
@@ -3260,7 +3278,7 @@
     "avatar": 64, 
     "birth": "2013-08-10T23:35:03.029", 
     "mother": null, 
-    "loyalty": 80, 
+    "loyalty": 85, 
     "spouse": null, 
     "quality_set": [
       15
@@ -3299,7 +3317,7 @@
   "model": "kingdom.folk", 
   "fields": {
     "kingdom": 58, 
-    "fight": 14, 
+    "fight": 16, 
     "first_name": "Raoul", 
     "last_name": "d'Ensign\u00e9", 
     "diplomacy": 12, 
@@ -3312,10 +3330,11 @@
     "avatar": 6, 
     "birth": "2013-07-22T23:37:31.826", 
     "mother": null, 
-    "loyalty": 25, 
+    "loyalty": 35, 
     "spouse": null, 
     "quality_set": [
-      2
+      2, 
+      12
     ], 
     "mentor": null
   }
@@ -4459,7 +4478,7 @@
     "avatar": 4, 
     "birth": "2013-08-08T17:17:57.719", 
     "mother": null, 
-    "loyalty": 59, 
+    "loyalty": 64, 
     "spouse": null, 
     "quality_set": [
       45, 
@@ -6048,6 +6067,94 @@
   }
 },
 {
+  "pk": 999, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-12T17:18:15.861", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1000, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": "Des bandits s\u2019appr\u00eatent \u00e0 mettre mes terres \u00e0 sac. Je dois [mener mes troupes \u00e0 leur rencontre](mission). ", 
+    "created": "2013-09-12T17:18:54.119", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1001, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": "J'ai vaincu les bandits. 3 de mes hommes d'armes sont tomb\u00e9s mais Raoul d'Ensign\u00e9 s'est illustr\u00e9 dans la bataille. ```Gagne le Trait Intrepide.```.", 
+    "created": "2013-09-12T17:21:38.806", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1002, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-12T17:21:41.210", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1003, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": "Les r\u00e9parations de hugo sont termin\u00e9es et il est temps de r\u00e9fl\u00e9chir \u00e0 s'agrandir. Je vais charger mes diplomates de [justifier diplomatiquement](#mission) une attaque sur notre voisin, le seigneur .", 
+    "created": "2013-09-12T17:22:30.152", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1004, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": "J'ai obtenu un cassus belli envers le seigneur .", 
+    "created": "2013-09-12T17:24:18.961", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1005, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": "Je peux maintenant [attaquer](#mission) le seigneur .", 
+    "created": "2013-09-12T17:24:23.847", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1006, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-12T17:24:25.288", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
   "pk": 1, 
   "model": "title.title", 
   "fields": {
@@ -6132,7 +6239,7 @@
     "name": "Tr\u00e9sorier", 
     "on_defect": "folk.loyalty-=6\nfolk.save()\n", 
     "on_affect": "folk.loyalty+=5\nfolk.save()\n", 
-    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un tr\u00e9sorier.\")\n\nkingdom.unlock_mission(slug=\"emprunt\")\nkingdom.unlock_mission(slug=\"investir\")\nkingdom.unlock_mission(slug=\"taxepaysanne\")\nkingdom.unlock_mission(slug=\"taxecour\")", 
+    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un tr\u00e9sorier.\")\n\nkingdom.unlock_mission(\"emprunt\")\nkingdom.unlock_mission(\"investir\")\nkingdom.unlock_mission(\"taxepaysanne\")\nkingdom.unlock_mission(\"taxecour\")", 
     "slug": "tresorier", 
     "condition": "\n", 
     "description": "Celui qui g\u00e8re les sousous"
@@ -6213,8 +6320,8 @@
   "model": "title.availabletitle", 
   "fields": {
     "kingdom": 58, 
-    "last_folk": null, 
-    "folk": null, 
+    "last_folk": 6681, 
+    "folk": 6681, 
     "title": 5
   }
 },
@@ -6323,8 +6430,8 @@
   "model": "title.availabletitle", 
   "fields": {
     "kingdom": 58, 
-    "last_folk": null, 
-    "folk": null, 
+    "last_folk": 6867, 
+    "folk": 6867, 
     "title": 7
   }
 },
@@ -43555,16 +43662,16 @@
   }
 },
 {
-  "pk": 172, 
+  "pk": 175, 
   "model": "mission.pendingmission", 
   "fields": {
     "kingdom": 58, 
     "is_started": false, 
     "target": null, 
-    "created": "2013-09-12T17:18:15.783", 
+    "created": "2013-09-12T17:26:16.294", 
     "started": null, 
     "last_target": null, 
-    "mission": 35, 
+    "mission": 41, 
     "value": 0, 
     "is_finished": false, 
     "last_value": 0
@@ -43864,6 +43971,14 @@
   "fields": {
     "kingdom": 58, 
     "mission": 19
+  }
+},
+{
+  "pk": 351, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 58, 
+    "mission": 41
   }
 },
 {
@@ -49747,15 +49862,15 @@
   }
 },
 {
-  "pk": 1626, 
+  "pk": 1638, 
   "model": "event.pendingevent", 
   "fields": {
     "kingdom": 58, 
-    "is_started": true, 
-    "created": "2013-09-12T17:18:15.767", 
-    "started": "2013-09-12T17:18:15.771", 
-    "text": "\"Sire!\"  entre  en trombe dans mes appartements, essouffl\u00e9 apr\u00e8s une longue course dans les couloirs du ch\u00e2teau. \"Des brigands, mon seigneur. Au moins une trentaine. Une sentinelle les a rep\u00e9r\u00e9es \u00e0 la fronti\u00e8re de nos terres...\". Il  prend une inspiration, et se redresse avec un sourire f\u00e9roce sur les l\u00e8vres. \"Avec votre permission, je vais rassembler nos hommes et chevaucher \u00e0 leur rencontre. Les stopper avant qu'ils n'atteignent le premier village\". Je me l\u00e8ve, le  regarde droit dans les yeux, et opine avec gravit\u00e9. \"Je prends le commandement.\" J'attrape mon \u00e9p\u00e9e et sort \u00e0 sa suite.\r\n\r\n    Nouvelle mission.", 
-    "event": 164
+    "is_started": false, 
+    "created": "2013-09-12T17:24:51.022", 
+    "started": null, 
+    "text": "", 
+    "event": 222
   }
 },
 {
@@ -49792,17 +49907,6 @@
   }
 },
 {
-  "pk": 1637, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 1626, 
-    "message": "Des bandits s\u2019appr\u00eatent \u00e0 mettre mes terres \u00e0 sac. Je dois [mener mes troupes \u00e0 leur rencontre](mission). ", 
-    "text": "Heureusement que j'ai prit soin de lever des troupes...", 
-    "folk": null, 
-    "event_action": 231
-  }
-},
-{
   "pk": 1653, 
   "model": "event._pendingeventvariable", 
   "fields": {
@@ -49836,15 +49940,6 @@
     "pending_event": 1596, 
     "name": "slug", 
     "value": "tuto_ambition"
-  }
-},
-{
-  "pk": 2990, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1626, 
-    "name": "slug", 
-    "value": "tuto_bandits_fantome"
   }
 },
 {
@@ -68241,6 +68336,440 @@
     "direct_queries": 16, 
     "time": 123, 
     "queries": 32
+  }
+},
+{
+  "pk": 1522, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 5, 
+    "object_type": "Title", 
+    "object_attr": "on_affect", 
+    "direct_queries": 4, 
+    "time": 11, 
+    "queries": 4
+  }
+},
+{
+  "pk": 1523, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 7, 
+    "object_type": "Title", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 8, 
+    "queries": 3
+  }
+},
+{
+  "pk": 1524, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 36, 
+    "object_type": "MissionGrid", 
+    "object_attr": "condition", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 1525, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 36, 
+    "object_type": "MissionGrid", 
+    "object_attr": "condition", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 1526, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 36, 
+    "object_type": "MissionGrid", 
+    "object_attr": "condition", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 1527, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 36, 
+    "object_type": "MissionGrid", 
+    "object_attr": "condition", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 1528, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 35, 
+    "object_type": "Mission", 
+    "object_attr": "on_start", 
+    "direct_queries": 32, 
+    "time": 70, 
+    "queries": 32
+  }
+},
+{
+  "pk": 1529, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 3, 
+    "object_pk": 12, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 7, 
+    "queries": 3
+  }
+},
+{
+  "pk": 1530, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 2, 
+    "object_pk": 170, 
+    "object_type": "Event", 
+    "object_attr": "on_fire", 
+    "direct_queries": 15, 
+    "time": 48, 
+    "queries": 18
+  }
+},
+{
+  "pk": 1531, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 236, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 31, 
+    "time": 107, 
+    "queries": 49
+  }
+},
+{
+  "pk": 1532, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 2, 
+    "object_pk": 171, 
+    "object_type": "Event", 
+    "object_attr": "on_fire", 
+    "direct_queries": 8, 
+    "time": 16, 
+    "queries": 8
+  }
+},
+{
+  "pk": 1533, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 237, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 34, 
+    "time": 76, 
+    "queries": 42
+  }
+},
+{
+  "pk": 1534, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 14, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 16, 
+    "time": 32, 
+    "queries": 16
+  }
+},
+{
+  "pk": 1535, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 238, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 35, 
+    "queries": 17
+  }
+},
+{
+  "pk": 1536, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 2, 
+    "object_pk": 9, 
+    "object_type": "Event", 
+    "object_attr": "on_fire", 
+    "direct_queries": 3, 
+    "time": 9, 
+    "queries": 3
+  }
+},
+{
+  "pk": 1537, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 293, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 25, 
+    "time": 76, 
+    "queries": 28
+  }
+},
+{
+  "pk": 1538, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 14, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 22, 
+    "time": 66, 
+    "queries": 22
+  }
+},
+{
+  "pk": 1539, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 15, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 15, 
+    "time": 29, 
+    "queries": 15
+  }
+},
+{
+  "pk": 1540, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 16, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 2, 
+    "time": 7, 
+    "queries": 2
+  }
+},
+{
+  "pk": 1541, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 40, 
+    "object_type": "Mission", 
+    "object_attr": "on_start", 
+    "direct_queries": 19, 
+    "time": 56, 
+    "queries": 19
+  }
+},
+{
+  "pk": 1542, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 271, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 17, 
+    "time": 65, 
+    "queries": 17
+  }
+},
+{
+  "pk": 1543, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 272, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 13, 
+    "time": 30, 
+    "queries": 13
+  }
+},
+{
+  "pk": 1544, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 2, 
+    "object_pk": 229, 
+    "object_type": "Event", 
+    "object_attr": "on_fire", 
+    "direct_queries": 6, 
+    "time": 11, 
+    "queries": 6
+  }
+},
+{
+  "pk": 1545, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 293, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 18, 
+    "time": 64, 
+    "queries": 24
+  }
+},
+{
+  "pk": 1546, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 19, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 1547, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 1, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 1548, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 19, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 1549, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 19, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 1550, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 20, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 19, 
+    "time": 57, 
+    "queries": 19
+  }
+},
+{
+  "pk": 1551, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 21, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 1, 
+    "queries": 0
+  }
+},
+{
+  "pk": 1552, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 41, 
+    "object_type": "Mission", 
+    "object_attr": "on_start", 
+    "direct_queries": 82, 
+    "time": 280, 
+    "queries": 101
   }
 },
 {
@@ -101470,6 +101999,19 @@
   }
 },
 {
+  "pk": 6960, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-12T17:27:16.338", 
+    "object_repr": "Tr\u00e9sorier", 
+    "object_id": "7", 
+    "change_message": "Modifi\u00e9 on_unlock, condition, on_affect et on_defect.", 
+    "user": 41, 
+    "content_type": 15
+  }
+},
+{
   "pk": 44, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -101495,11 +102037,11 @@
   "pk": 58, 
   "model": "kingdom.kingdom", 
   "fields": {
-    "soldiers": 21, 
-    "prestige": 0, 
-    "money": 120, 
+    "soldiers": 24, 
+    "prestige": 120, 
+    "money": 150, 
     "user": 41, 
-    "population": 140
+    "population": 180
   }
 },
 {
