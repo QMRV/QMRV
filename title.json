@@ -84,7 +84,7 @@
     "name": "Tr\u00e9sorier", 
     "on_defect": "folk.loyalty-=6\nfolk.save()\n", 
     "on_affect": "folk.loyalty+=5\nfolk.save()\n", 
-    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un tr\u00e9sorier.\")\n\nkingdom.unlock_mission(slug=\"emprunt\")\nkingdom.unlock_mission(slug=\"investir\")\nkingdom.unlock_mission(slug=\"taxepaysanne\")\nkingdom.unlock_mission(slug=\"taxecour\")", 
+    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un tr\u00e9sorier.\")\n\nkingdom.unlock_mission(\"emprunt\")\nkingdom.unlock_mission(\"investir\")\nkingdom.unlock_mission(\"taxepaysanne\")\nkingdom.unlock_mission(\"taxecour\")", 
     "slug": "tresorier", 
     "condition": "\n", 
     "description": "Celui qui g\u00e8re les sousous"
