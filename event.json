@@ -2959,6 +2959,34 @@
   }
 },
 {
+  "pk": 242, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "R\u00e9sultat de l'espionnage", 
+    "weight": 1, 
+    "text": "resultat_espionnage_echec", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "resultat_espionnage_echec", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 243, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "R\u00e9sultat de l'espionnage", 
+    "weight": 1, 
+    "text": "On a plein d'infos sur les troupes !", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "resultat_espionnage_troupes", 
+    "condition": "\n"
+  }
+},
+{
   "pk": 5, 
   "model": "event.eventaction", 
   "fields": {
@@ -5805,6 +5833,39 @@
     "event": 241, 
     "condition": "\n", 
     "on_fire": "#kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scanjoueur_fantome\")\npe.start()"
+  }
+},
+{
+  "pk": 311, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Fl\u00fbte ! Il faudrait que j'arr\u00eate d'envoyer des incomp\u00e9tents", 
+    "message": "", 
+    "event": 242, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 312, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Malheureusement, je n'ai que faire de ces informations...", 
+    "message": "", 
+    "event": 243, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 313, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Ces donn\u00e9es sont primordiales, je vais les noter sur mon registre.", 
+    "message": "", 
+    "event": 243, 
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 }
 ]
