@@ -3242,15 +3242,15 @@
     "fight": 6, 
     "first_name": "Giefroi", 
     "last_name": "de hugo", 
-    "diplomacy": 10, 
+    "diplomacy": 8, 
     "father": 6679, 
-    "plot": 7, 
+    "plot": 20, 
     "scholarship": 7, 
     "sex": "m", 
     "disabled": false, 
     "death": null, 
     "avatar": 25, 
-    "birth": "2013-08-09T23:35:02.966", 
+    "birth": "2013-08-09T23:35:02", 
     "mother": null, 
     "loyalty": 80, 
     "spouse": null, 
@@ -3268,15 +3268,15 @@
     "fight": 4, 
     "first_name": "Gerberte", 
     "last_name": "de hugo", 
-    "diplomacy": 12, 
+    "diplomacy": 13, 
     "father": 6679, 
-    "plot": 10, 
-    "scholarship": 5, 
+    "plot": 20, 
+    "scholarship": 3, 
     "sex": "f", 
     "disabled": false, 
     "death": null, 
     "avatar": 64, 
-    "birth": "2013-08-10T23:35:03.029", 
+    "birth": "2013-08-10T23:35:03", 
     "mother": null, 
     "loyalty": 85, 
     "spouse": null, 
@@ -3556,13 +3556,13 @@
     "last_name": "de hugo", 
     "diplomacy": 8, 
     "father": null, 
-    "plot": 5, 
+    "plot": 20, 
     "scholarship": 12, 
     "sex": "f", 
     "disabled": false, 
     "death": null, 
     "avatar": 51, 
-    "birth": "2013-07-27T19:57:14.547", 
+    "birth": "2013-07-27T19:57:14", 
     "mother": null, 
     "loyalty": 55, 
     "spouse": null, 
@@ -3902,7 +3902,7 @@
     "avatar": 67, 
     "birth": "2013-08-20T13:41:26.623", 
     "mother": null, 
-    "loyalty": 85, 
+    "loyalty": 79, 
     "spouse": null, 
     "quality_set": [
       27
@@ -4033,7 +4033,7 @@
     "avatar": 43, 
     "birth": "2013-08-26T13:43:17.087", 
     "mother": 6776, 
-    "loyalty": 65, 
+    "loyalty": 70, 
     "spouse": null, 
     "quality_set": [
       8
@@ -6380,8 +6380,8 @@
   "model": "title.availabletitle", 
   "fields": {
     "kingdom": 70, 
-    "last_folk": 6773, 
-    "folk": 6773, 
+    "last_folk": 6778, 
+    "folk": 6778, 
     "title": 5
   }
 },
@@ -43169,7 +43169,7 @@
     "target_list": "\n", 
     "text": "Aller qu\u00e9rir des informations sur la force de bataille !", 
     "has_value": false, 
-    "on_resolution": "attack = 0\nfor folk in grids['espions']:\n  attack += folk.plot\nA = 0\ntry :\n  A += target.get_folk_in_title(\"maitre_espion\").plot * 4\nexcept:\n  pass \ntry :\n  A += target.get_folk_in_title(\"chatelain\").plot\nexcept:\n  pass\nA /= 5\ndef_folks = Folk.objects.filter(kingdom = target, mission = None, birth__gte= datetime.now() - timedelta(days=C(\"MAJORITE\")), sex = \"m\")\nB = f(\"somme_stat_folks\", folks=def_folks, stat=\"plot\") / def_folks.count()\ndefense = float(0.3*float(A) + 0.7*float(B))\nif defense < attack * 2:\n  pe = kingdom.create_pending_event(\"resultat_espionnage_echec\")\n  pe.set_value(\"target\", target)\n  pe.start()\nelse:\n  marge = min(100, 100 * 4/float(3) * 1/float(2) * ( 1 + ( (attack-defense) / float((attack+defense)) ) ) )\n  soliers = int(target.soldiers*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  cavaliers = int(Folk.objects.filter(kingdom=target, quality_set__name=\"cavalier\").count()*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  archers = int(Folk.objects.filter(kingdom=target, quality_set__name=\"archer\").count()*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  piquiers = int(Folk.objects.filter(kingdom=target, quality_set__name=\"piquier\").count()*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  choice_folks = random_value(1,10)\n  defenseurs = []\n  if choice_folks < 6 :\n    defenseurs = PendingMission.objects.get(kingdom = target, slug=\"ligne_defense\").grids[\"defenseurs\"]\n    import random\n    random.shuffle(defenseurs)\n    defenseurs = defenseurs[0]\n  elif choice_folks < 8:\n    defenseurs = PendingMission.objects.get(kingdom = target, slug=\"ligne_defense\").grids[\"defenseurs\"]\n    import random\n    random.shuffle(defenseurs)\n    defenseurs = defenseurs[0:2]\n  pe = kingdom.create_pending_mission(\"resultat_espionnage_troupes\")\n  pe.set_value(\"marge\", marge)\n  pe.set_value(\"soldiers\",soldiers)\n  pe.set_value(\"archers\",archers)\n  pe.set_value(\"piquiers\",piquiers)\n  pe.set_value(\"defenseurs\",defenseurs)\n  pe.start()\n", 
+    "on_resolution": "attack = 0\nfor folk in grids['espions']:\n  attack += folk.plot\nA = 0\ntry :\n  A += target.get_folk_in_title(\"maitre_espion\").plot * 4\nexcept:\n  pass \ntry :\n  A += target.get_folk_in_title(\"chatelain\").plot\nexcept:\n  pass\nA /= 5\ndef_folks = list(Folk.objects.filter(kingdom = target, mission = None, birth__gte= datetime.now() - timedelta(days=C(\"MAJORITE\")), sex = \"m\"))\nB = f(\"somme_stat_folks\", folks=def_folks, stat=\"plot\") / len(def_folks)\ndefense = float(0.3*float(A) + 0.7*float(B))\nif defense > attack * 2:\n  pe = kingdom.create_pending_event(\"resultat_espionnage_echec\")\n  pe.set_value(\"target\", target)\n  pe.start()\nelse:\n  marge = min(100, 100 * 4/float(3) * 1/float(2) * ( 1 + ( (attack-defense) / float((attack+defense)) ) ) )\n  soldiers = int(target.soldiers*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  cavaliers = int(Folk.objects.filter(kingdom=target, quality_set__name=\"cavalier\").count()*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  archers = int(Folk.objects.filter(kingdom=target, quality_set__name=\"archer\").count()*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  piquiers = int(Folk.objects.filter(kingdom=target, quality_set__name=\"piquier\").count()*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  choice_folks = random_value(1,10)\n  defenseurs = []\n  if choice_folks < 6 :\n    defenseurs = PendingMission.objects.get(kingdom = target, mission__slug=\"ligne_defense\").grids[\"defenseurs\"]\n    import random\n    random.shuffle(defenseurs)\n    defenseurs = defenseurs[0]\n  elif choice_folks < 8:\n    defenseurs = PendingMission.objects.get(kingdom = target, mission__slug=\"ligne_defense\").grids[\"defenseurs\"]\n    import random\n    random.shuffle(defenseurs)\n    defenseurs = defenseurs[0:2]\n  pe = kingdom.create_pending_event(\"resultat_espionnage_troupes\")\n  pe.set_value(\"marge\", marge)\n  pe.set_value(\"soldiers\",soldiers)\n  pe.set_value(\"archers\",archers)\n  pe.set_value(\"piquiers\",piquiers)\n  pe.set_value(\"defenseurs\",defenseurs)\n  pe.start()\n", 
     "value_description": "", 
     "on_start": "\n", 
     "has_target": true, 
@@ -43744,38 +43744,6 @@
   }
 },
 {
-  "pk": 175, 
-  "model": "mission.pendingmission", 
-  "fields": {
-    "kingdom": 58, 
-    "is_started": false, 
-    "target": null, 
-    "created": "2013-09-12T17:26:16.294", 
-    "started": null, 
-    "last_target": null, 
-    "mission": 41, 
-    "value": 0, 
-    "is_finished": false, 
-    "last_value": 0
-  }
-},
-{
-  "pk": 176, 
-  "model": "mission.pendingmission", 
-  "fields": {
-    "kingdom": 58, 
-    "is_started": true, 
-    "target": 70, 
-    "created": "2013-09-12T21:43:57.156", 
-    "started": "2013-09-12T21:44:24.801", 
-    "last_target": 70, 
-    "mission": 44, 
-    "value": 0, 
-    "is_finished": false, 
-    "last_value": 0
-  }
-},
-{
   "pk": 177, 
   "model": "mission.pendingmission", 
   "fields": {
@@ -43808,30 +43776,19 @@
   }
 },
 {
-  "pk": 285, 
-  "model": "mission.pendingmissionaffectation", 
+  "pk": 181, 
+  "model": "mission.pendingmission", 
   "fields": {
-    "pending_mission": 176, 
-    "folk": 6681, 
-    "mission_grid": 45
-  }
-},
-{
-  "pk": 286, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 176, 
-    "folk": 6682, 
-    "mission_grid": 45
-  }
-},
-{
-  "pk": 287, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 176, 
-    "folk": 6679, 
-    "mission_grid": 45
+    "kingdom": 58, 
+    "is_started": true, 
+    "target": 70, 
+    "created": "2013-09-12T23:07:05.314", 
+    "started": "2013-09-12T23:07:15.977", 
+    "last_target": 70, 
+    "mission": 44, 
+    "value": 0, 
+    "is_finished": false, 
+    "last_value": 0
   }
 },
 {
@@ -43886,6 +43843,42 @@
     "pending_mission": 177, 
     "folk": 6868, 
     "mission_grid": 44
+  }
+},
+{
+  "pk": 298, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 177, 
+    "folk": 6867, 
+    "mission_grid": 44
+  }
+},
+{
+  "pk": 306, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 181, 
+    "folk": 6680, 
+    "mission_grid": 45
+  }
+},
+{
+  "pk": 307, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 181, 
+    "folk": 6733, 
+    "mission_grid": 45
+  }
+},
+{
+  "pk": 308, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 181, 
+    "folk": 6681, 
+    "mission_grid": 45
   }
 },
 {
@@ -50156,6 +50149,18 @@
     "kingdom": 58, 
     "is_started": false, 
     "created": "2013-09-12T17:24:51.022", 
+    "started": null, 
+    "text": "", 
+    "event": 222
+  }
+},
+{
+  "pk": 1640, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 58, 
+    "is_started": false, 
+    "created": "2013-09-12T23:01:57.210", 
     "started": null, 
     "text": "", 
     "event": 222
@@ -102550,6 +102555,162 @@
   }
 },
 {
+  "pk": 6977, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-12T22:32:28.911", 
+    "object_repr": "espionnage_troupes", 
+    "object_id": "44", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionnage_troupes [Espions (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6978, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-12T22:32:59.397", 
+    "object_repr": "espionnage_troupes", 
+    "object_id": "44", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionnage_troupes [Espions (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6979, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-12T22:52:21.187", 
+    "object_repr": "espionnage_troupes", 
+    "object_id": "44", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionnage_troupes [Espions (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6980, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-12T22:52:33.254", 
+    "object_repr": "espionnage_troupes", 
+    "object_id": "44", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionnage_troupes [Espions (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6981, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-12T22:53:32.641", 
+    "object_repr": "espionnage_troupes", 
+    "object_id": "44", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionnage_troupes [Espions (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6982, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-12T23:05:06.557", 
+    "object_repr": "Giefroi de hugo", 
+    "object_id": "6680", 
+    "change_message": "Modifi\u00e9 plot.", 
+    "user": 41, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 6983, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-12T23:05:23.668", 
+    "object_repr": "Gerberte de hugo", 
+    "object_id": "6681", 
+    "change_message": "Modifi\u00e9 plot.", 
+    "user": 41, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 6984, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-12T23:05:47.239", 
+    "object_repr": "Li\u00e9tharde de hugo", 
+    "object_id": "6733", 
+    "change_message": "Modifi\u00e9 plot.", 
+    "user": 41, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 6985, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-12T23:06:44.631", 
+    "object_repr": "espionnage_troupes", 
+    "object_id": "44", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionnage_troupes [Espions (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6986, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-12T23:08:17.849", 
+    "object_repr": "espionnage_troupes", 
+    "object_id": "44", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionnage_troupes [Espions (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6987, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-12T23:10:34.580", 
+    "object_repr": "espionnage_troupes", 
+    "object_id": "44", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionnage_troupes [Espions (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6988, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-12T23:10:53.519", 
+    "object_repr": "espionnage_troupes", 
+    "object_id": "44", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionnage_troupes [Espions (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
   "pk": 44, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -102576,7 +102737,7 @@
   "model": "kingdom.kingdom", 
   "fields": {
     "soldiers": 24, 
-    "prestige": 120, 
+    "prestige": 100, 
     "money": 150, 
     "user": 41, 
     "population": 180
