@@ -6516,9 +6516,9 @@
   "pk": 2, 
   "model": "internal.recurring", 
   "fields": {
-    "delay": 1440, 
-    "kingdom_list": "", 
-    "on_fire": "for blesse in Folk.objects.filter(kingdom=kingdom, quality_set__name=\"blesse\"):\n  if random_value(1,20) == 1 :\n    blesse.die()\n", 
+    "delay": 770, 
+    "kingdom_list": "param = []\n", 
+    "on_fire": "blesses = folks.filter(quality_set__name=\"blesse\")\ntry:\n  soigneurs = PendingMission.objects.get(kingdom = kingdom, mission__slug=\"team_soigneurs\").folk_set.get(mission_grid__slug=\"soigneurs\")\n  moy_erudition = f(\"somme_stat_folks\", folks=soigneurs, stat=\"scholarship\") / soigneurs.count()\n  import math\n  soin = 99 - (float(moy_erudition/float(20))) * 8 * max(1, soigneurs.count() / math.sqrt(blesses.count()))\nexcept:\n  soin = 99\n  \nfor blesse in blesses:\n  fate = random_value(1,100)\n  if fate == 1 : #il meurt\n    blesse.die()\n  elif fate > soin : #il n'est plus bless\u00e9, mais gagne un autre trait\n    blesse.remove_quality(\"blesse\")\n    choix_trait = random_value(1,100)\n    if choix_trait < 34: #il est infirme\n      blesse.add_quality(\"infirme\")\n    elif choix < 67: #il est autre chose\n      choix_handicap = random_in(Quality.objects.filter(quality_category__name=\"handicap\"))\n      blesse.quality_set.add(choix_handicap)\n    else: #il est gu\u00e9rit\n      pass\n  #else on attendant 30 minutes qu'il retente sa chance\n", 
     "name": "Les bless\u00e9s peuvent mourir", 
     "description": "Fais mourir (ou pas) les bless\u00e9s"
   }
@@ -43208,6 +43208,29 @@
   }
 },
 {
+  "pk": 46, 
+  "model": "mission.mission", 
+  "fields": {
+    "name": "Nommer les soigneurs", 
+    "target_list": "\n", 
+    "text": "Nommer les personnes qui seront charg\u00e9 de soigner les bless\u00e9s.", 
+    "has_value": false, 
+    "on_resolution": "\n", 
+    "value_description": "", 
+    "on_start": "\n", 
+    "has_target": false, 
+    "is_team": true, 
+    "title": 3, 
+    "target_description": "", 
+    "timeout": null, 
+    "is_cancellable": false, 
+    "duration": 5, 
+    "on_cancel": "\n", 
+    "slug": "team_soigneurs", 
+    "on_init": "\n"
+  }
+},
+{
   "pk": 2, 
   "model": "mission.missiongrid", 
   "fields": {
@@ -43780,6 +43803,19 @@
   }
 },
 {
+  "pk": 47, 
+  "model": "mission.missiongrid", 
+  "fields": {
+    "allow_disabled": true, 
+    "name": "Soigneurs", 
+    "mission": 46, 
+    "length": 2000, 
+    "allow_empty": false, 
+    "slug": "soigneurs", 
+    "condition": "if folk.sex == \"m\" and folk.has_quality(\"pretre\") is False :\n  status = \"Seul les femmes et les pr\u00eatres peuvent soigner les bl\u00e9ss\u00e9s\"\n"
+  }
+},
+{
   "pk": 177, 
   "model": "mission.pendingmission", 
   "fields": {
@@ -43806,6 +43842,22 @@
     "started": null, 
     "last_target": null, 
     "mission": 43, 
+    "value": 0, 
+    "is_finished": false, 
+    "last_value": 0
+  }
+},
+{
+  "pk": 183, 
+  "model": "mission.pendingmission", 
+  "fields": {
+    "kingdom": 58, 
+    "is_started": false, 
+    "target": null, 
+    "created": "2013-09-13T15:24:53.652", 
+    "started": null, 
+    "last_target": null, 
+    "mission": 46, 
     "value": 0, 
     "is_finished": false, 
     "last_value": 0
@@ -43866,12 +43918,30 @@
   }
 },
 {
-  "pk": 298, 
+  "pk": 312, 
   "model": "mission.pendingmissionaffectation", 
   "fields": {
-    "pending_mission": 177, 
+    "pending_mission": 183, 
     "folk": 6867, 
-    "mission_grid": 44
+    "mission_grid": 47
+  }
+},
+{
+  "pk": 318, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 183, 
+    "folk": 6681, 
+    "mission_grid": 47
+  }
+},
+{
+  "pk": 319, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 183, 
+    "folk": 6733, 
+    "mission_grid": 47
   }
 },
 {
@@ -44200,6 +44270,14 @@
   "fields": {
     "kingdom": 58, 
     "mission": 45
+  }
+},
+{
+  "pk": 355, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 58, 
+    "mission": 46
   }
 },
 {
@@ -102953,6 +103031,97 @@
     "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel, target_list et title. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionner_troupes [Espions (3)]\u00a0\u00bb.", 
     "user": 41, 
     "content_type": 23
+  }
+},
+{
+  "pk": 7005, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-13T15:24:09.115", 
+    "object_repr": "nommer_soigneurs", 
+    "object_id": "46", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7006, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-13T15:24:25.511", 
+    "object_repr": "resultat_espionnage_troupes", 
+    "object_id": "243", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Malheureusement, je n'ai que faire de ces informat [resultat_espionnage_troupes]\u00a0\u00bb. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ces donn\u00e9es sont primordiales, je vais les noter s [resultat_espionnage_troupes]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7007, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-13T15:24:44.418", 
+    "object_repr": "Nomer les soigneurs [hugo]", 
+    "object_id": "355", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 27
+  }
+},
+{
+  "pk": 7008, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-13T15:25:36.594", 
+    "object_repr": "nommer_soigneurs", 
+    "object_id": "46", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel, target_list et is_cancellable. condition modifi\u00e9 pour mission grid \u00ab\u00a0nommer_soigneurs [Soigneurs (2000)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7009, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-13T15:27:45.786", 
+    "object_repr": "nommer_soigneurs", 
+    "object_id": "46", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0nommer_soigneurs [Soigneurs (2000)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7010, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-13T15:39:34.899", 
+    "object_repr": "team_soigneurs", 
+    "object_id": "46", 
+    "change_message": "Modifi\u00e9 name, slug, on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0team_soigneurs [Soigneurs (2000)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7011, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-13T16:04:11.552", 
+    "object_repr": "Les bless\u00e9s peuvent mourir", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 delay, kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
   }
 },
 {
