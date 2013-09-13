@@ -43185,6 +43185,29 @@
   }
 },
 {
+  "pk": 45, 
+  "model": "mission.mission", 
+  "fields": {
+    "name": "Espionnage un chateau", 
+    "target_list": "\n", 
+    "text": "Aller qu\u00e9rir des information sur les ressources du chateau", 
+    "has_value": false, 
+    "on_resolution": "attack = 0\nfor folk in grids['espions']:\n  attack += folk.plot\nattack /= 3\ndefense = 0\nme=0\nch=0\ntry :\n  me = target.get_folk_in_title(\"maitre_espion\").plot\nexcept:\n  pass\ntry :\n  ch = target.get_folk_in_title(\"chatelain\").plot\nexcept:\n  pass\ndef_folks = list(Folk.objects.filter(kingdom = target, mission = None, birth__gte= datetime.now() - timedelta(days=C(\"MAJORITE\")), sex = \"m\"))\ncour = f(\"somme_stat_folks\", folks=def_folks, stat=\"plot\") / len(def_folks)\ndefense = 0.3 * (4*me+ch) / 5 + 0.7 * cour\n\nif defense > attack * 2:\n  pe = kingdom.create_pending_event(\"resultat_espionnage_echec\")\n  pe.set_value(\"target\", target)\n  pe.start()\nelse:\n  marge = min(100, 100 * 4/float(3) * 1/float(2) * ( 1 + ( (attack-defense) / float((attack+defense)) ) ) )\n  gold = int(target.money*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  population = int(target.population*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  titles = Title.objects.all()\n  folks_titled = []\n  for title in titles :\n    folks_titled.append(target.get_folk_in_title(title.name))\n  pe = kingdom.create_pending_event(\"resultat_espionnage_chateau\")\n  pe.set_value(\"marge\", marge)\n  pe.set_value(\"gold\", gold)\n  pe.set_value(\"population\", population)\n  pe.set_value(\"folks_titled\", folks_titled)\n  pe.start()\n", 
+    "value_description": "", 
+    "on_start": "\n", 
+    "has_target": true, 
+    "is_team": false, 
+    "title": null, 
+    "target_description": "", 
+    "timeout": null, 
+    "is_cancellable": true, 
+    "duration": 120, 
+    "on_cancel": "\n", 
+    "slug": "espionner_chateau", 
+    "on_init": "\n"
+  }
+},
+{
   "pk": 2, 
   "model": "mission.missiongrid", 
   "fields": {
@@ -43744,6 +43767,19 @@
   }
 },
 {
+  "pk": 46, 
+  "model": "mission.missiongrid", 
+  "fields": {
+    "allow_disabled": false, 
+    "name": "Espions", 
+    "mission": 45, 
+    "length": 3, 
+    "allow_empty": false, 
+    "slug": "espions", 
+    "condition": "if folk.age() < C(\"MAJORITE\"):\n  status = \"Cette personne est trop jeune pour cette mission\"\n"
+  }
+},
+{
   "pk": 177, 
   "model": "mission.pendingmission", 
   "fields": {
@@ -44156,6 +44192,14 @@
   "fields": {
     "kingdom": 58, 
     "mission": 43
+  }
+},
+{
+  "pk": 354, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 58, 
+    "mission": 45
   }
 },
 {
@@ -47146,6 +47190,20 @@
   }
 },
 {
+  "pk": 244, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "R\u00e9sultat de l'espionnage", 
+    "weight": 1, 
+    "text": "On a plein d'infos sur le chateau !", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "resultat_espionnage_chateau", 
+    "condition": "\n"
+  }
+},
+{
   "pk": 5, 
   "model": "event.eventaction", 
   "fields": {
@@ -50023,6 +50081,28 @@
     "text": "Ces donn\u00e9es sont primordiales, je vais les noter sur mon registre.", 
     "message": "", 
     "event": 243, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 314, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Malheureusement, je n'ai que faire de ces informations...", 
+    "message": "", 
+    "event": 244, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 315, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Ces donn\u00e9es sont primordiales, je vais les noter sur mon registre.", 
+    "message": "", 
+    "event": 244, 
     "condition": "\n", 
     "on_fire": "\n"
   }
@@ -102795,6 +102875,58 @@
     "change_message": "Modifi\u00e9 params.", 
     "user": 41, 
     "content_type": 34
+  }
+},
+{
+  "pk": 6999, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-13T09:36:50.431", 
+    "object_repr": "espionner_chateau", 
+    "object_id": "45", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7000, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-13T09:37:16.382", 
+    "object_repr": "espionner_chateau", 
+    "object_id": "45", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. mission grid \u00ab\u00a0espionner_chateau [Espions (3)]\u00a0\u00bb ajout\u00e9.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7001, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-13T09:46:39.818", 
+    "object_repr": "resultat_espionnage_chateau", 
+    "object_id": "244", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7002, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-13T09:47:11.303", 
+    "object_repr": "Espionnage un chateau [hugo]", 
+    "object_id": "354", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 27
   }
 },
 {
