@@ -1332,9 +1332,9 @@
   "pk": 2, 
   "model": "internal.recurring", 
   "fields": {
-    "delay": 1440, 
-    "kingdom_list": "", 
-    "on_fire": "for blesse in Folk.objects.filter(kingdom=kingdom, quality_set__name=\"blesse\"):\n  if random_value(1,20) == 1 :\n    blesse.die()\n", 
+    "delay": 770, 
+    "kingdom_list": "param = []\n", 
+    "on_fire": "blesses = folks.filter(quality_set__name=\"blesse\")\ntry:\n  soigneurs = PendingMission.objects.get(kingdom = kingdom, mission__slug=\"team_soigneurs\").folk_set.get(mission_grid__slug=\"soigneurs\")\n  moy_erudition = f(\"somme_stat_folks\", folks=soigneurs, stat=\"scholarship\") / soigneurs.count()\n  import math\n  soin = 99 - (float(moy_erudition/float(20))) * 8 * max(1, soigneurs.count() / math.sqrt(blesses.count()))\nexcept:\n  soin = 99\n  \nfor blesse in blesses:\n  fate = random_value(1,100)\n  if fate == 1 : #il meurt\n    blesse.die()\n  elif fate > soin : #il n'est plus bless\u00e9, mais gagne un autre trait\n    blesse.remove_quality(\"blesse\")\n    choix_trait = random_value(1,100)\n    if choix_trait < 34: #il est infirme\n      blesse.add_quality(\"infirme\")\n    elif choix < 67: #il est autre chose\n      choix_handicap = random_in(Quality.objects.filter(quality_category__name=\"handicap\"))\n      blesse.quality_set.add(choix_handicap)\n    else: #il est gu\u00e9rit\n      pass\n  #else on attendant 30 minutes qu'il retente sa chance\n", 
     "name": "Les bless\u00e9s peuvent mourir", 
     "description": "Fais mourir (ou pas) les bless\u00e9s"
   }
