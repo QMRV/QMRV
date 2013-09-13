@@ -868,5 +868,13 @@
     "name": "Social", 
     "description": "Traits impos\u00e9 par la soci\u00e9t\u00e9"
   }
+},
+{
+  "pk": 6, 
+  "model": "kingdom.qualitycategory", 
+  "fields": {
+    "name": "Handicap", 
+    "description": "Les handicap possibles"
+  }
 }
 ]
