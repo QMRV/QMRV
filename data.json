@@ -6764,7 +6764,7 @@
   "pk": 19, 
   "model": "internal.function", 
   "fields": {
-    "params": "stat:str La comp\u00e9tence \u00e0 tester\r\nfolks:list Les folks \u00e0 tester", 
+    "params": "stat:str La comp\u00e9tence \u00e0 tester\r\nfolks:list|QuerySet Les folks \u00e0 tester", 
     "slug": "somme_stat_folks", 
     "on_fire": "param = sum([getattr(folk,stat) for folk in folks])", 
     "description": "Renvoie la somme d'une stat sur un groupe de folk (f1.figth + f2.fight + ...)"
@@ -43180,7 +43180,7 @@
     "is_cancellable": true, 
     "duration": 120, 
     "on_cancel": "\n", 
-    "slug": "espionnage_troupes", 
+    "slug": "espionner_troupes", 
     "on_init": "\n"
   }
 },
@@ -102769,6 +102769,32 @@
     "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionnage_troupes [Espions (3)]\u00a0\u00bb.", 
     "user": 41, 
     "content_type": 23
+  }
+},
+{
+  "pk": 6997, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-13T08:46:42.654", 
+    "object_repr": "espionner_troupes", 
+    "object_id": "44", 
+    "change_message": "Modifi\u00e9 slug, on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionner_troupes [Espions (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 6998, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-13T08:51:41.983", 
+    "object_repr": "somme_stat_folks()", 
+    "object_id": "19", 
+    "change_message": "Modifi\u00e9 params.", 
+    "user": 41, 
+    "content_type": 34
   }
 },
 {
