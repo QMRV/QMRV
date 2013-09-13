@@ -2987,6 +2987,20 @@
   }
 },
 {
+  "pk": 244, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "R\u00e9sultat de l'espionnage", 
+    "weight": 1, 
+    "text": "On a plein d'infos sur le chateau !", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "resultat_espionnage_chateau", 
+    "condition": "\n"
+  }
+},
+{
   "pk": 5, 
   "model": "event.eventaction", 
   "fields": {
@@ -5864,6 +5878,28 @@
     "text": "Ces donn\u00e9es sont primordiales, je vais les noter sur mon registre.", 
     "message": "", 
     "event": 243, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 314, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Malheureusement, je n'ai que faire de ces informations...", 
+    "message": "", 
+    "event": 244, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 315, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Ces donn\u00e9es sont primordiales, je vais les noter sur mon registre.", 
+    "message": "", 
+    "event": 244, 
     "condition": "\n", 
     "on_fire": "\n"
   }
