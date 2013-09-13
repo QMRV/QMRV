@@ -961,7 +961,7 @@
     "is_cancellable": true, 
     "duration": 120, 
     "on_cancel": "\n", 
-    "slug": "espionnage_troupes", 
+    "slug": "espionner_troupes", 
     "on_init": "\n"
   }
 },

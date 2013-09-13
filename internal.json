@@ -35666,7 +35666,7 @@
   "pk": 19, 
   "model": "internal.function", 
   "fields": {
-    "params": "stat:str La comp\u00e9tence \u00e0 tester\r\nfolks:list Les folks \u00e0 tester", 
+    "params": "stat:str La comp\u00e9tence \u00e0 tester\r\nfolks:list|QuerySet Les folks \u00e0 tester", 
     "slug": "somme_stat_folks", 
     "on_fire": "param = sum([getattr(folk,stat) for folk in folks])", 
     "description": "Renvoie la somme d'une stat sur un groupe de folk (f1.figth + f2.fight + ...)"
