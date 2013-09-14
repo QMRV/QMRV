@@ -9,11 +9,12 @@
     "fired": [
       68, 
       70, 
-      44, 
       46, 
       58, 
       59, 
-      71
+      71, 
+      73, 
+      72
     ], 
     "money_threshold": 0, 
     "on_fire": "# Cr\u00e9ation du ch\u00e2telain\nseigneur = call_function(\"creer_folk\", kingdom=kingdom, fight_min=7, plot_min=7, diplomacy_min=7, scholarship_min=7, max_carac=36, loyalty=99, sex=\"m\", last_name=kingdom.user.username, birth=datetime.now() - timedelta(days=35))\n\nkingdom.unlock_title(\"chatelain\")\nseigneur.add_title(\"chatelain\")\n\n# Son fils\nfils = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=\"m\", last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=17))\n\n# Sa fille\nfille = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=\"f\", last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=16))\n\n# Compagnon\ncompagnon = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=\"m\",birth=datetime.now() - timedelta(days=35))\n\n# Lancement de l'event\npe = kingdom.create_pending_event(\"tuto_intro\")\npe.set_value(\"fils\", fils)\npe.set_value(\"fille\", fille)\npe.set_value(\"compagnon\", compagnon)\nkingdom.set_value(\"adversaire_tuto\", FirstName.objects.filter(sex='m').order_by('?')[0].name+\" \"+LastName.objects.all().order_by('?')[0].name)\nkingdom.set_value(\"prestige_pnj\",100)\nkingdom.set_value(\"population_pnj\",100)\npe.start()\n\n# Kingdom init\nkingdom.money = 100\nkingdom.save()\n\nkingdom.set_value(\"in_tuto\", True)\n\n\n", 
@@ -3317,7 +3318,7 @@
   "pk": 238, 
   "model": "internal.firstname", 
   "fields": {
-    "name": "Almodis,", 
+    "name": "Almodis", 
     "sex": "f"
   }
 },
@@ -3389,7 +3390,7 @@
   "pk": 247, 
   "model": "internal.firstname", 
   "fields": {
-    "name": "Arlette,", 
+    "name": "Arlette", 
     "sex": "f"
   }
 },
@@ -3821,7 +3822,7 @@
   "pk": 301, 
   "model": "internal.firstname", 
   "fields": {
-    "name": "Emeline,", 
+    "name": "Emeline", 
     "sex": "f"
   }
 },
@@ -4957,7 +4958,7 @@
   "pk": 443, 
   "model": "internal.firstname", 
   "fields": {
-    "name": "Rixende,", 
+    "name": "Rixende", 
     "sex": "f"
   }
 },
@@ -5229,7 +5230,7 @@
   "pk": 477, 
   "model": "internal.firstname", 
   "fields": {
-    "name": "Yolande,", 
+    "name": "Yolande", 
     "sex": "f"
   }
 },
