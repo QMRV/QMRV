@@ -44496,10 +44496,10 @@
   "model": "mission.pendingmission", 
   "fields": {
     "kingdom": 71, 
-    "is_started": false, 
+    "is_started": true, 
     "target": null, 
     "created": "2013-09-14T17:17:54.784", 
-    "started": null, 
+    "started": "2013-09-14T17:18:48.446", 
     "last_target": null, 
     "mission": 22, 
     "value": 0, 
