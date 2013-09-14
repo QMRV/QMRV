@@ -1719,9 +1719,9 @@
     "category": null, 
     "name": "Duel maison", 
     "weight": 1, 
-    "text": "Toute la cour s\u2019est rassembl\u00e9e dans la grande salle pour assister au duel, et les serviteurs se sont agglutin\u00e9s aux ouvertures pour ne rien manquer du spectacle. L\u2019air est lourd de tension, les combattants soup\u00e8sent leurs \u00e9p\u00e9es en jetant \u00e0 leur adversaire des regards mena\u00e7ant. Les t\u00e9moins d\u00e9sign\u00e9s se tiennent en retrait, alors que le p\u00e8re {{pretre.first_name}} implore Dieu de soutenir le bras de celui dont la cause est juste, et lui recommande d\u2019avance l\u2019\u00e2me du vaincu.", 
+    "text": "Toute la cour s\u2019est rassembl\u00e9e dans la grande salle pour assister au duel, et les serviteurs se sont agglutin\u00e9s aux ouvertures pour ne rien manquer du spectacle. L\u2019air est lourd de tension, les combattants soup\u00e8sent leurs \u00e9p\u00e9es en jetant \u00e0 leur adversaire des regards mena\u00e7ant.\r\n{% if prete %}\r\n Les t\u00e9moins d\u00e9sign\u00e9s se tiennent en retrait, alors que le p\u00e8re {{pretre.first_name}} implore Dieu de soutenir le bras de celui dont la cause est juste, et lui recommande d\u2019avance l\u2019\u00e2me du vaincu.\r\n{% endif %}", 
     "image": "events/407_4.jpg", 
-    "on_fire": "pretre = Folk.objects.filter(quality_set__name=\"pretre\").order_by('?')[0]\nparam.set_value(\"pretre\", pretre)\n", 
+    "on_fire": "try :\n  pretre = Folk.objects.filter(quality_set__name=\"pretre\").order_by('?')[0]\n  param.set_value(\"pretre\", pretre)\nexcept:\n  pass\n\n", 
     "slug": "duel_domestique", 
     "condition": "\n"
   }
@@ -2447,7 +2447,7 @@
     "category": null, 
     "name": "Un enfant est n\u00e9", 
     "weight": 1, 
-    "text": "{% if mother_is_dead %}\r\nL'enfant de {{pere.name}} et {{mere.name}} vient de na\u00eetre.\r\n{% else %}\r\nUn enfant est n\u00e9 mais sa m\u00e8re, {{mere.name}} est morte.\r\n{% endif %}\r\n\r\nIl rejoindra votre cour une fois atteint l'age de six ans.", 
+    "text": "{% if mother_is_dead %}\r\nL'enfant de {{pere}} et {{mere}} vient de na\u00eetre.\r\n{% else %}\r\nUn enfant est n\u00e9 mais sa m\u00e8re, {{mere}} est morte.\r\n{% endif %}\r\n\r\nIl rejoindra votre cour une fois atteint l'age de six ans.", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "naissance_unique", 
@@ -2716,7 +2716,7 @@
     "text": "Il y eut un soir, il y eut un matin.\r\nEt ce 30 fois de suite.", 
     "image": "", 
     "on_fire": "\n", 
-    "slug": "tuto_timewarp", 
+    "slug": "_tuto_timewarp", 
     "condition": "\n"
   }
 },
@@ -2925,7 +2925,7 @@
     "weight": 1, 
     "text": "Votre arm\u00e9e s'est reform\u00e9e correctement.\r\n\r\n{{ if gain_thune }} Et en plus on t'a donne de la thune !! si on est pas sympa...  {{ endif }}\r\n{{ if gain_soldiers }} Et en plus on t'a donne des soldats !! si on est pas TROP sympa...  {{ endif }}", 
     "image": "", 
-    "on_fire": "if nb_chevaliers_dispo<3:\n  if kingdom.money<thune_mini:\n    kingdom.money+=10\n    param.set_value(\"gain_thune\",True)\n  else:\n    param.set_value(\"gain_thune\",False)\n  if nb_troupes<0.8*0.07*float(kingdom.prestige*2):\n    kingdom.soldiers=0.8*0.07*float(kingdom.prestige*2)\n    param.set_value(\"gain_soldiers\",True)\n  else:\n    param.set_value(\"gain_soldiers\",False)\n  param.next_event(\"tuto_warning_incapable_subir_attaque\")\nelse:\n  kingdom.soldiers=0.8*0.07*float(kingdom.prestige*2)\n  param.set_value(\"gain_soldiers\",True)\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()  \n", 
+    "on_fire": "if nb_chevaliers_dispo<3:\n  if kingdom.money<thune_mini:\n    kingdom.money+=10\n    param.set_value(\"gain_thune\",True)\n  else:\n    param.set_value(\"gain_thune\",False)\n  if nb_troupes<0.8*0.07*float(kingdom.prestige*2):\n    kingdom.soldiers=0.8*0.07*float(kingdom.prestige*2)\n    param.set_value(\"gain_soldiers\",True)\n  else:\n    param.set_value(\"gain_soldiers\",False)\n  param.next_event(\"tuto_warning_incapable_subir_attaque\")\nelse:\n  kingdom.soldiers=0.8*0.07*float(kingdom.prestige*2)\n  param.set_value(\"gain_soldiers\",True)\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()  \n", 
     "slug": "tuto_regeneration_armee", 
     "condition": "\n"
   }
@@ -2965,9 +2965,9 @@
     "category": null, 
     "name": "R\u00e9sultat de l'espionnage", 
     "weight": 1, 
-    "text": "On a plein d'infos sur les troupes !", 
+    "text": "L'adversaire a : {{soldiers}} soldats, {{archers}} archers, {{piquiers}} piquiers, {{cavaliers}} cavaliers\r\n{% for defenseur in defenseurs %}\r\nNous avons aussi rep\u00e9r\u00e9 {{defenseur.0}} dont les stats sont {{defenseur.1}}(C), {{defenseur.2}}(I), {{defenseur.3}}(\u00c9), {{defenseur.4}}(L) et ont pour trait(s) :\r\n\r\n{% for trait in defenseur.5 %}\r\n* trait.name\r\n{% endfor %}\r\n{% endfor %}", 
     "image": "", 
-    "on_fire": "defenseurs = param.get_value(\"defenseurs\")\nmarge = param.get_value(\"marge\")\n\ntab= []\ndef randomize(value):\n  stat = int(min(20,value*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100))\n  return stat\n\nfor folk in defenseurs:\n  traits=[]\n  tab.append([folk.name, randomize(folk.fight), randomize(folk.plot), randomize(folk.diplomacy), randomize(folk.scholarship), folk.quality_set.all()])\n", 
+    "on_fire": "\n", 
     "slug": "resultat_espionnage_troupes", 
     "condition": "\n"
   }
@@ -3473,7 +3473,7 @@
     "message": "Ma fille et le chevalier {{folks.3.first_name}} semble avoir un peu trop d'affection l'un pour l'autre. J'ai d\u00e9cid\u00e9 de fermer les yeux.", 
     "event": 48, 
     "condition": " ", 
-    "on_fire": "#param.next_event(\"tuto_scandale_fille\").start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fille\")\npe.start()\n"
+    "on_fire": "#param.next_event(\"tuto_scandale_fille\").start()\npe=param.next_event(slug=\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fille\")\npe.start()\n"
   }
 },
 {
@@ -3484,7 +3484,7 @@
     "message": "Mon fils s'est entich\u00e9 d'une servante. J'ai d\u00e9cid\u00e9 de fermer les yeux.", 
     "event": 47, 
     "condition": " ", 
-    "on_fire": "#param.next_event(\"tuto_scandale_fils\").start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fils\")\npe.start()"
+    "on_fire": "#param.next_event(\"tuto_scandale_fils\").start()\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fils\")\npe.start()"
   }
 },
 {
@@ -3737,7 +3737,7 @@
     "message": "Il se pourrait que ma fille {{folk.2.first_name}} et mon ami le chevalier {{folk.3.first_name}} partagent une affection d\u00e9plac\u00e9e. Je ferme les yeux pour l'instant.", 
     "event": 50, 
     "condition": " ", 
-    "on_fire": "#param.next_event(\"tuto_scandale_fille\").start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fille\")\npe.start()\n"
+    "on_fire": "#param.next_event(\"tuto_scandale_fille\").start()\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_scandale_fille\")\npe.start()\n"
   }
 },
 {
@@ -3803,7 +3803,7 @@
     "message": "J'ai d\u00e9cid\u00e9 que ma fille {{folk.2.first_name}} allait \u00e9pouser mon vieil ami {{folk.3}}. Le cur\u00e9 devra veiller \u00e0 ce que [mariage](mission) se d\u00e9roule au plus t\u00f4t.", 
     "event": 71, 
     "condition": " ", 
-    "on_fire": "pm=kingdom.create_pending_mission(\"marier\")\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mari\"), mission_grid=MissionGrid.objects.get(slug=\"mari\", mission=pm.mission)).save()\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mariee\"), mission_grid=MissionGrid.objects.get(slug=\"femme\", mission=pm.mission)).save()\nif kingdom.availabletitle_set.filter(title__slug=\"cure\").exists():\n  #param.pending_event.next_event(\"tuto_mariage_fille_accepte_fantome\").start()\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_mariage_fille_accepte_fantome\")\n  pe.start()\nelse:\n  param.pending_event.next_event(\"tuto_mariagepreparatifs\").start()\n"
+    "on_fire": "pm=kingdom.create_pending_mission(\"marier\")\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mari\"), mission_grid=MissionGrid.objects.get(slug=\"mari\", mission=pm.mission)).save()\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mariee\"), mission_grid=MissionGrid.objects.get(slug=\"femme\", mission=pm.mission)).save()\nif kingdom.availabletitle_set.filter(title__slug=\"cure\").exists():\n  #param.pending_event.next_event(\"tuto_mariage_fille_accepte_fantome\").start()\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_mariage_fille_accepte_fantome\")\n  pe.start()\nelse:\n  param.pending_event.next_event(\"tuto_mariagepreparatifs\").start()\n"
   }
 },
 {
@@ -3902,7 +3902,7 @@
     "message": "Mon vieil ami {{folk.3}} m'a demand\u00e9 la main de ma fille, et je la lui ai accord\u00e9. Le cur\u00e9 devra les [unir devant Dieu](mission).", 
     "event": 56, 
     "condition": "  ", 
-    "on_fire": "param.set_value(\"mari\", folks[3])\nparam.set_value(\"mariee\", folks[2])\npm=kingdom.create_pending_mission(\"marier\")\nkingdom.unlock_mission(\"marier\")\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mari\"), mission_grid=MissionGrid.objects.get(slug=\"mari\", mission=pm.mission)).save()\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mariee\"), mission_grid=MissionGrid.objects.get(slug=\"femme\", mission=pm.mission)).save()\nif kingdom.availabletitle_set.filter(title__slug=\"cure\").exists():\n  #param.pending_event.next_event(\"tuto_mariage_fille_accepte_fantome\").start()\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_mariage_fille_accepte_fantome\")\n  pe.start()\nelse:\n  param.pending_event.next_event(\"tuto_mariagepreparatifs\").start()\n"
+    "on_fire": "param.set_value(\"mari\", folks[3])\nparam.set_value(\"mariee\", folks[2])\npm=kingdom.create_pending_mission(\"marier\")\nkingdom.unlock_mission(\"marier\")\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mari\"), mission_grid=MissionGrid.objects.get(slug=\"mari\", mission=pm.mission)).save()\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mariee\"), mission_grid=MissionGrid.objects.get(slug=\"femme\", mission=pm.mission)).save()\nif kingdom.availabletitle_set.filter(title__slug=\"cure\").exists():\n  #param.pending_event.next_event(\"tuto_mariage_fille_accepte_fantome\").start()\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_mariage_fille_accepte_fantome\")\n  pe.start()\nelse:\n  param.pending_event.next_event(\"tuto_mariagepreparatifs\").start()\n"
   }
 },
 {
@@ -4452,7 +4452,7 @@
     "message": "Les r\u00e9parations de {{dynasty}} sont termin\u00e9e. Un grand jour pour notre famille.", 
     "event": 11, 
     "condition": "\n", 
-    "on_fire": "#param.next_event(\"tuto_ennemi_casusbelli\").start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_ennemi_casusbelli\")\npe.start()\n"
+    "on_fire": "#param.next_event(\"tuto_ennemi_casusbelli\").start()\npe=param.next_event(slug=\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_ennemi_casusbelli\")\npe.start()\n"
   }
 },
 {
@@ -4738,7 +4738,7 @@
     "message": "J'ai accept\u00e9 que {{homme}} et {{femme}} se marient.", 
     "event": 143, 
     "condition": "\n", 
-    "on_fire": "pm=kingdom.create_pending_mission(\"marier\")\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mari\"), mission_grid=MissionGrid.objects.get(slug=\"mari\", mission=pm.mission)).save()\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mariee\"), mission_grid=MissionGrid.objects.get(slug=\"femme\", mission=pm.mission)).save()\nkingdom.unlock_mission(\"marier\")\nif kingdom.availabletitle_set.filter(title__slug=\"cure\").exists():\n  #param.pending_event.next_event(\"tuto_mariage_fille_accepte_fantome\").start()\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_mariage_fille_accepte_fantome\")\n  pe.start()\nelse:\n  param.pending_event.next_event(\"tuto_mariagepreparatifs\").start()"
+    "on_fire": "pm=kingdom.create_pending_mission(\"marier\")\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mari\"), mission_grid=MissionGrid.objects.get(slug=\"mari\", mission=pm.mission)).save()\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mariee\"), mission_grid=MissionGrid.objects.get(slug=\"femme\", mission=pm.mission)).save()\nkingdom.unlock_mission(\"marier\")\nif kingdom.availabletitle_set.filter(title__slug=\"cure\").exists():\n  #param.pending_event.next_event(\"tuto_mariage_fille_accepte_fantome\").start()\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_mariage_fille_accepte_fantome\")\n  pe.start()\nelse:\n  param.pending_event.next_event(\"tuto_mariagepreparatifs\").start()"
   }
 },
 {
@@ -4848,7 +4848,7 @@
     "message": "{{winner}} a tu\u00e9 {{loser}} en duel. ```+1 de Combat```", 
     "event": 149, 
     "condition": "\n", 
-    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux\")"
+    "on_fire": "if param.get_value(\"tuto\"):\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")"
   }
 },
 {
@@ -4870,7 +4870,7 @@
     "message": "{{winner}} a vaincu {{loser}} en duel, mais a choisit de l'\u00e9pargner. ```+1 de Combat```", 
     "event": 150, 
     "condition": "\n", 
-    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux\")"
+    "on_fire": "if param.get_value(\"tuto\"):\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")"
   }
 },
 {
@@ -4892,7 +4892,7 @@
     "message": "J'ai interrompu le duel. ```\r\n-15 de Loyaut\u00e9 g\u00e9n\u00e9rale\r\n-15 de Loyaut\u00e9 pour {{winner}}\r\n+45 de Loyaut\u00e9 pour {{loser}}\r\n```", 
     "event": 152, 
     "condition": "\n", 
-    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux\")"
+    "on_fire": "if param.get_value(\"tuto\"):\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")"
   }
 },
 {
@@ -4914,7 +4914,7 @@
     "message": "", 
     "event": 154, 
     "condition": "\n", 
-    "on_fire": "param.set_value(\"come_from\", 2)\n#param.next_event(\"tuto_facheux_3\").start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_3\")\npe.start()"
+    "on_fire": "param.set_value(\"come_from\", 2)\n#param.next_event(\"tuto_facheux_3\").start()\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_3\")\npe.start()"
   }
 },
 {
@@ -4991,7 +4991,7 @@
     "message": "", 
     "event": 156, 
     "condition": "\n", 
-    "on_fire": "param.set_value(\"come_from\", 4)\n#param.next_event(\"tuto_facheux_3\").start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_3\")\npe.start()"
+    "on_fire": "param.set_value(\"come_from\", 4)\n#param.next_event(\"tuto_facheux_3\").start()\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_3\")\npe.start()"
   }
 },
 {
@@ -5002,7 +5002,7 @@
     "message": "Mon fils {{folk.1.first_name}} et le {{facheux}} sont \u00e0 couteaux tir\u00e9s. Je pourrais regler le probl\u00e8me en [d\u00e9barassant](mission) ma cour du chevalier.", 
     "event": 157, 
     "condition": "\n", 
-    "on_fire": "come_from = param.get_value(\"come_from\")\nif come_from == 5:\n  #param.next_event(\"tuto_facheux_5\").start()\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_facheux_5\")\n  pe.start()\nelse:\n  param.pending_event.next_event(\"tuto_facheux_7\").start()\n\nif kingdom.get_folk_in_title(\"maitre_espion\") in None:\n  kingdom.unlock_title(\"maitre_espion\")\n\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")"
+    "on_fire": "come_from = param.get_value(\"come_from\")\nif come_from == 5:\n  #param.next_event(\"tuto_facheux_5\").start()\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_facheux_5\")\n  pe.start()\nelse:\n  param.pending_event.next_event(\"tuto_facheux_7\").start()\n\nif kingdom.get_folk_in_title(\"maitre_espion\") is None:\n  kingdom.unlock_title(\"maitre_espion\")\n"
   }
 },
 {
@@ -5024,7 +5024,7 @@
     "message": "", 
     "event": 159, 
     "condition": "\n", 
-    "on_fire": "dueliste_1 = param.get_value(\"fils\")\ndueliste_2 = param.get_value(\"facheux\")\nparam.set_value(\"dueliste_1\", dueliste_1)\nparam.set_value(\"dueliste_2\", dueliste_2)\nparam.next_event(\"duel_domestique\").start()"
+    "on_fire": "dueliste_1 = param.get_value(\"fils\")\ndueliste_2 = param.get_value(\"facheux\")\nparam.set_value(\"tuto\", True) \nparam.set_value(\"dueliste_1\", dueliste_1)\nparam.set_value(\"dueliste_2\", dueliste_2)\nparam.next_event(\"duel_domestique\").start()"
   }
 },
 {
@@ -5167,7 +5167,7 @@
     "message": "", 
     "event": 75, 
     "condition": "\n", 
-    "on_fire": "pe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_mariage_fille_accepte_fantome\")\npe.start()\n#param.pending_event.next_event(\"tuto_mariage_fille_accepte_fantome\").start()"
+    "on_fire": "pe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_mariage_fille_accepte_fantome\")\npe.start()\n#param.pending_event.next_event(\"tuto_mariage_fille_accepte_fantome\").start()"
   }
 },
 {
@@ -5178,7 +5178,7 @@
     "message": "{{mari}} attend impatiemment son mariage avec {{mariee}}.", 
     "event": 175, 
     "condition": "\n", 
-    "on_fire": "pe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_mariage_fille_accepte_fantome_2\")\npe.start()\n#param.next_event(\"demandemariage_terminated\").start()\n\n"
+    "on_fire": "pe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_mariage_fille_accepte_fantome_2\")\npe.start()\n#param.next_event(\"demandemariage_terminated\").start()\n\n"
   }
 },
 {
@@ -5354,7 +5354,7 @@
     "message": "Mon fils {{folk.1.first_name}} et le chevalier {{facheux}} se sont disput\u00e9.", 
     "event": 154, 
     "condition": "\n", 
-    "on_fire": "param.set_value(\"come_from\", 2)\n#param.next_event(\"tuto_facheux_5\").start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_5\")\npe.start()"
+    "on_fire": "param.set_value(\"come_from\", 2)\n#param.next_event(\"tuto_facheux_5\").start()\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_5\")\npe.start()"
   }
 },
 {
@@ -5387,7 +5387,7 @@
     "message": "", 
     "event": 192, 
     "condition": "\n", 
-    "on_fire": "#param.next_event(\"tuto_facheux_3\").start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_3\")\npe.start()"
+    "on_fire": "#param.next_event(\"tuto_facheux_3\").start()\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_3\")\npe.start()"
   }
 },
 {
@@ -5464,7 +5464,7 @@
     "message": "Je peux maintenant [attaquer](#mission) le seigneur {{ennemi}}.", 
     "event": 205, 
     "condition": "\n", 
-    "on_fire": "#param.next_event(\"tuto_casusbelli_effective\").start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_casusbelli_effective\")\npe.start()\n"
+    "on_fire": "#param.next_event(\"tuto_casusbelli_effective\").start()\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_casusbelli_effective\")\npe.start()\n"
   }
 },
 {
@@ -5717,7 +5717,7 @@
     "message": "", 
     "event": 230, 
     "condition": "\n", 
-    "on_fire": "if (param.get_value(\"attaquant\")==False):\n  pe=param.next_event(\"tuto_escarmouche_misasac\").start()\nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",False)==False):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",False)==False):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n\n\n"
+    "on_fire": "if (param.get_value(\"attaquant\")==False):\n  pe=param.next_event(\"tuto_escarmouche_misasac\").start()\nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",False)==False):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",False)==False):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n\n\n"
   }
 },
 {
@@ -5728,7 +5728,7 @@
     "message": "", 
     "event": 231, 
     "condition": "\n", 
-    "on_fire": "if param.get_value(\"attaquant\"):\n  pe=param.next_event(\"tuto_escarmouche_pillage\").start()  \nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n\n\n"
+    "on_fire": "if param.get_value(\"attaquant\"):\n  pe=param.next_event(\"tuto_escarmouche_pillage\").start()  \nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n\n\n"
   }
 },
 {
@@ -5739,7 +5739,7 @@
     "message": "", 
     "event": 207, 
     "condition": "\n", 
-    "on_fire": "pe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_attaque_par_pnj\")\npe.start()\n\n\n"
+    "on_fire": "pe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_attaque_par_pnj\")\npe.start()\n\n\n"
   }
 },
 {
@@ -5761,7 +5761,7 @@
     "message": "", 
     "event": 233, 
     "condition": "\n", 
-    "on_fire": "#param.next_event(\"tuto_ennemi_casusbelli_2\")\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_ennemi_casusbelli_2\")\npe.start()\n\n\n"
+    "on_fire": "#param.next_event(\"tuto_ennemi_casusbelli_2\")\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_ennemi_casusbelli_2\")\npe.start()\n\n\n"
   }
 },
 {
@@ -5783,7 +5783,7 @@
     "message": "", 
     "event": 236, 
     "condition": "\n", 
-    "on_fire": "if (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()"
+    "on_fire": "if (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()"
   }
 },
 {
@@ -5794,7 +5794,7 @@
     "message": "", 
     "event": 237, 
     "condition": "\n", 
-    "on_fire": "if (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()"
+    "on_fire": "if (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()"
   }
 },
 {
@@ -5860,7 +5860,7 @@
     "message": "", 
     "event": 241, 
     "condition": "\n", 
-    "on_fire": "#kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_scanjoueur_fantome\")\npe.start()"
+    "on_fire": "#kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_scanjoueur_fantome\")\npe.start()"
   }
 },
 {
