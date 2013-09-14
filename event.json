@@ -3558,7 +3558,7 @@
     "message": "", 
     "event": 57, 
     "condition": " ", 
-    "on_fire": "folk.delete()\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_cour_basse_fantome\")"
+    "on_fire": "folk = param.get_value(\"chevalier\")\nfolk.delete()\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_cour_basse_fantome\")"
   }
 },
 {
@@ -5373,7 +5373,7 @@
     "message": "", 
     "event": 192, 
     "condition": "\n", 
-    "on_fire": "#param.next_event(\"tuto_facheux_3\").start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_3\")\npe.start()"
+    "on_fire": "#param.next_event(\"tuto_facheux_3\").start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_3\")\npe.start()"
   }
 },
 {
