@@ -1665,9 +1665,9 @@
     "weight": 1, 
     "text": "Elle se rel\u00e8ve, et ses yeux br\u00fblent de rage. \"MONSTRE!\" Sa voix est charg\u00e9e de bile, mais me laisse de glace. Les gardes accourent, l'attrapent par les \u00e9paules et l'attire vers la porte, avec ses enfants en larmes. \"Vous le PAIEREZ! Vous le paierez je le jure! Sur mon honneur de {{dynasty}}, vous le...\". La porte se referme avec un bruit sourd.", 
     "image": "events/361_10.jpg", 
-    "on_fire": null, 
+    "on_fire": "\n", 
     "slug": "tuto_soeurette_castout", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -1999,7 +1999,7 @@
     "category": null, 
     "name": "Tuto bandits", 
     "weight": 1, 
-    "text": "Mon chambellan {{title.chambellan.first_name}} a conduit les gueux devant mon tr\u00f4ne. Ils sont sales, \u00e9puis\u00e9s, et je peux lire le d\u00e9sespoir sur leur visage. Le plus vieux d'entre eux s'avance, serrant son couvre-chef entre ses mains. \"M'ssire\". Il s'incline. \"Je... Nous...\". Le voyant trop affect\u00e9 pour poursuivre, {{title.chambellan.first_name}} prend la parole. \"Des brigands, mon seigneurs. Ils ont attaqu\u00e9 leur village, ont pill\u00e9 toutes leurs r\u00e9serves et ont br\u00fbl\u00e9 leurs maisons. Les six que voyez ici sont les seuls survivants\". J'encaisse la nouvelle avec tout le calme dont je suis capable. Les mis\u00e9rables ont entendu parler de la faiblesse de {{dynastie}}, et se sont offert un butin facile... Serrant les poings, je me l\u00e8ve et regarde le vieillard droit dans les yeux. \"Je ne peux vous rendre ni vos fermes ni vos morts, mais je peux vous promettre une chose. Ils paieront. Tous, jusqu'au dernier\".\r\n\r\n    -20 de population.\r\n", 
+    "text": "Mon chambellan {{title.chambellan.first_name}} a conduit les gueux devant mon tr\u00f4ne. Ils sont sales, \u00e9puis\u00e9s, et je peux lire le d\u00e9sespoir sur leur visage. Le plus vieux d'entre eux s'avance, serrant son couvre-chef entre ses mains. \"M'ssire\". Il s'incline. \"Je... Nous...\". Le voyant trop affect\u00e9 pour poursuivre, {{title.chambellan.first_name}} prend la parole. \"Des brigands, mon seigneurs. Ils ont attaqu\u00e9 leur village, ont pill\u00e9 toutes leurs r\u00e9serves et ont br\u00fbl\u00e9 leurs maisons. Les six que voyez ici sont les seuls survivants\". J'encaisse la nouvelle avec tout le calme dont je suis capable. Les mis\u00e9rables ont entendu parler de la faiblesse de {{dynasty}}, et se sont offert un butin facile... Serrant les poings, je me l\u00e8ve et regarde le vieillard droit dans les yeux. \"Je ne peux vous rendre ni vos fermes ni vos morts, mais je peux vous promettre une chose. Ils paieront. Tous, jusqu'au dernier\".\r\n\r\n    -20 de population.\r\n", 
     "image": "events/362_4.jpg", 
     "on_fire": "\nkingdom.population -= 20\nkingdom.save()", 
     "slug": "tuto_bandits_chambellan", 
@@ -2405,9 +2405,9 @@
     "category": null, 
     "name": "Mort en couches", 
     "weight": 1, 
-    "text": "Prenom Nom (m\u00e8re) est mort en donnant naissance \u00e0 son enfant.", 
+    "text": "{% mere.name %} est morte en donnant naissance \u00e0 son enfant.", 
     "image": "", 
-    "on_fire": "\n", 
+    "on_fire": "mere.die()\n", 
     "slug": "mort_couches", 
     "condition": "\n"
   }
@@ -2433,7 +2433,7 @@
     "category": null, 
     "name": "Naissance de jumeaux", 
     "weight": 1, 
-    "text": "Prenom Nom a mis au monde des jumeaux", 
+    "text": "{% mere.name %} a mis au monde des jumeaux", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "naissance_jumeaux", 
@@ -2447,7 +2447,7 @@
     "category": null, 
     "name": "Naissance de tripl\u00e9s", 
     "weight": 1, 
-    "text": "Prenom Nom a mis au monde des tripl\u00e9s.", 
+    "text": "{% mere.name %} Nom a mis au monde des tripl\u00e9s.", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "naissance_triples", 
@@ -2997,6 +2997,34 @@
     "image": "", 
     "on_fire": "\n", 
     "slug": "resultat_espionnage_chateau", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 245, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "la revenche du batard", 
+    "weight": 1, 
+    "text": "bla", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "tuto_bastard_revenge", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 246, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "tuto_bastard_soeurette", 
+    "weight": 1, 
+    "text": "bla", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "tuto_bastard_soeurette", 
     "condition": "\n"
   }
 },
@@ -4691,7 +4719,7 @@
     "message": "J'ai fait mettre ma soeur {{soeur.first_name}} et ses enfants \u00e0 la porte.", 
     "event": 141, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"bastard_revenge\").start()"
+    "on_fire": "param.next_event(\"tuto_bastard_soeurette\").start()"
   }
 },
 {
@@ -5340,7 +5368,7 @@
     "message": "Mon fils {{folk.1.first_name}} et le chevalier {{facheux}} se sont disput\u00e9.", 
     "event": 154, 
     "condition": "\n", 
-    "on_fire": "param.set_value(\"come_from\", 2)\n#param.next_event(\"tuto_facheux_5\").start()\npe=param.next_event(slug=\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_5\")\npe.start()"
+    "on_fire": "param.set_value(\"come_from\", 2)\n#param.next_event(\"tuto_facheux_5\").start()\npe=param.next_event(\"tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_5\")\npe.start()"
   }
 },
 {
@@ -5658,7 +5686,7 @@
     "text": "Je dois agir.", 
     "message": "", 
     "event": 158, 
-    "condition": "\n", 
+    "condition": "if param.get_value(\"come_from\") == 2:\n  status = \"ce boutton n'apparait pas\"\n", 
     "on_fire": "param.set_value(\"come_from\", 5)\nparam.next_event(\"tuto_facheux_7\").start()\n"
   }
 },
@@ -5902,6 +5930,28 @@
     "event": 244, 
     "condition": "\n", 
     "on_fire": "\n"
+  }
+},
+{
+  "pk": 316, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Ok !", 
+    "message": "", 
+    "event": 245, 
+    "condition": "\n", 
+    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_scandale_fantome\")"
+  }
+},
+{
+  "pk": 317, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "OK !", 
+    "message": "", 
+    "event": 246, 
+    "condition": "\n", 
+    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_soeurette\")"
   }
 }
 ]
