@@ -83,7 +83,7 @@
     "weight": 1, 
     "text": "{{folks.3.first_name}} et mon fils {{folks.1.first_name}} se tiennent devant moi, alors que j\u2019ach\u00e8ve de leur exposer mon projet. \r\n\u201c...un casque, un tabard et une \u00e9p\u00e9e par homme d\u2019arme, le reste de l\u2019\u00e9quipement sera \u00e0 leur charge. Je vais avoir besoin que l\u2019un de vous deux accepte le titre de Conn\u00e9table et supervise leur recrutement et leur entra\u00eenement.\u201d\r\n\r\n    Fa\u00eetes glisser un de vos suivants depuis l\u2019onglet Titre pour le nommer Conn\u00e9table.", 
     "image": "events/451.jpg", 
-    "on_fire": " ", 
+    "on_fire": "kingdom.unlock_title(\"connetable\")\nkingdom.create_pending_mission(\"tuto_recrutement\")", 
     "slug": "tuto_intro_choixcombat", 
     "condition": " "
   }
@@ -125,7 +125,7 @@
     "weight": 1, 
     "text": "Pench\u00e9 sur ma table de travail, j\u2019\u00e9tudie cartes de la r\u00e9gion, missives diplomatiques rapports de mes espions. Il en semblerait qu\u2019un seigneur voisin de petite stature, {{ennemi}}, ait ses greniers bien remplis. Si je pouvais trouver un pr\u00e9texte honorable pour l\u2019affronter, je pourrais \u00e0 la fois m\u2019imposer en tant que puissance militaire et remplir mes coffres.\r\n\r\n    Il est impossible d\u2019attaquer un autre seigneur sans un motif diplomatique (casus belli).", 
     "image": "events/900.jpg", 
-    "on_fire": "  ", 
+    "on_fire": "param.set_value(\"ennemi\", kingdom.get_value(\"adversaire_tuto\"))\n\n", 
     "slug": "tuto_ambition_3", 
     "condition": " "
   }
@@ -165,9 +165,9 @@
     "category": null, 
     "name": "Rassembler l'arm\u00e9e", 
     "weight": 1, 
-    "text": "Je prononce les paroles d\u2019usage, et il y r\u00e9pond sans h\u00e9siter jurant de me servir tant que son bras en aura la force. \u201cRelevez-vous, messire. La maison de {{dynastie}} accepte votre all\u00e9geance.\u201d\r\n\r\n\u2018\u2019\u2019{{knight}} a rejoint ma cour\u2019\u2019\u2019", 
+    "text": "Je prononce les paroles d\u2019usage, et il y r\u00e9pond sans h\u00e9siter jurant de me servir tant que son bras en aura la force. \u201cRelevez-vous, messire. La maison de {{dynasty}} accepte votre all\u00e9geance.\u201d\r\n\r\n    {{knight}} a rejoint ma cour.", 
     "image": "events/716_2.jpg", 
-    "on_fire": "param.set_value(\"dynastie\", kingdom.user.username)\n", 
+    "on_fire": "knight.kingdom = kingdom\nknight.save()\n", 
     "slug": "tuto_recrutement_3", 
     "condition": " "
   }
@@ -195,7 +195,7 @@
     "weight": 1, 
     "text": "{{folks.3}}, mon fils {{folks.1.first_name}} et ma fille {{folks.2.first_name}} se tiennent devant moi, alors que j\u2019ach\u00e8ve de leur exposer mon projet.  \u201c...la seconde moiti\u00e9 du paiement sera vers\u00e9e une fois que le village m\u2019aura publiquement reconnu comme son seigneur l\u00e9gitime. Je vais avoir besoin que l\u2019un de vous trois me serve de ma\u00eetre espion et s\u2019occupe de cette affaire avec doigt\u00e9 et discr\u00e9tion.\u201d\r\n\r\n    Faites glisser un de vos suivants depuis l\u2019onglet Titre pour le nommer Ma\u00eetre Espion.", 
     "image": "events/451_1.jpg", 
-    "on_fire": " ", 
+    "on_fire": "kingdom.unlock_title(\"maitre_espion\")\nkingdom.create_pending_mission(\"tuto_potsdevin\")", 
     "slug": "tuto_intro_choixintrigue", 
     "condition": " "
   }
@@ -1021,7 +1021,7 @@
     "weight": 1, 
     "text": "Ma cour se peuple peu \u00e0 peu mais il y a trop peu de paysans sur mes terres pour esperer lever des impots satisfaisants. Pour fid\u00e9liser mes serfs et les faire travailler plus dur, j'aurais besoin de leur insufler une ferveur religieuse nouvelle. Pour convaincre de nouveaux paysans de s'installer sur mes terres, j'ai besoin de convaincre la populace de ma pi\u00e9t\u00e9 et de ma bienveillance. Pour m'aider dans cette t\u00e2che, j'ai persuad\u00e9 le p\u00e8re {{title.cure}}, un cur\u00e9  respect\u00e9 de la r\u00e9gion, de se mettre \u00e0 mon service pour m'aider \u00e0 d\u00e9montrer ma charit\u00e9 par des aum\u00f4nes aux plus d\u00e9munis.\r\n\r\n    Le p\u00e8re {{cure.first_name}} a rejoint ma cour, et occupe le titre de Cur\u00e9\r\n", 
     "image": "events/703_1.jpg", 
-    "on_fire": "cure = call_function(\"creer_folk\", kingdom=kingdom, fight_min=1, plot_min=1, diplomacy_min=1, scholarship_min=1, max_carac=32, loyalty=50, sex=\"m\", birth=datetime.now() - timedelta(days=35), trait=\"pretre\")\nparam.set_value(\"cure\", cure)\nkingdom.unlock_title(\"cure\")\ncure.add_title(\"cure\")\n\n", 
+    "on_fire": "cure = call_function(\"creer_folk\", kingdom=kingdom, fight_min=1, plot_min=1, diplomacy_min=1, scholarship_min=1, max_carac=32, loyalty=50, sex=\"m\", birth=datetime.now() - timedelta(days=35), trait=\"pretre\")\nparam.set_value(\"cure\", cure)\nkingdom.unlock_title(\"cure\")\nif kingdom.get_folk_in_title(\"cure\") == None:\n  cure.add_title(\"cure\")\n\n", 
     "slug": "tuto_toofewpopulation", 
     "condition": " "
   }
@@ -2391,24 +2391,10 @@
     "category": null, 
     "name": "Mort-n\u00e9", 
     "weight": 1, 
-    "text": "L'enfant de pere et mere est mort \u00e0 la naissance.\r\n", 
+    "text": "L'enfant de {{pere.name}} et {{mere.name}} est mort \u00e0 la naissance.\r\n", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "mort_ne", 
-    "condition": "\n"
-  }
-},
-{
-  "pk": 199, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "Mort en couches", 
-    "weight": 1, 
-    "text": "{% mere.name %} est morte en donnant naissance \u00e0 son enfant.", 
-    "image": "", 
-    "on_fire": "mere.die()\n", 
-    "slug": "mort_couches", 
     "condition": "\n"
   }
 },
@@ -2419,7 +2405,7 @@
     "category": null, 
     "name": "Carnage chez la sage-femme", 
     "weight": 1, 
-    "text": "L'accouchement de Prenom Nom fut un v\u00e9ritable de troiomphe de la mort sur la vie.\r\nNi la m\u00e8re ni le b\u00e9b\u00e9 n'ont surv\u00e9cu.", 
+    "text": "L'accouchement de {{mere.name}} fut un v\u00e9ritable de troiomphe de la mort sur la vie.\r\nNi la m\u00e8re ni l'enfant n'a surv\u00e9cu.", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "mort_couches_double", 
@@ -2433,9 +2419,9 @@
     "category": null, 
     "name": "Naissance de jumeaux", 
     "weight": 1, 
-    "text": "{% mere.name %} a mis au monde des jumeaux", 
+    "text": "{{mere.name}} a mis au monde des jumeaux", 
     "image": "", 
-    "on_fire": "\n", 
+    "on_fire": "maturite = param.next_event('coming_of_age')\nmaturite.started = datetime.now() + timedelta(days=6)  \nmaturite.save()\n\nmaturite = param.next_event('coming_of_age')\nmaturite.started = datetime.now() + timedelta(days=6)  \nmaturite.save()\n", 
     "slug": "naissance_jumeaux", 
     "condition": "\n"
   }
@@ -2447,9 +2433,9 @@
     "category": null, 
     "name": "Naissance de tripl\u00e9s", 
     "weight": 1, 
-    "text": "{% mere.name %} Nom a mis au monde des tripl\u00e9s.", 
+    "text": "{{mere.name}} a mis au monde des tripl\u00e9s.", 
     "image": "", 
-    "on_fire": "\n", 
+    "on_fire": "maturite1 = param.next_event('coming_of_age')\nmaturite1.started = datetime.now() + timedelta(days=6)  \nmaturite1.save()\n\nmaturite2 = param.next_event('coming_of_age')\nmaturite2.started = datetime.now() + timedelta(days=6)  \nmaturite2.save()\n\nmaturite3 = param.next_event('coming_of_age')\nmaturite3.started = datetime.now() + timedelta(days=6)  \nmaturite3.save()\n", 
     "slug": "naissance_triples", 
     "condition": "\n"
   }
@@ -2461,11 +2447,11 @@
     "category": null, 
     "name": "Un enfant est n\u00e9", 
     "weight": 1, 
-    "text": "{% if mother_is_dead %}\r\nUn enfant est n\u00e9 (indiquer p\u00e8re et m\u00e8re).\r\n{% else %}\r\nUn enfant est n\u00e9 mais la m\u00e8re est morte.\r\n{% endif %}\r\n\r\nIl rejoindra votre cour une fois atteint l'age de six ans.", 
+    "text": "{% if mother_is_dead %}\r\nL'enfant de {{pere.name}} et {{mere.name}} vient de na\u00eetre.\r\n{% else %}\r\nUn enfant est n\u00e9 mais sa m\u00e8re, {{mere.name}} est morte.\r\n{% endif %}\r\n\r\nIl rejoindra votre cour une fois atteint l'age de six ans.", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "naissance_unique", 
-    "condition": "r = random_value(1,77)\n#For test purposes only\nparam.set_value('mother_is_dead', False)\n\nif(r<61):\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  maturite = param.next_event('coming_of_age')\n  maturite.started = datetime.now() + timedelta(days=6)  \n  maturite.save()\n  \nelif(r<71):\n  #L'enfant meurt en bas \u00e2ge\n  d = random_value(0, 5)\n  h = random_value(0, 23)\n  m = random_value(0, 60)\n  mort = param.next_event('mort_precoce')\n  mort.started = datetime.now() + timedelta(days=d, hours=h, minutes=m)\n  mort.save()\n\nelse:\n  #La m\u00e8re meurt en donnant naissance\n  param.set_value('mother_is_dead', True)\n  maturite = param.next_event('coming_of_age')\n  maturite.started = datetime.now() + timedelta(days=6)  \n  maturite.save()\n  \n"
+    "condition": "r = random_value(1,77)\nparam.set_value('mother_is_dead', False)\n\nif(r<61):\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  maturite = param.next_event('coming_of_age')\n  maturite.started = datetime.now() + timedelta(days=6)  \n  maturite.save()\n  \nelif(r<71):\n  #L'enfant meurt en bas \u00e2ge\n  d = random_value(0, 5)\n  h = random_value(0, 23)\n  m = random_value(0, 60)\n  mort = param.next_event('mort_precoce')\n  mort.started = datetime.now() + timedelta(days=d, hours=h, minutes=m)\n  mort.save()\n\nelse:\n  #La m\u00e8re meurt en donnant naissance\n  param.set_value('mother_is_dead', True)\n  mere.die()\n  maturite = param.next_event('coming_of_age')\n  maturite.started = datetime.now() + timedelta(days=6)  \n  maturite.save()\n  \n"
   }
 },
 {
@@ -2981,7 +2967,7 @@
     "weight": 1, 
     "text": "On a plein d'infos sur les troupes !", 
     "image": "", 
-    "on_fire": "\n", 
+    "on_fire": "defenseurs = param.get_value(\"defenseurs\")\nmarge = param.get_value(\"marge\")\n\ntab= []\ndef randomize(value):\n  stat = int(min(20,value*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100))\n  return stat\n\nfor folk in defenseurs:\n  traits=[]\n  tab.append([folk.name, randomize(folk.fight), randomize(folk.plot), randomize(folk.diplomacy), randomize(folk.scholarship), folk.quality_set.all()])\n", 
     "slug": "resultat_espionnage_troupes", 
     "condition": "\n"
   }
@@ -3102,7 +3088,7 @@
     "message": "Nommer un [conn\u00e9table](#title) me permettra de [recruter des hommes d'armes](#mission).", 
     "event": 7, 
     "condition": " ", 
-    "on_fire": "kingdom.unlock_title(\"connetable\")\nkingdom.create_pending_mission(\"tuto_recrutement\")\n"
+    "on_fire": "\n"
   }
 },
 {
@@ -3190,7 +3176,7 @@
     "message": "Nommer un <Ma\u00eetre espion> me permettra <d'acheter le soutien de la population>.", 
     "event": 16, 
     "condition": " ", 
-    "on_fire": "kingdom.unlock_title(\"maitre_espion\")\nkingdom.create_pending_mission(\"tuto_potsdevin\")\n"
+    "on_fire": "\n"
   }
 },
 {
