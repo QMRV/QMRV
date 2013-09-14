@@ -1105,7 +1105,7 @@
     "weight": 1, 
     "text": "La nourriture est riche et abondante, et le vin la fait descendre sans effort. Autour de moi, les convives mangent, discutent et s\u2019esclaffent.", 
     "image": "events/88_1.jpg", 
-    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nconvives = list(Folk.objects.filter(mission = None,\n                               kingdom=kingdom, \n                               birth__lte=datetime.now()-timedelta(days=C(\"MAJORITE\")).exclude(id=chatelain.id).order_by('?')[0:2]))\nparam.set_value(\"convive1\", convives[0])\nparam.set_value(\"convive2\", convives[1])\n", 
+    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nconvives = list(Folk.objects.filter(mission = None,\n                               kingdom=kingdom, \n                               birth__lte=datetime.now()-timedelta(days=C(\"MAJORITE\"))).exclude(id=chatelain.id).order_by('?')[0:2])\nparam.set_value(\"convive1\", convives[0])\nparam.set_value(\"convive2\", convives[1])\n", 
     "slug": "banquet_conversation", 
     "condition": " "
   }
@@ -1497,7 +1497,7 @@
     "weight": 1, 
     "text": " ", 
     "image": "", 
-    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchoose_banquet = random_value(1,3)\ndanseuses = Folk.objects.filter(mission = None,\n                                kingdom=kingdom,\n                                sex=\"f\",\n                                birth__lte=datetime.now() - timedelta(days=C(\"MAJORITE\"))).count()\n#recherche des possibilit\u00e9s de suite\nchatelain=kingdom.get_folk_in_title(\"chatelain\")\ntoast = False\nfuckers = Folk.objects.filter(kingdom=kingdom,\n                              mission=None,\n                              birth__lte=datetime.now() - timedelta(days=C(\"MAJORITE\")),\n                              sex=\"m\",\n                              loyalty__lte=20).order_by('?')\nloyaux = Folk.objects.filter(kingdom=kingdom,\n                             mission=None,\n                             birth__lte=datetime.now() - timedelta(days=C(\"MAJORITE\")),\n                             sex=\"m\",\n                             loyalty__gte=80).exclude(id=chatelain.id)\n\nif chatelain.diplomacy >=9 or fuckers.count() >= 1 or loyaux.count() >= 1:\n  toast = True\n\nif choose_banquet == 1 and danseuses != 0:\n  kingdom.create_pending_event(\"banquet_danse\").start()\nelif choose_banquet <= 2 and toast == True:\n  nb_folk_actuels = Folk.objects.filter(kingdom=kingdom,\n                                     mission=None,\n                                     birth__lte=datetime.now() - timedelta(days=C(\"MAJORITE\")),\n                                     ).count()\n  choose_toast = random_value (1, nb_folk_actuels)\n  if choose_toast > fuckers and choose_toast < loyaux:\n    kingdom.create_pending_event(\"banquet_toast_chatelain\").start()\n  elif choose_toast <= fuckers.count():\n    pe = kingdom.create_pending_event(\"banquet_toast_fucker\")\n    pe.set_value(\"fucker\", fuckers[0])\n    pe.start()\n  else:\n    kingdom.create_pending_event(\"banquet_toast_loyaliste\")\n    pe.set_value(\"loyaliste\", loyaux[0])\n    pe.start()           \nelse:\n  kingdom.create_pending_event(\"banquet_beuverie\").start()\nstatus = \"ghost event\"\n", 
+    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchoose_banquet = random_value(1,3)\ndanseuses = Folk.objects.filter(mission = None,\n                                kingdom=kingdom,\n                                sex=\"f\",\n                                birth__lte=datetime.now() - timedelta(days=C(\"MAJORITE\"))).count()\n#recherche des possibilit\u00e9s de suite\nchatelain=kingdom.get_folk_in_title(\"chatelain\")\ntoast = False\nfuckers = Folk.objects.filter(kingdom=kingdom,\n                              mission=None,\n                              birth__lte=datetime.now() - timedelta(days=C(\"MAJORITE\")),\n                              sex=\"m\",\n                              loyalty__lte=20).order_by('?')\nloyaux = Folk.objects.filter(kingdom=kingdom,\n                             mission=None,\n                             birth__lte=datetime.now() - timedelta(days=C(\"MAJORITE\")),\n                             sex=\"m\",\n                             loyalty__gte=80).exclude(id=chatelain.id)\n\nif chatelain.diplomacy >=9 or fuckers.count() >= 1 or loyaux.count() >= 1:\n  toast = True\n\nif choose_banquet == 1 and danseuses != 0:\n  kingdom.create_pending_event(\"banquet_danse\").start()\nelif choose_banquet <= 2 and toast == True:\n  nb_folk_actuels = Folk.objects.filter(kingdom=kingdom,\n                                     mission=None,\n                                     birth__lte=datetime.now() - timedelta(days=C(\"MAJORITE\")),\n                                     ).count()\n  choose_toast = random_value (1, nb_folk_actuels)\n  if choose_toast > fuckers and choose_toast < loyaux:\n    kingdom.create_pending_event(\"banquet_toast_chatelain\").start()\n  elif choose_toast <= fuckers.count():\n    pe = kingdom.create_pending_event(\"banquet_toast_fucker\")\n    pe.set_value(\"fucker\", fuckers[0])\n    pe.start()\n  else:\n    pe = kingdom.create_pending_event(\"banquet_toast_loyaliste\")\n    pe.set_value(\"loyaliste\", loyaux[0])\n    pe.start()           \nelse:\n  kingdom.create_pending_event(\"banquet_beuverie\").start()\nstatus = \"ghost event\"\n", 
     "slug": "banquet_fantome", 
     "condition": " "
   }
@@ -1621,7 +1621,7 @@
     "category": null, 
     "name": "Soeurette", 
     "weight": 1, 
-    "text": "Elle sourit, sans se d\u00e9partir de son air hautain. \"Merci, mon seigneur. Je suis certaine que vous en trouverez votre maison renforc\u00e9e\". Sur un regard de sa part, {{mioche.first_name}} ajoute \"Merci mon oncle\".\r\n\r\n    {{soeur}}, {{mioche}} et {{chiard}} vous ont ont rejoint. {{chiard.first_name}} n'a que 1 ans, et n\u2019appara\u00eetra dans votre cour qu'\u00e0 l'age de 6 ans.\r\n", 
+    "text": "Elle sourit, sans se d\u00e9partir de son air hautain. \"Merci, mon seigneur. Je suis certaine que vous en trouverez votre maison renforc\u00e9e\". Sur un regard de sa part, {{mioche.first_name}} ajoute \"Merci mon oncle\".\r\n\r\n    {{soeur}}, {{mioche}} et {{chiard}} vous ont ont rejoint.", 
     "image": "events/361_7.jpg", 
     "on_fire": "soeur = param.get_value(\"soeur\")\nmioche = param.get_value(\"mioche\")\nchiard = param.get_value(\"chiard\")\n\nsoeur.kingdom = kingdom\nmioche.kingdom = kingdom\nchiard.kingdom = kingdom\n\nsoeur.save()\nmioche.save()\nchiard.save()", 
     "slug": "tuto_soeurette_accept", 
@@ -2295,7 +2295,7 @@
     "weight": 1, 
     "text": "bla", 
     "image": "", 
-    "on_fire": "# Cr\u00e9ation d'un nouveau folk\npapa = param.get_value(\"pere\")\nmaman = param.get_value(\"mere\")\n\nif(maman == papa.spouse):\n  nom = papa.last_name\nelse:\n  nom = maman.last_name\n  \nbebe = call_function(\"creer_folk\", kingdom=kingdom, father=papa, mother=maman, last_name=nom)\n\n# on enl\u00e8ve les traits auto\nfor q in Quality.objects.all():\n  bebe.remove_quality(q.slug)\n\n# on calcule les caracs\nr1 = random_value(13, 18)\nd = (papa.plot + maman.plot + papa.fight + mama.fight + papa.diplomatie + maman.diplomatie + papa.scholarship + maman.scholarship)\n\nbebe.plot        = min(max((papa.plot + maman.plot + random_value(-3,3)) * r1 / d, 1), 8)\nbebe.fight       = min(max((papa.fight + maman.fight + random_value(-3,3)) * r1 / d, 1), 8)\nbebe.diplomatie  = min(max((papa.diplomatie + maman.diplomatie + random_value(-3,3)) * r1 / d, 1), 8)\nbebe.scholarship = min(max((papa.scholarship + maman.scholarship + random_value(-3,3)) * r1 / d, 1), 8)\n\n#on attribue les traits\nif(papa != maman.spouse):\n  bebe.add_quality(\"batard\")\n\nfor t in papa.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if(random_value(1, 100) < 16):\n    bebe.add_quality(t.slug)\n    \nfor t in maman.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if(random_value(1, 100) < 16):\n    bebe.add_quality(t.slug)\n    \nfor t in papa.father.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if(random_value(1, 100) < 6):\n    bebe.add_quality(t.slug)\n    \nfor t in papa.mother.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if(random_value(1, 100) < 6):\n    bebe.add_quality(t.slug)\n    \nfor t in maman.father.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if(random_value(1, 100) < 6):\n    bebe.add_quality(t.slug)\n    \nfor t in maman.mother.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if(random_value(1, 100) < 6):\n    bebe.add_quality(t.slug)\n    \nfor t in Quality.objects.filter(category__name=\"Caract\u00e8re\"):\n  if(random_value(1, 200) < 6):\n    bebe.add_quality(t.slug)\n    \n#calcul du degr\u00e9 de consanguinit\u00e9 \ngp1 = papa.father\ngm1 = papa.mother\ngp2 = maman.father\ngm2 = maman.mother\nagp1 = gp1.father\nagm1 = gp1.mother\nagp2 = gm1.father\nagm2 = gm1.mother\nagp3 = gp2.father\nagm3 = gp2.mother\nagp4 = gm2.father\nagm4 = gm2.mother\n\nd1  = (agp1 == agp2) + (agp1 == agp3) + (agp1 == agp4) + (agp2 == agp3) + (agp2 == agp4) + (agp3 == agp4)\nd1 += (agm1 == agm2) + (agm1 == agm3) + (agm1 == agm4) + (agm2 == agm3) + (agm2 == agm4) + (agm3 == agm4)\n\nd2  = ((gp1 == gp2) + (gm1 == gm2))*2\n\nd3  = ((papa == gp2) | (maman ==gm1))*2\n\nd4  = ((maman == agm1) | (maman == agm2) | (papa == agp3) | (papa == agp4))\n\nd = max(max(max(d1, d2), d3), d4)\n\nfor i in range(1, d):\n  if(random_value(1, 100) < 14):\n    bebe.add_quality(random_in(['idiot', 'frele', 'laid']))\n", 
+    "on_fire": "# Cr\u00e9ation d'un nouveau folk\npapa = param.get_value(\"pere\")\nmaman = param.get_value(\"mere\")\n\nif maman == papa.spouse:\n  nom = papa.last_name\nelse:\n  nom = maman.last_name\n  \nbebe = call_function(\"creer_folk\", kingdom=kingdom, father=papa, mother=maman, last_name=nom)\n\n# on enl\u00e8ve les traits auto\nfor q in Quality.objects.all():\n  bebe.remove_quality(q.slug)\n\n# on calcule les caracs\nr1 = random_value(13, 18)\nd = (papa.plot + maman.plot + papa.fight + mama.fight + papa.diplomatie + maman.diplomatie + papa.scholarship + maman.scholarship)\n\nbebe.plot        = min(max((papa.plot + maman.plot + random_value(-3,3)) * r1 / d, 1), 8)\nbebe.fight       = min(max((papa.fight + maman.fight + random_value(-3,3)) * r1 / d, 1), 8)\nbebe.diplomatie  = min(max((papa.diplomatie + maman.diplomatie + random_value(-3,3)) * r1 / d, 1), 8)\nbebe.scholarship = min(max((papa.scholarship + maman.scholarship + random_value(-3,3)) * r1 / d, 1), 8)\n\n#on attribue les traits\nif papa != maman.spouse:\n  bebe.add_quality(\"batard\")\n\nfor t in papa.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if random_value(1, 100) < 16:\n    bebe.add_quality(t.slug)\n    \nfor t in maman.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if random_value(1, 100) < 16:\n    bebe.add_quality(t.slug)\n    \nfor t in papa.father.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if random_value(1, 100) < 6:\n    bebe.add_quality(t.slug)\n    \nfor t in papa.mother.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if random_value(1, 100) < 6:\n    bebe.add_quality(t.slug)\n    \nfor t in maman.father.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if random_value(1, 100) < 6:\n    bebe.add_quality(t.slug)\n    \nfor t in maman.mother.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if random_value(1, 100) < 6:\n    bebe.add_quality(t.slug)\n    \nfor t in Quality.objects.filter(category__name=\"Caract\u00e8re\"):\n  if random_value(1, 200) < 6:\n    bebe.add_quality(t.slug)\n    \n#calcul du degr\u00e9 de consanguinit\u00e9 \ngp1 = papa.father\ngm1 = papa.mother\ngp2 = maman.father\ngm2 = maman.mother\nagp1 = gp1.father\nagm1 = gp1.mother\nagp2 = gm1.father\nagm2 = gm1.mother\nagp3 = gp2.father\nagm3 = gp2.mother\nagp4 = gm2.father\nagm4 = gm2.mother\n\nd1  = (agp1 == agp2) + (agp1 == agp3) + (agp1 == agp4) + (agp2 == agp3) + (agp2 == agp4) + (agp3 == agp4)\nd1 += (agm1 == agm2) + (agm1 == agm3) + (agm1 == agm4) + (agm2 == agm3) + (agm2 == agm4) + (agm3 == agm4)\n\nd2  = ((gp1 == gp2) + (gm1 == gm2))*2\n\nd3  = ((papa == gp2) | (maman ==gm1))*2\n\nd4  = ((maman == agm1) | (maman == agm2) | (papa == agp3) | (papa == agp4))\n\nd = max(max(max(d1, d2), d3), d4)\n\nfor i in range(1, d):\n  if random_value(1, 100) < 14:\n    bebe.add_quality(random_in(['idiot', 'frele', 'laid']))\n", 
     "slug": "naissance_fantome", 
     "condition": "\n"
   }
@@ -2309,7 +2309,7 @@
     "weight": 1, 
     "text": "bla", 
     "image": "", 
-    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\n# Qu'arrive-t-il au nourrisson ? \nr = random_value(1,100)\n\n#For test purposes only\nr = 1\n\nif(r < 78):\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  naissance = param.next_event('naissance_unique')\n  naissance.start() \n  \nelif(r < 88):\n  # l'enfant est mort n\u00e9 (un soulagement pour certains, une grande peine pour d'autres, c'est toujours mieux que ce qui vient apr\u00e8s)\n  mort_ne = param.next_event('mort_ne')\n  mort_ne.start()\n\nelif(r < 91):\n  # les deux meurent (putain, \u00e7a c'est vraiment pas de bol!)\n  bloodbath = param.next_event('mort_couches_double')\n  bloodbath.start()\n  \nelif(r < 100):\n  # Ce sont des jumeaux qui naissent (oups, deux bouches au lieu d'une)\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nelif(r == 100):\n  # Et bim, des tripl\u00e9s, tu vas voir la gueule de ton budget couches !!!\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nstatus = \"fantome\"\n", 
+    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\n# Qu'arrive-t-il au nourrisson ? \nr = random_value(1,100)\n\n#For test purposes only\nr = 1\n\nif r < 78:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  naissance = param.next_event('naissance_unique')\n  naissance.start() \n  \nelif r < 88:\n  # l'enfant est mort n\u00e9 (un soulagement pour certains, une grande peine pour d'autres, c'est toujours mieux que ce qui vient apr\u00e8s)\n  mort_ne = param.next_event('mort_ne')\n  mort_ne.start()\n\nelif r < 91:\n  # les deux meurent (putain, \u00e7a c'est vraiment pas de bol!)\n  bloodbath = param.next_event('mort_couches_double')\n  bloodbath.start()\n  \nelif r < 100:\n  # Ce sont des jumeaux qui naissent (oups, deux bouches au lieu d'une)\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nelif r == 100:\n  # Et bim, des tripl\u00e9s, tu vas voir la gueule de ton budget couches !!!\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nstatus = \"fantome\"\n", 
     "slug": "accouchement_fantome", 
     "condition": "\n"
   }
@@ -2451,7 +2451,7 @@
     "image": "", 
     "on_fire": "\n", 
     "slug": "naissance_unique", 
-    "condition": "r = random_value(1,77)\nparam.set_value('mother_is_dead', False)\n\nif(r<61):\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  maturite = param.next_event('coming_of_age')\n  maturite.started = datetime.now() + timedelta(days=6)  \n  maturite.save()\n  \nelif(r<71):\n  #L'enfant meurt en bas \u00e2ge\n  d = random_value(0, 5)\n  h = random_value(0, 23)\n  m = random_value(0, 60)\n  mort = param.next_event('mort_precoce')\n  mort.started = datetime.now() + timedelta(days=d, hours=h, minutes=m)\n  mort.save()\n\nelse:\n  #La m\u00e8re meurt en donnant naissance\n  param.set_value('mother_is_dead', True)\n  mere.die()\n  maturite = param.next_event('coming_of_age')\n  maturite.started = datetime.now() + timedelta(days=6)  \n  maturite.save()\n  \n"
+    "condition": "r = random_value(1,77)\nparam.set_value('mother_is_dead', False)\n\nr = 1 # for testing purposes\n\nif r<61:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  maturite = param.next_event('coming_of_age')\n  maturite.started = datetime.now() + timedelta(days=6)  \n  maturite.save()\n  \nelif r<71:\n  #L'enfant meurt en bas \u00e2ge\n  d = random_value(0, 5)\n  h = random_value(0, 23)\n  m = random_value(0, 60)\n  mort = param.next_event('mort_precoce')\n  mort.started = datetime.now() + timedelta(days=d, hours=h, minutes=m)\n  mort.save()\n\nelse:\n  #La m\u00e8re meurt en donnant naissance\n  param.set_value('mother_is_dead', True)\n  mere.die()\n  maturite = param.next_event('coming_of_age')\n  maturite.started = datetime.now() + timedelta(days=6)  \n  maturite.save()\n  \n"
   }
 },
 {
@@ -2517,11 +2517,11 @@
     "category": null, 
     "name": "facheux", 
     "weight": 1, 
-    "text": "D'un commun accord, ils se battront sans armure. Mes suivants se tiennent debout au milieu de la cour, entour\u00e9s de quelques gardes et  domestiques, et contemplent sans un mot les deux combattants qui se pr\u00e9parent pour le duel. Sire {{facheux.first_name}} semble s\u00fbr de lui, et s'\u00e9chauffe en faisant quelques moulinets. Face \u00e0 lui, mon fils {{folk.1.first_name}} fait rouler ses \u00e9paules, pr\u00eat \u00e0 en d\u00e9coudre. Alors m\u00eame que sa s\u0153ur l'enlace et lui ordonne de gagner, il ne quitte pas une seconde son adversaire des yeux. En essuyant ses larmes, elle vient se placer \u00e0 mes c\u00f4t\u00e9s et attrape fermement le bras de sire {{folk.3.first_name}}. \"Messieurs, en garde!\" Ma voix fait taire les murmures du public. Les combattants se saluent, l\u00e8vent leurs \u00e9p\u00e9es, et se pr\u00e9parent au premier assaut.", 
+    "text": "D'un commun accord, ils se battront sans armure. Mes suivants se tiennent debout au milieu de la cour, entour\u00e9s de quelques gardes et  domestiques, et contemplent sans un mot les deux combattants qui se pr\u00e9parent pour le duel. Sire {{facheux.first_name}} semble s\u00fbr de lui, et s'\u00e9chauffe en faisant quelques moulinets. Face \u00e0 lui, mon fils {{folks.1.first_name}} fait rouler ses \u00e9paules, pr\u00eat \u00e0 en d\u00e9coudre. Alors m\u00eame que sa s\u0153ur l'enlace et lui ordonne de gagner, il ne quitte pas une seconde son adversaire des yeux. En essuyant ses larmes, elle vient se placer \u00e0 mes c\u00f4t\u00e9s et attrape fermement le bras de sire {{folks.3.first_name}}. \"Messieurs, en garde!\" Ma voix fait taire les murmures du public. Les combattants se saluent, l\u00e8vent leurs \u00e9p\u00e9es, et se pr\u00e9parent au premier assaut.", 
     "image": "events/716_7.jpg", 
-    "on_fire": null, 
+    "on_fire": "\n", 
     "slug": "tuto_facheux_duel", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -2855,7 +2855,7 @@
     "weight": 1, 
     "text": "check si le joueur peut subir une attaque si oui il se fait attaquer sinon on lui donne des ressources", 
     "image": "", 
-    "on_fire": "#gar\u00e7ons qui ont au moins 8 en combat, sont adultes et pas disable\nnb_chevaliers_dispo=kingdom.folk_set.all().count()\nseuil_troupes_min=0.8*0.07*float(kingdom.prestige*2)\nthune_mini=10 #de quoi recruter 2 chevaliers\n\nif ((kingdom.soldiers>seuil_troupes_min and nb_chevaliers_dispo>=3) or kingdom.get_value(\"tuto_warning_incapable_subir_attaque\",False)==True):\n  kingdom.create_pending_event(\"tuto_attaque_par_pnj\").start()\n  kingdom.set_value(\"tuto_warning_incapable_subir_attaque\",False)\nelse:\n  kingdom.set_value(\"tuto_warning_incapable_subir_attaque\",True)\n  param.next_event(\"tuto_regeneration_armee\").start()\n\nstatus=\"fantome\"\n", 
+    "on_fire": "#gar\u00e7ons qui ont au moins 8 en combat, sont adultes et pas disable\nnb_chevaliers_dispo=kingdom.folk_set.all().count()\nseuil_troupes_min=0.8*0.07*float(kingdom.prestige*2)\nthune_mini=10 #de quoi recruter 2 chevaliers\n\nif ((kingdom.soldiers>seuil_troupes_min and nb_chevaliers_dispo>=3) or kingdom.get_value(\"tuto_warning_incapable_subir_attaque\",False)):\n  kingdom.create_pending_event(\"tuto_attaque_par_pnj\").start()\n  kingdom.set_value(\"tuto_warning_incapable_subir_attaque\",False)\nelse:\n  kingdom.set_value(\"tuto_warning_incapable_subir_attaque\",True)\n  param.next_event(\"tuto_regeneration_armee\").start()\n\nstatus=\"fantome\"\n", 
     "slug": "tuto_scanjoueur_fantome", 
     "condition": "\n"
   }
@@ -4320,7 +4320,7 @@
     "message": "Je suis maintenant F\u00eatard.", 
     "event": 116, 
     "condition": " ", 
-    "on_fire": "kingdom.get_folk_in_title(\"chatelain\").add_quality(\"fetard\")\nif param.get_value(\"banquet_marriage_tuto\",False)==True:\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_scandale_fantome\")"
+    "on_fire": "kingdom.get_folk_in_title(\"chatelain\").add_quality(\"fetard\")\nif param.get_value(\"banquet_mariage_tuto\",False):\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_scandale_fantome\")"
   }
 },
 {
@@ -4353,7 +4353,7 @@
     "message": "J'ai renonc\u00e9 \u00e0 mes habitudes de F\u00eatard.", 
     "event": 118, 
     "condition": " ", 
-    "on_fire": "if param.get_value(\"banquet_marriage_tuto\",False)==True:\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_scandale_fantome\")\n"
+    "on_fire": "if param.get_value(\"banquet_mariage_tuto\",False):\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_scandale_fantome\")\n"
   }
 },
 {
@@ -4364,7 +4364,7 @@
     "message": "Je suis devenu Asc\u00e8te.", 
     "event": 119, 
     "condition": " ", 
-    "on_fire": "kingdom.get_folk_in_title(\"chatelain\").add_quality(slug=\"ascete\")\nif param.get_value(\"banquet_marriage_tuto\",False)==True:\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_scandale_fantome\")\n"
+    "on_fire": "kingdom.get_folk_in_title(\"chatelain\").add_quality(slug=\"ascete\")\nif param.get_value(\"banquet_mariage_tuto\",False):\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_scandale_fantome\")\n"
   }
 },
 {
@@ -4419,7 +4419,7 @@
     "message": "Le banquet s'est termin\u00e9 dans la bonne humeur. ```+3 de Loyaut\u00e9 g\u00e9n\u00e9rale.```", 
     "event": 124, 
     "condition": " ", 
-    "on_fire": "call_function(\"gain_loyaute_general\", kingdom=kingdom, gain_min=2, gain_max=4)\nif param.get_value(\"banquet_marriage_tuto\",False)==True:\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_scandale_fantome\")\n"
+    "on_fire": "call_function(\"gain_loyaute_general\", kingdom=kingdom, gain_min=2, gain_max=4)\nif param.get_value(\"banquet_mariage_tuto\",False):\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_scandale_fantome\")\n"
   }
 },
 {
@@ -5002,7 +5002,7 @@
     "message": "Mon fils {{folk.1.first_name}} et le {{facheux}} sont \u00e0 couteaux tir\u00e9s. Je pourrais regler le probl\u00e8me en [d\u00e9barassant](mission) ma cour du chevalier.", 
     "event": 157, 
     "condition": "\n", 
-    "on_fire": "passage=param.get_value(\"passage\")\nif 5 in passage:\n  passage.append(5)\n  param.set_value(\"passage\", passage)\n  #param.next_event(\"tuto_facheux_5\").start()\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_facheux_5\")\n  pe.start()\nelse:\n  param.pending_event.next_event(\"tuto_facheux_7\").start()\n\nif kingdom.get_folk_in_title(\"maitre_espion\") in None:\n  kingdom.unlock_title(\"maitre_espion\")\n\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")"
+    "on_fire": "come_from = param.get_value(\"come_from\")\nif come_from == 5:\n  #param.next_event(\"tuto_facheux_5\").start()\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_facheux_5\")\n  pe.start()\nelse:\n  param.pending_event.next_event(\"tuto_facheux_7\").start()\n\nif kingdom.get_folk_in_title(\"maitre_espion\") in None:\n  kingdom.unlock_title(\"maitre_espion\")\n\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")"
   }
 },
 {
@@ -5485,7 +5485,7 @@
     "text": "J'adresse une pri\u00e8re muette au Seigneur, le suppliant d'\u00e9pargner mon fils.", 
     "message": "", 
     "event": 209, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_facheux_duel_2\").start()"
   }
 },
@@ -5717,7 +5717,7 @@
     "message": "", 
     "event": 230, 
     "condition": "\n", 
-    "on_fire": "if (param.get_value(\"attaquant\")==False):\n  pe=param.next_event(\"tuto_escarmouche_misasac\").start()\nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",False)==False):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\")==True and kingdom.get_value(\"tuto_conflit\",False)==False):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n\n\n"
+    "on_fire": "if (param.get_value(\"attaquant\")==False):\n  pe=param.next_event(\"tuto_escarmouche_misasac\").start()\nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",False)==False):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",False)==False):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n\n\n"
   }
 },
 {
@@ -5728,7 +5728,7 @@
     "message": "", 
     "event": 231, 
     "condition": "\n", 
-    "on_fire": "if param.get_value(\"attaquant\")==True:\n  pe=param.next_event(\"tuto_escarmouche_pillage\").start()  \nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\")==True and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n\n\n"
+    "on_fire": "if param.get_value(\"attaquant\"):\n  pe=param.next_event(\"tuto_escarmouche_pillage\").start()  \nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n\n\n"
   }
 },
 {
@@ -5772,7 +5772,7 @@
     "message": "", 
     "event": 234, 
     "condition": "\n", 
-    "on_fire": "is_victory=random_value(0,1)\nif is_victory==True:\n  kingdom.prestige+=20\n  kingdom.save()\nelse:\n  kingdom.prestige-=15\n  kingdom.save()\n\nif kingdom.get_value(\"tuto_firstbattle_defense\",False)==False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_defense\")\nelif is_victory==True:  \n  pe=kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe=kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\",False)\npe.start()\n  \n"
+    "on_fire": "is_victory=random_value(0,1)\nif is_victory:\n  kingdom.prestige+=20\n  kingdom.save()\nelse:\n  kingdom.prestige-=15\n  kingdom.save()\n\nif kingdom.get_value(\"tuto_firstbattle_defense\",False)==False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_defense\")\nelif is_victory:  \n  pe=kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe=kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\",False)\npe.start()\n  \n"
   }
 },
 {
@@ -5783,7 +5783,7 @@
     "message": "", 
     "event": 236, 
     "condition": "\n", 
-    "on_fire": "if (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\")==True and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()"
+    "on_fire": "if (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()"
   }
 },
 {
@@ -5794,7 +5794,7 @@
     "message": "", 
     "event": 237, 
     "condition": "\n", 
-    "on_fire": "if (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\")==True and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()"
+    "on_fire": "if (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()"
   }
 },
 {
