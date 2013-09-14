@@ -2447,7 +2447,7 @@
     "category": null, 
     "name": "Un enfant est n\u00e9", 
     "weight": 1, 
-    "text": "{% if mother_is_dead %}\r\nL'enfant de {{pere}} et {{mere}} vient de na\u00eetre.\r\n{% else %}\r\nUn enfant est n\u00e9 mais sa m\u00e8re, {{mere}} est morte.\r\n{% endif %}\r\n\r\nIl rejoindra votre cour une fois atteint l'age de six ans.", 
+    "text": "{% if mother_is_dead %}\r\nUn enfant est n\u00e9 mais sa m\u00e8re, {{mere}} est morte.\r\n{% else %}\r\nL'enfant de {{pere}} et {{mere}} vient de na\u00eetre.\r\n{% endif %}\r\n\r\nIl rejoindra votre cour une fois atteint l'age de six ans.", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "naissance_unique", 
