@@ -1081,6 +1081,14 @@
   }
 },
 {
+  "pk": "qkyujn8luvo6iierpaiho76113beenld", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-09-29T11:20:45.187", 
+    "session_data": "ZDVhYmUzZmY4NjE4YzUzODJjYmFhMmNkN2Y3NjczMmE3YjQ0ZGVjODqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLKXUu"
+  }
+},
+{
   "pk": "qrhoho83ahy92yeil2enbq9hlvx0u9vg", 
   "model": "sessions.session", 
   "fields": {
@@ -46292,7 +46300,7 @@
     "target_list": "\n", 
     "text": "Aller qu\u00e9rir des information sur les ressources du chateau", 
     "has_value": false, 
-    "on_resolution": "attack = 0\nfor folk in grids['espions']:\n  attack += folk.plot\nattack /= 3\ndefense = 0\nme=0\nch=0\ntry :\n  me = target.get_folk_in_title(\"maitre_espion\").plot\nexcept:\n  pass\ntry :\n  ch = target.get_folk_in_title(\"chatelain\").plot\nexcept:\n  pass\ndef_folks = list(Folk.objects.filter(kingdom = target, mission = None, birth__gte= datetime.now() - timedelta(days=C(\"MAJORITE\")), sex = \"m\"))\ncour = f(\"somme_stat_folks\", folks=def_folks, stat=\"plot\") / len(def_folks)\ndefense = 0.3 * (4*me+ch) / 5 + 0.7 * cour\n\nif defense > attack * 2:\n  pe = kingdom.create_pending_event(\"resultat_espionnage_echec\")\n  pe.set_value(\"target\", target)\n  pe.start()\nelse:\n  marge = min(100, 100 * 4/float(3) * 1/float(2) * ( 1 + ( (attack-defense) / float((attack+defense)) ) ) )\n  gold = int(target.money*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  population = int(target.population*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  titles = Title.objects.all()\n  folks_titled = []\n  for title in titles :\n    folks_titled.append(target.get_folk_in_title(title.name))\n  pe = kingdom.create_pending_event(\"resultat_espionnage_chateau\")\n  pe.set_value(\"marge\", marge)\n  pe.set_value(\"gold\", gold)\n  pe.set_value(\"population\", population)\n  pe.set_value(\"folks_titled\", folks_titled)\n  pe.start()\n", 
+    "on_resolution": "def randomize_number(value, marge):\n  number = int(value*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  return number\n\ndef randomize_stat(value, marge):\n  stat = int(min(20,value*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100))\n  return stat\n\nattack = 0\nfor folk in grids['espions']:\n  attack += folk.plot\nattack /= 3\ndefense = 0\nme=0\nch=0\ntry :\n  me = target.get_folk_in_title(\"maitre_espion\").plot\nexcept:\n  pass\ntry :\n  ch = target.get_folk_in_title(\"chatelain\").plot\nexcept:\n  pass\ndef_folks = list(Folk.objects.filter(kingdom = target, mission = None, birth__gte= datetime.now() - timedelta(days=C(\"MAJORITE\")), sex = \"m\"))\ncour = f(\"somme_stat_folks\", folks=def_folks, stat=\"plot\") / len(def_folks)\ndefense = 0.3 * (4*me+ch) / 5 + 0.7 * cour\n\nif defense > attack * 2:\n  pe = kingdom.create_pending_event(\"resultat_espionnage_echec\")\n  pe.set_value(\"target\", target)\n  pe.start()\nelse:\n  marge = min(100, 100 * 4/float(3) * 1/float(2) * ( 1 + ( (attack-defense) / float((attack+defense)) ) ) )\n  gold = randomize_number(target.money, marge)\n  population = randomize_number(target.population, marge)\n  \n  folks_titled = []\n  titles = [[\"ambassadeur\", Folk.diplomacy], [\"connetable\", Folk.fight], [\"maitre_espion\", Folk.plot]]\n  for title in titles:\n    folk = target.get_folk_in_title(title[0])\n    if folk is not None:\n      folks_titled.append(folk.title[1])\n  pe = kingdom.create_pending_event(\"resultat_espionnage_chateau\")\n  pe.set_value(\"gold\", gold)\n  pe.set_value(\"population\", population)\n  pe.set_value(\"folks_titled\", folks_titled)\n  pe.start()\n", 
     "value_description": "", 
     "on_start": "\n", 
     "has_target": true, 
@@ -47060,6 +47068,22 @@
   }
 },
 {
+  "pk": 232, 
+  "model": "mission.pendingmission", 
+  "fields": {
+    "kingdom": 58, 
+    "is_started": true, 
+    "target": 70, 
+    "created": "2013-09-15T12:10:17.992", 
+    "started": "2013-09-15T12:10:25.949", 
+    "last_target": 70, 
+    "mission": 45, 
+    "value": 0, 
+    "is_finished": false, 
+    "last_value": 0
+  }
+},
+{
   "pk": 289, 
   "model": "mission.pendingmissionaffectation", 
   "fields": {
@@ -47201,6 +47225,33 @@
     "pending_mission": 222, 
     "folk": 6955, 
     "mission_grid": 30
+  }
+},
+{
+  "pk": 428, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 232, 
+    "folk": 6680, 
+    "mission_grid": 46
+  }
+},
+{
+  "pk": 429, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 232, 
+    "folk": 6681, 
+    "mission_grid": 46
+  }
+},
+{
+  "pk": 430, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 232, 
+    "folk": 6733, 
+    "mission_grid": 46
   }
 },
 {
@@ -50745,7 +50796,7 @@
     "category": null, 
     "name": "R\u00e9sultat de l'espionnage", 
     "weight": 1, 
-    "text": "L'adversaire a : {{soldiers}} soldats, {{archers}} archers, {{piquiers}} piquiers, {{cavaliers}} cavaliers\r\n{% for defenseur in defenseurs %}\r\nNous avons aussi rep\u00e9r\u00e9 {{defenseur.0}} dont les stats sont {{defenseur.1}}(C), {{defenseur.2}}(I), {{defenseur.3}}(\u00c9), {{defenseur.4}}(L) et ont pour trait(s) :\r\n\r\n{% for trait in defenseur.5 %}\r\n* trait.name\r\n{% endfor %}\r\n{% endfor %}", 
+    "text": "L'adversaire a : {{soldiers}} soldats, {{archers}} archers, {{piquiers}} piquiers, {{cavaliers}} cavaliers\r\n{% for defenseur in defenseurs %}\r\nNous avons aussi rep\u00e9r\u00e9 {{defenseur.0}} dont les stats sont {{defenseur.1}}(C), {{defenseur.2}}(I), {{defenseur.3}}(\u00c9), {{defenseur.4}}(L) et a pour trait(s) :\r\n\r\n{% for trait in defenseur.5 %}\r\n* trait.name\r\n{% endfor %}\r\n{% endfor %}", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "resultat_espionnage_troupes", 
@@ -53670,7 +53721,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Ces donn\u00e9es sont primordiales, je vais les noter sur mon registre.", 
-    "message": "", 
+    "message": "L'adversaire a : {{soldiers}} soldats, {{archers}} archers, {{piquiers}} piquiers, {{cavaliers}} cavaliers\r\n{% for defenseur in defenseurs %}\r\nNous avons aussi rep\u00e9r\u00e9 {{defenseur.0}} dont les stats sont {{defenseur.1}}(C), {{defenseur.2}}(I), {{defenseur.3}}(\u00c9), {{defenseur.4}}(L) et a pour trait(s) :\r\n\r\n{% for trait in defenseur.5 %}\r\n* trait.name\r\n{% endfor %}\r\n{% endfor %}", 
     "event": 243, 
     "condition": "\n", 
     "on_fire": "\n"
@@ -53841,18 +53892,6 @@
   }
 },
 {
-  "pk": 2135, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 58, 
-    "is_started": true, 
-    "created": "2013-09-15T00:20:05.567", 
-    "started": "2013-09-15T00:20:06.383", 
-    "text": "L'adversaire a : 40 soldats, 0 archers, 0 piquiers,  cavaliers\r\n", 
-    "event": 243
-  }
-},
-{
   "pk": 1024, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -53952,28 +53991,6 @@
   }
 },
 {
-  "pk": 2306, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 2135, 
-    "message": "", 
-    "text": "Ces donn\u00e9es sont primordiales, je vais les noter sur mon registre.", 
-    "folk": null, 
-    "event_action": 313
-  }
-},
-{
-  "pk": 2307, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 2135, 
-    "message": "", 
-    "text": "Malheureusement, je n'ai que faire de ces informations...", 
-    "folk": null, 
-    "event_action": 312
-  }
-},
-{
   "pk": 1653, 
   "model": "event._pendingeventvariable", 
   "fields": {
@@ -54070,42 +54087,6 @@
     "pending_event": 2118, 
     "name": "slug", 
     "value": "tuto_ambition"
-  }
-},
-{
-  "pk": 4389, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2135, 
-    "name": "soldiers", 
-    "value": 40
-  }
-},
-{
-  "pk": 4390, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2135, 
-    "name": "archers", 
-    "value": 0
-  }
-},
-{
-  "pk": 4391, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2135, 
-    "name": "piquiers", 
-    "value": 0
-  }
-},
-{
-  "pk": 4392, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2135, 
-    "name": "defenseurs", 
-    "value": "[]"
   }
 },
 {
@@ -76315,7 +76296,7 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-09-12T10:24:20.664", 
+    "last_login": "2013-09-15T11:20:45.184", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$10000$yINKp6NRHK8F$dc6Q/6j7MRoi3I+KbeQakISZfrlBcOUR3nYfj71TRb4=", 
@@ -111199,6 +111180,58 @@
     "change_message": "", 
     "user": 45, 
     "content_type": 31
+  }
+},
+{
+  "pk": 7180, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-15T11:21:31.926", 
+    "object_repr": "resultat_espionnage_troupes", 
+    "object_id": "243", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Malheureusement, je n'ai que faire de ces informat [resultat_espionnage_troupes]\u00a0\u00bb. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ces donn\u00e9es sont primordiales, je vais les noter s [resultat_espionnage_troupes]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7181, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-15T11:23:33.450", 
+    "object_repr": "espionner_chateau", 
+    "object_id": "45", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionner_chateau [Espions (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7182, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-15T11:39:36.424", 
+    "object_repr": "resultat_espionnage_troupes", 
+    "object_id": "243", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Malheureusement, je n'ai que faire de ces informat [resultat_espionnage_troupes]\u00a0\u00bb. condition, on_fire et message modifi\u00e9 pour event action \u00ab\u00a0Ces donn\u00e9es sont primordiales, je vais les noter s [resultat_espionnage_troupes]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7183, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-15T12:09:50.025", 
+    "object_repr": "espionner_chateau", 
+    "object_id": "45", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionner_chateau [Espions (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
   }
 },
 {
