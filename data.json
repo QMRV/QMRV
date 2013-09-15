@@ -50171,7 +50171,7 @@
     "category": null, 
     "name": "Mort-n\u00e9", 
     "weight": 1, 
-    "text": "L'enfant de {{pere.name}} et {{mere.name}} est mort \u00e0 la naissance.\r\n", 
+    "text": "L'enfant de {{pere}} et {{mere}} est mort \u00e0 la naissance.\r\n", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "mort_ne", 
@@ -53853,30 +53853,6 @@
   }
 },
 {
-  "pk": 2141, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 74, 
-    "is_started": true, 
-    "created": "2013-09-15T01:52:57.130", 
-    "started": "2013-09-15T01:52:57.144", 
-    "text": "\r\nL'enfant de John de bom et Jenna de bom vient de na\u00eetre.\r\n\r\n\r\nIl rejoindra votre cour une fois atteint l'age de six ans.", 
-    "event": 203
-  }
-},
-{
-  "pk": 2142, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 74, 
-    "is_started": true, 
-    "created": "2013-09-15T01:52:57.170", 
-    "started": "2013-09-15T02:05:53", 
-    "text": "L'enfant (indiquer pere et mere) Prenom Nom vient d'avoir six ans. \r\nIl se pr\u00e9sente \u00e0 votre cour.", 
-    "event": 197
-  }
-},
-{
   "pk": 1024, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -54130,60 +54106,6 @@
     "pending_event": 2135, 
     "name": "defenseurs", 
     "value": "[]"
-  }
-},
-{
-  "pk": 4405, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2141, 
-    "name": "mere", 
-    "value": "`Folk`:6979"
-  }
-},
-{
-  "pk": 4406, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2141, 
-    "name": "pere", 
-    "value": "`Folk`:6974"
-  }
-},
-{
-  "pk": 4407, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2141, 
-    "name": "mother_is_dead", 
-    "value": 0
-  }
-},
-{
-  "pk": 4408, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2142, 
-    "name": "mere", 
-    "value": "`Folk`:6979"
-  }
-},
-{
-  "pk": 4409, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2142, 
-    "name": "pere", 
-    "value": "`Folk`:6974"
-  }
-},
-{
-  "pk": 4410, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2142, 
-    "name": "mother_is_dead", 
-    "value": 0
   }
 },
 {
@@ -111186,6 +111108,97 @@
     "change_message": "Modifi\u00e9 condition et on_fire.", 
     "user": 45, 
     "content_type": 29
+  }
+},
+{
+  "pk": 7173, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-15T02:19:20.704", 
+    "object_repr": "Accouchement [bom kingdom]", 
+    "object_id": "None", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7174, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-15T02:22:18.818", 
+    "object_repr": "mort_ne", 
+    "object_id": "198", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire.", 
+    "user": 45, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7175, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-15T02:22:57.109", 
+    "object_repr": "Mort-n\u00e9 [bom kingdom]", 
+    "object_id": "2144", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7176, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-15T02:22:57.112", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2142", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7177, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-15T02:22:57.113", 
+    "object_repr": "Un enfant est n\u00e9 [bom kingdom]", 
+    "object_id": "2141", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7178, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-15T02:23:48.736", 
+    "object_repr": "Accouchement [bom kingdom]", 
+    "object_id": "None", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7179, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-15T02:25:40.760", 
+    "object_repr": "Mort-n\u00e9 [bom kingdom]", 
+    "object_id": "2146", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
   }
 },
 {
