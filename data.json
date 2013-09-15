@@ -1105,6 +1105,14 @@
   }
 },
 {
+  "pk": "qtp14pncf6h8zr330mwop572id1pl55h", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-09-30T01:12:54.300", 
+    "session_data": "MDIyODVmMjA0NzlmNjY0YmJjOWFhNmNkN2E3OTI1M2Y2Zjk3ODg4ZDqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLLXUu"
+  }
+},
+{
   "pk": "r6a3yn3mzpzlkzzrfvvz195nbbe4yvl1", 
   "model": "sessions.session", 
   "fields": {
@@ -6441,6 +6449,56 @@
     "quality_set": [
       4
     ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7002, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 74, 
+    "fight": 3, 
+    "first_name": "Gilemer", 
+    "last_name": "de de bom", 
+    "diplomacy": 13, 
+    "father": 6974, 
+    "plot": 4, 
+    "scholarship": 4, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 44, 
+    "birth": "2013-09-10T01:16:35.314", 
+    "mother": 6979, 
+    "loyalty": 1, 
+    "spouse": null, 
+    "quality_set": [
+      20
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7003, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 74, 
+    "fight": 15, 
+    "first_name": "Bartholom\u00e9", 
+    "last_name": "de de bom", 
+    "diplomacy": 12, 
+    "father": 6974, 
+    "plot": 11, 
+    "scholarship": 12, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 44, 
+    "birth": "2013-09-10T01:16:48.584", 
+    "mother": 6979, 
+    "loyalty": 0, 
+    "spouse": null, 
+    "quality_set": [], 
     "mentor": null
   }
 },
@@ -50148,7 +50206,7 @@
     "weight": 1, 
     "text": "bla", 
     "image": "", 
-    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\n# Qu'arrive-t-il au nourrisson ? \nr = random_value(1,100)\n\n#For test purposes only\nr = 78\n\nif r < 78:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  naissance = param.next_event('naissance_unique')\n  naissance.start() \n  \nelif r < 88:\n  # l'enfant est mort n\u00e9 (un soulagement pour certains, une grande peine pour d'autres, c'est toujours mieux que ce qui vient apr\u00e8s)\n  mort_ne = param.next_event('mort_ne')\n  mort_ne.start()\n\nelif r < 91:\n  # les deux meurent (putain, \u00e7a c'est vraiment pas de bol!)\n  bloodbath = param.next_event('mort_couches_double')\n  bloodbath.start()\n  \nelif r < 100:\n  # Ce sont des jumeaux qui naissent (oups, deux bouches au lieu d'une)\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nelif r == 100:\n  # Et bim, des tripl\u00e9s, tu vas voir la gueule de ton budget couches !!!\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nstatus = \"fantome\"\n", 
+    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\n# Qu'arrive-t-il au nourrisson ? \nr = random_value(1,100)\n\n#For test purposes only\nr = 99\n\nif r < 78:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  naissance = param.next_event('naissance_unique')\n  naissance.start() \n  \nelif r < 88:\n  # l'enfant est mort n\u00e9 (un soulagement pour certains, une grande peine pour d'autres, c'est toujours mieux que ce qui vient apr\u00e8s)\n  mort_ne = param.next_event('mort_ne')\n  mort_ne.start()\n\nelif r < 91:\n  # les deux meurent (putain, \u00e7a c'est vraiment pas de bol!)\n  bloodbath = param.next_event('mort_couches_double')\n  bloodbath.start()\n  \nelif r < 100:\n  # Ce sont des jumeaux qui naissent (oups, deux bouches au lieu d'une)\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nelif r == 100:\n  # Et bim, des tripl\u00e9s, tu vas voir la gueule de ton budget couches !!!\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nstatus = \"fantome\"\n", 
     "slug": "accouchement_fantome", 
     "condition": "\n"
   }
@@ -53900,6 +53958,42 @@
   }
 },
 {
+  "pk": 2148, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 74, 
+    "is_started": true, 
+    "created": "2013-09-16T01:16:15.724", 
+    "started": "2013-09-16T01:16:15.735", 
+    "text": " a mis au monde des jumeaux", 
+    "event": 201
+  }
+},
+{
+  "pk": 2149, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 74, 
+    "is_started": true, 
+    "created": "2013-09-16T01:16:15.743", 
+    "started": "2013-09-16T01:16:45", 
+    "text": "L'enfant (indiquer pere et mere) Prenom Nom vient d'avoir six ans. \r\nIl se pr\u00e9sente \u00e0 votre cour.", 
+    "event": 197
+  }
+},
+{
+  "pk": 2150, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 74, 
+    "is_started": true, 
+    "created": "2013-09-16T01:16:15.758", 
+    "started": "2013-09-16T01:16:33", 
+    "text": "L'enfant (indiquer pere et mere) Prenom Nom vient d'avoir six ans. \r\nIl se pr\u00e9sente \u00e0 votre cour.", 
+    "event": 197
+  }
+},
+{
   "pk": 1024, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -54095,6 +54189,60 @@
     "pending_event": 2118, 
     "name": "slug", 
     "value": "tuto_ambition"
+  }
+},
+{
+  "pk": 4421, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2148, 
+    "name": "mere", 
+    "value": "`Folk`:6979"
+  }
+},
+{
+  "pk": 4422, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2148, 
+    "name": "pere", 
+    "value": "`Folk`:6974"
+  }
+},
+{
+  "pk": 4423, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2149, 
+    "name": "mere", 
+    "value": "`Folk`:6979"
+  }
+},
+{
+  "pk": 4424, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2149, 
+    "name": "pere", 
+    "value": "`Folk`:6974"
+  }
+},
+{
+  "pk": 4425, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2150, 
+    "name": "mere", 
+    "value": "`Folk`:6979"
+  }
+},
+{
+  "pk": 4426, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2150, 
+    "name": "pere", 
+    "value": "`Folk`:6974"
   }
 },
 {
@@ -76376,7 +76524,7 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-09-15T01:41:15.376", 
+    "last_login": "2013-09-16T01:12:54.296", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$10000$CkUn5dGug67d$zHnH32sdxgsKPJGO5aIWL6A+5YjcrrvRjnbNHiSjCxE=", 
@@ -111240,6 +111388,58 @@
     "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionner_chateau [Espions (3)]\u00a0\u00bb.", 
     "user": 41, 
     "content_type": 23
+  }
+},
+{
+  "pk": 7184, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:15:31.028", 
+    "object_repr": "accouchement_fantome", 
+    "object_id": "191", 
+    "change_message": "Modifi\u00e9 condition et on_fire.", 
+    "user": 45, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7185, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:16:15.843", 
+    "object_repr": "Accouchement [bom kingdom]", 
+    "object_id": "None", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7186, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:16:35.655", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2150", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7187, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:16:48.705", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2149", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
   }
 },
 {
