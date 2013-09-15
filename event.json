@@ -2391,7 +2391,7 @@
     "category": null, 
     "name": "Mort-n\u00e9", 
     "weight": 1, 
-    "text": "L'enfant de {{pere.name}} et {{mere.name}} est mort \u00e0 la naissance.\r\n", 
+    "text": "L'enfant de {{pere}} et {{mere}} est mort \u00e0 la naissance.\r\n", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "mort_ne", 
