@@ -761,6 +761,14 @@
   }
 },
 {
+  "pk": "cij6h8l02j8gupuq2szqirnk0jjmbj4t", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-09-29T01:41:15.379", 
+    "session_data": "MDIyODVmMjA0NzlmNjY0YmJjOWFhNmNkN2E3OTI1M2Y2Zjk3ODg4ZDqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLLXUu"
+  }
+},
+{
   "pk": "d6e403c0096623d5da5cd00a401ad420", 
   "model": "sessions.session", 
   "fields": {
@@ -6395,6 +6403,32 @@
   }
 },
 {
+  "pk": 7001, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 74, 
+    "fight": 3, 
+    "first_name": "Landri", 
+    "last_name": "de de bom", 
+    "diplomacy": 14, 
+    "father": 6974, 
+    "plot": 4, 
+    "scholarship": 4, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 44, 
+    "birth": "2013-09-09T02:05:54.899", 
+    "mother": 6979, 
+    "loyalty": 0, 
+    "spouse": null, 
+    "quality_set": [
+      4
+    ], 
+    "mentor": null
+  }
+},
+{
   "pk": 1, 
   "model": "kingdom.qualitycategory", 
   "fields": {
@@ -9802,7 +9836,7 @@
   "fields": {
     "params": "pere:Folk le p\u00e8re de l'enfance\r\nmere:Folk la m\u00e8re\r\nkingdom:Kingdom l'object Kingdom associ\u00e9", 
     "slug": "creer_enfant", 
-    "on_fire": "# Cr\u00e9ation d'un nouveau folk\npapa = pere\nmaman = mere\n\nif maman == papa.spouse:\n  nom = papa.last_name\nelse:\n  nom = maman.last_name\n  \nbebe = call_function(\"creer_folk\", fight_min=1, plot_min=1, diplomacy_min=1, scholarship_min=1, loyalty=1, max_carac=50, kingdom=kingdom, father=papa, mother=maman, last_name=nom, birth=datetime.now() - timedelta(days=6))\nprint bebe\n# on enl\u00e8ve les traits auto\nbebe.quality_set.clear()\n\n# on calcule les caracs\nr1 = random_value(13, 18)\nd = (papa.plot + maman.plot + papa.fight + maman.fight + papa.diplomacy + maman.diplomacy + papa.scholarship + maman.scholarship)\n\nbebe.plot        = min(max((papa.plot + maman.plot + random_value(-3,3)) * r1 / d, 1), 8)\nbebe.fight       = min(max((papa.fight + maman.fight + random_value(-3,3)) * r1 / d, 1), 8)\nbebe.diplomatie  = min(max((papa.diplomacy + maman.diplomacy + random_value(-3,3)) * r1 / d, 1), 8)\nbebe.scholarship = min(max((papa.scholarship + maman.scholarship + random_value(-3,3)) * r1 / d, 1), 8)\n\n#on attribue les traits\nif papa != maman.spouse:\n  bebe.add_quality(\"batard\")\n\nfor t in papa.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if random_value(1, 100) < 16:\n    bebe.add_quality(t.slug)\n    \nfor t in maman.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if random_value(1, 100) < 16:\n    bebe.add_quality(t.slug)\n    \nfor t in papa.father.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if random_value(1, 100) < 6:\n    bebe.add_quality(t.slug)\n    \nfor t in papa.mother.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if random_value(1, 100) < 6:\n    bebe.add_quality(t.slug)\n    \nfor t in maman.father.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if random_value(1, 100) < 6:\n    bebe.add_quality(t.slug)\n    \nfor t in maman.mother.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if random_value(1, 100) < 6:\n    bebe.add_quality(t.slug)\n    \nfor t in Quality.objects.filter(category__name=\"Caract\u00e8re\"):\n  if random_value(1, 200) < 6:\n    bebe.add_quality(t.slug)\n    \n#calcul du degr\u00e9 de consanguinit\u00e9\ngp1 = papa.father\ngm1 = papa.mother\ngp2 = maman.father\ngm2 = maman.mother\nagp1 = gp1.father\nagm1 = gp1.mother\nagp2 = gm1.father\nagm2 = gm1.mother\nagp3 = gp2.father\nagm3 = gp2.mother\nagp4 = gm2.father\nagm4 = gm2.mother\n\nd1  = (agp1 == agp2) + (agp1 == agp3) + (agp1 == agp4) + (agp2 == agp3) + (agp2 == agp4) + (agp3 == agp4)\nd1 += (agm1 == agm2) + (agm1 == agm3) + (agm1 == agm4) + (agm2 == agm3) + (agm2 == agm4) + (agm3 == agm4)\n\nd2  = ((gp1 == gp2) + (gm1 == gm2))*2\n\nd3  = ((papa == gp2) | (maman ==gm1))*2\n\nd4  = ((maman == agm1) | (maman == agm2) | (papa == agp3) | (papa == agp4))\n\nd = max(max(max(d1, d2), d3), d4)\n\nfor i in range(1, d):\n  if random_value(1, 100) < 14:\n    bebe.add_quality(random_in(['idiot', 'frele', 'laid']))\n    \nparam = bebe\n", 
+    "on_fire": "# Cr\u00e9ation d'un nouveau folk\npapa = pere\nmaman = mere\n\nif maman == papa.spouse:\n  nom = papa.last_name\nelse:\n  nom = maman.last_name\n  \nbebe = call_function(\"creer_folk\", fight_min=1, plot_min=1, diplomacy_min=1, scholarship_min=1, loyalty=1, max_carac=50, kingdom=kingdom, father=papa, mother=maman, last_name=nom, birth=datetime.now() - timedelta(days=6))\n\n# on enl\u00e8ve les traits auto\nbebe.quality_set.clear()\n\n# on calcule les caracs\nr1 = random_value(13, 18)\nd = (papa.plot + maman.plot + papa.fight + maman.fight + papa.diplomacy + maman.diplomacy + papa.scholarship + maman.scholarship)\n\nbebe.plot        = min(max((papa.plot + maman.plot + random_value(-3,3)) * r1 / d, 1), 8)\nbebe.fight       = min(max((papa.fight + maman.fight + random_value(-3,3)) * r1 / d, 1), 8)\nbebe.diplomatie  = min(max((papa.diplomacy + maman.diplomacy + random_value(-3,3)) * r1 / d, 1), 8)\nbebe.scholarship = min(max((papa.scholarship + maman.scholarship + random_value(-3,3)) * r1 / d, 1), 8)\n\n#on attribue les traits\nif papa != maman.spouse:\n  bebe.add_quality(\"batard\")\n\nfor t in papa.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if random_value(1, 100) < 16:\n    bebe.add_quality(t.slug)\n    \nfor t in maman.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if random_value(1, 100) < 16:\n    bebe.add_quality(t.slug)\n    \n#for t in papa.father.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n#  if random_value(1, 100) < 6:\n#    bebe.add_quality(t.slug)\n    \n#for t in papa.mother.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n#  if random_value(1, 100) < 6:\n#    bebe.add_quality(t.slug)\n    \n#for t in maman.father.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n#  if random_value(1, 100) < 6:\n#    bebe.add_quality(t.slug)\n    \n#for t in maman.mother.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n#  if random_value(1, 100) < 6:\n#    bebe.add_quality(t.slug)\n    \nfor t in Quality.objects.filter(category__name=\"Caract\u00e8re\"):\n  if random_value(1, 200) < 6:\n    bebe.add_quality(t.slug)\n    \n#calcul du degr\u00e9 de consanguinit\u00e9\ngp1 = papa.father\ngm1 = papa.mother\ngp2 = maman.father\ngm2 = maman.mother\n#agp1 = gp1.father\n#agm1 = gp1.mother\n#agp2 = gm1.father\n#agm2 = gm1.mother\n#agp3 = gp2.father\n#agm3 = gp2.mother\n#agp4 = gm2.father\n#agm4 = gm2.mother\n\n#d1  = (agp1 == agp2) + (agp1 == agp3) + (agp1 == agp4) + (agp2 == agp3) + (agp2 == agp4) + (agp3 == agp4)\n#d1 += (agm1 == agm2) + (agm1 == agm3) + (agm1 == agm4) + (agm2 == agm3) + (agm2 == agm4) + (agm3 == agm4)\n\n#d2  = ((gp1 == gp2) + (gm1 == gm2))*2\n\n#d3  = ((papa == gp2) | (maman ==gm1))*2\n\n#d4  = ((maman == agm1) | (maman == agm2) | (papa == agp3) | (papa == agp4))\n\n#d = max(max(max(d1, d2), d3), d4)\n\n#for i in range(1, d):\n#  if random_value(1, 100) < 14:\n#    bebe.add_quality(random_in(['idiot', 'frele', 'laid']))\n    \nparam = bebe\n", 
     "description": "Cr\u00e9e un nouvel enfant \u00e0 partir des parents."
   }
 },
@@ -50055,7 +50089,7 @@
     "weight": 1, 
     "text": "bla", 
     "image": "", 
-    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\n# Qu'arrive-t-il au nourrisson ? \nr = random_value(1,100)\n\n#For test purposes only\nr = 1\n\nif r < 78:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  naissance = param.next_event('naissance_unique')\n  naissance.start() \n  \nelif r < 88:\n  # l'enfant est mort n\u00e9 (un soulagement pour certains, une grande peine pour d'autres, c'est toujours mieux que ce qui vient apr\u00e8s)\n  mort_ne = param.next_event('mort_ne')\n  mort_ne.start()\n\nelif r < 91:\n  # les deux meurent (putain, \u00e7a c'est vraiment pas de bol!)\n  bloodbath = param.next_event('mort_couches_double')\n  bloodbath.start()\n  \nelif r < 100:\n  # Ce sont des jumeaux qui naissent (oups, deux bouches au lieu d'une)\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nelif r == 100:\n  # Et bim, des tripl\u00e9s, tu vas voir la gueule de ton budget couches !!!\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nstatus = \"fantome\"\n", 
+    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\n# Qu'arrive-t-il au nourrisson ? \nr = random_value(1,100)\n\n#For test purposes only\nr = 78\n\nif r < 78:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  naissance = param.next_event('naissance_unique')\n  naissance.start() \n  \nelif r < 88:\n  # l'enfant est mort n\u00e9 (un soulagement pour certains, une grande peine pour d'autres, c'est toujours mieux que ce qui vient apr\u00e8s)\n  mort_ne = param.next_event('mort_ne')\n  mort_ne.start()\n\nelif r < 91:\n  # les deux meurent (putain, \u00e7a c'est vraiment pas de bol!)\n  bloodbath = param.next_event('mort_couches_double')\n  bloodbath.start()\n  \nelif r < 100:\n  # Ce sont des jumeaux qui naissent (oups, deux bouches au lieu d'une)\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nelif r == 100:\n  # Et bim, des tripl\u00e9s, tu vas voir la gueule de ton budget couches !!!\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nstatus = \"fantome\"\n", 
     "slug": "accouchement_fantome", 
     "condition": "\n"
   }
@@ -53819,26 +53853,26 @@
   }
 },
 {
-  "pk": 2138, 
+  "pk": 2141, 
   "model": "event.pendingevent", 
   "fields": {
     "kingdom": 74, 
     "is_started": true, 
-    "created": "2013-09-15T00:27:46.469", 
-    "started": "2013-09-15T00:27:46.480", 
+    "created": "2013-09-15T01:52:57.130", 
+    "started": "2013-09-15T01:52:57.144", 
     "text": "\r\nL'enfant de John de bom et Jenna de bom vient de na\u00eetre.\r\n\r\n\r\nIl rejoindra votre cour une fois atteint l'age de six ans.", 
     "event": 203
   }
 },
 {
-  "pk": 2139, 
+  "pk": 2142, 
   "model": "event.pendingevent", 
   "fields": {
     "kingdom": 74, 
-    "is_started": false, 
-    "created": "2013-09-15T00:27:46.504", 
-    "started": "2013-09-21T00:27:46.516", 
-    "text": "", 
+    "is_started": true, 
+    "created": "2013-09-15T01:52:57.170", 
+    "started": "2013-09-15T02:05:53", 
+    "text": "L'enfant (indiquer pere et mere) Prenom Nom vient d'avoir six ans. \r\nIl se pr\u00e9sente \u00e0 votre cour.", 
     "event": 197
   }
 },
@@ -54099,55 +54133,55 @@
   }
 },
 {
-  "pk": 4397, 
+  "pk": 4405, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2138, 
+    "pending_event": 2141, 
     "name": "mere", 
     "value": "`Folk`:6979"
   }
 },
 {
-  "pk": 4398, 
+  "pk": 4406, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2138, 
+    "pending_event": 2141, 
     "name": "pere", 
     "value": "`Folk`:6974"
   }
 },
 {
-  "pk": 4399, 
+  "pk": 4407, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2138, 
+    "pending_event": 2141, 
     "name": "mother_is_dead", 
     "value": 0
   }
 },
 {
-  "pk": 4400, 
+  "pk": 4408, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2139, 
+    "pending_event": 2142, 
     "name": "mere", 
     "value": "`Folk`:6979"
   }
 },
 {
-  "pk": 4401, 
+  "pk": 4409, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2139, 
+    "pending_event": 2142, 
     "name": "pere", 
     "value": "`Folk`:6974"
   }
 },
 {
-  "pk": 4402, 
+  "pk": 4410, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2139, 
+    "pending_event": 2142, 
     "name": "mother_is_dead", 
     "value": 0
   }
@@ -76431,7 +76465,7 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-09-14T22:22:34.223", 
+    "last_login": "2013-09-15T01:41:15.376", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$10000$CkUn5dGug67d$zHnH32sdxgsKPJGO5aIWL6A+5YjcrrvRjnbNHiSjCxE=", 
@@ -111061,6 +111095,97 @@
     "change_message": "Modifi\u00e9 on_fire.", 
     "user": 45, 
     "content_type": 34
+  }
+},
+{
+  "pk": 7166, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-15T01:50:27.111", 
+    "object_repr": "creer_enfant()", 
+    "object_id": "15", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 45, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7167, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-15T01:52:57.298", 
+    "object_repr": "Accouchement [bom kingdom]", 
+    "object_id": "None", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7168, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-15T01:53:40.278", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2139", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7169, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-15T01:53:40.280", 
+    "object_repr": "Un enfant est n\u00e9 [bom kingdom]", 
+    "object_id": "2138", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7170, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-15T02:03:42.448", 
+    "object_repr": "creer_enfant()", 
+    "object_id": "15", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 45, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7171, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-15T02:05:55.224", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2142", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7172, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-15T02:17:23.533", 
+    "object_repr": "accouchement_fantome", 
+    "object_id": "191", 
+    "change_message": "Modifi\u00e9 condition et on_fire.", 
+    "user": 45, 
+    "content_type": 29
   }
 },
 {
