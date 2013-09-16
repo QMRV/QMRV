@@ -2979,7 +2979,7 @@
     "category": null, 
     "name": "R\u00e9sultat de l'espionnage", 
     "weight": 1, 
-    "text": "On a plein d'infos sur le chateau !", 
+    "text": "L'adversaire a : {{gold}} \u00e9cus et {{population}} habitants\r\n\r\n{% for folk in folks_titled %}\r\n* Le {{folk.0}} a {{folk.1}} dans sa stat principale\r\n{% endfor %}", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "resultat_espionnage_chateau", 
