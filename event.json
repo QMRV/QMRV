@@ -109,7 +109,7 @@
     "category": null, 
     "name": "Soif de gloire !", 
     "weight": 1, 
-    "text": "Et pourtant, je sais que mon p\u00e9riple ne fait que commencer. Mon h\u00e9ritage ne sera pas \u00e0 l'abri des convoitises tant que je n\u2019aurai pas prouv\u00e9 ma valeur aux yeux du royaume. Mes sujets sont encore si peu nombreux... Nobles ou paysans, le prestige de mon nom les a ralli\u00e9 sous ma banni\u00e8re, et ils attendent encore de moi que je porte ce nom vers la gloire. Mon regard se pose \u00e0 nouveau sur les hommes d\u2019arme qui suent sous ma fen\u00eatre. {% if title.connetable %}L'entra\u00eenement de sire {{title.connetable.first_name}} leur a \u00e9t\u00e9 profitable, mais d{% elif %}D{% endif %}epuis le passage des brigands, il n\u2019ont pas eu d\u2019occasion de se battre. Il est peut \u00eatre temps qu\u2019ils affrontent un vrai ennemi, sur un vrai champ de bataille.\r\n\r\n    Votre valeur de Prestige limite le nombre de suivants dans votre cour et la population de votre ville. Une mani\u00e8re s\u00fbre de gagner du Prestige est de gagner des batailles.", 
+    "text": "Et pourtant, je sais que mon p\u00e9riple ne fait que commencer. Mon h\u00e9ritage ne sera pas \u00e0 l'abri des convoitises tant que je n\u2019aurai pas prouv\u00e9 ma valeur aux yeux du royaume. Mes sujets sont encore si peu nombreux... Nobles ou paysans, le prestige de mon nom les a ralli\u00e9 sous ma banni\u00e8re, et ils attendent encore de moi que je porte ce nom vers la gloire. Mon regard se pose \u00e0 nouveau sur les hommes d\u2019arme qui suent sous ma fen\u00eatre. {% if title.connetable %}L'entra\u00eenement de sire {{title.connetable.first_name}} leur a \u00e9t\u00e9 profitable, mais d{% else %}D{% endif %}epuis le passage des brigands, il n\u2019ont pas eu d\u2019occasion de se battre. Il est peut \u00eatre temps qu\u2019ils affrontent un vrai ennemi, sur un vrai champ de bataille.\r\n\r\n    Votre valeur de Prestige limite le nombre de suivants dans votre cour et la population de votre ville. Une mani\u00e8re s\u00fbre de gagner du Prestige est de gagner des batailles.", 
     "image": "events/711_1.jpg", 
     "on_fire": "  \n ", 
     "slug": "tuto_ambition_2", 
@@ -123,7 +123,7 @@
     "category": null, 
     "name": "Soif de gloire !", 
     "weight": 1, 
-    "text": "Pench\u00e9 sur ma table de travail, j\u2019\u00e9tudie cartes de la r\u00e9gion, missives diplomatiques rapports de mes espions. Il en semblerait qu\u2019un seigneur voisin de petite stature, {{ennemi}}, ait ses greniers bien remplis. Si je pouvais trouver un pr\u00e9texte honorable pour l\u2019affronter, je pourrais \u00e0 la fois m\u2019imposer en tant que puissance militaire et remplir mes coffres.\r\n\r\n    Il est impossible d\u2019attaquer un autre seigneur sans un motif diplomatique (casus belli).\r\n    {% if ambassadeur==False %}Un Ambassadeur pourra s'occuper des d\u00e9tails, et faire venir davantage de nobles dans ma cour.{% endif %}", 
+    "text": "Pench\u00e9 sur ma table de travail, j\u2019\u00e9tudie cartes de la r\u00e9gion, missives diplomatiques rapports de mes espions. Il en semblerait qu\u2019un seigneur voisin de petite stature, {{ennemi}}, ait ses greniers bien remplis. Si je pouvais trouver un pr\u00e9texte honorable pour l\u2019affronter, je pourrais \u00e0 la fois m\u2019imposer en tant que puissance militaire et remplir mes coffres.\r\n\r\n    Il est impossible d\u2019attaquer un autre seigneur sans un motif diplomatique (casus belli).\r\n    {% if ambassadeur==False %}Un Ambassadeur pourra s'occuper des d\u00e9tails, ainsi qu'inviter davantage de nobles dans ma cour.{% endif %}", 
     "image": "events/900.jpg", 
     "on_fire": "param.set_value(\"ennemi\", kingdom.get_value(\"adversaire_tuto\"))\n\n", 
     "slug": "tuto_ambition_3", 
@@ -235,7 +235,7 @@
     "category": null, 
     "name": "Pot de vin", 
     "weight": 1, 
-    "text": "Sire {{knight.first_name}} {{knight.last_name}} a accept\u00e9 mon invitation, et boit \u00e0 pr\u00e9sent mon vin en compagnie de mes enfants et de {{compagnon.first_name}}. Il semblait d\u2019abord avoir des r\u00e9serves au sujet de mon nouveau r\u00e8gne, mais le breuvage aidant, mon badinage et mes questions polies ont fini par lui faire baisser sa garde. Nous \u00e9changeons \u00e0 pr\u00e9sent des souvenirs de bataille, et il rit avec moi sans r\u00e9aliser que j\u2019exag\u00e8re copieusement mes exploits pass\u00e9. Un sourire bienveillant aux l\u00e8vres, je lui ressers une coupe de nectar.", 
+    "text": "Sire {{knight.first_name}} {{knight.last_name}} a accept\u00e9 mon invitation, et boit \u00e0 pr\u00e9sent mon vin en compagnie de mes enfants et de {{compagnon.first_name}}. Il semblait d\u2019abord avoir des r\u00e9serves au sujet de mon nouveau r\u00e8gne, mais le breuvage aidant, mon badinage et mes questions polies ont fini par lui faire baisser sa garde. Nous \u00e9changeons \u00e0 pr\u00e9sent des souvenirs de bataille, et il rit avec moi sans r\u00e9aliser que j\u2019exag\u00e8re copieusement mes exploits pass\u00e9s. Un sourire bienveillant aux l\u00e8vres, je lui ressers une coupe de nectar.", 
     "image": "events/503_1.jpg", 
     "on_fire": "#Cr\u00e9ation du chevalier\nknight = call_function(\"creer_folk\", kingdom=kingdom, fight_min=6, plot_min=6, diplomacy_min=6, scholarship_min=6, max_carac=32, loyalty=50, sex=\"m\", birth=datetime.now() - timedelta(days=35))\n\n\nparam.set_value(\"knight\", knight)\nparam.set_value(\"compagnon\", folks[3])\n", 
     "slug": "tuto_potsdevin_2", 
@@ -459,7 +459,7 @@
     "category": null, 
     "name": "Pot de vin", 
     "weight": 1, 
-    "text": "    -12 ecus\r\n\r\nLes jours suivants, {{title.maitre_espion.first_name}} a rencontr\u00e9 en secret les gueux les plus influents et leur a vers\u00e9 de g\u00e9n\u00e9reux pots de vin en \u00e9change de leur soutien. Sous leur influence, la population m\u2019a accept\u00e9 comme suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eatre d\u00e9sormais le seigneur de 90 paysans et 10 soldats.", 
+    "text": "    -12 ecus\r\n\r\nLes jours suivants, {{title.maitre_espion.first_name}} a rencontr\u00e9 en secret les gueux les plus influents et leur a vers\u00e9 de g\u00e9n\u00e9reux pots de vin en \u00e9change de leur soutien. Sous leur influence, la population m\u2019a accept\u00e9 comme suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eates d\u00e9sormais le seigneur de 90 paysans et 10 soldats.", 
     "image": "", 
     "on_fire": "kingdom.money-=12\nkingdom.population=90\nkingdom.soldiers=10\nkingdom.save()", 
     "slug": "tuto_potsdevin_5", 
@@ -1019,7 +1019,7 @@
     "category": null, 
     "name": "Tuto too few pop", 
     "weight": 1, 
-    "text": "Ma cour se peuple peu \u00e0 peu mais il y a trop peu de paysans sur mes terres pour esperer lever des impots satisfaisants. Pour fid\u00e9liser mes serfs et les faire travailler plus dur, j'aurais besoin de leur insufler une ferveur religieuse nouvelle. Pour convaincre de nouveaux paysans de s'installer sur mes terres, j'ai besoin de convaincre la populace de ma pi\u00e9t\u00e9 et de ma bienveillance. Pour m'aider dans cette t\u00e2che, j'ai persuad\u00e9 le p\u00e8re {{title.cure}}, un cur\u00e9  respect\u00e9 de la r\u00e9gion, de se mettre \u00e0 mon service pour m'aider \u00e0 d\u00e9montrer ma charit\u00e9 par des aum\u00f4nes aux plus d\u00e9munis.\r\n\r\n    Le p\u00e8re {{cure.first_name}} a rejoint ma cour, et occupe le titre de Cur\u00e9\r\n", 
+    "text": "Ma cour se peuple peu \u00e0 peu mais il y a trop peu de paysans sur mes terres pour esperer lever des impots satisfaisants. Pour fid\u00e9liser mes serfs et les faire travailler plus dur, j'aurais besoin de leur insuffler une ferveur religieuse nouvelle. Pour convaincre de nouveaux paysans de s'installer sur mes terres, j'ai besoin de convaincre la populace de ma pi\u00e9t\u00e9 et de ma bienveillance. \r\n\r\nPour m'aider dans cette t\u00e2che, j'ai persuad\u00e9 le p\u00e8re {{title.cure}}, un cur\u00e9 respect\u00e9 de la r\u00e9gion, de se mettre \u00e0 mon service - en plus de celui du Seigneur - pour m'aider \u00e0 d\u00e9montrer ma charit\u00e9 par des aum\u00f4nes aux plus d\u00e9munis.\r\n\r\n    Le p\u00e8re {{cure.first_name}} a rejoint ma cour, et occupe le titre de Cur\u00e9. \r\n", 
     "image": "events/703_1.jpg", 
     "on_fire": "cure = call_function(\"creer_folk\", kingdom=kingdom, fight_min=1, plot_min=1, diplomacy_min=1, scholarship_min=1, max_carac=32, loyalty=50, sex=\"m\", birth=datetime.now() - timedelta(days=35), trait=\"pretre\")\nparam.set_value(\"cure\", cure)\nkingdom.unlock_title(\"cure\")\nif kingdom.get_folk_in_title(\"cure\") == None:\n  cure.add_title(\"cure\")\n\n", 
     "slug": "tuto_toofewpopulation", 
@@ -1509,11 +1509,11 @@
     "category": null, 
     "name": "Soeurette", 
     "weight": 1, 
-    "text": "\"Ma s\u0153ur? Ici? mais...\" Le garde m'observe depuis le pied de mon tr\u00f4ne, alors que j'essaie de dissimuler mon trouble. Je n'ai pas vu ma s\u0153ur depuis plus de quinze ans. Notre derni\u00e8re rencontre, {% if random <= 33 %}\u00e0 l'enterrement de notre p\u00e8re, {% elif random <= 66 %}juste avant mon d\u00e9part pour la cour du Roi, {% else %} alors qu'elle partait pour la cour du Duc de Bretagne, {% endif %}ne s'est pas termin\u00e9e en les meilleurs termes... Que fait-elle chez moi, et pourquoi n'a-t-elle pas annonc\u00e9 sa visite? Le garde attend toujours mes instructions \"Fais-l\u00e0 entrer, et veille \u00e0 ce que l'on ne nous d\u00e9range pas\". Je me redresse sur mon si\u00e8ge, intrigu\u00e9 et nerveux.", 
+    "text": "\"Ma s\u0153ur? Ici? mais...\" Le garde m'observe depuis le pied de mon tr\u00f4ne, alors que j'essaie de dissimuler mon trouble. Je n'ai pas vu ma s\u0153ur depuis plus de quinze ans. Notre derni\u00e8re rencontre, {% if random <= 33 %}\u00e0 l'enterrement de notre p\u00e8re, {% elif random <= 66 %}juste avant mon d\u00e9part pour la cour du Roi, {% else %} alors qu'elle partait pour la cour du Duc de Bretagne, {% endif %}ne s'est pas termin\u00e9e dans les meilleurs termes... Que fait-elle chez moi, et pourquoi n'a-t-elle pas annonc\u00e9e sa visite ? Le garde attend toujours mes instructions \"Fais-l\u00e0 entrer, et veille \u00e0 ce que l'on ne nous d\u00e9range pas\". Je me redresse sur mon si\u00e8ge, intrigu\u00e9 et nerveux.", 
     "image": "events/361_1.jpg", 
     "on_fire": "random = random_value(1, 100)\nparam.set_value(\"random\", random)\n\nsoeur = call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = 32, kingdom = None, trait = \"fier\", sex = \"f\", last_name = kingdom.user.username, father = kingdom.get_folk_in_title(\"chatelain\").father, mother = kingdom.get_folk_in_title(\"chatelain\").mother, birth = datetime.now()-timedelta(days=35))\nparam.set_value(\"soeur\", soeur)\n\nmari = call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = 32, kingdom = None, sex = \"m\")\n\nrandomgender = random_value(1, 2)\nif randomgender == 1:                     \n  mioche = call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = 20, kingdom = None, sex = \"m\", last_name = kingdom.user.username, father = mari, mother = soeur, birth = datetime.now()-timedelta(days=10))\n  param.set_value(\"mioche\", mioche)\n  \n  chiard = call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = 4, kingdom = None, sex = \"f\", last_name = kingdom.user.username, father = mari, mother = soeur, birth = datetime.now()-timedelta(days=1))\n  param.set_value(\"chiard\", chiard)                     \n\nelse:\n                     \n  mioche = call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = 20, kingdom = None, sex = \"f\", last_name = kingdom.user.username, father = mari, mother = soeur, birth = datetime.now()-timedelta(days=10))\n  param.set_value(\"mioche\", mioche)\n  \n  chiard = call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = 4, kingdom = None, sex = \"m\", last_name = kingdom.user.username, father = mari, mother = soeur, birth = datetime.now()-timedelta(days=1))\n  param.set_value(\"chiard\", chiard)  ", 
     "slug": "tuto_soeurette", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -1523,7 +1523,7 @@
     "category": null, 
     "name": "Soeurette", 
     "weight": 1, 
-    "text": "Elle franchit le pas de la porte de sa d\u00e9marche fi\u00e8re, qui fait remonter en moi bien des souvenirs. A ma grande surprise, elle n'entre pas seule. {{mioche|feminize:\"Un petit gar\u00e7on,Une petite fille\"}} d'une dizaine d'ann\u00e9e la suit de quelque pas, serrant dans ses bras un b\u00e9b\u00e9 emmitoufl\u00e9 dans un linge. Ma s\u0153ur {{soeur.first_name}} vient se planter devant moi, et m'offre une r\u00e9v\u00e9rence un rien rapide. Elle regarde l'enfant qui, maladroitement, s'incline \u00e0 son tour. \"Mon fr\u00e8re, quelle joie de vous voir une si belle mine. Un fief \u00e0 gouverner a \u00e9t\u00e9 un changement heureux\". {% if title.chatelain.plot >= 9 %}Ignorant le sarcasme, je l'examine de la t\u00eate au pied. Elle a vieillit, mais je reconnait toujours la jeune arrogante de jadis. Cette fois ci, cependant, je crois lire une trace de peur dans son regard. Int\u00e9ressant.{% else %}Je contemple ma s\u0153ur, et les l\u00e9gers sillons que le temps a trac\u00e9 sur sa peau. Elle n'a rien perdu de son ton imp\u00e9rieux, cependant.{% endif %}", 
+    "text": "Elle franchit le pas de la porte de sa d\u00e9marche fi\u00e8re, qui fait remonter en moi bien des souvenirs. A ma grande surprise, elle n'entre pas seule. {{mioche|feminize:\"Un petit gar\u00e7on,Une petite fille\"}} d'une dizaine d'ann\u00e9es la suit de quelques pas, serrant dans ses bras un b\u00e9b\u00e9 emmitoufl\u00e9 dans un linge. Ma s\u0153ur {{soeur.first_name}} vient se planter devant moi, et m'offre une r\u00e9v\u00e9rence un rien rapide. Elle regarde l'enfant qui, maladroitement, s'incline \u00e0 son tour. \"Mon fr\u00e8re, quelle joie de vous voir une si belle mine. Un fief \u00e0 gouverner a \u00e9t\u00e9 un changement heureux\". {% if title.chatelain.plot >= 9 %}Ignorant le sarcasme, je l'examine de la t\u00eate au pied. Elle a vieilli, mais je reconnais toujours la jeune arrogante de jadis. Cette fois ci, cependant, je crois lire une trace de peur dans son regard. Int\u00e9ressant.{% else %}Je contemple ma s\u0153ur, et les l\u00e9gers sillons que le temps a trac\u00e9 sur sa peau. Elle n'a rien perdu de son ton imp\u00e9rieux, cependant.{% endif %}", 
     "image": "events/361_2.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_soeurette_2", 
@@ -1537,11 +1537,11 @@
     "category": null, 
     "name": "Soeurette", 
     "weight": 1, 
-    "text": "{% if compliment %}Elle sourit, et elle semble un rien soulag\u00e9e.{% elif injure %}Elle se crispe sous l'injure, et le sang lui monte aux joues.  Elle reprend d'une voix pinc\u00e9e.{% else %}Ignorant mon silence, elle poursuit.{% endif %} \"Permettez-moi de vous pr\u00e9senter m{{mioche|feminize:\"on fils,a fille\"}} {{mioche.first_name}}, ainsi que {{chiard|feminize:\"son petit fr\u00e8re,sa petite soeur\"}} {{chiard.first_name}}.\" Je contemple les enfants, qui n'en m\u00e8nent pas large, et retrouve dans le visage de l'a\u00een\u00e9{{mioche|feminize}} certaines lignes de celui de ma s\u0153ur. \"Ils portent le nom {{title.chatelain.last_name}}\". {% if injure %}Son regard semble me d\u00e9fier de pr\u00e9tendre le contraire.{% else %}Elle a prononc\u00e9 la derni\u00e8re phrase avec insistance, et en me regardant droit dans les yeux.{% endif %}\r\n", 
+    "text": "{% if compliment %}Elle sourit, un rien soulag\u00e9e.{% elif injure %}Elle se crispe sous l'injure, et le sang lui monte aux joues.  Elle reprend d'une voix pinc\u00e9e.{% else %}Ignorant mon silence, elle poursuit.{% endif %} \"Permettez-moi de vous pr\u00e9senter m{{mioche|feminize:\"on fils,a fille\"}} {{mioche.first_name}}, ainsi que {{chiard|feminize:\"son petit fr\u00e8re,sa petite soeur\"}} {{chiard.first_name}}.\" Je contemple les enfants, qui n'en m\u00e8nent pas large, et retrouve dans le visage de l'a\u00een\u00e9{{mioche|feminize}} certaines lignes de celui de ma s\u0153ur. \"Ils portent le nom {{title.chatelain.last_name}}\". {% if injure %}Son regard semble me d\u00e9fier de pr\u00e9tendre le contraire.{% else %}Elle a prononc\u00e9 la derni\u00e8re phrase avec insistance, et en me regardant droit dans les yeux.{% endif %}\r\n", 
     "image": "events/361_3.jpg", 
-    "on_fire": null, 
+    "on_fire": "\n", 
     "slug": "tuto_soeurette_3", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -1551,7 +1551,7 @@
     "category": null, 
     "name": "Soeurette", 
     "weight": 1, 
-    "text": "Elle prend une profonde inspiration. \"Leur p\u00e8re \u00e9tait un homme bon, mais qui ne savait pas choisir ses amis et encore moins ses ennemis. Il a rejoint le Tr\u00e8s Haut, et nous a laiss\u00e9s tous les trois dans une situation... d\u00e9licate\". Elle pose une main sur l'\u00e9paule de {{mioche.First_name}}. \"Ces enfants sont de votre sang, et  je souhaite qu'ils rejoignent votre cour et participent \u00e0 la restauration de notre famille\". Elle attend ma r\u00e9ponse, anxieuse.", 
+    "text": "Elle prend une profonde inspiration. \"Leur p\u00e8re \u00e9tait un homme bon mais il ne savait pas choisir ses amis et encore moins ses ennemis. Il a rejoint le Tr\u00e8s Haut, et nous a laiss\u00e9s tous les trois dans une situation... d\u00e9licate\". \r\nElle pose une main sur l'\u00e9paule de {{mioche.first_name}}. \"Ces enfants sont de votre sang, et  je souhaite qu'ils rejoignent votre cour et participent \u00e0 la restauration de notre lign\u00e9e\". Elle attend ma r\u00e9ponse, anxieuse.", 
     "image": "events/361_4.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_soeurette_4", 
@@ -1567,9 +1567,9 @@
     "weight": 1, 
     "text": "Elle se fige, et me fusille du regard. \"Vraiment, {{title.chatelain.first_name}}? Vous  refuseriez \u00e0 votre famille la place qui lui revient de DROIT?\".  Sous sa col\u00e8re, je peux sentir sa terreur...", 
     "image": "events/361_5.jpg", 
-    "on_fire": null, 
+    "on_fire": "\n", 
     "slug": "tuto_soeurette_5", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -1593,7 +1593,7 @@
     "category": null, 
     "name": "Soeurette", 
     "weight": 1, 
-    "text": "Elle sourit, sans se d\u00e9partir de son air hautain. \"Merci, mon seigneur. Je suis certaine que vous en trouverez votre maison renforc\u00e9e\". Sur un regard de sa part, {{mioche.first_name}} ajoute \"Merci mon oncle\".\r\n\r\n    {{soeur}}, {{mioche}} et {{chiard}} vous ont ont rejoint.", 
+    "text": "Elle sourit, sans se d\u00e9partir de son air hautain. \"Merci, mon seigneur. Je suis certaine que vous en trouverez votre maison renforc\u00e9e\". Sur un regard de sa part, {{mioche.first_name}} ajoute \"Merci mon oncle\".\r\n\r\n    {{soeur}}, {{mioche}} et {{chiard}} vous ont rejoint.", 
     "image": "events/361_7.jpg", 
     "on_fire": "soeur = param.get_value(\"soeur\")\nmioche = param.get_value(\"mioche\")\nchiard = param.get_value(\"chiard\")\n\nsoeur.kingdom = kingdom\nmioche.kingdom = kingdom\nchiard.kingdom = kingdom\n\nsoeur.save()\nmioche.save()\nchiard.save()", 
     "slug": "tuto_soeurette_accept", 
@@ -1943,7 +1943,7 @@
     "category": null, 
     "name": "Tuto bandits", 
     "weight": 1, 
-    "text": "\"Sire!\" {{connetable.first_name}} entre  en trombe dans mes appartements, essouffl\u00e9 apr\u00e8s une longue course dans les couloirs du ch\u00e2teau. \"Des brigands, mon seigneur. Au moins une trentaine. Une sentinelle les a rep\u00e9r\u00e9es \u00e0 la fronti\u00e8re de nos terres...\". Il  prend une inspiration, et se redresse avec un sourire f\u00e9roce sur les l\u00e8vres. \"Avec votre permission, je vais rassembler nos hommes et chevaucher \u00e0 leur rencontre. Les stopper avant qu'ils n'atteignent le premier village\". Je me l\u00e8ve, le  regarde droit dans les yeux, et opine avec gravit\u00e9. \"Je prends le commandement.\" J'attrape mon \u00e9p\u00e9e et sort \u00e0 sa suite.\r\n\r\n    Nouvelle mission.", 
+    "text": "\"Sire!\" {{title.connetable.first_name}} entre  en trombe dans mes appartements, essouffl\u00e9 apr\u00e8s une longue course dans les couloirs du ch\u00e2teau. \"Des brigands, mon seigneur. Au moins une trentaine. Une sentinelle les a rep\u00e9r\u00e9es \u00e0 la fronti\u00e8re de nos terres...\". Il  prend une inspiration, et se redresse avec un sourire f\u00e9roce sur les l\u00e8vres. \"Avec votre permission, je vais rassembler nos hommes et chevaucher \u00e0 leur rencontre. Les stopper avant qu'ils n'atteignent le premier village\". Je me l\u00e8ve, le  regarde droit dans les yeux, et opine avec gravit\u00e9. \"Je prends le commandement.\" J'attrape mon \u00e9p\u00e9e et sort \u00e0 sa suite.\r\n\r\n    Nouvelle mission.", 
     "image": "events/451_11.jpg", 
     "on_fire": "kingdom.create_pending_mission(\"tuto_bandits_attaque\")\n", 
     "slug": "tuto_bandits_connetable", 
@@ -2083,7 +2083,7 @@
     "category": null, 
     "name": "Education", 
     "weight": 1, 
-    "text": "Depuis ma table de travail, je peux entendre {{mioche.first_name}} et {{chiard}} jouer dans la cour en contrebas. Je me l\u00e8ve, et vais m'accouder \u00e0 la fen\u00eatre. L'ain\u00e9{{mioche|feminize:\" tient sa petite soeur par les mains,e tient son petit f\u00e8re par les mains\"}}, et l'aide \u00e0 marcher le long des \u00e9curies. Quelques enfants des domestiques les encouragent et rient avec eux. La scene est touchante, mais je songe que {{mioche}} a d\u00e9j\u00e0 dix ans, et qu'il est grand temps qu'{{mioche|feminize:\"il,elle\"}} apprenne \u00e0 se rende utile.\r\n\r\n    Nouvelle mission.\r\n", 
+    "text": "Depuis ma table de travail, je peux entendre {{mioche.first_name}} et {{chiard}} jouer dans la cour en contrebas. Je me l\u00e8ve, et vais m'accouder \u00e0 la fen\u00eatre. L'ain\u00e9{{mioche|feminize:\" tient sa petite s\u0153ur par les mains,e tient son petit fr\u00e8re par les mains\"}}, et l'aide \u00e0 marcher le long des \u00e9curies. Quelques enfants des domestiques les encouragent et rient avec eux. La sc\u00e8ne est touchante, mais je songe que {{mioche}} a d\u00e9j\u00e0 dix ans, et qu'il est grand temps qu'{{mioche|feminize:\"il,elle\"}} apprenne son r\u00f4le futur dans le monde. \r\n\r\n    Nouvelle mission.\r\n", 
     "image": "events/709_1.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_education", 
@@ -2937,7 +2937,7 @@
     "category": null, 
     "name": "R\u00e9sultat de l'espionnage", 
     "weight": 1, 
-    "text": "L'adversaire a : {{soldiers}} soldats, {{archers}} archers, {{piquiers}} piquiers, {{cavaliers}} cavaliers\r\n{% for defenseur in defenseurs %}\r\nNous avons aussi rep\u00e9r\u00e9 {{defenseur.0}}\r\n{% if defenseur.1 %}, {{defenseur.1|elide:\"le,l'\"}}, \r\n{% endif %}\r\ndont les stats sont {{defenseur.2}}(C), {{defenseur.3}}(I), {{defenseur.4}}(D), {{defenseur.5}}(\u00c9), {{defenseur.6}}(L) et a pour trait(s) :\r\n\r\n{% for trait in defenseur.7 %}\r\n* {{trait.name}}\r\n{% endfor %}\r\n{% endfor %}", 
+    "text": "L'adversaire a : {{soldiers}} soldats, {{archers}} archers, {{piquiers}} piquiers, {{cavaliers}} cavaliers\r\n{% for defenseur in defenseurs %}\r\nNous avons aussi rep\u00e9r\u00e9 {{defenseur.0}}{% if defenseur.1 %}, {{defenseur.1|elide:\"le,l'\"}}, {% endif %}\r\ndont les stats sont {{defenseur.2}}(C), {{defenseur.3}}(I), {{defenseur.4}}(D), {{defenseur.5}}(\u00c9), {{defenseur.6}}(L) et a pour trait(s) :\r\n\r\n{% for trait in defenseur.7 %}\r\n* {{trait.name}}\r\n{% endfor %}\r\n{% endfor %}", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "resultat_espionnage_troupes", 
@@ -3925,7 +3925,7 @@
   "pk": 127, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "In nomine patri, filii, et spiritus sancti.", 
+    "text": "In nomine patris, et filii, et spiritus sancti.", 
     "message": "Le p\u00e8re {{title.cure}} a accept\u00e9 de devenir le [cur\u00e9](titre) de ma cour.", 
     "event": 94, 
     "condition": " ", 
@@ -4445,7 +4445,7 @@
     "text": "Les domestiques quittent la salle.", 
     "message": "", 
     "event": 132, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_soeurette_2\").start()"
   }
 },
@@ -4453,7 +4453,7 @@
   "pk": 177, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Sinc\u00e8re : \"Le plaisir est partag\u00e9, ma soeur. Cela fait bien trop longtemps\".", 
+    "text": "Sinc\u00e8re : \"Le plaisir est partag\u00e9, aim\u00e9e {{soeur.first_name}}. Cela fait bien trop longtemps\".", 
     "message": "", 
     "event": 133, 
     "condition": "\n", 
@@ -4486,7 +4486,7 @@
   "pk": 180, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Je la fusille du regard \"\u00c9pargnez-moi vos platitudes, {{soeur.first_name}}. Que voulez-vous de moi cette fois-ci?\".", 
+    "text": "Je la fusille du regard \"\u00c9pargnez-moi vos platitudes, ma soeur. Que voulez-vous de moi cette fois-ci?\".", 
     "message": "", 
     "event": 133, 
     "condition": "\n", 
@@ -4497,10 +4497,10 @@
   "pk": 181, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Hocher la t\u00eate. \"Heureux de vous conna\u00eetre, les enfants. Je suis votre oncle {{title.chatelain.first_name}}.\" A {{soeur.first_name}}, respectueusement : \"Puis-je demander o\u00f9 est leur p\u00e8re?\"", 
+    "text": "Hocher la t\u00eate. \"Heureux de vous conna\u00eetre, les enfants. Je suis votre oncle {{title.chatelain.first_name}}.\" A {{soeur.first_name}}, respectueusement : \"Puis-je demander o\u00f9 est leur p\u00e8re ?\"", 
     "message": "", 
     "event": 134, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_soeurette_4\").start()\n\nsoeur = param.get_value(\"soeur\")\n\nsoeur.loyalty += 10\n\nsoeur.save()\n"
   }
 },
@@ -4508,10 +4508,10 @@
   "pk": 182, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Moue septique. \"Si vous le d\u00eetes... \"", 
+    "text": "Moue sceptique. \"Si vous le d\u00eetes... \"", 
     "message": "", 
     "event": 134, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_soeurette_4\").start()\nsoeur = param.get_value(\"soeur\")\n\nsoeur.loyalty -= 10\n\nsoeur.save()\n"
   }
 },
@@ -4519,10 +4519,10 @@
   "pk": 183, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Sardonique \"Vraiment? Vous n'arrivez pas \u00e0 savoir qui est leur p\u00e8re? Vous n'avez pas chaum\u00e9e ma s\u0153ur...\"", 
+    "text": "Sardonique \"Vraiment? Vous n'arrivez pas \u00e0 savoir qui est leur p\u00e8re ? Vous n'avez pas chaum\u00e9 ma s\u0153ur...\"", 
     "message": "", 
     "event": 134, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_soeurette_4\").start()\nsoeur = param.get_value(\"soeur\")\n\nsoeur.loyalty -= 20\n\nsoeur.save()\n"
   }
 },
@@ -4530,7 +4530,7 @@
   "pk": 184, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "J'opine. \"Je n'y vois pas d'objection. Soyez les bienvenus dans ma cour\".", 
+    "text": "J'opine. \"Je n'y vois pas d'objection. Soyez les bienvenus \u00e0 ma cour\".", 
     "message": "", 
     "event": 135, 
     "condition": "\n", 
@@ -4552,7 +4552,7 @@
   "pk": 186, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\"Ah, nous y voil\u00e0! Maintenant que j'ai remis {{kingdom}} sur pieds, vous voulez que vos rejetons aient leur part du g\u00e2teau!\"", 
+    "text": "\"Ah, nous y voil\u00e0 ! Maintenant que j'ai remis {{kingdom}} sur pieds, vous voulez que vos rejetons aient leur part du g\u00e2teau !\"", 
     "message": "", 
     "event": 135, 
     "condition": "\n", 
@@ -4566,7 +4566,7 @@
     "text": "Je soupire. \"Tr\u00e8s bien, vous avez gagn\u00e9...\"", 
     "message": "", 
     "event": 136, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_soeurette_accept\").start()"
   }
 },
@@ -4574,10 +4574,10 @@
   "pk": 188, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\"Il me semble au contraire que vous et vous enfants n'avez rien fait pour m\u00e9riter ce \"droit\".", 
+    "text": "\"Il me semble au contraire que vous et vos enfants n'avez rien fait pour m\u00e9riter ce \"droit\".", 
     "message": "", 
     "event": 136, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_soeurette_6\").start()\nsoeur = param.get_value(\"soeur\")\n\nsoeur.loyalty -= 10\n\nsoeur.save()\n"
   }
 },
