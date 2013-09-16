@@ -2309,7 +2309,7 @@
     "weight": 1, 
     "text": "bla", 
     "image": "", 
-    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\n# Qu'arrive-t-il au nourrisson ? \nr = random_value(1,100)\n\n#For test purposes only\nr = 99\n\nif r < 78:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  naissance = param.next_event('naissance_unique')\n  naissance.start() \n  \nelif r < 88:\n  # l'enfant est mort n\u00e9 (un soulagement pour certains, une grande peine pour d'autres, c'est toujours mieux que ce qui vient apr\u00e8s)\n  mort_ne = param.next_event('mort_ne')\n  mort_ne.start()\n\nelif r < 91:\n  # les deux meurent (putain, \u00e7a c'est vraiment pas de bol!)\n  bloodbath = param.next_event('mort_couches_double')\n  bloodbath.start()\n  \nelif r < 100:\n  # Ce sont des jumeaux qui naissent (oups, deux bouches au lieu d'une)\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nelif r == 100:\n  # Et bim, des tripl\u00e9s, tu vas voir la gueule de ton budget couches !!!\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nstatus = \"fantome\"\n", 
+    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\n# Qu'arrive-t-il au nourrisson ? \nr = random_value(1,100)\n\n#For test purposes only\nr = 88\n\nif r < 78:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  naissance = param.next_event('naissance_unique')\n  naissance.start() \n  \nelif r < 88:\n  # l'enfant est mort n\u00e9 (un soulagement pour certains, une grande peine pour d'autres, c'est toujours mieux que ce qui vient apr\u00e8s)\n  mort_ne = param.next_event('mort_ne')\n  mort_ne.start()\n\nelif r < 91:\n  # les deux meurent (putain, \u00e7a c'est vraiment pas de bol!)\n  bloodbath = param.next_event('mort_couches_double')\n  bloodbath.start()\n  \nelif r < 100:\n  # Ce sont des jumeaux qui naissent (oups, deux bouches au lieu d'une)\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nelif r == 100:\n  # Et bim, des tripl\u00e9s, tu vas voir la gueule de ton budget couches !!!\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nstatus = \"fantome\"\n", 
     "slug": "accouchement_fantome", 
     "condition": "\n"
   }
@@ -2377,9 +2377,9 @@
     "category": null, 
     "name": "Arriv\u00e9e d'un enfant \u00e0 la cour", 
     "weight": 1, 
-    "text": "L'enfant (indiquer pere et mere) Prenom Nom vient d'avoir six ans. \r\nIl se pr\u00e9sente \u00e0 votre cour.", 
+    "text": "L'enfant {{bebe}} vient d'avoir six ans. \r\nIl se pr\u00e9sente \u00e0 votre cour.", 
     "image": "", 
-    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\nbebe = call_function('creer_enfant', pere=papa, mere=maman, kingdom=kingdom)\n", 
+    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\nbebe = call_function('creer_enfant', pere=papa, mere=maman, kingdom=kingdom)\nparam.set_value(\"bebe\", bebe)\n", 
     "slug": "coming_of_age", 
     "condition": "\n"
   }
@@ -2405,9 +2405,9 @@
     "category": null, 
     "name": "Carnage chez la sage-femme", 
     "weight": 1, 
-    "text": "L'accouchement de {{mere.name}} fut un v\u00e9ritable de troiomphe de la mort sur la vie.\r\nNi la m\u00e8re ni l'enfant n'a surv\u00e9cu.", 
+    "text": "L'accouchement de {{mere}} fut un v\u00e9ritable de troiomphe de la mort sur la vie.\r\nNi la m\u00e8re ni l'enfant n'a surv\u00e9cu.", 
     "image": "", 
-    "on_fire": "\n", 
+    "on_fire": "maman = param.get_value(\"mere\")\nmaman.die()\n", 
     "slug": "mort_couches_double", 
     "condition": "\n"
   }
@@ -2419,7 +2419,7 @@
     "category": null, 
     "name": "Naissance de jumeaux", 
     "weight": 1, 
-    "text": "{{mere.name}} a mis au monde des jumeaux", 
+    "text": "{{mere}} a mis au monde des jumeaux", 
     "image": "", 
     "on_fire": "maturite = param.next_event('coming_of_age')\nmaturite.started = datetime.now() + timedelta(days=6)  \nmaturite.save()\n\nmaturite = param.next_event('coming_of_age')\nmaturite.started = datetime.now() + timedelta(days=6)  \nmaturite.save()\n", 
     "slug": "naissance_jumeaux", 
@@ -2433,7 +2433,7 @@
     "category": null, 
     "name": "Naissance de tripl\u00e9s", 
     "weight": 1, 
-    "text": "{{mere.name}} a mis au monde des tripl\u00e9s.", 
+    "text": "{{mere}} a mis au monde des tripl\u00e9s.", 
     "image": "", 
     "on_fire": "maturite1 = param.next_event('coming_of_age')\nmaturite1.started = datetime.now() + timedelta(days=6)  \nmaturite1.save()\n\nmaturite2 = param.next_event('coming_of_age')\nmaturite2.started = datetime.now() + timedelta(days=6)  \nmaturite2.save()\n\nmaturite3 = param.next_event('coming_of_age')\nmaturite3.started = datetime.now() + timedelta(days=6)  \nmaturite3.save()\n", 
     "slug": "naissance_triples", 
