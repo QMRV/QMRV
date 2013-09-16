@@ -2965,7 +2965,7 @@
     "category": null, 
     "name": "R\u00e9sultat de l'espionnage", 
     "weight": 1, 
-    "text": "L'adversaire a : {{soldiers}} soldats, {{archers}} archers, {{piquiers}} piquiers, {{cavaliers}} cavaliers\r\n{% for defenseur in defenseurs %}\r\nNous avons aussi rep\u00e9r\u00e9 {{defenseur.0}} dont les stats sont {{defenseur.1}}(C), {{defenseur.2}}(I), {{defenseur.3}}(\u00c9), {{defenseur.4}}(L) et a pour trait(s) :\r\n\r\n{% for trait in defenseur.5 %}\r\n* trait.name\r\n{% endfor %}\r\n{% endfor %}", 
+    "text": "L'adversaire a : {{soldiers}} soldats, {{archers}} archers, {{piquiers}} piquiers, {{cavaliers}} cavaliers\r\n{% for defenseur in defenseurs %}\r\nNous avons aussi rep\u00e9r\u00e9 {{defenseur.0}} dont les stats sont {{defenseur.1}}(C), {{defenseur.2}}(I), {{defenseur.3}}(\u00c9), {{defenseur.4}}(L) et a pour trait(s) :\r\n\r\n{% for trait in defenseur.5 %}\r\n* {{trait.name}}\r\n{% endfor %}\r\n{% endfor %}", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "resultat_espionnage_troupes", 
@@ -2979,7 +2979,7 @@
     "category": null, 
     "name": "R\u00e9sultat de l'espionnage", 
     "weight": 1, 
-    "text": "L'adversaire a : {{gold}} \u00e9cus et {{population}} habitants\r\n\r\n{% for folk in folks_titled %}\r\n* Le {{folk.0}} a {{folk.1}} dans sa stat principale\r\n{% endfor %}", 
+    "text": "L'adversaire a : {{gold}} \u00e9cus et {{population}} habitants\r\n{{folks_titled}}\r\n{% for folk in folks_titled %}\r\n* {{folk.0}} a {{folk.1}} dans sa stat principale\r\n{% endfor %}", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "resultat_espionnage_chateau", 
@@ -5890,7 +5890,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Ces donn\u00e9es sont primordiales, je vais les noter sur mon registre.", 
-    "message": "L'adversaire a : {{soldiers}} soldats, {{archers}} archers, {{piquiers}} piquiers, {{cavaliers}} cavaliers\r\n{% for defenseur in defenseurs %}\r\nNous avons aussi rep\u00e9r\u00e9 {{defenseur.0}} dont les stats sont {{defenseur.1}}(C), {{defenseur.2}}(I), {{defenseur.3}}(\u00c9), {{defenseur.4}}(L) et a pour trait(s) :\r\n\r\n{% for trait in defenseur.5 %}\r\n* trait.name\r\n{% endfor %}\r\n{% endfor %}", 
+    "message": "L'adversaire a : {{soldiers}} soldats, {{archers}} archers, {{piquiers}} piquiers, {{cavaliers}} cavaliers\r\n{% for defenseur in defenseurs %}\r\nNous avons aussi rep\u00e9r\u00e9 {{defenseur.0}} dont les stats sont {{defenseur.1}}(C), {{defenseur.2}}(I), {{defenseur.3}}(\u00c9), {{defenseur.4}}(L) et a pour trait(s) :\r\n\r\n{% for trait in defenseur.5 %}\r\n* {{trait.name}}\r\n{% endfor %}\r\n{% endfor %}", 
     "event": 243, 
     "condition": "\n", 
     "on_fire": "\n"
