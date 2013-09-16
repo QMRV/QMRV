@@ -30,7 +30,7 @@
     "target_list": "param = Kingdom.objects.filter(offended_set__offender=kingdom)", 
     "text": "Aller chercher des noises \u00e0 votre voisin.\r\n\r\n\r\n[co\u00fbt 25 ecus pour lancer la mission]", 
     "has_value": false, 
-    "on_resolution": "a = 0\nfor folk in grids['chercheurs_noises']:\n  a += folk.diplomacy\nd = 0\ntry :\n  d += target.get_folk_in_title(\"diplomate\").diplomacy *3\nexcept:\n  pass\nd += sum_folks(folks.filter(mission=None, birth__gte=datetime.now() - timedelta(days=C(\"MAJORITE\"))), \"diplomacy\")\nd *= 0.3\n\n\nif a>d:\n  kingdom.add_claim(target, Claim.REACHABLE)\n  pe = PendingEvent(event=Event.objects.get(slug=\"getaffront_diplomatie_kingdomsuccess\"),kingdom=kingdom,started=None)\n  pe.save()\n  pe.set_value(\"defenseur\", target)\n  pe.start()\n  pe = PendingEvent(event=Event.objects.get(slug=\"getaffront_diplomatie_targetsuccess\"),kingdom=target,started=None)\n  pe.save()\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\n  #evenement attaquer\n  kingdom.create_pending_mission(\"escarmouche\")\n\n  \n   \nelse:\n  pe = PendingEvent(Event.objects.get(slug=\"getaffront_diplomatie_kingdomfailure\"),kingdom=kingdom,started=None)\n  pe.save()\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\n  pe = PendingEvent(Event.objects.get(slug=\"getaffront_diplomatie_targetfailure\"),kingdom=target,started=None)\n  pe.save()\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\nkingdom.money-=25  ", 
+    "on_resolution": "a = 0\nfor folk in grids['chercheurs_noises']:\n  a += folk.diplomacy\nd = 0\ntry :\n  d += target.get_folk_in_title(\"diplomate\").diplomacy * 3\nexcept:\n  pass\nd += sum_folks(folks.filter(mission=None, birth__gte=datetime.now() - timedelta(days=C.MAJORITE)), \"diplomacy\")\nd *= 0.3\n\n\nif a>d:\n  kingdom.add_claim(target, Claim.REACHABLE)\n  pe = PendingEvent(event=Event.objects.get(slug=\"getaffront_diplomatie_kingdomsuccess\"),kingdom=kingdom,started=None)\n  pe.save()\n  pe.set_value(\"defenseur\", target)\n  pe.start()\n  pe = PendingEvent(event=Event.objects.get(slug=\"getaffront_diplomatie_targetsuccess\"),kingdom=target,started=None)\n  pe.save()\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\n  #evenement attaquer\n  kingdom.create_pending_mission(\"escarmouche\")\n\n  \n   \nelse:\n  pe = PendingEvent(Event.objects.get(slug=\"getaffront_diplomatie_kingdomfailure\"),kingdom=kingdom,started=None)\n  pe.save()\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\n  pe = PendingEvent(Event.objects.get(slug=\"getaffront_diplomatie_targetfailure\"),kingdom=target,started=None)\n  pe.save()\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\nkingdom.money-=25  ", 
     "value_description": "Valeur :", 
     "on_start": " ", 
     "has_target": true, 
@@ -283,7 +283,7 @@
     "target_list": " ", 
     "text": "Nous sommes en manque d'homme d'Eglise ! Allons en chercher dans les bois", 
     "has_value": false, 
-    "on_resolution": "pretre = call_function(\"creer_folk\", kingdom=kingdom, plot_min=2, fight_min=2, scholarship_min=8, diplomacy_min=6, max_carac =32, sex=\"m\", loyalty=60, birth=(datetime.now() - timedelta(days=35)), trait=\"pretre\")\n", 
+    "on_resolution": "pretre = call_function(\"creer_folk\", kingdom=kingdom, plot_min=2, fight_min=2, scholarship_min=8, diplomacy_min=6, max_carac =32, sex=Folk.MALE, loyalty=60, birth=(datetime.now() - timedelta(days=35)), trait=\"pretre\")\n", 
     "value_description": "Valeur :", 
     "on_start": " ", 
     "has_target": false, 
@@ -559,7 +559,7 @@
     "target_list": "param = Kingdom.objects.filter(offended_set__offender=kingdom)", 
     "text": "Je suis quelqu'un de suspicieux. Je veux les espionner", 
     "has_value": false, 
-    "on_resolution": "a = 0\nfor folk in grids['espion']:\n  a += folk.plot\nd = 0\ntry :\n  d += target.get_folk_in_title(\"maitre_espion\").plot *3\nexcept:\n  pass \nd += sum_folks(folks.filter(mission = None, birth__gte= datetime.now() - timedelta(days=C(\"MAJORITE\"))), \"plot\")\nd *= 0.7\n\nmarge = min(100, 100 * 4/float(3) * 1/float(2) * ( 1 + ( (a-d) / float((a+d)) ) ) )\n\nmoney = target.money + max(-target.money, target.money * random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100)))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\nfolk = max(5, min(target.folk_set.count() * incertitude, target.prestige/10))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\npopulation =  max(5, min(target.population * incertitude, call_function(\"population_max\",kingdom=target)))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\narchers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"archer\").count() * incertitude, folk * 2/3))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\npiquiers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"piquier\").count() * incertitude, folk * 2/3))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\ncavaliers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"cavalier\").count() * incertitude, folk * 2/3))\n\npe = PendingEvent(event = Event.objects.get(slug=\"rapport_espionnage\"), kingdom=kingdom, started=None)\npe.save()\npe.set_value(\"money\", money)\npe.set_value(\"folk\", folk)\npe.set_value(\"population\", population)\npe.set_value(\"piquiers\", piquiers)\npe.set_value(\"cavaliers\", cavaliers)\npe.set_value(\"archers\", archers)\npe.set_value(\"target\", target)\npe.start()\n", 
+    "on_resolution": "a = 0\nfor folk in grids['espion']:\n  a += folk.plot\nd = 0\ntry :\n  d += target.get_folk_in_title(\"maitre_espion\").plot *3\nexcept:\n  pass \nd += sum_folks(folks.filter(mission = None, birth__gte= datetime.now() - timedelta(days=C.MAJORITE\"))), \"plot\nd *= 0.7\n\nmarge = min(100, 100 * 4/float(3) * 1/float(2) * ( 1 + ( (a-d) / float((a+d)) ) ) )\n\nmoney = target.money + max(-target.money, target.money * random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100)))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\nfolk = max(5, min(target.folk_set.count() * incertitude, target.prestige/10))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\npopulation =  max(5, min(target.population * incertitude, call_function(\"population_max\",kingdom=target)))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\narchers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"archer\").count() * incertitude, folk * 2/3))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\npiquiers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"piquier\").count() * incertitude, folk * 2/3))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\ncavaliers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"cavalier\").count() * incertitude, folk * 2/3))\n\npe = PendingEvent(event = Event.objects.get(slug=\"rapport_espionnage\"), kingdom=kingdom, started=None)\npe.save()\npe.set_value(\"money\", money)\npe.set_value(\"folk\", folk)\npe.set_value(\"population\", population)\npe.set_value(\"piquiers\", piquiers)\npe.set_value(\"cavaliers\", cavaliers)\npe.set_value(\"archers\", archers)\npe.set_value(\"target\", target)\npe.start()\n", 
     "value_description": " ", 
     "on_start": "\n", 
     "has_target": true, 
@@ -812,9 +812,9 @@
     "target_list": "\n", 
     "text": "Donner \u00e0 votre filleul un mentor pour l'\u00e9duquer.", 
     "has_value": false, 
-    "on_resolution": "AvailableMission(mission=Mission.objects.get(slug=\"nommer_mentor\"), kingdom=kingdom).save()\n", 
+    "on_resolution": "kingdom.unlock_mission(\"nommer_mentor\")\n", 
     "value_description": "", 
-    "on_start": "grids['enfant'][0].mentor= grids['mentor'][0]\ngrids['enfant'][0].save()\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_soeurette\")\n", 
+    "on_start": "grids['enfant'][0].mentor = grids['mentor'][0]\ngrids['enfant'][0].save()\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_soeurette\")\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 4, 
@@ -840,7 +840,7 @@
     "on_start": "if sum_folks(affected, \"diplomacy\") < 20:\n  status=\"Il va falloir \u00eatre un peu plus diplomate\"\n  stop()\n\nkingdom.set_value(\"tuto_has_claim\", True)\nkingdom.create_pending_event(\"tuto_casusbelli_success\").start()\n", 
     "has_target": false, 
     "is_team": false, 
-    "title": null, 
+    "title": 6, 
     "target_description": "", 
     "timeout": null, 
     "is_cancellable": false, 
@@ -860,7 +860,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "\nattaquant = {\n  'troupes': C(\"POURCENTAGE_SOLDATS_ESCARMOUCHE\") * kingdom.soldiers / 100,\n  'combattants': affected,\n  'population': kingdom.population,\n  'prestige': kingdom.prestige,\n}\n\n# R\u00e9cuperer les cinq meilleurs combattants de l'attaquant\ndate_majorite = datetime.now() - timedelta(days=C(\"MAJORITE\"))\ncinq_meilleurs = kingdom.folk_set.filter(sex=Folk.MALE, disabled=False, birth__lte=date_majorite).order_by('fight')[0:5]\nmoyenne_meilleurs_fight = avg_folks(cinq_meilleurs, 'fight')\n\ncombattants = [Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight)]\nmap(lambda f: f.save(), combattants)\ncombattants[0].add_quality('piquier')\ncombattants[1].add_quality('piquier')\ncombattants[2].add_quality('archer')\n\ndefenseur = {\n  # Dans le cadre du tuto,\n  # Les troupes du d\u00e9fenseur correspondent \u00e0 80% des troupes maximales disponibles pour ce Kingdom\n  'troupes': C(\"POURCENTAGE_SOLDATS_ESCARMOUCHE\") * 0.8 * C(\"POURCENTAGE_MAX_SOLDATS_PASSIF\") * call_function(\"get_max_population\", kingdom=kingdom) / (100 * 100),\n  'combattants': combattants,\n  'population': 200,\n  'prestige': kingdom.prestige,\n}\n\ngagnant, perdant, marge = f(\"determiner_vainqueur_combat\", attaquant=attaquant, defenseur=defenseur)\nis_victory = gagnant == attaquant\n\nprint \"GP\", gagnant, perdant, marge\ndelta = f(\"determiner_modifications_combat\", gagnant=gagnant, perdant=perdant, marge=marge, attaquant_est_gagnant=is_victory)\nprint \"DELTA\", delta\n\nif is_victory:\n  kingdom.prestige += 20\nelse:\n  kingdom.prestige -= 20\nkingdom.save()\n\nif kingdom.get_value(\"tuto_firstbattle_attack\", False) == False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_attack\")\nelif is_victory:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \n  pe.set_value(\"is_victory\", is_victory)\n  pe.set_value(\"attaquant\", True)\n  pe.start()\n  \nmap(lambda f: f.delete(), combattants)", 
+    "on_start": "\nattaquant = {\n  'troupes': C.POURCENTAGE_SOLDATS_ESCARMOUCHE * kingdom.soldiers / 100,\n  'combattants': affected,\n  'population': kingdom.population,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':kingdom.get_value('tuto_dynasty_PNJ')\n}\n\n# R\u00e9cuperer les cinq meilleurs combattants de l'attaquant\ndate_majorite = datetime.now() - timedelta(days=C.MAJORITE)\ncinq_meilleurs = kingdom.folk_set.filter(sex=Folk.MALE, disabled=False, birth__lte=date_majorite).order_by('fight')[0:5]\nmoyenne_meilleurs_fight = avg_folks(cinq_meilleurs, 'fight')\n\ncombattants = [Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight)]\nmap(lambda f: f.save(), combattants)\ncombattants[0].add_quality('piquier')\ncombattants[1].add_quality('piquier')\ncombattants[2].add_quality('archer')\n\ndefenseur = {\n  # Dans le cadre du tuto,\n  # Les troupes du d\u00e9fenseur correspondent \u00e0 80% des troupes maximales disponibles pour ce Kingdom\n  'troupes': C.POURCENTAGE_SOLDATS_ESCARMOUCHE * 0.8 * C.POURCENTAGE_MAX_SOLDATS_PASSIF * call_function(\"get_max_population\", kingdom=kingdom) / (100 * 100),\n  'combattants': combattants,\n  'population': 200,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':\"dynastie advserse\",\n}\n\ngagnant, perdant, marge = f(\"determiner_vainqueur_combat\", attaquant=attaquant, defenseur=defenseur)\nis_victory = gagnant == attaquant\n\nprint \"GP\", gagnant, perdant, marge\ndelta = f(\"determiner_modifications_combat\", gagnant=gagnant, perdant=perdant, marge=marge, attaquant_est_gagnant=is_victory)\nprint \"DELTA\", delta\n\nif is_victory:\n  kingdom.prestige += 20\nelse:\n  kingdom.prestige -= 20\nkingdom.save()\n\nif kingdom.get_value(\"tuto_firstbattle_attack\", False) == False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_attack\")\nelif is_victory:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \n  pe.set_value(\"is_victory\", is_victory)\n  pe.set_value(\"attaquant\", True)\n  pe.start()\n  \nmap(lambda f: f.delete(), combattants)", 
     "has_target": false, 
     "is_team": false, 
     "title": null, 
@@ -927,7 +927,7 @@
     "target_list": "\n", 
     "text": "Aller qu\u00e9rir des informations sur la force de bataille !", 
     "has_value": false, 
-    "on_resolution": "def randomize_stat(value, marge, maximum=20):\n  min_error = C(\"POURCENTAGE_ERREUR_MIN_ESPIONNAGE\")\n  max_error = C(\"POURCENTAGE_ERREUR_MAX_ESPIONNAGE\")\n  stat = int(min(maximum,value*(100+random_value(-max(min_error,(100-marge)*(100-marge)*max_error/10000), max(min_error,(100-marge)*(100-marge)*max_error/10000)))/100))\n  return stat\n\ndef randomize_number(value, marge):\n  min_error = C(\"POURCENTAGE_ERREUR_MIN_ESPIONNAGE\")\n  max_error = C(\"POURCENTAGE_ERREUR_MAX_ESPIONNAGE\")\n  number = int(value*(100+random_value(-max(min_error,(100-marge)*(100-marge)*max_error/10000), max(min_error,(100-marge)*(100-marge)*max_error/10000)))/100)\n  return number\n\n# Notre valeur d'intrigue\nattack = sum_folks(grids['espions'], 'plot')\nattack /= 3\n\n# Carac du maitre espion adverse\nintrigue_maitre_espion=0\ntry :\n  intrigue_maitre_espion = target.get_folk_in_title(\"maitre_espion\").plot\nexcept:\n  pass\n\n# Carac du chatelain adverse\nintrigue_chatelain = 0\ntry :\n  intrigue_chatelain = target.get_folk_in_title(\"chatelain\").plot\nexcept:\n  pass\n\n# R\u00e9cup\u00e9rer la moyenne de l'intrigue des personnes majeures dans la cour adverse qui ne sont pas en mission\ndef_folks = target.folk_set.filter(mission = None, birth__gte= datetime.now() - timedelta(days=C(\"MAJORITE\")))\nmoyenne_cour = avg_folks(def_folks, \"plot\")\n\n# Calcul final.\ndefense = 0.3 * (4 * intrigue_maitre_espion + intrigue_chatelain) / 5 + 0.7 * moyenne_cour\n\nif defense > attack * 2:\n  pe = kingdom.create_pending_event(\"resultat_espionnage_echec\")\n  pe.set_value(\"target\", target)\n  pe.start()\nelse:\n  marge = min(100, 100 * 4/float(3) * 1/float(2) * ( 1 + ( (attack-defense) / float((attack+defense)) ) ) )\n  soldiers = randomize_number(target.soldiers, marge)\n  cavaliers = randomize_number(Folk.objects.filter(kingdom=target, quality_set__name=\"cavalier\").count(), marge)\n  archers= randomize_number(Folk.objects.filter(kingdom=target, quality_set__name=\"archers\").count(), marge)\n  piquiers = randomize_number(Folk.objects.filter(kingdom=target, quality_set__name=\"piquiers \").count(), marge)\n  choice_folks = random_value(1,10)\n  defenseurs = []\n  tab_defenseurs= []\n  if False:\n  #if choice_folks < 7 :\n    defenseurs = target.get_team(\"ligne_defense\")[\"affected\"]\n    import random\n    random.shuffle(defenseurs)\n    defenseurs = defenseurs[0:1]\n  else:\n  #elif choice_folks < 9:\n    defenseurs = target.get_team(\"ligne_defense\")[\"affected\"]\n    import random\n    random.shuffle(defenseurs)\n    defenseurs = defenseurs[0:2] \n  \n  for folk in defenseurs:\n    title = False\n    try:\n      title = folk.title.title.name\n    except:\n      pass\n    tab_defenseurs.append([folk.first_name + \" \" + folk.last_name, title , randomize_stat(folk.fight, marge), randomize_stat(folk.plot, marge), randomize_stat(folk.diplomacy, marge), randomize_stat(folk.scholarship, marge),randomize_stat(folk.loyalty, marge, 100), folk.quality_set.all()])\n    \n  pe = kingdom.create_pending_event(\"resultat_espionnage_troupes\")\n  \n  pe.set_value(\"soldiers\",soldiers)\n  pe.set_value(\"archers\",archers)\n  pe.set_value(\"piquiers\",piquiers)\n  pe.set_value(\"cavaliers\",cavaliers)\n  pe.set_value(\"defenseurs\",tab_defenseurs)\n  pe.start()\n", 
+    "on_resolution": "def randomize_stat(value, marge, maximum=20):\n  min_error = C.POURCENTAGE_ERREUR_MIN_ESPIONNAGE\n  max_error = C.POURCENTAGE_ERREUR_MAX_ESPIONNAGE\n  stat = int(min(maximum,value*(100+random_value(-max(min_error,(100-marge)*(100-marge)*max_error/10000), max(min_error,(100-marge)*(100-marge)*max_error/10000)))/100))\n  return stat\n\ndef randomize_number(value, marge):\n  min_error = C.POURCENTAGE_ERREUR_MIN_ESPIONNAGE\n  max_error = C.POURCENTAGE_ERREUR_MAX_ESPIONNAGE\n  number = int(value*(100+random_value(-max(min_error,(100-marge)*(100-marge)*max_error/10000), max(min_error,(100-marge)*(100-marge)*max_error/10000)))/100)\n  return number\n\n# Notre valeur d'intrigue\nattack = sum_folks(grids['espions'], 'plot')\nattack /= 3\n\n# Carac du maitre espion adverse\nintrigue_maitre_espion=0\ntry :\n  intrigue_maitre_espion = target.get_folk_in_title(\"maitre_espion\").plot\nexcept:\n  pass\n\n# Carac du chatelain adverse\nintrigue_chatelain = 0\ntry :\n  intrigue_chatelain = target.get_folk_in_title(\"chatelain\").plot\nexcept:\n  pass\n\n# R\u00e9cup\u00e9rer la moyenne de l'intrigue des personnes majeures dans la cour adverse qui ne sont pas en mission\ndef_folks = target.folk_set.filter(mission = None, birth__gte= datetime.now() - timedelta(days=C.MAJORITE))\nmoyenne_cour = avg_folks(def_folks, \"plot\")\n\n# Calcul final.\ndefense = 0.3 * (4 * intrigue_maitre_espion + intrigue_chatelain) / 5 + 0.7 * moyenne_cour\n\nif defense > attack * 2:\n  pe = kingdom.create_pending_event(\"resultat_espionnage_echec\")\n  pe.set_value(\"target\", target)\n  pe.start()\nelse:\n  marge = min(100, 100 * 4/float(3) * 1/float(2) * ( 1 + ( (attack-defense) / float((attack+defense)) ) ) )\n  soldiers = randomize_number(target.soldiers, marge)\n  cavaliers = randomize_number(Folk.objects.filter(kingdom=target, quality_set__name=\"cavalier\").count(), marge)\n  archers= randomize_number(Folk.objects.filter(kingdom=target, quality_set__name=\"archers\").count(), marge)\n  piquiers = randomize_number(Folk.objects.filter(kingdom=target, quality_set__name=\"piquiers \").count(), marge)\n  choice_folks = random_value(1,10)\n  defenseurs = []\n  tab_defenseurs= []\n  if False:\n  #if choice_folks < 7 :\n    defenseurs = target.get_team(\"ligne_defense\")[\"affected\"]\n    import random\n    random.shuffle(defenseurs)\n    defenseurs = defenseurs[0:1]\n  else:\n  #elif choice_folks < 9:\n    defenseurs = target.get_team(\"ligne_defense\")[\"affected\"]\n    import random\n    random.shuffle(defenseurs)\n    defenseurs = defenseurs[0:2] \n  \n  for folk in defenseurs:\n    title = False\n    try:\n      title = folk.title.title.name\n    except:\n      pass\n    tab_defenseurs.append([folk.first_name + \" \" + folk.last_name, title , randomize_stat(folk.fight, marge), randomize_stat(folk.plot, marge), randomize_stat(folk.diplomacy, marge), randomize_stat(folk.scholarship, marge),randomize_stat(folk.loyalty, marge, 100), folk.quality_set.all()])\n    \n  pe = kingdom.create_pending_event(\"resultat_espionnage_troupes\")\n  \n  pe.set_value(\"soldiers\",soldiers)\n  pe.set_value(\"archers\",archers)\n  pe.set_value(\"piquiers\",piquiers)\n  pe.set_value(\"cavaliers\",cavaliers)\n  pe.set_value(\"defenseurs\",tab_defenseurs)\n  pe.start()\n", 
     "value_description": "", 
     "on_start": "\n", 
     "has_target": true, 
@@ -950,7 +950,7 @@
     "target_list": "\n", 
     "text": "Aller qu\u00e9rir des information sur les ressources du chateau", 
     "has_value": false, 
-    "on_resolution": "def randomize_stat(value, marge, maximum=20):\n  min_error = C(\"POURCENTAGE_ERREUR_MIN_ESPIONNAGE\")\n  max_error = C(\"POURCENTAGE_ERREUR_MAX_ESPIONNAGE\")\n  return int(min(maximum,value*(100+random_value(-max(min_error,(100-marge)*(100-marge)*max_error/10000), max(min_error,(100-marge)*(100-marge)*max_error/10000)))/100))\ndef randomize_number(value, marge):\n  min_error = C(\"POURCENTAGE_ERREUR_MIN_ESPIONNAGE\")\n  max_error = C(\"POURCENTAGE_ERREUR_MAX_ESPIONNAGE\")\n  return int(value*(100+random_value(-max(min_error,(100-marge)*(100-marge)*max_error/10000), max(min_error,(100-marge)*(100-marge)*max_error/10000)))/100)\n\n# Notre valeur d'intrigue\nattack = sum_folks(grids['espions'], 'plot')\nattack /= 3\n\n# Carac du maitre espion adverse\nintrigue_maitre_espion=0\ntry :\n  intrigue_maitre_espion = target.get_folk_in_title(\"maitre_espion\").plot\nexcept:\n  pass\n\n# Carac du chatelain adverse\nintrigue_chatelain = 0\ntry :\n  intrigue_chatelain = target.get_folk_in_title(\"chatelain\").plot\nexcept:\n  pass\n\n# R\u00e9cup\u00e9rer la moyenne de l'intrigue des personnes majeures dans la cour adverse qui ne sont pas en mission\ndef_folks = target.folk_set.filter(mission = None, birth__gte= datetime.now() - timedelta(days=C(\"MAJORITE\")))\nmoyenne_cour = f(\"somme_stat_folks\", folks=def_folks, stat=\"plot\") / len(def_folks)\n\n# Calcul final.\ndefense = 0.3 * (4 * intrigue_maitre_espion + intrigue_chatelain) / 5 + 0.7 * moyenne_cour\n\n\nif defense > attack * 2:\n  pe = kingdom.create_pending_event(\"resultat_espionnage_echec\")\n  pe.set_value(\"target\", target)\n  pe.start()\nelse:\n  marge = min(100, 100 * 4 / 3 / 2 * ( 1 + (attack-defense) / (attack+defense)))\n  money = randomize_number(target.money, marge)\n  population = randomize_number(target.population, marge)\n  \n  folks_titled = []\n  titles = {\n    'ambassadeur': 'diplomacy',\n    'connetable': 'fight',\n    'maitre_espion': 'plot',\n  }\n\n  for title in titles.keys():\n    values = []\n    folk = target.get_folk_in_title(title)\n    if folk is not None:\n      values.append(folk)\n      values.append(Title.objects.get(slug=title).name)\n      values.append(randomize_stat(getattr(folk, titles[title]), marge))\n      folks_titled.append(values)\n  \n  pe = kingdom.create_pending_event(\"resultat_espionnage_chateau\")\n  pe.set_value(\"folks_titled\", folks_titled)\n  pe.set_value(\"gold\", money)\n  pe.set_value(\"population\", population)\n  pe.start()\n", 
+    "on_resolution": "def randomize_stat(value, marge, maximum=20):\n  min_error = C.POURCENTAGE_ERREUR_MIN_ESPIONNAGE\n  max_error = C.POURCENTAGE_ERREUR_MAX_ESPIONNAGE\n  return int(min(maximum,value*(100+random_value(-max(min_error,(100-marge)*(100-marge)*max_error/10000), max(min_error,(100-marge)*(100-marge)*max_error/10000)))/100))\ndef randomize_number(value, marge):\n  min_error = C.POURCENTAGE_ERREUR_MIN_ESPIONNAGE\n  max_error = C.POURCENTAGE_ERREUR_MAX_ESPIONNAGE\n  return int(value*(100+random_value(-max(min_error,(100-marge)*(100-marge)*max_error/10000), max(min_error,(100-marge)*(100-marge)*max_error/10000)))/100)\n\n# Notre valeur d'intrigue\nattack = sum_folks(grids['espions'], 'plot')\nattack /= 3\n\n# Carac du maitre espion adverse\nintrigue_maitre_espion=0\ntry :\n  intrigue_maitre_espion = target.get_folk_in_title(\"maitre_espion\").plot\nexcept:\n  pass\n\n# Carac du chatelain adverse\nintrigue_chatelain = 0\ntry :\n  intrigue_chatelain = target.get_folk_in_title(\"chatelain\").plot\nexcept:\n  pass\n\n# R\u00e9cup\u00e9rer la moyenne de l'intrigue des personnes majeures dans la cour adverse qui ne sont pas en mission\ndef_folks = target.folk_set.filter(mission = None, birth__gte= datetime.now() - timedelta(days=C.MAJORITE))\nmoyenne_cour = avg_folks(def_folks, \"plot\")\n\n# Calcul final.\ndefense = 0.3 * (4 * intrigue_maitre_espion + intrigue_chatelain) / 5 + 0.7 * moyenne_cour\n\n\nif defense > attack * 2:\n  pe = kingdom.create_pending_event(\"resultat_espionnage_echec\")\n  pe.set_value(\"target\", target)\n  pe.start()\nelse:\n  marge = min(100, 100 * 4 / 3 / 2 * ( 1 + (attack-defense) / (attack+defense)))\n  money = randomize_number(target.money, marge)\n  population = randomize_number(target.population, marge)\n  \n  folks_titled = []\n  titles = {\n    'ambassadeur': 'diplomacy',\n    'connetable': 'fight',\n    'maitre_espion': 'plot',\n  }\n\n  for title in titles.keys():\n    values = []\n    folk = target.get_folk_in_title(title)\n    if folk is not None:\n      values.append(folk)\n      values.append(Title.objects.get(slug=title).name)\n      values.append(randomize_stat(getattr(folk, titles[title]), marge))\n      folks_titled.append(values)\n  \n  pe = kingdom.create_pending_event(\"resultat_espionnage_chateau\")\n  pe.set_value(\"folks_titled\", folks_titled)\n  pe.set_value(\"gold\", money)\n  pe.set_value(\"population\", population)\n  pe.start()\n", 
     "value_description": "", 
     "on_start": "\n", 
     "has_target": true, 
@@ -998,7 +998,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "defenseurs", 
-    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()<=C(\"MAJORITE\"):\n  status=\"La guerre, c'est une histoire d'adultes !\"\n"
+    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()<=C.MAJORITE:\n  status=\"La guerre, c'est une histoire d'adultes !\"\n"
   }
 },
 {
@@ -1011,7 +1011,7 @@
     "length": 20, 
     "allow_empty": false, 
     "slug": "chercheurs_noises", 
-    "condition": "if folk.age()>=C(\"MAJORITE\"):\n  status=\"Laisse les grands jouer \u00e0 ce jeu\""
+    "condition": "if folk.age() >= C.MAJORITE:\n  status=\"Laisse les grands jouer \u00e0 ce jeu\""
   }
 },
 {
@@ -1024,7 +1024,7 @@
     "length": 4, 
     "allow_empty": false, 
     "slug": "combattants", 
-    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()<=C(\"MAJORITE\"):\n  status=\"La guerre, c'est une histoire d'adultes !\"\n"
+    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()<=C.MAJORITE:\n  status=\"La guerre, c'est une histoire d'adultes !\"\n"
   }
 },
 {
@@ -1076,7 +1076,7 @@
     "length": 4, 
     "allow_empty": false, 
     "slug": "defenseurs", 
-    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()>=C(\"MAJORITE\"):\n  status=\"La guerre, c'est une histoire d'adultes !\""
+    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()>=C.MAJORITE:\n  status=\"La guerre, c'est une histoire d'adultes !\""
   }
 },
 {
@@ -1102,7 +1102,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "recruteur", 
-    "condition": "if folk.age() < C(\"MAJORITE\") or folk.has_quality(\"pretre\") :\n  status = \"Cette personne ne peut pas effectuer cette mission\"\n"
+    "condition": "if folk.age() < C.MAJORITE or folk.has_quality(\"pretre\"):\n  status = \"Cette personne ne peut pas effectuer cette mission\"\n"
   }
 },
 {
@@ -1115,7 +1115,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "envoye_dans_ordres", 
-    "condition": "if folk.sex == \"f\":\n  Status = \"Seul un homme peut \u00eatre pr\u00eatre\"\n"
+    "condition": "if folk.sex == Folk.FEMALE:\n  Status = \"Seul un homme peut \u00eatre pr\u00eatre\"\n"
   }
 },
 {
@@ -1128,7 +1128,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "mari", 
-    "condition": "if folk.age < C(\"MAJORITE\") : \n  status = \"Cette personne est trop jeune pour \u00eatre mari\u00e9e\"\nelif folk.sex == \"f\" :\n  status = \"Le mari doit \u00eatre un homme\"\nelif folk.has_quality(\"pretre\") :\n  status = \"Un p\u00eatre ne peut pas se marier\"\nelif (kingdom.get_value(\"in_tuto\") == True and folk==folks[0]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre chatelain\"\nelif (kingdom.get_value(\"passage_proposition_mariage\",False) and  folk==folks[1]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre fils\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
+    "condition": "if folk.age < C.MAJORITE : \n  status = S.TOO_YOUNG pour \u00eatre mari\u00e9e\"\nelif folk.sex == Folk.FEMALE :\n  status = \"Le mari doit \u00eatre un homme\"\nelif folk.has_quality(\"pretre\") :\n  status = \"Un p\u00eatre ne peut pas se marier\"\nelif (kingdom.get_value(\"in_tuto\") == True and folk==folks[0]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre chatelain\"\nelif (kingdom.get_value(\"passage_proposition_mariage\",False) and  folk==folks[1]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre fils\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
   }
 },
 {
@@ -1141,7 +1141,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "femme", 
-    "condition": "if folk.age < C(\"MAJORITE\"):\n  status = \"Cette personne est trop jeune pour \u00eatre mari\u00e9e\"\nelif folk.sex == \"m\":\n  status = \"La femme doit \u00eatre une femme\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
+    "condition": "if folk.age < C.MAJORITE:\n  status = S.TOO_YOUNG pour \u00eatre mari\u00e9e\"\nelif folk.sex == Folk.MALE:\n  status = \"La femme doit \u00eatre une femme\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
   }
 },
 {
@@ -1206,7 +1206,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "mentor", 
-    "condition": "if folk.age()< C(\"MAJORITE\"):\n  status = \"Un mentor doit \u00eatre majeur\"\n"
+    "condition": "if folk.age()< C.MAJORITE:\n  status = S.TOO_YOUNG\n"
   }
 },
 {
@@ -1219,7 +1219,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "enfant", 
-    "condition": "if folk.age() > C(\"MAJORITE\"):\n  status = \"L'apprenti doit \u00eatre un enfant\"\n"
+    "condition": "if folk.age() > C.MAJORITE:\n  status = S.TOO_YOUNG\n"
   }
 },
 {
@@ -1232,7 +1232,7 @@
     "length": 20, 
     "allow_empty": false, 
     "slug": "recruteurs", 
-    "condition": "if folk.sex=='f':\n  status=\"il faut une homme\"\n"
+    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"il faut une homme\"\n"
   }
 },
 {
@@ -1258,7 +1258,7 @@
     "length": 200, 
     "allow_empty": false, 
     "slug": "espion", 
-    "condition": "if PendingMissionAffectation.objects.filter(pending_mission=param.pending_mission, mission_grid=param.mission_grid).count() > kingdom.prestige / 10:\n  status = \"Vous ne pouvez plus rajouter de personne \u00e0 cette mission\"\nif folk.age < C(\"MAJORITE\"):\n  status = \"Un enfant ne peut pas effectuer cette mission\"\n\n"
+    "condition": "if PendingMissionAffectation.objects.filter(pending_mission=param.pending_mission, mission_grid=param.mission_grid).count() > kingdom.prestige / 10:\n  status = \"Vous ne pouvez plus rajouter de personne \u00e0 cette mission\"\nif folk.age < C.MAJORITE:\n  status = \"Un enfant ne peut pas effectuer cette mission\"\n\n"
   }
 },
 {
@@ -1297,7 +1297,7 @@
     "length": 4, 
     "allow_empty": false, 
     "slug": "attaquants", 
-    "condition": "if folk.age() < C(\"MAJORITE\"):\n  status = \"Vous ne pouvez pas affecter un enfant \u00e0 cette mission.\"\nelif folk.sex == Folk.FEMALE:\n  status = \"Vous ne pouvez pas affecter de femme \u00e0 cette mission\"\n"
+    "condition": "if folk.age() < C.MAJORITE:\n  status = \"Vous ne pouvez pas affecter un enfant \u00e0 cette mission.\"\nelif folk.sex == Folk.FEMALE:\n  status = \"Vous ne pouvez pas affecter de femme \u00e0 cette mission\"\n"
   }
 },
 {
@@ -1310,7 +1310,7 @@
     "length": 4, 
     "allow_empty": false, 
     "slug": "combattants_tuto", 
-    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()>=C(\"MAJORITE\"):\n  status=\"La guerre, c'est une histoire d'adultes !\""
+    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()>=C.MAJORITE:\n  status=\"La guerre, c'est une histoire d'adultes !\""
   }
 },
 {
@@ -1323,7 +1323,7 @@
     "length": 20, 
     "allow_empty": false, 
     "slug": "chercheurs_merde", 
-    "condition": "if folk.age()>=C(\"MAJORITE\"):\n  status=\"Laisse les grands jouer \u00e0 ce jeu\"\nelif folk.sex==\"f\":\n  status = \"Une femme ne peut pas aller se battre\"\n"
+    "condition": "if folk.age()>=C.MAJORITE:\n  status=\"Laisse les grands jouer \u00e0 ce jeu\"\nelif folk.sex==Folk.FEMALE:\n  status = \"Une femme ne peut pas aller se battre\"\n"
   }
 },
 {
@@ -1349,7 +1349,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "organisateurs", 
-    "condition": "if folk.age() < C(\"MAJORITE\"):\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"\n"
+    "condition": "if folk.age() < C.MAJORITE:\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"\n"
   }
 },
 {
@@ -1375,7 +1375,7 @@
     "length": 10, 
     "allow_empty": false, 
     "slug": "chasseurs", 
-    "condition": "if folk.sex==\"f\" or folk.has_quality(\"pretre\") or folk.age()<C(\"MAJORITE\"):\n  status = \"Le chasseur doit etre un chevalier adulte\"\n"
+    "condition": "if folk.sex==Folk.FEMALE or folk.has_quality(\"pretre\") or folk.age()<C.MAJORITE:\n  status = \"Le chasseur doit etre un chevalier adulte\"\n"
   }
 },
 {
@@ -1388,7 +1388,7 @@
     "length": 20, 
     "allow_empty": false, 
     "slug": "chercheur", 
-    "condition": "if folk.age() < C(\"MAJORITE\"): \n  status = \"Cette personne est trop jeune pour cette t\u00e2che\"\n"
+    "condition": "if folk.age() < C.MAJORITE: \n  status = S.TOO_YOUNG\n"
   }
 },
 {
@@ -1414,7 +1414,7 @@
     "length": 4, 
     "allow_empty": false, 
     "slug": "defenseurs_tuto", 
-    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()<=C(\"MAJORITE\"):\n  status=\"La guerre, c'est une histoire d'adultes !\"\n"
+    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()<=C.MAJORITE:\n  status=\"La guerre, c'est une histoire d'adultes !\"\n"
   }
 },
 {
@@ -1427,7 +1427,7 @@
     "length": 4, 
     "allow_empty": false, 
     "slug": "defenseurs", 
-    "condition": "if folk.sex=='f':\n  status=\"Depuis des temps imm\u00e9moriaux les femmes ont persuad\u00e9 les hommes que c'\u00e9taient \u00e0 eux de mourrir. On ne revient pas sur des privil\u00e8ges durement gagn\u00e9s.\""
+    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Depuis des temps imm\u00e9moriaux les femmes ont persuad\u00e9 les hommes que c'\u00e9taient \u00e0 eux de mourrir. On ne revient pas sur des privil\u00e8ges durement gagn\u00e9s.\""
   }
 },
 {
@@ -1466,7 +1466,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "enfant", 
-    "condition": "if folk.age() > C(\"MAJORITE\"):\n  status = \"L'apprenti doit \u00eatre un enfant\"\n"
+    "condition": "if folk.age() > C.MAJORITE:\n  status = S.TOO_YOUNG\n"
   }
 },
 {
@@ -1479,7 +1479,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "mentor", 
-    "condition": "if folk.age()< C(\"MAJORITE\"):\n  status = \"Un mentor doit \u00eatre majeur\"\n"
+    "condition": "if folk.age()< C.MAJORITE:\n  status = S.TOO_YOUNG\n"
   }
 },
 {
@@ -1531,7 +1531,7 @@
     "length": 1000, 
     "allow_empty": false, 
     "slug": "defenseurs", 
-    "condition": "if folk.age()< C(\"MAJORITE\"):\n  status = \"Cette personne est trop jeune pour se battre.\"\nif folk.sex == Folk.FEMALE:\n  status = \"Seul un homme peut \u00eatre choisi pour d\u00e9fendre la cit\u00e9.\"\n"
+    "condition": "if folk.age()< C.MAJORITE:\n  status = S.TOO_YOUNG pour se battre.\"\nif folk.sex == Folk.FEMALE:\n  status = \"Seul un homme peut \u00eatre choisi pour d\u00e9fendre la cit\u00e9.\"\n"
   }
 },
 {
@@ -1544,7 +1544,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "espions", 
-    "condition": "if folk.age() < C(\"MAJORITE\"):\n  status = \"Cette personne est trop jeune pour cette mission\"\n"
+    "condition": "if folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG\n"
   }
 },
 {
@@ -1557,7 +1557,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "espions", 
-    "condition": "if folk.age() < C(\"MAJORITE\"):\n  status = \"Cette personne est trop jeune pour cette mission\"\n"
+    "condition": "if folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG\n"
   }
 },
 {

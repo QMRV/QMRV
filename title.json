@@ -21,7 +21,7 @@
     "on_affect": "folk.loyalty+=5\nfolk.save()", 
     "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un conn\u00e9table.\")\n# AvailableMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"chasse\")).save()\nkingdom.unlock_mission(\"organiser_raid\")", 
     "slug": "connetable", 
-    "condition": "if folk.sex==\"f\":\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age()<C(\"MAJORITE\"):\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"\n", 
+    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age()<C.MAJORITE:\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"\n", 
     "description": "En tant que premier conseill\u00e9 militaire, le conn\u00e9table supervise le recrutement et l'entra\u00eenement de vos hommes d'arme.\r\n\r\nUn conn\u00e9table a besoin d'un haut Combat pour \u00eatre efficace."
   }
 },
@@ -34,7 +34,7 @@
     "on_affect": "folk.loyalty+=5\nfolk.save()", 
     "on_unlock": "# unlock code\nAvailableMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"charite\")).save()\nAvailableMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"soigner_blesse\")).save()", 
     "slug": "cure", 
-    "condition": "if folk.sex==\"f\":\n  status=\"Un homme est attendu \u00e0 ce poste\"\nif folk.has_quality(\"pretre\")==False:\n  status=\"Un pretre est attendu \u00e0 ce poste\"\n", 
+    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Un homme est attendu \u00e0 ce poste\"\nif folk.has_quality(\"pretre\")==False:\n  status=\"Un pretre est attendu \u00e0 ce poste\"\n", 
     "description": "Cet homme d'\u00e9glise s'occupe de toutes les affaires religieuses de votre cour.\r\n\r\nUn cur\u00e9 a besoin d'une haute \u00c9rudition pour \u00eatre efficace."
   }
 },
@@ -47,7 +47,7 @@
     "on_affect": "folk.loyalty+=5\nfolk.save()", 
     "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un chambellan.\")", 
     "slug": "chambellan", 
-    "condition": "if folk.sex == \"f\":\n  status = \"Un homme est attendu \u00e0 ce poste\"\n", 
+    "condition": "if folk.sex == Folk.FEMALE:\n  status = \"Un homme est attendu \u00e0 ce poste\"\n", 
     "description": "Le chambellan est votre ma\u00eetre du protocole. Il vous d\u00e9charge des affaires courantes concernant la vie au ch\u00e2teau, s'assure de la loyaut\u00e9 de vos courtisans et prot\u00e8ge votre image publique.\r\n\r\nUn chambellan a besoin d'une haute Diplomatie pour \u00eatre efficace."
   }
 },
@@ -73,7 +73,7 @@
     "on_affect": "folk.loyalty+=5\nfolk.save()", 
     "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un ambassadeur.\")\n\nkingdom.unlock_mission(\"tuto_recrutement\")\nkingdom.unlock_mission(\"tuto_getaffront_diplomatie\")\n", 
     "slug": "ambassadeur", 
-    "condition": "if folk.sex==\"f\":\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age() < C(\"MAJORITE\"):\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"", 
+    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age() < C.MAJORITE:\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"", 
     "description": "L'ambassadeur est responsable des relations diplomatiques avec le reste du royaume.\r\n\r\nUn ambassadeur a besoin d'une haute Diplomatie pour \u00eatre efficace."
   }
 },
@@ -86,7 +86,7 @@
     "on_affect": "folk.loyalty+=5\nfolk.save()\n", 
     "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un tr\u00e9sorier.\")\n\nkingdom.unlock_mission(\"emprunt\")\nkingdom.unlock_mission(\"taxepaysanne\")\nkingdom.unlock_mission(\"taxecour\")", 
     "slug": "tresorier", 
-    "condition": "if folk.sex==\"f\":\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age() < C(\"MAJORITE\"):\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"\n", 
+    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age() < C.MAJORITE:\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"\n", 
     "description": "Le tr\u00e9sorier est responsable de la gestion quotidienne de vos finances et de la collecte des taxes.\r\n\r\nUn tr\u00e9sorier a besoin d'une haute \u00c9rudition pour \u00eatre efficace."
   }
 }
