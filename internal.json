@@ -14,8 +14,8 @@
       76, 
       79, 
       80, 
-      81, 
       59, 
+      81, 
       58
     ], 
     "money_threshold": 0, 
@@ -1333,12 +1333,30 @@
   }
 },
 {
+  "pk": 6, 
+  "model": "internal.constant", 
+  "fields": {
+    "name": "POURCENTAGE_ERREUR_MIN_ESPIONNAGE", 
+    "value": 5, 
+    "description": "Diff\u00e9rence minimum entre r\u00e9alit\u00e9 et observ\u00e9"
+  }
+},
+{
+  "pk": 7, 
+  "model": "internal.constant", 
+  "fields": {
+    "name": "POURCENTAGE_ERREUR_MAX_ESPIONNAGE", 
+    "value": 100, 
+    "description": "Diff\u00e9rence max entre r\u00e9alit\u00e9 et observ\u00e9"
+  }
+},
+{
   "pk": 2, 
   "model": "internal.recurring", 
   "fields": {
     "delay": 770, 
     "kingdom_list": "param = []\n", 
-    "on_fire": "blesses = folks.filter(quality_set__name=\"blesse\")\nsoigneurs = target.get_team(\"ligne_defense\")[\"affected\"]\nmoy_erudition = f(\"somme_stat_folks\", folks=soigneurs, stat=\"scholarship\") / soigneurs.count()\nimport math\nsoin = 99 - (float(moy_erudition/float(20))) * 8 * max(1, soigneurs.count() / math.sqrt(blesses.count()))\n  \nfor blesse in blesses:\n  fate = random_value(1,100)\n  if fate == 1 : #il meurt\n    blesse.die()\n  elif fate > soin : #il n'est plus bless\u00e9, mais gagne un autre trait\n    blesse.remove_quality(\"blesse\")\n    choix_trait = random_value(1,100)\n    chances_handicap = 30 - random_in(soigneurs).scholarship * max(1,soigneurs.count()/ math.sqrt(blesses.count()))\n    if choix_trait < chances_handicap : #il est infirme\n      choix_handicap = random_in(Quality.objects.filter(quality_category__name=\"Handicap\"))\n      blesse.quality_set.add(choix_handicap)\n    else: #il est gu\u00e9rit\n      pass\n  #else on attendant 30 minutes qu'il retente sa chance\n", 
+    "on_fire": "blesses = folks.filter(quality_set__name=\"blesse\")\nsoigneurs = target.get_team(\"ligne_defense\")[\"affected\"]\nmoy_erudition = avg_folks(soigneurs, \"scholarship\")\nimport math\nsoin = 99 - (float(moy_erudition/float(20))) * 8 * max(1, soigneurs.count() / math.sqrt(blesses.count()))\n  \nfor blesse in blesses:\n  fate = random_value(1,100)\n  if fate == 1 : #il meurt\n    blesse.die()\n  elif fate > soin : #il n'est plus bless\u00e9, mais gagne un autre trait\n    blesse.remove_quality(\"blesse\")\n    choix_trait = random_value(1,100)\n    chances_handicap = 30 - random_in(soigneurs).scholarship * max(1,soigneurs.count()/ math.sqrt(blesses.count()))\n    if choix_trait < chances_handicap : #il est infirme\n      choix_handicap = random_in(Quality.objects.filter(quality_category__name=\"Handicap\"))\n      blesse.quality_set.add(choix_handicap)\n    else: #il est gu\u00e9rit\n      pass\n  #else on attendant 30 minutes qu'il retente sa chance\n", 
     "name": "Les bless\u00e9s peuvent mourir", 
     "description": "Fais mourir (ou pas) les bless\u00e9s"
   }
@@ -35672,7 +35690,7 @@
   "fields": {
     "params": "stat:str La comp\u00e9tence \u00e0 tester\r\nfolks:list|QuerySet Les folks \u00e0 tester", 
     "slug": "somme_stat_folks", 
-    "on_fire": "param = sum([getattr(folk,stat) for folk in folks])", 
+    "on_fire": "param = sum([getattr(folk, stat) for folk in folks])", 
     "description": "Renvoie la somme d'une stat sur un groupe de folk (f1.figth + f2.fight + ...)"
   }
 },

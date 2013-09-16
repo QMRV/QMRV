@@ -741,7 +741,7 @@
     "weight": 1, 
     "text": "{{chevalier}} est venu m'annoncer qu'il venait de recevoir une missive sa cousine {{dame.first_name}}, qui prenait aimablement de ses nouvelles et demandait \u00e0 mots couverts si elle serait la bienvenue dans ma cour. Sire {{chevalier.first_name}} ajoute qu'elle est une honn\u00eate demoiselle, qui cherche seulement a \u00e9chapper \u00e0 la tyrannie de ses fr\u00e8res.", 
     "image": "events/463.jpg", 
-    "on_fire": "dame = call_function(\"creer_folk\", kingdom=kingdom, fight_min=1, plot_min=1, diplomacy_min=1, scholarship_min=1, max_carac=32, loyalty=50, sex=\"f\")\nparam.set_value(\"dame\", dame)\n", 
+    "on_fire": "dame = call_function(\"creer_folk\", kingdom=kingdom, fight_min=1, plot_min=1, diplomacy_min=1, scholarship_min=1, max_carac=32, loyalty=50, sex=\"f\", birth=datetime.now() - timedelta(days=16), trait=\"jouvencelle\")\nparam.set_value(\"dame\", dame)\n", 
     "slug": "tuto_allegeance_dame", 
     "condition": " "
   }
@@ -811,7 +811,7 @@
     "weight": 1, 
     "text": "\"JEUNE IMPUDENT!\" La gifle le frappe de plein fouet. Il l\u00e8ve sur moi un regard interloqu\u00e9 et je poursuit, vibrant de rage. \"Tu force ma porte au milieu de la nuit, ivre comme une barrique, pour m'annoncer CECI? Dieu merci, ta m\u00e8re n'est plus de ce monde pour contempler une telle d\u00e9ch\u00e9ance!\" Il se ratatine, mais semble sur le point de me r\u00e9pondre. \"SILENCE, FILS INDIGNE! Si tu crois pour un instant que je vais te laisser tra\u00eener notre nom dans la boue, tu as d\u00e9pass\u00e9 les limites du cr\u00e9tinisme!\". Il me fixe, des larmes aux coins des yeux.\r\n\r\n```-15 de loyaut\u00e9 pour {{folks.1.first_name}}```", 
     "image": "events/451_8.jpg", 
-    "on_fire": " ", 
+    "on_fire": "folks[1].loyalty -= 15\nfolks[1].save()\n", 
     "slug": "tuto_scandale_fils_4", 
     "condition": " "
   }
@@ -2951,7 +2951,7 @@
     "category": null, 
     "name": "R\u00e9sultat de l'espionnage", 
     "weight": 1, 
-    "text": "L'adversaire a : {{gold}} \u00e9cus et {{population}} habitants\r\n{{folks_titled}}\r\n{% for folk in folks_titled %}\r\n* {{folk.0}}, le {{folk.1}} a {{folk.2}} dans sa stat principale\r\n{% endfor %}", 
+    "text": "L'adversaire a : {{gold}} \u00e9cus et {{population}} habitants\r\n\r\n{% for folk in folks_titled %}\r\n* {{folk.0}}, le {{folk.1}}, a {{folk.2}} dans sa statistique principale\r\n{% endfor %}", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "resultat_espionnage_chateau", 
