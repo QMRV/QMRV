@@ -109,7 +109,7 @@
     "category": null, 
     "name": "Soif de gloire !", 
     "weight": 1, 
-    "text": "Et pourtant, je sais que mon p\u00e9riple ne fait que commencer. Mon h\u00e9ritage ne sera pas \u00e0 l'abri des convoitises tant que je n\u2019aurai pas prouv\u00e9 ma valeur aux yeux du royaume. Mes sujets sont encore si peu nombreux... Nobles ou paysans, le prestige de mon nom les a ralli\u00e9 sous ma banni\u00e8re, et ils attendent encore de moi que je porte ce nom vers la gloire. Mon regard se pose \u00e0 nouveau sur les hommes d\u2019arme qui suent sous ma fen\u00eatre. L'entra\u00eenement de sire {{title.connetable.first_name}} leur a \u00e9t\u00e9 profitable, mais depuis le passage des brigands, il n\u2019ont pas eu d\u2019occasion de se battre. Il est peut \u00eatre temps qu\u2019ils affrontent un vrai ennemi, sur un vrai champ de bataille.\r\n\r\n    Votre valeur de Prestige limite le nombre de suivants dans votre cour et la population de votre ville. Une mani\u00e8re s\u00fbre de gagner du Prestige est de gagner des batailles.", 
+    "text": "Et pourtant, je sais que mon p\u00e9riple ne fait que commencer. Mon h\u00e9ritage ne sera pas \u00e0 l'abri des convoitises tant que je n\u2019aurai pas prouv\u00e9 ma valeur aux yeux du royaume. Mes sujets sont encore si peu nombreux... Nobles ou paysans, le prestige de mon nom les a ralli\u00e9 sous ma banni\u00e8re, et ils attendent encore de moi que je porte ce nom vers la gloire. Mon regard se pose \u00e0 nouveau sur les hommes d\u2019arme qui suent sous ma fen\u00eatre. {% if title.connetable %}L'entra\u00eenement de sire {{title.connetable.first_name}} leur a \u00e9t\u00e9 profitable, mais d{% elif %}D{% endif %}epuis le passage des brigands, il n\u2019ont pas eu d\u2019occasion de se battre. Il est peut \u00eatre temps qu\u2019ils affrontent un vrai ennemi, sur un vrai champ de bataille.\r\n\r\n    Votre valeur de Prestige limite le nombre de suivants dans votre cour et la population de votre ville. Une mani\u00e8re s\u00fbre de gagner du Prestige est de gagner des batailles.", 
     "image": "events/711_1.jpg", 
     "on_fire": "  \n ", 
     "slug": "tuto_ambition_2", 
@@ -123,7 +123,7 @@
     "category": null, 
     "name": "Soif de gloire !", 
     "weight": 1, 
-    "text": "Pench\u00e9 sur ma table de travail, j\u2019\u00e9tudie cartes de la r\u00e9gion, missives diplomatiques rapports de mes espions. Il en semblerait qu\u2019un seigneur voisin de petite stature, {{ennemi}}, ait ses greniers bien remplis. Si je pouvais trouver un pr\u00e9texte honorable pour l\u2019affronter, je pourrais \u00e0 la fois m\u2019imposer en tant que puissance militaire et remplir mes coffres.\r\n\r\n    Il est impossible d\u2019attaquer un autre seigneur sans un motif diplomatique (casus belli).", 
+    "text": "Pench\u00e9 sur ma table de travail, j\u2019\u00e9tudie cartes de la r\u00e9gion, missives diplomatiques rapports de mes espions. Il en semblerait qu\u2019un seigneur voisin de petite stature, {{ennemi}}, ait ses greniers bien remplis. Si je pouvais trouver un pr\u00e9texte honorable pour l\u2019affronter, je pourrais \u00e0 la fois m\u2019imposer en tant que puissance militaire et remplir mes coffres.\r\n\r\n    Il est impossible d\u2019attaquer un autre seigneur sans un motif diplomatique (casus belli).\r\n    {% if ambassadeur==False %}Un Ambassadeur pourra s'occuper des d\u00e9tails, et faire venir davantage de nobles dans ma cour.{% endif %}", 
     "image": "events/900.jpg", 
     "on_fire": "param.set_value(\"ennemi\", kingdom.get_value(\"adversaire_tuto\"))\n\n", 
     "slug": "tuto_ambition_3", 
@@ -167,7 +167,7 @@
     "weight": 1, 
     "text": "Je prononce les paroles d\u2019usage, et il y r\u00e9pond sans h\u00e9siter jurant de me servir tant que son bras en aura la force. \u201cRelevez-vous, messire. La maison de {{dynasty}} accepte votre all\u00e9geance.\u201d\r\n\r\n    {{knight}} a rejoint ma cour.", 
     "image": "events/716_2.jpg", 
-    "on_fire": "knight.kingdom = kingdom\nknight.save()\n", 
+    "on_fire": "knight = param.get_value(\"knight\")\nknight.kingdom = kingdom\nknight.save()\n", 
     "slug": "tuto_recrutement_3", 
     "condition": " "
   }
@@ -179,7 +179,7 @@
     "category": null, 
     "name": "Rassembler l'arm\u00e9e", 
     "weight": 1, 
-    "text": "J\u2019ai envoy\u00e9 {{title.connetable.first_name}} et ses hommes, arm\u00e9s de pieds en cap, parcourir la campagne et porter la nouvelle du renouveau de {{dynastie}}. Il a fait savoir aux paysans qu\u2019ils sont sous ma protection tant qu\u2019ils m\u2019offriront l\u2019ob\u00e9issance due \u00e0 leur suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eatre d\u00e9sormais le seigneur de 90 paysans et 10 soldats.", 
+    "text": "J\u2019ai envoy\u00e9 {{title.connetable.first_name}} et ses hommes, arm\u00e9s de pieds en cap, parcourir la campagne et porter la nouvelle du renouveau de {{dynasty}}. Il a fait savoir aux paysans qu\u2019ils sont sous ma protection tant qu\u2019ils m\u2019offriront l\u2019ob\u00e9issance due \u00e0 leur suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eatre d\u00e9sormais le seigneur de 90 paysans et 10 soldats.", 
     "image": "events/17.jpg", 
     "on_fire": "kingdom.population=90\nkingdom.soldiers=10\nkingdom.save()\n", 
     "slug": "tuto_recrutement_4", 
@@ -361,7 +361,7 @@
     "category": null, 
     "name": "Pot de vin", 
     "weight": 1, 
-    "text": "Ma question semble le prendre par surprise, mais il ne se braque pas.  Je le laisse me d\u00e9visager un moment, avant d\u2019ajouter. \u00ab J\u2019ai l\u2019ambition d\u2019apporter ordre et s\u00e9curit\u00e9 \u00e0 mes terres, et de faire briller \u00e0 nouveau le nom de ma famille. J\u2019aurai grand besoin d\u2019un homme de votre valeur pour m\u2019\u00e9pauler dans cette t\u00e2che. \u00bb  Ma basse flatterie fait mouche, et son visage s\u2019empourpre l\u00e9g\u00e8rement. \u00ab Votre offre est g\u00e9n\u00e9reuse, messire, mais je ne sais pas si\u2026\u00bb Je l\u2019interromps d\u2019un ton suave. \u00ab Allons, ne fa\u00eetes pas de mani\u00e8res. Votre bras \u00e0 soif de service et votre nom, d\u2019honneur. Agenouillez-vous et pr\u00e9sentez moi votre \u00e9p\u00e9e. \u00bb", 
+    "text": "Ma question semble le prendre par surprise, mais il ne se braque pas.  Je le laisse me d\u00e9visager un moment, avant d\u2019ajouter. \u00ab J\u2019ai l\u2019ambition d\u2019apporter ordre et s\u00e9curit\u00e9 \u00e0 mes terres, et de faire briller \u00e0 nouveau le nom de ma famille. J\u2019aurai grand besoin d\u2019un homme de votre valeur pour m\u2019\u00e9pauler dans cette t\u00e2che. \u00bb \r\n\r\n Ma basse flatterie fait mouche, et son visage s\u2019empourpre l\u00e9g\u00e8rement. \u00ab Votre offre est g\u00e9n\u00e9reuse, messire, mais je ne sais pas si\u2026\u00bb Je l\u2019interromps d\u2019un ton suave. \u00ab Allons, ne fa\u00eetes pas de mani\u00e8res. Votre bras \u00e0 soif de service et votre nom, d\u2019honneur. Agenouillez-vous et pr\u00e9sentez moi votre \u00e9p\u00e9e. \u00bb", 
     "image": "events/503_2.jpg", 
     "on_fire": " \n", 
     "slug": "tuto_potsdevin_3", 
@@ -1500,34 +1500,6 @@
     "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchoose_banquet = random_value(1,3)\ndanseuses = Folk.objects.filter(mission = None,\n                                kingdom=kingdom,\n                                sex=\"f\",\n                                birth__lte=datetime.now() - timedelta(days=C(\"MAJORITE\"))).count()\n#recherche des possibilit\u00e9s de suite\nchatelain=kingdom.get_folk_in_title(\"chatelain\")\ntoast = False\nfuckers = Folk.objects.filter(kingdom=kingdom,\n                              mission=None,\n                              birth__lte=datetime.now() - timedelta(days=C(\"MAJORITE\")),\n                              sex=\"m\",\n                              loyalty__lte=20).order_by('?')\nloyaux = Folk.objects.filter(kingdom=kingdom,\n                             mission=None,\n                             birth__lte=datetime.now() - timedelta(days=C(\"MAJORITE\")),\n                             sex=\"m\",\n                             loyalty__gte=80).exclude(id=chatelain.id)\n\nif chatelain.diplomacy >=9 or fuckers.count() >= 1 or loyaux.count() >= 1:\n  toast = True\n\nif choose_banquet == 1 and danseuses != 0:\n  kingdom.create_pending_event(\"banquet_danse\").start()\nelif choose_banquet <= 2 and toast == True:\n  nb_folk_actuels = Folk.objects.filter(kingdom=kingdom,\n                                     mission=None,\n                                     birth__lte=datetime.now() - timedelta(days=C(\"MAJORITE\")),\n                                     ).count()\n  choose_toast = random_value (1, nb_folk_actuels)\n  if choose_toast > fuckers and choose_toast < loyaux:\n    kingdom.create_pending_event(\"banquet_toast_chatelain\").start()\n  elif choose_toast <= fuckers.count():\n    pe = kingdom.create_pending_event(\"banquet_toast_fucker\")\n    pe.set_value(\"fucker\", fuckers[0])\n    pe.start()\n  else:\n    pe = kingdom.create_pending_event(\"banquet_toast_loyaliste\")\n    pe.set_value(\"loyaliste\", loyaux[0])\n    pe.start()           \nelse:\n  kingdom.create_pending_event(\"banquet_beuverie\").start()\nstatus = \"ghost event\"\n", 
     "slug": "banquet_fantome", 
     "condition": " "
-  }
-},
-{
-  "pk": 130, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "tuto_getafront diplomatie", 
-    "weight": 1, 
-    "text": "{{title.ambassadeur}} m\u2019annonce qu\u2019il est parvenu a justifier diplomatiquement une agression de notre part contre {{cible_chatelain}}. Un affront \u00e0 moiti\u00e9 invent\u00e9 et au trois-quarts exag\u00e9r\u00e9, mais qui emp\u00eachera quiconque de nous reprocher d\u2019essayer de \u201claver\u201d notre nom.\r\n\r\n    {{dynasty}} a maintenant un casus belli contre {{cible}}.", 
-    "image": "events/76_1.jpg", 
-    "on_fire": "cible = param.get_value(\"defenseur\")\nparam.set_value(\"cible\", cible.user.username)\nparam.set_value(\"cible_chatelain\", cible.get_folk_in_title(\"chatelain\"))\n\n", 
-    "slug": "tuto_getaffront_diplomatie_kingdomsuccess", 
-    "condition": "\n"
-  }
-},
-{
-  "pk": 131, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "tuto_getafront diplomatie", 
-    "weight": 1, 
-    "text": "{{title.ambassadeur}}, mon ambassadeur, m\u2019avoue avec regret que ses tractations diplomatiques pour justifier une attaque contre {{cible}} ont \u00e9chou\u00e9es.", 
-    "image": "events/464_4.jpg", 
-    "on_fire": "cible = param.get_value(\"defenseur\").user.username", 
-    "slug": "tuto_getaffront_diplomatie_kingdomfailure", 
-    "condition": "\n"
   }
 },
 {
@@ -2965,7 +2937,7 @@
     "category": null, 
     "name": "R\u00e9sultat de l'espionnage", 
     "weight": 1, 
-    "text": "L'adversaire a : {{soldiers}} soldats, {{archers}} archers, {{piquiers}} piquiers, {{cavaliers}} cavaliers\r\n{% for defenseur in defenseurs %}\r\nNous avons aussi rep\u00e9r\u00e9 {{defenseur.0}} dont les stats sont {{defenseur.1}}(C), {{defenseur.2}}(I), {{defenseur.3}}(\u00c9), {{defenseur.4}}(L) et a pour trait(s) :\r\n\r\n{% for trait in defenseur.5 %}\r\n* {{trait.name}}\r\n{% endfor %}\r\n{% endfor %}", 
+    "text": "L'adversaire a : {{soldiers}} soldats, {{archers}} archers, {{piquiers}} piquiers, {{cavaliers}} cavaliers\r\n{% for defenseur in defenseurs %}\r\nNous avons aussi rep\u00e9r\u00e9 {{defenseur.0}}\r\n{% if defenseur.1 %}, {{defenseur.1|elide:\"le,l'\"}}, \r\n{% endif %}\r\ndont les stats sont {{defenseur.2}}(C), {{defenseur.3}}(I), {{defenseur.4}}(D), {{defenseur.5}}(\u00c9), {{defenseur.6}}(L) et a pour trait(s) :\r\n\r\n{% for trait in defenseur.7 %}\r\n* {{trait.name}}\r\n{% endfor %}\r\n{% endfor %}", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "resultat_espionnage_troupes", 
@@ -3118,7 +3090,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Je vais mettre mes meilleurs diplomates sur le coup.", 
-    "message": "Les r\u00e9parations de {{dynasty}} sont termin\u00e9es et il est temps de r\u00e9fl\u00e9chir \u00e0 s'agrandir. Je vais charger mes diplomates de [justifier diplomatiquement](#mission) une attaque sur notre voisin, le seigneur {{ennemi}}.", 
+    "message": "Les r\u00e9parations de {{dynasty}} sont termin\u00e9es et il est temps de r\u00e9fl\u00e9chir \u00e0 s'agrandir. Je vais charger mes diplomates de [justifier diplomatiquement](#mission) une attaque sur notre voisin, le seigneur {{ennemi}}.\r\n\r\n{% if ambassadeur==False %}Je peux maintenant nommer un ambassadeur pour s'occuper des d\u00e9tails et faire venir des suivants \u00e0 {{dynasty}}{% endif %}", 
     "event": 11, 
     "condition": "\n", 
     "on_fire": "kingdom.create_pending_mission(\"tuto_claim\")\n"
@@ -3205,7 +3177,7 @@
   "pk": 25, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\u00ab D\u00eetes moi, sire {{knight.first_name}}, que diriez d\u2019entrer \u00e0 mon service ? \u00bb", 
+    "text": "\u00ab D\u00eetes moi, sire {{knight.first_name}}, que diriez vous d\u2019entrer \u00e0 mon service ? \u00bb", 
     "message": "", 
     "event": 19, 
     "condition": " ", 
@@ -3338,7 +3310,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Il me sera utile\u2026", 
-    "message": "", 
+    "message": "Le chevalier {{knight.first_name}} a rejoint notre cour.", 
     "event": 31, 
     "condition": " ", 
     "on_fire": "param.next_event(\"tuto_potsdevin_5\").start()"
@@ -4449,7 +4421,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Ce seigneur ne m'a rien fait, laissons-le tranquille.", 
-    "message": "Les r\u00e9parations de {{dynasty}} sont termin\u00e9e. Un grand jour pour notre famille.", 
+    "message": "Les r\u00e9parations de {{dynasty}} sont termin\u00e9e. Un grand jour pour notre famille.\r\n\r\n{% if ambassadeur==False %}Je peux maintenant nommer un ambassadeur pour faire venir des suivants \u00e0 {{dynasty}}{% endif %}", 
     "event": 11, 
     "condition": "\n", 
     "on_fire": "#param.next_event(\"tuto_ennemi_casusbelli\").start()\npe=param.next_event(slug=\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_ennemi_casusbelli\")\npe.start()\n"
@@ -4464,28 +4436,6 @@
     "event": 109, 
     "condition": "\n", 
     "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nsoiffard = param.get_value(\"soiffard\")\nif soiffard.fight <= 6:\n  param.next_event(\"banquet_beuverie_success\").start() \nelif chatelain.fight <= 6:\n  param.next_event(\"banquet_beuverie_pompete\").start()\nelse:\n  param.next_event(\"banquet_beuverie_2\").start()"
-  }
-},
-{
-  "pk": 174, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "Nous allons pouvoir agir.", 
-    "message": "Je dispose maintenant d'un casus belli contre {{cible}}.", 
-    "event": 130, 
-    "condition": "\n", 
-    "on_fire": "kingdom.create_pending_mission(\"tuto_escarmouche\")\n"
-  }
-},
-{
-  "pk": 175, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "Ce n'est que partie remise...", 
-    "message": "Mon ambassadeur n'est pas parvenu \u00e0 \u00e9tablir un casus belli contre {{cible}}.", 
-    "event": 131, 
-    "condition": "\n", 
-    "on_fire": "\n"
   }
 },
 {
@@ -5453,7 +5403,7 @@
     "message": "Un casus belli envers le seigneur {{ennemi}} sera bient\u00f4t officiel. Je devrais pr\u00e9parer mes troupes pour une attaque contre ses terres.", 
     "event": 204, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_casusbelli_success_2\").start()"
+    "on_fire": "#param.next_event(\"tuto_casusbelli_effective\").start()\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_casusbelli_effective\")\npe.start()\n"
   }
 },
 {
@@ -5890,7 +5840,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Ces donn\u00e9es sont primordiales, je vais les noter sur mon registre.", 
-    "message": "L'adversaire a : {{soldiers}} soldats, {{archers}} archers, {{piquiers}} piquiers, {{cavaliers}} cavaliers\r\n{% for defenseur in defenseurs %}\r\nNous avons aussi rep\u00e9r\u00e9 {{defenseur.0}} dont les stats sont {{defenseur.1}}(C), {{defenseur.2}}(I), {{defenseur.3}}(\u00c9), {{defenseur.4}}(L) et a pour trait(s) :\r\n\r\n{% for trait in defenseur.5 %}\r\n* {{trait.name}}\r\n{% endfor %}\r\n{% endfor %}", 
+    "message": "L'adversaire a : {{soldiers}} soldats, {{archers}} archers, {{piquiers}} piquiers, {{cavaliers}} cavaliers\r\n{% for defenseur in defenseurs %}\r\nNous avons aussi rep\u00e9r\u00e9 {{defenseur.0}}\r\n{% if defenseur.1 %}, {{defenseur.1|elide:\"le,l'\"}}, \r\n{% endif %}\r\ndont les stats sont {{defenseur.2}}(C), {{defenseur.3}}(I), {{defenseur.4}}(D), {{defenseur.5}}(\u00c9), {{defenseur.6}}(L) et a pour trait(s) :\r\n\r\n{% for trait in defenseur.7 %}\r\n* {{trait.name}}\r\n{% endfor %}\r\n{% endfor %}", 
     "event": 243, 
     "condition": "\n", 
     "on_fire": "\n"
