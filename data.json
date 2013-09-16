@@ -6017,7 +6017,7 @@
     "scholarship": 7, 
     "sex": "f", 
     "disabled": false, 
-    "death": null, 
+    "death": "2013-09-16T01:50:36.149", 
     "avatar": 62, 
     "birth": "2013-08-15T22:25:36", 
     "mother": null, 
@@ -6423,82 +6423,6 @@
       15, 
       8
     ], 
-    "mentor": null
-  }
-},
-{
-  "pk": 7001, 
-  "model": "kingdom.folk", 
-  "fields": {
-    "kingdom": 74, 
-    "fight": 3, 
-    "first_name": "Landri", 
-    "last_name": "de de bom", 
-    "diplomacy": 14, 
-    "father": 6974, 
-    "plot": 4, 
-    "scholarship": 4, 
-    "sex": "m", 
-    "disabled": false, 
-    "death": null, 
-    "avatar": 44, 
-    "birth": "2013-09-09T02:05:54.899", 
-    "mother": 6979, 
-    "loyalty": 0, 
-    "spouse": null, 
-    "quality_set": [
-      4
-    ], 
-    "mentor": null
-  }
-},
-{
-  "pk": 7002, 
-  "model": "kingdom.folk", 
-  "fields": {
-    "kingdom": 74, 
-    "fight": 3, 
-    "first_name": "Gilemer", 
-    "last_name": "de de bom", 
-    "diplomacy": 13, 
-    "father": 6974, 
-    "plot": 4, 
-    "scholarship": 4, 
-    "sex": "m", 
-    "disabled": false, 
-    "death": null, 
-    "avatar": 44, 
-    "birth": "2013-09-10T01:16:35.314", 
-    "mother": 6979, 
-    "loyalty": 1, 
-    "spouse": null, 
-    "quality_set": [
-      20
-    ], 
-    "mentor": null
-  }
-},
-{
-  "pk": 7003, 
-  "model": "kingdom.folk", 
-  "fields": {
-    "kingdom": 74, 
-    "fight": 15, 
-    "first_name": "Bartholom\u00e9", 
-    "last_name": "de de bom", 
-    "diplomacy": 12, 
-    "father": 6974, 
-    "plot": 11, 
-    "scholarship": 12, 
-    "sex": "m", 
-    "disabled": false, 
-    "death": null, 
-    "avatar": 44, 
-    "birth": "2013-09-10T01:16:48.584", 
-    "mother": 6979, 
-    "loyalty": 0, 
-    "spouse": null, 
-    "quality_set": [], 
     "mentor": null
   }
 },
@@ -50206,7 +50130,7 @@
     "weight": 1, 
     "text": "bla", 
     "image": "", 
-    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\n# Qu'arrive-t-il au nourrisson ? \nr = random_value(1,100)\n\n#For test purposes only\nr = 99\n\nif r < 78:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  naissance = param.next_event('naissance_unique')\n  naissance.start() \n  \nelif r < 88:\n  # l'enfant est mort n\u00e9 (un soulagement pour certains, une grande peine pour d'autres, c'est toujours mieux que ce qui vient apr\u00e8s)\n  mort_ne = param.next_event('mort_ne')\n  mort_ne.start()\n\nelif r < 91:\n  # les deux meurent (putain, \u00e7a c'est vraiment pas de bol!)\n  bloodbath = param.next_event('mort_couches_double')\n  bloodbath.start()\n  \nelif r < 100:\n  # Ce sont des jumeaux qui naissent (oups, deux bouches au lieu d'une)\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nelif r == 100:\n  # Et bim, des tripl\u00e9s, tu vas voir la gueule de ton budget couches !!!\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nstatus = \"fantome\"\n", 
+    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\n# Qu'arrive-t-il au nourrisson ? \nr = random_value(1,100)\n\n#For test purposes only\nr = 88\n\nif r < 78:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  naissance = param.next_event('naissance_unique')\n  naissance.start() \n  \nelif r < 88:\n  # l'enfant est mort n\u00e9 (un soulagement pour certains, une grande peine pour d'autres, c'est toujours mieux que ce qui vient apr\u00e8s)\n  mort_ne = param.next_event('mort_ne')\n  mort_ne.start()\n\nelif r < 91:\n  # les deux meurent (putain, \u00e7a c'est vraiment pas de bol!)\n  bloodbath = param.next_event('mort_couches_double')\n  bloodbath.start()\n  \nelif r < 100:\n  # Ce sont des jumeaux qui naissent (oups, deux bouches au lieu d'une)\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nelif r == 100:\n  # Et bim, des tripl\u00e9s, tu vas voir la gueule de ton budget couches !!!\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nstatus = \"fantome\"\n", 
     "slug": "accouchement_fantome", 
     "condition": "\n"
   }
@@ -50274,9 +50198,9 @@
     "category": null, 
     "name": "Arriv\u00e9e d'un enfant \u00e0 la cour", 
     "weight": 1, 
-    "text": "L'enfant (indiquer pere et mere) Prenom Nom vient d'avoir six ans. \r\nIl se pr\u00e9sente \u00e0 votre cour.", 
+    "text": "L'enfant {{bebe}} vient d'avoir six ans. \r\nIl se pr\u00e9sente \u00e0 votre cour.", 
     "image": "", 
-    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\nbebe = call_function('creer_enfant', pere=papa, mere=maman, kingdom=kingdom)\n", 
+    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\nbebe = call_function('creer_enfant', pere=papa, mere=maman, kingdom=kingdom)\nparam.set_value(\"bebe\", bebe)\n", 
     "slug": "coming_of_age", 
     "condition": "\n"
   }
@@ -50302,9 +50226,9 @@
     "category": null, 
     "name": "Carnage chez la sage-femme", 
     "weight": 1, 
-    "text": "L'accouchement de {{mere.name}} fut un v\u00e9ritable de troiomphe de la mort sur la vie.\r\nNi la m\u00e8re ni l'enfant n'a surv\u00e9cu.", 
+    "text": "L'accouchement de {{mere}} fut un v\u00e9ritable de troiomphe de la mort sur la vie.\r\nNi la m\u00e8re ni l'enfant n'a surv\u00e9cu.", 
     "image": "", 
-    "on_fire": "\n", 
+    "on_fire": "maman = param.get_value(\"mere\")\nmaman.die()\n", 
     "slug": "mort_couches_double", 
     "condition": "\n"
   }
@@ -50316,7 +50240,7 @@
     "category": null, 
     "name": "Naissance de jumeaux", 
     "weight": 1, 
-    "text": "{{mere.name}} a mis au monde des jumeaux", 
+    "text": "{{mere}} a mis au monde des jumeaux", 
     "image": "", 
     "on_fire": "maturite = param.next_event('coming_of_age')\nmaturite.started = datetime.now() + timedelta(days=6)  \nmaturite.save()\n\nmaturite = param.next_event('coming_of_age')\nmaturite.started = datetime.now() + timedelta(days=6)  \nmaturite.save()\n", 
     "slug": "naissance_jumeaux", 
@@ -50330,7 +50254,7 @@
     "category": null, 
     "name": "Naissance de tripl\u00e9s", 
     "weight": 1, 
-    "text": "{{mere.name}} a mis au monde des tripl\u00e9s.", 
+    "text": "{{mere}} a mis au monde des tripl\u00e9s.", 
     "image": "", 
     "on_fire": "maturite1 = param.next_event('coming_of_age')\nmaturite1.started = datetime.now() + timedelta(days=6)  \nmaturite1.save()\n\nmaturite2 = param.next_event('coming_of_age')\nmaturite2.started = datetime.now() + timedelta(days=6)  \nmaturite2.save()\n\nmaturite3 = param.next_event('coming_of_age')\nmaturite3.started = datetime.now() + timedelta(days=6)  \nmaturite3.save()\n", 
     "slug": "naissance_triples", 
@@ -53958,39 +53882,27 @@
   }
 },
 {
-  "pk": 2148, 
+  "pk": 2174, 
   "model": "event.pendingevent", 
   "fields": {
     "kingdom": 74, 
     "is_started": true, 
-    "created": "2013-09-16T01:16:15.724", 
-    "started": "2013-09-16T01:16:15.735", 
-    "text": " a mis au monde des jumeaux", 
-    "event": 201
+    "created": "2013-09-16T01:48:08.830", 
+    "started": "2013-09-16T01:48:08.843", 
+    "text": "L'accouchement de  fut un v\u00e9ritable de troiomphe de la mort sur la vie.\r\nNi la m\u00e8re ni l'enfant n'a surv\u00e9cu.", 
+    "event": 200
   }
 },
 {
-  "pk": 2149, 
+  "pk": 2177, 
   "model": "event.pendingevent", 
   "fields": {
     "kingdom": 74, 
     "is_started": true, 
-    "created": "2013-09-16T01:16:15.743", 
-    "started": "2013-09-16T01:16:45", 
-    "text": "L'enfant (indiquer pere et mere) Prenom Nom vient d'avoir six ans. \r\nIl se pr\u00e9sente \u00e0 votre cour.", 
-    "event": 197
-  }
-},
-{
-  "pk": 2150, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 74, 
-    "is_started": true, 
-    "created": "2013-09-16T01:16:15.758", 
-    "started": "2013-09-16T01:16:33", 
-    "text": "L'enfant (indiquer pere et mere) Prenom Nom vient d'avoir six ans. \r\nIl se pr\u00e9sente \u00e0 votre cour.", 
-    "event": 197
+    "created": "2013-09-16T01:50:36.129", 
+    "started": "2013-09-16T01:50:36.139", 
+    "text": "L'accouchement de None fut un v\u00e9ritable de troiomphe de la mort sur la vie.\r\nNi la m\u00e8re ni l'enfant n'a surv\u00e9cu.", 
+    "event": 200
   }
 },
 {
@@ -54192,55 +54104,37 @@
   }
 },
 {
-  "pk": 4421, 
+  "pk": 4481, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2148, 
+    "pending_event": 2174, 
     "name": "mere", 
-    "value": "`Folk`:6979"
+    "value": null
   }
 },
 {
-  "pk": 4422, 
+  "pk": 4482, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2148, 
+    "pending_event": 2174, 
     "name": "pere", 
     "value": "`Folk`:6974"
   }
 },
 {
-  "pk": 4423, 
+  "pk": 4487, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2149, 
+    "pending_event": 2177, 
     "name": "mere", 
-    "value": "`Folk`:6979"
+    "value": null
   }
 },
 {
-  "pk": 4424, 
+  "pk": 4488, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2149, 
-    "name": "pere", 
-    "value": "`Folk`:6974"
-  }
-},
-{
-  "pk": 4425, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2150, 
-    "name": "mere", 
-    "value": "`Folk`:6979"
-  }
-},
-{
-  "pk": 4426, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2150, 
+    "pending_event": 2177, 
     "name": "pere", 
     "value": "`Folk`:6974"
   }
@@ -111437,6 +111331,734 @@
     "action_time": "2013-09-16T01:16:48.705", 
     "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
     "object_id": "2149", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7188, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:18:53.899", 
+    "object_repr": "coming_of_age", 
+    "object_id": "197", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire.", 
+    "user": 45, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7189, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:19:11.016", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2150", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7190, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:19:11.019", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2149", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7191, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:19:35.818", 
+    "object_repr": "naissance_jumeaux", 
+    "object_id": "201", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire.", 
+    "user": 45, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7192, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:20:01.017", 
+    "object_repr": "naissance_triples", 
+    "object_id": "202", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire.", 
+    "user": 45, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7193, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:20:50.127", 
+    "object_repr": "Landri de de bom", 
+    "object_id": "7001", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7194, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:20:50.140", 
+    "object_repr": "Gilemer de de bom", 
+    "object_id": "7002", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7195, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:20:50.141", 
+    "object_repr": "Bartholom\u00e9 de de bom", 
+    "object_id": "7003", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7196, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:21:14.891", 
+    "object_repr": "Naissance de jumeaux [bom kingdom]", 
+    "object_id": "2148", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7197, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:21:58.185", 
+    "object_repr": "Accouchement [bom kingdom]", 
+    "object_id": "None", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7198, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:31:29.621", 
+    "object_repr": "coming_of_age", 
+    "object_id": "197", 
+    "change_message": "Modifi\u00e9 condition et on_fire.", 
+    "user": 45, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7199, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:31:40.313", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2154", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7200, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:32:24.881", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2153", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7201, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:36:57.146", 
+    "object_repr": "Accouchement [bom kingdom]", 
+    "object_id": "None", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7202, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:37:14.044", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2158", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7203, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:37:38.868", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2157", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7204, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:39:48.823", 
+    "object_repr": "Grossesse", 
+    "object_id": "7", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 45, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7205, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:40:19.325", 
+    "object_repr": "Accouchement [bom kingdom]", 
+    "object_id": "None", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7206, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:40:24.674", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2162", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7207, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:40:47.838", 
+    "object_repr": "Accouchement [bom kingdom]", 
+    "object_id": "None", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7208, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:41:05.240", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2163", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7209, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:41:12.240", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2165", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7210, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:41:18.623", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2166", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7211, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:42:37.750", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2166", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7212, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:42:37.752", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2165", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7213, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:42:37.753", 
+    "object_repr": "Naissance de jumeaux [bom kingdom]", 
+    "object_id": "2164", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7214, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:42:37.754", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2163", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7215, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:42:37.754", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2162", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7216, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:42:37.755", 
+    "object_repr": "Naissance de jumeaux [bom kingdom]", 
+    "object_id": "2161", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7217, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:42:37.756", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2158", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7218, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:42:37.757", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2157", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7219, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:42:37.758", 
+    "object_repr": "Naissance de jumeaux [bom kingdom]", 
+    "object_id": "2156", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7220, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:42:37.759", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2154", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7221, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:42:37.760", 
+    "object_repr": "Arriv\u00e9e d'un enfant \u00e0 la cour [bom kingdom]", 
+    "object_id": "2153", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7222, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:42:37.761", 
+    "object_repr": "Naissance de jumeaux [bom kingdom]", 
+    "object_id": "2152", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7223, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:43:05.500", 
+    "object_repr": "F\u00e9licie de de bom", 
+    "object_id": "7005", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7224, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:43:05.501", 
+    "object_repr": "Ansgarde de de bom", 
+    "object_id": "7006", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7225, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:43:05.502", 
+    "object_repr": "Ermeline de de bom", 
+    "object_id": "7007", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7226, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:43:05.503", 
+    "object_repr": "Raimon de de bom", 
+    "object_id": "7008", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7227, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:43:05.504", 
+    "object_repr": "Richoard de de bom", 
+    "object_id": "7009", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7228, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:43:05.505", 
+    "object_repr": "Assalid de de bom", 
+    "object_id": "7010", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7229, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:43:05.506", 
+    "object_repr": "Alayde de de bom", 
+    "object_id": "7011", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7230, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:43:05.506", 
+    "object_repr": "Henri de de bom", 
+    "object_id": "7012", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7231, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:44:41.048", 
+    "object_repr": "accouchement_fantome", 
+    "object_id": "191", 
+    "change_message": "Modifi\u00e9 condition et on_fire.", 
+    "user": 45, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7232, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:45:14.761", 
+    "object_repr": "Accouchement [bom kingdom]", 
+    "object_id": "None", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7233, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:45:24.636", 
+    "object_repr": "Accouchement [bom kingdom]", 
+    "object_id": "None", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7234, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:46:08.242", 
+    "object_repr": "Mort-n\u00e9 [bom kingdom]", 
+    "object_id": "2170", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7235, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:46:08.244", 
+    "object_repr": "Mort-n\u00e9 [bom kingdom]", 
+    "object_id": "2169", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7236, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:46:50.091", 
+    "object_repr": "accouchement_fantome", 
+    "object_id": "191", 
+    "change_message": "Modifi\u00e9 condition et on_fire.", 
+    "user": 45, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7237, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:47:51.405", 
+    "object_repr": "Grossesse", 
+    "object_id": "7", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 45, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7238, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:48:01.627", 
+    "object_repr": "Accouchement [bom kingdom]", 
+    "object_id": "2172", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7239, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-16T01:48:01.629", 
+    "object_repr": "Accouchement [bom kingdom]", 
+    "object_id": "2171", 
+    "change_message": "", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7240, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:48:08.875", 
+    "object_repr": "Accouchement [bom kingdom]", 
+    "object_id": "None", 
+    "change_message": "Modifi\u00e9 started.", 
+    "user": 45, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7241, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:49:02.607", 
+    "object_repr": "mort_couches_double", 
+    "object_id": "200", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire.", 
+    "user": 45, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7242, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:50:27.184", 
+    "object_repr": "mort_couches_double", 
+    "object_id": "200", 
+    "change_message": "Modifi\u00e9 condition et on_fire.", 
+    "user": 45, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7243, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T01:50:36.174", 
+    "object_repr": "Accouchement [bom kingdom]", 
+    "object_id": "None", 
     "change_message": "Modifi\u00e9 started.", 
     "user": 45, 
     "content_type": 31
