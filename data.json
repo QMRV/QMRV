@@ -4716,7 +4716,7 @@
     "avatar": 4, 
     "birth": "2013-08-08T17:17:57.719", 
     "mother": null, 
-    "loyalty": 64, 
+    "loyalty": 63, 
     "spouse": null, 
     "quality_set": [
       45, 
@@ -5285,7 +5285,7 @@
     "fight": 10, 
     "first_name": "Ebble", 
     "last_name": "de rudy", 
-    "diplomacy": 10, 
+    "diplomacy": 11, 
     "father": null, 
     "plot": 10, 
     "scholarship": 7, 
@@ -5373,7 +5373,7 @@
     "avatar": 4, 
     "birth": "2013-08-10T20:40:22.431", 
     "mother": null, 
-    "loyalty": 65, 
+    "loyalty": 70, 
     "spouse": null, 
     "quality_set": [
       1
@@ -9117,6 +9117,39 @@
   }
 },
 {
+  "pk": 1253, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 76, 
+    "content": "Vous pouvez d\u00e9sormais nommer un chambellan.", 
+    "created": "2013-09-16T16:16:12.487", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1254, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 76, 
+    "content": "Grace au soutien du Roi de France, ma famille s'est install\u00e9e \u00e0 rudy, la demeure de mes anc\u00eatres. J'ai d\u00e9bours\u00e9 85 \u00e9cus pour entamer des r\u00e9parations et recruter des serviteurs.", 
+    "created": "2013-09-16T16:16:12.644", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1255, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 76, 
+    "content": "Je peux \u00e0 pr\u00e9sent nommer un [chambellan](title) pour s'occuper de mon [banquet](mission).", 
+    "created": "2013-09-16T16:17:01.076", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
   "pk": 1, 
   "model": "title.title", 
   "fields": {
@@ -9555,6 +9588,16 @@
     "last_folk": null, 
     "folk": null, 
     "title": 5
+  }
+},
+{
+  "pk": 315, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 76, 
+    "last_folk": 6932, 
+    "folk": 6932, 
+    "title": 4
   }
 },
 {
@@ -46298,7 +46341,7 @@
     "target_list": "\n", 
     "text": "Aller qu\u00e9rir des information sur les ressources du chateau", 
     "has_value": false, 
-    "on_resolution": "def randomize_number(value, marge):\n  number = int(value*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  return number\n\ndef randomize_stat(value, marge):\n  stat = int(min(20,value*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100))\n  return stat\n\nattack = 0\nfor folk in grids['espions']:\n  attack += folk.plot\nattack /= 3\ndefense = 0\nme=0\nch=0\ntry :\n  me = target.get_folk_in_title(\"maitre_espion\").plot\nexcept:\n  pass\ntry :\n  ch = target.get_folk_in_title(\"chatelain\").plot\nexcept:\n  pass\ndef_folks = list(Folk.objects.filter(kingdom = target, mission = None, birth__gte= datetime.now() - timedelta(days=C(\"MAJORITE\")), sex = \"m\"))\ncour = f(\"somme_stat_folks\", folks=def_folks, stat=\"plot\") / len(def_folks)\ndefense = 0.3 * (4*me+ch) / 5 + 0.7 * cour\n\nif defense > attack * 2:\n  pe = kingdom.create_pending_event(\"resultat_espionnage_echec\")\n  pe.set_value(\"target\", target)\n  pe.start()\nelse:\n  marge = min(100, 100 * 4/float(3) * 1/float(2) * ( 1 + ( (attack-defense) / float((attack+defense)) ) ) )\n  gold = randomize_number(target.money, marge)\n  population = randomize_number(target.population, marge)\n  \n  folks_titled = []\n  titles = [[\"ambassadeur\", Folk.diplomacy], [\"connetable\", Folk.fight], [\"maitre_espion\", Folk.plot]]\n  for title in titles:\n    folk = target.get_folk_in_title(title[0])\n    if folk is not None:\n      folks_titled.append(folk.title[1])\n  pe = kingdom.create_pending_event(\"resultat_espionnage_chateau\")\n  pe.set_value(\"gold\", gold)\n  pe.set_value(\"population\", population)\n  pe.set_value(\"folks_titled\", folks_titled)\n  pe.start()\n", 
+    "on_resolution": "def randomize_number(value, marge):\n  number = int(value*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100)\n  return number\n\ndef randomize_stat(value, marge):\n  stat = int(min(20,value*(100+random_value(-max(10,(100-marge)*(100-marge)/100), max(10,(100-marge)*(100-marge)/100)))/100))\n  return stat\n\nattack = 0\nfor folk in grids['espions']:\n  attack += folk.plot\nattack /= 3\ndefense = 0\nme=0\nch=0\ntry :\n  me = target.get_folk_in_title(\"maitre_espion\").plot\nexcept:\n  pass\ntry :\n  ch = target.get_folk_in_title(\"chatelain\").plot\nexcept:\n  pass\ndef_folks = list(Folk.objects.filter(kingdom = target, mission = None, birth__gte= datetime.now() - timedelta(days=C(\"MAJORITE\")), sex = \"m\"))\ncour = f(\"somme_stat_folks\", folks=def_folks, stat=\"plot\") / len(def_folks)\ndefense = 0.3 * (4*me+ch) / 5 + 0.7 * cour\n\nif defense > attack * 2:\n  pe = kingdom.create_pending_event(\"resultat_espionnage_echec\")\n  pe.set_value(\"target\", target)\n  pe.start()\nelse:\n  marge = min(100, 100 * 4/float(3) * 1/float(2) * ( 1 + ( (attack-defense) / float((attack+defense)) ) ) )\n  gold = randomize_number(target.money, marge)\n  population = randomize_number(target.population, marge)\n  \n  folks_titled = []\n  ambassadeur = []\n  ambassadeur.append(kingdom.get_folk_in_title(\"ambassadeur\"))\n  if ambassadeur[0]: \n    ambassadeur.append(randomize_stat(ambassadeur[0].diplomacy, marge))\n    folks_titled.append(ambassadeur)\n    \n  connetable = []\n  connetable.append(kingdom.get_folk_in_title(\"connetable\"))\n  if connetable[0]:\n    connetable.append(randomize_stat(connetable[0].fight, marge))\n    folks_titled.append(connetable)\n    \n  maitre_espion = []\n  maitre_espion.append(kingdom.get_folk_in_title(\"maitre_espion\"))\n  if maitre_espion[0]:\n    maitre_espion.append(randomize_stat(maitre_espion[0].plot, marge))\n    folks_titled.append(maitre_espion)\n  \n  pe = kingdom.create_pending_event(\"resultat_espionnage_chateau\")\n  pe.set_value(\"folks_titled\", folks_titled)\n  pe.set_value(\"gold\", gold)\n  pe.set_value(\"population\", population)\n  pe.start()\n", 
     "value_description": "", 
     "on_start": "\n", 
     "has_target": true, 
@@ -47066,16 +47109,16 @@
   }
 },
 {
-  "pk": 232, 
+  "pk": 234, 
   "model": "mission.pendingmission", 
   "fields": {
-    "kingdom": 58, 
-    "is_started": true, 
-    "target": 70, 
-    "created": "2013-09-15T12:10:17.992", 
-    "started": "2013-09-15T12:10:25.949", 
-    "last_target": 70, 
-    "mission": 45, 
+    "kingdom": 76, 
+    "is_started": false, 
+    "target": null, 
+    "created": "2013-09-16T16:16:12.607", 
+    "started": null, 
+    "last_target": null, 
+    "mission": 10, 
     "value": 0, 
     "is_finished": false, 
     "last_value": 0
@@ -47226,30 +47269,12 @@
   }
 },
 {
-  "pk": 428, 
+  "pk": 435, 
   "model": "mission.pendingmissionaffectation", 
   "fields": {
-    "pending_mission": 232, 
-    "folk": 6680, 
-    "mission_grid": 46
-  }
-},
-{
-  "pk": 429, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 232, 
-    "folk": 6681, 
-    "mission_grid": 46
-  }
-},
-{
-  "pk": 430, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 232, 
-    "folk": 6733, 
-    "mission_grid": 46
+    "pending_mission": 234, 
+    "folk": 6929, 
+    "mission_grid": 30
   }
 },
 {
@@ -50808,7 +50833,7 @@
     "category": null, 
     "name": "R\u00e9sultat de l'espionnage", 
     "weight": 1, 
-    "text": "On a plein d'infos sur le chateau !", 
+    "text": "L'adversaire a : {{gold}} \u00e9cus et {{population}} habitants\r\n\r\n{% for folk in folks_titled %}\r\n* Le {{folk.0}} a {{folk.1}} dans sa stat principale\r\n{% endfor %}", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "resultat_espionnage_chateau", 
@@ -53830,18 +53855,6 @@
   }
 },
 {
-  "pk": 1808, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 76, 
-    "is_started": true, 
-    "created": "2013-09-14T20:40:22.498", 
-    "started": "2013-09-14T20:40:22.515", 
-    "text": "En arrivant au sommet de la cr\u00eate, nous tirons sur nos brides et nous nous autorisons enfin une pause, afin de contempler le ch\u00e2teau qui se dessine en contrebas. Juved, \u00e0 ma droite, \u00e0 les joues rougies par le froid de l\u2019hiver. \r\n\u201cEst-ce celui-ci, p\u00e8re? Sommes-nous arriv\u00e9?\u201d. Sa voix n\u2019est qu\u2019un murmure dans lequel perce l'excitation de la jeunesse. \r\n\u201cOui, ma fille. rudy. La terre de nos a\u00efeux.\u201d \r\nSans un regard en arri\u00e8re, je guide mon cheval sur le sentier qui serpente jusque dans la vall\u00e9e. Juved m'embo\u00eete le pas, suivit de pr\u00e8s par son fr\u00e8re Burchard et par Lisois, mon compagnon de toujours qui garde sa main sur le pommeau de son \u00e9p\u00e9e.", 
-    "event": 3
-  }
-},
-{
   "pk": 2060, 
   "model": "event.pendingevent", 
   "fields": {
@@ -53914,6 +53927,18 @@
   }
 },
 {
+  "pk": 2179, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 58, 
+    "is_started": true, 
+    "created": "2013-09-16T16:08:16.916", 
+    "started": "2013-09-16T16:08:16.922", 
+    "text": "L'adversaire a : 148 \u00e9cus et 290 habitants\r\n\r\n\r\n* Le [ a ` dans sa stat principale\r\n\r\n* Le 8 a ] dans sa stat principale\r\n\r\n* Le [ a ` dans sa stat principale\r\n\r\n* Le 1 a 9 dans sa stat principale\r\n", 
+    "event": 244
+  }
+},
+{
   "pk": 1024, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -53944,17 +53969,6 @@
     "text": "Le temps passe...", 
     "folk": null, 
     "event_action": 293
-  }
-},
-{
-  "pk": 1883, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 1808, 
-    "message": "", 
-    "text": "Notre voyage s'ach\u00e8ve.", 
-    "folk": null, 
-    "event_action": 5
   }
 },
 {
@@ -54013,6 +54027,28 @@
   }
 },
 {
+  "pk": 2310, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 2179, 
+    "message": "", 
+    "text": "Malheureusement, je n'ai que faire de ces informations...", 
+    "folk": null, 
+    "event_action": 314
+  }
+},
+{
+  "pk": 2311, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 2179, 
+    "message": "", 
+    "text": "Ces donn\u00e9es sont primordiales, je vais les noter sur mon registre.", 
+    "folk": null, 
+    "event_action": 315
+  }
+},
+{
   "pk": 1653, 
   "model": "event._pendingeventvariable", 
   "fields": {
@@ -54046,33 +54082,6 @@
     "pending_event": 1675, 
     "name": "slug", 
     "value": "tuto_caissesvides"
-  }
-},
-{
-  "pk": 3430, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1808, 
-    "name": "fils", 
-    "value": "`Folk`:6930"
-  }
-},
-{
-  "pk": 3431, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1808, 
-    "name": "fille", 
-    "value": "`Folk`:6931"
-  }
-},
-{
-  "pk": 3432, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 1808, 
-    "name": "compagnon", 
-    "value": "`Folk`:6932"
   }
 },
 {
@@ -54145,6 +54154,33 @@
     "pending_event": 2177, 
     "name": "pere", 
     "value": "`Folk`:6974"
+  }
+},
+{
+  "pk": 4492, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2179, 
+    "name": "folks_titled", 
+    "value": "[[`Folk`:6682_|_8]_|_[`Folk`:6681_|_19]]"
+  }
+},
+{
+  "pk": 4493, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2179, 
+    "name": "gold", 
+    "value": 148
+  }
+},
+{
+  "pk": 4494, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2179, 
+    "name": "population", 
+    "value": 290
   }
 },
 {
@@ -112073,6 +112109,84 @@
   }
 },
 {
+  "pk": 7244, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T15:57:55.056", 
+    "object_repr": "espionner_chateau", 
+    "object_id": "45", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionner_chateau [Espions (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7245, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T15:58:35.566", 
+    "object_repr": "espionner_chateau", 
+    "object_id": "45", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionner_chateau [Espions (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7246, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T16:04:42.022", 
+    "object_repr": "resultat_espionnage_chateau", 
+    "object_id": "244", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Malheureusement, je n'ai que faire de ces informat [resultat_espionnage_chateau]\u00a0\u00bb. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ces donn\u00e9es sont primordiales, je vais les noter s [resultat_espionnage_chateau]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7247, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T16:05:50.652", 
+    "object_repr": "espionner_chateau", 
+    "object_id": "45", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionner_chateau [Espions (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7248, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T16:06:23.501", 
+    "object_repr": "espionner_chateau", 
+    "object_id": "45", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0espionner_chateau [Espions (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7249, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-16T16:07:11.616", 
+    "object_repr": "resultat_espionnage_chateau", 
+    "object_id": "244", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Malheureusement, je n'ai que faire de ces informat [resultat_espionnage_chateau]\u00a0\u00bb. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ces donn\u00e9es sont primordiales, je vais les noter s [resultat_espionnage_chateau]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
   "pk": 46, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -112144,7 +112258,7 @@
   "fields": {
     "soldiers": 0, 
     "prestige": 0, 
-    "money": 100, 
+    "money": 15, 
     "user": 46, 
     "population": 0
   }
