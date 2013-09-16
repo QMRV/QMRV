@@ -1128,7 +1128,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "mari", 
-    "condition": "if folk.age < C.MAJORITE : \n  status = S.TOO_YOUNG pour \u00eatre mari\u00e9e\"\nelif folk.sex == Folk.FEMALE :\n  status = \"Le mari doit \u00eatre un homme\"\nelif folk.has_quality(\"pretre\") :\n  status = \"Un p\u00eatre ne peut pas se marier\"\nelif (kingdom.get_value(\"in_tuto\") == True and folk==folks[0]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre chatelain\"\nelif (kingdom.get_value(\"passage_proposition_mariage\",False) and  folk==folks[1]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre fils\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
+    "condition": "if folk.age < C.MAJORITE : \n  status = S.TOO_YOUNG\nelif folk.sex == Folk.FEMALE :\n  status = \"Le mari doit \u00eatre un homme\"\nelif folk.has_quality(\"pretre\") :\n  status = \"Un pr\u00eatre ne peut pas se marier\"\nelif (kingdom.get_value(\"in_tuto\") == True and folk==folks[0]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre chatelain\"\nelif (kingdom.get_value(\"passage_proposition_mariage\", False) and  folk==folks[1]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre fils\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
   }
 },
 {
@@ -1141,7 +1141,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "femme", 
-    "condition": "if folk.age < C.MAJORITE:\n  status = S.TOO_YOUNG pour \u00eatre mari\u00e9e\"\nelif folk.sex == Folk.MALE:\n  status = \"La femme doit \u00eatre une femme\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
+    "condition": "if folk.age < C.MAJORITE:\n  status = S.TOO_YOUNG\nelif folk.sex == Folk.MALE:\n  status = \"La femme doit \u00eatre une femme\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
   }
 },
 {
@@ -1531,7 +1531,7 @@
     "length": 1000, 
     "allow_empty": false, 
     "slug": "defenseurs", 
-    "condition": "if folk.age()< C.MAJORITE:\n  status = S.TOO_YOUNG pour se battre.\"\nif folk.sex == Folk.FEMALE:\n  status = \"Seul un homme peut \u00eatre choisi pour d\u00e9fendre la cit\u00e9.\"\n"
+    "condition": "if folk.age()< C.MAJORITE:\n  status = S.TOO_YOUNG\nif folk.sex == Folk.FEMALE:\n  status = \"Seul un homme peut \u00eatre choisi pour d\u00e9fendre la cit\u00e9.\"\n"
   }
 },
 {
