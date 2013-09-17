@@ -17,12 +17,12 @@
   "model": "title.title", 
   "fields": {
     "name": "Conn\u00e9table", 
-    "on_defect": "folk.loyalty-=6\nfolk.save()\n", 
-    "on_affect": "folk.loyalty+=5\nfolk.save()", 
+    "on_defect": "folk.loyalty -= 6\nfolk.save()\n", 
+    "on_affect": "folk.loyalty += 5\nfolk.save()", 
     "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un conn\u00e9table.\")\n# AvailableMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"chasse\")).save()\nkingdom.unlock_mission(\"organiser_raid\")", 
     "slug": "connetable", 
-    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age()<C.MAJORITE:\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"\n", 
-    "description": "En tant que premier conseill\u00e9 militaire, le conn\u00e9table supervise le recrutement et l'entra\u00eenement de vos hommes d'arme.\r\n\r\nUn conn\u00e9table a besoin d'un haut Combat pour \u00eatre efficace."
+    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age()<C.MAJORITE:\n  status = S.TOO_YOUNG\n", 
+    "description": "En tant que premier conseiller militaire, le conn\u00e9table supervise le recrutement et l'entra\u00eenement de vos hommes d'arme.\r\n\r\nUn conn\u00e9table a besoin d'un haut Combat pour \u00eatre efficace."
   }
 },
 {
@@ -30,11 +30,11 @@
   "model": "title.title", 
   "fields": {
     "name": "Cur\u00e9", 
-    "on_defect": "folk.loyalty-=6\nfolk.save()", 
-    "on_affect": "folk.loyalty+=5\nfolk.save()", 
-    "on_unlock": "# unlock code\nAvailableMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"charite\")).save()\nAvailableMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"soigner_blesse\")).save()", 
+    "on_defect": "folk.loyalty -= 6\nfolk.save()", 
+    "on_affect": "folk.loyalty += 5\nfolk.save()", 
+    "on_unlock": "kingdom.unlock_mission(\"charite\")\nkingdom.unlock_missson(\"soigner_blesse\")", 
     "slug": "cure", 
-    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Un homme est attendu \u00e0 ce poste\"\nif folk.has_quality(\"pretre\")==False:\n  status=\"Un pretre est attendu \u00e0 ce poste\"\n", 
+    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Un homme est attendu \u00e0 ce poste\"\nif folk.has_quality(\"pretre\")==False:\n  status=\"Un pr\u00eatre est attendu \u00e0 ce poste\"\n", 
     "description": "Cet homme d'\u00e9glise s'occupe de toutes les affaires religieuses de votre cour.\r\n\r\nUn cur\u00e9 a besoin d'une haute \u00c9rudition pour \u00eatre efficace."
   }
 },
@@ -55,10 +55,10 @@
   "pk": 5, 
   "model": "title.title", 
   "fields": {
-    "name": "Maitre espion", 
-    "on_defect": "folk.loyalty-=6\nfolk.save()", 
-    "on_affect": "folk.loyalty+=5\nfolk.save()", 
-    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un ma\u00eetre espion.\")\n\nAvailableMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"espionner\")).save()", 
+    "name": "Ma\u00eetre espion", 
+    "on_defect": "folk.loyalty -= 6\nfolk.save()", 
+    "on_affect": "folk.loyalty += 5\nfolk.save()", 
+    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un ma\u00eetre espion.\")\nkingdom.unlock_mission(\"espionner\")", 
     "slug": "maitre_espion", 
     "condition": "\n", 
     "description": "Le ma\u00eetre espion vous tient inform\u00e9 des ragots de votre cour et des machinations de vos rivaux. Il s'occupe \u00e9galement des basses besognes qui demandent de la discr\u00e9tion et du doigt\u00e9.\r\n\r\nUn ma\u00eetre espion a besoin d'une haute Intrigue pour \u00eatre efficace."
@@ -69,11 +69,11 @@
   "model": "title.title", 
   "fields": {
     "name": "Ambassadeur", 
-    "on_defect": "folk.loyalty-=6\nfolk.save()", 
-    "on_affect": "folk.loyalty+=5\nfolk.save()", 
+    "on_defect": "folk.loyalty -= 6\nfolk.save()", 
+    "on_affect": "folk.loyalty += 5\nfolk.save()", 
     "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un ambassadeur.\")\n\nkingdom.unlock_mission(\"tuto_recrutement\")\nkingdom.unlock_mission(\"tuto_getaffront_diplomatie\")\n", 
     "slug": "ambassadeur", 
-    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age() < C.MAJORITE:\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"", 
+    "condition": "if folk.sex == Folk.FEMALE:\n  status = \"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG", 
     "description": "L'ambassadeur est responsable des relations diplomatiques avec le reste du royaume.\r\n\r\nUn ambassadeur a besoin d'une haute Diplomatie pour \u00eatre efficace."
   }
 },
@@ -82,11 +82,11 @@
   "model": "title.title", 
   "fields": {
     "name": "Tr\u00e9sorier", 
-    "on_defect": "folk.loyalty-=6\nfolk.save()\n", 
-    "on_affect": "folk.loyalty+=5\nfolk.save()\n", 
+    "on_defect": "folk.loyalty -= 6\nfolk.save()\n", 
+    "on_affect": "folk.loyalty += 5\nfolk.save()\n", 
     "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un tr\u00e9sorier.\")\n\nkingdom.unlock_mission(\"emprunt\")\nkingdom.unlock_mission(\"taxepaysanne\")\nkingdom.unlock_mission(\"taxecour\")", 
     "slug": "tresorier", 
-    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age() < C.MAJORITE:\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"\n", 
+    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG\n", 
     "description": "Le tr\u00e9sorier est responsable de la gestion quotidienne de vos finances et de la collecte des taxes.\r\n\r\nUn tr\u00e9sorier a besoin d'une haute \u00c9rudition pour \u00eatre efficace."
   }
 }
