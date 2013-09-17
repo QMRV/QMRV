@@ -43,8 +43,8 @@
   "model": "title.title", 
   "fields": {
     "name": "Chambellan", 
-    "on_defect": "folk.loyalty-=6\nfolk.save()", 
-    "on_affect": "folk.loyalty+=5\nfolk.save()", 
+    "on_defect": "folk.loyalty -= 6\nfolk.save()", 
+    "on_affect": "folk.loyalty += 5\nfolk.save()", 
     "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un chambellan.\")", 
     "slug": "chambellan", 
     "condition": "if folk.sex == Folk.FEMALE:\n  status = \"Un homme est attendu \u00e0 ce poste\"\n", 
