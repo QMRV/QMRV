@@ -906,6 +906,14 @@
   }
 },
 {
+  "pk": "hyedwxjxn8ny6azv027ab6xy5pip2k5y", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-01T07:56:16.774", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "iagm4dx8hcfq1b5c59zael1x446fuul4", 
   "model": "sessions.session", 
   "fields": {
