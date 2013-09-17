@@ -794,7 +794,7 @@
   "pk": 46, 
   "model": "kingdom.quality", 
   "fields": {
-    "category": 5, 
+    "category": 4, 
     "description": " ", 
     "on_defect": "\n", 
     "female_description": " ", 
