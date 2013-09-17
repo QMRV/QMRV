@@ -5869,7 +5869,7 @@
     "avatar": 4, 
     "birth": "2013-08-28T21:27:16.854", 
     "mother": null, 
-    "loyalty": 60, 
+    "loyalty": 65, 
     "spouse": null, 
     "quality_set": [
       16
@@ -10353,8 +10353,8 @@
   "model": "title.title", 
   "fields": {
     "name": "Chambellan", 
-    "on_defect": "folk.loyalty-=6\nfolk.save()", 
-    "on_affect": "folk.loyalty+=5\nfolk.save()", 
+    "on_defect": "folk.loyalty -= 6\nfolk.save()", 
+    "on_affect": "folk.loyalty += 5\nfolk.save()", 
     "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un chambellan.\")", 
     "slug": "chambellan", 
     "condition": "if folk.sex == Folk.FEMALE:\n  status = \"Un homme est attendu \u00e0 ce poste\"\n", 
@@ -78933,6 +78933,34 @@
   }
 },
 {
+  "pk": 2159, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 79, 
+    "stack_level": 1, 
+    "object_pk": 4, 
+    "object_type": "Title", 
+    "object_attr": "condition", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 2160, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 79, 
+    "stack_level": 1, 
+    "object_pk": 4, 
+    "object_type": "Title", 
+    "object_attr": "on_affect", 
+    "direct_queries": 4, 
+    "time": 11, 
+    "queries": 4
+  }
+},
+{
   "pk": 1, 
   "model": "auth.permission", 
   "fields": {
@@ -118170,6 +118198,19 @@
     "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0marier [La femme (1)]\u00a0\u00bb. condition modifi\u00e9 pour mission grid \u00ab\u00a0marier [Le mari (1)]\u00a0\u00bb.", 
     "user": 1, 
     "content_type": 23
+  }
+},
+{
+  "pk": 7422, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-17T11:45:01.383", 
+    "object_repr": "Chambellan", 
+    "object_id": "4", 
+    "change_message": "Modifi\u00e9 condition, on_affect et on_defect.", 
+    "user": 1, 
+    "content_type": 15
   }
 },
 {
