@@ -8059,7 +8059,7 @@
   "pk": 46, 
   "model": "kingdom.quality", 
   "fields": {
-    "category": 5, 
+    "category": 4, 
     "description": " ", 
     "on_defect": "\n", 
     "female_description": " ", 
@@ -118211,6 +118211,19 @@
     "change_message": "Modifi\u00e9 condition, on_affect et on_defect.", 
     "user": 1, 
     "content_type": 15
+  }
+},
+{
+  "pk": 7423, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-17T12:42:25.413", 
+    "object_repr": "Sc\u00e9l\u00e9rat", 
+    "object_id": "46", 
+    "change_message": "Modifi\u00e9 category, on_affect et on_defect.", 
+    "user": 40, 
+    "content_type": 11
   }
 },
 {
