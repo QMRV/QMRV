@@ -3893,7 +3893,7 @@
     "avatar": 64, 
     "birth": "2013-08-10T23:35:03", 
     "mother": null, 
-    "loyalty": 85, 
+    "loyalty": 79, 
     "spouse": null, 
     "quality_set": [
       15
@@ -4179,7 +4179,7 @@
     "avatar": 51, 
     "birth": "2013-07-27T19:57:14", 
     "mother": null, 
-    "loyalty": 55, 
+    "loyalty": 60, 
     "spouse": null, 
     "quality_set": [
       3, 
@@ -7252,7 +7252,7 @@
     "avatar": 12, 
     "birth": "2013-08-15T11:09:07.356", 
     "mother": null, 
-    "loyalty": 99, 
+    "loyalty": 100, 
     "spouse": null, 
     "quality_set": [], 
     "mentor": null
@@ -7333,6 +7333,60 @@
     "spouse": null, 
     "quality_set": [
       10
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7055, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 58, 
+    "fight": 11, 
+    "first_name": "Perceval", 
+    "last_name": "de Pieusse", 
+    "diplomacy": 9, 
+    "father": null, 
+    "plot": 9, 
+    "scholarship": 6, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 6, 
+    "birth": "2013-08-26T18:56:39.008", 
+    "mother": null, 
+    "loyalty": 100, 
+    "spouse": null, 
+    "quality_set": [
+      22, 
+      38
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7056, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 58, 
+    "fight": 11, 
+    "first_name": "Sulpice", 
+    "last_name": "d'Esnon", 
+    "diplomacy": 8, 
+    "father": null, 
+    "plot": 8, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 4, 
+    "birth": "2013-09-03T18:58:33.630", 
+    "mother": null, 
+    "loyalty": 100, 
+    "spouse": null, 
+    "quality_set": [
+      26, 
+      38
     ], 
     "mentor": null
   }
@@ -10475,6 +10529,39 @@
   }
 },
 {
+  "pk": 1359, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": "Vous pouvez d\u00e9sormais nommer un ambassadeur.", 
+    "created": "2013-09-19T18:31:37.385", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1360, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": "Perceval de Pieusse a rejoint votre cour", 
+    "created": "2013-09-19T18:57:26.588", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1361, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": "Sulpice d'Esnon a rejoint votre cour", 
+    "created": "2013-09-19T18:58:54.959", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
   "pk": 1, 
   "model": "title.title", 
   "fields": {
@@ -10620,8 +10707,8 @@
   "model": "title.availabletitle", 
   "fields": {
     "kingdom": 58, 
-    "last_folk": 6681, 
-    "folk": 6681, 
+    "last_folk": 6733, 
+    "folk": 6733, 
     "title": 5
   }
 },
@@ -10986,6 +11073,16 @@
   }
 },
 {
+  "pk": 338, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 58, 
+    "last_folk": 7050, 
+    "folk": 7050, 
+    "title": 6
+  }
+},
+{
   "pk": 1, 
   "model": "internal.trigger", 
   "fields": {
@@ -11244,7 +11341,7 @@
   "fields": {
     "params": "fight_min:int combat minimum\r\nplot_min:int intrigue minimum\r\nscholarship_min:int \u00e9rudition minimum\r\ndiplomacy_min:int diplomatie minimum\r\nloyalty:int loyaut\u00e9 initiale\r\nmax_carac:int nombre de points de carac \u00e0 r\u00e9partir\r\nkingdom:Kingdom le royaume contenant le folk.", 
     "slug": "creer_folk", 
-    "on_fire": "# Ajout des stats min\nfolk = Folk(\n  fight=fight_min,\n  plot=plot_min,\n  scholarship=scholarship_min,\n  diplomacy=diplomacy_min,\n  loyalty=loyalty\n)\n# Ajout du kingdom \nif \"kingdom\" in locals():\n  folk.kingdom=kingdom\n# Ajout de son sexe\nif \"sex\" in locals():\n  folk.sex=sex\nelse:\n  folk.sex=random_in([Folk.FEMALE,Folk.MALE])\n# Ajout des statistiques compl\u00e8tes\nif folk.sex == Folk.MALE:\n  # Si c'est un homme\n  sum_stats = call_function(\"somme_stat_folk\", folk=folk)\n  while sum_stats < max_carac :\n    fight = (20 - folk.fight) * float(100 / float(80 - sum_stats))\n    plot = (20 - folk.plot) * float(100 / float(80 - sum_stats))\n    scholarship = (20 - folk.scholarship) * float(100 / float(80 - sum_stats))\n    diplomacy = (20 - folk.diplomacy) * float(100 / float(80 - sum_stats))\n    choose_attribute = random_value(1,100)\n    if choose_attribute < fight:\n      folk.fight += 1\n    elif choose_attribute < fight + plot :\n      folk.plot += 1\n    elif choose_attribute < fight + plot + scholarship :\n      folk.scholarship += 1\n    else :\n      folk.diplomacy += 1\n    sum_stats += 1\nelse:\n  # Si c'est une femme\n  folk.fight= random_value(2,7)\n  sum_stats = call_function(\"somme_stat_folk\", folk=folk) - folk.fight\n  \n  while sum_stats < max_carac - folk.fight:\n    plot = (20 - folk.plot) * float(100 / float(60 - sum_stats))\n    scholarship = (20 - folk.scholarship) * float(100 / float(60 - sum_stats))\n    diplomacy = (20 - folk.diplomacy) * float(100 / float(60 - sum_stats))\n    \n    choose_attribute = random_value(1,100)  \n    if choose_attribute < plot :\n      folk.plot += 1\n    elif choose_attribute < plot + scholarship :\n      folk.scholarship += 1\n    else :\n      folk.diplomacy += 1\n    sum_stats += 1\n# Ajout du last_name\nif \"last_name\" in locals():\n  #s'il y a d\u00e9j\u00e0 d' ou de devant\n  if last_name.startswith(\"de \") or last_name.startswith(\"d'\"):\n    folk.last_name = last_name\n  else:\n    if last_name[0] in ['a','e','i','o','u','y','A','E','I','O','U','Y']:\n      folk.last_name = \"d'\" + last_name\n    else:\n      folk.last_name = \"de \" + last_name\n\n# Ajout des parents\nif \"father\" in locals():\n  folk.father = father\nif \"mother\" in locals():\n  folk.mother = mother\n# Ajout de l'epoux\nif \"spouse\" in locals():\n  folk.spouse = spouse\n# Ajout de la date de naissance\nif \"birth\" in locals():\n  folk.birth = birth\n  \nfolk.save()\n\n# Ajout des traits\nchoose_quality = random_value(1, 10)\nexculded_traits = {}\nif \"notraits\" in locals():\n  exculded_traits = notraits\n  \nif choose_quality > 1 :\n  if random_value(1,10) <= 1:\n    folk.add_quality(Quality.objects.filter(category__name=\"G\u00e9n\u00e9tique\").exclude(slug__in=exculded_traits).order_by('?')[0].slug)\n  else:\n    folk.add_quality(Quality.objects.filter(category__name=\"Caract\u00e8re\").exclude(slug__in=exculded_traits).order_by('?')[0].slug)\n\n  if choose_quality > 8 :\n    folk.add_quality(Quality.objects.filter(category__name=\"Caract\u00e8re\").exclude(slug__in=exculded_traits).order_by('?')[0].slug)\n\nif \"trait\" in locals():\n  folk.add_quality(trait)\n\nif \"traits\" in locals():\n  for trait in traits:\n    folk.add_quality(trait)\n    \nfolk.save()\ncall_function(\"attribuer_avatar\", folk=folk)\n\nparam = folk\n", 
+    "on_fire": "# Ajout des stats min\nfolk = Folk(\n  fight=fight_min,\n  plot=plot_min,\n  scholarship=scholarship_min,\n  diplomacy=diplomacy_min,\n  loyalty=loyalty\n)\n# Ajout du kingdom \nif \"kingdom\" in locals():\n  folk.kingdom=kingdom\n# Ajout de son sexe\nif \"sex\" in locals():\n  folk.sex=sex\nelse:\n  folk.sex=random_in([Folk.FEMALE,Folk.MALE])\n# Ajout des statistiques compl\u00e8tes\nif folk.sex == Folk.MALE:\n  # Si c'est un homme\n  sum_stats = call_function(\"somme_stat_folk\", folk=folk)\n  while sum_stats < max_carac :\n    fight = (20 - folk.fight) * float(100 / float(80 - sum_stats))\n    plot = (20 - folk.plot) * float(100 / float(80 - sum_stats))\n    scholarship = (20 - folk.scholarship) * float(100 / float(80 - sum_stats))\n    diplomacy = (20 - folk.diplomacy) * float(100 / float(80 - sum_stats))\n    choose_attribute = random_value(1,100)\n    if choose_attribute < fight:\n      folk.fight += 1\n    elif choose_attribute < fight + plot :\n      folk.plot += 1\n    elif choose_attribute < fight + plot + scholarship :\n      folk.scholarship += 1\n    else :\n      folk.diplomacy += 1\n    sum_stats += 1\nelse:\n  # Si c'est une femme\n  folk.fight= random_value(2,7)\n  sum_stats = call_function(\"somme_stat_folk\", folk=folk) - folk.fight\n  \n  while sum_stats < max_carac - folk.fight:\n    plot = (20 - folk.plot) * float(100 / float(60 - sum_stats))\n    scholarship = (20 - folk.scholarship) * float(100 / float(60 - sum_stats))\n    diplomacy = (20 - folk.diplomacy) * float(100 / float(60 - sum_stats))\n    \n    choose_attribute = random_value(1,100)  \n    if choose_attribute < plot :\n      folk.plot += 1\n    elif choose_attribute < plot + scholarship :\n      folk.scholarship += 1\n    else :\n      folk.diplomacy += 1\n    sum_stats += 1\n# Ajout du last_name\nif \"last_name\" in locals():\n  #s'il y a d\u00e9j\u00e0 d' ou de devant\n  if last_name.startswith(\"de \") or last_name.startswith(\"d'\"):\n    folk.last_name = last_name\n  else:\n    if last_name[0] in ['a','e','i','o','u','y','A','E','I','O','U','Y']:\n      folk.last_name = \"d'\" + last_name\n    else:\n      folk.last_name = \"de \" + last_name\n\n# Ajout des parents\nif \"father\" in locals():\n  folk.father = father\nif \"mother\" in locals():\n  folk.mother = mother\n# Ajout de l'epoux\nif \"spouse\" in locals():\n  folk.spouse = spouse\n# Ajout de la date de naissance\nif \"birth\" in locals():\n  folk.birth = birth\n  \nfolk.save()\n\n# Ajout des traits\nchoose_quality = random_value(1, 10)\nexculded_traits = []\nif \"notraits\" in locals():\n  exculded_traits = notraits\n  \nif choose_quality > 1 :\n  if random_value(1,10) <= 1:\n    folk.add_quality(Quality.objects.filter(category__name=\"G\u00e9n\u00e9tique\").exclude(slug__in=exculded_traits).order_by('?')[0].slug)\n  else:\n    folk.add_quality(Quality.objects.filter(category__name=\"Caract\u00e8re\").exclude(slug__in=exculded_traits).order_by('?')[0].slug)\n\n  if choose_quality > 8 :\n    folk.add_quality(Quality.objects.filter(category__name=\"Caract\u00e8re\").exclude(slug__in=exculded_traits).order_by('?')[0].slug)\n\nif \"trait\" in locals():\n  folk.add_quality(trait)\n\nif \"traits\" in locals():\n  for trait in traits:\n    folk.add_quality(trait)\n    \nfolk.save()\ncall_function(\"attribuer_avatar\", folk=folk)\n\nparam = folk\n", 
     "description": "Cr\u00e9e un nouveau Folk dans le royaume.\r\n\r\n(trait)\r\n(traits)\r\n(notraits)\r\n(sex)\r\n(last_name)\r\n(father)\r\n(mother)\r\n(birth)\r\n(spouse)"
   }
 },
@@ -47773,7 +47870,7 @@
     "target_list": "\n", 
     "text": "Envoyer des missionnaire recruter un chevalier", 
     "has_value": false, 
-    "on_resolution": "#age = f(\"random_gauss\", min=16, max=40)\nage = random_value(16,40)\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = {}\nqualities.append(random_in({\"archer\", \"cavalier\", \"piquier\"}))\n#liste des traits qu'il ne peut pas avoir\nno_qualities = {}\n\nloyalty = 50 + 30 * (sum_folks(affected, \"loyalty\")-23)/37 + random_value(-10, 10)\nchevalier = f(\"creer_folk\", kingdom=None, fight_min=7, plot_min=1, diplomacy_min=1, scholarship_min=1, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\npe = kingdom.create_pending_event(\"recrutement_chevalier\")\npe.set_value(\"chevalier\", chevalier)\npe.start()\n", 
+    "on_resolution": "#age = f(\"random_gauss\", min=16, max=40)\nage = random_value(16,40)\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nqualities.append(random_in([\"archer\", \"cavalier\", \"piquier\"]))\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"loyalty\")-23)/37) + random_value(-10, 10)\nchevalier = f(\"creer_folk\", kingdom=None, fight_min=7, plot_min=1, diplomacy_min=1, scholarship_min=1, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\npe = kingdom.create_pending_event(\"recrutement_chevalier\")\npe.set_value(\"chevalier\", chevalier)\npe.start()\n", 
     "value_description": "", 
     "on_start": "cout = 15 + 10 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"ambassadeur\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  status = \"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\"\n", 
     "has_target": false, 
@@ -48563,24 +48660,6 @@
   "fields": {
     "pending_mission": 178, 
     "folk": 6775, 
-    "mission_grid": 44
-  }
-},
-{
-  "pk": 294, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 177, 
-    "folk": 6683, 
-    "mission_grid": 44
-  }
-},
-{
-  "pk": 295, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 177, 
-    "folk": 6868, 
     "mission_grid": 44
   }
 },
@@ -49389,6 +49468,30 @@
   "model": "mission.availablemission", 
   "fields": {
     "kingdom": 76, 
+    "mission": 30
+  }
+},
+{
+  "pk": 770, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 58, 
+    "mission": 47
+  }
+},
+{
+  "pk": 771, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 58, 
+    "mission": 4
+  }
+},
+{
+  "pk": 772, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 58, 
     "mission": 30
   }
 },
@@ -52366,6 +52469,20 @@
   }
 },
 {
+  "pk": 248, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Voici le chevalier", 
+    "weight": 1, 
+    "text": "Je vous pr\u00e9sente sir {{chevalier}}.\r\nSes stats sont {{chevalier.fight}}(C) {{chevalier.plot}}(I) {{chevalier.diplomacy}}(D) {{chevalier.scholarship}}(\u00c9) {{chevalier.loyalty}}(L)\r\nSes traits sont:\r\n{% for quality in chevalier.quality_set.all %}\r\n* {{quality.name}}\r\n{% endfor %}", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "recrutement_chevalier", 
+    "condition": "\n"
+  }
+},
+{
   "pk": 5, 
   "model": "event.eventaction", 
   "fields": {
@@ -55267,6 +55384,28 @@
     "event": 247, 
     "condition": null, 
     "on_fire": "if param.get_value('is_victory'):\n  kingdom.create_pending_event(\"tuto_escarmouche_victoire\").start()\nelse:\n  kingdom.create_pending_event(\"tuto_escarmouche_defaite\").start()"
+  }
+},
+{
+  "pk": 319, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Je le veux !", 
+    "message": "{{chevalier}} a rejoint votre cour", 
+    "event": 248, 
+    "condition": "\n", 
+    "on_fire": "chevalier = param.get_value(\"chevalier\")\n\nchevalier.kingdom = kingdom\nchevalier.save()\n"
+  }
+},
+{
+  "pk": 320, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Il ne m'interesse pas... Mais je dois le d\u00e9domager pour son voyage ```- 30 \u00e9cus ```", 
+    "message": "", 
+    "event": 248, 
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 },
 {
@@ -79802,6 +79941,132 @@
     "direct_queries": 14, 
     "time": 40, 
     "queries": 14
+  }
+},
+{
+  "pk": 2640, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 48, 
+    "object_type": "MissionGrid", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 12, 
+    "queries": 1
+  }
+},
+{
+  "pk": 2641, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 48, 
+    "object_type": "MissionGrid", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 2, 
+    "queries": 1
+  }
+},
+{
+  "pk": 2642, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 48, 
+    "object_type": "MissionGrid", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 2, 
+    "queries": 1
+  }
+},
+{
+  "pk": 2643, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 6, 
+    "object_type": "Title", 
+    "object_attr": "on_unlock", 
+    "direct_queries": 9, 
+    "time": 81, 
+    "queries": 9
+  }
+},
+{
+  "pk": 2645, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 5, 
+    "object_type": "Title", 
+    "object_attr": "on_defect", 
+    "direct_queries": 4, 
+    "time": 9, 
+    "queries": 4
+  }
+},
+{
+  "pk": 2646, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 5, 
+    "object_type": "Title", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 7, 
+    "queries": 3
+  }
+},
+{
+  "pk": 2650, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 6, 
+    "object_type": "Title", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 2, 
+    "queries": 1
+  }
+},
+{
+  "pk": 2651, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 6, 
+    "object_type": "Title", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 9, 
+    "queries": 3
+  }
+},
+{
+  "pk": 2652, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 47, 
+    "object_type": "Mission", 
+    "object_attr": "on_start", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
   }
 },
 {
@@ -119276,6 +119541,162 @@
     "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0recruter_chevalier [Recruteurs (3)]\u00a0\u00bb.", 
     "user": 41, 
     "content_type": 23
+  }
+},
+{
+  "pk": 7440, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-19T18:28:02.610", 
+    "object_repr": "Recruter un chevalier [hugo]", 
+    "object_id": "770", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 27
+  }
+},
+{
+  "pk": 7441, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-19T18:31:37.469", 
+    "object_repr": "Ambassadeur [hugo kingdom]", 
+    "object_id": "338", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 16
+  }
+},
+{
+  "pk": 7442, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-19T18:51:22.434", 
+    "object_repr": "recrutement_chevalier", 
+    "object_id": "248", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7443, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-19T18:51:32.856", 
+    "object_repr": "recrutement_chevalier", 
+    "object_id": "248", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Je le veux ! [recrutement_chevalier]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7444, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-19T18:52:32.419", 
+    "object_repr": "recrutement_chevalier", 
+    "object_id": "248", 
+    "change_message": "Modifi\u00e9 condition et on_fire. event action \u00ab\u00a0Il ne m'interesse pas... Mais je dois le d\u00e9domager [recrutement_chevalier]\u00a0\u00bb ajout\u00e9. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Je le veux ! [recrutement_chevalier]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7445, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-19T18:53:22.328", 
+    "object_repr": "recruter_chevalier", 
+    "object_id": "47", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0recruter_chevalier [Recruteurs (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7446, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-19T18:53:45.587", 
+    "object_repr": "creer_folk()", 
+    "object_id": "8", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 41, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7447, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-19T18:54:23.987", 
+    "object_repr": "recruter_chevalier", 
+    "object_id": "47", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0recruter_chevalier [Recruteurs (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7448, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-19T18:55:29.232", 
+    "object_repr": "recruter_chevalier", 
+    "object_id": "47", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0recruter_chevalier [Recruteurs (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7449, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-19T18:56:07.062", 
+    "object_repr": "recruter_chevalier", 
+    "object_id": "47", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0recruter_chevalier [Recruteurs (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7450, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-19T18:56:36.019", 
+    "object_repr": "recrutement_chevalier", 
+    "object_id": "248", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition, on_fire et message modifi\u00e9 pour event action \u00ab\u00a0Je le veux ! [recrutement_chevalier]\u00a0\u00bb. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Il ne m'interesse pas... Mais je dois le d\u00e9domager [recrutement_chevalier]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7451, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-19T18:57:18.355", 
+    "object_repr": "recrutement_chevalier", 
+    "object_id": "248", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Je le veux ! [recrutement_chevalier]\u00a0\u00bb. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Il ne m'interesse pas... Mais je dois le d\u00e9domager [recrutement_chevalier]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
   }
 },
 {
