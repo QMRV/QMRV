@@ -11327,6 +11327,16 @@
   }
 },
 {
+  "pk": 22, 
+  "model": "internal.function", 
+  "fields": {
+    "params": "min:int valeur minimale\r\nmax:int valeur maximale", 
+    "slug": "random_gauss", 
+    "on_fire": "import random\n#calcul de mu et de sigma\n\n\n#retour\nparam = random.gauss(mu, sigma)\n", 
+    "description": "retourne une valeur al\u00e9atoire gaussienne"
+  }
+},
+{
   "pk": 67, 
   "model": "internal.freeze", 
   "fields": {
@@ -47734,6 +47744,29 @@
   }
 },
 {
+  "pk": 47, 
+  "model": "mission.mission", 
+  "fields": {
+    "name": "Recruter un chevalier", 
+    "target_list": "\n", 
+    "text": "Envoyer des missionnaire recruter un chevalier", 
+    "has_value": false, 
+    "on_resolution": "\n", 
+    "value_description": "", 
+    "on_start": "bonus = 0\nif kingdom.get_folk_in_title(\"ambassadeur\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  status = \"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\"\n", 
+    "has_target": false, 
+    "is_team": false, 
+    "title": 6, 
+    "target_description": "", 
+    "timeout": null, 
+    "is_cancellable": true, 
+    "duration": 360, 
+    "on_cancel": "\n", 
+    "slug": "recruter_chevalier", 
+    "on_init": "\n"
+  }
+},
+{
   "pk": 2, 
   "model": "mission.missiongrid", 
   "fields": {
@@ -48316,6 +48349,19 @@
     "allow_empty": false, 
     "slug": "soigneurs", 
     "condition": "if folk.sex == Folk.MALE and not folk.has_quality(\"pretre\"):\n  status = \"Seul les femmes et les pr\u00eatres peuvent soigner les bl\u00e9ss\u00e9s\"\n"
+  }
+},
+{
+  "pk": 48, 
+  "model": "mission.missiongrid", 
+  "fields": {
+    "allow_disabled": false, 
+    "name": "Recruteurs", 
+    "mission": 47, 
+    "length": 3, 
+    "allow_empty": false, 
+    "slug": "recruteurs", 
+    "condition": "if folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG\n"
   }
 },
 {
@@ -119033,6 +119079,32 @@
     "change_message": "Modifi\u00e9 condition, on_fire et fired.", 
     "user": 41, 
     "content_type": 17
+  }
+},
+{
+  "pk": 7435, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-19T11:35:23.514", 
+    "object_repr": "recruter_chevalier", 
+    "object_id": "47", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7436, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-19T12:03:09.185", 
+    "object_repr": "random_gauss()", 
+    "object_id": "22", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 34
   }
 },
 {
