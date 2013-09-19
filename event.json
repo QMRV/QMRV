@@ -2973,6 +2973,20 @@
   }
 },
 {
+  "pk": 248, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Voici le chevalier", 
+    "weight": 1, 
+    "text": "Je vous pr\u00e9sente sir {{chevalier}}.\r\nSes stats sont {{chevalier.fight}}(C) {{chevalier.plot}}(I) {{chevalier.diplomacy}}(D) {{chevalier.scholarship}}(\u00c9) {{chevalier.loyalty}}(L)\r\nSes traits sont:\r\n{% for quality in chevalier.quality_set.all %}\r\n* {{quality.name}}\r\n{% endfor %}", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "recrutement_chevalier", 
+    "condition": "\n"
+  }
+},
+{
   "pk": 5, 
   "model": "event.eventaction", 
   "fields": {
@@ -5874,6 +5888,28 @@
     "event": 247, 
     "condition": null, 
     "on_fire": "if param.get_value('is_victory'):\n  kingdom.create_pending_event(\"tuto_escarmouche_victoire\").start()\nelse:\n  kingdom.create_pending_event(\"tuto_escarmouche_defaite\").start()"
+  }
+},
+{
+  "pk": 319, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Je le veux !", 
+    "message": "{{chevalier}} a rejoint votre cour", 
+    "event": 248, 
+    "condition": "\n", 
+    "on_fire": "chevalier = param.get_value(\"chevalier\")\n\nchevalier.kingdom = kingdom\nchevalier.save()\n"
+  }
+},
+{
+  "pk": 320, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Il ne m'interesse pas... Mais je dois le d\u00e9domager pour son voyage ```- 30 \u00e9cus ```", 
+    "message": "", 
+    "event": 248, 
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 }
 ]
