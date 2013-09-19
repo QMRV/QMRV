@@ -3337,6 +3337,24 @@
   }
 },
 {
+  "pk": 630, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 58, 
+    "name": "tuto_dynasty_PNJ", 
+    "value": "de Hodent"
+  }
+},
+{
+  "pk": 631, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 58, 
+    "name": "in_tuto", 
+    "value": 1
+  }
+},
+{
   "pk": 196, 
   "model": "kingdom.folk", 
   "fields": {
@@ -7217,6 +7235,109 @@
   }
 },
 {
+  "pk": 7050, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 58, 
+    "fight": 9, 
+    "first_name": "Emery", 
+    "last_name": "de hugo", 
+    "diplomacy": 10, 
+    "father": null, 
+    "plot": 8, 
+    "scholarship": 9, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 12, 
+    "birth": "2013-08-15T11:09:07.356", 
+    "mother": null, 
+    "loyalty": 99, 
+    "spouse": null, 
+    "quality_set": [], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7051, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 58, 
+    "fight": 9, 
+    "first_name": "Henri", 
+    "last_name": "de hugo", 
+    "diplomacy": 6, 
+    "father": 7050, 
+    "plot": 8, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 29, 
+    "birth": "2013-09-02T11:09:07.691", 
+    "mother": null, 
+    "loyalty": 65, 
+    "spouse": null, 
+    "quality_set": [
+      5, 
+      47
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7052, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 58, 
+    "fight": 6, 
+    "first_name": "Gallendis", 
+    "last_name": "de hugo", 
+    "diplomacy": 10, 
+    "father": 7050, 
+    "plot": 12, 
+    "scholarship": 12, 
+    "sex": "f", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 67, 
+    "birth": "2013-09-03T11:09:07.925", 
+    "mother": null, 
+    "loyalty": 50, 
+    "spouse": null, 
+    "quality_set": [
+      2
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7053, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 58, 
+    "fight": 10, 
+    "first_name": "Bartholom\u00e9", 
+    "last_name": "de Zimmersheim", 
+    "diplomacy": 8, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 12, 
+    "birth": "2013-08-15T11:09:07.978", 
+    "mother": null, 
+    "loyalty": 80, 
+    "spouse": null, 
+    "quality_set": [
+      10
+    ], 
+    "mentor": null
+  }
+},
+{
   "pk": 1, 
   "model": "kingdom.qualitycategory", 
   "fields": {
@@ -10858,8 +10979,8 @@
       79, 
       80, 
       81, 
-      58, 
-      59
+      59, 
+      58
     ], 
     "money_threshold": 0, 
     "on_fire": "# Cr\u00e9ation du ch\u00e2telain\nseigneur = call_function(\"creer_folk\", kingdom=kingdom, fight_min=7, plot_min=7, diplomacy_min=7, scholarship_min=7, max_carac=36, loyalty=99, sex=Folk.MALE, last_name=kingdom.user.username, birth=datetime.now() - timedelta(days=35))\n\nkingdom.unlock_title(\"chatelain\")\nseigneur.add_title(\"chatelain\")\n\n# Son fils\nfils = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=17))\n\n# Sa fille\nfille = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=16))\n\n# Compagnon\ncompagnon = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE,birth=datetime.now() - timedelta(days=35))\n\n# Lancement de l'event\npe = kingdom.create_pending_event(\"tuto_intro\")\npe.set_value(\"fils\", fils)\npe.set_value(\"fille\", fille)\npe.set_value(\"compagnon\", compagnon)\nkingdom.set_value(\"tuto_dynasty_PNJ\", LastName.objects.all().order_by('?')[0].name)\npe.start()\n\n# Kingdom init\nkingdom.money = 100\nkingdom.save()\n\nkingdom.set_value(\"in_tuto\", True)\n\n\n", 
@@ -11101,8 +11222,8 @@
   "fields": {
     "params": "fight_min:int combat minimum\r\nplot_min:int intrigue minimum\r\nscholarship_min:int \u00e9rudition minimum\r\ndiplomacy_min:int diplomatie minimum\r\nloyalty:int loyaut\u00e9 initiale\r\nmax_carac:int nombre de points de carac \u00e0 r\u00e9partir\r\nkingdom:Kingdom le royaume contenant le folk.", 
     "slug": "creer_folk", 
-    "on_fire": "# Ajout des stats min\nfolk = Folk(\n  fight=fight_min,\n  plot=plot_min,\n  scholarship=scholarship_min,\n  diplomacy=diplomacy_min,\n  loyalty=loyalty\n)\n# Ajout du kingdom \nif \"kingdom\" in locals():\n  folk.kingdom=kingdom\n# Ajout de son sexe\nif \"sex\" in locals():\n  folk.sex=sex\nelse:\n  folk.sex=random_in([Folk.FEMALE,Folk.MALE])\n# Ajout des statistiques compl\u00e8tes\nif folk.sex == Folk.MALE:\n  # Si c'est un homme\n  sum_stats = call_function(\"somme_stat_folk\", folk=folk)\n  while sum_stats < max_carac :\n    fight = (20 - folk.fight) * float(100 / float(80 - sum_stats))\n    plot = (20 - folk.plot) * float(100 / float(80 - sum_stats))\n    scholarship = (20 - folk.scholarship) * float(100 / float(80 - sum_stats))\n    diplomacy = (20 - folk.diplomacy) * float(100 / float(80 - sum_stats))\n    choose_attribute = random_value(1,100)\n    if choose_attribute < fight:\n      folk.fight += 1\n    elif choose_attribute < fight + plot :\n      folk.plot += 1\n    elif choose_attribute < fight + plot + scholarship :\n      folk.scholarship += 1\n    else :\n      folk.diplomacy += 1\n    sum_stats += 1\nelse:\n  # Si c'est une femme\n  folk.fight= random_value(2,7)\n  sum_stats = call_function(\"somme_stat_folk\", folk=folk) - folk.fight\n  \n  while sum_stats < max_carac - folk.fight:\n    plot = (20 - folk.plot) * float(100 / float(60 - sum_stats))\n    scholarship = (20 - folk.scholarship) * float(100 / float(60 - sum_stats))\n    diplomacy = (20 - folk.diplomacy) * float(100 / float(60 - sum_stats))\n    \n    choose_attribute = random_value(1,100)  \n    if choose_attribute < plot :\n      folk.plot += 1\n    elif choose_attribute < plot + scholarship :\n      folk.scholarship += 1\n    else :\n      folk.diplomacy += 1\n    sum_stats += 1\n# Ajout du last_name\nif \"last_name\" in locals():\n  if last_name[0] in ['a','e','i','o','u','y','A','E','I','O','U','Y']:\n    folk.last_name = \"d'\" + last_name\n  else:\n    folk.last_name = \"de \" + last_name\n\n# Ajout des parents\nif \"father\" in locals():\n  folk.father = father\nif \"mother\" in locals():\n  folk.mother = mother\n# Ajout de l'epoux\nif \"spouse\" in locals():\n  folk.spouse = spouse\n# Ajout de la date de naissance\nif \"birth\" in locals():\n  folk.birth = birth\n  \nfolk.save()\n\n# Ajout des traits\nchoose_quality = random_value(1, 10)\nif choose_quality > 1 :\n  if random_value(1,10) <= 1:\n    folk.add_quality(Quality.objects.filter(category__name=\"G\u00e9n\u00e9tique\").order_by('?')[0].slug)\n  else:\n    folk.add_quality(Quality.objects.filter(category__name=\"Caract\u00e8re\").order_by('?')[0].slug)\n\n  if choose_quality > 8 :\n    folk.add_quality(Quality.objects.filter(category__name=\"Caract\u00e8re\").order_by('?')[0].slug)\n\nif \"trait\" in locals():\n  folk.add_quality(trait)\nfolk.save()\n\ncall_function(\"attribuer_avatar\", folk=folk)\n\nparam = folk\n", 
-    "description": "Cr\u00e9e un nouveau Folk dans le royaume.\r\n\r\n(trait)\r\n(sex)\r\n(last_name)\r\n(father)\r\n(mother)\r\n(birth)\r\n(spouse)"
+    "on_fire": "# Ajout des stats min\nfolk = Folk(\n  fight=fight_min,\n  plot=plot_min,\n  scholarship=scholarship_min,\n  diplomacy=diplomacy_min,\n  loyalty=loyalty\n)\n# Ajout du kingdom \nif \"kingdom\" in locals():\n  folk.kingdom=kingdom\n# Ajout de son sexe\nif \"sex\" in locals():\n  folk.sex=sex\nelse:\n  folk.sex=random_in([Folk.FEMALE,Folk.MALE])\n# Ajout des statistiques compl\u00e8tes\nif folk.sex == Folk.MALE:\n  # Si c'est un homme\n  sum_stats = call_function(\"somme_stat_folk\", folk=folk)\n  while sum_stats < max_carac :\n    fight = (20 - folk.fight) * float(100 / float(80 - sum_stats))\n    plot = (20 - folk.plot) * float(100 / float(80 - sum_stats))\n    scholarship = (20 - folk.scholarship) * float(100 / float(80 - sum_stats))\n    diplomacy = (20 - folk.diplomacy) * float(100 / float(80 - sum_stats))\n    choose_attribute = random_value(1,100)\n    if choose_attribute < fight:\n      folk.fight += 1\n    elif choose_attribute < fight + plot :\n      folk.plot += 1\n    elif choose_attribute < fight + plot + scholarship :\n      folk.scholarship += 1\n    else :\n      folk.diplomacy += 1\n    sum_stats += 1\nelse:\n  # Si c'est une femme\n  folk.fight= random_value(2,7)\n  sum_stats = call_function(\"somme_stat_folk\", folk=folk) - folk.fight\n  \n  while sum_stats < max_carac - folk.fight:\n    plot = (20 - folk.plot) * float(100 / float(60 - sum_stats))\n    scholarship = (20 - folk.scholarship) * float(100 / float(60 - sum_stats))\n    diplomacy = (20 - folk.diplomacy) * float(100 / float(60 - sum_stats))\n    \n    choose_attribute = random_value(1,100)  \n    if choose_attribute < plot :\n      folk.plot += 1\n    elif choose_attribute < plot + scholarship :\n      folk.scholarship += 1\n    else :\n      folk.diplomacy += 1\n    sum_stats += 1\n# Ajout du last_name\nif \"last_name\" in locals():\n  #s'il y a d\u00e9j\u00e0 d' ou de devant\n  if last_name.startswith(\"de \") or last_name.startswith(\"d'\"):\n    folk.last_name = last_name\n  else:\n    if last_name[0] in ['a','e','i','o','u','y','A','E','I','O','U','Y']:\n      folk.last_name = \"d'\" + last_name\n    else:\n      folk.last_name = \"de \" + last_name\n\n# Ajout des parents\nif \"father\" in locals():\n  folk.father = father\nif \"mother\" in locals():\n  folk.mother = mother\n# Ajout de l'epoux\nif \"spouse\" in locals():\n  folk.spouse = spouse\n# Ajout de la date de naissance\nif \"birth\" in locals():\n  folk.birth = birth\n  \nfolk.save()\n\n# Ajout des traits\nchoose_quality = random_value(1, 10)\nexculded_traits = {}\nif \"notraits\" in locals():\n  exculded_traits = notraits\n  \nif choose_quality > 1 :\n  if random_value(1,10) <= 1:\n    folk.add_quality(Quality.objects.filter(category__name=\"G\u00e9n\u00e9tique\").exclude(slug__in=exculded_traits).order_by('?')[0].slug)\n  else:\n    folk.add_quality(Quality.objects.filter(category__name=\"Caract\u00e8re\").exclude(slug__in=exculded_traits).order_by('?')[0].slug)\n\n  if choose_quality > 8 :\n    folk.add_quality(Quality.objects.filter(category__name=\"Caract\u00e8re\").exclude(slug__in=exculded_traits).order_by('?')[0].slug)\n\nif \"trait\" in locals():\n  folk.add_quality(trait)\n\nif \"traits\" in locals():\n  for trait in traits:\n    folk.add_quality(trait)\n    \nfolk.save()\ncall_function(\"attribuer_avatar\", folk=folk)\n\nparam = folk\n", 
+    "description": "Cr\u00e9e un nouveau Folk dans le royaume.\r\n\r\n(trait)\r\n(traits)\r\n(notraits)\r\n(sex)\r\n(last_name)\r\n(father)\r\n(mother)\r\n(birth)\r\n(spouse)"
   }
 },
 {
@@ -48310,6 +48431,22 @@
   }
 },
 {
+  "pk": 274, 
+  "model": "mission.pendingmission", 
+  "fields": {
+    "kingdom": 58, 
+    "is_started": true, 
+    "target": null, 
+    "created": "2013-09-19T11:09:04.177", 
+    "started": "2013-09-19T11:09:07.283", 
+    "last_target": null, 
+    "mission": 18, 
+    "value": 0, 
+    "is_finished": false, 
+    "last_value": 0
+  }
+},
+{
   "pk": 289, 
   "model": "mission.pendingmissionaffectation", 
   "fields": {
@@ -55184,6 +55321,18 @@
   }
 },
 {
+  "pk": 2394, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 58, 
+    "is_started": true, 
+    "created": "2013-09-19T11:09:08.135", 
+    "started": "2013-09-19T11:09:08.316", 
+    "text": "En arrivant au sommet de la cr\u00eate, nous tirons sur nos brides et nous nous autorisons enfin une pause, afin de contempler le ch\u00e2teau qui se dessine en contrebas. Gallendis, \u00e0 ma droite, \u00e0 les joues rougies par le froid de l\u2019hiver. \r\n\u201cEst-ce celui-ci, p\u00e8re? Sommes-nous arriv\u00e9?\u201d. Sa voix n\u2019est qu\u2019un murmure dans lequel perce l'excitation de la jeunesse. \r\n\u201cOui, ma fille. hugo. La terre de nos a\u00efeux.\u201d \r\nSans un regard en arri\u00e8re, je guide mon cheval sur le sentier qui serpente jusque dans la vall\u00e9e. Gallendis m'embo\u00eete le pas, suivit de pr\u00e8s par son fr\u00e8re Henri et par Bartholom\u00e9, mon compagnon de toujours qui garde sa main sur le pommeau de son \u00e9p\u00e9e.", 
+    "event": 3
+  }
+},
+{
   "pk": 1625, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -55269,6 +55418,17 @@
     "text": "Je vais devoir convoquer mon conn\u00e9table...", 
     "folk": null, 
     "event_action": 271
+  }
+},
+{
+  "pk": 2606, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 2394, 
+    "message": "", 
+    "text": "Notre voyage s'ach\u00e8ve.", 
+    "folk": null, 
+    "event_action": 5
   }
 },
 {
@@ -55413,6 +55573,33 @@
     "pending_event": 2323, 
     "name": "compliment", 
     "value": 1
+  }
+},
+{
+  "pk": 5149, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2394, 
+    "name": "fils", 
+    "value": "`Folk`:7051"
+  }
+},
+{
+  "pk": 5150, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2394, 
+    "name": "fille", 
+    "value": "`Folk`:7052"
+  }
+},
+{
+  "pk": 5151, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2394, 
+    "name": "compagnon", 
+    "value": "`Folk`:7053"
   }
 },
 {
@@ -79157,6 +79344,286 @@
     "direct_queries": 3, 
     "time": 7, 
     "queries": 3
+  }
+},
+{
+  "pk": 2175, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 4, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 2176, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 4, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 36, 
+    "queries": 5
+  }
+},
+{
+  "pk": 2177, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 8, 
+    "time": 199, 
+    "queries": 13
+  }
+},
+{
+  "pk": 2178, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 3, 
+    "object_pk": 1, 
+    "object_type": "Title", 
+    "object_attr": "on_defect", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 2179, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 4, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 2180, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 4, 
+    "object_pk": 5, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 6, 
+    "queries": 3
+  }
+},
+{
+  "pk": 2181, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 4, 
+    "object_pk": 47, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 6, 
+    "queries": 3
+  }
+},
+{
+  "pk": 2182, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 4, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 11, 
+    "queries": 5
+  }
+},
+{
+  "pk": 2183, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 22, 
+    "time": 232, 
+    "queries": 33
+  }
+},
+{
+  "pk": 2184, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 4, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 2185, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 4, 
+    "object_pk": 2, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 5, 
+    "queries": 3
+  }
+},
+{
+  "pk": 2186, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 4, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 10, 
+    "queries": 5
+  }
+},
+{
+  "pk": 2187, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 15, 
+    "time": 50, 
+    "queries": 23
+  }
+},
+{
+  "pk": 2188, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 4, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 2189, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 4, 
+    "object_pk": 10, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 6, 
+    "queries": 3
+  }
+},
+{
+  "pk": 2190, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 4, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 12, 
+    "queries": 5
+  }
+},
+{
+  "pk": 2191, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 16, 
+    "time": 119, 
+    "queries": 24
+  }
+},
+{
+  "pk": 2192, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 2, 
+    "object_pk": 1, 
+    "object_type": "Trigger", 
+    "object_attr": "on_fire", 
+    "direct_queries": 48, 
+    "time": 1122, 
+    "queries": 141
+  }
+},
+{
+  "pk": 2193, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 18, 
+    "object_type": "Mission", 
+    "object_attr": "on_start", 
+    "direct_queries": 5, 
+    "time": 1141, 
+    "queries": 146
+  }
+},
+{
+  "pk": 2194, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 1, 
+    "object_type": "Title", 
+    "object_attr": "on_defect", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
   }
 },
 {
@@ -118543,6 +119010,32 @@
   }
 },
 {
+  "pk": 7433, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-19T11:08:05.742", 
+    "object_repr": "creer_folk()", 
+    "object_id": "8", 
+    "change_message": "Modifi\u00e9 description et on_fire.", 
+    "user": 41, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7434, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-19T11:08:32.271", 
+    "object_repr": "Initialisation", 
+    "object_id": "1", 
+    "change_message": "Modifi\u00e9 condition, on_fire et fired.", 
+    "user": 41, 
+    "content_type": 17
+  }
+},
+{
   "pk": 46, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -118559,7 +119052,7 @@
   "fields": {
     "soldiers": 24, 
     "prestige": 100, 
-    "money": 150, 
+    "money": 100, 
     "user": 41, 
     "population": 180
   }
