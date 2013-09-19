@@ -51735,7 +51735,7 @@
     "weight": 1, 
     "text": "Sire {{title.connetable}} a fait conduire {{banni}} sous bonne escorte jusqu'\u00e0 la fronti\u00e8re de mes terres, et lui a lanc\u00e9 d'un ton ferme de ne jamais revenir. La cour est sous le choc, et ils sont nombreux \u00e0 m\u2019appeler \"tyran\" dans mon dos, en se demandant lequel d'entre eux sera le prochain.\r\n\r\n    {{banni}} a \u00e9t\u00e9 chass\u00e9 de votre cour. Ses possessions ont \u00e9t\u00e9 saisies et vous ont rapport\u00e9 20 \u00e9cus.\r\n-20 de Loyaut\u00e9 g\u00e9n\u00e9rale.", 
     "image": "events/417.jpg", 
-    "on_fire": "if banni.has_quality(\"scelerat\") or banni.has_quality(\"taitre\"):\n  pass\n", 
+    "on_fire": "banni = pamre.get_value(\"banni\")\nif banni.has_quality(\"scelerat\") or banni.has_quality(\"taitre\"):\n  pass\n", 
     "slug": "bannissement", 
     "condition": "\n"
   }
@@ -119695,6 +119695,19 @@
     "object_repr": "recrutement_chevalier", 
     "object_id": "248", 
     "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Je le veux ! [recrutement_chevalier]\u00a0\u00bb. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Il ne m'interesse pas... Mais je dois le d\u00e9domager [recrutement_chevalier]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7452, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-19T19:49:39.947", 
+    "object_repr": "bannissement", 
+    "object_id": "186", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Bon d\u00e9barras! [bannissement]\u00a0\u00bb.", 
     "user": 41, 
     "content_type": 29
   }
