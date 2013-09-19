@@ -3833,7 +3833,7 @@
     "fight": 11, 
     "first_name": "Bertrand", 
     "last_name": "de hugo", 
-    "diplomacy": 7, 
+    "diplomacy": 8, 
     "father": null, 
     "plot": 9, 
     "scholarship": 10, 
@@ -10448,6 +10448,28 @@
     "kingdom": 76, 
     "content": "Les r\u00e9parations de rudy sont termin\u00e9es et il est temps de r\u00e9fl\u00e9chir \u00e0 s'agrandir. Je vais charger mes diplomates de [justifier diplomatiquement](#mission) une attaque sur notre voisin, le seigneur Aymeric d'Orniac.\r\n\r\nJe peux maintenant nommer un ambassadeur pour s'occuper des d\u00e9tails et faire venir des suivants \u00e0 rudy", 
     "created": "2013-09-18T09:45:15.833", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1357, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": "Grace au soutien du Roi de France, ma famille s'est install\u00e9e \u00e0 hugo, la demeure de mes anc\u00eatres. J'ai d\u00e9bours\u00e9 85 \u00e9cus pour entamer des r\u00e9parations et recruter des serviteurs.", 
+    "created": "2013-09-19T17:18:28.260", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1358, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": "Je peux \u00e0 pr\u00e9sent nommer un [chambellan](title) pour s'occuper de mon [banquet](mission).", 
+    "created": "2013-09-19T17:18:30.800", 
     "read": null, 
     "level": 1
   }
@@ -47751,9 +47773,9 @@
     "target_list": "\n", 
     "text": "Envoyer des missionnaire recruter un chevalier", 
     "has_value": false, 
-    "on_resolution": "\n", 
+    "on_resolution": "#age = f(\"random_gauss\", min=16, max=40)\nage = random_value(16,40)\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = {}\nqualities.append(random_in({\"archer\", \"cavalier\", \"piquier\"}))\n#liste des traits qu'il ne peut pas avoir\nno_qualities = {}\n\nloyalty = 50 + 30 * (sum_folks(affected, \"loyalty\")-23)/37 + random_value(-10, 10)\nchevalier = f(\"creer_folk\", kingdom=None, fight_min=7, plot_min=1, diplomacy_min=1, scholarship_min=1, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\npe = kingdom.create_pending_event(\"recrutement_chevalier\")\npe.set_value(\"chevalier\", chevalier)\npe.start()\n", 
     "value_description": "", 
-    "on_start": "bonus = 0\nif kingdom.get_folk_in_title(\"ambassadeur\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  status = \"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\"\n", 
+    "on_start": "cout = 15 + 10 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"ambassadeur\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  status = \"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\"\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 6, 
@@ -48493,6 +48515,22 @@
   }
 },
 {
+  "pk": 275, 
+  "model": "mission.pendingmission", 
+  "fields": {
+    "kingdom": 58, 
+    "is_started": true, 
+    "target": null, 
+    "created": "2013-09-19T17:18:28.202", 
+    "started": "2013-09-19T17:18:53.324", 
+    "last_target": null, 
+    "mission": 10, 
+    "value": 0, 
+    "is_finished": false, 
+    "last_value": 0
+  }
+},
+{
   "pk": 289, 
   "model": "mission.pendingmissionaffectation", 
   "fields": {
@@ -48547,15 +48585,6 @@
   }
 },
 {
-  "pk": 312, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 183, 
-    "folk": 6867, 
-    "mission_grid": 47
-  }
-},
-{
   "pk": 399, 
   "model": "mission.pendingmissionaffectation", 
   "fields": {
@@ -48607,6 +48636,24 @@
     "pending_mission": 273, 
     "folk": 6929, 
     "mission_grid": 41
+  }
+},
+{
+  "pk": 522, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 275, 
+    "folk": 6733, 
+    "mission_grid": 30
+  }
+},
+{
+  "pk": 523, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 275, 
+    "folk": 6867, 
+    "mission_grid": 30
   }
 },
 {
@@ -55367,15 +55414,15 @@
   }
 },
 {
-  "pk": 2394, 
+  "pk": 2398, 
   "model": "event.pendingevent", 
   "fields": {
     "kingdom": 58, 
     "is_started": true, 
-    "created": "2013-09-19T11:09:08.135", 
-    "started": "2013-09-19T11:09:08.316", 
-    "text": "En arrivant au sommet de la cr\u00eate, nous tirons sur nos brides et nous nous autorisons enfin une pause, afin de contempler le ch\u00e2teau qui se dessine en contrebas. Gallendis, \u00e0 ma droite, \u00e0 les joues rougies par le froid de l\u2019hiver. \r\n\u201cEst-ce celui-ci, p\u00e8re? Sommes-nous arriv\u00e9?\u201d. Sa voix n\u2019est qu\u2019un murmure dans lequel perce l'excitation de la jeunesse. \r\n\u201cOui, ma fille. hugo. La terre de nos a\u00efeux.\u201d \r\nSans un regard en arri\u00e8re, je guide mon cheval sur le sentier qui serpente jusque dans la vall\u00e9e. Gallendis m'embo\u00eete le pas, suivit de pr\u00e8s par son fr\u00e8re Henri et par Bartholom\u00e9, mon compagnon de toujours qui garde sa main sur le pommeau de son \u00e9p\u00e9e.", 
-    "event": 3
+    "created": "2013-09-19T17:18:53.360", 
+    "started": "2013-09-19T17:18:53.360", 
+    "text": "Raoul a fait arracher les mauvaises herbes de la cour, et les serviteurs y ont dress\u00e9 de grandes tables dont les nappes blanches ondulent dans la brise du soir. Des fleurs fra\u00eechement cueillies ont \u00e9t\u00e9 dispos\u00e9es entre les plats et les tonnelets de vin d\u2019Anjou. Je me tient au milieu de la cour, pour accueillir les paysans qui s\u2019avancent d\u2019un pas timide. Ils semblent impressionn\u00e9s par le faste du banquet, et leurs yeux d\u00e9vorent les victuailles savamment expos\u00e9es. Un duo de troubadours entame un air joyeux.", 
+    "event": 32
   }
 },
 {
@@ -55467,14 +55514,14 @@
   }
 },
 {
-  "pk": 2606, 
+  "pk": 2613, 
   "model": "event.pendingeventaction", 
   "fields": {
-    "pending_event": 2394, 
+    "pending_event": 2398, 
     "message": "", 
-    "text": "Notre voyage s'ach\u00e8ve.", 
+    "text": "\u201cBienvenue \u00e0 ma f\u00eate!\u201d", 
     "folk": null, 
-    "event_action": 5
+    "event_action": 39
   }
 },
 {
@@ -55619,33 +55666,6 @@
     "pending_event": 2323, 
     "name": "compliment", 
     "value": 1
-  }
-},
-{
-  "pk": 5149, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2394, 
-    "name": "fils", 
-    "value": "`Folk`:7051"
-  }
-},
-{
-  "pk": 5150, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2394, 
-    "name": "fille", 
-    "value": "`Folk`:7052"
-  }
-},
-{
-  "pk": 5151, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2394, 
-    "name": "compagnon", 
-    "value": "`Folk`:7053"
   }
 },
 {
@@ -79670,6 +79690,118 @@
     "direct_queries": 0, 
     "time": 0, 
     "queries": 0
+  }
+},
+{
+  "pk": 2559, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 2, 
+    "object_pk": 7, 
+    "object_type": "EventAction", 
+    "object_attr": "condition", 
+    "direct_queries": 3, 
+    "time": 8, 
+    "queries": 3
+  }
+},
+{
+  "pk": 2560, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 5, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 26, 
+    "time": 236, 
+    "queries": 29
+  }
+},
+{
+  "pk": 2561, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 7, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 30, 
+    "time": 81, 
+    "queries": 30
+  }
+},
+{
+  "pk": 2562, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 2, 
+    "object_pk": 30, 
+    "object_type": "Event", 
+    "object_attr": "on_fire", 
+    "direct_queries": 6, 
+    "time": 73, 
+    "queries": 6
+  }
+},
+{
+  "pk": 2563, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 10, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 31, 
+    "time": 154, 
+    "queries": 37
+  }
+},
+{
+  "pk": 2564, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 30, 
+    "object_type": "MissionGrid", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 14, 
+    "queries": 1
+  }
+},
+{
+  "pk": 2565, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 30, 
+    "object_type": "MissionGrid", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 2, 
+    "queries": 1
+  }
+},
+{
+  "pk": 2566, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 58, 
+    "stack_level": 1, 
+    "object_pk": 10, 
+    "object_type": "Mission", 
+    "object_attr": "on_start", 
+    "direct_queries": 14, 
+    "time": 40, 
+    "queries": 14
   }
 },
 {
@@ -119105,6 +119237,45 @@
     "change_message": "", 
     "user": 41, 
     "content_type": 34
+  }
+},
+{
+  "pk": 7437, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-19T17:31:35.811", 
+    "object_repr": "recruter_chevalier", 
+    "object_id": "47", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0recruter_chevalier [Recruteurs (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7438, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-19T17:33:38.057", 
+    "object_repr": "recruter_chevalier", 
+    "object_id": "47", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0recruter_chevalier [Recruteurs (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7439, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-19T17:45:14.521", 
+    "object_repr": "recruter_chevalier", 
+    "object_id": "47", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0recruter_chevalier [Recruteurs (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
   }
 },
 {
