@@ -2987,6 +2987,34 @@
   }
 },
 {
+  "pk": 249, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Recruter un pretre", 
+    "weight": 1, 
+    "text": "Je vous pr\u00e9sente sir {{pretre}}.\r\nSes stats sont {{pretre.fight}}(C) {{pretre.plot}}(I) {{pretre.diplomacy}}(D) {{pretre.scholarship}}(\u00c9) {{pretre.loyalty}}(L)\r\nSes traits sont:\r\n{% for quality in pretre.quality_set.all %}\r\n* {{quality.name}}\r\n{% endfor %}", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "recrutement_pretre", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 250, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Recruter un ambassadeur", 
+    "weight": 1, 
+    "text": "Je vous pr\u00e9sente sir {{ambassadeur}}.\r\nSes stats sont {{ambassadeur.fight}}(C) {{ambassadeur.plot}}(I) {{ambassadeur.diplomacy}}(D) {{ambassadeur.scholarship}}(\u00c9) {{ambassadeur.loyalty}}(L)\r\nSes traits sont:\r\n{% for quality in ambassadeur.quality_set.all %}\r\n* {{quality.name}}\r\n{% endfor %}", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "recrutement_ambassadeur", 
+    "condition": "\n"
+  }
+},
+{
   "pk": 5, 
   "model": "event.eventaction", 
   "fields": {
@@ -5910,6 +5938,39 @@
     "event": 248, 
     "condition": "\n", 
     "on_fire": "\n"
+  }
+},
+{
+  "pk": 321, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Je le veux !", 
+    "message": "{{pretre}} a rejoint votre cour", 
+    "event": 249, 
+    "condition": "\n", 
+    "on_fire": "pretre = param.get_value(\"pretre\")\n\npretre.kingdom = kingdom\npretre.save()"
+  }
+},
+{
+  "pk": 322, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Cet homme est inutile", 
+    "message": "", 
+    "event": 249, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 323, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Je le veux !", 
+    "message": "{{ambassadeur }} a rejoint votre cour", 
+    "event": 250, 
+    "condition": "\n", 
+    "on_fire": "pretre = param.get_value(\"pretre\")\n\npretre.kingdom = kingdom\npretre.save()\n"
   }
 }
 ]
