@@ -3005,12 +3005,12 @@
   "model": "event.event", 
   "fields": {
     "category": null, 
-    "name": "Recruter un ambassadeur", 
+    "name": "Recruter une dame", 
     "weight": 1, 
-    "text": "Je vous pr\u00e9sente sir {{ambassadeur}}.\r\nSes stats sont {{ambassadeur.fight}}(C) {{ambassadeur.plot}}(I) {{ambassadeur.diplomacy}}(D) {{ambassadeur.scholarship}}(\u00c9) {{ambassadeur.loyalty}}(L)\r\nSes traits sont:\r\n{% for quality in ambassadeur.quality_set.all %}\r\n* {{quality.name}}\r\n{% endfor %}", 
+    "text": "Je vous pr\u00e9sente sir {{dame}}.\r\nSes stats sont {{dame.fight}}(C) {{dame.plot}}(I) {{dame.diplomacy}}(D) {{dame.scholarship}}(\u00c9) {{dame.loyalty}}(L)\r\nSes traits sont:\r\n{% for quality in dame.quality_set.all %}\r\n* {{quality.name}}\r\n{% endfor %}", 
     "image": "", 
     "on_fire": "\n", 
-    "slug": "recrutement_ambassadeur", 
+    "slug": "recrutement_dame", 
     "condition": "\n"
   }
 },
@@ -5967,10 +5967,10 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Je le veux !", 
-    "message": "{{ambassadeur }} a rejoint votre cour", 
+    "message": "{{dame}} a rejoint votre cour", 
     "event": 250, 
     "condition": "\n", 
-    "on_fire": "pretre = param.get_value(\"pretre\")\n\npretre.kingdom = kingdom\npretre.save()\n"
+    "on_fire": "dame= param.get_value(\"dame\")\n\ndame.kingdom = kingdom\ndame.save()\n"
   }
 }
 ]
