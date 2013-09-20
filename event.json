@@ -2729,7 +2729,7 @@
     "weight": 1, 
     "text": "J'ai perdu ouiiiinn\r\n\r\ntest {{ test }}\r\nattaquant {{ attaquant }}", 
     "image": "", 
-    "on_fire": "param.set_value(\"test\",kingdom.get_value(\"tuto_conflit\",False))\nparam.set_value(\"attaquant\",param.get_value(\"attaquant\",False))\n", 
+    "on_fire": "param.set_value(\"test\",kingdom.get_value(\"tuto_conflit\",False))\nparam.set_value(\"attaquant\",param.get_value(\"attaquant\",False))\nparam.set_value(\"moi\",param.get_value(\"perdant\"))\nparam.set_value(\"lui\",param.get_value(\"gagnant\")) \n", 
     "slug": "tuto_escarmouche_defaite", 
     "condition": "\n"
   }
@@ -2741,9 +2741,9 @@
     "category": null, 
     "name": "resultat de bataille", 
     "weight": 1, 
-    "text": "J'ai gagn\u00e9 wouhou !\r\n\r\n{{ attaquant }}\r\n{{ tuto_rapport_espion }}\r\n{{ tuto_conflit }}", 
+    "text": "moi=gagnant {{ moi }}\r\n\r\nlui=perdant {{ lui }}\r\n\r\nbataille : {{bataille}}\r\n\r\ndelta : {{delta}}\r\n\r\ntest description armee : ", 
     "image": "", 
-    "on_fire": "param.set_value(\"tuto_rapport_espion\",kingdom.get_value(\"tuto_rapport_espion\",False))\nparam.set_value(\"tuto_conflit\",kingdom.get_value(\"tuto_conflit\",False))\n\n", 
+    "on_fire": "param.set_value(\"tuto_rapport_espion\",kingdom.get_value(\"tuto_rapport_espion\",False))\nparam.set_value(\"tuto_conflit\",kingdom.get_value(\"tuto_conflit\",False))\nparam.set_value(\"moi\",param.get_value(\"gagnant\"))\nparam.set_value(\"lui\",param.get_value(\"perdant\"))\ntxt=f(\"liste_nom_avec_specialite\", commandants=param.get_value(\"gagnant\")['combattants'])\n", 
     "slug": "tuto_escarmouche_victoire", 
     "condition": "\n"
   }
