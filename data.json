@@ -47916,12 +47916,12 @@
     "target_list": "\n", 
     "text": "Partir recruter une dame", 
     "has_value": false, 
-    "on_resolution": "#age = f(\"random_gauss\", min=16, max=40)\nage = random_value(16,40)\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nqualities.append(\"jouvancelle\")\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"loyalty\")-23)/37) + random_value(-10, 10)\n\nambassadeur = f(\"creer_folk\", kingdom=None, fight_min=2, plot_min=2, diplomacy_min=2, scholarship_min=2, loyalty=loyalty, max_carac=max_carac, sex=Folk.FEMALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\n\npe = kingdom.create_pending_event(\"recrutement_ambassadeur\")\npe.set_value(\"ambassadeur\", ambassadeur)\npe.start()", 
+    "on_resolution": "#age = f(\"random_gauss\", min=16, max=40)\nage = random_value(16,40)\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nchoix_baisee = (40-age)/24*100\nif choix_baisee <= ramdon_value(1,100):\n  qualities.append(\"jouvancelle\")\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"loyalty\")-23)/37) + random_value(-10, 10)\n\ndame= f(\"creer_folk\", kingdom=None, fight_min=2, plot_min=2, diplomacy_min=2, scholarship_min=2, loyalty=loyalty, max_carac=max_carac, sex=Folk.FEMALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\n\npe = kingdom.create_pending_event(\"recrutement_dame\")\npe.set_value(\"dame\", dame)\npe.start()", 
     "value_description": "", 
     "on_start": "cout = 15 + 5 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"ambassadeur\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  status = \"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\"", 
     "has_target": false, 
     "is_team": false, 
-    "title": null, 
+    "title": 6, 
     "target_description": "", 
     "timeout": null, 
     "is_cancellable": true, 
@@ -48536,6 +48536,19 @@
     "allow_disabled": false, 
     "name": "Recruteurs", 
     "mission": 48, 
+    "length": 3, 
+    "allow_empty": false, 
+    "slug": "recruteurs", 
+    "condition": "if folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+  }
+},
+{
+  "pk": 50, 
+  "model": "mission.missiongrid", 
+  "fields": {
+    "allow_disabled": false, 
+    "name": "Recruteurs", 
+    "mission": 49, 
     "length": 3, 
     "allow_empty": false, 
     "slug": "recruteurs", 
@@ -52560,12 +52573,12 @@
   "model": "event.event", 
   "fields": {
     "category": null, 
-    "name": "Recruter un ambassadeur", 
+    "name": "Recruter une dame", 
     "weight": 1, 
-    "text": "Je vous pr\u00e9sente sir {{ambassadeur}}.\r\nSes stats sont {{ambassadeur.fight}}(C) {{ambassadeur.plot}}(I) {{ambassadeur.diplomacy}}(D) {{ambassadeur.scholarship}}(\u00c9) {{ambassadeur.loyalty}}(L)\r\nSes traits sont:\r\n{% for quality in ambassadeur.quality_set.all %}\r\n* {{quality.name}}\r\n{% endfor %}", 
+    "text": "Je vous pr\u00e9sente sir {{dame}}.\r\nSes stats sont {{dame.fight}}(C) {{dame.plot}}(I) {{dame.diplomacy}}(D) {{dame.scholarship}}(\u00c9) {{dame.loyalty}}(L)\r\nSes traits sont:\r\n{% for quality in dame.quality_set.all %}\r\n* {{quality.name}}\r\n{% endfor %}", 
     "image": "", 
     "on_fire": "\n", 
-    "slug": "recrutement_ambassadeur", 
+    "slug": "recrutement_dame", 
     "condition": "\n"
   }
 },
@@ -55522,10 +55535,10 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Je le veux !", 
-    "message": "{{ambassadeur }} a rejoint votre cour", 
+    "message": "{{dame}} a rejoint votre cour", 
     "event": 250, 
     "condition": "\n", 
-    "on_fire": "pretre = param.get_value(\"pretre\")\n\npretre.kingdom = kingdom\npretre.save()\n"
+    "on_fire": "dame= param.get_value(\"dame\")\n\ndame.kingdom = kingdom\ndame.save()\n"
   }
 },
 {
@@ -119895,6 +119908,45 @@
     "change_message": "", 
     "user": 41, 
     "content_type": 23
+  }
+},
+{
+  "pk": 7458, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-20T11:33:45.614", 
+    "object_repr": "recruter_dame", 
+    "object_id": "49", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel, target_list et title. mission grid \u00ab\u00a0recruter_dame [Recruteurs (3)]\u00a0\u00bb ajout\u00e9.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7459, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-20T11:34:09.886", 
+    "object_repr": "recruter_dame", 
+    "object_id": "49", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0recruter_dame [Recruteurs (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7460, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-20T11:35:24.108", 
+    "object_repr": "recrutement_dame", 
+    "object_id": "250", 
+    "change_message": "Modifi\u00e9 name, slug, text, condition et on_fire. condition, on_fire et message modifi\u00e9 pour event action \u00ab\u00a0Je le veux ! [recrutement_dame]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
   }
 },
 {
