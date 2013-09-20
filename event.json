@@ -2183,7 +2183,7 @@
     "weight": 1, 
     "text": "Un chevalier s'est pr\u00e9sent\u00e9 \u00e0 la porte du ch\u00e2teau, annon\u00e7ant d'une voix forte qu'il voulait me parler. Sur mon ordre, les gardes ont baiss\u00e9 le pont levis, et je suis all\u00e9 \u00e0 sa rencontre dans la cour. Le pas vif et l\u2019\u0153il farouche, il marche droit sur moi, alors que les gardes qui m'entourent se raidissent. Il est v\u00eatu d'une armure de qualit\u00e9, et l'\u00e9p\u00e9e qu'il porte \u00e0 la ceinture n'a rien d'un jouet. Arriv\u00e9 devant moi, il se laisse tomber  \u00e0 genoux. \"Sire! Je suis {{chevalier}}. J'ai entendu parler de vos hauts faits, et d\u00e9sire ardemment rejoindre vos rangs.\". Il me lance une \u0153illade f\u00e9roce et gronde \"Pointez du doigt vos ennemis, et je les taillerai en pi\u00e8ces !\"", 
     "image": "events/716_5.jpg", 
-    "on_fire": "chevalier = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=60, sex=Folk.MALE,  birth=datetime.now() - timedelta(days=35), trait=\"colerique\")\nparam.set_value(\"facheux\", chevalier)\n\n", 
+    "on_fire": "chevalier = call_function(\"creer_folk\", kingdom=None, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=60, sex=Folk.MALE,  birth=datetime.now() - timedelta(days=35), trait=\"colerique\")\nparam.set_value(\"facheux\", chevalier)\n\n", 
     "slug": "tuto_facheux_chevalier", 
     "condition": "\n"
   }
@@ -5255,7 +5255,7 @@
     "message": "Le chevalier {{chevalier}} a rejoint ma cour.", 
     "event": 181, 
     "condition": "\n", 
-    "on_fire": "facheux = param.get_value(\"facheux\")\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"Aucun_event_fini_moteur\")"
+    "on_fire": "facheux = param.get_value(\"facheux\")\nfacheux.kingdom = kingdom\nkingdom.save()\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"Aucun_event_fini_moteur\")"
   }
 },
 {
