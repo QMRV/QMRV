@@ -11456,6 +11456,16 @@
   }
 },
 {
+  "pk": 23, 
+  "model": "internal.function", 
+  "fields": {
+    "params": "", 
+    "slug": "liste_nom_avec_specialite", 
+    "on_fire": "archers=[]\nlanciers=[]\ncavaliers=[]\ninfanterie=[]\npretres=[]\nfor commandant in commandants:\n  if commandant.has_quality(\"archer\"):\n    archers.append(commandant)\n  elif commandant.has_quality(\"lancier\"):\n    lancier.append(commandant)\n  elif commandant.has_quality(\"cavalier\"):\n    cavaliers.append(commandant)\n  elif commandant.has_quality(\"pretre\"):\n    pretres.append(commandant)\n  else:\n    infanterie.append(commandant)\nstring=\"\"\nnb_categorie=0\nif archers.length()>0:\n  nb_categorie+=1\nif lancier.length()>0:\n  nb_categorie+=1\nif cavaliers.length()>0:\n  nb_categorie+=1\nif pretres.length()>0:\n  nb_categorie+=1\nif infanterie.length()>0:\n  nb_categorie+=1\n  \ncompteur=archers.length()\nif archers.length()>0:\n  for archer in archers:\n    compteur-=1\n    string+=archer.first_name+\" \"+archer.last_name\n    if compteur>1:\n      string+=\", \"\n    elif compteur==1:\n      string+=\" et \"\n  if archers.length()==1:\n    string+=\" commandait\"\n  else:\n    string+=\" commandaient\"\n  string+=\" les archers\"\n  nb_categorie-=1\n  if nb_categorie==1:\n    string+=\" alors que \"\n  elif nb_categorie>1:\n    string+=\", \"\n  else:\n    string+=\".\"\ncompteur=lanciers.length()\nif lanciers.length()>0:\n  for lancier in lanciers:\n    compteur-=1\n    string+=lancier.first_name+\" \"+lancier.last_name\n    if compteur>1:\n      string+=\", \"\n    if compteur==1:\n      string+=\" et \"\n  if lancier.length()==1:\n    string+=\" commandait\"\n  else:\n    string+=\" commandaient\"\n  string+=\" les lanciers\"\n  nb_categorie-=1\n  if nb_categorie==1:\n    string+=\" alors que \"\n  elif nb_categorie>1:\n    string+=\", \"\n  else:\n    string+=\".\"\n\ncompteur=cavaliers.length()\nif cavaliers.length()>0:\n  for cavalier in cavaliers:\n    compteur-=1\n    string+=cavalier.first_name+\" \"+cavalier.last_name\n    if compteur>1:\n      string+=\", \"\n    if compteur==1:\n      string+=\" et \"\n  if cavaliers.length()==1:\n    string+=\" commandait\"\n  else:\n    string+=\" commandaient\"\n  string+=\" les cavaliers\"\n  nb_categorie-=1\n  if nb_categorie==1:\n    string+=\" alors que \"\n  elif nb_categorie>1:\n    string+=\", \"\n  else:\n    string+=\".\"\n\ncompteur=pretres.length()\nif pretres.length()>0:\n  for pretre in pretres:\n    compteur-=1\n    string+=pretre.first_name+\" \"+pretre.last_name\n    if compteur>1:\n      string+=\", \"\n    if compteur==1:\n      string+=\" et \"\n  if pretres.length()==1:\n    string+=\" commandait\"\n  else:\n    string+=\" commandaient\"\n  string+=\" les archers\"\n  nb_categorie-=1\n  if nb_categorie==1:\n    string+=\" alors que \"\n  elif nb_categorie>1:\n    string+=\", \"\n  else:\n    string+=\".\"    \n    \nparam=string\n    \n    \n    \n\n", 
+    "description": "Jean de Rochefort et Hugues de Lavoisier commandaient les piquiers, Herbert d'Aloigne commandait les archer, Edouard de Malvalette commandait la cavalerie alors que Antoine d'Iseusse et le pr\u00eatre Cyril d'Antagonie commandaient l'infanterie."
+  }
+},
+{
   "pk": 67, 
   "model": "internal.freeze", 
   "fields": {
@@ -51751,7 +51761,7 @@
     "weight": 1, 
     "text": "Un chevalier s'est pr\u00e9sent\u00e9 \u00e0 la porte du ch\u00e2teau, annon\u00e7ant d'une voix forte qu'il voulait me parler. Sur mon ordre, les gardes ont baiss\u00e9 le pont levis, et je suis all\u00e9 \u00e0 sa rencontre dans la cour. Le pas vif et l\u2019\u0153il farouche, il marche droit sur moi, alors que les gardes qui m'entourent se raidissent. Il est v\u00eatu d'une armure de qualit\u00e9, et l'\u00e9p\u00e9e qu'il porte \u00e0 la ceinture n'a rien d'un jouet. Arriv\u00e9 devant moi, il se laisse tomber  \u00e0 genoux. \"Sire! Je suis {{chevalier}}. J'ai entendu parler de vos hauts faits, et d\u00e9sire ardemment rejoindre vos rangs.\". Il me lance une \u0153illade f\u00e9roce et gronde \"Pointez du doigt vos ennemis, et je les taillerai en pi\u00e8ces !\"", 
     "image": "events/716_5.jpg", 
-    "on_fire": "chevalier = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=60, sex=Folk.MALE,  birth=datetime.now() - timedelta(days=35), trait=\"colerique\")\nparam.set_value(\"facheux\", chevalier)\n\n", 
+    "on_fire": "chevalier = call_function(\"creer_folk\", kingdom=None, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=60, sex=Folk.MALE,  birth=datetime.now() - timedelta(days=35), trait=\"colerique\")\nparam.set_value(\"facheux\", chevalier)\n\n", 
     "slug": "tuto_facheux_chevalier", 
     "condition": "\n"
   }
@@ -54823,7 +54833,7 @@
     "message": "Le chevalier {{chevalier}} a rejoint ma cour.", 
     "event": 181, 
     "condition": "\n", 
-    "on_fire": "facheux = param.get_value(\"facheux\")\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"Aucun_event_fini_moteur\")"
+    "on_fire": "facheux = param.get_value(\"facheux\")\nfacheux.kingdom = kingdom\nkingdom.save()\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"Aucun_event_fini_moteur\")"
   }
 },
 {
@@ -119960,6 +119970,32 @@
     "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0recruter_dame [Recruteurs (3)]\u00a0\u00bb.", 
     "user": 41, 
     "content_type": 23
+  }
+},
+{
+  "pk": 7462, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-20T22:25:16.269", 
+    "object_repr": "tuto_facheux_chevalier", 
+    "object_id": "181", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Je ris de bon coeur. \"Vous me plaisez, mon ami ! s [tuto_facheux_chevalier]\u00a0\u00bb. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0\"Non merci, chevalier, je n'ai que faire d'un suiv [tuto_facheux_chevalier]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7463, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-20T23:13:06.142", 
+    "object_repr": "liste_nom_avec_specialite()", 
+    "object_id": "23", 
+    "change_message": "", 
+    "user": 38, 
+    "content_type": 34
   }
 },
 {
