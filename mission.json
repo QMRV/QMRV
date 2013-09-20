@@ -1044,7 +1044,7 @@
     "has_value": false, 
     "on_resolution": "#age = f(\"random_gauss\", min=16, max=40)\nage = random_value(16,40)\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nchoix_baisee = (40-age)/24*100\nif choix_baisee <= ramdon_value(1,100):\n  qualities.append(\"jouvancelle\")\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"loyalty\")-23)/37) + random_value(-10, 10)\n\ndame= f(\"creer_folk\", kingdom=None, fight_min=2, plot_min=2, diplomacy_min=2, scholarship_min=2, loyalty=loyalty, max_carac=max_carac, sex=Folk.FEMALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\n\npe = kingdom.create_pending_event(\"recrutement_dame\")\npe.set_value(\"dame\", dame)\npe.start()", 
     "value_description": "", 
-    "on_start": "cout = 15 + 5 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"ambassadeur\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  status = \"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\"", 
+    "on_start": "cout = 15 + 10 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"ambassadeur\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  status = \"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\"", 
     "has_target": false, 
     "is_team": false, 
     "title": 6, 
