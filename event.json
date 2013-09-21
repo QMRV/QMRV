@@ -2741,9 +2741,9 @@
     "category": null, 
     "name": "resultat de bataille", 
     "weight": 1, 
-    "text": "moi=gagnant {{ moi }}\r\n\r\nlui=perdant {{ lui }}\r\n\r\nbataille : {{bataille}}\r\n\r\ndelta : {{delta}}\r\n\r\ntest description armee : ", 
+    "text": "moi=gagnant {{ moi }}\r\n\r\nlui=perdant {{ lui }}\r\n\r\nbataille : {{bataille}}\r\n\r\ndelta : {{delta}}\r\n\r\ntest description de mon arm\u00e9e : {{liste_gagnant}}\r\n\r\ntest description de son arm\u00e9e : {{liste_perdant}}", 
     "image": "", 
-    "on_fire": "param.set_value(\"tuto_rapport_espion\",kingdom.get_value(\"tuto_rapport_espion\",False))\nparam.set_value(\"tuto_conflit\",kingdom.get_value(\"tuto_conflit\",False))\nparam.set_value(\"moi\",param.get_value(\"gagnant\"))\nparam.set_value(\"lui\",param.get_value(\"perdant\"))\ntxt=f(\"liste_nom_avec_specialite\", commandants=param.get_value(\"gagnant\")['combattants'])\n", 
+    "on_fire": "param.set_value(\"tuto_rapport_espion\",kingdom.get_value(\"tuto_rapport_espion\",False))\nparam.set_value(\"tuto_conflit\",kingdom.get_value(\"tuto_conflit\",False))\nparam.set_value(\"moi\",param.get_value(\"gagnant\"))\nparam.set_value(\"lui\",param.get_value(\"perdant\"))\n\n", 
     "slug": "tuto_escarmouche_victoire", 
     "condition": "\n"
   }
