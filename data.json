@@ -48059,6 +48059,29 @@
   }
 },
 {
+  "pk": 50, 
+  "model": "mission.mission", 
+  "fields": {
+    "name": "Accepter un courtisan", 
+    "target_list": "\n", 
+    "text": "Ouvrir les portes de mon ch\u00e2teau et laisser entrer le premier venu ", 
+    "has_value": false, 
+    "on_resolution": "\n", 
+    "value_description": "", 
+    "on_start": "age = random_gauss(16,40)\nmax_carac = 32+int((age-16)/5)\nloyalty = 50 + 30 * int((sum_folks(affected, \"loyalty\")-23)/37) + random_value(-10, 10)\nqualities = []\n\nchoice_folk = random_value(0,99)\nif choice_folk < 5:\n  #pretre\n  \n  qualities.append(\"pretre\")\n  #liste des traits qu'il ne peut pas avoir\n  no_qualities = []  \n  folk = f(\"creer_folk\", kingdom=None, fight_min=2, plot_min=4, diplomacy_min=4, scholarship_min=7, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\nelif choice_folk < 55:\n  #noble dame\n  choix_baisee = (40-age)/24*100\n  if choix_baisee <= ramdon_value(1,100):\n    qualities.append(\"jouvancelle\")\n  #liste des traits qu'il ne peut pas avoir\n  no_qualities = []\n  folk = f(\"creer_folk\", kingdom=None, fight_min=2, plot_min=2, diplomacy_min=2, scholarship_min=2, loyalty=loyalty, max_carac=max_carac, sex=Folk.FEMALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\nelse:\n  if random_value(1,2) == 1 : #si c'est un homme\n    if random_value(1,100) < (40-age)/24*100 : #il a alors un trait martial\n      qualities.append(random_in([\"archer\", \"cavalier\", \"piquier\"]))\n    folk = f(\"creer_folk\", kingdom=None, fight_min=7, plot_min=1, diplomacy_min=1, scholarship_min=1, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\n  else: #si c'est une femme\n    pass\n    \n", 
+    "has_target": false, 
+    "is_team": false, 
+    "title": 4, 
+    "target_description": "", 
+    "timeout": null, 
+    "is_cancellable": true, 
+    "duration": 120, 
+    "on_cancel": "\n", 
+    "slug": "accepter_courtisan", 
+    "on_init": "\n"
+  }
+},
+{
   "pk": 2, 
   "model": "mission.missiongrid", 
   "fields": {
@@ -121097,6 +121120,19 @@
     "object_repr": "recruter_chevalier", 
     "object_id": "47", 
     "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0recruter_chevalier [Recruteurs (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7527, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-22T22:23:16.947", 
+    "object_repr": "accepter_courtisan", 
+    "object_id": "50", 
+    "change_message": "", 
     "user": 41, 
     "content_type": 23
   }
