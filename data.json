@@ -11418,7 +11418,7 @@
   "fields": {
     "params": "fight_min:int combat minimum\r\nplot_min:int intrigue minimum\r\nscholarship_min:int \u00e9rudition minimum\r\ndiplomacy_min:int diplomatie minimum\r\nloyalty:int loyaut\u00e9 initiale\r\nmax_carac:int nombre de points de carac \u00e0 r\u00e9partir\r\nkingdom:Kingdom le royaume contenant le folk.", 
     "slug": "creer_folk", 
-    "on_fire": "# Ajout des stats min\nfolk = Folk(\n  fight=fight_min,\n  plot=plot_min,\n  scholarship=scholarship_min,\n  diplomacy=diplomacy_min,\n  loyalty=loyalty\n)\n# Ajout du kingdom \nif \"kingdom\" in locals():\n  folk.kingdom=kingdom\n# Ajout de son sexe\nif \"sex\" in locals():\n  folk.sex=sex\nelse:\n  folk.sex=random_in([Folk.FEMALE,Folk.MALE])\n# Ajout des statistiques compl\u00e8tes\nif folk.sex == Folk.MALE:\n  # Si c'est un homme\n  sum_stats = call_function(\"somme_stat_folk\", folk=folk)\n  while sum_stats < max_carac :\n    fight = (20 - folk.fight) * float(100 / float(80 - sum_stats))\n    plot = (20 - folk.plot) * float(100 / float(80 - sum_stats))\n    scholarship = (20 - folk.scholarship) * float(100 / float(80 - sum_stats))\n    diplomacy = (20 - folk.diplomacy) * float(100 / float(80 - sum_stats))\n    choose_attribute = random_value(1,100)\n    if choose_attribute < fight:\n      folk.fight += 1\n    elif choose_attribute < fight + plot :\n      folk.plot += 1\n    elif choose_attribute < fight + plot + scholarship :\n      folk.scholarship += 1\n    else :\n      folk.diplomacy += 1\n    sum_stats += 1\nelse:\n  # Si c'est une femme\n  folk.fight= random_value(2,7)\n  sum_stats = call_function(\"somme_stat_folk\", folk=folk) - folk.fight\n  \n  while sum_stats < max_carac - folk.fight:\n    plot = (20 - folk.plot) * float(100 / float(60 - sum_stats))\n    scholarship = (20 - folk.scholarship) * float(100 / float(60 - sum_stats))\n    diplomacy = (20 - folk.diplomacy) * float(100 / float(60 - sum_stats))\n    \n    choose_attribute = random_value(1,100)  \n    if choose_attribute < plot :\n      folk.plot += 1\n    elif choose_attribute < plot + scholarship :\n      folk.scholarship += 1\n    else :\n      folk.diplomacy += 1\n    sum_stats += 1\n# Ajout du last_name\nif \"last_name\" in locals():\n  #s'il y a d\u00e9j\u00e0 d' ou de devant\n  if last_name.startswith(\"de \") or last_name.startswith(\"d'\"):\n    folk.last_name = last_name\n  else:\n    if last_name[0] in ['a','e','i','o','u','y','A','E','I','O','U','Y']:\n      folk.last_name = \"d'\" + last_name\n    else:\n      folk.last_name = \"de \" + last_name\n\n# Ajout des parents\nif \"father\" in locals():\n  folk.father = father\nif \"mother\" in locals():\n  folk.mother = mother\n# Ajout de l'epoux\nif \"spouse\" in locals():\n  folk.spouse = spouse\n# Ajout de la date de naissance\nif \"birth\" in locals():\n  folk.birth = birth\n  \nfolk.save()\n\n# Ajout des traits\nchoose_quality = random_value(1, 10)\nexculded_traits = []\nif \"notraits\" in locals():\n  exculded_traits = notraits\n  \nif choose_quality > 1 :\n  if random_value(1,10) <= 1:\n    folk.add_quality(Quality.objects.filter(category__name=\"G\u00e9n\u00e9tique\").exclude(slug__in=exculded_traits).order_by('?')[0].slug)\n  else:\n    folk.add_quality(Quality.objects.filter(category__name=\"Caract\u00e8re\").exclude(slug__in=exculded_traits).order_by('?')[0].slug)\n\n  if choose_quality > 8 :\n    folk.add_quality(Quality.objects.filter(category__name=\"Caract\u00e8re\").exclude(slug__in=exculded_traits).order_by('?')[0].slug)\n\nif \"trait\" in locals():\n  folk.add_quality(trait)\n\nif \"traits\" in locals():\n  for trait in traits:\n    folk.add_quality(trait)\n    \nfolk.save()\ncall_function(\"attribuer_avatar\", folk=folk)\n\nparam = folk\n", 
+    "on_fire": "# Ajout des stats min\nfolk = Folk(\n  fight=fight_min,\n  plot=plot_min,\n  scholarship=scholarship_min,\n  diplomacy=diplomacy_min,\n  loyalty=loyalty\n)\n# Ajout du kingdom \nif \"kingdom\" in locals():\n  folk.kingdom=kingdom\n# Ajout de son sexe\nif \"sex\" in locals():\n  folk.sex=sex\nelse:\n  folk.sex=random_in([Folk.FEMALE,Folk.MALE])\n# Ajout des statistiques compl\u00e8tes\nif folk.sex == Folk.MALE:\n  # Si c'est un homme\n  sum_stats = call_function(\"somme_stat_folk\", folk=folk)\n  while sum_stats < max_carac :\n    fight = (20 - folk.fight) * float(100 / float(80 - sum_stats))\n    plot = (20 - folk.plot) * float(100 / float(80 - sum_stats))\n    scholarship = (20 - folk.scholarship) * float(100 / float(80 - sum_stats))\n    diplomacy = (20 - folk.diplomacy) * float(100 / float(80 - sum_stats))\n    choose_attribute = random_value(1,100)\n    if choose_attribute < fight:\n      folk.fight += 1\n    elif choose_attribute < fight + plot :\n      folk.plot += 1\n    elif choose_attribute < fight + plot + scholarship :\n      folk.scholarship += 1\n    else :\n      folk.diplomacy += 1\n    sum_stats += 1\nelse:\n  # Si c'est une femme\n  folk.fight= random_gauss(2,11)\n  sum_stats = call_function(\"somme_stat_folk\", folk=folk) - folk.fight\n  \n  while sum_stats < max_carac - folk.fight:\n    plot = (20 - folk.plot) * float(100 / float(60 - sum_stats))\n    scholarship = (20 - folk.scholarship) * float(100 / float(60 - sum_stats))\n    diplomacy = (20 - folk.diplomacy) * float(100 / float(60 - sum_stats))\n    \n    choose_attribute = random_value(1,100)  \n    if choose_attribute < plot :\n      folk.plot += 1\n    elif choose_attribute < plot + scholarship :\n      folk.scholarship += 1\n    else :\n      folk.diplomacy += 1\n    sum_stats += 1\n# Ajout du last_name\nif \"last_name\" in locals():\n  #s'il y a d\u00e9j\u00e0 d' ou de devant\n  if last_name.startswith(\"de \") or last_name.startswith(\"d'\"):\n    folk.last_name = last_name\n  else:\n    if last_name[0] in ['a','e','i','o','u','y','A','E','I','O','U','Y']:\n      folk.last_name = \"d'\" + last_name\n    else:\n      folk.last_name = \"de \" + last_name\n\n# Ajout des parents\nif \"father\" in locals():\n  folk.father = father\nif \"mother\" in locals():\n  folk.mother = mother\n# Ajout de l'epoux\nif \"spouse\" in locals():\n  folk.spouse = spouse\n# Ajout de la date de naissance\nif \"birth\" in locals():\n  folk.birth = birth\n  \nfolk.save()\n\n# Ajout des traits\nchoose_quality = random_value(1, 10)\nexculded_traits = []\nif \"notraits\" in locals():\n  exculded_traits = notraits\n  \nif choose_quality > 1 :\n  if random_value(1,10) <= 1:\n    folk.add_quality(Quality.objects.filter(category__name=\"G\u00e9n\u00e9tique\").exclude(slug__in=exculded_traits).order_by('?')[0].slug)\n  else:\n    folk.add_quality(Quality.objects.filter(category__name=\"Caract\u00e8re\").exclude(slug__in=exculded_traits).order_by('?')[0].slug)\n\n  if choose_quality > 8 :\n    folk.add_quality(Quality.objects.filter(category__name=\"Caract\u00e8re\").exclude(slug__in=exculded_traits).order_by('?')[0].slug)\n\nif \"trait\" in locals():\n  folk.add_quality(trait)\n\nif \"traits\" in locals():\n  for trait in traits:\n    folk.add_quality(trait)\n    \nfolk.save()\ncall_function(\"attribuer_avatar\", folk=folk)\n\nparam = folk\n", 
     "description": "Cr\u00e9e un nouveau Folk dans le royaume.\r\n\r\n(trait)\r\n(traits)\r\n(notraits)\r\n(sex)\r\n(last_name)\r\n(father)\r\n(mother)\r\n(birth)\r\n(spouse)"
   }
 },
@@ -47997,7 +47997,7 @@
     "target_list": "\n", 
     "text": "Envoyer des missionnaire recruter un chevalier", 
     "has_value": false, 
-    "on_resolution": "#age = f(\"random_gauss\", min=16, max=40)\nage = random_value(16,40)\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nqualities.append(random_in([\"archer\", \"cavalier\", \"piquier\"]))\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"loyalty\")-23)/37) + random_value(-10, 10)\nchevalier = f(\"creer_folk\", kingdom=None, fight_min=7, plot_min=1, diplomacy_min=1, scholarship_min=1, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\npe = kingdom.create_pending_event(\"recrutement_chevalier\")\npe.set_value(\"chevalier\", chevalier)\npe.start()\n", 
+    "on_resolution": "age = random_gauss(16,40)\n\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nqualities.append(random_in([\"archer\", \"cavalier\", \"piquier\"]))\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"loyalty\")-23)/37) + random_value(-10, 10)\nchevalier = f(\"creer_folk\", kingdom=None, fight_min=7, plot_min=1, diplomacy_min=1, scholarship_min=1, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\npe = kingdom.create_pending_event(\"recrutement_chevalier\")\npe.set_value(\"chevalier\", chevalier)\npe.start()\n", 
     "value_description": "", 
     "on_start": "cout = 15 + 10 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"ambassadeur\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  status = \"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\"\n", 
     "has_target": false, 
@@ -48020,7 +48020,7 @@
     "target_list": "\n", 
     "text": "Mander un pr\u00eatre \u00e0 l'\u00e9v\u00e9ch\u00e9\r\n", 
     "has_value": false, 
-    "on_resolution": "#age = f(\"random_gauss\", min=16, max=40)\nage = random_value(16,40)\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nqualities.append(\"pretre\")\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"loyalty\")-23)/37) + random_value(-10, 10)\n\npretre = f(\"creer_folk\", kingdom=None, fight_min=2, plot_min=4, diplomacy_min=4, scholarship_min=7, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\n\npe = kingdom.create_pending_event(\"recrutement_pretre\")\npe.set_value(\"pretre\", pretre)\npe.start()", 
+    "on_resolution": "age = random_gauss(16, 40)\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nqualities.append(\"pretre\")\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"loyalty\")-23)/37) + random_value(-10, 10)\n\npretre = f(\"creer_folk\", kingdom=None, fight_min=2, plot_min=4, diplomacy_min=4, scholarship_min=7, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\n\npe = kingdom.create_pending_event(\"recrutement_pretre\")\npe.set_value(\"pretre\", pretre)\npe.start()", 
     "value_description": "", 
     "on_start": "cout = 15 + 5 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"cure\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  status = \"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\"", 
     "has_target": false, 
@@ -48043,7 +48043,7 @@
     "target_list": "\n", 
     "text": "Partir recruter une dame", 
     "has_value": false, 
-    "on_resolution": "#age = f(\"random_gauss\", min=16, max=40)\nage = random_value(16,40)\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nchoix_baisee = (40-age)/24*100\nif choix_baisee <= ramdon_value(1,100):\n  qualities.append(\"jouvancelle\")\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"loyalty\")-23)/37) + random_value(-10, 10)\n\ndame= f(\"creer_folk\", kingdom=None, fight_min=2, plot_min=2, diplomacy_min=2, scholarship_min=2, loyalty=loyalty, max_carac=max_carac, sex=Folk.FEMALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\n\npe = kingdom.create_pending_event(\"recrutement_dame\")\npe.set_value(\"dame\", dame)\npe.start()", 
+    "on_resolution": "age = random_gauss(16,40)\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nchoix_baisee = (40-age)/24*100\nif choix_baisee <= ramdon_value(1,100):\n  qualities.append(\"jouvancelle\")\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"loyalty\")-23)/37) + random_value(-10, 10)\n\ndame= f(\"creer_folk\", kingdom=None, fight_min=2, plot_min=2, diplomacy_min=2, scholarship_min=2, loyalty=loyalty, max_carac=max_carac, sex=Folk.FEMALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\n\npe = kingdom.create_pending_event(\"recrutement_dame\")\npe.set_value(\"dame\", dame)\npe.start()", 
     "value_description": "", 
     "on_start": "cout = 15 + 10 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"ambassadeur\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  status = \"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\"", 
     "has_target": false, 
@@ -121047,6 +121047,58 @@
     "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0OK [tuto_escarmouche_victoire]\u00a0\u00bb.", 
     "user": 38, 
     "content_type": 29
+  }
+},
+{
+  "pk": 7523, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-22T12:45:21.789", 
+    "object_repr": "creer_folk()", 
+    "object_id": "8", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 41, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7524, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-22T12:46:23.608", 
+    "object_repr": "recruter_pretre", 
+    "object_id": "48", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0recruter_pretre [Recruteurs (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7525, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-22T12:46:47.089", 
+    "object_repr": "recruter_dame", 
+    "object_id": "49", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0recruter_dame [Recruteurs (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7526, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-22T12:47:17.500", 
+    "object_repr": "recruter_chevalier", 
+    "object_id": "47", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0recruter_chevalier [Recruteurs (3)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
   }
 },
 {
