@@ -608,13 +608,14 @@
   "pk": 34, 
   "model": "kingdom.quality", 
   "fields": {
-    "category": 4, 
+    "category": 5, 
     "description": "Les hauts faits qu'il a accomplit sur le champ de bataille lui conf\u00e8re une certaine aura.\r\n\r\n* +1 en Combat\r\n* +1 en Diplomatie", 
     "on_defect": "folk.fight-=1\nfolk.diplomacy-=1\nfolk.save()", 
     "female_description": "description f\u00e9minine", 
     "on_affect": "folk.fight+=1\nfolk.diplomacy+=1\nfolk.save()", 
     "female_name": "nope", 
     "incompatible_qualities": [
+      48, 
       23, 
       35
     ], 
@@ -626,13 +627,14 @@
   "pk": 35, 
   "model": "kingdom.quality", 
   "fields": {
-    "category": 4, 
+    "category": 5, 
     "description": "Les exploits de cet individu sont connus dans toute la r\u00e9gion. Sur son passage, les hommes crient son nom et les femmes lui pr\u00e9sentent leur b\u00e9b\u00e9.\r\n\r\n* +2 en Combat\r\n* +2 en Diplomatie", 
     "on_defect": "folk.fight-=2\nfolk.diplomacy-=2\nfolk.save()", 
     "female_description": "description f\u00e9minine", 
     "on_affect": "folk.fight+=2\nfolk.diplomacy+=2\nfolk.save()\n", 
     "female_name": "-", 
     "incompatible_qualities": [
+      48, 
       23, 
       34
     ], 
@@ -794,7 +796,7 @@
   "pk": 46, 
   "model": "kingdom.quality", 
   "fields": {
-    "category": 4, 
+    "category": 5, 
     "description": " ", 
     "on_defect": "\n", 
     "female_description": " ", 
@@ -820,6 +822,24 @@
     ], 
     "slug": "amer", 
     "name": "Amer"
+  }
+},
+{
+  "pk": 48, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 5, 
+    "description": "Traire reconnu", 
+    "on_defect": "\n", 
+    "female_description": "Traitresse reconnue", 
+    "on_affect": "\n", 
+    "female_name": "Traitresse", 
+    "incompatible_qualities": [
+      34, 
+      35
+    ], 
+    "slug": "traitre", 
+    "name": "Traitre"
   }
 },
 {
