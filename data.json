@@ -458,6 +458,14 @@
   }
 },
 {
+  "pk": "2ql8aznam3whzy6lpm2fmtpwpaw9geqf", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T22:51:52.116", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "3331c14f4395a978ea57f98d156fd8ce", 
   "model": "sessions.session", 
   "fields": {
@@ -578,6 +586,14 @@
   }
 },
 {
+  "pk": "55bewrd1tjkgiivdr5p4jhce40yz4mwm", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T22:37:43.428", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "55ccf98c7adaa0e8ef5f07350aab9f25", 
   "model": "sessions.session", 
   "fields": {
@@ -662,6 +678,14 @@
   "model": "sessions.session", 
   "fields": {
     "expire_date": "2013-10-08T22:03:07.460", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
+  "pk": "7ubvavfi27jfq4xgo8xas7o7tjf35rmx", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T22:52:00.337", 
     "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
@@ -786,11 +810,27 @@
   }
 },
 {
+  "pk": "b47lbr5v4b9ak1k7tfq1jvbej439wp4c", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T22:36:17.256", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "b49a9ed3c29c496e31827886285bc9c6", 
   "model": "sessions.session", 
   "fields": {
     "expire_date": "2013-07-17T19:36:06.794", 
     "session_data": "OThhOTdlYTY5ZjEwMDFmN2M0Yzc3MjU2ZjVkZGIyMGY4N2U3NzYxZDqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED\nVQ1fYXV0aF91c2VyX2lkcQRLAnUu\n"
+  }
+},
+{
+  "pk": "b5uhj8ptyt085sor299k2xxfcn0n3v07", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T22:20:11.662", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
 {
@@ -858,6 +898,14 @@
   }
 },
 {
+  "pk": "dj9szut8hhyeeqdaut2utguzg4zuqugr", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T22:51:43.280", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "dmcjdkbply0l8oko2pe2chptifhdgb8v", 
   "model": "sessions.session", 
   "fields": {
@@ -871,6 +919,14 @@
   "fields": {
     "expire_date": "2013-07-17T10:07:10.424", 
     "session_data": "OThhOTdlYTY5ZjEwMDFmN2M0Yzc3MjU2ZjVkZGIyMGY4N2U3NzYxZDqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED\nVQ1fYXV0aF91c2VyX2lkcQRLAnUu\n"
+  }
+},
+{
+  "pk": "e7uhe15dyd3fp4j2cdxtjf5oiz29hxx3", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T22:36:21.813", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
 {
@@ -1066,6 +1122,14 @@
   }
 },
 {
+  "pk": "jp640td4qeyd7da6wwbbz37x9fo0njd1", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T22:36:28.368", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "jtlv20os8q29ugh4vpj1t79b4f1h124t", 
   "model": "sessions.session", 
   "fields": {
@@ -1186,6 +1250,14 @@
   }
 },
 {
+  "pk": "o894ache3ei15f2j8r9r046y7ebjxww9", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T22:36:15.191", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "o9iuilw4xm6cy7pkzatg7p64pw729vop", 
   "model": "sessions.session", 
   "fields": {
@@ -1210,6 +1282,14 @@
   }
 },
 {
+  "pk": "ow2sxqf5pgyfkd1afg2f23dss1i2vsjf", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T22:37:15.051", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "p4soy33ok0exbt3ll6gki3o3msxvlq0s", 
   "model": "sessions.session", 
   "fields": {
@@ -1230,6 +1310,14 @@
   "model": "sessions.session", 
   "fields": {
     "expire_date": "2013-09-30T20:05:25.297", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
+  "pk": "pu9a8fbdejgp7x5vnxq16sncpux79vsj", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T22:50:26.473", 
     "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
@@ -1319,6 +1407,14 @@
   "fields": {
     "expire_date": "2013-07-28T16:45:16.079", 
     "session_data": "MmY4NTljM2Q3YzA3OGQwODcyNTQ0MzI1MjYyOTgxYmRjNTNkMTdiMDqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLGHUu"
+  }
+},
+{
+  "pk": "ry4hqh0lnlds57hfxbaw9s6in571fkl0", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T22:51:15.011", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
 {
@@ -1450,6 +1546,14 @@
   }
 },
 {
+  "pk": "v438wdh13nbiqa5k44tzeha4lod20evj", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T22:50:21.812", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "v4tgnnmuy4unzm5uoggr9tpjioa7j877", 
   "model": "sessions.session", 
   "fields": {
@@ -1514,6 +1618,14 @@
   }
 },
 {
+  "pk": "xbh1n6ndvkev0bbj6im4q23zyimv4njz", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T22:18:47.864", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "xlfnuspmzdzip4qsotkulmmp3itbpq5u", 
   "model": "sessions.session", 
   "fields": {
@@ -1538,6 +1650,14 @@
   }
 },
 {
+  "pk": "xyjo38yck2kcppio1b69nz08bzg78pqm", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T22:53:26.814", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "y2vbark609vzna9l64pr6vwlth3tadon", 
   "model": "sessions.session", 
   "fields": {
@@ -1558,6 +1678,14 @@
   "model": "sessions.session", 
   "fields": {
     "expire_date": "2013-07-24T16:24:18.305", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
+  "pk": "yl0go69w091f8ti5t0blpuyupqpobutj", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T22:36:38.915", 
     "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
@@ -4014,7 +4142,7 @@
     "avatar": 25, 
     "birth": "2013-08-09T23:35:02", 
     "mother": null, 
-    "loyalty": 80, 
+    "loyalty": 40, 
     "spouse": null, 
     "quality_set": [
       25
@@ -4040,7 +4168,7 @@
     "avatar": 64, 
     "birth": "2013-08-10T23:35:03", 
     "mother": null, 
-    "loyalty": 79, 
+    "loyalty": 39, 
     "spouse": null, 
     "quality_set": [
       15
@@ -4066,7 +4194,7 @@
     "avatar": 11, 
     "birth": "2013-07-22T23:35:03.099", 
     "mother": null, 
-    "loyalty": 85, 
+    "loyalty": 45, 
     "spouse": null, 
     "quality_set": [
       7
@@ -4092,7 +4220,7 @@
     "avatar": 6, 
     "birth": "2013-07-22T23:37:31.826", 
     "mother": null, 
-    "loyalty": 35, 
+    "loyalty": 0, 
     "spouse": null, 
     "quality_set": [
       2, 
@@ -4141,7 +4269,7 @@
     "scholarship": 5, 
     "sex": "m", 
     "disabled": false, 
-    "death": null, 
+    "death": "2013-09-24T22:53:27.347", 
     "avatar": 11, 
     "birth": "2013-08-10T20:41:33.878", 
     "mother": null, 
@@ -4190,7 +4318,7 @@
     "plot": 8, 
     "scholarship": 7, 
     "sex": "m", 
-    "disabled": false, 
+    "disabled": true, 
     "death": null, 
     "avatar": 1, 
     "birth": "2013-07-23T20:41:33.962", 
@@ -4198,6 +4326,7 @@
     "loyalty": 80, 
     "spouse": null, 
     "quality_set": [
+      37, 
       20
     ], 
     "mentor": null
@@ -4216,7 +4345,7 @@
     "plot": 11, 
     "scholarship": 8, 
     "sex": "m", 
-    "disabled": false, 
+    "disabled": true, 
     "death": null, 
     "avatar": 18, 
     "birth": "2013-07-23T21:02:55.344", 
@@ -4225,7 +4354,8 @@
     "spouse": null, 
     "quality_set": [
       4, 
-      5
+      5, 
+      37
     ], 
     "mentor": null
   }
@@ -4326,7 +4456,7 @@
     "avatar": 51, 
     "birth": "2013-07-27T19:57:14", 
     "mother": null, 
-    "loyalty": 60, 
+    "loyalty": 20, 
     "spouse": null, 
     "quality_set": [
       3, 
@@ -4379,7 +4509,7 @@
     "avatar": 43, 
     "birth": "2013-08-21T19:57:14.707", 
     "mother": 6733, 
-    "loyalty": 75, 
+    "loyalty": 35, 
     "spouse": null, 
     "quality_set": [
       17
@@ -4401,11 +4531,11 @@
     "scholarship": 1, 
     "sex": "m", 
     "disabled": false, 
-    "death": null, 
+    "death": "2013-09-24T22:55:42.251", 
     "avatar": 44, 
     "birth": "2013-08-30T19:57:14.772", 
     "mother": 6733, 
-    "loyalty": 65, 
+    "loyalty": 45, 
     "spouse": null, 
     "quality_set": [
       23
@@ -5115,7 +5245,7 @@
     "avatar": 4, 
     "birth": "2013-08-08T17:17:57.719", 
     "mother": null, 
-    "loyalty": 63, 
+    "loyalty": 23, 
     "spouse": null, 
     "quality_set": [
       45, 
@@ -5142,7 +5272,7 @@
     "avatar": 7, 
     "birth": "2013-08-08T17:18:05.710", 
     "mother": null, 
-    "loyalty": 55, 
+    "loyalty": 15, 
     "spouse": null, 
     "quality_set": [
       30, 
@@ -7402,7 +7532,7 @@
     "avatar": 12, 
     "birth": "2013-08-15T11:09:07.356", 
     "mother": null, 
-    "loyalty": 100, 
+    "loyalty": 60, 
     "spouse": null, 
     "quality_set": [], 
     "mentor": null
@@ -7426,7 +7556,7 @@
     "avatar": 29, 
     "birth": "2013-09-02T11:09:07.691", 
     "mother": null, 
-    "loyalty": 65, 
+    "loyalty": 25, 
     "spouse": null, 
     "quality_set": [
       47, 
@@ -7453,7 +7583,7 @@
     "avatar": 67, 
     "birth": "2013-09-03T11:09:07.925", 
     "mother": null, 
-    "loyalty": 50, 
+    "loyalty": 10, 
     "spouse": null, 
     "quality_set": [
       2
@@ -7479,7 +7609,7 @@
     "avatar": 12, 
     "birth": "2013-08-15T11:09:07.978", 
     "mother": null, 
-    "loyalty": 80, 
+    "loyalty": 40, 
     "spouse": null, 
     "quality_set": [
       10
@@ -7505,7 +7635,7 @@
     "avatar": 6, 
     "birth": "2013-08-26T18:56:39.008", 
     "mother": null, 
-    "loyalty": 100, 
+    "loyalty": 60, 
     "spouse": null, 
     "quality_set": [
       22, 
@@ -7532,7 +7662,7 @@
     "avatar": 4, 
     "birth": "2013-09-03T18:58:33.630", 
     "mother": null, 
-    "loyalty": 100, 
+    "loyalty": 60, 
     "spouse": null, 
     "quality_set": [
       26, 
@@ -7555,11 +7685,11 @@
     "scholarship": 9, 
     "sex": "f", 
     "disabled": false, 
-    "death": null, 
+    "death": "2013-09-24T22:37:02.799", 
     "avatar": 38, 
     "birth": "2013-08-30T19:41:57.067", 
     "mother": null, 
-    "loyalty": 40, 
+    "loyalty": 20, 
     "spouse": null, 
     "quality_set": [
       5
@@ -7611,7 +7741,7 @@
     "avatar": 1, 
     "birth": "2013-08-28T00:29:53.761", 
     "mother": null, 
-    "loyalty": 49, 
+    "loyalty": 9, 
     "spouse": null, 
     "quality_set": [
       13, 
@@ -11941,7 +12071,7 @@
   "fields": {
     "params": "", 
     "slug": "determiner_raid", 
-    "on_fire": "\nsomme_combat = sum_folks(liste_attaquant,'fight')\n\n\nparam = {\n         'argent_vole' : somme_combat,\n         'population_perdue' : 10\n         }\n", 
+    "on_fire": "\nsomme_combat = sum_folks(liste_attaquant,'fight')\n\n# argent vol\u00e9 au defenseur\nargent_vole = int(30*((somme_combat)**0.5)/7.74*(population_defenseur/population_max_defenseur))\n# population perdue par le defenseur\npopulation_perdue = int(argent_vole/3)\n\n# proba de mourrir / d'etre bless\u00e9 des attaquants\n# random_value : un entier aleatoire entre a et b\n# random_in : un element aleatoirement pris dans un tableau\n# random_gauss : (min,max,[sigma],[mu])\nmorts_attaquant=[]\nblesses_attaquant=[]\n\nfor attaquant in liste_attaquant:\n  pourcent_mort = int(((256-min(16,attaquant.fight)**0.5)*0.09/256+0.01)*100)\n  pourcent_blesse = 4*pourcent_mort\n  destin=random_value(1,100)\n  if destin<=pourcent_mort:\n    truc=truc+1\n    attaquant.die()\n    morts_attaquant.append(attaquant)\n  elif destin<=pourcent_blesse:\n    call_function(\"blesser_folk\",folk=attaquant)\n    blesses_attaquant.append(attaquant)\n\n\nparam = {\n         'argent_vole' : argent_vole,\n         'population_perdue' : population_perdue\n         }\n", 
     "description": "d\u00e9terminer r\u00e9sultat d'un raid : \r\n- population d\u00e9fenseur tu\u00e9e\r\n- argent gagn\u00e9e par le vainqueur\r\n- bless\u00e9s attaquant\r\n- tu\u00e9s attaquant\r\n"
   }
 },
@@ -47868,7 +47998,7 @@
     "target_list": " ", 
     "text": "L'affront est trop grand. Il me faudra l'ex\u00e9cuter pour l'exemple.", 
     "has_value": false, 
-    "on_resolution": "grids['victime'][0].die()\n\n#Baisse de loyaut\u00e9 g\u00e9n\u00e9ral\n\nif grids['victime'][0].has_quality(\"scelerat\"):\n  call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=8, perte_max=12)\nelse :\n  call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=18, perte_max=22)\n", 
+    "on_resolution": "def perte(facteur, kingdom=kingdom):\n  call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=C.PERTE_LOYAUTE_EXECUTION*facteur, perte_max=C.PERTE_LOYAUTE_EXECUTION*facteur)\n\ncondamne = grids['condamne'][0]\n\n\nif condamne.has_quality(\"legende_locale\"):\n  perte(2)\nelif condamne.has_quality(\"intrepide\"):\n  perte(1.5)\nelif condamne.has_quality(\"scelerat\"):\n  perte(0)\nelif condamne.has_quality(\"traitre\"):\n  call_function(\"gain_loyaute_general\", kingdom=kingdom, gain_min=4, gain_max=6)\nelse :\n  perte(1)\n\nbiens = random_value(2,30)\nkingdom.money += biens\nkingdom.save()\n\ncondamne.die()\nname = condamne.first_name + \" \" + condamne.last_name\npe = kingdom.create_pending_event(\"execution\")\npe.set_value(\"condamne\", name)\npe.set_value(\"biens\", biens)\npe.start()\n", 
     "value_description": "Valeur :", 
     "on_start": " ", 
     "has_target": false, 
@@ -47877,7 +48007,7 @@
     "target_description": "Cible", 
     "timeout": null, 
     "is_cancellable": true, 
-    "duration": 5, 
+    "duration": 0, 
     "on_cancel": "\n", 
     "slug": "executer", 
     "on_init": " "
@@ -47962,7 +48092,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent ?)\nif kingdom.money >= 10:\n  kingdom.money-=10\n  # Retrieve the claim\n  try:\n    claim = Claim.objects.get(offender=kingdom, offended=target)\n    kingdom.prestige-=30\n    kingdom.save()\n  except:\n    #add claim lvl 1 Claim.objects.set(offender=kingdom, offended=target)\n    #claim.save()\n    pass\n\n  retour_fonction = call_function('determiner_raid',\n                                  liste_attaquant=grids['attaquants'],\n                                  argent_defenseur = target.money,\n                                  population_defenseur = target.population\n                                  )\n  \n  \n  kingdom.money+= retour_fonction['argent_vole']\n  target.money-= retour_fonction['argent_vole']\n  target.population-=retour_fonction['population_perdue']\n  target.save()\n  # kingdom.save()\n\nelse:\n  status=\"vous n'avez pas suffisamment d'argent pour lancer cette mission.\"  \n", 
+    "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent ?)\nif kingdom.money >= 10:\n  kingdom.money-=10\n  # Retrieve the claim\n  try:\n    claim = Claim.objects.get(offender=kingdom, offended=target)\n    kingdom.prestige-=30\n    kingdom.save()\n  except:\n    #add claim lvl 1 Claim.objects.set(offender=kingdom, offended=target)\n    #claim.save()\n    pass\n\n  retour_fonction = call_function('determiner_raid',\n                                  liste_attaquant=grids['attaquants'],\n                                  argent_defenseur = target.money,\n                                  population_defenseur = target.population,\n                                  population_max_defenseur = f('get_max_population',kingdom=target)\n                                  )\n  \n  \n  kingdom.money+= retour_fonction['argent_vole']\n  target.population-=retour_fonction['population_perdue']\n  target.save()\n  kingdom.save()\n\nelse:\n  status=\"vous n'avez pas suffisamment d'argent pour lancer cette mission.\"  \n", 
     "has_target": true, 
     "is_team": false, 
     "title": null, 
@@ -49137,7 +49267,7 @@
     "mission": 22, 
     "length": 1, 
     "allow_empty": false, 
-    "slug": "condomane", 
+    "slug": "condamne", 
     "condition": "\n"
   }
 },
@@ -49222,22 +49352,6 @@
   }
 },
 {
-  "pk": 257, 
-  "model": "mission.pendingmission", 
-  "fields": {
-    "kingdom": 59, 
-    "is_started": false, 
-    "target": null, 
-    "created": "2013-09-16T20:56:03.871", 
-    "started": null, 
-    "last_target": null, 
-    "mission": 27, 
-    "value": 0, 
-    "is_finished": false, 
-    "last_value": 0
-  }
-},
-{
   "pk": 273, 
   "model": "mission.pendingmission", 
   "fields": {
@@ -49292,24 +49406,6 @@
     "pending_mission": 222, 
     "folk": 6955, 
     "mission_grid": 30
-  }
-},
-{
-  "pk": 478, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 257, 
-    "folk": 6686, 
-    "mission_grid": 23
-  }
-},
-{
-  "pk": 479, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 257, 
-    "folk": 6688, 
-    "mission_grid": 23
   }
 },
 {
@@ -53154,6 +53250,20 @@
   }
 },
 {
+  "pk": 252, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Execution", 
+    "weight": 1, 
+    "text": "{{condamne}} a \u00e9t\u00e9 ex\u00e9cut\u00e9.\r\n\r\n    Vous avez gagn\u00e9 {{biens}} \u00e9cus suite \u00e0 la r\u00e9quisition de ses biens.", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "execution", 
+    "condition": "\n"
+  }
+},
+{
   "pk": 5, 
   "model": "event.eventaction", 
   "fields": {
@@ -56069,6 +56179,17 @@
   }
 },
 {
+  "pk": 325, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Ok !", 
+    "message": "", 
+    "event": 252, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
   "pk": 1638, 
   "model": "event.pendingevent", 
   "fields": {
@@ -56213,6 +56334,18 @@
   }
 },
 {
+  "pk": 2513, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 58, 
+    "is_started": true, 
+    "created": "2013-09-24T22:55:42.269", 
+    "started": "2013-09-24T22:55:42.274", 
+    "text": "Odard de Gauciel a \u00e9t\u00e9 ex\u00e9cut\u00e9.\r\n\r\n    Vous avez gagn\u00e9 8 \u00e9cus suite \u00e0 la r\u00e9quisition de ses biens.", 
+    "event": 252
+  }
+},
+{
   "pk": 1705, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -56298,6 +56431,17 @@
     "text": "OK", 
     "folk": null, 
     "event_action": 297
+  }
+},
+{
+  "pk": 2702, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 2513, 
+    "message": "", 
+    "text": "Ok !", 
+    "folk": null, 
+    "event_action": 325
   }
 },
 {
@@ -56541,6 +56685,24 @@
     "pending_event": 2496, 
     "name": "lui", 
     "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 5, \"bonus_tactique\": 3, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 18, \"attaquant\": \"`False`\", \"prestige\": 120, \"population\": 200}"
+  }
+},
+{
+  "pk": 5831, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2513, 
+    "name": "condamne", 
+    "value": "Odard de Gauciel"
+  }
+},
+{
+  "pk": 5832, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2513, 
+    "name": "biens", 
+    "value": 8
   }
 },
 {
@@ -122827,6 +122989,383 @@
   }
 },
 {
+  "pk": 7629, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:18:21.980", 
+    "object_repr": "executer", 
+    "object_id": "22", 
+    "change_message": "Modifi\u00e9 duration, on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0executer [Condamn\u00e9 (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7630, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:20:42.878", 
+    "object_repr": "determiner_raid()", 
+    "object_id": "24", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7631, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:21:11.022", 
+    "object_repr": "determiner_modifications_combat()", 
+    "object_id": "21", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 38, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7632, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:21:25.774", 
+    "object_repr": "executer", 
+    "object_id": "22", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0executer [Condamn\u00e9 (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7633, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:21:51.832", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7634, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-24T22:23:34.089", 
+    "object_repr": "execution", 
+    "object_id": "252", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7635, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:24:17.880", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7636, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:24:43.644", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7637, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:27:27.994", 
+    "object_repr": "executer", 
+    "object_id": "22", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. slug et condition modifi\u00e9 pour mission grid \u00ab\u00a0executer [Condamn\u00e9 (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7638, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:27:33.405", 
+    "object_repr": "determiner_raid()", 
+    "object_id": "24", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7639, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:27:56.223", 
+    "object_repr": "executer", 
+    "object_id": "22", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0executer [Condamn\u00e9 (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7640, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:34:03.882", 
+    "object_repr": "execution", 
+    "object_id": "252", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ok ! [execution]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7641, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:34:08.093", 
+    "object_repr": "executer", 
+    "object_id": "22", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0executer [Condamn\u00e9 (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7642, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:35:09.666", 
+    "object_repr": "executer", 
+    "object_id": "22", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0executer [Condamn\u00e9 (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7643, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:35:35.162", 
+    "object_repr": "executer", 
+    "object_id": "22", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0executer [Condamn\u00e9 (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7644, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:36:54.176", 
+    "object_repr": "executer", 
+    "object_id": "22", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0executer [Condamn\u00e9 (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7645, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:41:08.606", 
+    "object_repr": "execution", 
+    "object_id": "252", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ok ! [execution]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7646, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:42:28.362", 
+    "object_repr": "executer", 
+    "object_id": "22", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0executer [Condamn\u00e9 (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7647, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:43:02.144", 
+    "object_repr": "executer", 
+    "object_id": "22", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0executer [Condamn\u00e9 (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7648, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:44:26.322", 
+    "object_repr": "determiner_raid()", 
+    "object_id": "24", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7649, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:45:03.474", 
+    "object_repr": "determiner_raid()", 
+    "object_id": "24", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7650, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:52:16.443", 
+    "object_repr": "determiner_raid()", 
+    "object_id": "24", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7651, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:52:32.575", 
+    "object_repr": "determiner_raid()", 
+    "object_id": "24", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7652, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:53:19.547", 
+    "object_repr": "determiner_raid()", 
+    "object_id": "24", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7653, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:55:06.954", 
+    "object_repr": "determiner_raid()", 
+    "object_id": "24", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7654, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T22:56:38.951", 
+    "object_repr": "determiner_raid()", 
+    "object_id": "24", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7655, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T23:04:11.041", 
+    "object_repr": "determiner_raid()", 
+    "object_id": "24", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7656, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T23:04:18.753", 
+    "object_repr": "determiner_raid()", 
+    "object_id": "24", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7657, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T23:05:20.116", 
+    "object_repr": "determiner_raid()", 
+    "object_id": "24", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
   "pk": 46, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -122843,7 +123382,7 @@
   "fields": {
     "soldiers": 13, 
     "prestige": 100, 
-    "money": 0, 
+    "money": 19, 
     "user": 41, 
     "population": 110
   }
@@ -122854,7 +123393,7 @@
   "fields": {
     "soldiers": 13, 
     "prestige": 150, 
-    "money": 92, 
+    "money": 108, 
     "user": 42, 
     "population": 270
   }
@@ -122867,7 +123406,7 @@
     "prestige": 140, 
     "money": 168, 
     "user": 38, 
-    "population": 295
+    "population": 288
   }
 },
 {
