@@ -449,7 +449,7 @@
     "on_start": " ", 
     "has_target": false, 
     "is_team": false, 
-    "title": null, 
+    "title": 4, 
     "target_description": "Cible", 
     "timeout": null, 
     "is_cancellable": true, 
@@ -538,14 +538,14 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent ?)\nif kingdom.money >= 10:\n  kingdom.money-=10\n  # Retrieve the claim\n  try:\n    claim = Claim.objects.get(offender=kingdom, offended=target)\n    kingdom.prestige-=30\n    kingdom.save()\n  except:\n    #add claim lvl 1 Claim.objects.set(offender=kingdom, offended=target)\n    #claim.save()\n    pass\n\n  \n  # chute de population\n  capa2 = sum_folks(grids['attaquants'], 'fight')\n  # f('somme_stats_folks,folks = grids['combattants'],stat='filght')\n  capacite_combat=0\n  for personnage in grids['attaquants']:\n    capacite_combat += personnage.fight**1/2\n\n  capacite_combat = capacite_combat**3/capa2\n  \n  target.population-=max(0.05*target.population,capacite_combat)\n  target.save()\n  kingdom.money+=f('determiner_raid')[\"argent\"]\n  target.money-=0\n  target.save()\n  kingdom.save()\n\nelse:\n  status=\"vous n'avez pas suffisamment d'argent pour lancer cette mission.\"  \n", 
+    "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent ?)\nif kingdom.money >= 10:\n  kingdom.money-=10\n  # Retrieve the claim\n  try:\n    claim = Claim.objects.get(offender=kingdom, offended=target)\n    kingdom.prestige-=30\n    kingdom.save()\n  except:\n    #add claim lvl 1 Claim.objects.set(offender=kingdom, offended=target)\n    #claim.save()\n    pass\n\n  retour_fonction = call_function('determiner_raid',\n                                  liste_attaquant=grids['attaquants'],\n                                  argent_defenseur = target.money,\n                                  population_defenseur = target.population\n                                  )\n  \n  \n  kingdom.money+= retour_fonction['argent_vole']\n  target.money-= retour_fonction['argent_vole']\n  target.population-=retour_fonction['population_perdue']\n  target.save()\n  # kingdom.save()\n\nelse:\n  status=\"vous n'avez pas suffisamment d'argent pour lancer cette mission.\"  \n", 
     "has_target": true, 
     "is_team": false, 
     "title": null, 
     "target_description": "Cible", 
     "timeout": null, 
     "is_cancellable": true, 
-    "duration": 360, 
+    "duration": 1, 
     "on_cancel": "\n", 
     "slug": "organiser_raid", 
     "on_init": " "
@@ -860,7 +860,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "\nattaquant = {\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * kingdom.soldiers / 100),\n  'combattants': affected,\n  'population': kingdom.population,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':kingdom.get_value('tuto_dynasty_PNJ')\n}\n\n# R\u00e9cuperer les cinq meilleurs combattants de l'attaquant\ndate_majorite = datetime.now() - timedelta(days=C.MAJORITE)\ncinq_meilleurs = kingdom.folk_set.filter(sex=Folk.MALE, disabled=False, birth__lte=date_majorite).order_by('fight')[0:5]\nmoyenne_meilleurs_fight = avg_folks(cinq_meilleurs, 'fight')\n\ncombattants = [Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight)]\nmap(lambda f: f.save(), combattants)\ncombattants[0].add_quality('piquier')\ncombattants[1].add_quality('piquier')\ncombattants[2].add_quality('archer')\n\ndefenseur = {\n  # Dans le cadre du tuto,\n  # Les troupes du d\u00e9fenseur correspondent \u00e0 80% des troupes maximales disponibles pour ce Kingdom\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * 0.8 * C.POURCENTAGE_MAX_SOLDATS_PASSIF * call_function(\"get_max_population\", kingdom=kingdom) / (100 * 100)),\n  'combattants': combattants,\n  'population': 200,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':\"dynastie advserse\",\n}\n\ngagnant, perdant, bataille = f(\"determiner_vainqueur_combat\", attaquant=attaquant, defenseur=defenseur)\nis_victory = gagnant == attaquant\n\n\ndelta = f(\"determiner_modifications_combat\", gagnant=gagnant, perdant=perdant, marge=bataille['marge'], attaquant_est_gagnant=is_victory)\n\n\nif is_victory:\n  kingdom.prestige += 20\nelse:\n  kingdom.prestige -= 20\nkingdom.save()\n\nif kingdom.get_value(\"tuto_firstbattle_attack\", False) == False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_attack\")\nelif is_victory:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\", True)\npe.set_value(\"gagnant\",gagnant)\npe.set_value(\"perdant\",perdant)\npe.set_value(\"liste_perdant\",f(\"liste_nom_avec_specialite\", commandants=perdant['combattants']))\npe.set_value(\"liste_gagnant\",f(\"liste_nom_avec_specialite\", commandants=gagnant['combattants']))\npe.set_value(\"delta\",delta)\npe.set_value(\"bataille\",bataille)\nprint \"gagnant : \"\nprint gagnant\nprint \"perdant : \"\nprint perdant\nprint \"delta : \"\nprint delta\nprint \"bataille : \"\nprint bataille\n\npe.start()\n  \nmap(lambda f: f.delete(), combattants)", 
+    "on_start": "\nattaquant = {\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * kingdom.soldiers / 100),\n  'combattants': affected,\n  'population': kingdom.population,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':kingdom.get_value('tuto_dynasty_PNJ')\n}\n\n# R\u00e9cuperer les cinq meilleurs combattants de l'attaquant\ndate_majorite = datetime.now() - timedelta(days=C.MAJORITE)\ncinq_meilleurs = kingdom.folk_set.filter(sex=Folk.MALE, disabled=False, birth__lte=date_majorite).order_by('fight')[0:5]\nmoyenne_meilleurs_fight = avg_folks(cinq_meilleurs, 'fight')\n\ncombattants = [Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight)]\nmap(lambda f: f.save(), combattants)\ncombattants[0].add_quality('piquier')\ncombattants[1].add_quality('piquier')\ncombattants[2].add_quality('archer')\n\ndefenseur = {\n  # Dans le cadre du tuto,\n  # Les troupes du d\u00e9fenseur correspondent \u00e0 80% des troupes maximales disponibles pour ce Kingdom\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * 0.8 * C.POURCENTAGE_MAX_SOLDATS_PASSIF * call_function(\"get_max_population\", kingdom=kingdom) / (100 * 100)),\n  'combattants': combattants,\n  'population': 200,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':\"dynastie advserse\",\n}\n\ngagnant, perdant, bataille = f(\"determiner_vainqueur_combat\", attaquant=attaquant, defenseur=defenseur)\nis_victory = gagnant == attaquant\n\n\ndelta = f(\"determiner_modifications_combat\", gagnant=gagnant, perdant=perdant, marge=bataille['marge'], attaquant_est_gagnant=is_victory)\n\n\nif is_victory:\n  kingdom.prestige += 20\nelse:\n  kingdom.prestige -= 20\nkingdom.save()\n\nif kingdom.get_value(\"tuto_firstbattle_attack\", False) == False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_attack\")\nelif is_victory:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\", True)\npe.set_value(\"gagnant\",gagnant)\npe.set_value(\"perdant\",perdant)\npe.set_value(\"liste_perdant\",f(\"liste_nom_avec_specialite\", commandants=perdant['combattants']))\npe.set_value(\"liste_gagnant\",f(\"liste_nom_avec_specialite\", commandants=gagnant['combattants']))\npe.set_value(\"delta\",delta)\npe.set_value(\"bataille\",bataille)\n\n\npe.start()\n  \nmap(lambda f: f.delete(), combattants)", 
     "has_target": false, 
     "is_team": false, 
     "title": null, 
@@ -996,7 +996,7 @@
     "target_list": "\n", 
     "text": "Envoyer des missionnaire recruter un chevalier", 
     "has_value": false, 
-    "on_resolution": "age = random_gauss(16,40)\n\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nqualities.append(random_in([\"archer\", \"cavalier\", \"piquier\"]))\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"diplomacy\")-23)/37) + random_value(-10, 10)\nchevalier = f(\"creer_folk\", kingdom=None, fight_min=7, plot_min=1, diplomacy_min=1, scholarship_min=1, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\npe = kingdom.create_pending_event(\"recrutement_chevalier\")\npe.set_value(\"chevalier\", chevalier)\npe.start()\n", 
+    "on_resolution": "age = random_gauss(16,40)\n\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nqualities.append(random_in([\"archer\", \"cavalier\", \"piquier\"]))\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"diplomacy\")-23)/37) + random_value(-10, 10)\nchevalier = f(\"creer_folk\", kingdom=None, fight_min=7, plot_min=1, diplomacy_min=1, scholarship_min=1, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\npe = kingdom.create_pending_event(\"allegeance_chevalier\")\npe.set_value(\"chevalier\", chevalier)\npe.start()\n", 
     "value_description": "", 
     "on_start": "cout = 15 + 10 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"ambassadeur\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  status = \"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\"\n", 
     "has_target": false, 
@@ -1019,7 +1019,7 @@
     "target_list": "\n", 
     "text": "Mander un pr\u00eatre \u00e0 l'\u00e9v\u00e9ch\u00e9\r\n", 
     "has_value": false, 
-    "on_resolution": "age = random_gauss(16, 40)\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nqualities.append(\"pretre\")\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"scholarship\")-23)/37) + random_value(-10, 10)\n\npretre = f(\"creer_folk\", kingdom=None, fight_min=2, plot_min=4, diplomacy_min=4, scholarship_min=7, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\n\npe = kingdom.create_pending_event(\"recrutement_pretre\")\npe.set_value(\"pretre\", pretre)\npe.start()", 
+    "on_resolution": "age = random_gauss(16, 40)\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nqualities.append(\"pretre\")\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"scholarship\")-23)/37) + random_value(-10, 10)\n\npretre = f(\"creer_folk\", kingdom=None, fight_min=2, plot_min=4, diplomacy_min=4, scholarship_min=7, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\n\npe = kingdom.create_pending_event(\"allegeance_pretre\")\npe.set_value(\"pretre\", pretre)\npe.start()", 
     "value_description": "", 
     "on_start": "cout = 15 + 5 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"cure\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  status = \"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\"", 
     "has_target": false, 
@@ -1042,7 +1042,7 @@
     "target_list": "\n", 
     "text": "Partir recruter une dame", 
     "has_value": false, 
-    "on_resolution": "age = random_gauss(16,40)\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nchoix_baisee = (40-age)/24*100\nif choix_baisee <= ramdon_value(1,100):\n  qualities.append(\"jouvancelle\")\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"diplomacy\")-23)/37) + random_value(-10, 10)\n\ndame= f(\"creer_folk\", kingdom=None, fight_min=2, plot_min=2, diplomacy_min=2, scholarship_min=2, loyalty=loyalty, max_carac=max_carac, sex=Folk.FEMALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\n\npe = kingdom.create_pending_event(\"recrutement_dame\")\npe.set_value(\"dame\", dame)\npe.start()", 
+    "on_resolution": "age = random_gauss(16,40)\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nchoix_baisee = (40-age)/24*100\nif choix_baisee <= random_value(1,100):\n  qualities.append(\"jouvancelle\")\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"diplomacy\")-23)/37) + random_value(-10, 10)\n\ndame= f(\"creer_folk\", kingdom=None, fight_min=2, plot_min=2, diplomacy_min=2, scholarship_min=2, loyalty=loyalty, max_carac=max_carac, sex=Folk.FEMALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\n\npe = kingdom.create_pending_event(\"allegeance_dame\")\npe.set_value(\"dame\", dame)\npe.start()", 
     "value_description": "", 
     "on_start": "cout = 15 + 10 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"ambassadeur\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  status = \"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\"", 
     "has_target": false, 
@@ -1273,19 +1273,6 @@
     "allow_empty": false, 
     "slug": "libere", 
     "condition": "if Folk.objects.filter(kingdom=kingdom,quality__name=\"prisonnier\").count()==0:\n  status=\"Aucun prisonnier a liberer\"\n"
-  }
-},
-{
-  "pk": 18, 
-  "model": "mission.missiongrid", 
-  "fields": {
-    "allow_disabled": false, 
-    "name": "Victime", 
-    "mission": 22, 
-    "length": 20, 
-    "allow_empty": false, 
-    "slug": "victime", 
-    "condition": "\n"
   }
 },
 {
@@ -1715,6 +1702,19 @@
     "allow_empty": false, 
     "slug": "accueil", 
     "condition": "if folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+  }
+},
+{
+  "pk": 52, 
+  "model": "mission.missiongrid", 
+  "fields": {
+    "allow_disabled": false, 
+    "name": "Condamn\u00e9", 
+    "mission": 22, 
+    "length": 1, 
+    "allow_empty": false, 
+    "slug": "condomane", 
+    "condition": "\n"
   }
 }
 ]

@@ -2153,7 +2153,7 @@
     "category": null, 
     "name": "Allegeance chevalier", 
     "weight": 1, 
-    "text": "{{title.ambassadeur.first_name}}, mon ambassadeur, se tient aux c\u00f4t\u00e9 du chevalier en armure. \"Mon seigneur, permettez-moi de vous pr\u00e9senter sire {{chevalier}}. Un homme de valeur qui a accept\u00e9 de s'allier \u00e0 notre cause\". Le chevalier opine, et met un genou \u00e0 terre. \"Votre honneur est connu \u00e0 travers le pays, sire {{title.chatelain.last_name}}. Mon bras est \u00e0 votre service\".", 
+    "text": "{{title.ambassadeur.first_name}}, mon ambassadeur, se tient aux c\u00f4t\u00e9 du chevalier en armure. \"Mon seigneur, permettez-moi de vous pr\u00e9senter sire {{chevalier}}. Un homme de valeur qui a accept\u00e9 de s'allier \u00e0 notre cause\". Le chevalier opine, et met un genou \u00e0 terre. \"Votre honneur est connu \u00e0 travers le pays, sire {{title.chatelain.last_name}}. Mon bras est \u00e0 votre service\".\r\n\r\n    {{chevalier.fight}}(C) {{chevalier.plot}}(I) {{chevalier.diplomacy}}(D) {{chevalier.scholarship}}(\u00c9) {{chevalier.loyalty}}(L)\r\n{% for quality in chevalier.quality_set.all %}    {{quality.name}}\r\n{% endfor %}", 
     "image": "events/102_1.jpg", 
     "on_fire": "\n", 
     "slug": "allegeance_chevalier", 
@@ -2167,7 +2167,7 @@
     "category": null, 
     "name": "Allegeance noble dame", 
     "weight": 1, 
-    "text": "La noble dame m'offre une profonde r\u00e9v\u00e9rence, alors que {{title.ambassadeur.first_name}}, mon ambassadeur, se tient en retrait. \"Messire, je me nome {{dame}}. Votre \u00e9missaire m'a fait part de votre offre, et j'ai song\u00e9 que m'installer dans votre cour m'apporterai un changement bienvenu\". Elle me sourit, guettant ma r\u00e9ponse.", 
+    "text": "La noble dame m'offre une profonde r\u00e9v\u00e9rence, alors que {{title.ambassadeur.first_name}}, mon ambassadeur, se tient en retrait. \"Messire, je me nome {{dame}}. Votre \u00e9missaire m'a fait part de votre offre, et j'ai song\u00e9 que m'installer dans votre cour m'apporterai un changement bienvenu\". Elle me sourit, guettant ma r\u00e9ponse.\r\n\r\n    {{dame.fight}}(C) {{dame.plot}}(I) {{dame.diplomacy}}(D) {{dame.scholarship}}(\u00c9) {{dame.loyalty}}(L)\r\n{% for quality in dame.quality_set.all %}    {{quality.name}}\r\n{% endfor %}", 
     "image": "events/102_2.jpg", 
     "on_fire": "\n", 
     "slug": "allegeance_dame", 
@@ -2195,11 +2195,11 @@
     "category": null, 
     "name": "Allegeance pretre", 
     "weight": 1, 
-    "text": "L'homme d'\u00e9glise se tient devant mon tr\u00f4ne, la t\u00eate baiss\u00e9e avec humilit\u00e9. Le p\u00e8re {{title.cure.first_name}} s'avance. \"Mon seigneur, permettez-moi de vous pr\u00e9senter le p\u00e8re {{pretre}}, envoy\u00e9  par l'\u00e9v\u00each\u00e9 \u00e0 votre demande\".", 
+    "text": "L'homme d'\u00e9glise se tient devant mon tr\u00f4ne, la t\u00eate baiss\u00e9e avec humilit\u00e9. Le p\u00e8re {{title.cure.first_name}} s'avance. \"Mon seigneur, permettez-moi de vous pr\u00e9senter le p\u00e8re {{pretre}}, envoy\u00e9  par l'\u00e9v\u00each\u00e9 \u00e0 votre demande\".\r\n\r\n    {{pretre.fight}}(C) {{pretre.plot}}(I) {{pretre.diplomacy}}(D) {{pretre.scholarship}}(\u00c9) {{pretre.loyalty}}(L)\r\n{% for quality in pretre.quality_set.all %}    {{quality.name}}\r\n{% endfor %}", 
     "image": "events/102_3.jpg", 
-    "on_fire": null, 
+    "on_fire": "\n", 
     "slug": "allegeance_pretre", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -2741,9 +2741,9 @@
     "category": null, 
     "name": "resultat de bataille", 
     "weight": 1, 
-    "text": "Le combat se d\u00e9roula en for\u00eat.\r\n\r\nNous \u00e9tions forts de {{moi.troupes}} soldats. {{liste_gagnant}}\r\n\r\nDe leur c\u00f4t\u00e9 on pouvait d\u00e9nombrer {{lui.troupes}} soldats. {{liste_perdant}}\r\n\r\n{% if moi.troupes < lui.troupes %}Nous \u00e9tions en sous nombre\r\n{% elif moi.troupes > lui.troupes %} Nous avions l'avantage du nombre\r\n{% else %}Nous \u00e9tions autant d'un c\u00f4t\u00e9 que de l'autre{% endif %}{% if moi.troupes < lui.troupes and moi.puissance_generaux < lui.puissance_generaux %}et la sup\u00e9riorit\u00e9 de ses g\u00e9n\u00e9raux \u00e9tait \u00e9vidente\r\n{% elif moi.troupes > lui.troupes and moi.puissance_generaux > lui.puissance_generaux %}et nos g\u00e9n\u00e9raux \u00e9taient plus aguerris.\r\n{% elif moi.troupes <= lui.troupes and moi.puissance_generaux < lui.puissance_generaux %}mais nos g\u00e9n\u00e9raux semblaient plus hardis.\r\n{% elif moi.troupes >= lui.troupes and moi.puissance_generaux > lui.puissance_generaux %}mais ses g\u00e9n\u00e9raux semblaient plus effrayant.\r\n{% else %}et les commandant des deux arm\u00e9es se regardaient dans le blanc des yeux.\r\n{% endif %}\r\n{% if moi.bonus_tactique >= lui.bonus_tactique %}N{% if bataille.PRV.0.0 > 0 %}os cavaliers allaient faire des ravages dans leurs archers{% if sum_prv_0 > 1 %} et n{% endif %}{% endif %}\r\n{% if bataille.PRV.0.1 > 0 %}os archers allaient faire des ravages dans leurs lanciers{% if bataille.PRV.0.1 > 0 and bataille.PRV.0.2 == 0 %} et n{% endif %}{% endif %}\r\n{% if bataille.PRV.0.2 > 0 %}os lanciers allaient faire des ravages dans leurs cavaliers{% endif %}\r\n.{% if bataille.PRV.1.0 > 0 or bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 %}Malgr\u00e9 \r\n{% if bataille.PRV.1.0 > 0 %}leurs cavaliers qui allaient \u00eatre une plaie pour nos archers{% if sum_prv_1 > 1 %} et {% endif %}{% endif %}\r\n{% if bataille.PRV.1.1 > 0 %}leurs archers ont qui allaient \u00eatre une plaie pour nos lanciers{% if bataille.PRV.1.1 > 0 and bataille.PRV.1.2 == 0 %} et {% endif %}{% endif %}\r\n{% if bataille.PRV.1.2 > 0 %}leurs lanciers ont qui allaient \u00eatre une plaie pour nos cavaliers{% endif %}\r\n.{% endif %}\r\n{% else %}N{% if bataille.PRV.0.0 > 0 %}os cavaliers allaient \u00eatre une plaie pour leurs archers{% if sum_prv_0 > 1 %} et n{% endif %}{% endif %}\r\n{% if bataille.PRV.0.1 > 0 %}os archers allaient \u00eatre plaie pour leurs lanciers{% if  bataille.PRV.0.1 > 0 and bataille.PRV.0.2 == 0  %} et n{% endif %}{% endif %}\r\n{% if bataille.PRV.0.2 > 0 %}os lanciers allaient \u00eatre une plaie pour leurs cavaliers{% endif %}\r\n.{% if bataille.PRV.1.0 > 0 or bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 %} Mais c'\u00e9tait sans comparaison avec ce que \r\n{% if bataille.PRV.1.0 > 0 %}leurs cavaliers allaient faire \u00e0 nos archers{% if sum_prv_1 > 1 %} et ce que {% endif %}{% endif %}\r\n{% if bataille.PRV.1.1 > 0 %}leurs archers allaient faire \u00e0 nos lanciers{% if  bataille.PRV.1.1 > 0 and bataille.PRV.1.2 == 0  %} et ce que  {% endif %}{% endif %}\r\n{% if bataille.PRV.1.2 > 0 %}leurs lanciers allaient faire \u00e0 nos cavaliers{% endif %}\r\n.{% endif %}\r\n{% endif %}\r\n\r\n\r\nC'est le c\u0153ur empli de chevalerie que nous charge\u00e2mes...  \r\n\r\n    A des fin de test : \r\n    moi=gagnant {{ moi }}\r\n    lui=perdant {{ lui }} \r\n    bataille : {{bataille}}\r\n    delta : {{delta}}", 
+    "text": "Le combat se d\u00e9roula en for\u00eat.\r\n\r\nNous \u00e9tions forts de {{moi.troupes}} soldats. {{liste_gagnant}}\r\n\r\nDe leur c\u00f4t\u00e9 on pouvait d\u00e9nombrer {{lui.troupes}} soldats. {{liste_perdant}}\r\n\r\n{% if moi.troupes < lui.troupes %}Nous \u00e9tions en sous nombre{% elif moi.troupes > lui.troupes %} Nous avions l'avantage du nombre{% else %}Nous \u00e9tions autant d'un c\u00f4t\u00e9 que de l'autre{% endif %}{% if moi.troupes < lui.troupes and moi.puissance_generaux < lui.puissance_generaux %}et la sup\u00e9riorit\u00e9 de ses g\u00e9n\u00e9raux \u00e9tait \u00e9vidente{% elif moi.troupes > lui.troupes and moi.puissance_generaux > lui.puissance_generaux %}et nos g\u00e9n\u00e9raux \u00e9taient plus aguerris.{% elif moi.troupes <= lui.troupes and moi.puissance_generaux < lui.puissance_generaux %}mais nos g\u00e9n\u00e9raux semblaient plus hardis.{% elif moi.troupes >= lui.troupes and moi.puissance_generaux > lui.puissance_generaux %}mais ses g\u00e9n\u00e9raux semblaient plus effrayant.{% else %}et les commandant des deux arm\u00e9es se regardaient dans le blanc des yeux.{% endif %}\r\n{% if moi.bonus_tactique >= lui.bonus_tactique %}N{% if bataille.PRV.0.0 > 0 %}os cavaliers allaient faire des ravages dans leurs archers{% if bataille.PRV.0.1 > 0 or bataille.PRV.0.2 > 0 %} et n{% endif %}{% endif %}{% if bataille.PRV.0.1 > 0 %}os archers allaient faire des ravages dans leurs lanciers{% if bataille.PRV.0.2 > 0 %} et n{% endif %}{% endif %}{% if bataille.PRV.0.2 > 0 %}os lanciers allaient faire des ravages dans leurs cavaliers{% endif %}.{% if bataille.PRV.1.0 > 0 or bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 %}De leur c\u00f4t\u00e9 {% if bataille.PRV.1.0 > 0 %}leurs cavaliers allaient \u00eatre une plaie pour nos archers{% if bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 > 1 %} et {% endif %}{% endif %}{% if bataille.PRV.1.1 > 0 %}leurs archers allaient \u00eatre une plaie pour nos lanciers{% if bataille.PRV.1.2 > 0 %} et {% endif %}{% endif %}{% if bataille.PRV.1.2 > 0 %}leurs lanciers allaient \u00eatre une plaie pour nos cavaliers{% endif %}.{% endif %}{% else %}N{% if bataille.PRV.0.0 > 0 %}os cavaliers allaient \u00eatre une plaie pour leurs archers{% if  bataille.PRV.0.1 > 0 or bataille.PRV.0.2 > 0 %} et n{% endif %}{% endif %}{% if bataille.PRV.0.1 > 0 %}os archers allaient \u00eatre plaie pour leurs lanciers{% if bataille.PRV.0.2 > 0  %} et n{% endif %}{% endif %}{% if bataille.PRV.0.2 > 0 %}os lanciers allaient \u00eatre une plaie pour leurs cavaliers{% endif %}.{% if bataille.PRV.1.0 > 0 or bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 %} Mais c'\u00e9tait sans comparaison avec ce que {% if bataille.PRV.1.0 > 0 %}leurs cavaliers allaient faire \u00e0 nos archers{% if bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 %} et ce que {% endif %}{% endif %}{% if bataille.PRV.1.1 > 0 %}leurs archers allaient faire \u00e0 nos lanciers{% if bataille.PRV.1.2 > 0  %} et ce que  {% endif %}{% endif %}{% if bataille.PRV.1.2 > 0 %}leurs lanciers allaient faire \u00e0 nos cavaliers{% endif %}.{% endif %}{% endif %}\r\n\r\n\r\nC'est le c\u0153ur empli de chevalerie que nous charge\u00e2mes...  \r\n\r\n    A des fin de test : \r\n    moi=gagnant {{ moi }}\r\n    lui=perdant {{ lui }} \r\n    bataille : {{bataille}}\r\n    delta : {{delta}}", 
     "image": "", 
-    "on_fire": "param.set_value(\"tuto_rapport_espion\",kingdom.get_value(\"tuto_rapport_espion\",False))\nparam.set_value(\"tuto_conflit\",kingdom.get_value(\"tuto_conflit\",False))\nparam.set_value(\"moi\",param.get_value(\"gagnant\"))\nparam.set_value(\"lui\",param.get_value(\"perdant\"))\n\nbataille=param.get_value(\"bataille\")\nPRV=bataille['PRV']\nparam.set_value(\"sum_prv_1\",PRV[1][1] + PRV[1][2])\nparam.set_value(\"sum_prv_0\",PRV[0][1] + PRV[0][2])\n", 
+    "on_fire": "param.set_value(\"tuto_rapport_espion\",kingdom.get_value(\"tuto_rapport_espion\",False))\nparam.set_value(\"tuto_conflit\",kingdom.get_value(\"tuto_conflit\",False))\nparam.set_value(\"moi\",param.get_value(\"gagnant\"))\nparam.set_value(\"lui\",param.get_value(\"perdant\"))\n\n", 
     "slug": "tuto_escarmouche_victoire", 
     "condition": "\n"
   }
@@ -2970,48 +2970,6 @@
     "on_fire": "kingdom.set_value(\"tuto_firstbattle_defense\",True)", 
     "slug": "tuto_firstbattle_defense_2", 
     "condition": null
-  }
-},
-{
-  "pk": 248, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "Voici le chevalier", 
-    "weight": 1, 
-    "text": "Je vous pr\u00e9sente sir {{chevalier}}.\r\nSes stats sont {{chevalier.fight}}(C) {{chevalier.plot}}(I) {{chevalier.diplomacy}}(D) {{chevalier.scholarship}}(\u00c9) {{chevalier.loyalty}}(L)\r\nSes traits sont:\r\n{% for quality in chevalier.quality_set.all %}\r\n* {{quality.name}}\r\n{% endfor %}", 
-    "image": "", 
-    "on_fire": "\n", 
-    "slug": "recrutement_chevalier", 
-    "condition": "\n"
-  }
-},
-{
-  "pk": 249, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "Recruter un pretre", 
-    "weight": 1, 
-    "text": "Je vous pr\u00e9sente sir {{pretre}}.\r\nSes stats sont {{pretre.fight}}(C) {{pretre.plot}}(I) {{pretre.diplomacy}}(D) {{pretre.scholarship}}(\u00c9) {{pretre.loyalty}}(L)\r\nSes traits sont:\r\n{% for quality in pretre.quality_set.all %}\r\n* {{quality.name}}\r\n{% endfor %}", 
-    "image": "", 
-    "on_fire": "\n", 
-    "slug": "recrutement_pretre", 
-    "condition": "\n"
-  }
-},
-{
-  "pk": 250, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "Recruter une dame", 
-    "weight": 1, 
-    "text": "Je vous pr\u00e9sente sir {{dame}}.\r\nSes stats sont {{dame.fight}}(C) {{dame.plot}}(I) {{dame.diplomacy}}(D) {{dame.scholarship}}(\u00c9) {{dame.loyalty}}(L)\r\nSes traits sont:\r\n{% for quality in dame.quality_set.all %}\r\n* {{quality.name}}\r\n{% endfor %}", 
-    "image": "", 
-    "on_fire": "\n", 
-    "slug": "recrutement_dame", 
-    "condition": "\n"
   }
 },
 {
@@ -5225,18 +5183,18 @@
     "message": "Le chevalier {{chevalier}} a rejoint ma cour.", 
     "event": 179, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "chevalier = param.get_value(\"chevalier\")\n\nchevalier.kingdom = kingdom\nchevalier.save()\n"
   }
 },
 {
   "pk": 248, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Navr\u00e9, mais je n'ai pas de place pour vous. {{title.ambassadeur.first_name}} va vous d\u00e9domager pour votre peine. `-10 ecus`.", 
-    "message": "Je n'ai pas voulu du chevalier {{chevalier}} dans ma cour. ```-10 \u00e9cus de compensation.```", 
+    "text": "Navr\u00e9, mais je n'ai pas de place pour vous. {{title.ambassadeur.first_name}} va vous d\u00e9domager pour votre peine. `-30 ecus`.", 
+    "message": "Je n'ai pas voulu du chevalier {{chevalier}} dans ma cour. ```-30 \u00e9cus de compensation.```", 
     "event": 179, 
-    "condition": "\n", 
-    "on_fire": "\n"
+    "condition": "if kingdom.money < 30:\n  status = \"Not enough minerals\"\n", 
+    "on_fire": "kingdom.money -= 30\nkingdom.save()\n"
   }
 },
 {
@@ -5247,18 +5205,18 @@
     "message": "Dame {{dame}} a rejoint ma cour.", 
     "event": 180, 
     "condition": "\n", 
-    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_cour_basse_fantome\")"
+    "on_fire": "dame= param.get_value(\"dame\")\n\ndame.kingdom = kingdom\ndame.save()\n"
   }
 },
 {
   "pk": 250, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\"Malheureusement, cette offre ne tient plus. Permettez que {{title.ambassadeur.first_name}} vous d\u00e9dommage pour votre p\u00e9riple\". `-10 ecus`.", 
-    "message": "Je n'ai pas voulu de dame {{dame}} dans ma cour. ```-10 \u00e9cus de compensation.```", 
+    "text": "\"Malheureusement, cette offre ne tient plus. Permettez que {{title.ambassadeur.first_name}} vous d\u00e9dommage pour votre p\u00e9riple\". `-30 ecus`.", 
+    "message": "Je n'ai pas voulu de dame {{dame}} dans ma cour. ```-30 \u00e9cus de compensation.```", 
     "event": 180, 
-    "condition": "\n", 
-    "on_fire": "kingdom.money -= 10\nkingdom.save()"
+    "condition": "if kingdom.money < 30:\n  status = \"Not enough minerals\"\n", 
+    "on_fire": "kingdom.money -= 30\nkingdom.save()"
   }
 },
 {
@@ -5279,19 +5237,19 @@
     "text": "\"Vous etiez attendu, mon p\u00e8re. Les serviteurs vont vous montrer vos quartiers\". `Le p\u00e8re {{pretre.first_name}} rejoint votre cour.`\"Vous etiez attendu, mon p\u00e8re. Les serviteurs vont vous montrer vos quartiers\". `Le p\u00e8re {{pretre.first_name}} rejoint votre", 
     "message": "Le p\u00e8re {{pretre}} a rejoint ma cour.", 
     "event": 182, 
-    "condition": null, 
-    "on_fire": null
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 },
 {
   "pk": 253, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\"Je regrette, mais les choses ont chang\u00e9es et vos services ne sont plus necessaires... Voici une obole \u00e0 remettre \u00e0 monseigneur l'\u00e9v\u00eaque, avec mes humbles excuses\". `-10 ecus`.", 
-    "message": "Je n'ai pas voulu du p\u00e8re {{pretre}} dans ma cour. ```-10 \u00e9cus de compensation.```", 
+    "text": "\"Je regrette, mais les choses ont chang\u00e9es et vos services ne sont plus necessaires... Voici une obole \u00e0 remettre \u00e0 monseigneur l'\u00e9v\u00eaque, avec mes humbles excuses\". `-30 ecus`.", 
+    "message": "Je n'ai pas voulu du p\u00e8re {{pretre}} dans ma cour. ```-30 \u00e9cus de compensation.```", 
     "event": 182, 
-    "condition": null, 
-    "on_fire": null
+    "condition": "if kingdom.money < 30:\n  status = \"Not enough minerals\"\n", 
+    "on_fire": "kingdom.money -= 30\nkingdom.save()\n"
   }
 },
 {
@@ -5930,61 +5888,6 @@
     "event": 247, 
     "condition": null, 
     "on_fire": "if param.get_value('is_victory'):\n  kingdom.create_pending_event(\"tuto_escarmouche_victoire\").start()\nelse:\n  kingdom.create_pending_event(\"tuto_escarmouche_defaite\").start()"
-  }
-},
-{
-  "pk": 319, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "Je le veux !", 
-    "message": "{{chevalier}} a rejoint votre cour", 
-    "event": 248, 
-    "condition": "\n", 
-    "on_fire": "chevalier = param.get_value(\"chevalier\")\n\nchevalier.kingdom = kingdom\nchevalier.save()\n"
-  }
-},
-{
-  "pk": 320, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "Il ne m'interesse pas... Mais je dois le d\u00e9domager pour son voyage ```- 30 \u00e9cus ```", 
-    "message": "", 
-    "event": 248, 
-    "condition": "\n", 
-    "on_fire": "\n"
-  }
-},
-{
-  "pk": 321, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "Je le veux !", 
-    "message": "{{pretre}} a rejoint votre cour", 
-    "event": 249, 
-    "condition": "\n", 
-    "on_fire": "pretre = param.get_value(\"pretre\")\n\npretre.kingdom = kingdom\npretre.save()"
-  }
-},
-{
-  "pk": 322, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "Cet homme est inutile", 
-    "message": "", 
-    "event": 249, 
-    "condition": "\n", 
-    "on_fire": "\n"
-  }
-},
-{
-  "pk": 323, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "Je le veux !", 
-    "message": "{{dame}} a rejoint votre cour", 
-    "event": 250, 
-    "condition": "\n", 
-    "on_fire": "dame= param.get_value(\"dame\")\n\ndame.kingdom = kingdom\ndame.save()\n"
   }
 },
 {
