@@ -386,11 +386,27 @@
   }
 },
 {
+  "pk": "0fsh63ul4z0w319jh5sej3twi1m693mr", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T23:38:15.194", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "0i355xtq1m59pdjfnw0cu6ytu5d23njq", 
   "model": "sessions.session", 
   "fields": {
     "expire_date": "2013-07-29T13:09:18.544", 
     "session_data": "OThhOTdlYTY5ZjEwMDFmN2M0Yzc3MjU2ZjVkZGIyMGY4N2U3NzYxZDqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLAnUu"
+  }
+},
+{
+  "pk": "12hh4wudumegfo8sy6n1p75y56jlmj7w", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T23:42:53.179", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
 {
@@ -511,6 +527,14 @@
   "fields": {
     "expire_date": "2013-07-14T15:51:44.845", 
     "session_data": "OThhOTdlYTY5ZjEwMDFmN2M0Yzc3MjU2ZjVkZGIyMGY4N2U3NzYxZDqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED\nVQ1fYXV0aF91c2VyX2lkcQRLAnUu\n"
+  }
+},
+{
+  "pk": "3dp7581l3ha5al586ppyg81dhbi60qdu", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T23:25:11.117", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
 {
@@ -778,6 +802,14 @@
   }
 },
 {
+  "pk": "a1rfk0w1rlf28ifuphy00u9mewnc7caw", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T23:28:31.754", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "ak2keeu96zspawtud4l4bi8o2xtlfjg4", 
   "model": "sessions.session", 
   "fields": {
@@ -847,6 +879,14 @@
   "fields": {
     "expire_date": "2013-07-28T13:58:49.172", 
     "session_data": "OThhOTdlYTY5ZjEwMDFmN2M0Yzc3MjU2ZjVkZGIyMGY4N2U3NzYxZDqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLAnUu"
+  }
+},
+{
+  "pk": "bzpnrdjlq2dca0h4j16hbg9dcn30jita", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T23:28:45.041", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
 {
@@ -1062,6 +1102,14 @@
   "model": "sessions.session", 
   "fields": {
     "expire_date": "2013-09-19T13:41:42.832", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
+  "pk": "im7lkxe54hn7nqv9sy0gckng7g2nqe7y", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T23:37:59.405", 
     "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
@@ -1295,6 +1343,14 @@
   "fields": {
     "expire_date": "2013-07-24T14:56:53.186", 
     "session_data": "OThhOTdlYTY5ZjEwMDFmN2M0Yzc3MjU2ZjVkZGIyMGY4N2U3NzYxZDqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLAnUu"
+  }
+},
+{
+  "pk": "p8mudxp4iqtz5nlef0d8jgw85h1f8mmn", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T23:24:22.081", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
 {
@@ -1634,6 +1690,14 @@
   }
 },
 {
+  "pk": "xnqzqda0462uemde0dbjayzcwc9i3zkl", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T23:39:20.932", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "xoi247gkofrnmir476xny8b7mfouznsy", 
   "model": "sessions.session", 
   "fields": {
@@ -1719,6 +1783,14 @@
   "fields": {
     "expire_date": "2013-09-10T20:41:32.408", 
     "session_data": "MTI5NWFmZDMzMzQwYWNlNDhhNzM3NDVhMmEzNTFhMGNjNzI1MjkwNzqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLKnUu"
+  }
+},
+{
+  "pk": "zr3zaunoch9u33apdlgod6u95gr8ti4u", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-08T23:41:09.587", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
 {
@@ -4318,16 +4390,16 @@
     "plot": 8, 
     "scholarship": 7, 
     "sex": "m", 
-    "disabled": true, 
+    "disabled": false, 
     "death": null, 
     "avatar": 1, 
-    "birth": "2013-07-23T20:41:33.962", 
+    "birth": "2013-07-23T20:41:33", 
     "mother": null, 
     "loyalty": 80, 
     "spouse": null, 
     "quality_set": [
-      37, 
-      20
+      20, 
+      37
     ], 
     "mentor": null
   }
@@ -7190,13 +7262,14 @@
     "disabled": false, 
     "death": null, 
     "avatar": 29, 
-    "birth": "2013-08-12T21:55:14.486", 
+    "birth": "2013-08-12T21:55:14", 
     "mother": null, 
     "loyalty": 55, 
     "spouse": null, 
     "quality_set": [
       23, 
-      36
+      36, 
+      37
     ], 
     "mentor": null
   }
@@ -11772,6 +11845,15 @@
   }
 },
 {
+  "pk": 9, 
+  "model": "internal.constant", 
+  "fields": {
+    "name": "PERTE_LOYAUTE_BANNISSEMENT", 
+    "value": 10, 
+    "description": "Perte de loyaut\u00e9 lorsqu'on bannit quelqu'un"
+  }
+},
+{
   "pk": 1, 
   "model": "internal.status", 
   "fields": {
@@ -12073,6 +12155,16 @@
     "slug": "determiner_raid", 
     "on_fire": "\nsomme_combat = sum_folks(liste_attaquant,'fight')\n\n# argent vol\u00e9 au defenseur\nargent_vole = int(30*((somme_combat)**0.5)/7.74*(population_defenseur/population_max_defenseur))\n# population perdue par le defenseur\npopulation_perdue = int(argent_vole/3)\n\n# proba de mourrir / d'etre bless\u00e9 des attaquants\n# random_value : un entier aleatoire entre a et b\n# random_in : un element aleatoirement pris dans un tableau\n# random_gauss : (min,max,[sigma],[mu])\nmorts_attaquant=[]\nblesses_attaquant=[]\n\nfor attaquant in liste_attaquant:\n  pourcent_mort = int(((256-min(16,attaquant.fight)**0.5)*0.09/256+0.01)*100)\n  pourcent_blesse = 4*pourcent_mort\n  destin=random_value(1,100)\n  if destin<=pourcent_mort:\n    truc=truc+1\n    attaquant.die()\n    morts_attaquant.append(attaquant)\n  elif destin<=pourcent_blesse:\n    call_function(\"blesser_folk\",folk=attaquant)\n    blesses_attaquant.append(attaquant)\n\n\nparam = {\n         'argent_vole' : argent_vole,\n         'population_perdue' : population_perdue\n         }\n", 
     "description": "d\u00e9terminer r\u00e9sultat d'un raid : \r\n- population d\u00e9fenseur tu\u00e9e\r\n- argent gagn\u00e9e par le vainqueur\r\n- bless\u00e9s attaquant\r\n- tu\u00e9s attaquant\r\n"
+  }
+},
+{
+  "pk": 25, 
+  "model": "internal.function", 
+  "fields": {
+    "params": "", 
+    "slug": "leader_de_mission", 
+    "on_fire": "chatelain_in=False\nconnetable_in=False\n\nchatelain=royaume.get_folk_in_title(\"chatelain\")\nconnetable=royaume.get_folk_in_title(\"connetable\")\n\n\nif chatelain in list_folk:\n  chatelain_in=True\n  general=chatelain\nelif connetable in list_folk:\n  connetable_in=True\n  general=connetable\nelse:\n  general=random_in(list_folk)\n\nparam={\n       'chatelain':chatelain,\n       'connetable':connetable,\n       'general':general,\n       }\n\n", 
+    "description": "input : royaume(kongdom), list_folk(liste des gens que le joueur a mis dans la mission)\r\noutput={\r\n       'chatelain':chatelain\r\n       'connetable':connetable\r\n       'general':general\r\n       }"
   }
 },
 {
@@ -47812,9 +47904,9 @@
   "fields": {
     "name": "Bannir un membre de ta cour", 
     "target_list": " ", 
-    "text": "Je souhaite bannir un m\u00e9cr\u00e9ant", 
+    "text": "Je souhaite bannir quelqu'un", 
     "has_value": false, 
-    "on_resolution": "banni = grids['banni'][0]\nbanni.kingdom = None\nbanni.save()\n\npe = PendingEvent(event=Event.objects.get(slug=\"bannissement\"), kingdom=kingdom, started=datetime.now() + timedelta(hours=6))\npe.save()\npe.set_value(\"banni\", banni)\n", 
+    "on_resolution": "def perte(facteur, kingdom=kingdom):\n  call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=C.PERTE_LOYAUTE_BANNISSEMENT*facteur, perte_max=C.PERTE_LOYAUTE_BANNISSEMENT*facteur)\n  return PERTE_LOYAUTE_BANNISSEMENT*facteur\n\nbanni = grids['banni'][0]\nperte_loyaute = 0\n\nif condamne.has_quality(\"legende_locale\"):\n  perte_loyaute -= perte(2)\nelif condamne.has_quality(\"intrepide\"):\n  perte_loyaute -= perte(1.5)\nelif condamne.has_quality(\"scelerat\"):\n  perte_loyaute -= perte(0)\nelif condamne.has_quality(\"traitre\"):\n  call_function(\"gain_loyaute_general\", kingdom=kingdom, gain_min=4, gain_max=6)\n  perte_loyaute = 5\nelse :\n  perte_loyaute -= perte(1)\n\nbiens = random_value(2,30)\nkingdom.money += biens\nkingdom.save()\n\nbanni.kingdom = None\nbanni.save()\n\npe = kingdom.create_pending_event(\"bannissement\")\npe.set_value(\"condamne\", banni)\npe.set_value(\"biens\", biens)\npe.set_value(\"perte\", perte_loyaute)\npe.start()\n", 
     "value_description": "Valeur :", 
     "on_start": " ", 
     "has_target": false, 
@@ -48092,7 +48184,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent ?)\nif kingdom.money >= 10:\n  kingdom.money-=10\n  # Retrieve the claim\n  try:\n    claim = Claim.objects.get(offender=kingdom, offended=target)\n    kingdom.prestige-=30\n    kingdom.save()\n  except:\n    #add claim lvl 1 Claim.objects.set(offender=kingdom, offended=target)\n    #claim.save()\n    pass\n\n  retour_fonction = call_function('determiner_raid',\n                                  liste_attaquant=grids['attaquants'],\n                                  argent_defenseur = target.money,\n                                  population_defenseur = target.population,\n                                  population_max_defenseur = f('get_max_population',kingdom=target)\n                                  )\n  \n  \n  kingdom.money+= retour_fonction['argent_vole']\n  target.population-=retour_fonction['population_perdue']\n  target.save()\n  kingdom.save()\n\nelse:\n  status=\"vous n'avez pas suffisamment d'argent pour lancer cette mission.\"  \n", 
+    "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent - cible acceptable ? )\nnok = 0\nif kingdom.money < 10:\n  nok = 1\nelif kingdom.user.username==target.user.username:\n  nok = 2\n  \n\nif nok == 0:\n  kingdom.money-=10\n  # Retrieve the claim\n  try:\n    claim = Claim.objects.get(offender=kingdom, offended=target)\n    kingdom.prestige-=30\n    kingdom.save()\n  except:\n    #add claim lvl 1 Claim.objects.set(offender=kingdom, offended=target)\n    #claim.save()\n    pass\n\n  retour_fonction = call_function('determiner_raid',\n                                  liste_attaquant=grids['attaquants'],\n                                  argent_defenseur = target.money,\n                                  population_defenseur = target.population,\n                                  population_max_defenseur = f('get_max_population',kingdom=target)\n                                  )\n  \n  \n  kingdom.money+= retour_fonction['argent_vole']\n  target.population-=retour_fonction['population_perdue']\n  target.save()\n  kingdom.save()\n\nelif nok==1 :\n  status=\"Vous n'avez pas suffisamment d'argent pour lancer cette mission.\"  \nelif nok==2 :status=\"On n'organise pas de raid sur son domaine, \u00e7a va pas la t\u00eate ?\"  \n\n", 
     "has_target": true, 
     "is_team": false, 
     "title": null, 
@@ -49368,22 +49460,6 @@
   }
 },
 {
-  "pk": 282, 
-  "model": "mission.pendingmission", 
-  "fields": {
-    "kingdom": 70, 
-    "is_started": true, 
-    "target": null, 
-    "created": "2013-09-21T18:45:46.756", 
-    "started": "2013-09-24T21:52:30.921", 
-    "last_target": null, 
-    "mission": 41, 
-    "value": 0, 
-    "is_finished": false, 
-    "last_value": 0
-  }
-},
-{
   "pk": 292, 
   "model": "mission.pendingmission", 
   "fields": {
@@ -49433,33 +49509,6 @@
     "pending_mission": 273, 
     "folk": 6929, 
     "mission_grid": 41
-  }
-},
-{
-  "pk": 544, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 282, 
-    "folk": 6771, 
-    "mission_grid": 42
-  }
-},
-{
-  "pk": 545, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 282, 
-    "folk": 6774, 
-    "mission_grid": 42
-  }
-},
-{
-  "pk": 546, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 282, 
-    "folk": 6772, 
-    "mission_grid": 42
   }
 },
 {
@@ -50792,9 +50841,9 @@
     "category": null, 
     "name": "Escarmouche", 
     "weight": 1, 
-    "text": "La bataille \u00e9tait termin\u00e9e, et les corbeaux apparaissaient un \u00e0 un dans le ciel, poussant leurs  cris affam\u00e9s sans  parvenir \u00e0 couvrir le r\u00e2le des bless\u00e9s et des mourants. {{dynasty}} avait vaincu. Sur mes {{pop_envoyee_gagnant}} hommes d'arme, {{pop_pertes_vainqueur}} \u00e9taient tomb\u00e9s l'arme \u00e0 la main, emportant avec eux {{pop_pertes_perdant}} ennemis vocif\u00e9rants et faisant fuir le reste.\r\n{% if morts_gagnant|length >= 1 %}\r\nNous avions remport\u00e9 une victoire, mais \u00e0 quel prix? {{ morts_gagnant|folks_list}} \r\n{% if morts_gagnant|length == 1 %}\r\ngisait aux milieu des cadavres, serrant encore son \u00e9p\u00e9e.\r\n{% else %}\r\n\u00e9taient tomb\u00e9s sans que les n\u00f4tres ne puissent leur porter secours.\r\n{% endif %}\r\n{% endif %}\r\n{% if blesses_gagnant|length >= 1 %}\r\n{{blesses_gagnant|folks_list}} avai{{blesses_gagnant|pluralize:\"t,ent\" }} \u00e9t\u00e9 bless\u00e9{{blesses_gagnant|pluralize}} dans la bataille, et devrai{{blesses_gagnant|pluralize:\"t,ent\" }} \u00eatre ramen\u00e9{{blesses_gagnant|pluralize}} au ch\u00e2teau sur {{blesses_gagnant|pluralize:\"une,des\"}} liti\u00e8re{{blesses_gagnant|pluralize}}.\r\n{% endif %}\r\n{% if morts_perdants|length >= 1 %}\r\nChez l'adversaire, {{ morts_perdants|folks_list}} avai{{mort_perdants|pluralize:\"t,ent\" }} \u00e9t\u00e9 terrass\u00e9.{{mort_perdants|pluralize}}\r\n{% endif %} \r\n{% if blesses_perdants|length >= 1 %}\r\n{% if morts_gagnant|length >= 1 %}\r\nDe plus,\r\n{% endif %} \r\n{{ blesses_perdants|folks_list}} avaient \u00e9t\u00e9 bless\u00e9s et garderaient des cicatrice de cette bataille.\r\n{% endif %}\r\n\r\n{% if chatelain_in_mission_vainqueur %}\r\nChassant la fatigue qui me tenaillait, je rassemblai mes hommes valides pour{% elif connetable_in_mission_vainqueur %}\r\nSire {{general_vainqueur.first_name}} essuya son \u00e9p\u00e9e, et cria aux hommes de se regrouper pour\r\n{% else %}\r\n{{general_vainqueur}} entreprit de rallier les n\u00f4tres  pour \r\n{% endif %}\r\n{% if vainqueur_est_attaquant %} proc\u00e9der au pillage de {% if tuto %}  {{tuto_adversaire}} {% else %} {{perdant}} {% endif %}{% else %} entamer le repli vers le ch\u00e2teau.{% endif %}", 
+    "text": "La bataille \u00e9tait termin\u00e9e, et les corbeaux apparaissaient un \u00e0 un dans le ciel, poussant leurs  cris affam\u00e9s sans  parvenir \u00e0 couvrir le r\u00e2le des bless\u00e9s et des mourants. {{dynasty}} avait vaincu. Sur mes {{gagnant.troupes}} hommes d'arme, {{delta.gagnant.pertes_troupe}} \u00e9taient tomb\u00e9s l'arme \u00e0 la main, emportant avec eux {{delta.perdant.pertes_troupe}} ennemis vocif\u00e9rants et faisant fuir le reste.\r\n{% if delta.gagnant.morts|length >= 1 %}\r\nNous avions remport\u00e9 une victoire, mais \u00e0 quel prix? {{ delta.gagnant.morts|folks_list}} \r\n{% if delta.gagnant.morts|length == 1 %}\r\ngisait aux milieu des cadavres, serrant encore son \u00e9p\u00e9e.\r\n{% else %}\r\n\u00e9taient tomb\u00e9s sans que les n\u00f4tres ne puissent leur porter secours.\r\n{% endif %}\r\n{% endif %}\r\n{% if delta.gagnant.blesses|length >= 1 %}\r\n{{delta.gagnant.blesses|folks_list}} avai{{delta.gagnant.blesses|pluralize:\"t,ent\" }} \u00e9t\u00e9 bless\u00e9{{delta.gagnant.blesses|pluralize}} dans la bataille, et devrai{{delta.gagnant.blesses|pluralize:\"t,ent\" }} \u00eatre ramen\u00e9{{delta.gagnant.blesses|pluralize}} au ch\u00e2teau sur {{delta.gagnant.blesses|pluralize:\"une,des\"}} liti\u00e8re{{delta.gagnant.blesses|pluralize}}.\r\n{% endif %}\r\n{% if delta.perdant.morts|length >= 1 %}\r\nChez l'adversaire, {{ delta.perdant.morts|folks_list}} avai{{mort_perdants|pluralize:\"t,ent\" }} \u00e9t\u00e9 terrass\u00e9.{{mort_perdants|pluralize}}\r\n{% endif %} \r\n{% if delta.perdant.blesses|length >= 1 %}\r\n{% if delta.gagnant.morts|length >= 1 %}\r\nDe plus,\r\n{% endif %} \r\n{{ delta.perdant.blesses|folks_list}} avaient \u00e9t\u00e9 bless\u00e9s et garderaient des cicatrice de cette bataille.\r\n{% endif %}\r\n\r\n{% if chatelain_in_mission_vainqueur %}\r\nChassant la fatigue qui me tenaillait, je rassemblai mes hommes valides pour{% elif connetable_in_mission_vainqueur %}\r\nSire {{general_vainqueur.first_name}} essuya son \u00e9p\u00e9e, et cria aux hommes de se regrouper pour\r\n{% else %}\r\n{{general_vainqueur}} entreprit de rallier les n\u00f4tres  pour \r\n{% endif %}\r\n{% if vainqueur_est_attaquant %} proc\u00e9der au pillage de {{tuto_adversaire}}{% else %} entamer le repli vers le ch\u00e2teau.{% endif %}", 
     "image": "events/10_1.jpg", 
-    "on_fire": "\n", 
+    "on_fire": "param.set_value(\"tuto_adversaire\",kingdom.get_value(\"tuto_adversaire\"))", 
     "slug": "escarmouche_victoire", 
     "condition": " "
   }
@@ -52498,12 +52547,12 @@
   "model": "event.event", 
   "fields": {
     "category": null, 
-    "name": "Bannissement", 
+    "name": "banissement", 
     "weight": 1, 
-    "text": "Sire {{title.connetable}} a fait conduire {{banni}} sous bonne escorte jusqu'\u00e0 la fronti\u00e8re de mes terres, et lui a lanc\u00e9 d'un ton ferme de ne jamais revenir. La cour est sous le choc, et ils sont nombreux \u00e0 m\u2019appeler \"tyran\" dans mon dos, en se demandant lequel d'entre eux sera le prochain.\r\n\r\n    {{banni}} a \u00e9t\u00e9 chass\u00e9 de votre cour. Ses possessions ont \u00e9t\u00e9 saisies et vous ont rapport\u00e9 20 \u00e9cus.\r\n-20 de Loyaut\u00e9 g\u00e9n\u00e9rale.", 
+    "text": "Sire {{title.connetable}} a fait conduire {{banni}} sous bonne escorte jusqu'\u00e0 la fronti\u00e8re de mes terres, et lui a lanc\u00e9 d'un ton ferme de ne jamais revenir. \r\n{% if {{perte}} < 0 %}\r\nLa cour est sous le choc, et ils sont nombreux \u00e0 m\u2019appeler \"tyran\" dans mon dos, en se demandant lequel d'entre eux sera le prochain.\r\n{% else %}\r\nC'EST BIEN FAIT POUR TA GUEULE TRAITRE (a modifier)\r\n{% endif%}\r\n\r\n    {{banni}} a \u00e9t\u00e9 chass\u00e9 de votre cour. Ses possessions ont \u00e9t\u00e9 saisies et vous ont rapport\u00e9 {{biens}} \u00e9cus.\r\n{% if {{perte}} < 0 %}\r\n{{perte}} de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n{% else %}\r\n+ {{perte}} de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n{% endif %}", 
     "image": "events/417.jpg", 
-    "on_fire": "banni = pamre.get_value(\"banni\")\nif banni.has_quality(\"scelerat\") or banni.has_quality(\"taitre\"):\n  pass\n", 
-    "slug": "bannissement", 
+    "on_fire": "\n", 
+    "slug": "banissement", 
     "condition": "\n"
   }
 },
@@ -55567,7 +55616,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Bon d\u00e9barras!", 
-    "message": "{{banni}} a \u00e9t\u00e9 chass\u00e9 de ma cour.```\r\n+20 \u00e9cus.\r\n-20 de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n```", 
+    "message": "{{banni}} a \u00e9t\u00e9 chass\u00e9 de ma cour.", 
     "event": 186, 
     "condition": "\n", 
     "on_fire": "\n"
@@ -56286,18 +56335,6 @@
   }
 },
 {
-  "pk": 2235, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 71, 
-    "is_started": false, 
-    "created": "2013-09-16T18:46:26.985", 
-    "started": "2013-09-17T00:46:26.984", 
-    "text": "", 
-    "event": 186
-  }
-},
-{
   "pk": 2323, 
   "model": "event.pendingevent", 
   "fields": {
@@ -56514,15 +56551,6 @@
     "pending_event": 2177, 
     "name": "pere", 
     "value": "`Folk`:6974"
-  }
-},
-{
-  "pk": 4639, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2235, 
-    "name": "banni", 
-    "value": "`Folk`:6879"
   }
 },
 {
@@ -123366,6 +123394,162 @@
   }
 },
 {
+  "pk": 7658, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-24T23:28:29.539", 
+    "object_repr": "PERTE_LOYAUTE_BANNISSEMENT", 
+    "object_id": "9", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 18
+  }
+},
+{
+  "pk": 7659, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T23:32:01.370", 
+    "object_repr": "bannir_folk", 
+    "object_id": "14", 
+    "change_message": "Modifi\u00e9 text, on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0bannir_folk [Banni (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7660, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T23:34:46.325", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7661, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T23:35:02.069", 
+    "object_repr": "bannir_folk", 
+    "object_id": "14", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0bannir_folk [Banni (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7662, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T23:36:00.664", 
+    "object_repr": "banissement", 
+    "object_id": "186", 
+    "change_message": "Modifi\u00e9 name, slug, text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Bon d\u00e9barras! [banissement]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7663, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-09-24T23:37:04.142", 
+    "object_repr": "banissement [Laguarfield kingdom]", 
+    "object_id": "2235", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7664, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T23:37:28.264", 
+    "object_repr": "Sorin de Nonac", 
+    "object_id": "6687", 
+    "change_message": "Modifi\u00e9 disabled.", 
+    "user": 42, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7665, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T23:37:50.847", 
+    "object_repr": "Ebble de La Chapelle", 
+    "object_id": "7036", 
+    "change_message": "Modifi\u00e9 disabled.", 
+    "user": 42, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7666, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-24T23:39:49.854", 
+    "object_repr": "leader_de_mission()", 
+    "object_id": "25", 
+    "change_message": "", 
+    "user": 38, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7667, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T23:41:58.407", 
+    "object_repr": "escarmouche_victoire", 
+    "object_id": "41", 
+    "change_message": "Modifi\u00e9 text et on_fire. on_fire modifi\u00e9 pour event action \u00ab\u00a0{% if vainqueur_est_attaquant %}A nous le butin!{% [escarmouche_victoire]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7668, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T23:44:37.798", 
+    "object_repr": "banissement", 
+    "object_id": "186", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition, on_fire et message modifi\u00e9 pour event action \u00ab\u00a0Bon d\u00e9barras! [banissement]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7669, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-24T23:45:54.200", 
+    "object_repr": "bannir_folk", 
+    "object_id": "14", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0bannir_folk [Banni (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
   "pk": 46, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -123393,7 +123577,7 @@
   "fields": {
     "soldiers": 13, 
     "prestige": 150, 
-    "money": 108, 
+    "money": 107, 
     "user": 42, 
     "population": 270
   }
@@ -123406,7 +123590,7 @@
     "prestige": 140, 
     "money": 168, 
     "user": 38, 
-    "population": 288
+    "population": 283
   }
 },
 {
