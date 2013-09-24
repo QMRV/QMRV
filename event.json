@@ -2987,6 +2987,20 @@
   }
 },
 {
+  "pk": 252, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Execution", 
+    "weight": 1, 
+    "text": "{{condamne}} a \u00e9t\u00e9 ex\u00e9cut\u00e9.\r\n\r\n    Vous avez gagn\u00e9 {{biens}} \u00e9cus suite \u00e0 la r\u00e9quisition de ses biens.", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "execution", 
+    "condition": "\n"
+  }
+},
+{
   "pk": 5, 
   "model": "event.eventaction", 
   "fields": {
@@ -5897,6 +5911,17 @@
     "text": "Tr\u00e8s bien, cette personne me sera utile !", 
     "message": "{{folk}} \u00e0 rejoint votre cour", 
     "event": 251, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 325, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Ok !", 
+    "message": "", 
+    "event": 252, 
     "condition": "\n", 
     "on_fire": "\n"
   }

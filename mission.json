@@ -444,7 +444,7 @@
     "target_list": " ", 
     "text": "L'affront est trop grand. Il me faudra l'ex\u00e9cuter pour l'exemple.", 
     "has_value": false, 
-    "on_resolution": "grids['victime'][0].die()\n\n#Baisse de loyaut\u00e9 g\u00e9n\u00e9ral\n\nif grids['victime'][0].has_quality(\"scelerat\"):\n  call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=8, perte_max=12)\nelse :\n  call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=18, perte_max=22)\n", 
+    "on_resolution": "def perte(facteur, kingdom=kingdom):\n  call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=C.PERTE_LOYAUTE_EXECUTION*facteur, perte_max=C.PERTE_LOYAUTE_EXECUTION*facteur)\n\ncondamne = grids['condamne'][0]\n\n\nif condamne.has_quality(\"legende_locale\"):\n  perte(2)\nelif condamne.has_quality(\"intrepide\"):\n  perte(1.5)\nelif condamne.has_quality(\"scelerat\"):\n  perte(0)\nelif condamne.has_quality(\"traitre\"):\n  call_function(\"gain_loyaute_general\", kingdom=kingdom, gain_min=4, gain_max=6)\nelse :\n  perte(1)\n\nbiens = random_value(2,30)\nkingdom.money += biens\nkingdom.save()\n\ncondamne.die()\nname = condamne.first_name + \" \" + condamne.last_name\npe = kingdom.create_pending_event(\"execution\")\npe.set_value(\"condamne\", name)\npe.set_value(\"biens\", biens)\npe.start()\n", 
     "value_description": "Valeur :", 
     "on_start": " ", 
     "has_target": false, 
@@ -453,7 +453,7 @@
     "target_description": "Cible", 
     "timeout": null, 
     "is_cancellable": true, 
-    "duration": 5, 
+    "duration": 0, 
     "on_cancel": "\n", 
     "slug": "executer", 
     "on_init": " "
@@ -538,7 +538,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent ?)\nif kingdom.money >= 10:\n  kingdom.money-=10\n  # Retrieve the claim\n  try:\n    claim = Claim.objects.get(offender=kingdom, offended=target)\n    kingdom.prestige-=30\n    kingdom.save()\n  except:\n    #add claim lvl 1 Claim.objects.set(offender=kingdom, offended=target)\n    #claim.save()\n    pass\n\n  retour_fonction = call_function('determiner_raid',\n                                  liste_attaquant=grids['attaquants'],\n                                  argent_defenseur = target.money,\n                                  population_defenseur = target.population\n                                  )\n  \n  \n  kingdom.money+= retour_fonction['argent_vole']\n  target.money-= retour_fonction['argent_vole']\n  target.population-=retour_fonction['population_perdue']\n  target.save()\n  # kingdom.save()\n\nelse:\n  status=\"vous n'avez pas suffisamment d'argent pour lancer cette mission.\"  \n", 
+    "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent ?)\nif kingdom.money >= 10:\n  kingdom.money-=10\n  # Retrieve the claim\n  try:\n    claim = Claim.objects.get(offender=kingdom, offended=target)\n    kingdom.prestige-=30\n    kingdom.save()\n  except:\n    #add claim lvl 1 Claim.objects.set(offender=kingdom, offended=target)\n    #claim.save()\n    pass\n\n  retour_fonction = call_function('determiner_raid',\n                                  liste_attaquant=grids['attaquants'],\n                                  argent_defenseur = target.money,\n                                  population_defenseur = target.population,\n                                  population_max_defenseur = f('get_max_population',kingdom=target)\n                                  )\n  \n  \n  kingdom.money+= retour_fonction['argent_vole']\n  target.population-=retour_fonction['population_perdue']\n  target.save()\n  kingdom.save()\n\nelse:\n  status=\"vous n'avez pas suffisamment d'argent pour lancer cette mission.\"  \n", 
     "has_target": true, 
     "is_team": false, 
     "title": null, 
@@ -1713,7 +1713,7 @@
     "mission": 22, 
     "length": 1, 
     "allow_empty": false, 
-    "slug": "condomane", 
+    "slug": "condamne", 
     "condition": "\n"
   }
 }

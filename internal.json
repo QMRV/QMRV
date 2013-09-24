@@ -35729,7 +35729,7 @@
   "fields": {
     "params": "", 
     "slug": "determiner_raid", 
-    "on_fire": "\nsomme_combat = sum_folks(liste_attaquant,'fight')\n\n\nparam = {\n         'argent_vole' : somme_combat,\n         'population_perdue' : 10\n         }\n", 
+    "on_fire": "\nsomme_combat = sum_folks(liste_attaquant,'fight')\n\n# argent vol\u00e9 au defenseur\nargent_vole = int(30*((somme_combat)**0.5)/7.74*(population_defenseur/population_max_defenseur))\n# population perdue par le defenseur\npopulation_perdue = int(argent_vole/3)\n\n# proba de mourrir / d'etre bless\u00e9 des attaquants\n# random_value : un entier aleatoire entre a et b\n# random_in : un element aleatoirement pris dans un tableau\n# random_gauss : (min,max,[sigma],[mu])\nmorts_attaquant=[]\nblesses_attaquant=[]\n\nfor attaquant in liste_attaquant:\n  pourcent_mort = int(((256-min(16,attaquant.fight)**0.5)*0.09/256+0.01)*100)\n  pourcent_blesse = 4*pourcent_mort\n  destin=random_value(1,100)\n  if destin<=pourcent_mort:\n    truc=truc+1\n    attaquant.die()\n    morts_attaquant.append(attaquant)\n  elif destin<=pourcent_blesse:\n    call_function(\"blesser_folk\",folk=attaquant)\n    blesses_attaquant.append(attaquant)\n\n\nparam = {\n         'argent_vole' : argent_vole,\n         'population_perdue' : population_perdue\n         }\n", 
     "description": "d\u00e9terminer r\u00e9sultat d'un raid : \r\n- population d\u00e9fenseur tu\u00e9e\r\n- argent gagn\u00e9e par le vainqueur\r\n- bless\u00e9s attaquant\r\n- tu\u00e9s attaquant\r\n"
   }
 }
