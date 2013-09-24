@@ -2741,9 +2741,9 @@
     "category": null, 
     "name": "resultat de bataille", 
     "weight": 1, 
-    "text": "Le combat se d\u00e9roula en for\u00eat.\r\n\r\nNous \u00e9tions forts de {{moi.troupes}} soldats. {{liste_gagnant}}\r\n\r\nDe leur c\u00f4t\u00e9 on pouvait d\u00e9nombrer {{lui.troupes}} soldats. {{liste_perdant}}\r\n\r\n{ % if moi.troupes<lui.troupes % }\r\nNous \u00e9tions en sous nombre\r\n{ % elif moi.troupes>lui.troupes % } \r\nNous avions l'avantage du nombre\r\n{ % else % }\r\nNous \u00e9tions autant d'un c\u00f4t\u00e9 que de l'autre\r\n{ % endif % }\r\n{ % if (moi.troupes<lui.troupes and moi.bonus_tactique<lui.bonus_tactique) % }\r\net la sup\u00e9riorit\u00e9 de ses g\u00e9n\u00e9raux \u00e9tait \u00e9vidente\r\n{ % elif (moi.troupes>lui.troupes and moi.bonus_tactique>lui.bonus_tactique) % }\r\net vos g\u00e9n\u00e9raux \u00e9taient plus aguerris.\r\n{ % elif (moi.troupes<=lui.troupes and moi.bonus_tactique>lui.bonus_tactique) % }\r\nmais vos g\u00e9n\u00e9raux semblaient plus hardis.\r\n{ % elif (moi.troupes>=lui.troupes and moi.bonus_tactique<lui.bonus_tactique)  % }\r\nmais ses g\u00e9n\u00e9raux semblaient plus effrayant.\r\n{ % else %}\r\net les commandant des deux arm\u00e9es se regardaient dans le blanc des yeux.\r\n{ % Endif % }\r\n\r\n{ % if moi.bonus_tactique>lui.bonus_tactique % }\r\nN\r\n{ % if bataille.PRV[0][0]>0 % }os cavaliers allaient faire des ravages dans leurs archers{ % if bataille.PRV[0]>1 % } et n{ % Endif % }{ % Endif % }\r\n{ % if bataille.PRV[0][1]>0 % }os archers allaient faire des ravages dans leurs lanciers{ % if (bataille.PRV[0][1]>0 && bataille.PRV[0][2]==0) % } et n{ % Endif % }{ % Endif % }\r\n{ % if bataille.PRV[0][2]>0 % }os lanciers allaient faire des ravages dans leurs cavaliers{ % Endif % }\r\n.\r\n{ % if bataille.PRV[1][0]>0 and bataille.PRV[1][1]>0 and bataille.PRV[1][2]>0 % }Malgr\u00e9 \r\n{ % if bataille.PRV[1][0]>0 % }leurs cavaliers qui allaient \u00eatre une plaie pour nos archers{ % if bataille.PRV[1]>1 % } et { % Endif % }{ % Endif % }\r\n{ % if bataille.PRV[1][1]>0 % }leurs archers ont qui allaient \u00eatre une plaie pour nos lanciers{ % if (bataille.PRV[1][1]>0 && bataille.PRV[1][2]==0) % } et { % Endif % }{ % Endif % }\r\n{ % if bataille.PRV[1][2]>0 % }leurs lanciers ont qui allaient \u00eatre une plaie pour nos cavaliers{ % Endif % }\r\n.\r\n{ % Endif % }\r\n{ % else % }\r\nN\r\n{ % if bataille.PRV[0][0]>0 % }os cavaliers allaient \u00eatre une plaie pour leurs archers{ % if bataille.PRV[0]>1 % } et n{ % Endif % }{ % Endif % }\r\n{ % if bataille.PRV[0][1]>0 % }os archers allaient \u00eatre plaie pour leurs lanciers{ % if (bataille.PRV[0][1]>0 && bataille.PRV[0][2]==0) % } et n{ % Endif % }{ % Endif % }\r\n{ % if bataille.PRV[0][2]>0 % }os lanciers allaient \u00eatre une plaie pour leurs cavaliers{ % Endif % }\r\n.\r\n{ % if bataille.PRV[1][0]>0 and bataille.PRV[1][1]>0 and bataille.PRV[1][2]>0 % } Mais c'\u00e9tait sans comparaison avec ce que \r\n{ % if bataille.PRV[1][0]>0 % }leurs cavaliers allaient faire \u00e0 nos archers{ % if bataille.PRV[1]>1 % } et ce que { % Endif % }{ % Endif % }\r\n{ % if bataille.PRV[1][1]>0 % }leurs archers allaient faire \u00e0 nos lanciers{ % if (bataille.PRV[1][1]>0 && bataille.PRV[1][2]==0) % } et ce que  { % Endif % }{ % Endif % }\r\n{ % if bataille.PRV[1][2]>0 % }leurs lanciers allaient faire \u00e0 nos cavaliers{ % Endif % }\r\n.\r\n{ % Endif % }\r\n{ % Endif % }\r\n\r\nC'est le c\u0153ur empli de chevalerie que nous charge\u00e2mes...  \r\n\r\n    A des fin de test : \r\n    moi=gagnant {{ moi }}\r\n    lui=perdant {{ lui }} \r\n    bataille : {{bataille}}\r\n    delta : {{delta}}", 
+    "text": "Le combat se d\u00e9roula en for\u00eat.\r\n\r\nNous \u00e9tions forts de {{moi.troupes}} soldats. {{liste_gagnant}}\r\n\r\nDe leur c\u00f4t\u00e9 on pouvait d\u00e9nombrer {{lui.troupes}} soldats. {{liste_perdant}}\r\n\r\n{% if moi.troupes < lui.troupes %}\r\nNous \u00e9tions en sous nombre\r\n{% elif moi.troupes > lui.troupes %} \r\nNous avions l'avantage du nombre\r\n{% else %}\r\nNous \u00e9tions autant d'un c\u00f4t\u00e9 que de l'autre\r\n{% endif %}\r\n{% if moi.troupes < lui.troupes and moi.puissance_generaux < lui.puissance_generaux %}\r\net la sup\u00e9riorit\u00e9 de ses g\u00e9n\u00e9raux \u00e9tait \u00e9vidente\r\n{% elif moi.troupes > lui.troupes and moi.puissance_generaux > lui.puissance_generaux %}\r\net vos g\u00e9n\u00e9raux \u00e9taient plus aguerris.\r\n{% elif moi.troupes <= lui.troupes and moi.puissance_generaux < lui.puissance_generaux %}\r\nmais vos g\u00e9n\u00e9raux semblaient plus hardis.\r\n{% elif moi.troupes >= lui.troupes and moi.puissance_generaux > lui.puissance_generaux %}\r\nmais ses g\u00e9n\u00e9raux semblaient plus effrayant.\r\n{% else %}\r\net les commandant des deux arm\u00e9es se regardaient dans le blanc des yeux.\r\n{% endif %}\r\n\r\n{% if moi.bonus_tactique > lui.bonus_tactique %}\r\nNous avions l'avantage tactique : n{% if bataille.PRV.0.0 > 0 %}os cavaliers allaient faire des ravages dans leurs archers{% if sum_prv_0 > 1 %} et n{% endif %}{% endif %}\r\n{% if bataille.PRV.0.1 > 0 %}os archers allaient faire des ravages dans leurs lanciers{% if bataille.PRV.0.1 > 0 and bataille.PRV.0.2 == 0 %} et n{% endif %}{% endif %}\r\n{% if bataille.PRV.0.2 > 0 %}os lanciers allaient faire des ravages dans leurs cavaliers{% endif %}\r\n.{% if bataille.PRV.1.0 > 0 and bataille.PRV.1.1 > 0 and bataille.PRV.1.2 > 0 %}Malgr\u00e9 \r\n{% if bataille.PRV.1.0 > 0 %}leurs cavaliers qui allaient \u00eatre une plaie pour nos archers{% if sum_prv_1 > 1 %} et {% endif %}{% endif %}\r\n{% if bataille.PRV.1.1 > 0 %}leurs archers ont qui allaient \u00eatre une plaie pour nos lanciers{% if bataille.PRV.1.1 > 0 and bataille.PRV.1.2 == 0 %} et {% endif %}{% endif %}\r\n{% if bataille.PRV.1.2 > 0 %}leurs lanciers ont qui allaient \u00eatre une plaie pour nos cavaliers{% endif %}\r\n.{% endif %}\r\n{% if moi.bonus_tactique < lui.bonus_tactique %}\r\nIls avaient l'avantage tactique : N{% if bataille.PRV.0.0 > 0 %}os cavaliers allaient \u00eatre une plaie pour leurs archers{% if sum_prv_0 > 1 %} et n{% endif %}{% endif %}\r\n{% if bataille.PRV.0.1 > 0 %}os archers allaient \u00eatre plaie pour leurs lanciers{% if  bataille.PRV.0.1 > 0 and bataille.PRV.0.2 == 0  %} et n{% endif %}{% endif %}\r\n{% if bataille.PRV.0.2 > 0 %}os lanciers allaient \u00eatre une plaie pour leurs cavaliers{% endif %}\r\n.{% if bataille.PRV.1.0 > 0 and bataille.PRV.1.1 > 0 and bataille.PRV.1.2 > 0 %} Mais c'\u00e9tait sans comparaison avec ce que \r\n{% if bataille.PRV.1.0 > 0 %}leurs cavaliers allaient faire \u00e0 nos archers{% if sum_prv_1 > 1 %} et ce que {% endif %}{% endif %}\r\n{% if bataille.PRV.1.1 > 0 %}leurs archers allaient faire \u00e0 nos lanciers{% if  bataille.PRV.1.1 > 0 and bataille.PRV.1.2 == 0  %} et ce que  {% endif %}{% endif %}\r\n{% if bataille.PRV.1.2 > 0 %}leurs lanciers allaient faire \u00e0 nos cavaliers{% endif %}\r\n.{% endif %}\r\n{% else %}\r\nPersonne n'avait l'agantage tactique.\r\n{% endif %}\r\n\r\nC'est le c\u0153ur empli de chevalerie que nous charge\u00e2mes...  \r\n\r\n    A des fin de test : \r\n    moi=gagnant {{ moi }}\r\n    lui=perdant {{ lui }} \r\n    bataille : {{bataille}}\r\n    delta : {{delta}}", 
     "image": "", 
-    "on_fire": "param.set_value(\"tuto_rapport_espion\",kingdom.get_value(\"tuto_rapport_espion\",False))\nparam.set_value(\"tuto_conflit\",kingdom.get_value(\"tuto_conflit\",False))\nparam.set_value(\"moi\",param.get_value(\"gagnant\"))\nparam.set_value(\"lui\",param.get_value(\"perdant\"))\n\n", 
+    "on_fire": "param.set_value(\"tuto_rapport_espion\",kingdom.get_value(\"tuto_rapport_espion\",False))\nparam.set_value(\"tuto_conflit\",kingdom.get_value(\"tuto_conflit\",False))\nparam.set_value(\"moi\",param.get_value(\"gagnant\"))\nparam.set_value(\"lui\",param.get_value(\"perdant\"))\n\nbataille=param.get_value(\"bataille\")\nPRV=bataille['PRV']\nparam.set_value(\"sum_prv_1\",PRV[1][0] + PRV[1][1] + PRV[1][2])\nparam.set_value(\"sum_prv_0\",PRV[0][0] + PRV[0][1] + PRV[0][2])\n", 
     "slug": "tuto_escarmouche_victoire", 
     "condition": "\n"
   }
@@ -3011,6 +3011,20 @@
     "image": "", 
     "on_fire": "\n", 
     "slug": "recrutement_dame", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 251, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Un nouveau courtisan est arriv\u00e9", 
+    "weight": 1, 
+    "text": "{{folk}} a frapp\u00e9 \u00e0 la porte du ch\u00e2teau.\r\nSes stats sont {{folk.fight}}(C) {{folk.plot}}(I) {{folk.diplomacy}}(D) {{folk.scholarship}}(\u00c9) {{folk.loyalty}}(L)\r\nSes traits sont:\r\n{% for quality in folk.quality_set.all %}\r\n* {{quality.name}}\r\n{% endfor %}", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "nouveau_courtisan", 
     "condition": "\n"
   }
 },
@@ -5971,6 +5985,17 @@
     "event": 250, 
     "condition": "\n", 
     "on_fire": "dame= param.get_value(\"dame\")\n\ndame.kingdom = kingdom\ndame.save()\n"
+  }
+},
+{
+  "pk": 324, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Tr\u00e8s bien, cette personne me sera utile !", 
+    "message": "{{folk}} \u00e0 rejoint votre cour", 
+    "event": 251, 
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 }
 ]
