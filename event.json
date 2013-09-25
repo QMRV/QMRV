@@ -3029,6 +3029,34 @@
   }
 },
 {
+  "pk": 255, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Nous sommes vicitime d'un raid ! ", 
+    "weight": 1, 
+    "text": "Notre seigneurie, nos terres ont \u00e9t\u00e9 attaqu\u00e9es ! \r\n\r\nde Belze @ Jules : event pour avertir la cible d'un raid qu'elle a \u00e9t\u00e9 attaqu\u00e9e ( \u00e7a me semblait necessaire). En construction ...", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "cible_raid_ok", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 256, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Nous avons \u00e9t\u00e9 raid\u00e9s mais ...", 
+    "weight": 1, 
+    "text": "Seigneur, c'est terrible ! \r\n\r\nNos terres ont \u00e9t\u00e9 attaqu\u00e9es mais plusieurs l\u00e2ches sont all\u00e9s en enfer pour leur forfait. ", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "cible_raid_morts", 
+    "condition": "\n"
+  }
+},
+{
   "pk": 5, 
   "model": "event.eventaction", 
   "fields": {
@@ -5961,6 +5989,28 @@
     "text": "Votre geste sera chant\u00e9e au repas. ", 
     "message": "", 
     "event": 253, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 327, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Les cuistres ! ", 
+    "message": "", 
+    "event": 255, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 328, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Qu'il y brulent pour l'eternit\u00e9. ", 
+    "message": "", 
+    "event": 256, 
     "condition": "\n", 
     "on_fire": "\n"
   }
