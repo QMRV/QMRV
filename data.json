@@ -1418,6 +1418,14 @@
   }
 },
 {
+  "pk": "opvc263hcry6qy5x30irojrqqdtl4q1s", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-09T23:48:23.466", 
+    "session_data": "ZTVmOWNkZTdlZWU1MjQ0NjU3OWY4MGI0MGRmYjZmMzQzNWZiYTg4MTqAAn1xAS4="
+  }
+},
+{
   "pk": "ow2sxqf5pgyfkd1afg2f23dss1i2vsjf", 
   "model": "sessions.session", 
   "fields": {
@@ -1471,14 +1479,6 @@
   "fields": {
     "expire_date": "2013-09-29T11:20:45.187", 
     "session_data": "ZDVhYmUzZmY4NjE4YzUzODJjYmFhMmNkN2Y3NjczMmE3YjQ0ZGVjODqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLKXUu"
-  }
-},
-{
-  "pk": "qnonjpfnkzjb61sskh7rtkg0g7n0hcl8", 
-  "model": "sessions.session", 
-  "fields": {
-    "expire_date": "2013-10-09T23:05:28.453", 
-    "session_data": "NDJlMTlkMDI1ZGQwOTBjNmJlOWRlZjEzMzY0NDYxYmI3MjNlNWYzYjqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZFUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmRxAlUNX2F1dGhfdXNlcl9pZEsqdS4="
   }
 },
 {
@@ -4450,15 +4450,16 @@
     "plot": 8, 
     "scholarship": 8, 
     "sex": "m", 
-    "disabled": false, 
+    "disabled": true, 
     "death": null, 
     "avatar": 5, 
-    "birth": "2013-07-23T20:41:33.437", 
+    "birth": "2013-07-23T20:41:33", 
     "mother": null, 
     "loyalty": 99, 
     "spouse": null, 
     "quality_set": [
-      19
+      19, 
+      37
     ], 
     "mentor": null
   }
@@ -48277,7 +48278,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent - cible acceptable ? )\nnok = 0\nif kingdom.money < 10:\n  nok = 1\nelif kingdom.user.username==target.user.username:\n  nok = 2\n  \n\nif nok == 0:\n  kingdom.money-=10\n  # Retrieve the claim\n  try:\n    claim = Claim.objects.get(offender=kingdom, offended=target)\n    kingdom.prestige-=30\n    kingdom.save()\n  except:\n    #add claim lvl 1 Claim.objects.set(offender=kingdom, offended=target)\n    #claim.save()\n    pass\n\n  retour_fonction = call_function('determiner_raid',\n                                  liste_attaquant=grids['attaquants'],\n                                  argent_defenseur = target.money,\n                                  population_defenseur = target.population,\n                                  population_max_defenseur = f('get_max_population',kingdom=target)\n                                  )\n  \n  \n  kingdom.money+= retour_fonction['argent_vole']\n  target.population-=retour_fonction['population_perdue']\n  \n  # gestion evenement de retour du raid\n  if (len(retour_fonction['morts_attaquant'])>0):\n     pe = kingdom.create_pending_event(\"retour_raid_morts\")\n     pe.set_value(\"morts_attaquant\", retour_fonction['morts_attaquant'])\n     pe.start()\n  else:\n     pe = kingdom.create_pending_event(\"retour_raid_ok\")\n     pe.set_value(\"blesses_attaquant\", retour_fonction['blesses_attaquant'])\n     pe.start()               \n  \n  \n  target.save()\n  kingdom.save()\n\nelif nok==1 :\n  status=\"Vous n'avez pas suffisamment d'argent pour lancer cette mission.\"  \nelif nok==2 :status=\"On n'organise pas de raid sur son domaine, il y a les imp\u00f4ts et le droit de cuissage pour \u00e7a !\"  \n\n", 
+    "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent - cible acceptable ? )\nnok = 0\nif kingdom.money < 10:\n  nok = 1\nelif kingdom.user.username==target.user.username:\n  nok = 2\n  \n\nif nok == 0:\n  kingdom.money-=10\n  # Retrieve the claim\n  try:\n    claim = Claim.objects.get(offender=kingdom, offended=target)\n    kingdom.prestige-=30\n    kingdom.save()\n  except:\n    #add claim lvl 1 Claim.objects.set(offender=kingdom, offended=target)\n    #claim.save()\n    pass\n\n  retour_fonction = call_function('determiner_raid',\n                                  liste_attaquant=grids['attaquants'],\n                                  argent_defenseur = target.money,\n                                  population_defenseur = target.population,\n                                  population_max_defenseur = f('get_max_population',kingdom=target)\n                                  )\n  \n  \n  kingdom.money+= retour_fonction['argent_vole']\n  target.population-=retour_fonction['population_perdue']\n  \n  target.save()\n  kingdom.save()\n  \n  # gestion des evenements de retour du raid pour l'attaquant et d'avertissement de raid pour la cible\n  # cas d'un raid qui tourne tr\u00e8s mal (des morts ...)\n  if (len(retour_fonction['morts_attaquant'])>0):\n     # evenement pour l'attaquant\n     pa = kingdom.create_pending_event(\"retour_raid_morts\")\n     pa.set_value(\"morts_attaquant\", retour_fonction['morts_attaquant'])\n     pa.start()\n     # evenement pour la cible\n     pc = target.create_pending_event(\"cible_raid_morts\")\n     pc.set_value(\"population_perdue\", retour_fonction['population_perdue'])\n     pc.start()\n  # cas d'un raid sans encombre  \n  else:\n     # evenement pour l'attaquant\n     pa = kingdom.create_pending_event(\"retour_raid_ok\")\n     pa.set_value(\"liste_attaquant\", grids['attaquants'])\n     pa.set_value(\"blesses_attaquant\", retour_fonction['blesses_attaquant'])\n     pa.start()\n     # evenement pour la cible\n     pc = target.create_pending_event(\"cible_raid_ok\")\n     pc.set_value(\"population_perdue\", retour_fonction['population_perdue'])\n     pc.start()             \n  \n  \n\nelif nok==1 :\n  status=\"Vous n'avez pas suffisamment d'argent pour lancer cette mission.\"  \nelif nok==2 :status=\"On n'organise pas de raid sur son domaine, il y a les imp\u00f4ts et le droit de cuissage pour \u00e7a !\"  \n\n", 
     "has_target": true, 
     "is_team": false, 
     "title": null, 
@@ -49585,22 +49586,6 @@
   }
 },
 {
-  "pk": 312, 
-  "model": "mission.pendingmission", 
-  "fields": {
-    "kingdom": 59, 
-    "is_started": true, 
-    "target": 70, 
-    "created": "2013-09-25T23:17:12.646", 
-    "started": "2013-09-25T23:17:35.171", 
-    "last_target": 70, 
-    "mission": 26, 
-    "value": 0, 
-    "is_finished": false, 
-    "last_value": 0
-  }
-},
-{
   "pk": 399, 
   "model": "mission.pendingmissionaffectation", 
   "fields": {
@@ -49634,15 +49619,6 @@
     "pending_mission": 273, 
     "folk": 6929, 
     "mission_grid": 41
-  }
-},
-{
-  "pk": 590, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 312, 
-    "folk": 6687, 
-    "mission_grid": 26
   }
 },
 {
@@ -53475,6 +53451,34 @@
   }
 },
 {
+  "pk": 255, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Nous sommes vicitime d'un raid ! ", 
+    "weight": 1, 
+    "text": "Notre seigneurie, nos terres ont \u00e9t\u00e9 attaqu\u00e9es ! \r\n\r\nde Belze @ Jules : event pour avertir la cible d'un raid qu'elle a \u00e9t\u00e9 attaqu\u00e9e ( \u00e7a me semblait necessaire). En construction ...", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "cible_raid_ok", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 256, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Nous avons \u00e9t\u00e9 raid\u00e9s mais ...", 
+    "weight": 1, 
+    "text": "Seigneur, c'est terrible ! \r\n\r\nNos terres ont \u00e9t\u00e9 attaqu\u00e9es mais plusieurs l\u00e2ches sont all\u00e9s en enfer pour leur forfait. ", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "cible_raid_morts", 
+    "condition": "\n"
+  }
+},
+{
   "pk": 5, 
   "model": "event.eventaction", 
   "fields": {
@@ -56412,6 +56416,28 @@
   }
 },
 {
+  "pk": 327, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Les cuistres ! ", 
+    "message": "", 
+    "event": 255, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 328, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Qu'il y brulent pour l'eternit\u00e9. ", 
+    "message": "", 
+    "event": 256, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
   "pk": 1638, 
   "model": "event.pendingevent", 
   "fields": {
@@ -56556,6 +56582,30 @@
   }
 },
 {
+  "pk": 2525, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 59, 
+    "is_started": true, 
+    "created": "2013-09-25T23:40:25.093", 
+    "started": "2013-09-25T23:40:25.098", 
+    "text": "Nos hommes sont de retour.\r\n\r\nCe soir vous me conterez votre chevauch\u00e9e autour d'une bonne tabl\u00e9e ! En attendant cet or va dans les coffres du donjon.    ", 
+    "event": 253
+  }
+},
+{
+  "pk": 2526, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 70, 
+    "is_started": true, 
+    "created": "2013-09-25T23:40:25.134", 
+    "started": "2013-09-25T23:40:25.136", 
+    "text": "Notre seigneurie, nos terres ont \u00e9t\u00e9 attaqu\u00e9es ! \r\n\r\nde Belze @ Jules : event pour avertir la cible d'un raid qu'elle a \u00e9t\u00e9 attaqu\u00e9e ( \u00e7a me semblait necessaire). En construction ...", 
+    "event": 255
+  }
+},
+{
   "pk": 1705, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -56652,6 +56702,28 @@
     "text": "\"A L'ATTAQUE!\"", 
     "folk": null, 
     "event_action": 307
+  }
+},
+{
+  "pk": 2709, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 2525, 
+    "message": "", 
+    "text": "Votre geste sera chant\u00e9e au repas. ", 
+    "folk": null, 
+    "event_action": 326
+  }
+},
+{
+  "pk": 2710, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 2526, 
+    "message": "", 
+    "text": "Les cuistres ! ", 
+    "folk": null, 
+    "event_action": 327
   }
 },
 {
@@ -56868,6 +56940,33 @@
     "pending_event": 2519, 
     "name": "commandement", 
     "value": "{\"perdant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": null}\", \"gagnant\": \"{\\\"connetable\\\": \\\"`Folk`:6772\\\", \\\"chatelain\\\": \\\"`Folk`:6771\\\", \\\"general\\\": \\\"`Folk`:6771\\\"}\"}"
+  }
+},
+{
+  "pk": 5861, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2525, 
+    "name": "liste_attaquant", 
+    "value": "[\"`Folk`:6684\"]"
+  }
+},
+{
+  "pk": 5862, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2525, 
+    "name": "blesses_attaquant", 
+    "value": "[\"`Folk`:6684\"]"
+  }
+},
+{
+  "pk": 5863, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2526, 
+    "name": "population_perdue", 
+    "value": 3.0
   }
 },
 {
@@ -81750,6 +81849,76 @@
 },
 {
   "pk": 9965, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 59, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 9966, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 59, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 9967, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 59, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 9968, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 59, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "MissionGrid", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 2, 
+    "queries": 1
+  }
+},
+{
+  "pk": 9969, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 59, 
+    "stack_level": 1, 
+    "object_pk": 26, 
+    "object_type": "Mission", 
+    "object_attr": "target_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 9970, 
   "model": "reporting.scriptlog", 
   "fields": {
     "kingdom": 59, 
@@ -124461,6 +124630,149 @@
   }
 },
 {
+  "pk": 7694, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-25T23:20:00.654", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7695, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-25T23:28:56.783", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7696, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-25T23:31:10.435", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7697, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-25T23:34:29.888", 
+    "object_repr": "cible_raid_morts", 
+    "object_id": "256", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7698, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-25T23:36:30.336", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Les cuistres !  [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7699, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-25T23:37:50.830", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7700, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-25T23:38:55.863", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7701, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-25T23:40:04.906", 
+    "object_repr": "Laurent de Belze", 
+    "object_id": "6684", 
+    "change_message": "Modifi\u00e9 disabled.", 
+    "user": 42, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7702, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-25T23:42:23.948", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Les cuistres !  [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7703, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-25T23:42:30.087", 
+    "object_repr": "determiner_raid()", 
+    "object_id": "24", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7704, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-25T23:42:39.004", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 23
+  }
+},
+{
   "pk": 46, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -124488,7 +124800,7 @@
   "fields": {
     "soldiers": 13, 
     "prestige": 150, 
-    "money": 107, 
+    "money": 110, 
     "user": 42, 
     "population": 270
   }
@@ -124501,7 +124813,7 @@
     "prestige": 160, 
     "money": 168, 
     "user": 38, 
-    "population": 289
+    "population": 282
   }
 },
 {
