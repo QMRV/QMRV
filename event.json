@@ -3001,6 +3001,34 @@
   }
 },
 {
+  "pk": 253, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Retour de raid", 
+    "weight": 1, 
+    "text": "Nos hommes sont de retour.\r\n\r\nCe soir vous me conterez votre chevauch\u00e9e autour d'une bonne tabl\u00e9e ! En attendant cet or va dans les coffres du donjon.    ", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "retour_raid_ok", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 254, 
+  "model": "event.event", 
+  "fields": {
+    "category": 1, 
+    "name": "retour de raid sanglant", 
+    "weight": 1, 
+    "text": "Nos hommes sont morts pour vous, votre seigneurie. ", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "retour_raid_morts", 
+    "condition": "\n"
+  }
+},
+{
   "pk": 5, 
   "model": "event.eventaction", 
   "fields": {
@@ -5922,6 +5950,17 @@
     "text": "Ok !", 
     "message": "", 
     "event": 252, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 326, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Votre geste sera chant\u00e9e au repas. ", 
+    "message": "", 
+    "event": 253, 
     "condition": "\n", 
     "on_fire": "\n"
   }
