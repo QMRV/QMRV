@@ -4214,7 +4214,7 @@
     "avatar": 25, 
     "birth": "2013-08-09T23:35:02", 
     "mother": null, 
-    "loyalty": 40, 
+    "loyalty": 10, 
     "spouse": null, 
     "quality_set": [
       25
@@ -4240,7 +4240,7 @@
     "avatar": 64, 
     "birth": "2013-08-10T23:35:03", 
     "mother": null, 
-    "loyalty": 39, 
+    "loyalty": 9, 
     "spouse": null, 
     "quality_set": [
       15
@@ -4266,7 +4266,7 @@
     "avatar": 11, 
     "birth": "2013-07-22T23:35:03.099", 
     "mother": null, 
-    "loyalty": 45, 
+    "loyalty": 15, 
     "spouse": null, 
     "quality_set": [
       7
@@ -4528,7 +4528,7 @@
     "avatar": 51, 
     "birth": "2013-07-27T19:57:14", 
     "mother": null, 
-    "loyalty": 20, 
+    "loyalty": 0, 
     "spouse": null, 
     "quality_set": [
       3, 
@@ -4567,7 +4567,7 @@
   "pk": 6735, 
   "model": "kingdom.folk", 
   "fields": {
-    "kingdom": 58, 
+    "kingdom": null, 
     "fight": 4, 
     "first_name": "Sara", 
     "last_name": "de Gauciel", 
@@ -5317,7 +5317,7 @@
     "avatar": 4, 
     "birth": "2013-08-08T17:17:57.719", 
     "mother": null, 
-    "loyalty": 23, 
+    "loyalty": 0, 
     "spouse": null, 
     "quality_set": [
       45, 
@@ -5344,7 +5344,7 @@
     "avatar": 7, 
     "birth": "2013-08-08T17:18:05.710", 
     "mother": null, 
-    "loyalty": 15, 
+    "loyalty": 0, 
     "spouse": null, 
     "quality_set": [
       30, 
@@ -7605,7 +7605,7 @@
     "avatar": 12, 
     "birth": "2013-08-15T11:09:07.356", 
     "mother": null, 
-    "loyalty": 60, 
+    "loyalty": 30, 
     "spouse": null, 
     "quality_set": [], 
     "mentor": null
@@ -7629,7 +7629,7 @@
     "avatar": 29, 
     "birth": "2013-09-02T11:09:07.691", 
     "mother": null, 
-    "loyalty": 25, 
+    "loyalty": 0, 
     "spouse": null, 
     "quality_set": [
       47, 
@@ -7656,7 +7656,7 @@
     "avatar": 67, 
     "birth": "2013-09-03T11:09:07.925", 
     "mother": null, 
-    "loyalty": 10, 
+    "loyalty": 0, 
     "spouse": null, 
     "quality_set": [
       2
@@ -7682,7 +7682,7 @@
     "avatar": 12, 
     "birth": "2013-08-15T11:09:07.978", 
     "mother": null, 
-    "loyalty": 40, 
+    "loyalty": 10, 
     "spouse": null, 
     "quality_set": [
       10
@@ -7708,7 +7708,7 @@
     "avatar": 6, 
     "birth": "2013-08-26T18:56:39.008", 
     "mother": null, 
-    "loyalty": 60, 
+    "loyalty": 30, 
     "spouse": null, 
     "quality_set": [
       22, 
@@ -7731,11 +7731,11 @@
     "scholarship": 7, 
     "sex": "m", 
     "disabled": false, 
-    "death": null, 
+    "death": "2013-09-25T11:17:00.909", 
     "avatar": 4, 
     "birth": "2013-09-03T18:58:33.630", 
     "mother": null, 
-    "loyalty": 60, 
+    "loyalty": 50, 
     "spouse": null, 
     "quality_set": [
       26, 
@@ -7814,7 +7814,7 @@
     "avatar": 1, 
     "birth": "2013-08-28T00:29:53.761", 
     "mother": null, 
-    "loyalty": 9, 
+    "loyalty": 0, 
     "spouse": null, 
     "quality_set": [
       13, 
@@ -11211,6 +11211,17 @@
     "kingdom": 58, 
     "content": "Le p\u00e8re Ebble de Coincy a rejoint ma cour.", 
     "created": "2013-09-24T22:00:32.006", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1380, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": " a \u00e9t\u00e9 chass\u00e9 de ma cour.", 
+    "created": "2013-09-25T11:03:01.451", 
     "read": null, 
     "level": 1
   }
@@ -47906,7 +47917,7 @@
     "target_list": " ", 
     "text": "Je souhaite bannir quelqu'un", 
     "has_value": false, 
-    "on_resolution": "def perte(facteur, kingdom=kingdom):\n  call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=C.PERTE_LOYAUTE_BANNISSEMENT*facteur, perte_max=C.PERTE_LOYAUTE_BANNISSEMENT*facteur)\n  return PERTE_LOYAUTE_BANNISSEMENT*facteur\n\nbanni = grids['banni'][0]\nperte_loyaute = 0\n\nif condamne.has_quality(\"legende_locale\"):\n  perte_loyaute -= perte(2)\nelif condamne.has_quality(\"intrepide\"):\n  perte_loyaute -= perte(1.5)\nelif condamne.has_quality(\"scelerat\"):\n  perte_loyaute -= perte(0)\nelif condamne.has_quality(\"traitre\"):\n  call_function(\"gain_loyaute_general\", kingdom=kingdom, gain_min=4, gain_max=6)\n  perte_loyaute = 5\nelse :\n  perte_loyaute -= perte(1)\n\nbiens = random_value(2,30)\nkingdom.money += biens\nkingdom.save()\n\nbanni.kingdom = None\nbanni.save()\n\npe = kingdom.create_pending_event(\"bannissement\")\npe.set_value(\"condamne\", banni)\npe.set_value(\"biens\", biens)\npe.set_value(\"perte\", perte_loyaute)\npe.start()\n", 
+    "on_resolution": "def perte(facteur, kingdom=kingdom):\n  call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=C.PERTE_LOYAUTE_BANNISSEMENT*facteur, perte_max=C.PERTE_LOYAUTE_BANNISSEMENT*facteur)\n  return C.PERTE_LOYAUTE_BANNISSEMENT*facteur\n\nbanni = grids['banni'][0]\nperte_loyaute = 0\n\nif banni.has_quality(\"legende_locale\"):\n  perte_loyaute -= perte(2)\nelif banni.has_quality(\"intrepide\"):\n  perte_loyaute -= perte(1.5)\nelif banni.has_quality(\"scelerat\"):\n  perte_loyaute -= perte(0)\nelif banni.has_quality(\"traitre\"):\n  call_function(\"gain_loyaute_general\", kingdom=kingdom, gain_min=4, gain_max=6)\n  perte_loyaute = 5\nelse :\n  perte_loyaute -= perte(1)\n\nbiens = random_value(2,30)\nkingdom.money += biens\nkingdom.save()\n\nbanni.kingdom = None\nbanni.save()\n\npe = kingdom.create_pending_event(\"bannissement\")\npe.set_value(\"banni\", banni)\npe.set_value(\"biens\", biens)\npe.set_value(\"perte\", perte_loyaute)\npe.start()\n", 
     "value_description": "Valeur :", 
     "on_start": " ", 
     "has_target": false, 
@@ -48090,7 +48101,7 @@
     "target_list": " ", 
     "text": "L'affront est trop grand. Il me faudra l'ex\u00e9cuter pour l'exemple.", 
     "has_value": false, 
-    "on_resolution": "def perte(facteur, kingdom=kingdom):\n  call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=C.PERTE_LOYAUTE_EXECUTION*facteur, perte_max=C.PERTE_LOYAUTE_EXECUTION*facteur)\n\ncondamne = grids['condamne'][0]\n\n\nif condamne.has_quality(\"legende_locale\"):\n  perte(2)\nelif condamne.has_quality(\"intrepide\"):\n  perte(1.5)\nelif condamne.has_quality(\"scelerat\"):\n  perte(0)\nelif condamne.has_quality(\"traitre\"):\n  call_function(\"gain_loyaute_general\", kingdom=kingdom, gain_min=4, gain_max=6)\nelse :\n  perte(1)\n\nbiens = random_value(2,30)\nkingdom.money += biens\nkingdom.save()\n\ncondamne.die()\nname = condamne.first_name + \" \" + condamne.last_name\npe = kingdom.create_pending_event(\"execution\")\npe.set_value(\"condamne\", name)\npe.set_value(\"biens\", biens)\npe.start()\n", 
+    "on_resolution": "def perte(facteur, kingdom=kingdom):\n  call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=C.PERTE_LOYAUTE_EXECUTION*facteur, perte_max=C.PERTE_LOYAUTE_EXECUTION*facteur)\n  return C.PERTE_LOYAUTE_EXECUTION*facteur\n\ncondamne = grids['condamne'][0]\nperte_loyaute = 0\n\nif condamne.has_quality(\"legende_locale\"):\n  perte_loyaute -= perte(2)\nelif condamne.has_quality(\"intrepide\"):\n  perte_loyaute -= perte(1.5)\nelif condamne.has_quality(\"scelerat\"):\n  perte_loyaute -= perte(0)\nelif condamne.has_quality(\"traitre\"):\n  call_function(\"gain_loyaute_general\", kingdom=kingdom, gain_min=4, gain_max=6)\n  perte_loyaute = 5\nelse :\n  perte_loyaute -= perte(1)\n\nbiens = random_value(2,30)\nkingdom.money += biens\nkingdom.save()\n\ncondamne.die()\nname = condamne.first_name + \" \" + condamne.last_name\npe = kingdom.create_pending_event(\"execution\")\npe.set_value(\"condamne\", name)\npe.set_value(\"biens\", biens)\npe.set_value(\"perte\", perte_loyaute)\npe.start()\n", 
     "value_description": "Valeur :", 
     "on_start": " ", 
     "has_target": false, 
@@ -52547,12 +52558,12 @@
   "model": "event.event", 
   "fields": {
     "category": null, 
-    "name": "banissement", 
+    "name": "bannissement", 
     "weight": 1, 
-    "text": "Sire {{title.connetable}} a fait conduire {{banni}} sous bonne escorte jusqu'\u00e0 la fronti\u00e8re de mes terres, et lui a lanc\u00e9 d'un ton ferme de ne jamais revenir. \r\n{% if {{perte}} < 0 %}\r\nLa cour est sous le choc, et ils sont nombreux \u00e0 m\u2019appeler \"tyran\" dans mon dos, en se demandant lequel d'entre eux sera le prochain.\r\n{% else %}\r\nC'EST BIEN FAIT POUR TA GUEULE TRAITRE (a modifier)\r\n{% endif%}\r\n\r\n    {{banni}} a \u00e9t\u00e9 chass\u00e9 de votre cour. Ses possessions ont \u00e9t\u00e9 saisies et vous ont rapport\u00e9 {{biens}} \u00e9cus.\r\n{% if {{perte}} < 0 %}\r\n{{perte}} de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n{% else %}\r\n+ {{perte}} de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n{% endif %}", 
+    "text": "Sire {{title.connetable}} a fait conduire {{banni}} sous bonne escorte jusqu'\u00e0 la fronti\u00e8re de mes terres, et lui a lanc\u00e9 d'un ton ferme de ne jamais revenir. \r\n{% if perte < 0 %}\r\nLa cour est sous le choc, et ils sont nombreux \u00e0 m\u2019appeler \"tyran\" dans mon dos, en se demandant lequel d'entre eux sera le prochain.\r\n{% else %}\r\nC'EST BIEN FAIT POUR TA GUEULE TRAITRE (a modifier)\r\n{% endif%}\r\n\r\n    {{banni}} a \u00e9t\u00e9 chass\u00e9 de votre cour. Ses possessions ont \u00e9t\u00e9 saisies et vous ont rapport\u00e9 {{biens}} \u00e9cus.\r\n{% if perte < 0 %}    {{perte}} de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n{% else %}    + {{perte}} de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n{% endif %}", 
     "image": "events/417.jpg", 
     "on_fire": "\n", 
-    "slug": "banissement", 
+    "slug": "bannissement", 
     "condition": "\n"
   }
 },
@@ -53305,7 +53316,7 @@
     "category": null, 
     "name": "Execution", 
     "weight": 1, 
-    "text": "{{condamne}} a \u00e9t\u00e9 ex\u00e9cut\u00e9.\r\n\r\n    Vous avez gagn\u00e9 {{biens}} \u00e9cus suite \u00e0 la r\u00e9quisition de ses biens.", 
+    "text": "{{condamne}} a \u00e9t\u00e9 ex\u00e9cut\u00e9.\r\n{% if perte < 0 %}\r\nLa cour est sous le choc, et ils sont nombreux \u00e0 m\u2019appeler \"tyran\" dans mon dos, en se demandant lequel d'entre eux sera le prochain.\r\n{% else %}\r\nC'EST BIEN FAIT POUR TA GUEULE TRAITRE (a modifier)\r\n{% endif%}\r\n\r\n     Vous avez gagn\u00e9 {{biens}} \u00e9cus suite \u00e0 la r\u00e9quisition de ses biens.\r\n{% if perte < 0 %}    {{perte}} de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n{% else %}    + {{perte}} de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n{% endif %}", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "execution", 
@@ -56371,18 +56382,6 @@
   }
 },
 {
-  "pk": 2513, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 58, 
-    "is_started": true, 
-    "created": "2013-09-24T22:55:42.269", 
-    "started": "2013-09-24T22:55:42.274", 
-    "text": "Odard de Gauciel a \u00e9t\u00e9 ex\u00e9cut\u00e9.\r\n\r\n    Vous avez gagn\u00e9 8 \u00e9cus suite \u00e0 la r\u00e9quisition de ses biens.", 
-    "event": 252
-  }
-},
-{
   "pk": 1705, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -56468,17 +56467,6 @@
     "text": "OK", 
     "folk": null, 
     "event_action": 297
-  }
-},
-{
-  "pk": 2702, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 2513, 
-    "message": "", 
-    "text": "Ok !", 
-    "folk": null, 
-    "event_action": 325
   }
 },
 {
@@ -56713,24 +56701,6 @@
     "pending_event": 2496, 
     "name": "lui", 
     "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 5, \"bonus_tactique\": 3, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 18, \"attaquant\": \"`False`\", \"prestige\": 120, \"population\": 200}"
-  }
-},
-{
-  "pk": 5831, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2513, 
-    "name": "condamne", 
-    "value": "Odard de Gauciel"
-  }
-},
-{
-  "pk": 5832, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2513, 
-    "name": "biens", 
-    "value": 8
   }
 },
 {
@@ -123550,6 +123520,162 @@
   }
 },
 {
+  "pk": 7670, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-25T10:50:24.874", 
+    "object_repr": "bannir_folk", 
+    "object_id": "14", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0bannir_folk [Banni (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7671, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-25T10:53:08.265", 
+    "object_repr": "bannir_folk", 
+    "object_id": "14", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0bannir_folk [Banni (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7672, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-25T10:54:04.008", 
+    "object_repr": "bannissement", 
+    "object_id": "186", 
+    "change_message": "Modifi\u00e9 name, slug, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Bon d\u00e9barras! [bannissement]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7673, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-25T10:56:48.201", 
+    "object_repr": "bannissement", 
+    "object_id": "186", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Bon d\u00e9barras! [bannissement]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7674, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-25T11:00:17.805", 
+    "object_repr": "bannir_folk", 
+    "object_id": "14", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0bannir_folk [Banni (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7675, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-25T11:00:31.342", 
+    "object_repr": "bannissement", 
+    "object_id": "186", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Bon d\u00e9barras! [bannissement]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7676, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-25T11:00:40.627", 
+    "object_repr": "bannissement", 
+    "object_id": "186", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Bon d\u00e9barras! [bannissement]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7677, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-25T11:13:47.437", 
+    "object_repr": "executer", 
+    "object_id": "22", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0executer [Condamn\u00e9 (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7678, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-25T11:14:31.842", 
+    "object_repr": "execution", 
+    "object_id": "252", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ok ! [execution]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7679, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-25T11:16:50.229", 
+    "object_repr": "executer", 
+    "object_id": "22", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0executer [Condamn\u00e9 (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7680, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-25T11:16:56.525", 
+    "object_repr": "executer", 
+    "object_id": "22", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0executer [Condamn\u00e9 (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7681, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-25T11:17:53.731", 
+    "object_repr": "executer", 
+    "object_id": "22", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0executer [Condamn\u00e9 (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
   "pk": 46, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -123566,7 +123692,7 @@
   "fields": {
     "soldiers": 13, 
     "prestige": 100, 
-    "money": 19, 
+    "money": 63, 
     "user": 41, 
     "population": 110
   }
