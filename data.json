@@ -1501,8 +1501,8 @@
   "pk": "r5gynxg6yudatb2lcrehb56lmalt04ic", 
   "model": "sessions.session", 
   "fields": {
-    "expire_date": "2013-10-05T19:17:40.814", 
-    "session_data": "NGJjY2UxZTM5YTU4MjlmNmI0Njc3YTI2NmQ4YWE1MTk4YmMxYzE0MDqAAn1xAShYCgAAAHRlc3Rjb29raWVxAlgGAAAAd29ya2VkcQNVDV9hdXRoX3VzZXJfaWRLJlUSX2F1dGhfdXNlcl9iYWNrZW5kVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHUu"
+    "expire_date": "2013-10-10T20:09:37.203", 
+    "session_data": "MmIwNzU1ZTg2YjgxYmNhOGNhOWU4MDNmZGQxZWMyMjQ5MjJiNmNmOTqAAn1xAShYCgAAAHRlc3Rjb29raWVYBgAAAHdvcmtlZHECVRJfYXV0aF91c2VyX2JhY2tlbmRVKWRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kVQ1fYXV0aF91c2VyX2lkSyZ1Lg=="
   }
 },
 {
@@ -83264,6 +83264,24 @@
   }
 },
 {
+  "pk": 47, 
+  "model": "auth.user", 
+  "fields": {
+    "username": "Gonzalez", 
+    "first_name": "", 
+    "last_name": "", 
+    "is_active": true, 
+    "is_superuser": false, 
+    "is_staff": false, 
+    "last_login": "2013-09-26T20:10:33.897", 
+    "groups": [], 
+    "user_permissions": [], 
+    "password": "pbkdf2_sha256$10000$iX5htGBprnIM$anE1jwOr3EoD3J8v++VXyvY85cmw92Twy+OzD+LpXj4=", 
+    "email": "", 
+    "date_joined": "2013-09-26T20:10:33.897"
+  }
+},
+{
   "pk": 1, 
   "model": "admin.logentry", 
   "fields": {
@@ -124770,6 +124788,19 @@
     "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
     "user": 42, 
     "content_type": 23
+  }
+},
+{
+  "pk": 7705, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-26T20:10:34.157", 
+    "object_repr": "Gonzalez", 
+    "object_id": "47", 
+    "change_message": "", 
+    "user": 38, 
+    "content_type": 3
   }
 },
 {
