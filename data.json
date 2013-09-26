@@ -506,6 +506,14 @@
   }
 },
 {
+  "pk": "3807cg53zedxn0b6ty1hfa952zpxm5w7", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-10T21:22:09.062", 
+    "session_data": "MTI5NWFmZDMzMzQwYWNlNDhhNzM3NDVhMmEzNTFhMGNjNzI1MjkwNzqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLKnUu"
+  }
+},
+{
   "pk": "39g497w47hhtbw3qc1zi02ktodbvd7i8", 
   "model": "sessions.session", 
   "fields": {
@@ -1415,14 +1423,6 @@
   "fields": {
     "expire_date": "2013-07-25T20:15:02.922", 
     "session_data": "MjJmYTk4YjllZDc1MDUyNzBlYmY0ODJlZTEwZjYwM2RjYmQwMWE4NjqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLFXUu"
-  }
-},
-{
-  "pk": "opvc263hcry6qy5x30irojrqqdtl4q1s", 
-  "model": "sessions.session", 
-  "fields": {
-    "expire_date": "2013-10-09T23:48:23.466", 
-    "session_data": "ZTVmOWNkZTdlZWU1MjQ0NjU3OWY4MGI0MGRmYjZmMzQzNWZiYTg4MTqAAn1xAS4="
   }
 },
 {
@@ -56582,18 +56582,6 @@
   }
 },
 {
-  "pk": 2525, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 59, 
-    "is_started": true, 
-    "created": "2013-09-25T23:40:25.093", 
-    "started": "2013-09-25T23:40:25.098", 
-    "text": "Nos hommes sont de retour.\r\n\r\nCe soir vous me conterez votre chevauch\u00e9e autour d'une bonne tabl\u00e9e ! En attendant cet or va dans les coffres du donjon.    ", 
-    "event": 253
-  }
-},
-{
   "pk": 2526, 
   "model": "event.pendingevent", 
   "fields": {
@@ -56702,17 +56690,6 @@
     "text": "\"A L'ATTAQUE!\"", 
     "folk": null, 
     "event_action": 307
-  }
-},
-{
-  "pk": 2709, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 2525, 
-    "message": "", 
-    "text": "Votre geste sera chant\u00e9e au repas. ", 
-    "folk": null, 
-    "event_action": 326
   }
 },
 {
@@ -56940,24 +56917,6 @@
     "pending_event": 2519, 
     "name": "commandement", 
     "value": "{\"perdant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": null}\", \"gagnant\": \"{\\\"connetable\\\": \\\"`Folk`:6772\\\", \\\"chatelain\\\": \\\"`Folk`:6771\\\", \\\"general\\\": \\\"`Folk`:6771\\\"}\"}"
-  }
-},
-{
-  "pk": 5861, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2525, 
-    "name": "liste_attaquant", 
-    "value": "[\"`Folk`:6684\"]"
-  }
-},
-{
-  "pk": 5862, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2525, 
-    "name": "blesses_attaquant", 
-    "value": "[\"`Folk`:6684\"]"
   }
 },
 {
@@ -83183,7 +83142,7 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-09-25T23:05:28.450", 
+    "last_login": "2013-09-26T21:22:08.962", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$10000$Bc1Fz9XywYEu$+QrQqEhho+w6dzL0gTqLMxqfruLba4JfWrwuqrVe77E=", 
