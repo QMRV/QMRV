@@ -4358,7 +4358,7 @@
     "avatar": 25, 
     "birth": "2013-08-09T23:35:02", 
     "mother": null, 
-    "loyalty": 80, 
+    "loyalty": 75, 
     "spouse": null, 
     "quality_set": [
       25
@@ -4384,7 +4384,7 @@
     "avatar": 64, 
     "birth": "2013-08-10T23:35:03", 
     "mother": null, 
-    "loyalty": 79, 
+    "loyalty": 74, 
     "spouse": null, 
     "quality_set": [
       15
@@ -4410,7 +4410,7 @@
     "avatar": 11, 
     "birth": "2013-07-22T23:35:03.099", 
     "mother": null, 
-    "loyalty": 85, 
+    "loyalty": 80, 
     "spouse": null, 
     "quality_set": [
       7
@@ -4436,7 +4436,7 @@
     "avatar": 6, 
     "birth": "2013-07-22T23:37:31.826", 
     "mother": null, 
-    "loyalty": 35, 
+    "loyalty": 30, 
     "spouse": null, 
     "quality_set": [
       2, 
@@ -4673,7 +4673,7 @@
     "avatar": 51, 
     "birth": "2013-07-27T19:57:14", 
     "mother": null, 
-    "loyalty": 60, 
+    "loyalty": 55, 
     "spouse": null, 
     "quality_set": [
       3, 
@@ -4726,7 +4726,7 @@
     "avatar": 43, 
     "birth": "2013-08-21T19:57:14.707", 
     "mother": 6733, 
-    "loyalty": 75, 
+    "loyalty": 70, 
     "spouse": null, 
     "quality_set": [
       17
@@ -4752,7 +4752,7 @@
     "avatar": 44, 
     "birth": "2013-08-30T19:57:14.772", 
     "mother": 6733, 
-    "loyalty": 65, 
+    "loyalty": 60, 
     "spouse": null, 
     "quality_set": [
       23
@@ -5462,7 +5462,7 @@
     "avatar": 4, 
     "birth": "2013-08-08T17:17:57.719", 
     "mother": null, 
-    "loyalty": 63, 
+    "loyalty": 58, 
     "spouse": null, 
     "quality_set": [
       45, 
@@ -5489,7 +5489,7 @@
     "avatar": 7, 
     "birth": "2013-08-08T17:18:05.710", 
     "mother": null, 
-    "loyalty": 55, 
+    "loyalty": 50, 
     "spouse": null, 
     "quality_set": [
       30, 
@@ -7750,7 +7750,7 @@
     "avatar": 12, 
     "birth": "2013-08-15T11:09:07.356", 
     "mother": null, 
-    "loyalty": 100, 
+    "loyalty": 95, 
     "spouse": null, 
     "quality_set": [], 
     "mentor": null
@@ -7774,7 +7774,7 @@
     "avatar": 29, 
     "birth": "2013-09-02T11:09:07.691", 
     "mother": null, 
-    "loyalty": 65, 
+    "loyalty": 60, 
     "spouse": null, 
     "quality_set": [
       47, 
@@ -7801,7 +7801,7 @@
     "avatar": 67, 
     "birth": "2013-09-03T11:09:07.925", 
     "mother": null, 
-    "loyalty": 50, 
+    "loyalty": 45, 
     "spouse": null, 
     "quality_set": [
       2
@@ -7827,7 +7827,7 @@
     "avatar": 12, 
     "birth": "2013-08-15T11:09:07.978", 
     "mother": null, 
-    "loyalty": 80, 
+    "loyalty": 75, 
     "spouse": null, 
     "quality_set": [
       10
@@ -7853,7 +7853,7 @@
     "avatar": 6, 
     "birth": "2013-08-26T18:56:39.008", 
     "mother": null, 
-    "loyalty": 100, 
+    "loyalty": 95, 
     "spouse": null, 
     "quality_set": [
       22, 
@@ -7880,7 +7880,7 @@
     "avatar": 4, 
     "birth": "2013-09-03T18:58:33.630", 
     "mother": null, 
-    "loyalty": 100, 
+    "loyalty": 95, 
     "spouse": null, 
     "quality_set": [
       26, 
@@ -7902,15 +7902,16 @@
     "plot": 11, 
     "scholarship": 9, 
     "sex": "f", 
-    "disabled": false, 
+    "disabled": true, 
     "death": null, 
     "avatar": 38, 
     "birth": "2013-08-30T19:41:57.067", 
     "mother": null, 
-    "loyalty": 40, 
+    "loyalty": 10, 
     "spouse": null, 
     "quality_set": [
-      5
+      5, 
+      42
     ], 
     "mentor": null
   }
@@ -7959,7 +7960,7 @@
     "avatar": 1, 
     "birth": "2013-08-28T00:29:53.761", 
     "mother": null, 
-    "loyalty": 49, 
+    "loyalty": 44, 
     "spouse": null, 
     "quality_set": [
       13, 
@@ -8838,7 +8839,7 @@
     "description": "Aux fers au plus profond de vos cachots.", 
     "on_defect": "folk.disabled=False\nfolk.save()", 
     "female_description": "Aux fers au plus profond de vos cachots.", 
-    "on_affect": "folk.disabled=True\nfolk.save()\nfolk.remove_title()\n", 
+    "on_affect": "if folk.loyalty > 15 :\n  folk.loyalty = 15\nelse:\n  folk.loyalty -= 5\n\nfolk.disabled=True\nfolk.save()\nfolk.remove_title()\n", 
     "female_name": "Prisonni\u00e8re", 
     "incompatible_qualities": [], 
     "slug": "prisonnier", 
@@ -12114,8 +12115,8 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 1440, 
-    "kingdom_list": "param=[]\nparam = kingdom.objects.get(pk=58)", 
-    "on_fire": "nb_prisionners = folks.filter(quality_set__in=\"prisonnier\").count()\nkingdom.money -= nb_prisonniers - C.COUT_PRISONNIER\nkingdom.save()\n", 
+    "kingdom_list": "\n", 
+    "on_fire": "nb_prisonniers = folks.filter(quality_set__slug__contains=\"prisonnier\").count()\nkingdom.money -= nb_prisonniers * C.COUT_PRISONNIER\nprint(\"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\")\nprint(nb_prisonniers * C.COUT_PRISONNIER)\nkingdom.save()\n", 
     "name": "Cout des prisonniers", 
     "description": "Les prisonniers coutent ch\u00e8re"
   }
@@ -48197,7 +48198,7 @@
     "target_list": " ", 
     "text": "Un membre de ma cour m'a fortement d\u00e9plu. Et comme je suis la loi et qu'il me sied de le faire dispara\u00eetre de ma vue, j'ai pris la d\u00e9cision de le jeter en prison.", 
     "has_value": false, 
-    "on_resolution": "def perte(facteur, kingdom=kingdom):\n  call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=C.PERTE_LOYAUTE_EMPRISONNEMENT*facteur, perte_max=C.PERTE_LOYAUTE_EMPRISONNEMENT*facteur)\n  return C.PERTE_LOYAUTE_EMPRISONNEMENT*facteur\n\nprisonnier = grid['prisonnier'][0]\nprisonnier.add_quality(\"prisonnier\")\nperte_loyaute = 0\n\nif prisonnier.has_quality(\"legende_locale\"):\n  perte_loyaute -= perte(2)\nelif prisonnier.has_quality(\"intrepide\"):\n  perte_loyaute -= perte(1.5)\nelif prisonnier.has_quality(\"scelerat\"):\n  perte_loyaute -= perte(0)\nelif prisonnier.has_quality(\"traitre\"):\n  call_function(\"gain_loyaute_general\", kingdom=kingdom, gain_min=4, gain_max=6)\n  perte_loyaute = 5\nelse :\n  perte_loyaute -= perte(1)\n\nif prisonnier.loyalty > 15 :\n  prisonnier.loyalty = 15\nelse:\n  prisonnier.loyalty -= 5\nprisonnier.save()\n\npe = kingdom.create_pending_event(\"execution\")\npe.set_value(\"prisonnier\", prisonnier)\npe.set_value(\"perte\", perte_loyaute)\npe.start()\n", 
+    "on_resolution": "def perte(facteur, kingdom=kingdom):\n  call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=C.PERTE_LOYAUTE_EMPRISONNEMENT*facteur, perte_max=C.PERTE_LOYAUTE_EMPRISONNEMENT*facteur)\n  return C.PERTE_LOYAUTE_EMPRISONNEMENT*facteur\n\nprisonnier = grids['prisonnier'][0]\nprisonnier.add_quality(\"prisonnier\")\nperte_loyaute = 0\n\nif prisonnier.has_quality(\"legende_locale\"):\n  perte_loyaute -= perte(2)\nelif prisonnier.has_quality(\"intrepide\"):\n  perte_loyaute -= perte(1.5)\nelif prisonnier.has_quality(\"scelerat\"):\n  perte_loyaute -= perte(0)\nelif prisonnier.has_quality(\"traitre\"):\n  call_function(\"gain_loyaute_general\", kingdom=kingdom, gain_min=4, gain_max=6)\n  perte_loyaute = 5\nelse :\n  perte_loyaute -= perte(1)\n\n\npe = kingdom.create_pending_event(\"execution\")\npe.set_value(\"prisonnier\", prisonnier)\npe.set_value(\"perte\", perte_loyaute)\npe.start()\n", 
     "value_description": "Valeur :", 
     "on_start": " ", 
     "has_target": false, 
@@ -124909,6 +124910,266 @@
   }
 },
 {
+  "pk": 7712, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T15:33:23.245", 
+    "object_repr": "emprisonner", 
+    "object_id": "20", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0emprisonner [Prisonnier (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7713, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T15:33:53.926", 
+    "object_repr": "Prisonnier", 
+    "object_id": "42", 
+    "change_message": "Modifi\u00e9 on_affect et on_defect.", 
+    "user": 41, 
+    "content_type": 11
+  }
+},
+{
+  "pk": 7714, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T15:35:38.605", 
+    "object_repr": "emprisonner", 
+    "object_id": "20", 
+    "change_message": "Modifi\u00e9 on_resolution et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0emprisonner [Prisonnier (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7715, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T15:39:20.215", 
+    "object_repr": "Cout des prisonniers", 
+    "object_id": "10", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7716, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T15:39:43.226", 
+    "object_repr": "Cout des prisonniers", 
+    "object_id": "10", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7717, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T15:40:15.873", 
+    "object_repr": "Cout des prisonniers", 
+    "object_id": "10", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7718, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T16:01:31.927", 
+    "object_repr": "Cout des prisonniers", 
+    "object_id": "10", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7719, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T16:02:13.143", 
+    "object_repr": "Cout des prisonniers", 
+    "object_id": "10", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7720, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T16:03:18.893", 
+    "object_repr": "Cout des prisonniers", 
+    "object_id": "10", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7721, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T16:03:31.729", 
+    "object_repr": "Cout des prisonniers", 
+    "object_id": "10", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7722, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T16:04:02.218", 
+    "object_repr": "Cout des prisonniers", 
+    "object_id": "10", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7723, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T16:04:18.321", 
+    "object_repr": "Cout des prisonniers", 
+    "object_id": "10", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7724, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T16:04:31.178", 
+    "object_repr": "Cout des prisonniers", 
+    "object_id": "10", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7725, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T16:05:49.443", 
+    "object_repr": "Cout des prisonniers", 
+    "object_id": "10", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7726, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T16:06:04.082", 
+    "object_repr": "Cout des prisonniers", 
+    "object_id": "10", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7727, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T16:09:38.473", 
+    "object_repr": "Cout des prisonniers", 
+    "object_id": "10", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7728, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T16:10:31.768", 
+    "object_repr": "Cout des prisonniers", 
+    "object_id": "10", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7729, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T16:11:59.226", 
+    "object_repr": "Cout des prisonniers", 
+    "object_id": "10", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7730, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T16:12:38.039", 
+    "object_repr": "Cout des prisonniers", 
+    "object_id": "10", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7731, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T16:14:00.623", 
+    "object_repr": "Cout des prisonniers", 
+    "object_id": "10", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
   "pk": 46, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -124925,7 +125186,7 @@
   "fields": {
     "soldiers": 16, 
     "prestige": 100, 
-    "money": 45, 
+    "money": 43, 
     "user": 41, 
     "population": 130
   }
@@ -124980,7 +125241,7 @@
   "fields": {
     "soldiers": 37, 
     "prestige": 100, 
-    "money": 165, 
+    "money": 163, 
     "user": 46, 
     "population": 270
   }
@@ -125002,7 +125263,7 @@
   "fields": {
     "soldiers": 67, 
     "prestige": 100, 
-    "money": 300, 
+    "money": 298, 
     "user": 44, 
     "population": 470
   }
