@@ -562,6 +562,14 @@
   }
 },
 {
+  "pk": "41lu9wemm61m9l15z5sxgc993nuulp4v", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-11T14:36:54.115", 
+    "session_data": "ZDVhYmUzZmY4NjE4YzUzODJjYmFhMmNkN2Y3NjczMmE3YjQ0ZGVjODqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLKXUu"
+  }
+},
+{
   "pk": "41um4nu96gg964vw0xd3x15o6v3jex1o", 
   "model": "sessions.session", 
   "fields": {
@@ -1495,14 +1503,6 @@
   "fields": {
     "expire_date": "2013-09-30T01:12:54.300", 
     "session_data": "MDIyODVmMjA0NzlmNjY0YmJjOWFhNmNkN2E3OTI1M2Y2Zjk3ODg4ZDqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLLXUu"
-  }
-},
-{
-  "pk": "quc8ki0894g05vqg8ng9sadez0m1a4pk", 
-  "model": "sessions.session", 
-  "fields": {
-    "expire_date": "2013-10-11T13:58:52.494", 
-    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
 {
@@ -8838,7 +8838,7 @@
     "description": "Aux fers au plus profond de vos cachots.", 
     "on_defect": "folk.disabled=False\nfolk.save()", 
     "female_description": "Aux fers au plus profond de vos cachots.", 
-    "on_affect": "folk.loyalty-=30\nfolk.disabled=True\nfolk.save()\nfolk.remove_title()\n", 
+    "on_affect": "folk.disabled=True\nfolk.save()\nfolk.remove_title()\n", 
     "female_name": "Prisonni\u00e8re", 
     "incompatible_qualities": [], 
     "slug": "prisonnier", 
@@ -11328,6 +11328,28 @@
   }
 },
 {
+  "pk": 1383, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": "Les r\u00e9parations de hugo sont termin\u00e9e. Un grand jour pour notre famille.\r\n\r\n", 
+    "created": "2013-09-27T14:53:18.006", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1384, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 58, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-09-27T14:53:21.531", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
   "pk": 1, 
   "model": "title.title", 
   "fields": {
@@ -11966,6 +11988,24 @@
   }
 },
 {
+  "pk": 10, 
+  "model": "internal.constant", 
+  "fields": {
+    "name": "COUT_PRISONNIER", 
+    "value": 2, 
+    "description": "Cout d'un prisonnier/jour"
+  }
+},
+{
+  "pk": 11, 
+  "model": "internal.constant", 
+  "fields": {
+    "name": "PERTE_LOYAUTE_EMPRISONNEMENT", 
+    "value": 5, 
+    "description": "Perte de loyaut\u00e9 lors d'un emprisonnement"
+  }
+},
+{
   "pk": 1, 
   "model": "internal.status", 
   "fields": {
@@ -12067,6 +12107,17 @@
     "on_fire": "pourcentage_actuel = call_function('get_pourcentage_soldats_population', kingdom=kingdom)\nif pourcentage_actuel < C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  kingdom.soldiers += C.GAIN_SOLDATS_PASSIF_AUTO * get_max_population()\n  kingdom.save()\n\n  # Ne pas d\u00e9passer la limite passive\n  kingdom.soldiers = min(kingdom.soldiers, C.POURCENTAGE_MAX_SOLDATS_PASSIF * kingdom.population / 100)\n", 
     "name": "Augmenter le nombre de soldats", 
     "description": "Augmente automatiquement le nombre de soldats dans le royaume"
+  }
+},
+{
+  "pk": 10, 
+  "model": "internal.recurring", 
+  "fields": {
+    "delay": 1440, 
+    "kingdom_list": "param=[]\nparam = kingdom.objects.get(pk=58)", 
+    "on_fire": "nb_prisionners = folks.filter(quality_set__in=\"prisonnier\").count()\nkingdom.money -= nb_prisonniers - C.COUT_PRISONNIER\nkingdom.save()\n", 
+    "name": "Cout des prisonniers", 
+    "description": "Les prisonniers coutent ch\u00e8re"
   }
 },
 {
@@ -48146,16 +48197,16 @@
     "target_list": " ", 
     "text": "Un membre de ma cour m'a fortement d\u00e9plu. Et comme je suis la loi et qu'il me sied de le faire dispara\u00eetre de ma vue, j'ai pris la d\u00e9cision de le jeter en prison.", 
     "has_value": false, 
-    "on_resolution": "grid['prisonnier'][0].add_quality(\"prisonnier\")\ngrid['prisonnier'][0].save()\nif grid['prisonnier'][0].has_quality(\"scelerat\"):\n  call_function(\"perte_loyaute_general\", perte_min=8, perte_max=12)\nelse :\n  call_function(\"perte_loyaute_general\", perte_min=18, perte_max=22)\n", 
+    "on_resolution": "def perte(facteur, kingdom=kingdom):\n  call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=C.PERTE_LOYAUTE_EMPRISONNEMENT*facteur, perte_max=C.PERTE_LOYAUTE_EMPRISONNEMENT*facteur)\n  return C.PERTE_LOYAUTE_EMPRISONNEMENT*facteur\n\nprisonnier = grid['prisonnier'][0]\nprisonnier.add_quality(\"prisonnier\")\nperte_loyaute = 0\n\nif prisonnier.has_quality(\"legende_locale\"):\n  perte_loyaute -= perte(2)\nelif prisonnier.has_quality(\"intrepide\"):\n  perte_loyaute -= perte(1.5)\nelif prisonnier.has_quality(\"scelerat\"):\n  perte_loyaute -= perte(0)\nelif prisonnier.has_quality(\"traitre\"):\n  call_function(\"gain_loyaute_general\", kingdom=kingdom, gain_min=4, gain_max=6)\n  perte_loyaute = 5\nelse :\n  perte_loyaute -= perte(1)\n\nif prisonnier.loyalty > 15 :\n  prisonnier.loyalty = 15\nelse:\n  prisonnier.loyalty -= 5\nprisonnier.save()\n\npe = kingdom.create_pending_event(\"execution\")\npe.set_value(\"prisonnier\", prisonnier)\npe.set_value(\"perte\", perte_loyaute)\npe.start()\n", 
     "value_description": "Valeur :", 
     "on_start": " ", 
     "has_target": false, 
     "is_team": false, 
-    "title": null, 
+    "title": 4, 
     "target_description": "Cible", 
     "timeout": null, 
     "is_cancellable": true, 
-    "duration": 5, 
+    "duration": 0, 
     "on_cancel": "\n", 
     "slug": "emprisonner", 
     "on_init": " "
@@ -54924,7 +54975,7 @@
     "message": "Les r\u00e9parations de {{dynasty}} sont termin\u00e9e. Un grand jour pour notre famille.\r\n\r\n{% if not title.ambassadeur %}Je peux maintenant nommer un ambassadeur pour faire venir des suivants \u00e0 {{dynasty}}{% endif %}", 
     "event": 11, 
     "condition": "\n", 
-    "on_fire": "#param.next_event(\"tuto_ennemi_casusbelli\").start()\npe=param.next_event(slug=\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_ennemi_casusbelli\")\npe.start()\n"
+    "on_fire": "#param.next_event(\"tuto_ennemi_casusbelli\").start()\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_ennemi_casusbelli\")\npe.start()\n"
   }
 },
 {
@@ -56566,18 +56617,6 @@
   }
 },
 {
-  "pk": 2467, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 58, 
-    "is_started": true, 
-    "created": "2013-09-24T19:42:04.528", 
-    "started": "2013-09-24T19:42:04.532", 
-    "text": "Aujourd\u2019hui, les travaux ont pris fin. Mon ch\u00e2teau \u00e0 \u00e9t\u00e9 r\u00e9par\u00e9 jusqu\u2019\u00e0 la derni\u00e8re pierre, et l\u2019\u00e9tendard de ma famille claque fi\u00e8rement dans la brise du matin, perch\u00e9 au sommet de la plus haute tour. Ma cour est nombreuse et la ville sous mes remparts se d\u00e9veloppe peu \u00e0 peu. Accoud\u00e9 \u00e0 ma fen\u00eatre, j\u2019observe l'entra\u00eenement de mes fiers soldats dans la cour, sire Florentin de Poli\u00e9nas marchant parmi eux et beuglant ses instructions. Pour la premi\u00e8re fois depuis mon arriv\u00e9e, je me sens pleinement assur\u00e9 de la stabilit\u00e9 de ma position. Malgr\u00e9 tous les obstacles, je suis maintenant le souverain incontest\u00e9 de ces terres, et le nom de ma famille est de nouveau prononc\u00e9 avec respect.", 
-    "event": 9
-  }
-},
-{
   "pk": 2519, 
   "model": "event.pendingevent", 
   "fields": {
@@ -56599,6 +56638,18 @@
     "started": "2013-09-25T23:40:25.136", 
     "text": "Notre seigneurie, nos terres ont \u00e9t\u00e9 attaqu\u00e9es ! \r\n\r\nde Belze @ Jules : event pour avertir la cible d'un raid qu'elle a \u00e9t\u00e9 attaqu\u00e9e ( \u00e7a me semblait necessaire). En construction ...", 
     "event": 255
+  }
+},
+{
+  "pk": 2533, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 58, 
+    "is_started": true, 
+    "created": "2013-09-27T14:53:21.487", 
+    "started": "2013-09-27T14:53:21.493", 
+    "text": "Mon fils Giefroi s'avance d'un pas rapide. Il semble agit\u00e9, et tient une missive dans sa main. \"Sire, je... Notre voisin le seigneur  clame que nous l'avons offens\u00e9, et qu'il entend laver  l'affront dans le sang\". Je me redresse, stup\u00e9fait. \"Il ose!?\" J'arrache le courier de ses mains, et sens ma col\u00e8re monter au fil de ma lecture. \"Le mis\u00e9rable! Ces mensonges n'ont qu'un seul but. Il esp\u00e8re piller nos terres en toute impunit\u00e9\". Je froisse la missive. \"S'il nous prend pour une cible facile, il va vite d\u00e9chanter!\"\r\n\r\n     Le seigneur Ingebald d'Oust\u00e9 a obtenu un casus belli envers hugo.", 
+    "event": 206
   }
 },
 {
@@ -56679,17 +56730,6 @@
   }
 },
 {
-  "pk": 2655, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 2467, 
-    "message": "", 
-    "text": "Et pourtant...", 
-    "folk": null, 
-    "event_action": 14
-  }
-},
-{
   "pk": 2705, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -56709,6 +56749,17 @@
     "text": "Les cuistres ! ", 
     "folk": null, 
     "event_action": 327
+  }
+},
+{
+  "pk": 2716, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 2533, 
+    "message": "Le seigneur Ingebald d'Oust\u00e9 a obtenu un cassus belli envers hugo.", 
+    "text": "Nous devons nous pr\u00e9parer \u00e0 le recevoir...", 
+    "folk": null, 
+    "event_action": 273
   }
 },
 {
@@ -56838,15 +56889,6 @@
   }
 },
 {
-  "pk": 5531, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2467, 
-    "name": "slug", 
-    "value": "tuto_ambition"
-  }
-},
-{
   "pk": 5847, 
   "model": "event._pendingeventvariable", 
   "fields": {
@@ -56934,6 +56976,24 @@
     "pending_event": 2526, 
     "name": "population_perdue", 
     "value": 3.0
+  }
+},
+{
+  "pk": 5880, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2533, 
+    "name": "slug", 
+    "value": "tuto_ennemi_casusbelli"
+  }
+},
+{
+  "pk": 5881, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2533, 
+    "name": "ennemi", 
+    "value": "Ingebald d'Oust\u00e9"
   }
 },
 {
@@ -83132,7 +83192,7 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-09-15T11:20:45.184", 
+    "last_login": "2013-09-27T14:36:54.090", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$10000$yINKp6NRHK8F$dc6Q/6j7MRoi3I+KbeQakISZfrlBcOUR3nYfj71TRb4=", 
@@ -124771,6 +124831,84 @@
   }
 },
 {
+  "pk": 7706, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-27T14:38:52.158", 
+    "object_repr": "COUT_PRISONNIER", 
+    "object_id": "10", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 18
+  }
+},
+{
+  "pk": 7707, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-27T14:46:51.555", 
+    "object_repr": "Cout des prisonniers", 
+    "object_id": "10", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7708, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T14:53:13.682", 
+    "object_repr": "tuto_ambition_3", 
+    "object_id": "11", 
+    "change_message": "Modifi\u00e9 on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Je vais mettre mes meilleurs diplomates sur le cou [tuto_ambition_3]\u00a0\u00bb. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ce seigneur ne m'a rien fait, laissons-le tranquil [tuto_ambition_3]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7709, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-09-27T14:57:00.804", 
+    "object_repr": "PERTE_LOYAUTE_EMPRISONNEMENT", 
+    "object_id": "11", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 18
+  }
+},
+{
+  "pk": 7710, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T15:16:11.987", 
+    "object_repr": "emprisonner", 
+    "object_id": "20", 
+    "change_message": "Modifi\u00e9 duration, on_resolution, on_cancel et title. condition modifi\u00e9 pour mission grid \u00ab\u00a0emprisonner [Prisonnier (1)]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7711, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-09-27T15:17:41.713", 
+    "object_repr": "Prisonnier", 
+    "object_id": "42", 
+    "change_message": "Modifi\u00e9 on_affect et on_defect.", 
+    "user": 41, 
+    "content_type": 11
+  }
+},
+{
   "pk": 46, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -124785,11 +124923,11 @@
   "pk": 58, 
   "model": "kingdom.kingdom", 
   "fields": {
-    "soldiers": 13, 
+    "soldiers": 16, 
     "prestige": 100, 
-    "money": 30, 
+    "money": 45, 
     "user": 41, 
-    "population": 110
+    "population": 130
   }
 },
 {
