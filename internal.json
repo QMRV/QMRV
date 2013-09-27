@@ -1479,8 +1479,8 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 1440, 
-    "kingdom_list": "param=[]\nparam = kingdom.objects.get(pk=58)", 
-    "on_fire": "nb_prisionners = folks.filter(quality_set__in=\"prisonnier\").count()\nkingdom.money -= nb_prisonniers - C.COUT_PRISONNIER\nkingdom.save()\n", 
+    "kingdom_list": "\n", 
+    "on_fire": "nb_prisonniers = folks.filter(quality_set__slug__contains=\"prisonnier\").count()\nkingdom.money -= nb_prisonniers * C.COUT_PRISONNIER\nprint(\"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\")\nprint(nb_prisonniers * C.COUT_PRISONNIER)\nkingdom.save()\n", 
     "name": "Cout des prisonniers", 
     "description": "Les prisonniers coutent ch\u00e8re"
   }
