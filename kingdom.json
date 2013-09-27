@@ -740,7 +740,7 @@
     "description": "Aux fers au plus profond de vos cachots.", 
     "on_defect": "folk.disabled=False\nfolk.save()", 
     "female_description": "Aux fers au plus profond de vos cachots.", 
-    "on_affect": "folk.loyalty-=30\nfolk.disabled=True\nfolk.save()\nfolk.remove_title()\n", 
+    "on_affect": "folk.disabled=True\nfolk.save()\nfolk.remove_title()\n", 
     "female_name": "Prisonni\u00e8re", 
     "incompatible_qualities": [], 
     "slug": "prisonnier", 

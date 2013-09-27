@@ -4494,7 +4494,7 @@
     "message": "Les r\u00e9parations de {{dynasty}} sont termin\u00e9e. Un grand jour pour notre famille.\r\n\r\n{% if not title.ambassadeur %}Je peux maintenant nommer un ambassadeur pour faire venir des suivants \u00e0 {{dynasty}}{% endif %}", 
     "event": 11, 
     "condition": "\n", 
-    "on_fire": "#param.next_event(\"tuto_ennemi_casusbelli\").start()\npe=param.next_event(slug=\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_ennemi_casusbelli\")\npe.start()\n"
+    "on_fire": "#param.next_event(\"tuto_ennemi_casusbelli\").start()\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_ennemi_casusbelli\")\npe.start()\n"
   }
 },
 {

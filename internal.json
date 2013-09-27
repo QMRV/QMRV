@@ -1369,6 +1369,24 @@
   }
 },
 {
+  "pk": 10, 
+  "model": "internal.constant", 
+  "fields": {
+    "name": "COUT_PRISONNIER", 
+    "value": 2, 
+    "description": "Cout d'un prisonnier/jour"
+  }
+},
+{
+  "pk": 11, 
+  "model": "internal.constant", 
+  "fields": {
+    "name": "PERTE_LOYAUTE_EMPRISONNEMENT", 
+    "value": 5, 
+    "description": "Perte de loyaut\u00e9 lors d'un emprisonnement"
+  }
+},
+{
   "pk": 2, 
   "model": "internal.recurring", 
   "fields": {
@@ -1454,6 +1472,17 @@
     "on_fire": "pourcentage_actuel = call_function('get_pourcentage_soldats_population', kingdom=kingdom)\nif pourcentage_actuel < C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  kingdom.soldiers += C.GAIN_SOLDATS_PASSIF_AUTO * get_max_population()\n  kingdom.save()\n\n  # Ne pas d\u00e9passer la limite passive\n  kingdom.soldiers = min(kingdom.soldiers, C.POURCENTAGE_MAX_SOLDATS_PASSIF * kingdom.population / 100)\n", 
     "name": "Augmenter le nombre de soldats", 
     "description": "Augmente automatiquement le nombre de soldats dans le royaume"
+  }
+},
+{
+  "pk": 10, 
+  "model": "internal.recurring", 
+  "fields": {
+    "delay": 1440, 
+    "kingdom_list": "param=[]\nparam = kingdom.objects.get(pk=58)", 
+    "on_fire": "nb_prisionners = folks.filter(quality_set__in=\"prisonnier\").count()\nkingdom.money -= nb_prisonniers - C.COUT_PRISONNIER\nkingdom.save()\n", 
+    "name": "Cout des prisonniers", 
+    "description": "Les prisonniers coutent ch\u00e8re"
   }
 },
 {
