@@ -56654,6 +56654,18 @@
   }
 },
 {
+  "pk": 2535, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 74, 
+    "is_started": false, 
+    "created": "2013-09-29T14:10:03.255", 
+    "started": "2013-09-30T08:10:03.447", 
+    "text": "", 
+    "event": 191
+  }
+},
+{
   "pk": 1705, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -56995,6 +57007,24 @@
     "pending_event": 2533, 
     "name": "ennemi", 
     "value": "Ingebald d'Oust\u00e9"
+  }
+},
+{
+  "pk": 5884, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2535, 
+    "name": "pere", 
+    "value": "`Folk`:6907"
+  }
+},
+{
+  "pk": 5885, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2535, 
+    "name": "mere", 
+    "value": "`Folk`:6906"
   }
 },
 {
@@ -81957,6 +81987,62 @@
     "direct_queries": 0, 
     "time": 0, 
     "queries": 0
+  }
+},
+{
+  "pk": 9972, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 7, 
+    "object_type": "Recurring", 
+    "object_attr": "kingdom_list", 
+    "direct_queries": 0, 
+    "time": 1, 
+    "queries": 0
+  }
+},
+{
+  "pk": 9973, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 74, 
+    "stack_level": 1, 
+    "object_pk": 7, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 2, 
+    "time": 219, 
+    "queries": 2
+  }
+},
+{
+  "pk": 9974, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 7, 
+    "object_type": "Recurring", 
+    "object_attr": "kingdom_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 9975, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 74, 
+    "stack_level": 1, 
+    "object_pk": 7, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 13, 
+    "time": 314, 
+    "queries": 13
   }
 },
 {
