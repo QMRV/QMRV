@@ -3791,6 +3791,33 @@
   }
 },
 {
+  "pk": 670, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 88, 
+    "name": "tuto_facheux_fantome", 
+    "value": 1.0
+  }
+},
+{
+  "pk": 675, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 88, 
+    "name": "tuto_toofewpopulation", 
+    "value": 1.0
+  }
+},
+{
+  "pk": 676, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 88, 
+    "name": "tuto_scandale_fantome", 
+    "value": 1.0
+  }
+},
+{
   "pk": 196, 
   "model": "kingdom.folk", 
   "fields": {
@@ -7553,7 +7580,7 @@
   "model": "kingdom.folk", 
   "fields": {
     "kingdom": 88, 
-    "fight": 9, 
+    "fight": 10, 
     "first_name": "Sigismond", 
     "last_name": "de hugo", 
     "diplomacy": 8, 
@@ -7674,33 +7701,7 @@
     "loyalty": 65, 
     "spouse": null, 
     "quality_set": [
-      23, 
-      36
-    ], 
-    "mentor": null
-  }
-},
-{
-  "pk": 7218, 
-  "model": "kingdom.folk", 
-  "fields": {
-    "kingdom": 88, 
-    "fight": 10, 
-    "first_name": "Herchambaut", 
-    "last_name": "de Pleudaniel", 
-    "diplomacy": 8, 
-    "father": null, 
-    "plot": 5, 
-    "scholarship": 6, 
-    "sex": "m", 
-    "disabled": false, 
-    "death": null, 
-    "avatar": 24, 
-    "birth": "2013-09-07T12:43:21.543", 
-    "mother": null, 
-    "loyalty": 55, 
-    "spouse": null, 
-    "quality_set": [
+      36, 
       23
     ], 
     "mentor": null
@@ -7728,8 +7729,8 @@
     "spouse": null, 
     "quality_set": [
       1, 
-      22, 
-      3
+      3, 
+      22
     ], 
     "mentor": null
   }
@@ -7808,6 +7809,88 @@
     "spouse": null, 
     "quality_set": [
       10
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7223, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 88, 
+    "fight": 9, 
+    "first_name": "Anthiaume", 
+    "last_name": "de Fons", 
+    "diplomacy": 4, 
+    "father": null, 
+    "plot": 8, 
+    "scholarship": 9, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 4, 
+    "birth": "2013-08-28T16:38:37.377", 
+    "mother": null, 
+    "loyalty": 60, 
+    "spouse": null, 
+    "quality_set": [
+      36, 
+      6
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7226, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 88, 
+    "fight": 6, 
+    "first_name": "Robin", 
+    "last_name": "d'Uchon", 
+    "diplomacy": 9, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 12, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 10, 
+    "birth": "2013-08-28T16:45:07.955", 
+    "mother": null, 
+    "loyalty": 50, 
+    "spouse": null, 
+    "quality_set": [
+      24, 
+      36
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7227, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 88, 
+    "fight": 10, 
+    "first_name": "Guilhem", 
+    "last_name": "d'Outines", 
+    "diplomacy": 9, 
+    "father": null, 
+    "plot": 4, 
+    "scholarship": 9, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 19, 
+    "birth": "2013-08-28T16:48:45.443", 
+    "mother": null, 
+    "loyalty": 80, 
+    "spouse": null, 
+    "quality_set": [
+      9, 
+      3, 
+      36
     ], 
     "mentor": null
   }
@@ -10805,6 +10888,83 @@
   }
 },
 {
+  "pk": 1405, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 88, 
+    "content": "Mon fils a tu\u00e9 le chevalier Herchambaut de Pleudaniel en duel.", 
+    "created": "2013-10-02T16:37:04.857", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1406, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 88, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-10-02T16:38:37.857", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1407, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 88, 
+    "content": "Le p\u00e8re Maurin d'Esquay a accept\u00e9 de devenir le [cur\u00e9](titre) de ma cour.", 
+    "created": "2013-10-02T16:42:46.905", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1408, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 88, 
+    "content": "Le p\u00e8re Maurin d'Esquay a accept\u00e9 de devenir le [cur\u00e9](titre) de ma cour.", 
+    "created": "2013-10-02T16:45:39.991", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1409, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 88, 
+    "content": "Le p\u00e8re Maurin d'Esquay a accept\u00e9 de devenir le [cur\u00e9](titre) de ma cour.", 
+    "created": "2013-10-02T16:51:53.832", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1410, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 88, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-10-02T16:54:17.259", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1411, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 88, 
+    "content": "J'ai pr\u00e9fer\u00e9 refuser \u00e0  la main de ma fille. ```-10 de Loyaut\u00e9.```", 
+    "created": "2013-10-02T16:54:45.438", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
   "pk": 1, 
   "model": "title.title", 
   "fields": {
@@ -11300,8 +11460,8 @@
   "model": "title.availabletitle", 
   "fields": {
     "kingdom": 88, 
-    "last_folk": 7218, 
-    "folk": 7218, 
+    "last_folk": null, 
+    "folk": null, 
     "title": 2
   }
 },
@@ -50600,7 +50760,7 @@
     "weight": 1, 
     "text": "Sans un mot, il se rel\u00e8ve, me contemple, puis se d\u00e9tourne. Alors que la porte se referme dans un bruit sourd, je prends conscience que m\u00eame si {{folks.3.first_name}} continuera \u00e0 remplir son devoir, notre relation ne sera plus jamais la m\u00eame.\r\n\r\n```-10 de Loyaut\u00e9 pour {{folks.3.first_name}}.```", 
     "image": "events/407_3.jpg", 
-    "on_fire": " ", 
+    "on_fire": "folks[3].loyalty -= 10\nfolks[3].save()\n", 
     "slug": "tuto_scandale_fille_4", 
     "condition": " "
   }
@@ -50682,9 +50842,9 @@
     "category": null, 
     "name": "Tuto too few pop", 
     "weight": 1, 
-    "text": "Ma cour se peuple peu \u00e0 peu mais il y a trop peu de paysans sur mes terres pour esperer lever des impots satisfaisants. Pour fid\u00e9liser mes serfs et les faire travailler plus dur, j'aurais besoin de leur insuffler une ferveur religieuse nouvelle. Pour convaincre de nouveaux paysans de s'installer sur mes terres, j'ai besoin de convaincre la populace de ma pi\u00e9t\u00e9 et de ma bienveillance. \r\n\r\nPour m'aider dans cette t\u00e2che, j'ai persuad\u00e9 le p\u00e8re {{title.cure}}, un cur\u00e9 respect\u00e9 de la r\u00e9gion, de se mettre \u00e0 mon service - en plus de celui du Seigneur - pour m'aider \u00e0 d\u00e9montrer ma charit\u00e9 par des aum\u00f4nes aux plus d\u00e9munis.\r\n\r\n    Le p\u00e8re {{cure.first_name}} a rejoint ma cour, et occupe le titre de Cur\u00e9. \r\n", 
+    "text": "Ma cour se peuple peu \u00e0 peu mais il y a trop peu de paysans sur mes terres pour esperer lever des impots satisfaisants. Pour fid\u00e9liser mes serfs et les faire travailler plus dur, j'aurais besoin de leur insuffler une ferveur religieuse nouvelle. Pour convaincre de nouveaux paysans de s'installer sur mes terres, j'ai besoin de convaincre la populace de ma pi\u00e9t\u00e9 et de ma bienveillance. \r\n\r\nPour m'aider dans cette t\u00e2che, j'ai persuad\u00e9 le p\u00e8re {{title.cure}}, un cur\u00e9 respect\u00e9 de la r\u00e9gion, de se mettre \u00e0 mon service - en plus de celui du Seigneur - pour m'aider \u00e0 d\u00e9montrer ma charit\u00e9 par des aum\u00f4nes aux plus d\u00e9munis.\r\n{% if deja_cure == True %}\r\n    Le p\u00e8re {{cure.first_name}} a rejoint ma cour.\r\n{% else %}\r\n    Le p\u00e8re {{cure.first_name}} a rejoint ma cour, et occupe le titre de Cur\u00e9. \r\n{% endif %}", 
     "image": "events/703_1.jpg", 
-    "on_fire": "cure = call_function(\"creer_folk\", kingdom=kingdom, fight_min=1, plot_min=1, diplomacy_min=1, scholarship_min=1, max_carac=32, loyalty=50, sex=Folk.MALE, birth=datetime.now() - timedelta(days=35), trait=\"pretre\")\nparam.set_value(\"cure\", cure)\nkingdom.unlock_title(\"cure\")\nif kingdom.get_folk_in_title(\"cure\") == None:\n  cure.add_title(\"cure\")\n\n", 
+    "on_fire": "cure = call_function(\"creer_folk\", kingdom=kingdom, fight_min=1, plot_min=1, diplomacy_min=1, scholarship_min=1, max_carac=32, loyalty=50, sex=Folk.MALE, birth=datetime.now() - timedelta(days=35), trait=\"pretre\")\nparam.set_value(\"cure\", cure)\nkingdom.unlock_title(\"cure\")\nif kingdom.get_folk_in_title(\"cure\") == None:\n  param.set_value(\"deja_cure\", False)\n  cure.add_title(\"cure\")\nelse:\n  param.set_value(\"deja_cure\", True)\n\n", 
     "slug": "tuto_toofewpopulation", 
     "condition": " "
   }
@@ -55823,15 +55983,15 @@
   }
 },
 {
-  "pk": 2576, 
+  "pk": 2595, 
   "model": "event.pendingevent", 
   "fields": {
     "kingdom": 88, 
     "is_started": true, 
-    "created": "2013-10-02T13:08:13.262", 
-    "started": "2013-10-02T13:08:13.274", 
-    "text": "Le jeune ecervel\u00e9 est encore rouge de col\u00e8re et d'exitation. \"P\u00e8re, il s'agit de mon honneur!\" J'essaye en vain de lui faire comprendre que se battre en duel contre Herchambaut de Pleudaniel ne resoudra rien, et pourrait m\u00eame priver ma cour d'un suivant valeureux. \"Les mots ont \u00e9t\u00e9 prononc\u00e9s, p\u00e8re. Ni moi ni Herchambaut ne pouvons revenir dessus sans nous couvrir de ridicule!\".  Il semble determin\u00e9 \u00e0 se battre, avec ou sans mon autorisation.", 
-    "event": 154
+    "created": "2013-10-02T16:54:45.414", 
+    "started": "2013-10-02T16:54:45.417", 
+    "text": "Il y eut un soir, il y eut un matin.\r\nEt ce 30 fois de suite.", 
+    "event": 225
   }
 },
 {
@@ -55945,58 +56105,14 @@
   }
 },
 {
-  "pk": 2760, 
+  "pk": 2783, 
   "model": "event.pendingeventaction", 
   "fields": {
-    "pending_event": 2576, 
-    "message": "", 
-    "text": "\"Je comprends ton dilemme, mon fils... Le duel aura lieu dans la cours.\"", 
+    "pending_event": 2595, 
+    "message": "Un mois s'est \u00e9coul\u00e9.", 
+    "text": "Le temps passe...", 
     "folk": null, 
-    "event_action": 215
-  }
-},
-{
-  "pk": 2761, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 2576, 
-    "message": "", 
-    "text": "R\u00e9unir les deux inconscients pour les convaincre de faire la paix.", 
-    "folk": null, 
-    "event_action": 216
-  }
-},
-{
-  "pk": 2762, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 2576, 
-    "message": "", 
-    "text": "\"Je l'interdits! Vous ne verserez pas de sang sous mon toit!\"", 
-    "folk": null, 
-    "event_action": 217
-  }
-},
-{
-  "pk": 2763, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 2576, 
-    "message": "Mon fils  et le chevalier Herchambaut de Pleudaniel se sont disput\u00e9.", 
-    "text": "\"J'ai mieux \u00e0 faire que de m'occuper de tes enfantillages. Hors d'ici.\"", 
-    "folk": null, 
-    "event_action": 261
-  }
-},
-{
-  "pk": 2764, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 2576, 
-    "message": "", 
-    "text": "\"Je comprends ton dilemme, mon fils... Cependant, avant de faire une b\u00eatise, laisse moi un peu de temps pour trouver une solution.\"", 
-    "folk": null, 
-    "event_action": 214
+    "event_action": 293
   }
 },
 {
@@ -56261,21 +56377,12 @@
   }
 },
 {
-  "pk": 5984, 
+  "pk": 6014, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2576, 
+    "pending_event": 2595, 
     "name": "slug", 
-    "value": "tuto_facheux_fantome"
-  }
-},
-{
-  "pk": 5985, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2576, 
-    "name": "facheux", 
-    "value": "`Folk`:7218"
+    "value": "tuto_ambition"
   }
 },
 {
@@ -81552,7 +81659,7 @@
   "pk": 10084, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 88, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 39, 
     "object_type": "Mission", 
@@ -81566,7 +81673,7 @@
   "pk": 10085, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 88, 
+    "kingdom": null, 
     "stack_level": 2, 
     "object_pk": 42, 
     "object_type": "Quality", 
@@ -81594,7 +81701,7 @@
   "pk": 10087, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 88, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 21, 
     "object_type": "Mission", 
@@ -125075,6 +125182,188 @@
   }
 },
 {
+  "pk": 7753, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-02T16:41:58.236", 
+    "object_repr": "tuto_toofewpopulation", 
+    "object_id": "94", 
+    "change_message": "Modifi\u00e9 text et on_fire. on_fire modifi\u00e9 pour event action \u00ab\u00a0In nomine patris, et filii, et spiritus sancti. [tuto_toofewpopulation]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7754, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-02T16:44:02.775", 
+    "object_repr": "tuto_toofewpopulation", 
+    "object_id": "94", 
+    "change_message": "Modifi\u00e9 on_fire. on_fire modifi\u00e9 pour event action \u00ab\u00a0In nomine patris, et filii, et spiritus sancti. [tuto_toofewpopulation]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7755, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-02T16:44:54.141", 
+    "object_repr": "tuto_toofewpopulation", 
+    "object_id": "94", 
+    "change_message": "Modifi\u00e9 text et on_fire. on_fire modifi\u00e9 pour event action \u00ab\u00a0In nomine patris, et filii, et spiritus sancti. [tuto_toofewpopulation]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7756, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-02T16:45:08.160", 
+    "object_repr": "Tuto too few pop [hugo kingdom]", 
+    "object_id": "2585", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7757, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-02T16:47:21.018", 
+    "object_repr": "tuto_toofewpopulation", 
+    "object_id": "94", 
+    "change_message": "Modifi\u00e9 on_fire. on_fire modifi\u00e9 pour event action \u00ab\u00a0In nomine patris, et filii, et spiritus sancti. [tuto_toofewpopulation]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7758, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-02T16:48:27.696", 
+    "object_repr": "tuto_toofewpopulation", 
+    "object_id": "94", 
+    "change_message": "Modifi\u00e9 on_fire. on_fire modifi\u00e9 pour event action \u00ab\u00a0In nomine patris, et filii, et spiritus sancti. [tuto_toofewpopulation]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7759, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-02T16:48:45.626", 
+    "object_repr": "Tuto too few pop [hugo kingdom]", 
+    "object_id": "2587", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7760, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-02T16:51:48.626", 
+    "object_repr": "tuto_toofewpopulation", 
+    "object_id": "94", 
+    "change_message": "Modifi\u00e9 text et on_fire. on_fire modifi\u00e9 pour event action \u00ab\u00a0In nomine patris, et filii, et spiritus sancti. [tuto_toofewpopulation]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7761, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-02T16:52:24.733", 
+    "object_repr": "Tuto too few pop [hugo kingdom]", 
+    "object_id": "2589", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7762, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-02T16:53:09.122", 
+    "object_repr": "tuto_toofewpopulation", 
+    "object_id": "94", 
+    "change_message": "Modifi\u00e9 on_fire. on_fire modifi\u00e9 pour event action \u00ab\u00a0In nomine patris, et filii, et spiritus sancti. [tuto_toofewpopulation]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7763, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-02T16:53:25.032", 
+    "object_repr": "Tuto too few pop [hugo kingdom]", 
+    "object_id": "2590", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7764, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-02T16:54:12.078", 
+    "object_repr": "Le temps passe... [hugo kingdom]", 
+    "object_id": "2588", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7765, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-02T16:54:12.080", 
+    "object_repr": "Le temps passe... [hugo kingdom]", 
+    "object_id": "2586", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 31
+  }
+},
+{
+  "pk": 7766, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-02T16:55:59.451", 
+    "object_repr": "tuto_scandale_fille_4", 
+    "object_id": "85", 
+    "change_message": "Modifi\u00e9 on_fire. on_fire modifi\u00e9 pour event action \u00ab\u00a0Je vais rester ici un moment... [tuto_scandale_fille_4]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
   "pk": 46, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -125177,11 +125466,11 @@
   "pk": 88, 
   "model": "kingdom.kingdom", 
   "fields": {
-    "soldiers": 25, 
+    "soldiers": 31, 
     "prestige": 0, 
-    "money": 105, 
+    "money": 135, 
     "user": 41, 
-    "population": 190
+    "population": 230
   }
 }
 ]
