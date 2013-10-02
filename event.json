@@ -4622,7 +4622,7 @@
   "pk": 186, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\"Ah, nous y voil\u00e0 ! Maintenant que j'ai remis {{kingdom}} sur pieds, vous voulez que vos rejetons aient leur part du g\u00e2teau !\"", 
+    "text": "\"Ah, nous y voil\u00e0 ! Maintenant que j'ai remis {{dynasty}} sur pieds, vous voulez que vos rejetons aient leur part du g\u00e2teau !\"", 
     "message": "", 
     "event": 135, 
     "condition": "\n", 

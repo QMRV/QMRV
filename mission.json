@@ -398,7 +398,7 @@
     "target_list": " ", 
     "text": "Un membre de ma cour m'a fortement d\u00e9plu. Et comme je suis la loi et qu'il me sied de le faire dispara\u00eetre de ma vue, j'ai pris la d\u00e9cision de le jeter en prison.", 
     "has_value": false, 
-    "on_resolution": "def perte(facteur, kingdom=kingdom):\n  call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=C.PERTE_LOYAUTE_EMPRISONNEMENT*facteur, perte_max=C.PERTE_LOYAUTE_EMPRISONNEMENT*facteur)\n  return C.PERTE_LOYAUTE_EMPRISONNEMENT*facteur\n\nprisonnier = grids['prisonnier'][0]\nprisonnier.add_quality(\"prisonnier\")\nperte_loyaute = 0\n\nif prisonnier.has_quality(\"legende_locale\"):\n  perte_loyaute -= perte(2)\nelif prisonnier.has_quality(\"intrepide\"):\n  perte_loyaute -= perte(1.5)\nelif prisonnier.has_quality(\"scelerat\"):\n  perte_loyaute -= perte(0)\nelif prisonnier.has_quality(\"traitre\"):\n  call_function(\"gain_loyaute_general\", kingdom=kingdom, gain_min=4, gain_max=6)\n  perte_loyaute = 5\nelse :\n  perte_loyaute -= perte(1)\n\n\npe = kingdom.create_pending_event(\"execution\")\npe.set_value(\"prisonnier\", prisonnier)\npe.set_value(\"perte\", perte_loyaute)\npe.start()\n", 
+    "on_resolution": "def perte(facteur, kingdom=kingdom):\n  call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=C.PERTE_LOYAUTE_EMPRISONNEMENT*facteur, perte_max=C.PERTE_LOYAUTE_EMPRISONNEMENT*facteur)\n  return C.PERTE_LOYAUTE_EMPRISONNEMENT*facteur\n\nprisonnier = grids['prisonnier'][0]\nprisonnier.add_quality(\"prisonnier\")\nperte_loyaute = 0\n\nif prisonnier.has_quality(\"legende_locale\"):\n  perte_loyaute -= perte(2)\nelif prisonnier.has_quality(\"intrepide\"):\n  perte_loyaute -= perte(1.5)\nelif prisonnier.has_quality(\"scelerat\"):\n  perte_loyaute -= 0\nelif prisonnier.has_quality(\"traitre\"):\n  call_function(\"gain_loyaute_general\", kingdom=kingdom, gain_min=4, gain_max=6)\n  perte_loyaute = C.PERTE_LOYAUTE_EMPRISONNEMENT\nelse :\n  perte_loyaute -= perte(1)\n\n\npe = kingdom.create_pending_event(\"execution\")\npe.set_value(\"prisonnier\", prisonnier)\npe.set_value(\"perte\", perte_loyaute)\npe.start()\n", 
     "value_description": "Valeur :", 
     "on_start": " ", 
     "has_target": false, 
@@ -421,16 +421,16 @@
     "target_list": " ", 
     "text": "Le prisonnier a plus que payer pour son tord. Il est temps de le lib\u00e9rer.", 
     "has_value": false, 
-    "on_resolution": "folk.remove_quality(\"prisonnier\")\n", 
+    "on_resolution": "def gain(facteur, kingdom=kingdom):\n  call_function(\"gain_loyaute_general\", kingdom=kingdom, gain_min=C.PERTE_LOYAUTE_EMPRISONNEMENT*facteur, gain_max=C.PERTE_LOYAUTE_EMPRISONNEMENT*facteur)\n  return C.PERTE_LOYAUTE_EMPRISONNEMENT*facteur\n\nprisonnier = grids['libere'][0]\nprisonnier.remove_quality(\"prisonnier\")\ngain_loyaute = 0\n\nif prisonnier.has_quality(\"legende_locale\"):\n  gain_loyaute = gain(2)\nelif prisonnier.has_quality(\"intrepide\"):\n  gain_loyaute = gain(1.5)\nelif prisonnier.has_quality(\"scelerat\"):\n  gain_loyaute = gain(0)\nelif prisonnier.has_quality(\"traitre\"):\n  call_function(\"gain_loyaute_general\", kingdom=kingdom, gain_min=4, gain_max=6)\n  gain_loyaute -= C.PERTE_LOYAUTE_EMPRISONNEMENT\nelse :\n  gain_loyaute = gain(1)\n\nkingdom.message(\"\")\n", 
     "value_description": "Valeur :", 
     "on_start": " ", 
     "has_target": false, 
     "is_team": false, 
-    "title": null, 
+    "title": 4, 
     "target_description": "Cible", 
     "timeout": null, 
     "is_cancellable": true, 
-    "duration": 5, 
+    "duration": 0, 
     "on_cancel": "\n", 
     "slug": "liberer", 
     "on_init": " "
@@ -1266,13 +1266,13 @@
   "pk": 17, 
   "model": "mission.missiongrid", 
   "fields": {
-    "allow_disabled": false, 
+    "allow_disabled": true, 
     "name": "Lib\u00e9r\u00e9", 
     "mission": 21, 
-    "length": 20, 
+    "length": 1, 
     "allow_empty": false, 
     "slug": "libere", 
-    "condition": "if Folk.objects.filter(kingdom=kingdom,quality__name=\"prisonnier\").count()==0:\n  status=\"Aucun prisonnier a liberer\"\n"
+    "condition": "if folk.has_quality(\"prisonnier\") is False:\n  status=\"Cette personne est d\u00e9j\u00e0 libre\"\n"
   }
 },
 {
