@@ -7,15 +7,15 @@
     "description": "Initialise les comptes", 
     "prestige_threshold": 0, 
     "fired": [
-      70, 
-      71, 
-      74, 
-      76, 
+      87, 
       46, 
+      76, 
+      71, 
       80, 
-      81, 
+      70, 
       59, 
-      87
+      74, 
+      81
     ], 
     "money_threshold": 0, 
     "on_fire": "# Cr\u00e9ation du ch\u00e2telain\nseigneur = call_function(\"creer_folk\", kingdom=kingdom, fight_min=7, plot_min=7, diplomacy_min=7, scholarship_min=7, max_carac=36, loyalty=99, sex=Folk.MALE, last_name=kingdom.user.username, birth=datetime.now() - timedelta(days=35))\n\nkingdom.unlock_title(\"chatelain\")\nseigneur.add_title(\"chatelain\")\n\n# Son fils\nfils = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=17))\n\n# Sa fille\nfille = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=16))\n\n# Compagnon\ncompagnon = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE,birth=datetime.now() - timedelta(days=35))\n\n\n# Adversaire du tuto\nlast_name = LastName.objects.all().order_by('?')[0].name\nfirst_name = FirstName.objects.all().order_by('?')[0].name\nkingdom.set_value(\"adversaire_tuto\", first_name  + \" \" + last_name)\nkingdom.set_value(\"tuto_dynasty_PNJ\", last_name)\n\n# Lancement de l'event\npe = kingdom.create_pending_event(\"tuto_intro\")\npe.set_value(\"fils\", fils)\npe.set_value(\"fille\", fille)\npe.set_value(\"compagnon\", compagnon)\n\npe.start()\n\n# Kingdom init\nkingdom.money = 100\nkingdom.save()\n\nkingdom.set_value(\"in_tuto\", True)\n\n\n", 
@@ -1479,7 +1479,7 @@
   "fields": {
     "delay": 1440, 
     "kingdom_list": "\n", 
-    "on_fire": "nb_prisonniers = folks.filter(quality_set__slug__contains=\"prisonnier\").count()\nkingdom.money -= nb_prisonniers * C.COUT_PRISONNIER\nprint(\"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\")\nprint(nb_prisonniers * C.COUT_PRISONNIER)\nkingdom.save()\n", 
+    "on_fire": "nb_prisonniers = folks.filter(quality_set__slug__contains=\"prisonnier\").count()\ncout_total = nb_prisonniers * C.COUT_PRISONNIER\nkingdom.money -= cout_total\nkingdom.save()\nkingdom.message(\"Vos prisionniers vous ont co\u00fbt\u00e9 \" + cout_total + \" \u00e9cus cette ann\u00e9e.\")\n", 
     "name": "Cout des prisonniers", 
     "description": "Les prisonniers coutent ch\u00e8re"
   }
