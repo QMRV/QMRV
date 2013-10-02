@@ -937,7 +937,7 @@
     "weight": 1, 
     "text": "Sans un mot, il se rel\u00e8ve, me contemple, puis se d\u00e9tourne. Alors que la porte se referme dans un bruit sourd, je prends conscience que m\u00eame si {{folks.3.first_name}} continuera \u00e0 remplir son devoir, notre relation ne sera plus jamais la m\u00eame.\r\n\r\n```-10 de Loyaut\u00e9 pour {{folks.3.first_name}}.```", 
     "image": "events/407_3.jpg", 
-    "on_fire": " ", 
+    "on_fire": "folks[3].loyalty -= 10\nfolks[3].save()\n", 
     "slug": "tuto_scandale_fille_4", 
     "condition": " "
   }
@@ -1019,9 +1019,9 @@
     "category": null, 
     "name": "Tuto too few pop", 
     "weight": 1, 
-    "text": "Ma cour se peuple peu \u00e0 peu mais il y a trop peu de paysans sur mes terres pour esperer lever des impots satisfaisants. Pour fid\u00e9liser mes serfs et les faire travailler plus dur, j'aurais besoin de leur insuffler une ferveur religieuse nouvelle. Pour convaincre de nouveaux paysans de s'installer sur mes terres, j'ai besoin de convaincre la populace de ma pi\u00e9t\u00e9 et de ma bienveillance. \r\n\r\nPour m'aider dans cette t\u00e2che, j'ai persuad\u00e9 le p\u00e8re {{title.cure}}, un cur\u00e9 respect\u00e9 de la r\u00e9gion, de se mettre \u00e0 mon service - en plus de celui du Seigneur - pour m'aider \u00e0 d\u00e9montrer ma charit\u00e9 par des aum\u00f4nes aux plus d\u00e9munis.\r\n\r\n    Le p\u00e8re {{cure.first_name}} a rejoint ma cour, et occupe le titre de Cur\u00e9. \r\n", 
+    "text": "Ma cour se peuple peu \u00e0 peu mais il y a trop peu de paysans sur mes terres pour esperer lever des impots satisfaisants. Pour fid\u00e9liser mes serfs et les faire travailler plus dur, j'aurais besoin de leur insuffler une ferveur religieuse nouvelle. Pour convaincre de nouveaux paysans de s'installer sur mes terres, j'ai besoin de convaincre la populace de ma pi\u00e9t\u00e9 et de ma bienveillance. \r\n\r\nPour m'aider dans cette t\u00e2che, j'ai persuad\u00e9 le p\u00e8re {{title.cure}}, un cur\u00e9 respect\u00e9 de la r\u00e9gion, de se mettre \u00e0 mon service - en plus de celui du Seigneur - pour m'aider \u00e0 d\u00e9montrer ma charit\u00e9 par des aum\u00f4nes aux plus d\u00e9munis.\r\n{% if deja_cure == True %}\r\n    Le p\u00e8re {{cure.first_name}} a rejoint ma cour.\r\n{% else %}\r\n    Le p\u00e8re {{cure.first_name}} a rejoint ma cour, et occupe le titre de Cur\u00e9. \r\n{% endif %}", 
     "image": "events/703_1.jpg", 
-    "on_fire": "cure = call_function(\"creer_folk\", kingdom=kingdom, fight_min=1, plot_min=1, diplomacy_min=1, scholarship_min=1, max_carac=32, loyalty=50, sex=Folk.MALE, birth=datetime.now() - timedelta(days=35), trait=\"pretre\")\nparam.set_value(\"cure\", cure)\nkingdom.unlock_title(\"cure\")\nif kingdom.get_folk_in_title(\"cure\") == None:\n  cure.add_title(\"cure\")\n\n", 
+    "on_fire": "cure = call_function(\"creer_folk\", kingdom=kingdom, fight_min=1, plot_min=1, diplomacy_min=1, scholarship_min=1, max_carac=32, loyalty=50, sex=Folk.MALE, birth=datetime.now() - timedelta(days=35), trait=\"pretre\")\nparam.set_value(\"cure\", cure)\nkingdom.unlock_title(\"cure\")\nif kingdom.get_folk_in_title(\"cure\") == None:\n  param.set_value(\"deja_cure\", False)\n  cure.add_title(\"cure\")\nelse:\n  param.set_value(\"deja_cure\", True)\n\n", 
     "slug": "tuto_toofewpopulation", 
     "condition": " "
   }
