@@ -874,6 +874,14 @@
   }
 },
 {
+  "pk": "appy4odcin0v0taztak3pssvwsz4txke", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-17T19:04:01.052", 
+    "session_data": "MTYzOGQ4ZjNiNmY4YjE0ZmFiNTU1MDc5MmJiZmViZGE3ODllZjNmZDqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLJnUu"
+  }
+},
+{
   "pk": "awls0wcho8u1iou2g7pzfdoadqrqo0ls", 
   "model": "sessions.session", 
   "fields": {
@@ -52538,7 +52546,7 @@
     "category": null, 
     "name": "resultat de bataille", 
     "weight": 1, 
-    "text": "J'ai perdu ouiiiinn\r\n\r\ntest {{ test }}\r\nattaquant {{ attaquant }}", 
+    "text": "Le combat se d\u00e9roula en for\u00eat.\r\n\r\nNous \u00e9tions forts de {{moi.troupes}} soldats. {{liste_gagnant}}\r\n\r\nDe leur c\u00f4t\u00e9 on pouvait d\u00e9nombrer {{lui.troupes}} soldats. {{liste_perdant}}\r\n\r\n{% if moi.troupes < lui.troupes %}Nous \u00e9tions en sous nombre{% elif moi.troupes > lui.troupes %} Nous avions l'avantage du nombre{% else %}Nous \u00e9tions autant d'un c\u00f4t\u00e9 que de l'autre{% endif %}{% if moi.troupes < lui.troupes and moi.puissance_generaux < lui.puissance_generaux %}et la sup\u00e9riorit\u00e9 de ses g\u00e9n\u00e9raux \u00e9tait \u00e9vidente{% elif moi.troupes > lui.troupes and moi.puissance_generaux > lui.puissance_generaux %}et nos g\u00e9n\u00e9raux \u00e9taient plus aguerris.{% elif moi.troupes <= lui.troupes and moi.puissance_generaux < lui.puissance_generaux %}mais nos g\u00e9n\u00e9raux semblaient plus hardis.{% elif moi.troupes >= lui.troupes and moi.puissance_generaux > lui.puissance_generaux %}mais ses g\u00e9n\u00e9raux semblaient plus effrayant.{% else %}et les commandant des deux arm\u00e9es se regardaient dans le blanc des yeux.{% endif %}\r\n{% if moi.bonus_tactique >= lui.bonus_tactique %}N{% if bataille.PRV.0.0 > 0 %}os cavaliers allaient faire des ravages dans leurs archers{% if bataille.PRV.0.1 > 0 or bataille.PRV.0.2 > 0 %} et n{% endif %}{% endif %}{% if bataille.PRV.0.1 > 0 %}os archers allaient faire des ravages dans leurs lanciers{% if bataille.PRV.0.2 > 0 %} et n{% endif %}{% endif %}{% if bataille.PRV.0.2 > 0 %}os lanciers allaient faire des ravages dans leurs cavaliers{% endif %}.{% if bataille.PRV.1.0 > 0 or bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 %}De leur c\u00f4t\u00e9 {% if bataille.PRV.1.0 > 0 %}leurs cavaliers allaient \u00eatre une plaie pour nos archers{% if bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 > 1 %} et {% endif %}{% endif %}{% if bataille.PRV.1.1 > 0 %}leurs archers allaient \u00eatre une plaie pour nos lanciers{% if bataille.PRV.1.2 > 0 %} et {% endif %}{% endif %}{% if bataille.PRV.1.2 > 0 %}leurs lanciers allaient \u00eatre une plaie pour nos cavaliers{% endif %}.{% endif %}{% else %}N{% if bataille.PRV.0.0 > 0 %}os cavaliers allaient \u00eatre une plaie pour leurs archers{% if  bataille.PRV.0.1 > 0 or bataille.PRV.0.2 > 0 %} et n{% endif %}{% endif %}{% if bataille.PRV.0.1 > 0 %}os archers allaient \u00eatre plaie pour leurs lanciers{% if bataille.PRV.0.2 > 0  %} et n{% endif %}{% endif %}{% if bataille.PRV.0.2 > 0 %}os lanciers allaient \u00eatre une plaie pour leurs cavaliers{% endif %}.{% if bataille.PRV.1.0 > 0 or bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 %} Mais c'\u00e9tait sans comparaison avec ce que {% if bataille.PRV.1.0 > 0 %}leurs cavaliers allaient faire \u00e0 nos archers{% if bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 %} et ce que {% endif %}{% endif %}{% if bataille.PRV.1.1 > 0 %}leurs archers allaient faire \u00e0 nos lanciers{% if bataille.PRV.1.2 > 0  %} et ce que  {% endif %}{% endif %}{% if bataille.PRV.1.2 > 0 %}leurs lanciers allaient faire \u00e0 nos cavaliers{% endif %}.{% endif %}{% endif %}\r\n\r\n    A des fin de test : \r\n    moi=gagnant {{ moi }}\r\n    lui=perdant {{ lui }} \r\n    bataille : {{bataille}}\r\n    delta : {{delta}}", 
     "image": "", 
     "on_fire": "param.set_value(\"test\",kingdom.get_value(\"tuto_conflit\",False))\nparam.set_value(\"attaquant\",param.get_value(\"attaquant\",False))\nparam.set_value(\"moi\",param.get_value(\"perdant\"))\nparam.set_value(\"lui\",param.get_value(\"gagnant\")) \n", 
     "slug": "tuto_escarmouche_defaite", 
@@ -55533,11 +55541,11 @@
   "pk": 296, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "OK", 
+    "text": "C'est le c\u0153ur empli de chevalerie que nous charge\u00e2mes...  ", 
     "message": "", 
     "event": 230, 
     "condition": "\n", 
-    "on_fire": "if (param.get_value(\"attaquant\")==False):\n  pe=param.next_event(\"tuto_escarmouche_misasac\").start()\nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",False)==False):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",False)==False):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n\n\n"
+    "on_fire": "param.next_event(\"tuto_escarmouche_defaite_2\").start()\n\n"
   }
 },
 {
@@ -82892,7 +82900,7 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-10-02T22:09:44.175", 
+    "last_login": "2013-10-03T19:04:01.034", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$10000$SlRZsPYEixZ4$74mKi8WFqceBKTSlwQ9w1eOPPeLya7SJQz0igVPzZKQ=", 
@@ -125451,6 +125459,19 @@
     "object_repr": "tuto_escarmouche_pillage", 
     "object_id": "237", 
     "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Vae victis [tuto_escarmouche_pillage]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7774, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-03T19:14:05.687", 
+    "object_repr": "tuto_escarmouche_defaite", 
+    "object_id": "230", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition, on_fire et text modifi\u00e9 pour event action \u00ab\u00a0C'est le c\u0153ur empli de chevalerie que nous charge\u00e2 [tuto_escarmouche_defaite]\u00a0\u00bb.", 
     "user": 38, 
     "content_type": 29
   }
