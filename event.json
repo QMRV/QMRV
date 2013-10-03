@@ -2825,7 +2825,7 @@
     "category": null, 
     "name": "Escarmouche", 
     "weight": 1, 
-    "text": "Mes hommes se sont dispers\u00e9s pour mieux vider et saccager les fermes et villages  frontaliers de {{tuto_dynasty_PNJ}}, passant par le fer {{delta.perdant.population}} paysans assez sots pour r\u00e9sister. Leur butin a \u00e9t\u00e9 entass\u00e9 dans les chariots qui seront en route pour mon ch\u00e2teau avant que {{tuto_adversaire}} ne puisse organiser une contre-attaque. Il est probable qu'il cherche revanche un jour ou l'autre, mais pour l'heure, {{dynastie}} en sort plus craint et plus riche.\r\n\r\n    +{{delta.gagnant.thune}} \u00e9cus\r\n    +{{delta.gagnant.prestige}} de prestige, {{detla.perdant.prestige}} pour {{tuto_dynasty_PNJ}}", 
+    "text": "Mes hommes se sont dispers\u00e9s pour mieux vider et saccager les fermes et villages  frontaliers de {{tuto_dynasty_PNJ}}, passant par le fer {{delta.perdant.population}} paysans assez sots pour r\u00e9sister. Leur butin a \u00e9t\u00e9 entass\u00e9 dans les chariots qui seront en route pour mon ch\u00e2teau avant que {{tuto_adversaire}} ne puisse organiser une contre-attaque. Il est probable qu'il cherche revanche un jour ou l'autre, mais pour l'heure, {{dynasty}} en sort plus craint et plus riche.\r\n\r\n    +{{delta.gagnant.thune}} \u00e9cus\r\n    +{{delta.gagnant.prestige}} de prestige, {{detla.perdant.prestige}} pour {{tuto_dynasty_PNJ}}", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "tuto_escarmouche_pillage", 
@@ -3053,6 +3053,20 @@
     "image": "", 
     "on_fire": "\n", 
     "slug": "cible_raid_morts", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 257, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Resultat bataille", 
+    "weight": 1, 
+    "text": "Sur les {{perdant.troupes}} hommes d'armes qui s'\u00e9taient \u00e9lanc\u00e9s dans la bataille, seuls {{perdant.troupes - delta.perdant.pertes_troupe }} avait r\u00e9ussir \u00e0 s'enfuir, laissant le champ de bataille aux mains de l'ennemi. {{dynasty}} avait \u00e9t\u00e9 battu\r\n{% if delta.perdant.morts|length == 1 %}\r\net le corps de {{delta.perdant.morts|folks_list}}, tomb\u00e9 au milieu des combats, avait du \u00eatre laiss\u00e9 au main de l'ennemi.\r\n{% elif delta.perdant.morts|length >= 2 %}\r\n, et {{delta.perdant.morts|folks_list}} l'avaient pay\u00e9s de leur vie.\r\n{% else %}.{% endif %}\r\n{% if delta.perdant.blesses|length == 1 %}\r\n{{delta.perdant.blesses|folks_list}} avait \u00e9t\u00e9 gravement touch\u00e9, mais avait pu \u00eatre port\u00e9 hors des combats avant que le morale de mes troupes ne se brise.\r\n{% elif delta.perdant.blesses|length >= 2 %}\r\n{{delta.perdant.blesses|folks_list}} avaient encaiss\u00e9 plusieurs blessures, mais avaient r\u00e9ussit \u00e0 suivre mes troupes dans leur d\u00e9route.\r\n{% endif %}{% if delta.gagnant.blesses|length >= 1 %}Chez l'adversaire, {{delta.perdant.blesses|folks_list}} avai{{delta.gagnant.blesses|pluralize:\"t,ent\"}} \u00e9t\u00e9 cruellement bless\u00e9{{delta.gagnant.blesses|pluralize}} d\u00e8s le premier assaut. {% endif %}Les {{delta.gagnant.pertes_troupe}} soldats ennemis tu\u00e9s {% if delta.perdant.morts|length >= 1 %}et la mort de {{delta.perdant.morts|folks_list}}{% endif %} ne suffisaient pas \u00e0 att\u00e9nuer l'amertume de la d\u00e9faite...\r\n{% if commandement.perdant.chatelain %}\r\nRavalant ma col\u00e8re, je ralliais mes hommes en fuite{% else %}\r\n{{commandement.perdant.general}}, surmontant la fatigue qui le tenaillait, se redressa sur sa selle pour hurler aux hommes en fuite de se rassembler\r\n{% endif %} pour entamer le retour au ch\u00e2teau.\r\n{% if is_victory %}{{tuto_adversaire}} allait pouvoir mettre mes terres \u00e0 sac en toute impunit\u00e9.{% endif %}\r\n", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "tuto_escarmouche_defaite_2", 
     "condition": "\n"
   }
 },
@@ -6013,6 +6027,17 @@
     "event": 256, 
     "condition": "\n", 
     "on_fire": "\n"
+  }
+},
+{
+  "pk": 329, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Ok", 
+    "message": "", 
+    "event": 257, 
+    "condition": "\n", 
+    "on_fire": "if (param.get_value(\"attaquant\")==False):\n  pe=param.next_event(\"tuto_escarmouche_misasac\").start()\nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",False)==False):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",False)==False):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n\n"
   }
 }
 ]
