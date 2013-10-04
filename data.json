@@ -514,14 +514,6 @@
   }
 },
 {
-  "pk": "3807cg53zedxn0b6ty1hfa952zpxm5w7", 
-  "model": "sessions.session", 
-  "fields": {
-    "expire_date": "2013-10-10T21:22:09.062", 
-    "session_data": "MTI5NWFmZDMzMzQwYWNlNDhhNzM3NDVhMmEzNTFhMGNjNzI1MjkwNzqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLKnUu"
-  }
-},
-{
   "pk": "39g497w47hhtbw3qc1zi02ktodbvd7i8", 
   "model": "sessions.session", 
   "fields": {
@@ -1287,6 +1279,14 @@
   "fields": {
     "expire_date": "2013-07-24T12:40:05.662", 
     "session_data": "OThhOTdlYTY5ZjEwMDFmN2M0Yzc3MjU2ZjVkZGIyMGY4N2U3NzYxZDqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLAnUu"
+  }
+},
+{
+  "pk": "jueapcwzusmjj4qq6d9uzhxmqdjyftbo", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-18T23:59:24.213", 
+    "session_data": "MTI5NWFmZDMzMzQwYWNlNDhhNzM3NDVhMmEzNTFhMGNjNzI1MjkwNzqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLKnUu"
   }
 },
 {
@@ -4398,7 +4398,7 @@
     "fight": 9, 
     "first_name": "Sorin", 
     "last_name": "de Nonac", 
-    "diplomacy": 10, 
+    "diplomacy": 12, 
     "father": null, 
     "plot": 8, 
     "scholarship": 7, 
@@ -4411,8 +4411,7 @@
     "loyalty": 80, 
     "spouse": null, 
     "quality_set": [
-      20, 
-      37
+      20
     ], 
     "mentor": null
   }
@@ -6890,33 +6889,6 @@
   }
 },
 {
-  "pk": 7028, 
-  "model": "kingdom.folk", 
-  "fields": {
-    "kingdom": null, 
-    "fight": 8, 
-    "first_name": "Viviane", 
-    "last_name": "de belzebuth", 
-    "diplomacy": 7, 
-    "father": null, 
-    "plot": 9, 
-    "scholarship": 10, 
-    "sex": "f", 
-    "disabled": false, 
-    "death": null, 
-    "avatar": 46, 
-    "birth": "2013-08-12T21:29:45.756", 
-    "mother": null, 
-    "loyalty": 50, 
-    "spouse": null, 
-    "quality_set": [
-      1, 
-      3
-    ], 
-    "mentor": null
-  }
-},
-{
   "pk": 7029, 
   "model": "kingdom.folk", 
   "fields": {
@@ -6939,58 +6911,6 @@
     "quality_set": [
       3, 
       11
-    ], 
-    "mentor": null
-  }
-},
-{
-  "pk": 7030, 
-  "model": "kingdom.folk", 
-  "fields": {
-    "kingdom": null, 
-    "fight": 5, 
-    "first_name": "Brunon", 
-    "last_name": "de belzebuth", 
-    "diplomacy": 2, 
-    "father": 7029, 
-    "plot": 10, 
-    "scholarship": 5, 
-    "sex": "m", 
-    "disabled": false, 
-    "death": null, 
-    "avatar": 44, 
-    "birth": "2013-09-06T21:29:45.972", 
-    "mother": 7028, 
-    "loyalty": 45, 
-    "spouse": null, 
-    "quality_set": [
-      4
-    ], 
-    "mentor": null
-  }
-},
-{
-  "pk": 7031, 
-  "model": "kingdom.folk", 
-  "fields": {
-    "kingdom": null, 
-    "fight": 2, 
-    "first_name": "Th\u00e9odrade", 
-    "last_name": "de belzebuth", 
-    "diplomacy": 1, 
-    "father": 7029, 
-    "plot": 2, 
-    "scholarship": 1, 
-    "sex": "f", 
-    "disabled": false, 
-    "death": null, 
-    "avatar": 43, 
-    "birth": "2013-09-15T21:29:46.048", 
-    "mother": 7028, 
-    "loyalty": 50, 
-    "spouse": null, 
-    "quality_set": [
-      1
     ], 
     "mentor": null
   }
@@ -11508,7 +11428,7 @@
       81
     ], 
     "money_threshold": 0, 
-    "on_fire": "# Cr\u00e9ation du ch\u00e2telain\nseigneur = call_function(\"creer_folk\", kingdom=kingdom, fight_min=7, plot_min=7, diplomacy_min=7, scholarship_min=7, max_carac=36, loyalty=99, sex=Folk.MALE, last_name=kingdom.user.username, birth=datetime.now() - timedelta(days=35))\n\nkingdom.unlock_title(\"chatelain\")\nseigneur.add_title(\"chatelain\")\n\n# Son fils\nfils = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=17))\n\n# Sa fille\nfille = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=16))\n\n# Compagnon\ncompagnon = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE,birth=datetime.now() - timedelta(days=35))\n\n\n# Adversaire du tuto\nlast_name = LastName.objects.all().order_by('?')[0].name\nfirst_name = FirstName.objects.all().order_by('?')[0].name\nkingdom.set_value(\"adversaire_tuto\", first_name  + \" \" + last_name)\nkingdom.set_value(\"tuto_dynasty_PNJ\", last_name)\n\n# Lancement de l'event\npe = kingdom.create_pending_event(\"tuto_intro\")\npe.set_value(\"fils\", fils)\npe.set_value(\"fille\", fille)\npe.set_value(\"compagnon\", compagnon)\n\npe.start()\n\n# Kingdom init\nkingdom.money = 100\nkingdom.save()\n\nkingdom.set_value(\"in_tuto\", True)\n\n\n", 
+    "on_fire": "# Cr\u00e9ation du ch\u00e2telain\nseigneur = call_function(\"creer_folk\", kingdom=kingdom, fight_min=7, plot_min=7, diplomacy_min=7, scholarship_min=7, max_carac=36, loyalty=99, sex=Folk.MALE, last_name=kingdom.user.username, birth=datetime.now() - timedelta(days=35))\n\nkingdom.unlock_title(\"chatelain\")\nseigneur.add_title(\"chatelain\")\n\n# Son fils\nfils = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=17))\n\n# Sa fille\nfille = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=16))\n\n# Compagnon\ncompagnon = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE,birth=datetime.now() - timedelta(days=35))\n\n\n# Adversaire du tuto\nlast_name = LastName.objects.all().order_by('?')[0].name\nfirst_name = FirstName.objects.all().order_by('?')[0].name\nkingdom.set_value(\"adversaire_tuto\", first_name  + \" \" + last_name)\nkingdom.set_value(\"tuto_dynasty_PNJ\", last_name)\n\n# Lancement de l'event\npe = kingdom.create_pending_event(\"tuto_intro\")\npe.set_value(\"fils\", fils)\npe.set_value(\"fille\", fille)\npe.set_value(\"compagnon\", compagnon)\n\npe.start()\n\n# Kingdom init : on intialise de maniere equilibr\u00e9e avec un peu de random pour varier\n# pour modifier l'\u00e9quilibrage bouger ces 4 coeffs\npoints_base = 200\ncoeff_population = 0.5\ncoeff_prestige = 1\ncoeff_monnaie = 1\n\n# pour modifier la variabilit\u00e9 bouger les bornes de gaussienne\nrandom1 = random_gauss(0.75,1.25)\nrandom2 = random_gauss(0.75,1.25)\n\nkingdom.money = int(points_base/(coeff_population+random1*coeff_prestige+random2*coeff_population))\nkingdom.prestige = int(kingdom.money*coeff_prestige*random1)\nkingdom.population = int(kingdom.money*coeff_population*random2)\n\nkingdom.save()\n\nkingdom.set_value(\"in_tuto\", True)\n\n\n", 
     "slug": "initialisation", 
     "condition": "\n", 
     "name": "Initialisation"
@@ -11936,6 +11856,16 @@
     "slug": "leader_de_mission", 
     "on_fire": "chatelain_in=False\nconnetable_in=False\n\nchatelain=royaume.get_folk_in_title(\"chatelain\")\nconnetable=royaume.get_folk_in_title(\"connetable\")\n\n\nif chatelain in list_folk:\n  chatelain_in=True\n  general=chatelain\nelif connetable in list_folk:\n  connetable_in=True\n  general=connetable\nelse:\n  general=random_in(list_folk)\n\nparam={\n       'chatelain':chatelain_in,\n       'connetable':connetable_in,\n       'general':general,\n       }\n\n", 
     "description": "input : royaume(kingdom), list_folk(liste des gens que le joueur a mis dans la mission)\r\noutput={\r\n       'chatelain':chatelain\r\n       'connetable':connetable\r\n       'general':general\r\n       }"
+  }
+},
+{
+  "pk": 26, 
+  "model": "internal.function", 
+  "fields": {
+    "params": "folk:Folk", 
+    "slug": "soigner_folk", 
+    "on_fire": "folk.disabled=False\nfolk.remove_quality(\"blesse\")\nfolk.save()", 
+    "description": "\r\nSoigne une personne : enl\u00e8ve l'attribut disabled et la qualit\u00e9 bless\u00e9 "
   }
 },
 {
@@ -83523,7 +83453,7 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-09-26T21:22:08.962", 
+    "last_login": "2013-10-04T23:59:24.210", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$10000$Bc1Fz9XywYEu$+QrQqEhho+w6dzL0gTqLMxqfruLba4JfWrwuqrVe77E=", 
@@ -126493,6 +126423,448 @@
     "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0tuto_escarmouche [Combattants (3)]\u00a0\u00bb.", 
     "user": 38, 
     "content_type": 23
+  }
+},
+{
+  "pk": 7811, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-04T23:33:52.880", 
+    "object_repr": "Viviane de belzebuth", 
+    "object_id": "7028", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7812, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-04T23:33:54.860", 
+    "object_repr": "Brunon de belzebuth", 
+    "object_id": "7030", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7813, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-04T23:33:54.861", 
+    "object_repr": "Th\u00e9odrade de belzebuth", 
+    "object_id": "7031", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7814, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-04T23:36:07.494", 
+    "object_repr": "Sorin de Nonac", 
+    "object_id": "6687", 
+    "change_message": "Modifi\u00e9 quality_set.", 
+    "user": 42, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7815, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-04T23:36:37.417", 
+    "object_repr": "soigner_folk()", 
+    "object_id": "26", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7816, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-04T23:56:54.644", 
+    "object_repr": "Initialisation", 
+    "object_id": "1", 
+    "change_message": "Modifi\u00e9 condition et on_fire.", 
+    "user": 42, 
+    "content_type": 17
+  }
+},
+{
+  "pk": 7817, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-04T23:58:02.725", 
+    "object_repr": "b2", 
+    "object_id": "48", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 3
+  }
+},
+{
+  "pk": 7818, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-05T00:00:21.323", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "89", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7819, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-05T00:00:56.649", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "89", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7820, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-05T00:01:06.716", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "90", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7821, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T00:01:19.418", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "90", 
+    "change_message": "Aucun champ modifi\u00e9.", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7822, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-05T00:01:42.302", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "90", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7823, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-05T00:01:49.485", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "91", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7824, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-05T00:02:12.271", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "91", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7825, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-05T00:02:21.042", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "92", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7826, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-05T00:03:01.706", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "92", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7827, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T00:06:45.832", 
+    "object_repr": "Initialisation", 
+    "object_id": "1", 
+    "change_message": "Modifi\u00e9 condition et on_fire.", 
+    "user": 42, 
+    "content_type": 17
+  }
+},
+{
+  "pk": 7828, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-05T00:06:55.883", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "93", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7829, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-05T00:07:19.148", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "93", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7830, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-05T00:07:35.656", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "94", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7831, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T00:08:12.946", 
+    "object_repr": "Initialisation", 
+    "object_id": "1", 
+    "change_message": "Modifi\u00e9 condition, on_fire et fired.", 
+    "user": 42, 
+    "content_type": 17
+  }
+},
+{
+  "pk": 7832, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-05T00:08:24.225", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "94", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7833, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-05T00:08:34.443", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "95", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7834, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-05T00:08:56.541", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "95", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7835, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-05T00:09:13.673", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "96", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7836, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T00:10:11.553", 
+    "object_repr": "Initialisation", 
+    "object_id": "1", 
+    "change_message": "Modifi\u00e9 condition, on_fire et fired.", 
+    "user": 42, 
+    "content_type": 17
+  }
+},
+{
+  "pk": 7837, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T00:10:24.372", 
+    "object_repr": "Initialisation", 
+    "object_id": "1", 
+    "change_message": "Modifi\u00e9 condition et on_fire.", 
+    "user": 42, 
+    "content_type": 17
+  }
+},
+{
+  "pk": 7838, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-05T00:10:42.537", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "96", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7839, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-05T00:11:00.134", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "97", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7840, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T00:11:02.984", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "97", 
+    "change_message": "Aucun champ modifi\u00e9.", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7841, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-05T00:11:22.200", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "97", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7842, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-05T00:11:35.226", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "98", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7843, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-05T00:12:04.282", 
+    "object_repr": "b2 kingdom", 
+    "object_id": "98", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 7844, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-05T00:12:28.783", 
+    "object_repr": "b2", 
+    "object_id": "48", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 3
   }
 },
 {
