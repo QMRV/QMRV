@@ -11884,7 +11884,7 @@
   "fields": {
     "params": "", 
     "slug": "determiner_vainqueur_combat", 
-    "on_fire": "#combat de troupes\nsoldats=(attaquant[\"troupes\"]-defenseur[\"troupes\"])/(attaquant[\"troupes\"]+defenseur[\"troupes\"])\n\n\n#combat de soldats : stat brute + fuzzy\nattaquant['puissance_generaux']= sum_folks(attaquant[\"combattants\"], 'fight')\ndefenseur['puissance_generaux']= sum_folks(defenseur[\"combattants\"], 'fight')\nfacteur_chance=attaquant['puissance_generaux']*random_value(-10,10)*0.01-defenseur['puissance_generaux']*random_value(-10,10)*0.01\n\n\n#combat de soldat : ajout de matching PRV\nnb_cavalier_attaquant=0\nnb_cavalier_defenseur=0\nnb_piquier_attaquant=0\nnb_piquier_defenseur=0\nnb_archer_attaquant=0\nnb_archer_defenseur=0\nfor attaquant_folk in attaquant[\"combattants\"]:\n  if attaquant_folk.has_quality(\"piquier\"):\n    nb_piquier_attaquant+=1\n  elif attaquant_folk.has_quality(\"archer\"):\n    nb_archer_attaquant+=1\n  elif attaquant_folk.has_quality(\"cavalier\"):\n    nb_cavalier_attaquant+=1\n    score_attaquant+=1\n\nfor defenseur_folk in defenseur[\"combattants\"]:\n  if defenseur_folk.has_quality(\"piquier\"):\n    nb_piquier_defenseur+=1\n  elif defenseur_folk.has_quality(\"archer\"):\n    nb_archer_defenseur+=1\n  elif defenseur_folk.has_quality(\"cavalier\"):\n    nb_cavalier_defenseur+=1\n    score_defenseur+=1\n\nPRV=[[0,1,2],[0,1,2]]\nPRV[0][0]=min(nb_cavalier_attaquant,nb_archer_defenseur)\nPRV[0][1]=min(nb_archer_attaquant,nb_piquier_defenseur)\nPRV[0][2]=min(nb_piquier_attaquant,nb_cavalier_defenseur)\nPRV[1][0]=min(nb_cavalier_defenseur,nb_archer_attaquant)\nPRV[1][1]=min(nb_archer_defenseur,nb_piquier_attaquant)\nPRV[1][2]=min(nb_piquier_defenseur,nb_cavalier_attaquant)\nA=min(min(PRV[0]), min(PRV[1]))\nPRV[0] = [v - A for v in PRV[0]]\nPRV[1] = [v - A for v in PRV[1]]\n\nif sum(PRV[0])>sum(PRV[1]):\n  PRV[0] = [int(v/max(PRV[0])) for v in PRV[0]]\n  PRV[1] = [int(v/max(PRV[1])) for v in PRV[1]]\n    \nattaquant['bonus_tactique']=PRV[0][0]*2+PRV[0][1]*3+PRV[0][2]*4\nattaquant['attaquant']=True\ndefenseur['bonus_tactique']=PRV[1][0]*2+PRV[1][1]*3+PRV[1][2]*4\ndefenseur['attaquant']=False    \n    \n    \nscore_attaquant_avec_destin=attaquant['bonus_tactique']+attaquant['puissance_generaux']+facteur_chance\nscore_defenseur_avec_destin=defenseur['bonus_tactique']+defenseur['puissance_generaux']\nscore_attaquant_sans_destin=attaquant['bonus_tactique']+attaquant['puissance_generaux']\nscore_defenseur_sans_destin=defenseur['bonus_tactique']+defenseur['puissance_generaux']\n\n\n#resolution combat de soldat\nresultat_bataille_avec_destin=(score_attaquant_avec_destin-score_defenseur_avec_destin)/(score_attaquant_avec_destin+score_defenseur_avec_destin)+soldats\nresultat_bataille_sans_destin=(score_attaquant_sans_destin-score_defenseur_sans_destin)/(score_attaquant_sans_destin+score_defenseur_sans_destin)+soldats\n\nif (resultat_bataille_avec_destin>0 and resultat_bataille_sans_destin>0) or ( resultat_bataille_avec_destin<0 and resultat_bataille_sans_destin<0 ):\n  destiny_makes_difference=False\nelse:\n  destiny_makes_difference=True\n\n#calcul des sorties, marge en pourcentage\ngagnant = attaquant if resultat_bataille_avec_destin>0 else defenseur\nperdant = defenseur if resultat_bataille_avec_destin>0 else attaquant\nmarge=abs(resultat_bataille_avec_destin)*100\n\nbataille= {\n           'destiny_makes_difference':destiny_makes_difference,\n           'marge':int(marge), \n           'facteur_chance':int(abs(facteur_chance)), \n           'PRV':PRV,\n          }\n\n\nparam=[gagnant,perdant,bataille]\n", 
+    "on_fire": "#combat de troupes\nsoldats=(attaquant[\"troupes\"]-defenseur[\"troupes\"])/(attaquant[\"troupes\"]+defenseur[\"troupes\"])\n\n\n#combat de soldats : stat brute + fuzzy\nattaquant['puissance_generaux']= sum_folks(attaquant[\"combattants\"], 'fight')\ndefenseur['puissance_generaux']= sum_folks(defenseur[\"combattants\"], 'fight')\nfacteur_chance=attaquant['puissance_generaux']*random_value(-10,10)*0.01-defenseur['puissance_generaux']*random_value(-10,10)*0.01\n\n\n#combat de soldat : ajout de matching PRV\nnb_cavalier_attaquant=0\nnb_cavalier_defenseur=0\nnb_piquier_attaquant=0\nnb_piquier_defenseur=0\nnb_archer_attaquant=0\nnb_archer_defenseur=0\nfor attaquant_folk in attaquant[\"combattants\"]:\n  if attaquant_folk.has_quality(\"piquier\"):\n    nb_piquier_attaquant+=1\n  elif attaquant_folk.has_quality(\"archer\"):\n    nb_archer_attaquant+=1\n  elif attaquant_folk.has_quality(\"cavalier\"):\n    nb_cavalier_attaquant+=1\n    score_attaquant+=1\n\nfor defenseur_folk in defenseur[\"combattants\"]:\n  if defenseur_folk.has_quality(\"piquier\"):\n    nb_piquier_defenseur+=1\n  elif defenseur_folk.has_quality(\"archer\"):\n    nb_archer_defenseur+=1\n  elif defenseur_folk.has_quality(\"cavalier\"):\n    nb_cavalier_defenseur+=1\n    score_defenseur+=1\n\nPRV=[[0,1,2],[0,1,2]]\nPRV[0][0]=min(nb_cavalier_attaquant,nb_archer_defenseur)\nPRV[0][1]=min(nb_archer_attaquant,nb_piquier_defenseur)\nPRV[0][2]=min(nb_piquier_attaquant,nb_cavalier_defenseur)\nPRV[1][0]=min(nb_cavalier_defenseur,nb_archer_attaquant)\nPRV[1][1]=min(nb_archer_defenseur,nb_piquier_attaquant)\nPRV[1][2]=min(nb_piquier_defenseur,nb_cavalier_attaquant)\nA=min(min(PRV[0]), min(PRV[1]))\nPRV[0] = [v - A for v in PRV[0]]\nPRV[1] = [v - A for v in PRV[1]]\n\nif sum(PRV[0])>sum(PRV[1]):\n  PRV[0] = [int(v/max(PRV[0])) for v in PRV[0]]\n  if sum(PRV[1])>0:\n    PRV[1] = [int(v/max(PRV[1])) for v in PRV[1]]\n    \nattaquant['bonus_tactique']=PRV[0][0]*2+PRV[0][1]*3+PRV[0][2]*4\nattaquant['attaquant']=True\ndefenseur['bonus_tactique']=PRV[1][0]*2+PRV[1][1]*3+PRV[1][2]*4\ndefenseur['attaquant']=False    \n    \n    \nscore_attaquant_avec_destin=attaquant['bonus_tactique']+attaquant['puissance_generaux']+facteur_chance\nscore_defenseur_avec_destin=defenseur['bonus_tactique']+defenseur['puissance_generaux']\nscore_attaquant_sans_destin=attaquant['bonus_tactique']+attaquant['puissance_generaux']\nscore_defenseur_sans_destin=defenseur['bonus_tactique']+defenseur['puissance_generaux']\n\n\n#resolution combat de soldat\nresultat_bataille_avec_destin=(score_attaquant_avec_destin-score_defenseur_avec_destin)/(score_attaquant_avec_destin+score_defenseur_avec_destin)+soldats\nresultat_bataille_sans_destin=(score_attaquant_sans_destin-score_defenseur_sans_destin)/(score_attaquant_sans_destin+score_defenseur_sans_destin)+soldats\n\nif (resultat_bataille_avec_destin>0 and resultat_bataille_sans_destin>0) or ( resultat_bataille_avec_destin<0 and resultat_bataille_sans_destin<0 ):\n  destiny_makes_difference=False\nelse:\n  destiny_makes_difference=True\n\n#calcul des sorties, marge en pourcentage\ngagnant = attaquant if resultat_bataille_avec_destin>0 else defenseur\nperdant = defenseur if resultat_bataille_avec_destin>0 else attaquant\nmarge=abs(resultat_bataille_avec_destin)*100\n\nbataille= {\n           'destiny_makes_difference':destiny_makes_difference,\n           'marge':int(marge), \n           'facteur_chance':int(abs(facteur_chance)), \n           'PRV':PRV,\n          }\n\n\nparam=[gagnant,perdant,bataille]\n", 
     "description": "determiner_vainqueur_combat:\r\n\tattaquant = {\r\n\t\ttroupes:1,\r\n\t\tcombattants:[]\r\n\t}\r\n\r\n\tdefenseur = {\r\n\t\ttroupes:1,\r\n\t\tcombattants:[],\r\n\t}"
   }
 },
@@ -49143,6 +49143,22 @@
   }
 },
 {
+  "pk": 326, 
+  "model": "mission.pendingmission", 
+  "fields": {
+    "kingdom": 70, 
+    "is_started": false, 
+    "target": null, 
+    "created": "2013-10-04T20:10:08.987", 
+    "started": null, 
+    "last_target": null, 
+    "mission": 41, 
+    "value": 0, 
+    "is_finished": false, 
+    "last_value": 0
+  }
+},
+{
   "pk": 519, 
   "model": "mission.pendingmissionaffectation", 
   "fields": {
@@ -49203,6 +49219,33 @@
     "pending_mission": 324, 
     "folk": 7213, 
     "mission_grid": 54
+  }
+},
+{
+  "pk": 615, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 326, 
+    "folk": 6775, 
+    "mission_grid": 42
+  }
+},
+{
+  "pk": 616, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 326, 
+    "folk": 6771, 
+    "mission_grid": 42
+  }
+},
+{
+  "pk": 617, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 326, 
+    "folk": 6772, 
+    "mission_grid": 42
   }
 },
 {
@@ -52949,9 +52992,9 @@
     "category": null, 
     "name": "Resultat bataille", 
     "weight": 1, 
-    "text": "Sur les {{perdant.troupes}} hommes d'armes qui s'\u00e9taient \u00e9lanc\u00e9s dans la bataille, seuls {{perdant.troupes - delta.perdant.pertes_troupe }} avait r\u00e9ussir \u00e0 s'enfuir, laissant le champ de bataille aux mains de l'ennemi. {{dynasty}} avait \u00e9t\u00e9 battu\r\n{% if delta.perdant.morts|length == 1 %}\r\net le corps de {{delta.perdant.morts|folks_list}}, tomb\u00e9 au milieu des combats, avait du \u00eatre laiss\u00e9 au main de l'ennemi.\r\n{% elif delta.perdant.morts|length >= 2 %}\r\n, et {{delta.perdant.morts|folks_list}} l'avaient pay\u00e9s de leur vie.\r\n{% else %}.{% endif %}\r\n{% if delta.perdant.blesses|length == 1 %}\r\n{{delta.perdant.blesses|folks_list}} avait \u00e9t\u00e9 gravement touch\u00e9, mais avait pu \u00eatre port\u00e9 hors des combats avant que le morale de mes troupes ne se brise.\r\n{% elif delta.perdant.blesses|length >= 2 %}\r\n{{delta.perdant.blesses|folks_list}} avaient encaiss\u00e9 plusieurs blessures, mais avaient r\u00e9ussit \u00e0 suivre mes troupes dans leur d\u00e9route.\r\n{% endif %}{% if delta.gagnant.blesses|length >= 1 %}Chez l'adversaire, {{delta.perdant.blesses|folks_list}} avai{{delta.gagnant.blesses|pluralize:\"t,ent\"}} \u00e9t\u00e9 cruellement bless\u00e9{{delta.gagnant.blesses|pluralize}} d\u00e8s le premier assaut. {% endif %}Les {{delta.gagnant.pertes_troupe}} soldats ennemis tu\u00e9s {% if delta.perdant.morts|length >= 1 %}et la mort de {{delta.perdant.morts|folks_list}}{% endif %} ne suffisaient pas \u00e0 att\u00e9nuer l'amertume de la d\u00e9faite...\r\n{% if commandement.perdant.chatelain %}\r\nRavalant ma col\u00e8re, je ralliais mes hommes en fuite{% else %}\r\n{{commandement.perdant.general}}, surmontant la fatigue qui le tenaillait, se redressa sur sa selle pour hurler aux hommes en fuite de se rassembler\r\n{% endif %} pour entamer le retour au ch\u00e2teau.\r\n{% if is_victory %}{{tuto_adversaire}} allait pouvoir mettre mes terres \u00e0 sac en toute impunit\u00e9.{% endif %}\r\n", 
+    "text": "Sur les {{perdant.troupes}} hommes d'armes qui s'\u00e9taient \u00e9lanc\u00e9s dans la bataille, seuls {{perdant_survivants }} avait r\u00e9ussir \u00e0 s'enfuir, laissant le champ de bataille aux mains de l'ennemi. {{dynasty}} avait \u00e9t\u00e9 battu\r\n{% if delta.perdant.morts|length == 1 %}\r\net le corps de {{delta.perdant.morts|folks_list}}, tomb\u00e9 au milieu des combats, avait du \u00eatre laiss\u00e9 au main de l'ennemi.\r\n{% elif delta.perdant.morts|length >= 2 %}\r\n, et {{delta.perdant.morts|folks_list}} l'avaient pay\u00e9s de leur vie.\r\n{% else %}.{% endif %}\r\n{% if delta.perdant.blesses|length == 1 %}\r\n{{delta.perdant.blesses|folks_list}} avait \u00e9t\u00e9 gravement touch\u00e9, mais avait pu \u00eatre port\u00e9 hors des combats avant que le morale de mes troupes ne se brise.\r\n{% elif delta.perdant.blesses|length >= 2 %}\r\n{{delta.perdant.blesses|folks_list}} avaient encaiss\u00e9 plusieurs blessures, mais avaient r\u00e9ussit \u00e0 suivre mes troupes dans leur d\u00e9route.\r\n{% endif %}{% if delta.gagnant.blesses|length >= 1 %}Chez l'adversaire, {{delta.perdant.blesses|folks_list}} avai{{delta.gagnant.blesses|pluralize:\"t,ent\"}} \u00e9t\u00e9 cruellement bless\u00e9{{delta.gagnant.blesses|pluralize}} d\u00e8s le premier assaut. {% endif %}Les {{delta.gagnant.pertes_troupe}} soldats ennemis tu\u00e9s {% if delta.perdant.morts|length >= 1 %}et la mort de {{delta.perdant.morts|folks_list}}{% endif %} ne suffisaient pas \u00e0 att\u00e9nuer l'amertume de la d\u00e9faite...\r\n{% if commandement.perdant.chatelain %}\r\nRavalant ma col\u00e8re, je ralliais mes hommes en fuite{% else %}\r\n{{commandement.perdant.general}}, surmontant la fatigue qui le tenaillait, se redressa sur sa selle pour hurler aux hommes en fuite de se rassembler\r\n{% endif %} pour entamer le retour au ch\u00e2teau.\r\n{% if is_victory %}{{tuto_adversaire}} allait pouvoir mettre mes terres \u00e0 sac en toute impunit\u00e9.{% endif %}\r\n", 
     "image": "", 
-    "on_fire": "\n", 
+    "on_fire": "param.set_value('perdant_survivants',param.get_value(\"perdant\")['troupes'] - param.get_value(\"delta\")['perdant']['pertes_troupe'])", 
     "slug": "tuto_escarmouche_defaite_2", 
     "condition": "\n"
   }
@@ -56071,15 +56114,15 @@
   }
 },
 {
-  "pk": 2611, 
+  "pk": 2617, 
   "model": "event.pendingevent", 
   "fields": {
     "kingdom": 70, 
-    "is_started": true, 
-    "created": "2013-10-04T19:07:07.429", 
-    "started": "2013-10-04T19:07:07.529", 
-    "text": "Le combat se d\u00e9roula en for\u00eat.\r\n\r\nNous \u00e9tions forts de 12,0 soldats. Aymon de Varaville commandait les archers alors que B\u00e9rard de Solers et Philibert de Tr\u00e9maou\u00e9zan commandaient les lanciers.\r\n\r\nDe leur c\u00f4t\u00e9 on pouvait d\u00e9nombrer 8,0 soldats. Elbore de jules, Al\u00e9ide de jules et Roland de jules commandaient l'infanterie.\r\n\r\n Nous avions l'avantage du nombreet les commandant des deux arm\u00e9es se regardaient dans le blanc des yeux.\r\nN.\r\n\r\n    A des fin de test : \r\n    moi=gagnant {u'combattants': [<Folk: Elbore de jules>, <Folk: Al\u00e9ide de jules>, <Folk: Roland de jules>], u'troupes': 12.0, u'bonus_tactique': 0.0, u'dynastie_adverse': None, u'puissance_generaux': 9.0, u'attaquant': True, u'prestige': 180.0, u'population': 315.0}\r\n    lui=perdant {u'combattants': [<Folk: B\u00e9rard de Solers>, <Folk: Philibert de Tr\u00e9maou\u00e9zan>, <Folk: Aymon de Varaville>], u'troupes': 8.0, u'bonus_tactique': 0.0, u'dynastie_adverse': u'dynastie advserse', u'puissance_generaux': 18.0, u'attaquant': False, u'prestige': 180.0, u'population': 200.0} \r\n    bataille : {u'PRV': [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]], u'destiny_makes_difference': False, u'facteur_chance': 1.0, u'marge': 7.0}\r\n    delta : {u'perdant': {u'morts': [], u'blesses': [], u'prestige': -15.0, u'pertes_troupe': 9.0, u'population': 0.0}, u'gagnant': {u'morts': [], u'blesses': [<Folk: B\u00e9rard de Solers>], u'prestige': 15.0, u'pertes_troupe': 9.0, u'thune': 0.0}}", 
-    "event": 230
+    "is_started": false, 
+    "created": "2013-10-04T20:03:37.610", 
+    "started": null, 
+    "text": "", 
+    "event": 239
   }
 },
 {
@@ -56190,17 +56233,6 @@
     "text": "ok", 
     "folk": null, 
     "event_action": 298
-  }
-},
-{
-  "pk": 2798, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 2611, 
-    "message": "", 
-    "text": "C'est le c\u0153ur empli de chevalerie que nous charge\u00e2mes...  ", 
-    "folk": null, 
-    "event_action": 296
   }
 },
 {
@@ -56516,114 +56548,6 @@
     "pending_event": 2610, 
     "name": "liste_gagnant", 
     "value": "Philibert de jules commandait les archers, Giefroi de Mirambeau commandait les lanciers alors que  le pretre Girart de jules commandait l'infanterie."
-  }
-},
-{
-  "pk": 6209, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2611, 
-    "name": "is_victory", 
-    "value": 0.0
-  }
-},
-{
-  "pk": 6211, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2611, 
-    "name": "gagnant", 
-    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 8.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 18.0, \"attaquant\": \"`False`\", \"prestige\": 180.0, \"population\": 200.0}"
-  }
-},
-{
-  "pk": 6212, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2611, 
-    "name": "perdant", 
-    "value": "{\"combattants\": \"[\\\"`Folk`:6776\\\", \\\"`Folk`:6778\\\", \\\"`Folk`:6779\\\"]\", \"troupes\": 12.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": null, \"puissance_generaux\": 9.0, \"attaquant\": \"`True`\", \"prestige\": 180.0, \"population\": 315.0}"
-  }
-},
-{
-  "pk": 6213, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2611, 
-    "name": "liste_perdant", 
-    "value": "Elbore de jules, Al\u00e9ide de jules et Roland de jules commandaient l'infanterie."
-  }
-},
-{
-  "pk": 6214, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2611, 
-    "name": "liste_gagnant", 
-    "value": "Aymon de Varaville commandait les archers alors que B\u00e9rard de Solers et Philibert de Tr\u00e9maou\u00e9zan commandaient les lanciers."
-  }
-},
-{
-  "pk": 6215, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2611, 
-    "name": "delta", 
-    "value": "{\"perdant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[]\\\", \\\"prestige\\\": -15.0, \\\"pertes_troupe\\\": 9.0, \\\"population\\\": 0.0}\", \"gagnant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[null]\\\", \\\"prestige\\\": 15.0, \\\"pertes_troupe\\\": 9.0, \\\"thune\\\": 0.0}\"}"
-  }
-},
-{
-  "pk": 6216, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2611, 
-    "name": "bataille", 
-    "value": "{\"PRV\": \"[\\\"[0.0, 0.0, 0.0]\\\", \\\"[0.0, 0.0, 0.0]\\\"]\", \"destiny_makes_difference\": \"`False`\", \"facteur_chance\": 1.0, \"marge\": 7.0}"
-  }
-},
-{
-  "pk": 6217, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2611, 
-    "name": "commandement", 
-    "value": "{\"perdant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": \\\"`Folk`:6778\\\"}\", \"gagnant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": null}\"}"
-  }
-},
-{
-  "pk": 6218, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2611, 
-    "name": "test", 
-    "value": 1.0
-  }
-},
-{
-  "pk": 6220, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2611, 
-    "name": "attaquant", 
-    "value": 1.0
-  }
-},
-{
-  "pk": 6221, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2611, 
-    "name": "moi", 
-    "value": "{\"combattants\": \"[\\\"`Folk`:6776\\\", \\\"`Folk`:6778\\\", \\\"`Folk`:6779\\\"]\", \"troupes\": 12.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": null, \"puissance_generaux\": 9.0, \"attaquant\": \"`True`\", \"prestige\": 180.0, \"population\": 315.0}"
-  }
-},
-{
-  "pk": 6222, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2611, 
-    "name": "lui", 
-    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 8.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 18.0, \"attaquant\": \"`False`\", \"prestige\": 180.0, \"population\": 200.0}"
   }
 },
 {
@@ -126285,6 +126209,58 @@
     "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0C'est le c\u0153ur empli de chevalerie que nous charge\u00e2 [tuto_escarmouche_defaite]\u00a0\u00bb.", 
     "user": 38, 
     "content_type": 29
+  }
+},
+{
+  "pk": 7798, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-04T19:55:15.249", 
+    "object_repr": "tuto_escarmouche_defaite_2", 
+    "object_id": "257", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ok [tuto_escarmouche_defaite_2]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7799, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-04T19:59:16.497", 
+    "object_repr": "tuto_escarmouche_defaite_2", 
+    "object_id": "257", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ok [tuto_escarmouche_defaite_2]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7800, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-04T20:02:31.289", 
+    "object_repr": "tuto_escarmouche_defaite_2", 
+    "object_id": "257", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ok [tuto_escarmouche_defaite_2]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7801, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-04T20:18:02.725", 
+    "object_repr": "determiner_vainqueur_combat()", 
+    "object_id": "20", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 38, 
+    "content_type": 34
   }
 },
 {
