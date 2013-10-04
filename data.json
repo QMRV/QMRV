@@ -81793,6 +81793,62 @@
   }
 },
 {
+  "pk": 10088, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 7, 
+    "object_type": "Recurring", 
+    "object_attr": "kingdom_list", 
+    "direct_queries": 0, 
+    "time": 1, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10089, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 74, 
+    "stack_level": 1, 
+    "object_pk": 7, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 2, 
+    "time": 554, 
+    "queries": 2
+  }
+},
+{
+  "pk": 10090, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 7, 
+    "object_type": "Recurring", 
+    "object_attr": "kingdom_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10091, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 74, 
+    "stack_level": 1, 
+    "object_pk": 7, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 2, 
+    "time": 54, 
+    "queries": 2
+  }
+},
+{
   "pk": 1, 
   "model": "auth.permission", 
   "fields": {
