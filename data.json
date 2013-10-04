@@ -1533,7 +1533,7 @@
   "pk": "r5gynxg6yudatb2lcrehb56lmalt04ic", 
   "model": "sessions.session", 
   "fields": {
-    "expire_date": "2013-10-16T22:09:44.180", 
+    "expire_date": "2013-10-18T18:58:01.198", 
     "session_data": "ZjU1YWJjMGE1OThjMWU2NjA0OTRkNTc3NjUwYzNkOGQ4MzAxOTM0MjqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZFUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmRxAlUNX2F1dGhfdXNlcl9pZEsmdS4="
   }
 },
@@ -3830,6 +3830,15 @@
   "fields": {
     "kingdom": 70, 
     "name": "tuto_firstbattle_attack", 
+    "value": 1.0
+  }
+},
+{
+  "pk": 680, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 70, 
+    "name": "tuto_conflit", 
     "value": 1.0
   }
 },
@@ -10968,6 +10977,17 @@
   }
 },
 {
+  "pk": 1412, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 70, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-10-04T19:06:21.683", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
   "pk": 1, 
   "model": "title.title", 
   "fields": {
@@ -11477,8 +11497,8 @@
     "prestige_threshold": 0, 
     "fired": [
       87, 
-      70, 
       88, 
+      70, 
       46, 
       76, 
       71, 
@@ -52593,7 +52613,7 @@
     "category": null, 
     "name": "resultat de bataille", 
     "weight": 1, 
-    "text": "Le combat se d\u00e9roula en for\u00eat.\r\n\r\nNous \u00e9tions forts de {{moi.troupes}} soldats. {{liste_gagnant}}\r\n\r\nDe leur c\u00f4t\u00e9 on pouvait d\u00e9nombrer {{lui.troupes}} soldats. {{liste_perdant}}\r\n\r\n{% if moi.troupes < lui.troupes %}Nous \u00e9tions en sous nombre{% elif moi.troupes > lui.troupes %} Nous avions l'avantage du nombre{% else %}Nous \u00e9tions autant d'un c\u00f4t\u00e9 que de l'autre{% endif %}{% if moi.troupes < lui.troupes and moi.puissance_generaux < lui.puissance_generaux %}et la sup\u00e9riorit\u00e9 de ses g\u00e9n\u00e9raux \u00e9tait \u00e9vidente{% elif moi.troupes > lui.troupes and moi.puissance_generaux > lui.puissance_generaux %}et nos g\u00e9n\u00e9raux \u00e9taient plus aguerris.{% elif moi.troupes <= lui.troupes and moi.puissance_generaux < lui.puissance_generaux %}mais nos g\u00e9n\u00e9raux semblaient plus hardis.{% elif moi.troupes >= lui.troupes and moi.puissance_generaux > lui.puissance_generaux %}mais ses g\u00e9n\u00e9raux semblaient plus effrayant.{% else %}et les commandant des deux arm\u00e9es se regardaient dans le blanc des yeux.{% endif %}\r\n{% if moi.bonus_tactique >= lui.bonus_tactique %}N{% if bataille.PRV.0.0 > 0 %}os cavaliers allaient faire des ravages dans leurs archers{% if bataille.PRV.0.1 > 0 or bataille.PRV.0.2 > 0 %} et n{% endif %}{% endif %}{% if bataille.PRV.0.1 > 0 %}os archers allaient faire des ravages dans leurs lanciers{% if bataille.PRV.0.2 > 0 %} et n{% endif %}{% endif %}{% if bataille.PRV.0.2 > 0 %}os lanciers allaient faire des ravages dans leurs cavaliers{% endif %}.{% if bataille.PRV.1.0 > 0 or bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 %}De leur c\u00f4t\u00e9 {% if bataille.PRV.1.0 > 0 %}leurs cavaliers allaient \u00eatre une plaie pour nos archers{% if bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 > 1 %} et {% endif %}{% endif %}{% if bataille.PRV.1.1 > 0 %}leurs archers allaient \u00eatre une plaie pour nos lanciers{% if bataille.PRV.1.2 > 0 %} et {% endif %}{% endif %}{% if bataille.PRV.1.2 > 0 %}leurs lanciers allaient \u00eatre une plaie pour nos cavaliers{% endif %}.{% endif %}{% else %}N{% if bataille.PRV.0.0 > 0 %}os cavaliers allaient \u00eatre une plaie pour leurs archers{% if  bataille.PRV.0.1 > 0 or bataille.PRV.0.2 > 0 %} et n{% endif %}{% endif %}{% if bataille.PRV.0.1 > 0 %}os archers allaient \u00eatre plaie pour leurs lanciers{% if bataille.PRV.0.2 > 0  %} et n{% endif %}{% endif %}{% if bataille.PRV.0.2 > 0 %}os lanciers allaient \u00eatre une plaie pour leurs cavaliers{% endif %}.{% if bataille.PRV.1.0 > 0 or bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 %} Mais c'\u00e9tait sans comparaison avec ce que {% if bataille.PRV.1.0 > 0 %}leurs cavaliers allaient faire \u00e0 nos archers{% if bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 %} et ce que {% endif %}{% endif %}{% if bataille.PRV.1.1 > 0 %}leurs archers allaient faire \u00e0 nos lanciers{% if bataille.PRV.1.2 > 0  %} et ce que  {% endif %}{% endif %}{% if bataille.PRV.1.2 > 0 %}leurs lanciers allaient faire \u00e0 nos cavaliers{% endif %}.{% endif %}{% endif %}\r\n\r\n    A des fin de test : \r\n    moi=gagnant {{ moi }}\r\n    lui=perdant {{ lui }} \r\n    bataille : {{bataille}}\r\n    delta : {{delta}}", 
+    "text": "Le combat se d\u00e9roula en for\u00eat.\r\n\r\nNous \u00e9tions forts de {{moi.troupes}} soldats. {{liste_perdant}}\r\n\r\nDe leur c\u00f4t\u00e9 on pouvait d\u00e9nombrer {{lui.troupes}} soldats. {{liste_gagnant}}\r\n\r\n{% if moi.troupes < lui.troupes %}Nous \u00e9tions en sous nombre{% elif moi.troupes > lui.troupes %} Nous avions l'avantage du nombre{% else %}Nous \u00e9tions autant d'un c\u00f4t\u00e9 que de l'autre{% endif %}{% if moi.troupes < lui.troupes and moi.puissance_generaux < lui.puissance_generaux %}et la sup\u00e9riorit\u00e9 de ses g\u00e9n\u00e9raux \u00e9tait \u00e9vidente{% elif moi.troupes > lui.troupes and moi.puissance_generaux > lui.puissance_generaux %}et nos g\u00e9n\u00e9raux \u00e9taient plus aguerris.{% elif moi.troupes <= lui.troupes and moi.puissance_generaux > lui.puissance_generaux %}mais nos g\u00e9n\u00e9raux semblaient plus hardis.{% elif moi.troupes >= lui.troupes and moi.puissance_generaux < lui.puissance_generaux %}mais ses g\u00e9n\u00e9raux semblaient plus effrayant.{% else %}et les commandant des deux arm\u00e9es se regardaient dans le blanc des yeux.{% endif %}\r\n{% if moi.bonus_tactique >= lui.bonus_tactique and moi.bonus_tactique > 0 %}N{% if bataille.PRV.0.0 > 0 %}os cavaliers allaient faire des ravages dans leurs archers{% if bataille.PRV.0.1 > 0 or bataille.PRV.0.2 > 0 %} et n{% endif %}{% endif %}{% if bataille.PRV.0.1 > 0 %}os archers allaient faire des ravages dans leurs lanciers{% if bataille.PRV.0.2 > 0 %} et n{% endif %}{% endif %}{% if bataille.PRV.0.2 > 0 %}os lanciers allaient faire des ravages dans leurs cavaliers{% endif %}.{% if bataille.PRV.1.0 > 0 or bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 %}De leur c\u00f4t\u00e9 {% if bataille.PRV.1.0 > 0 %}leurs cavaliers allaient \u00eatre une plaie pour nos archers{% if bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 > 1 %} et {% endif %}{% endif %}{% if bataille.PRV.1.1 > 0 %}leurs archers allaient \u00eatre une plaie pour nos lanciers{% if bataille.PRV.1.2 > 0 %} et {% endif %}{% endif %}{% if bataille.PRV.1.2 > 0 %}leurs lanciers allaient \u00eatre une plaie pour nos cavaliers{% endif %}.{% endif %}{% else %}N{% if bataille.PRV.0.0 > 0 %}os cavaliers allaient \u00eatre une plaie pour leurs archers{% if  bataille.PRV.0.1 > 0 or bataille.PRV.0.2 > 0 %} et n{% endif %}{% endif %}{% if bataille.PRV.0.1 > 0 %}os archers allaient \u00eatre plaie pour leurs lanciers{% if bataille.PRV.0.2 > 0  %} et n{% endif %}{% endif %}{% if bataille.PRV.0.2 > 0 %}os lanciers allaient \u00eatre une plaie pour leurs cavaliers{% endif %}.{% if bataille.PRV.1.0 > 0 or bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 %} Mais c'\u00e9tait sans comparaison avec ce que {% if bataille.PRV.1.0 > 0 %}leurs cavaliers allaient faire \u00e0 nos archers{% if bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 %} et ce que {% endif %}{% endif %}{% if bataille.PRV.1.1 > 0 %}leurs archers allaient faire \u00e0 nos lanciers{% if bataille.PRV.1.2 > 0  %} et ce que  {% endif %}{% endif %}{% if bataille.PRV.1.2 > 0 %}leurs lanciers allaient faire \u00e0 nos cavaliers{% endif %}.{% endif %}{% endif %}\r\n\r\n    A des fin de test : \r\n    moi=perdant {{ moi }}\r\n    lui=gagnant {{ lui }} \r\n    bataille : {{bataille}}\r\n    delta : {{delta}}", 
     "image": "", 
     "on_fire": "param.set_value(\"test\",kingdom.get_value(\"tuto_conflit\",False))\nparam.set_value(\"attaquant\",param.get_value(\"attaquant\",False))\nparam.set_value(\"moi\",param.get_value(\"perdant\"))\nparam.set_value(\"lui\",param.get_value(\"gagnant\")) \n", 
     "slug": "tuto_escarmouche_defaite", 
@@ -56039,15 +56059,27 @@
   }
 },
 {
-  "pk": 2607, 
+  "pk": 2610, 
   "model": "event.pendingevent", 
   "fields": {
     "kingdom": 70, 
     "is_started": true, 
-    "created": "2013-10-03T20:23:55.209", 
-    "started": "2013-10-03T20:23:55.270", 
-    "text": "Mes hommes se sont dispers\u00e9s pour mieux vider et saccager les fermes et villages  frontaliers de , passant par le fer 27,0 paysans assez sots pour r\u00e9sister. Leur butin a \u00e9t\u00e9 entass\u00e9 dans les chariots qui seront en route pour mon ch\u00e2teau avant que None ne puisse organiser une contre-attaque. Il est probable qu'il cherche revanche un jour ou l'autre, mais pour l'heure,  en sort plus craint et plus riche.\r\n\r\n    +9,0 \u00e9cus\r\n    +15,0 de prestige,  pour ", 
-    "event": 237
+    "created": "2013-10-04T19:06:21.579", 
+    "started": "2013-10-04T19:06:21.632", 
+    "text": " (explication sur la d\u00e9fense)\r\n\r\npeut venir de tuto_pnjescaladeconflit ou tuto_ennemi_casusbelli", 
+    "event": 207
+  }
+},
+{
+  "pk": 2611, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 70, 
+    "is_started": true, 
+    "created": "2013-10-04T19:07:07.429", 
+    "started": "2013-10-04T19:07:07.529", 
+    "text": "Le combat se d\u00e9roula en for\u00eat.\r\n\r\nNous \u00e9tions forts de 12,0 soldats. Aymon de Varaville commandait les archers alors que B\u00e9rard de Solers et Philibert de Tr\u00e9maou\u00e9zan commandaient les lanciers.\r\n\r\nDe leur c\u00f4t\u00e9 on pouvait d\u00e9nombrer 8,0 soldats. Elbore de jules, Al\u00e9ide de jules et Roland de jules commandaient l'infanterie.\r\n\r\n Nous avions l'avantage du nombreet les commandant des deux arm\u00e9es se regardaient dans le blanc des yeux.\r\nN.\r\n\r\n    A des fin de test : \r\n    moi=gagnant {u'combattants': [<Folk: Elbore de jules>, <Folk: Al\u00e9ide de jules>, <Folk: Roland de jules>], u'troupes': 12.0, u'bonus_tactique': 0.0, u'dynastie_adverse': None, u'puissance_generaux': 9.0, u'attaquant': True, u'prestige': 180.0, u'population': 315.0}\r\n    lui=perdant {u'combattants': [<Folk: B\u00e9rard de Solers>, <Folk: Philibert de Tr\u00e9maou\u00e9zan>, <Folk: Aymon de Varaville>], u'troupes': 8.0, u'bonus_tactique': 0.0, u'dynastie_adverse': u'dynastie advserse', u'puissance_generaux': 18.0, u'attaquant': False, u'prestige': 180.0, u'population': 200.0} \r\n    bataille : {u'PRV': [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]], u'destiny_makes_difference': False, u'facteur_chance': 1.0, u'marge': 7.0}\r\n    delta : {u'perdant': {u'morts': [], u'blesses': [], u'prestige': -15.0, u'pertes_troupe': 9.0, u'population': 0.0}, u'gagnant': {u'morts': [], u'blesses': [<Folk: B\u00e9rard de Solers>], u'prestige': 15.0, u'pertes_troupe': 9.0, u'thune': 0.0}}", 
+    "event": 230
   }
 },
 {
@@ -56150,14 +56182,25 @@
   }
 },
 {
-  "pk": 2794, 
+  "pk": 2797, 
   "model": "event.pendingeventaction", 
   "fields": {
-    "pending_event": 2607, 
+    "pending_event": 2610, 
     "message": "", 
-    "text": "Vae victis", 
+    "text": "ok", 
     "folk": null, 
-    "event_action": 304
+    "event_action": 298
+  }
+},
+{
+  "pk": 2798, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 2611, 
+    "message": "", 
+    "text": "C'est le c\u0153ur empli de chevalerie que nous charge\u00e2mes...  ", 
+    "folk": null, 
+    "event_action": 296
   }
 },
 {
@@ -56341,129 +56384,246 @@
   }
 },
 {
-  "pk": 6151, 
+  "pk": 6194, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2607, 
+    "pending_event": 2610, 
     "name": "bataille", 
     "value": "{\"PRV\": \"[\\\"[0.0, 1.0, 0.0]\\\", \\\"[0.0, 1.0, 0.0]\\\"]\", \"destiny_makes_difference\": \"`False`\", \"facteur_chance\": 0.0, \"marge\": 48.0}"
   }
 },
 {
-  "pk": 6152, 
+  "pk": 6195, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2607, 
+    "pending_event": 2610, 
+    "name": "slug", 
+    "value": "tuto_ennemi_casusbelli_2"
+  }
+},
+{
+  "pk": 6196, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2610, 
     "name": "tuto_adversaire", 
     "value": null
   }
 },
 {
-  "pk": 6153, 
+  "pk": 6197, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2607, 
-    "name": "delta", 
-    "value": "{\"perdant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[null]\\\", \\\"prestige\\\": -15.0, \\\"pertes_troupe\\\": 8.0, \\\"population\\\": 27.0}\", \"gagnant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[]\\\", \\\"prestige\\\": 15.0, \\\"pertes_troupe\\\": 8.0, \\\"thune\\\": 9.0}\"}"
-  }
-},
-{
-  "pk": 6154, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2607, 
-    "name": "gagnant", 
-    "value": "{\"combattants\": \"[\\\"`Folk`:6772\\\", \\\"`Folk`:6774\\\", \\\"`Folk`:6771\\\"]\", \"troupes\": 12.0, \"bonus_tactique\": 3.0, \"dynastie_adverse\": null, \"puissance_generaux\": 30.0, \"attaquant\": \"`True`\", \"prestige\": 160.0, \"population\": 295.0}"
-  }
-},
-{
-  "pk": 6155, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2607, 
-    "name": "perdant", 
-    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 7.0, \"bonus_tactique\": 3.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 18.0, \"attaquant\": \"`False`\", \"prestige\": 160.0, \"population\": 200.0}"
-  }
-},
-{
-  "pk": 6156, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2607, 
-    "name": "moi", 
-    "value": "{\"combattants\": \"[\\\"`Folk`:6772\\\", \\\"`Folk`:6774\\\", \\\"`Folk`:6771\\\"]\", \"troupes\": 12.0, \"bonus_tactique\": 3.0, \"dynastie_adverse\": null, \"puissance_generaux\": 30.0, \"attaquant\": \"`True`\", \"prestige\": 160.0, \"population\": 295.0}"
-  }
-},
-{
-  "pk": 6157, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2607, 
-    "name": "liste_perdant", 
-    "value": "Raimon de Douy commandait les archers alors que Aymeric d'Ore et Guerri d'Omonville commandaient les lanciers."
-  }
-},
-{
-  "pk": 6158, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2607, 
-    "name": "commandement", 
-    "value": "{\"perdant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": null}\", \"gagnant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`True`\\\", \\\"general\\\": \\\"`Folk`:6771\\\"}\"}"
-  }
-},
-{
-  "pk": 6159, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2607, 
+    "pending_event": 2610, 
     "name": "tuto_rapport_espion", 
     "value": 0.0
   }
 },
 {
-  "pk": 6160, 
+  "pk": 6198, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2607, 
-    "name": "lui", 
-    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 7.0, \"bonus_tactique\": 3.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 18.0, \"attaquant\": \"`False`\", \"prestige\": 160.0, \"population\": 200.0}"
-  }
-},
-{
-  "pk": 6161, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2607, 
-    "name": "attaquant", 
-    "value": 1.0
-  }
-},
-{
-  "pk": 6162, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2607, 
+    "pending_event": 2610, 
     "name": "is_victory", 
     "value": 1.0
   }
 },
 {
-  "pk": 6163, 
+  "pk": 6199, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2607, 
+    "pending_event": 2610, 
+    "name": "perdant", 
+    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 7.0, \"bonus_tactique\": 3.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 18.0, \"attaquant\": \"`False`\", \"prestige\": 160.0, \"population\": 200.0}"
+  }
+},
+{
+  "pk": 6200, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2610, 
+    "name": "moi", 
+    "value": "{\"combattants\": \"[\\\"`Folk`:6772\\\", \\\"`Folk`:6774\\\", \\\"`Folk`:6771\\\"]\", \"troupes\": 12.0, \"bonus_tactique\": 3.0, \"dynastie_adverse\": null, \"puissance_generaux\": 30.0, \"attaquant\": \"`True`\", \"prestige\": 160.0, \"population\": 295.0}"
+  }
+},
+{
+  "pk": 6201, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2610, 
+    "name": "liste_perdant", 
+    "value": "Raimon de Douy commandait les archers alors que Aymeric d'Ore et Guerri d'Omonville commandaient les lanciers."
+  }
+},
+{
+  "pk": 6202, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2610, 
+    "name": "commandement", 
+    "value": "{\"perdant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": null}\", \"gagnant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`True`\\\", \\\"general\\\": \\\"`Folk`:6771\\\"}\"}"
+  }
+},
+{
+  "pk": 6203, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2610, 
+    "name": "delta", 
+    "value": "{\"perdant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[null]\\\", \\\"prestige\\\": -15.0, \\\"pertes_troupe\\\": 8.0, \\\"population\\\": 27.0}\", \"gagnant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[]\\\", \\\"prestige\\\": 15.0, \\\"pertes_troupe\\\": 8.0, \\\"thune\\\": 9.0}\"}"
+  }
+},
+{
+  "pk": 6204, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2610, 
+    "name": "lui", 
+    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 7.0, \"bonus_tactique\": 3.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 18.0, \"attaquant\": \"`False`\", \"prestige\": 160.0, \"population\": 200.0}"
+  }
+},
+{
+  "pk": 6205, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2610, 
+    "name": "attaquant", 
+    "value": 1.0
+  }
+},
+{
+  "pk": 6206, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2610, 
+    "name": "gagnant", 
+    "value": "{\"combattants\": \"[\\\"`Folk`:6772\\\", \\\"`Folk`:6774\\\", \\\"`Folk`:6771\\\"]\", \"troupes\": 12.0, \"bonus_tactique\": 3.0, \"dynastie_adverse\": null, \"puissance_generaux\": 30.0, \"attaquant\": \"`True`\", \"prestige\": 160.0, \"population\": 295.0}"
+  }
+},
+{
+  "pk": 6207, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2610, 
     "name": "tuto_conflit", 
     "value": 0.0
   }
 },
 {
-  "pk": 6164, 
+  "pk": 6208, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2607, 
+    "pending_event": 2610, 
     "name": "liste_gagnant", 
     "value": "Philibert de jules commandait les archers, Giefroi de Mirambeau commandait les lanciers alors que  le pretre Girart de jules commandait l'infanterie."
+  }
+},
+{
+  "pk": 6209, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2611, 
+    "name": "is_victory", 
+    "value": 0.0
+  }
+},
+{
+  "pk": 6211, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2611, 
+    "name": "gagnant", 
+    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 8.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 18.0, \"attaquant\": \"`False`\", \"prestige\": 180.0, \"population\": 200.0}"
+  }
+},
+{
+  "pk": 6212, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2611, 
+    "name": "perdant", 
+    "value": "{\"combattants\": \"[\\\"`Folk`:6776\\\", \\\"`Folk`:6778\\\", \\\"`Folk`:6779\\\"]\", \"troupes\": 12.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": null, \"puissance_generaux\": 9.0, \"attaquant\": \"`True`\", \"prestige\": 180.0, \"population\": 315.0}"
+  }
+},
+{
+  "pk": 6213, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2611, 
+    "name": "liste_perdant", 
+    "value": "Elbore de jules, Al\u00e9ide de jules et Roland de jules commandaient l'infanterie."
+  }
+},
+{
+  "pk": 6214, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2611, 
+    "name": "liste_gagnant", 
+    "value": "Aymon de Varaville commandait les archers alors que B\u00e9rard de Solers et Philibert de Tr\u00e9maou\u00e9zan commandaient les lanciers."
+  }
+},
+{
+  "pk": 6215, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2611, 
+    "name": "delta", 
+    "value": "{\"perdant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[]\\\", \\\"prestige\\\": -15.0, \\\"pertes_troupe\\\": 9.0, \\\"population\\\": 0.0}\", \"gagnant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[null]\\\", \\\"prestige\\\": 15.0, \\\"pertes_troupe\\\": 9.0, \\\"thune\\\": 0.0}\"}"
+  }
+},
+{
+  "pk": 6216, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2611, 
+    "name": "bataille", 
+    "value": "{\"PRV\": \"[\\\"[0.0, 0.0, 0.0]\\\", \\\"[0.0, 0.0, 0.0]\\\"]\", \"destiny_makes_difference\": \"`False`\", \"facteur_chance\": 1.0, \"marge\": 7.0}"
+  }
+},
+{
+  "pk": 6217, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2611, 
+    "name": "commandement", 
+    "value": "{\"perdant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": \\\"`Folk`:6778\\\"}\", \"gagnant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": null}\"}"
+  }
+},
+{
+  "pk": 6218, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2611, 
+    "name": "test", 
+    "value": 1.0
+  }
+},
+{
+  "pk": 6220, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2611, 
+    "name": "attaquant", 
+    "value": 1.0
+  }
+},
+{
+  "pk": 6221, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2611, 
+    "name": "moi", 
+    "value": "{\"combattants\": \"[\\\"`Folk`:6776\\\", \\\"`Folk`:6778\\\", \\\"`Folk`:6779\\\"]\", \"troupes\": 12.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": null, \"puissance_generaux\": 9.0, \"attaquant\": \"`True`\", \"prestige\": 180.0, \"population\": 315.0}"
+  }
+},
+{
+  "pk": 6222, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2611, 
+    "name": "lui", 
+    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 8.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 18.0, \"attaquant\": \"`False`\", \"prestige\": 180.0, \"population\": 200.0}"
   }
 },
 {
@@ -83252,7 +83412,7 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-10-03T20:18:59.535", 
+    "last_login": "2013-10-04T18:58:01.183", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$10000$SlRZsPYEixZ4$74mKi8WFqceBKTSlwQ9w1eOPPeLya7SJQz0igVPzZKQ=", 
@@ -126115,6 +126275,19 @@
   }
 },
 {
+  "pk": 7797, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-04T19:12:56.898", 
+    "object_repr": "tuto_escarmouche_defaite", 
+    "object_id": "230", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0C'est le c\u0153ur empli de chevalerie que nous charge\u00e2 [tuto_escarmouche_defaite]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
   "pk": 46, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -126140,11 +126313,11 @@
   "pk": 70, 
   "model": "kingdom.kingdom", 
   "fields": {
-    "soldiers": 40, 
-    "prestige": 180, 
-    "money": 168, 
+    "soldiers": 43, 
+    "prestige": 160, 
+    "money": 183, 
     "user": 38, 
-    "population": 295
+    "population": 315
   }
 },
 {
