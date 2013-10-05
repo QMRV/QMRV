@@ -11835,7 +11835,7 @@
   "fields": {
     "params": "", 
     "slug": "determiner_modifications_combat", 
-    "on_fire": "#variables\nlimit_difference_prestige=100\ngain_maxi_prestige=40\npourcentage_troupes_meurt=40\nperte_population_perdant=0\ngain_thune_gagnant=0\npourcent_mort=10\npourcent_blesse=30\n\n#gain et perte de prestige\n#cas attaquant gagne\n#gain prestige\nif attaquant_est_gagnant:\n  if gagnant[\"prestige\"]-perdant[\"prestige\"]>limit_difference_prestige:\n    gain_prestige_gagnant=-1/float(float(gagnant[\"prestige\"]-perdant[\"prestige\"])-limit_difference_prestige+1/float(gain_maxi_prestige))-gain_maxi_prestige\n    gain_prestige_perdant=0 #on ne va pas faire en sorte de donner du prestige pour perdre\n  elif gagnant[\"prestige\"]-perdant[\"prestige\"]<-limit_difference_prestige:\n    gain_prestige_gagnant=gain_maxi_prestige\n    gain_prestige_perdant=-gain_maxi_prestige\n  else:\n    difference_prestige=(gagnant[\"prestige\"]-perdant[\"prestige\"])*gain_maxi_prestige/(2*limit_difference_prestige)+gain_maxi_prestige/2\n    gain_prestige_gagnant=difference_prestige\n    gain_prestige_perdant=-difference_prestige\n\n  #gain thune/perte population\n  perte_population_perdant=perdant[\"population\"]*(0.05+0.15*(marge*0.01)**0.5)\n  gain_thune_gagnant=perte_population_perdant/float(3)\n\n#cas d\u00e9fenseur gagne\n#gain prestige\nelse:\n  if gagnant[\"prestige\"]-perdant[\"prestige\"]>limit_difference_prestige:\n    gain_prestige_gagnant=0 #on ne p\u00e9nalise pas un joueur de s'\u00eatre fait attaquer...\n    gain_prestige_perdant=-gain_maxi_prestige*0.5 #on p\u00e9nalise l'idiot qui a tent\u00e9\n  elif gagnant[\"prestige\"]-perdant[\"prestige\"]<-limit_difference_prestige:\n    gain_prestige_gagnant=gain_maxi_prestige\n    gain_prestige_perdant=-gain_maxi_prestige\n  elif gagnant[\"prestige\"]-perdant[\"prestige\"]<0:\n    difference_prestige=(gagnant[\"prestige\"]-perdant[\"prestige\"])*gain_maxi_prestige/(2*limit_difference_prestige)+gain_maxi_prestige/2\n    gain_prestige_gagnant=difference_prestige\n    gain_prestige_perdant=-gain_maxi_prestige/2\n  else:\n    difference_prestige=(gagnant[\"prestige\"]-perdant[\"prestige\"])*gain_maxi_prestige/(2*limit_difference_prestige)+gain_maxi_prestige/2\n    gain_prestige_gagnant=difference_prestige\n    gain_prestige_perdant=-difference_prestige\n    \n#perte population\nnb_morts=random_value(max(pourcentage_troupes_meurt-10,0),min(pourcentage_troupes_meurt+10,100))*0.01*(gagnant[\"troupes\"]+perdant[\"troupes\"])\nperte_troupe_gagnant=perdant[\"troupes\"]/(gagnant[\"troupes\"]+perdant[\"troupes\"])*nb_morts\nperte_troupe_perdant=gagnant[\"troupes\"]/(gagnant[\"troupes\"]+perdant[\"troupes\"])*nb_morts\n\n  \n#liste des morts et bless\u00e9s gagnant\nblesses_gagnant=[]\nmorts_gagnant=[]\n\nnb_tests=len(gagnant[\"combattants\"])*(100-marge)/float(100)\ni=0\nfor gagnant in gagnant[\"combattants\"]:\n  i+=1\n  if i<nb_tests:\n    destin=random_value(1,100)\n    if destin<pourcent_mort:\n      morts_gagnant.append(gagnant.first_name+\" \"+gagnant.last_name)\n    elif destin<pourcent_blesse:\n      blesses_gagnant.append(gagnant.first_name+\" \"+gagnant.last_name)\n    \n#liste des morts et bless\u00e9s perdant\nblesses_perdant=[]\nmorts_perdant=[]\n\nfor perdant in perdant[\"combattants\"]:\n  destin=random_value(1,100)\n  if destin<=pourcent_mort:\n    morts_perdant.append(perdant.first_name+\" \"+perdant.last_name)\n  elif destin<=pourcent_blesse:\n    blesses_perdant.append(perdant.first_name+\" \"+perdant.last_name)\n    \n#calcul des  sorties\n\n    \nparam = {\n         'perdant': {\n                     'prestige': int(gain_prestige_perdant),\n                     'morts': morts_perdant,\n                     'blesses': blesses_perdant,\n                     'pertes_troupe': int(perte_troupe_perdant),\n                     'population': int(perte_population_perdant),\n                    \n                     },\n         'gagnant': {\n                     'prestige': int(gain_prestige_gagnant),\n                     'morts': morts_gagnant,\n                     'blesses': blesses_gagnant,\n                     'pertes_troupe': int(perte_troupe_gagnant),\n                     'thune': int(gain_thune_gagnant),\n                     },\n   \n     }\n\n\n", 
+    "on_fire": "#variables\nlimit_difference_prestige=100\ngain_maxi_prestige=30\npourcentage_troupes_meurt=40\nperte_population_perdant=0\ngain_thune_gagnant=0\npourcent_mort=10\npourcent_blesse=30\n\n#gain et perte de prestige\n#cas attaquant gagne\n#gain prestige\nif attaquant_est_gagnant:\n  if gagnant[\"prestige\"]-perdant[\"prestige\"]>limit_difference_prestige:\n    gain_prestige_gagnant=-1/float(float(gagnant[\"prestige\"]-perdant[\"prestige\"])-limit_difference_prestige+1/float(gain_maxi_prestige))-gain_maxi_prestige\n    gain_prestige_perdant=0 #on ne va pas faire en sorte de donner du prestige pour perdre\n  elif gagnant[\"prestige\"]-perdant[\"prestige\"]<-limit_difference_prestige:\n    gain_prestige_gagnant=gain_maxi_prestige\n    gain_prestige_perdant=-gain_maxi_prestige\n  else:\n    difference_prestige=(gagnant[\"prestige\"]-perdant[\"prestige\"])*gain_maxi_prestige/(2*limit_difference_prestige)+gain_maxi_prestige/2\n    gain_prestige_gagnant=difference_prestige\n    gain_prestige_perdant=-difference_prestige\n\n  #gain thune/perte population\n  perte_population_perdant=perdant[\"population\"]*(0.05+0.15*(marge*0.01)**0.5)\n  gain_thune_gagnant=perte_population_perdant/float(3)\n\n#cas d\u00e9fenseur gagne\n#gain prestige\nelse:\n  if gagnant[\"prestige\"]-perdant[\"prestige\"]>limit_difference_prestige:\n    gain_prestige_gagnant=0 #on ne p\u00e9nalise pas un joueur de s'\u00eatre fait attaquer...\n    gain_prestige_perdant=-gain_maxi_prestige*0.5 #on p\u00e9nalise l'idiot qui a tent\u00e9\n  elif gagnant[\"prestige\"]-perdant[\"prestige\"]<-limit_difference_prestige:\n    gain_prestige_gagnant=gain_maxi_prestige\n    gain_prestige_perdant=-gain_maxi_prestige\n  elif gagnant[\"prestige\"]-perdant[\"prestige\"]<0:\n    difference_prestige=(gagnant[\"prestige\"]-perdant[\"prestige\"])*gain_maxi_prestige/(2*limit_difference_prestige)+gain_maxi_prestige/2\n    gain_prestige_gagnant=difference_prestige\n    gain_prestige_perdant=-gain_maxi_prestige/2\n  else:\n    difference_prestige=(gagnant[\"prestige\"]-perdant[\"prestige\"])*gain_maxi_prestige/(2*limit_difference_prestige)+gain_maxi_prestige/2\n    gain_prestige_gagnant=difference_prestige\n    gain_prestige_perdant=-difference_prestige\n    \n#perte population\nnb_morts=random_value(max(pourcentage_troupes_meurt-10,0),min(pourcentage_troupes_meurt+10,100))*0.01*(gagnant[\"troupes\"]+perdant[\"troupes\"])\nperte_troupe_gagnant=perdant[\"troupes\"]/(gagnant[\"troupes\"]+perdant[\"troupes\"])*nb_morts\nperte_troupe_perdant=gagnant[\"troupes\"]/(gagnant[\"troupes\"]+perdant[\"troupes\"])*nb_morts\n\n  \n#liste des morts et bless\u00e9s gagnant\nblesses_gagnant=[]\nmorts_gagnant=[]\nA_blesser=[]\nA_tuer=[]\n\nnb_tests=len(gagnant[\"combattants\"])*(100-marge)/float(100)\ni=0\nfor gagnant in gagnant[\"combattants\"]:\n  i+=1\n  if i<nb_tests:\n    destin=random_value(1,100)\n    if destin<pourcent_mort:\n      morts_gagnant.append(gagnant.first_name+\" \"+gagnant.last_name)\n      A_tuer.append(gagnant)\n    elif destin<pourcent_blesse:\n      blesses_gagnant.append(gagnant.first_name+\" \"+gagnant.last_name)\n      A_blesser.append(gagnant)\n    \n#liste des morts et bless\u00e9s perdant\nblesses_perdant=[]\nmorts_perdant=[]\n\nfor perdant in perdant[\"combattants\"]:\n  destin=random_value(1,100)\n  if destin<=pourcent_mort:\n    morts_perdant.append(perdant.first_name+\" \"+perdant.last_name)\n    A_tuer.append(perdant)\n  elif destin<=pourcent_blesse:\n    blesses_perdant.append(perdant.first_name+\" \"+perdant.last_name)\n    A_blesser.append(perdant)\n    \n#calcul des  sorties\n\n    \nparam = {\n         'perdant': {\n                     'prestige': int(gain_prestige_perdant),\n                     'morts': morts_perdant,\n                     'blesses': blesses_perdant,\n                     'pertes_troupe': int(perte_troupe_perdant),\n                     'population': int(perte_population_perdant),\n                    \n                     },\n         'gagnant': {\n                     'prestige': int(gain_prestige_gagnant),\n                     'morts': morts_gagnant,\n                     'blesses': blesses_gagnant,\n                     'pertes_troupe': int(perte_troupe_gagnant),\n                     'thune': int(gain_thune_gagnant),\n                     },\n         'A_tuer':A_tuer,\n         'A_blesser':A_blesser,\n   \n     }\n\n\n", 
     "description": "D\u00e9finit les modifications qui devront \u00eatre appliqu\u00e9es apr\u00e8s un combat.\r\n\r\nresolution_combat:\r\n\tgagnant = {\r\n\t\ttroupes:1,\r\n\t\tcombattants:[],\r\n                prestige,\r\n                population,\r\n\t}\r\n\r\n\tperdant = {\r\n\t\ttroupes:1,\r\n\t\tcombattants:[],\r\n                prestige,\r\n                population,\r\n\t}\r\n\r\n\tpourcentage_victoire\r\n\r\n\t----> {\r\n\t\tgagnant: {\r\n\t\t\tblesses: [],\r\n\t\t\ttues: [],\r\n\t\t\tpertes: 1\r\n\t\t\tprestige: -15\r\n                        gain_thunes\r\n\t\t},\r\n\t\tperdant: {\r\n\t\t\tblesses: [],\r\n\t\t\ttues: [],\r\n\t\t\tpertes: 1,\r\n\t\t\tprestige: 15\r\n                        perte_population\r\n\t\t}\r\n\t}"
   }
 },
@@ -48105,7 +48105,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "\nattaquant = {\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * kingdom.soldiers / 100),\n  'combattants': affected,\n  'population': kingdom.population,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':kingdom.get_value('tuto_dynasty_PNJ')\n}\n\n# R\u00e9cuperer les cinq meilleurs combattants de l'attaquant\ndate_majorite = datetime.now() - timedelta(days=C.MAJORITE)\ncinq_meilleurs = kingdom.folk_set.filter(sex=Folk.MALE, disabled=False, birth__lte=date_majorite).order_by('-fight')[0:5]\nprint cinq_meilleurs\nmoyenne_meilleurs_fight = avg_folks(cinq_meilleurs, 'fight')\n\ncombattants = [Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight)]\nmap(lambda f: f.save(), combattants)\ncombattants[0].add_quality('piquier')\ncombattants[1].add_quality('piquier')\ncombattants[2].add_quality('archer')\n\ndefenseur = {\n  # Dans le cadre du tuto,\n  # Les troupes du d\u00e9fenseur correspondent \u00e0 80% des troupes maximales disponibles pour ce Kingdom\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * 0.8 * C.POURCENTAGE_MAX_SOLDATS_PASSIF * call_function(\"get_max_population\", kingdom=kingdom) / (100 * 100)),\n  'combattants': combattants,\n  'population': 200,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':\"dynastie advserse\",\n}\n\ngagnant, perdant, bataille = f(\"determiner_vainqueur_combat\", attaquant=attaquant, defenseur=defenseur)\nis_victory = gagnant == attaquant\n\n\ndelta = f(\"determiner_modifications_combat\", gagnant=gagnant, perdant=perdant, marge=bataille['marge'], attaquant_est_gagnant=is_victory)\nif is_victory:\n  commandement={\n                'gagnant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                'perdant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                }\nelse:\n  commandement={\n                'gagnant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                'perdant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                }  \n\nif is_victory:\n  kingdom.prestige += delta['gagnant']['prestige']\nelse:\n  kingdom.prestige += delta['perdant']['prestige']\nkingdom.save()\n\nif kingdom.get_value(\"tuto_firstbattle_attack\", False) == False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_attack\")\nelif is_victory:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\", True)\npe.set_value(\"gagnant\",gagnant)\npe.set_value(\"perdant\",perdant)\npe.set_value(\"liste_perdant\",f(\"liste_nom_avec_specialite\", commandants=perdant['combattants']))\npe.set_value(\"liste_gagnant\",f(\"liste_nom_avec_specialite\", commandants=gagnant['combattants']))\npe.set_value(\"delta\",delta)\npe.set_value(\"bataille\",bataille)\npe.set_value(\"commandement\",commandement)\n\n\npe.start()\n  \nmap(lambda f: f.delete(), combattants)", 
+    "on_start": "\nattaquant = {\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * kingdom.soldiers / 100),\n  'combattants': affected,\n  'population': kingdom.population,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':kingdom.get_value('tuto_dynasty_PNJ')\n}\n\n# R\u00e9cuperer les cinq meilleurs combattants de l'attaquant\ndate_majorite = datetime.now() - timedelta(days=C.MAJORITE)\ncinq_meilleurs = kingdom.folk_set.filter(sex=Folk.MALE, disabled=False, birth__lte=date_majorite).order_by('-fight')[0:5]\nprint cinq_meilleurs\nmoyenne_meilleurs_fight = avg_folks(cinq_meilleurs, 'fight')\n\ncombattants = [Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight)]\nmap(lambda f: f.save(), combattants)\ncombattants[0].add_quality('piquier')\ncombattants[1].add_quality('piquier')\ncombattants[2].add_quality('archer')\n\ndefenseur = {\n  # Dans le cadre du tuto,\n  # Les troupes du d\u00e9fenseur correspondent \u00e0 80% des troupes maximales disponibles pour ce Kingdom\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * 0.8 * C.POURCENTAGE_MAX_SOLDATS_PASSIF * call_function(\"get_max_population\", kingdom=kingdom) / (100 * 100)),\n  'combattants': combattants,\n  'population': 200,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':\"dynastie advserse\",\n}\n\ngagnant, perdant, bataille = f(\"determiner_vainqueur_combat\", attaquant=attaquant, defenseur=defenseur)\nis_victory = gagnant == attaquant\n\n\ndelta = f(\"determiner_modifications_combat\", gagnant=gagnant, perdant=perdant, marge=bataille['marge'], attaquant_est_gagnant=is_victory)\nif is_victory:\n  commandement={\n                'gagnant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                'perdant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                }\nelse:\n  commandement={\n                'gagnant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                'perdant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                }  \n\nif is_victory:\n  kingdom.prestige += delta['gagnant']['prestige']\nelse:\n  kingdom.prestige += delta['perdant']['prestige']\nkingdom.save()\n\nif kingdom.get_value(\"tuto_firstbattle_attack\", False) == False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_attack\")\nelif is_victory:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\", True)\npe.set_value(\"gagnant\",gagnant)\npe.set_value(\"perdant\",perdant)\npe.set_value(\"liste_perdant\",f(\"liste_nom_avec_specialite\", commandants=perdant['combattants']))\npe.set_value(\"liste_gagnant\",f(\"liste_nom_avec_specialite\", commandants=gagnant['combattants']))\npe.set_value(\"delta\",delta)\npe.set_value(\"bataille\",bataille)\npe.set_value(\"commandement\",commandement)\npe.start()\n  \nfamille=kingdom.folk[0].last_name\nfor mort in delta['A_tuer']:\n  if mort.last_name <> famille:\n    mort.die()\nfor blesse in delta['A_blesser']:\n  call_function(\"blesser_folk\",folk=blesse)\n\nmap(lambda f: f.delete(), combattants)", 
     "has_target": false, 
     "is_team": false, 
     "title": null, 
@@ -49034,22 +49034,6 @@
   }
 },
 {
-  "pk": 344, 
-  "model": "mission.pendingmission", 
-  "fields": {
-    "kingdom": 70, 
-    "is_started": true, 
-    "target": null, 
-    "created": "2013-10-05T11:49:08.192", 
-    "started": "2013-10-05T13:14:04.794", 
-    "last_target": null, 
-    "mission": 41, 
-    "value": 0, 
-    "is_finished": false, 
-    "last_value": 0
-  }
-},
-{
   "pk": 519, 
   "model": "mission.pendingmissionaffectation", 
   "fields": {
@@ -49110,33 +49094,6 @@
     "pending_mission": 324, 
     "folk": 7213, 
     "mission_grid": 54
-  }
-},
-{
-  "pk": 642, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 344, 
-    "folk": 6771, 
-    "mission_grid": 42
-  }
-},
-{
-  "pk": 643, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 344, 
-    "folk": 6774, 
-    "mission_grid": 42
-  }
-},
-{
-  "pk": 644, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 344, 
-    "folk": 6775, 
-    "mission_grid": 42
   }
 },
 {
@@ -50349,7 +50306,7 @@
     "category": null, 
     "name": "Escarmouche", 
     "weight": 1, 
-    "text": "La bataille \u00e9tait termin\u00e9e. Les corbeaux apparaissaient un \u00e0 un dans le ciel, poussant leurs cris affam\u00e9s sans parvenir \u00e0 couvrir le r\u00e2le des bless\u00e9s et des mourants. {{dynasty}} avait vaincu. Sur mes {{gagnant.troupes}} hommes d'arme, {{delta.gagnant.pertes_troupe}} \u00e9taient tomb\u00e9s l'arme \u00e0 la main, emportant avec eux {{delta.perdant.pertes_troupe}} ennemis vocif\u00e9rants et faisant fuir le reste.\r\n{% if delta.gagnant.morts|length >= 1 %}\r\nNous avions remport\u00e9 une victoire, mais \u00e0 quel prix? {{ delta.gagnant.morts|folks_list}} \r\n{% if delta.gagnant.morts|length == 1 %}\r\ngisait aux milieu des cadavres, serrant encore son \u00e9p\u00e9e.\r\n{% else %}\r\n\u00e9taient tomb\u00e9s sans que les n\u00f4tres ne puissent leur porter secours.\r\n{% endif %}\r\n{% endif %}\r\n{% if delta.gagnant.blesses|length >= 1 %}\r\n{{delta.gagnant.blesses|folks_list}} avai{{delta.gagnant.blesses|pluralize:\"t,ent\" }} \u00e9t\u00e9 bless\u00e9{{delta.gagnant.blesses|pluralize}} dans la bataille, et devrai{{delta.gagnant.blesses|pluralize:\"t,ent\" }} \u00eatre ramen\u00e9{{delta.gagnant.blesses|pluralize}} au ch\u00e2teau sur {{delta.gagnant.blesses|pluralize:\"une,des\"}} liti\u00e8re{{delta.gagnant.blesses|pluralize}}.\r\n{% endif %}\r\n{% if delta.perdant.morts|length >= 1 %}\r\nChez l'adversaire, {{ delta.perdant.morts|folks_list}} avai{{delta.perdant.morts|pluralize:\"t,ent\" }} \u00e9t\u00e9 terrass\u00e9.{{mort_perdants|pluralize}}\r\n{% endif %} \r\n{% if delta.perdant.blesses|length >= 1 %}\r\n{% if delta.gagnant.morts|length >= 1 %}\r\nDe plus, {% else %} Chez l'adversaire, {% endif %} {{ delta.perdant.blesses|folks_list}} avai{{delta.perdant.blesses|pluralize:\"t,ent\" }} \u00e9t\u00e9 bless\u00e9{{delta.perdant.blesses|pluralize:\",s\" }} et garderai{{delta.perdant.blesses|pluralize:\"t,ent\" }} des cicatrice de cette bataille.\r\n{% endif %}\r\n\r\n{% if commandement.gagnant.chatelain %}\r\nChassant la fatigue qui me tenaillait, je rassemblai mes hommes valides pour{% elif commandement.gagnant.connetable %}\r\nSire {{commandement.gagnant.general}} essuya son \u00e9p\u00e9e, et cria aux hommes de se regrouper pour\r\n{% else %}\r\n{{commandement.gagnant.general}} entreprit de rallier les n\u00f4tres  pour \r\n{% endif %}\r\n{% if is_victory %} proc\u00e9der au pillage de {{tuto_adversaire}}{% else %} entamer le repli vers le ch\u00e2teau.{% endif %}", 
+    "text": "La bataille \u00e9tait termin\u00e9e. Les corbeaux apparaissaient un \u00e0 un dans le ciel, poussant leurs cris affam\u00e9s sans parvenir \u00e0 couvrir le r\u00e2le des bless\u00e9s et des mourants. {{dynasty}} avait vaincu. Sur mes {{gagnant.troupes}} hommes d'arme, {{delta.gagnant.pertes_troupe}} \u00e9taient tomb\u00e9s l'arme \u00e0 la main, emportant avec eux {{delta.perdant.pertes_troupe}} ennemis vocif\u00e9rants et faisant fuir le reste.\r\n{% if delta.gagnant.morts|length >= 1 %}\r\nNous avions remport\u00e9 une victoire, mais \u00e0 quel prix? {{ delta.gagnant.morts|folks_list}} \r\n{% if delta.gagnant.morts|length == 1 %}\r\ngisait aux milieu des cadavres, serrant encore son \u00e9p\u00e9e.\r\n{% else %}\r\n\u00e9taient tomb\u00e9s sans que les n\u00f4tres ne puissent leur porter secours.\r\n{% endif %}\r\n{% endif %}\r\n{% if delta.gagnant.blesses|length >= 1 %}\r\n{{delta.gagnant.blesses|folks_list}} avai{{delta.gagnant.blesses|pluralize:\"t,ent\" }} \u00e9t\u00e9 bless\u00e9{{delta.gagnant.blesses|pluralize}} dans la bataille, et devrai{{delta.gagnant.blesses|pluralize:\"t,ent\" }} \u00eatre ramen\u00e9{{delta.gagnant.blesses|pluralize}} au ch\u00e2teau sur {{delta.gagnant.blesses|pluralize:\"une,des\"}} liti\u00e8re{{delta.gagnant.blesses|pluralize}}.\r\n{% endif %}\r\n{% if delta.perdant.morts|length >= 1 %}\r\nChez l'adversaire, {{ delta.perdant.morts|folks_list}} avai{{delta.perdant.morts|pluralize:\"t,ent\" }} \u00e9t\u00e9 terrass\u00e9.{{mort_perdants|pluralize}}\r\n{% endif %} \r\n{% if delta.perdant.blesses|length >= 1 %}\r\n{% if delta.gagnant.morts|length >= 1 %}\r\nDe plus, {% else %} Chez l'adversaire, {% endif %} {{ delta.perdant.blesses|folks_list}} avai{{delta.perdant.blesses|pluralize:\"t,ent\" }} \u00e9t\u00e9 bless\u00e9{{delta.perdant.blesses|pluralize:\",s\" }} et garderai{{delta.perdant.blesses|pluralize:\"t,ent\" }} des cicatrice de cette bataille.\r\n{% endif %}\r\n\r\n{% if commandement.gagnant.chatelain %}\r\nChassant la fatigue qui me tenaillait, je rassemblai mes hommes valides pour{% elif commandement.gagnant.connetable %}\r\nSire {{commandement.gagnant.general}} essuya son \u00e9p\u00e9e, et cria aux hommes de se regrouper pour\r\n{% else %}\r\n{{commandement.gagnant.general}} entreprit de rallier les n\u00f4tres  pour \r\n{% endif %}\r\n{% if is_victory %} proc\u00e9der au pillage de {{tuto_adversaire}}{% else %} entamer le repli vers le ch\u00e2teau.{% endif %}\r\n\r\n    +{{delta.gagnant.prestige}} de prestige pour {{dynasty}}, {{delta.perdant.prestige}} de prestige pour {{moi.dynastie_adverse}}\r\n    ", 
     "image": "events/10_1.jpg", 
     "on_fire": "param.set_value(\"tuto_adversaire\",kingdom.get_value(\"tuto_adversaire\"))", 
     "slug": "tuto_escarmouche_victoire_2", 
@@ -127053,6 +127010,58 @@
     "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Vae victis [tuto_escarmouche_pillage]\u00a0\u00bb.", 
     "user": 38, 
     "content_type": 29
+  }
+},
+{
+  "pk": 7872, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T13:20:29.909", 
+    "object_repr": "tuto_escarmouche_victoire_2", 
+    "object_id": "41", 
+    "change_message": "Modifi\u00e9 text. on_fire modifi\u00e9 pour event action \u00ab\u00a0{% if is_victory %}A nous le butin!{% else %}Nous  [tuto_escarmouche_victoire_2]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7873, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T13:24:29.771", 
+    "object_repr": "determiner_modifications_combat()", 
+    "object_id": "21", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 38, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7874, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T13:24:40.843", 
+    "object_repr": "determiner_modifications_combat()", 
+    "object_id": "21", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 38, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7875, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T13:42:02.063", 
+    "object_repr": "tuto_escarmouche", 
+    "object_id": "41", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0tuto_escarmouche [Combattants (3)]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 23
   }
 },
 {
