@@ -653,9 +653,9 @@
   "fields": {
     "category": 3, 
     "description": "Les cavaliers ont un bonus de plus +1 en combat contre tous, et un bonus suppl\u00e9mentaire +1 contre les archers.", 
-    "on_defect": " ", 
+    "on_defect": "folk.fight-=1\nfolk.save()", 
     "female_description": "description f\u00e9minine", 
-    "on_affect": " ", 
+    "on_affect": "folk.fight+=1\nfolk.save()", 
     "female_name": "nope", 
     "incompatible_qualities": [], 
     "slug": "cavalier", 
