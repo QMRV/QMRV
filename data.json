@@ -1285,8 +1285,8 @@
   "pk": "jueapcwzusmjj4qq6d9uzhxmqdjyftbo", 
   "model": "sessions.session", 
   "fields": {
-    "expire_date": "2013-10-18T23:59:24.213", 
-    "session_data": "MTI5NWFmZDMzMzQwYWNlNDhhNzM3NDVhMmEzNTFhMGNjNzI1MjkwNzqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLKnUu"
+    "expire_date": "2013-10-19T17:34:56.079", 
+    "session_data": "NDJlMTlkMDI1ZGQwOTBjNmJlOWRlZjEzMzY0NDYxYmI3MjNlNWYzYjqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZFUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmRxAlUNX2F1dGhfdXNlcl9pZEsqdS4="
   }
 },
 {
@@ -4255,15 +4255,15 @@
   "model": "kingdom.folk", 
   "fields": {
     "kingdom": 59, 
-    "fight": 12, 
+    "fight": 14, 
     "first_name": "Laurent", 
     "last_name": "de Belze", 
-    "diplomacy": 9, 
+    "diplomacy": 8, 
     "father": null, 
-    "plot": 8, 
+    "plot": 7, 
     "scholarship": 8, 
     "sex": "m", 
-    "disabled": true, 
+    "disabled": false, 
     "death": null, 
     "avatar": 5, 
     "birth": "2013-07-23T20:41:33", 
@@ -4271,8 +4271,7 @@
     "loyalty": 99, 
     "spouse": null, 
     "quality_set": [
-      19, 
-      37
+      19
     ], 
     "mentor": null
   }
@@ -4335,12 +4334,12 @@
     "fight": 9, 
     "first_name": "Sorin", 
     "last_name": "de Nonac", 
-    "diplomacy": 14, 
+    "diplomacy": 18, 
     "father": null, 
     "plot": 8, 
     "scholarship": 7, 
     "sex": "m", 
-    "disabled": true, 
+    "disabled": false, 
     "death": null, 
     "avatar": 1, 
     "birth": "2013-07-23T20:41:33", 
@@ -4348,8 +4347,7 @@
     "loyalty": 80, 
     "spouse": null, 
     "quality_set": [
-      20, 
-      37
+      20
     ], 
     "mentor": null
   }
@@ -4367,17 +4365,16 @@
     "plot": 11, 
     "scholarship": 8, 
     "sex": "m", 
-    "disabled": true, 
+    "disabled": false, 
     "death": null, 
     "avatar": 18, 
-    "birth": "2013-07-23T21:02:55.344", 
+    "birth": "2013-07-23T21:02:55", 
     "mother": null, 
     "loyalty": 20, 
     "spouse": null, 
     "quality_set": [
       4, 
-      5, 
-      37
+      5
     ], 
     "mentor": null
   }
@@ -6708,9 +6705,9 @@
     "disabled": false, 
     "death": null, 
     "avatar": 44, 
-    "birth": "2013-09-15T21:57:26.581", 
+    "birth": "2013-09-15T21:57:26", 
     "mother": 7038, 
-    "loyalty": 60, 
+    "loyalty": 55, 
     "spouse": null, 
     "quality_set": [
       47
@@ -11438,7 +11435,7 @@
   "fields": {
     "params": "", 
     "slug": "determiner_raid", 
-    "on_fire": "\nsomme_combat = sum_folks(liste_attaquant,'fight')\n\n# argent vol\u00e9 au defenseur\nargent_vole = int(30*((somme_combat)**0.5)/7.74*(population_defenseur/population_max_defenseur))\n# population perdue par le defenseur\npopulation_perdue = int(argent_vole/3)\n\n# proba de mourrir / d'etre bless\u00e9 des attaquants\n# random_value : un entier aleatoire entre a et b\n# random_in : un element aleatoirement pris dans un tableau\n# random_gauss : (min,max,[sigma],[mu])\nmorts_attaquant=[]\nblesses_attaquant=[]\n\nfor attaquant in liste_attaquant:\n  pourcent_mort = int(((256-min(16,attaquant.fight)**0.5)*0.09/256+0.01)*100)\n  pourcent_blesse = 4*pourcent_mort\n  destin=random_value(1,100)\n  if destin<=pourcent_mort:\n    truc=truc+1\n    attaquant.die()\n    morts_attaquant.append(attaquant)\n  elif destin<=pourcent_blesse:\n    call_function(\"blesser_folk\",folk=attaquant)\n    blesses_attaquant.append(attaquant)\n\n\nparam = {\n         'argent_vole' : argent_vole,\n         'population_perdue' : population_perdue,\n         'blesses_attaquant' : blesses_attaquant,\n         'morts_attaquant' : morts_attaquant\n         }\n", 
+    "on_fire": "\nsomme_combat = sum_folks(liste_attaquant,'fight')\n\n# argent vol\u00e9 au defenseur\nargent_vole = int(30*((somme_combat)**0.5)/7.74*(population_defenseur/population_max_defenseur))\n# population perdue par le defenseur\npopulation_perdue = int(argent_vole/3)\n\n# proba de mourrir / d'etre bless\u00e9 des attaquants\n# random_value : un entier aleatoire entre a et b\n# random_in : un element aleatoirement pris dans un tableau\n# random_gauss : (min,max,[sigma],[mu])\nmorts_attaquant=[]\nblesses_attaquant=[]\n\nfor attaquant in liste_attaquant:\n  pourcent_mort = 0# int(((256-min(16,attaquant.fight)**0.5)*0.09/256+0.01)*100)\n  pourcent_blesse = 4*pourcent_mort\n  destin=random_value(1,100)\n  if destin<=pourcent_mort:\n    truc=truc+1\n    attaquant.die()\n    morts_attaquant.append(attaquant)\n  elif destin<=pourcent_blesse:\n    call_function(\"blesser_folk\",folk=attaquant)\n    blesses_attaquant.append(attaquant)\n\n\nparam = {\n         'argent_vole' : argent_vole,\n         'population_perdue' : population_perdue,\n         'blesses_attaquant' : blesses_attaquant,\n         'morts_attaquant' : morts_attaquant\n         }\n", 
     "description": "d\u00e9terminer r\u00e9sultat d'un raid : \r\n- population d\u00e9fenseur tu\u00e9e\r\n- argent gagn\u00e9e par le vainqueur\r\n- bless\u00e9s attaquant\r\n- tu\u00e9s attaquant\r\n"
   }
 },
@@ -47379,7 +47376,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent - cible acceptable ? )\nnok = 0\nif kingdom.money < 10:\n  nok = 1\nelif kingdom.user.username==target.user.username:\n  nok = 0\n  \n\nif nok == 0:\n  kingdom.money-=10\n  # Retrieve the claim\n  try:\n    claim = Claim.objects.get(offender=kingdom, offended=target)\n    kingdom.prestige-=30\n    kingdom.save()\n  except:\n    #add claim lvl 1 Claim.objects.set(offender=kingdom, offended=target)\n    #claim.save()\n    pass\n\n  retour_fonction = call_function('determiner_raid',\n                                  liste_attaquant=grids['attaquants'],\n                                  argent_defenseur = target.money,\n                                  population_defenseur = target.population,\n                                  population_max_defenseur = f('get_max_population',kingdom=target)\n                                  )\n  \n  \n  target.population-=retour_fonction['population_perdue']\n  # kingdom.save()\n  target.save()\n  \n  kingdom.money+= retour_fonction['argent_vole']\n  # target.save()\n  # kingdom.save()\n  \n  # gestion des evenements de retour du raid pour l'attaquant et d'avertissement de raid pour la cible\n  # cas d'un raid qui tourne tr\u00e8s mal (des morts ...)\n  if (len(retour_fonction['morts_attaquant'])>0):\n     # evenement pour l'attaquant\n     pa = kingdom.create_pending_event(\"retour_raid_morts\")\n     pa.set_value(\"morts_attaquant\", retour_fonction['morts_attaquant'])\n     pa.start()\n     # evenement pour la cible\n     pc = target.create_pending_event(\"cible_raid_morts\")\n     pc.set_value(\"population_perdue\", retour_fonction['population_perdue'])\n     pc.start()\n  # cas d'un raid sans encombre  \n  else:\n     # evenement pour l'attaquant\n     pa = kingdom.create_pending_event(\"retour_raid_ok\")\n     pa.set_value(\"liste_attaquant\", grids['attaquants'])\n     pa.set_value(\"blesses_attaquant\", retour_fonction['blesses_attaquant'])\n     pa.start()\n     # evenement pour la cible\n     pc = target.create_pending_event(\"cible_raid_ok\")\n     pc.set_value(\"population_perdue\", retour_fonction['population_perdue'])\n     pc.start()             \n  \n  \n\nelif nok==1 :\n  status=\"Vous n'avez pas suffisamment d'argent pour lancer cette mission.\"  \nelif nok==2 :status=\"On n'organise pas de raid sur son domaine, il y a les imp\u00f4ts et le droit de cuissage pour \u00e7a !\"  \n\n", 
+    "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent - cible acceptable ? )\nnok = 0\nif kingdom.money < 10:\n  nok = 1\nelif kingdom.user.username==target.user.username:\n  nok = 0\n  \n\nif nok == 0:\n  kingdom.money-=10\n  # Retrieve the claim\n  try:\n    claim = Claim.objects.get(offender=kingdom, offended=target)\n    kingdom.prestige-=30\n    kingdom.save()\n  except:\n    #add claim lvl 1 Claim.objects.set(offender=kingdom, offended=target)\n    #claim.save()\n    pass\n\n  retour_fonction = call_function('determiner_raid',\n                                  liste_attaquant=grids['attaquants'],\n                                  argent_defenseur = target.money,\n                                  population_defenseur = target.population,\n                                  population_max_defenseur = f('get_max_population',kingdom=target)\n                                  )\n  \n  \n  target.population-=retour_fonction['population_perdue']\n  # kingdom.save()\n  target.save()\n  \n  kingdom.money+= retour_fonction['argent_vole']\n  # target.save()\n  # kingdom.save()\n  \n  # gestion des evenements de retour du raid pour l'attaquant et d'avertissement de raid pour la cible\n  # cas d'un raid qui tourne tr\u00e8s mal (des morts ...)\n  if (len(retour_fonction['morts_attaquant'])>0):\n     # evenement pour l'attaquant\n     pa = kingdom.create_pending_event(\"retour_raid_morts\")\n     pa.set_value(\"morts_attaquant\", retour_fonction['morts_attaquant'])\n     pa.start()\n     # evenement pour la cible\n     pc = target.create_pending_event(\"cible_raid_morts\")\n     pc.set_value(\"population_perdue\", retour_fonction['population_perdue'])\n     pc.set_value(\"kingdom_attaquant\", kingdom.user.username)\n     pc.save()\n     pc.start()\n  # cas d'un raid sans encombre  \n  else:\n     # evenement pour l'attaquant\n     pa = kingdom.create_pending_event(\"retour_raid_ok\")\n     pa.set_value(\"liste_attaquant\", grids['attaquants'])\n     pa.set_value(\"blesses_attaquant\", retour_fonction['blesses_attaquant'])\n     pa.start()\n     # evenement pour la cible\n     pc = target.create_pending_event(\"cible_raid_ok\")\n     pc.set_value(\"population_perdue\", retour_fonction['population_perdue'])\n     pc.start()             \n  \n  \n\nelif nok==1 :\n  status=\"Vous n'avez pas suffisamment d'argent pour lancer cette mission.\"  \nelif nok==2 :status=\"On n'organise pas de raid sur son domaine, il y a les imp\u00f4ts et le droit de cuissage pour \u00e7a !\"  \n\n", 
     "has_target": true, 
     "is_team": false, 
     "title": null, 
@@ -52337,7 +52334,7 @@
     "category": null, 
     "name": "Nous sommes vicitime d'un raid ! ", 
     "weight": 1, 
-    "text": "C'\u00e9tait une bien jolie mansure quelques jours auparavant. D\u00e9sormais on n'y distingue plus que des amas de bois et de paille calcin\u00e9s avec en arri\u00e8re plan les cris d'affolement et de d\u00e9sespoir des b\u00eates et des hommes. \r\n\r\nA mes c\u00f4t\u00e9s le messager qui m'a amen\u00e9 sur les lieux reprend : \r\n\"L'attaque a eu lieu hier soir au cr\u00e9puscule. D'apr\u00e8s ces vilains quelques chevaliers suivis d'hommes d'armes ont surgi du bois dans cette direction et se sont pr\u00e9cipit\u00e9s sur les habitations. Sans sommation ils ont lanc\u00e9 des torches \u00e0 l\u2019int\u00e9rieur et alors que leurs occupants sortaient pour ne pas \u00e9touffer ces bandits ont commenc\u00e9 \u00e0 les massacrer.\"\r\n\r\n\"Impossible que ce soit de simples bandit en maraude me dis-je, il y a trop de g\u00e2chis alors que mon regard se pose sur ce qui reste d'un mouton apr\u00e8s le festin des corbeaux.\"\r\n\r\nL'homme \u00e0 mes c\u00f4t\u00e9s reprend : \" on dit qu'avant de partir ils ont d\u00e9clar\u00e9s aux survivants. Le seigneur de ... vous salue bien bas !\" \r\n\r\nPertes : {{population_perdue}} paysans morts. \r\n\r\nTout ceci devient bien trop clair. \r\n\r\n", 
+    "text": "C'\u00e9tait une bien jolie mansure quelques jours auparavant. D\u00e9sormais on n'y distingue plus que des amas de bois et de paille calcin\u00e9s avec en arri\u00e8re plan les cris d'affolement et de d\u00e9sespoir des b\u00eates et des hommes. \r\n\r\nA mes c\u00f4t\u00e9s le messager qui m'a amen\u00e9 sur les lieux reprend : \r\n\"L'attaque a eu lieu hier soir au cr\u00e9puscule. D'apr\u00e8s ces vilains quelques chevaliers suivis d'hommes d'armes ont surgi du bois dans cette direction et se sont pr\u00e9cipit\u00e9s sur les habitations. Sans sommation ils ont lanc\u00e9 des torches \u00e0 l\u2019int\u00e9rieur et alors que leurs occupants sortaient pour ne pas \u00e9touffer ces bandits ont commenc\u00e9 \u00e0 les massacrer.\"\r\n\r\n\"Impossible que ce soit de simples bandit en maraude me dis-je, il y a trop de g\u00e2chis alors que mon regard se pose sur ce qui reste d'un mouton apr\u00e8s le festin des corbeaux.\"\r\n\r\nL'homme \u00e0 mes c\u00f4t\u00e9s reprend : \" on dit qu'avant de partir ils ont d\u00e9clar\u00e9s aux survivants. Le seigneur de {{kingdom_attaquant}} vous salue bien bas !\" \r\n\r\nPertes : {{population_perdue}} paysans morts. \r\n\r\nTout ceci devient bien trop clair. \r\n\r\n", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "cible_raid_ok", 
@@ -82661,7 +82658,7 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-10-04T23:59:24.210", 
+    "last_login": "2013-10-05T17:34:56.056", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$10000$Bc1Fz9XywYEu$+QrQqEhho+w6dzL0gTqLMxqfruLba4JfWrwuqrVe77E=", 
@@ -126791,6 +126788,279 @@
   }
 },
 {
+  "pk": 7900, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T17:35:42.409", 
+    "object_repr": "Sorin de Nonac", 
+    "object_id": "6687", 
+    "change_message": "Modifi\u00e9 quality_set et disabled.", 
+    "user": 42, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7901, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T17:35:45.768", 
+    "object_repr": "Sorin de Nonac", 
+    "object_id": "6687", 
+    "change_message": "Aucun champ modifi\u00e9.", 
+    "user": 42, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7902, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T17:36:12.277", 
+    "object_repr": "Charles de Gourville", 
+    "object_id": "6688", 
+    "change_message": "Modifi\u00e9 quality_set et disabled.", 
+    "user": 42, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7903, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T17:36:14.582", 
+    "object_repr": "Charles de Gourville", 
+    "object_id": "6688", 
+    "change_message": "Aucun champ modifi\u00e9.", 
+    "user": 42, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7904, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T17:36:44.870", 
+    "object_repr": "Anselme de belzebuth", 
+    "object_id": "7041", 
+    "change_message": "Aucun champ modifi\u00e9.", 
+    "user": 42, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7905, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T17:37:12.319", 
+    "object_repr": "Laurent de Belze", 
+    "object_id": "6684", 
+    "change_message": "Modifi\u00e9 quality_set et disabled.", 
+    "user": 42, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 7906, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T17:37:48.768", 
+    "object_repr": "determiner_raid()", 
+    "object_id": "24", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7907, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T17:46:29.369", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7908, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T17:47:06.311", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ils paieront !  [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7909, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T17:49:23.429", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ils paieront !  [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7910, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T17:56:55.667", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ils paieront !  [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7911, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T17:59:32.976", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ils paieront !  [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7912, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T18:00:22.788", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ils paieront !  [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7913, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T18:02:20.389", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ils paieront !  [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7914, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T18:03:35.964", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ils paieront !  [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7915, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T18:04:39.979", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7916, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T18:05:37.557", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ils paieront !  [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7917, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T18:08:01.432", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7918, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T18:08:25.395", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ils paieront !  [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7919, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T18:13:15.219", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7920, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T18:14:36.023", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 23
+  }
+},
+{
   "pk": 46, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -126809,7 +127079,7 @@
     "prestige": 150, 
     "money": 86, 
     "user": 42, 
-    "population": 269
+    "population": 239
   }
 },
 {
