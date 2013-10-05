@@ -3035,7 +3035,7 @@
     "category": null, 
     "name": "Nous sommes vicitime d'un raid ! ", 
     "weight": 1, 
-    "text": "Notre seigneurie, nos terres ont \u00e9t\u00e9 attaqu\u00e9es ! \r\n\r\nde Belze @ Jules : event pour avertir la cible d'un raid qu'elle a \u00e9t\u00e9 attaqu\u00e9e ( \u00e7a me semblait necessaire). En construction ...", 
+    "text": "C'\u00e9tait une bien jolie mansure quelques jours auparavant. D\u00e9sormais on n'y distingue plus que des amas de bois et de paille calcin\u00e9s avec en arri\u00e8re plan les cris d'affolement et de d\u00e9sespoir des b\u00eates et des hommes. \r\n\r\nA mes c\u00f4t\u00e9s le messager qui m'a amen\u00e9 sur les lieux reprend : \r\n\"L'attaque a eu lieu hier soir au cr\u00e9puscule. D'apr\u00e8s ces vilains quelques chevaliers suivis d'hommes d'armes ont surgi du bois dans cette direction et se sont pr\u00e9cipit\u00e9s sur les habitations. Sans sommation ils ont lanc\u00e9 des torches \u00e0 l\u2019int\u00e9rieur et alors que leurs occupants sortaient pour ne pas \u00e9touffer ces bandits ont commenc\u00e9 \u00e0 les massacrer.\"\r\n\r\n\"Impossible que ce soit de simples bandit en maraude me dis-je, il y a trop de g\u00e2chis alors que mon regard se pose sur ce qui reste d'un mouton apr\u00e8s le festin des corbeaux.\"\r\n\r\nL'homme \u00e0 mes c\u00f4t\u00e9s reprend : \" on dit qu'avant de partir ils ont d\u00e9clar\u00e9s aux survivants. Le seigneur de ... vous salue bien bas !\" \r\n\r\nPertes : {{population_perdue}} paysans morts. \r\n\r\nTout ceci devient bien trop clair. \r\n\r\n", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "cible_raid_ok", 
@@ -6011,11 +6011,11 @@
   "pk": 327, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Les cuistres ! ", 
+    "text": "Ils paieront ! ", 
     "message": "", 
     "event": 255, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "#add claim lvl 1 Claim.objects.set(offender=kingdom, offended=target)\n# claim.save()\n"
   }
 },
 {
