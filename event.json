@@ -137,9 +137,9 @@
     "category": null, 
     "name": "Rassembler l'arm\u00e9e", 
     "weight": 1, 
-    "text": "Dans la cour du ch\u00e2teau, je marche d\u2019un pas martial au c\u00f4t\u00e9 de sire {{title.connetable.first_name}}, mon nouveau conn\u00e9table, chef de mon \u201carm\u00e9e\u201d. Les hommes qu\u2019il a recrut\u00e9 sont assis en d\u00e9sordre \u00e0 l\u2019ombre du rempart ouest. Au premier regard, je constate que la plupart ne sont que paysans mal d\u00e9grossis qui n\u2019ont probablement jamais tenu une \u00e9p\u00e9e de leur vie. Il faudra leur apprendre \u00e0 se battre, et leur inculquer la discipline, mais je suis convaincu que {{title.connetable.first_name}} sera \u00e0 la hauteur. Un homme, cependant, se d\u00e9tache du lot. Il semble en bien meilleur forme que le reste des recrues, et ses v\u00eatements sont de bonne facture, tout comme l\u2019\u00e9p\u00e9e qu\u2019il porte \u00e0 son c\u00f4t\u00e9.", 
+    "text": "Dans la cour du ch\u00e2teau, je marche d\u2019un pas martial au c\u00f4t\u00e9 de sire {{title.connetable.first_name}}, mon nouveau conn\u00e9table, chef de mon \u201carm\u00e9e\u201d. Les hommes qu\u2019il a recrut\u00e9 sont assis en d\u00e9sordre \u00e0 l\u2019ombre du rempart ouest. Au premier regard, je constate que la plupart ne sont que paysans mal d\u00e9grossis qui n\u2019ont probablement jamais tenu une \u00e9p\u00e9e de leur vie. Il faudra leur apprendre \u00e0 se battre, et leur inculquer la discipline, mais je suis convaincu que {{title.connetable.first_name}} sera \u00e0 la hauteur. Un homme, cependant, se d\u00e9tache du lot. Il semble en bien meilleur forme que le reste des recrues, et ses v\u00eatements sont de bonne facture, tout comme l\u2019\u00e9p\u00e9e qu\u2019il porte \u00e0 son c\u00f4t\u00e9.\r\n\r\n    10 de mes paysans sont d\u00e9sormais pass\u00e9 en soldats. Ils ne me rapportent plus aucun \u00e9cu et on m\u00eame un co\u00fbt d'entretien. Mais \u00e0 quoi bon avoir de l'argent si c'est pour se le faire voler.", 
     "image": "events/716.jpg", 
-    "on_fire": "\n", 
+    "on_fire": "kingdom.population-=10\nkingdom.soldiers+=10\nkingdom.set_value('total_soldats',kingdom.get_value('total_soldats')+10)\nkingdom.save()\n", 
     "slug": "tuto_recrutement", 
     "condition": " "
   }
@@ -153,7 +153,7 @@
     "weight": 1, 
     "text": "Il s\u2019incline respectueusement. \u201c {{knight}}, pour vous servir.\u201d Je jette un regard \u00e0  {{title.connetable.first_name}}, qui reste de marbre. \u201cVous me semblez homme aguerri. Seriez-vous d\u2019aventure chevalier?\u201d Il se redresse, et me regarde droit dans les yeux. \u201c En effet je le suis. Un chevalier fatigu\u00e9 par une longue errance, qui cherche un seigneur au c\u0153ur noble \u00e0 qui pr\u00eater son bras.\u201d J\u2019opine gravement, et pose une main ferme sur son \u00e9paule. \u201cVotre errance est termin\u00e9e, sire {{knight.first_name}}. A genoux.\u201d", 
     "image": "events/716_1.jpg", 
-    "on_fire": "#Cr\u00e9ation du chevalier\nknight = call_function(\"creer_folk\", sex=Folk.MALE, birth=(datetime.now() - timedelta(days=35)), fight_min=9, diplomacy_min=2, plot_min=2, scholarship_min=2, loyalty=50, max_carac=32, kingdom=kingdom)\nparam.set_value(\"knight\", knight)\n", 
+    "on_fire": "#Cr\u00e9ation du chevalier\nknight = call_function(\"creer_folk\", sex=Folk.MALE, birth=(datetime.now() - timedelta(days=35)), fight_min=9, diplomacy_min=2, plot_min=2, scholarship_min=2, loyalty=50, max_carac=32, kingdom=kingdom, trait=random_in(['piquier','cavalier','archer']))\nparam.set_value(\"knight\", knight)\n", 
     "slug": "tuto_recrutement_2", 
     "condition": " "
   }
@@ -181,7 +181,7 @@
     "weight": 1, 
     "text": "J\u2019ai envoy\u00e9 {{title.connetable.first_name}} et ses hommes, arm\u00e9s de pieds en cap, parcourir la campagne et porter la nouvelle du renouveau de {{dynasty}}. Il a fait savoir aux paysans qu\u2019ils sont sous ma protection tant qu\u2019ils m\u2019offriront l\u2019ob\u00e9issance due \u00e0 leur suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eatre d\u00e9sormais le seigneur de 90 paysans et 10 soldats.", 
     "image": "events/17.jpg", 
-    "on_fire": "kingdom.population=90\nkingdom.soldiers=10\nkingdom.save()\n", 
+    "on_fire": "kingdom.population=90\nkingdom.soldiers=10\nkingdom.set_value('total_soldats',10)\nkingdom.save()\n", 
     "slug": "tuto_recrutement_4", 
     "condition": " "
   }
