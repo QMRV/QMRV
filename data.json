@@ -10519,6 +10519,49 @@
   }
 },
 {
+  "pk": 1427, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth. Nous avons d\u00e9sormais un casus Belli contre eux. ", 
+    "created": "2013-10-05T19:28:27.603", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1428, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Nous avons d\u00e9sormais un casus Belli contre ces rats. ", 
+    "created": "2013-10-05T19:34:13.423", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1429, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie n'a pas de limite. ", 
+    "created": "2013-10-05T19:36:33.438", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 24, 
+  "model": "kingdom.claim", 
+  "fields": {
+    "offended": 59, 
+    "level": 2, 
+    "created": "2013-10-05T19:20:10.471", 
+    "offender": 59
+  }
+},
+{
   "pk": 1, 
   "model": "title.title", 
   "fields": {
@@ -11007,7 +11050,6 @@
     "description": "Initialise les comptes", 
     "prestige_threshold": 0, 
     "fired": [
-      101, 
       71, 
       74, 
       76, 
@@ -11019,7 +11061,7 @@
       59
     ], 
     "money_threshold": 0, 
-    "on_fire": "# Cr\u00e9ation du ch\u00e2telain\nseigneur = call_function(\"creer_folk\", kingdom=kingdom, fight_min=7, plot_min=7, diplomacy_min=7, scholarship_min=7, max_carac=36, loyalty=99, sex=Folk.MALE, last_name=kingdom.user.username, birth=datetime.now() - timedelta(days=35), trait=random_in(['piquier','archer','cavalier']))\n\nkingdom.unlock_title(\"chatelain\")\nseigneur.add_title(\"chatelain\")\n\n# Son fils\nfils = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=17), trait=random_in(['piquier','archer','cavalier']), )\n\n# Sa fille\nfille = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=16))\n\n# Compagnon\ncompagnon = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE,birth=datetime.now() - timedelta(days=35), trait=random_in(['piquier','archer','cavalier']))\n\n\n# Adversaire du tuto\nlast_name = LastName.objects.all().order_by('?')[0].name\nfirst_name = FirstName.objects.all().order_by('?')[0].name\nkingdom.set_value(\"adversaire_tuto\", first_name  + \" \" + last_name)\nkingdom.set_value(\"tuto_dynasty_PNJ\", last_name)\n\n# Lancement de l'event\npe = kingdom.create_pending_event(\"tuto_intro\")\npe.set_value(\"fils\", fils)\npe.set_value(\"fille\", fille)\npe.set_value(\"compagnon\", compagnon)\n\npe.start()\n\n# Kingdom init : on intialise de maniere equilibr\u00e9e avec un peu de random pour varier\n# pour modifier l'\u00e9quilibrage bouger ces 4 coeffs\npoints_base = 200\ncoeff_population = 0.5\ncoeff_prestige = 1\ncoeff_monnaie = 1\n\n# pour modifier la variabilit\u00e9 bouger les bornes de gaussienne\nrandom1 = random_gauss(0.75,1.25)\nrandom2 = random_gauss(0.75,1.25)\n\nkingdom.money = int(points_base/(coeff_population+random1*coeff_prestige+random2*coeff_population))\nkingdom.prestige = int(kingdom.money*coeff_prestige*random1)\nkingdom.population = 0 #int(kingdom.money*coeff_population*random2)\nkingdom.soldiers=0\nkingdom.set_value('total_soldats',0)\n\nkingdom.save()\n\nkingdom.set_value(\"in_tuto\", True)\n\n\n", 
+    "on_fire": "# Cr\u00e9ation du ch\u00e2telain\nseigneur = call_function(\"creer_folk\", kingdom=kingdom, fight_min=7, plot_min=7, diplomacy_min=7, scholarship_min=7, max_carac=36, loyalty=99, sex=Folk.MALE, last_name=kingdom.user.username, birth=datetime.now() - timedelta(days=35), trait=random_in(['piquier','archer','cavalier']))\n\nkingdom.unlock_title(\"chatelain\")\nseigneur.add_title(\"chatelain\")\n\n# Son fils\nfils = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=17), trait=random_in(['piquier','archer','cavalier']), )\n\n# Sa fille\nfille = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=16))\n\n# Compagnon\ncompagnon = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE,birth=datetime.now() - timedelta(days=35), trait=random_in(['piquier','archer','cavalier']))\n\n\n# Adversaire du tuto\nlast_name = LastName.objects.all().order_by('?')[0].name\nfirst_name = FirstName.objects.all().order_by('?')[0].name\nkingdom.set_value(\"adversaire_tuto\", first_name  + \" \" + last_name)\nkingdom.set_value(\"tuto_dynasty_PNJ\", last_name)\nkingdom.set_value(\"tuto_type_PNJ\", random_in(['piquier','archer','cavalier']))\n\n# Lancement de l'event\npe = kingdom.create_pending_event(\"tuto_intro\")\npe.set_value(\"fils\", fils)\npe.set_value(\"fille\", fille)\npe.set_value(\"compagnon\", compagnon)\n\npe.start()\n\n# Kingdom init : on intialise de maniere equilibr\u00e9e avec un peu de random pour varier\n# pour modifier l'\u00e9quilibrage bouger ces 4 coeffs\npoints_base = 200\ncoeff_population = 0.5\ncoeff_prestige = 1\ncoeff_monnaie = 1\n\n# pour modifier la variabilit\u00e9 bouger les bornes de gaussienne\nrandom1 = random_gauss(0.75,1.25)\nrandom2 = random_gauss(0.75,1.25)\n\nkingdom.money = int(points_base/(coeff_population+random1*coeff_prestige+random2*coeff_population))\nkingdom.prestige = int(kingdom.money*coeff_prestige*random1)\nkingdom.population = int(kingdom.money*coeff_population*random2)\nkingdom.soldiers=0\nkingdom.set_value('total_soldats',0)\n\nkingdom.save()\n\nkingdom.set_value(\"in_tuto\", True)\n\n\n", 
     "slug": "initialisation", 
     "condition": "\n", 
     "name": "Initialisation"
@@ -11178,8 +11220,8 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 120, 
-    "kingdom_list": "", 
-    "on_fire": "tr = kingdom.get_folk_in_title(\"tr\u00e9sorier\")\np = kingdom.population\np_max = call_function(\"population_max\", kingdom=kingdom)\n#on ne factorise pas p en raison de l'\u00e9valuation en partie enti\u00e8re\ngain = (p*(tr.scholarship - 5)/15 + p*p/p_max)\n\nkingdom.money += gain\nkingdom.save()", 
+    "kingdom_list": "\n", 
+    "on_fire": "chatelain=kingdom.get_folk_in_title(\"chatelain\")\nif chatelain is None:\n  erudition_chatelain=0\nelse:\n  erudition_chatelain=chatelain.scolarship\n\ntresorier=kingdom.get_folk_in_title(\"tresorier\")\nif tresorier is None:\n  erudition_tresorier=0\nelse:\n  erudition_tresorier=tresorier.scolarship\n\npourcentage_actuel = call_function('get_pourcentage_soldats_population', kingdom=kingdom)\nif pourcentage_actuel <= C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  gain=(kingdom.population * (((erudition_chatelain + 4*erudition_tresorier)/40  -0.5)*1/3 -kingdom.soldiers ))/12\nelse:\n  gain=(kingdom.population * (((erudition_chatelain + 4*erudition_tresorier)/40  -0.5)*1/3 -kingdom.soldiers*2 ))/12\n\nkingdom.money += gain\nkingdom.save()\n                             ", 
     "name": "Gain Thune", 
     "description": "Le royaume gagne de la thune\r\nLa fr\u00e9quence de cet \u00e9v\u00e8nement est cens\u00e9e \u00eatre toutes les 2h (1 mois in game)"
   }
@@ -47376,7 +47418,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent - cible acceptable ? )\nnok = 0\nif kingdom.money < 10:\n  nok = 1\nelif kingdom.user.username==target.user.username:\n  nok = 0\n  \n\nif nok == 0:\n  kingdom.money-=10\n  # Retrieve the claim\n  try:\n    claim = Claim.objects.get(offender=kingdom, offended=target)\n    kingdom.prestige-=30\n    kingdom.save()\n  except:\n    #add claim lvl 1 Claim.objects.set(offender=kingdom, offended=target)\n    #claim.save()\n    pass\n\n  retour_fonction = call_function('determiner_raid',\n                                  liste_attaquant=grids['attaquants'],\n                                  argent_defenseur = target.money,\n                                  population_defenseur = target.population,\n                                  population_max_defenseur = f('get_max_population',kingdom=target)\n                                  )\n  \n  \n  target.population-=retour_fonction['population_perdue']\n  # kingdom.save()\n  target.save()\n  \n  kingdom.money+= retour_fonction['argent_vole']\n  # target.save()\n  # kingdom.save()\n  \n  # gestion des evenements de retour du raid pour l'attaquant et d'avertissement de raid pour la cible\n  # cas d'un raid qui tourne tr\u00e8s mal (des morts ...)\n  if (len(retour_fonction['morts_attaquant'])>0):\n     # evenement pour l'attaquant\n     pa = kingdom.create_pending_event(\"retour_raid_morts\")\n     pa.set_value(\"morts_attaquant\", retour_fonction['morts_attaquant'])\n     pa.start()\n     # evenement pour la cible\n     pc = target.create_pending_event(\"cible_raid_morts\")\n     pc.set_value(\"population_perdue\", retour_fonction['population_perdue'])\n     pc.start()\n  # cas d'un raid sans encombre  \n  else:\n     # evenement pour l'attaquant\n     pa = kingdom.create_pending_event(\"retour_raid_ok\")\n     pa.set_value(\"liste_attaquant\", grids['attaquants'])\n     pa.set_value(\"blesses_attaquant\", retour_fonction['blesses_attaquant'])\n     pa.start()\n     # evenement pour la cible\n     casus = Claim(\n     level = 2,\n     offender =kingdom,\n     offended =target\n     )\n     casus.save()\n    \n     pc = target.create_pending_event(\"cible_raid_ok\")\n     pc.set_value(\"population_perdue\", int(retour_fonction['population_perdue']))\n     pc.set_value(\"kingdom_attaquant\", kingdom)\n     pc.set_value(\"kingdom_attaque\", target)\n     pc.start()             \n  \n  \n\nelif nok==1 :\n  status=\"Vous n'avez pas suffisamment d'argent pour lancer cette mission.\"  \nelif nok==2 :status=\"On n'organise pas de raid sur son domaine, il y a les imp\u00f4ts et le droit de cuissage pour \u00e7a !\"  \n\n", 
+    "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent - cible acceptable ? )\nnok = 0\nif kingdom.money < 10:\n  nok = 1\nelif kingdom.user.username==target.user.username:\n  nok = 0\n  \n\nif nok == 0:\n  kingdom.money-=10\n  # Retrieve the claim\n  try:\n    claim = Claim.objects.get(offender=kingdom, offended=target)\n    kingdom.prestige-=30\n    kingdom.save()\n  except:\n    #add claim lvl 1 Claim.objects.set(offender=kingdom, offended=target)\n    #claim.save()\n    pass\n\n  retour_fonction = call_function('determiner_raid',\n                                  liste_attaquant=grids['attaquants'],\n                                  argent_defenseur = target.money,\n                                  population_defenseur = target.population,\n                                  population_max_defenseur = f('get_max_population',kingdom=target)\n                                  )\n  \n  \n  target.population-=retour_fonction['population_perdue']\n  # kingdom.save()\n  target.save()\n  \n  kingdom.money+= retour_fonction['argent_vole']\n  # target.save()\n  # kingdom.save()\n  \n  # gestion des evenements de retour du raid pour l'attaquant et d'avertissement de raid pour la cible\n  # cas d'un raid qui tourne tr\u00e8s mal (des morts ...)\n  if (len(retour_fonction['morts_attaquant'])>0):\n     # evenement pour l'attaquant\n     pa = kingdom.create_pending_event(\"retour_raid_morts\")\n     pa.set_value(\"morts_attaquant\", retour_fonction['morts_attaquant'])\n     pa.start()\n     # evenement pour la cible\n     pc = target.create_pending_event(\"cible_raid_morts\")\n     pc.set_value(\"population_perdue\", retour_fonction['population_perdue'])\n     pc.start()\n  # cas d'un raid sans encombre  \n  else:\n     # evenement pour l'attaquant\n     pa = kingdom.create_pending_event(\"retour_raid_ok\")\n     pa.set_value(\"liste_attaquant\", grids['attaquants'])\n     pa.set_value(\"blesses_attaquant\", retour_fonction['blesses_attaquant'])\n     pa.start()\n     # evenement pour la cible\n     pc = target.create_pending_event(\"cible_raid_ok\")\n     pc.set_value(\"population_perdue\", int(retour_fonction['population_perdue']))\n     pc.set_value(\"kingdom_attaquant\", kingdom)\n     pc.set_value(\"kingdom_attaque\", target)\n     pc.start()             \n  \n  \n\nelif nok==1 :\n  status=\"Vous n'avez pas suffisamment d'argent pour lancer cette mission.\"  \nelif nok==2 :status=\"On n'organise pas de raid sur son domaine, il y a les imp\u00f4ts et le droit de cuissage pour \u00e7a !\"  \n\n", 
     "has_target": true, 
     "is_team": false, 
     "title": null, 
@@ -49436,9 +49478,9 @@
     "category": null, 
     "name": "Rassembler l'arm\u00e9e", 
     "weight": 1, 
-    "text": "Dans la cour du ch\u00e2teau, je marche d\u2019un pas martial au c\u00f4t\u00e9 de sire {{title.connetable.first_name}}, mon nouveau conn\u00e9table, chef de mon \u201carm\u00e9e\u201d. Les hommes qu\u2019il a recrut\u00e9 sont assis en d\u00e9sordre \u00e0 l\u2019ombre du rempart ouest. Au premier regard, je constate que la plupart ne sont que paysans mal d\u00e9grossis qui n\u2019ont probablement jamais tenu une \u00e9p\u00e9e de leur vie. Il faudra leur apprendre \u00e0 se battre, et leur inculquer la discipline, mais je suis convaincu que {{title.connetable.first_name}} sera \u00e0 la hauteur. Un homme, cependant, se d\u00e9tache du lot. Il semble en bien meilleur forme que le reste des recrues, et ses v\u00eatements sont de bonne facture, tout comme l\u2019\u00e9p\u00e9e qu\u2019il porte \u00e0 son c\u00f4t\u00e9.\r\n\r\n    10 de mes paysans sont d\u00e9sormais pass\u00e9 en soldats. Ils ne me rapportent plus aucun \u00e9cu et on m\u00eame un co\u00fbt d'entretien. Mais \u00e0 quoi bon avoir de l'argent si c'est pour se le faire voler.", 
+    "text": "Dans la cour du ch\u00e2teau, je marche d\u2019un pas martial au c\u00f4t\u00e9 de sire {{title.connetable.first_name}}, mon nouveau conn\u00e9table, chef de mon \u201carm\u00e9e\u201d. Les hommes qu\u2019il a recrut\u00e9 sont assis en d\u00e9sordre \u00e0 l\u2019ombre du rempart ouest. Au premier regard, je constate que la plupart ne sont que paysans mal d\u00e9grossis qui n\u2019ont probablement jamais tenu une \u00e9p\u00e9e de leur vie. Il faudra leur apprendre \u00e0 se battre, et leur inculquer la discipline, mais je suis convaincu que {{title.connetable.first_name}} sera \u00e0 la hauteur. Un homme, cependant, se d\u00e9tache du lot. Il semble en bien meilleur forme que le reste des recrues, et ses v\u00eatements sont de bonne facture, tout comme l\u2019\u00e9p\u00e9e qu\u2019il porte \u00e0 son c\u00f4t\u00e9.", 
     "image": "events/716.jpg", 
-    "on_fire": "kingdom.population-=10\nkingdom.soldiers+=10\nkingdom.set_value('total_soldats',kingdom.get_value('total_soldats')+10)\nkingdom.save()\n", 
+    "on_fire": "\n", 
     "slug": "tuto_recrutement", 
     "condition": " "
   }
@@ -55311,10 +55353,10 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Si ils veulent la guerre ils l'auront !", 
-    "message": "", 
+    "message": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de {{kingdom_attaquant.user.username}}. {% if deja_en_guerre == 0 %} Nous avons d\u00e9sormais un casus Belli contre ces rats. {% else %} Leur infamie ne connait aucune limite. {% endif %}", 
     "event": 255, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "deja_en_guerre = Claim.objects.filter(offender = param.get_value(\"kingdom_attaquant\"),offended =param.get_value(\"kingdom_attaque\")).count\n\nparam.set_value(\"deja_en_guerre\",1) \n\nif deja_en_guerre==0:\n  param.set_value(\"deja_en_guerre\",0) \n  casus = Claim(\n                level = 2,\n                offender =param.get_value(\"kingdom_attaquant\"),\n                offended =param.get_value(\"kingdom_attaque\")\n                )\n  casus.save()\n\n \n"
   }
 },
 {
@@ -127308,6 +127350,240 @@
   }
 },
 {
+  "pk": 7940, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T19:19:12.805", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7941, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T19:19:50.329", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 7942, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T19:22:50.145", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition, on_fire et message modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7943, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T19:27:34.242", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition, on_fire et message modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7944, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T19:27:57.369", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7945, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T19:28:12.753", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7946, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T19:28:23.776", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7947, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T19:29:59.825", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition, on_fire et message modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7948, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T19:32:12.766", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition, on_fire et message modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7949, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T19:33:27.712", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition, on_fire et message modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7950, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T19:34:00.895", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition, on_fire et message modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7951, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T19:36:15.952", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition, on_fire et message modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7952, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T19:37:10.755", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition, on_fire et message modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7953, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T20:12:14.465", 
+    "object_repr": "Gain Thune", 
+    "object_id": "5", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 38, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7954, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T20:14:58.724", 
+    "object_repr": "tuto_recrutement", 
+    "object_id": "12", 
+    "change_message": "Modifi\u00e9 text et on_fire. on_fire modifi\u00e9 pour event action \u00ab\u00a0\u201cVotre nom, messire?\u201d [tuto_recrutement]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7955, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T20:17:00.326", 
+    "object_repr": "Initialisation", 
+    "object_id": "1", 
+    "change_message": "Modifi\u00e9 condition, on_fire et fired.", 
+    "user": 38, 
+    "content_type": 17
+  }
+},
+{
+  "pk": 7956, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T20:17:28.540", 
+    "object_repr": "tuto_escarmouche_defaite", 
+    "object_id": "230", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0C'est le c\u0153ur empli de chevalerie que nous charge\u00e2 [tuto_escarmouche_defaite]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7957, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T20:17:48.349", 
+    "object_repr": "tuto_escarmouche", 
+    "object_id": "41", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0tuto_escarmouche [Combattants (3)]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 23
+  }
+},
+{
   "pk": 46, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -127326,7 +127602,7 @@
     "prestige": 150, 
     "money": 86, 
     "user": 42, 
-    "population": 227
+    "population": 216
   }
 },
 {
