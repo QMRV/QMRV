@@ -5707,7 +5707,7 @@
     "message": "Un mois s'est \u00e9coul\u00e9.", 
     "event": 225, 
     "condition": "\n", 
-    "on_fire": "# Terminer les missions en cours\npending_missions = kingdom.pendingmission_set.filter(started__isnull=False)\nfor pending_mission in pending_missions:\n  pending_mission.resolve()\n\n# Simuler un mois de temps sur le Kingdom\nkingdom.money += 15\nkingdom.population += 20\nkingdom.soldiers += 3\nkingdom.save()\n\n# Lancer l'\u00e9v\u00e8nement en next_event\n# Les variables seront automatiquement transmises aussi.\nparam.next_event(param.get_value('slug')).start()\n\n"
+    "on_fire": "# Terminer les missions en cours\npending_missions = kingdom.pendingmission_set.filter(started__isnull=False)\nfor pending_mission in pending_missions:\n  pending_mission.resolve()\n\n# Simuler un mois de temps sur le Kingdom\n#gain de population\nkingdom.population += 20\n\n#transformation pop_en_soldats\npourcentage_actuel = call_function('get_pourcentage_soldats_population', kingdom=kingdom)\nif pourcentage_actuel < C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  virgule=kingdom.get_value('virgule',0)\n  nouveaux_soldats=min(C.GAIN_SOLDATS_PASSIF_AUTO * get_max_population()+vigrule,int(C.POURCENTAGE_MAX_SOLDATS_PASSIF*get_max_population() - pourcentage_actuel*get_max_population()), kingdom.population)\n  kingdom.soldiers += int(nouveaux_soldats)\n  kingdom.population -=int(nouveaux_soldats)\n  kingdom.set_value('virgule',nouveaux_soldats-int(nouveaux_soldats))\n\n  \n#gain de thunes\nkingdom.money += 20\n\nkingdom.save()\n\n# Lancer l'\u00e9v\u00e8nement en next_event\n# Les variables seront automatiquement transmises aussi.\nparam.next_event(param.get_value('slug')).start()\n\n"
   }
 },
 {
