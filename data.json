@@ -1533,8 +1533,8 @@
   "pk": "r5gynxg6yudatb2lcrehb56lmalt04ic", 
   "model": "sessions.session", 
   "fields": {
-    "expire_date": "2013-10-19T14:41:25.650", 
-    "session_data": "ZjU1YWJjMGE1OThjMWU2NjA0OTRkNTc3NjUwYzNkOGQ4MzAxOTM0MjqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZFUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmRxAlUNX2F1dGhfdXNlcl9pZEsmdS4="
+    "expire_date": "2013-10-19T15:52:18.645", 
+    "session_data": "NGJjY2UxZTM5YTU4MjlmNmI0Njc3YTI2NmQ4YWE1MTk4YmMxYzE0MDqAAn1xAShYCgAAAHRlc3Rjb29raWVxAlgGAAAAd29ya2VkcQNVDV9hdXRoX3VzZXJfaWRLJlUSX2F1dGhfdXNlcl9iYWNrZW5kVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHUu"
   }
 },
 {
@@ -3726,20 +3726,56 @@
   }
 },
 {
-  "pk": 718, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 101, 
-    "name": "total_soldats", 
-    "value": 0.0
-  }
-},
-{
   "pk": 719, 
   "model": "kingdom._kingdomvariable", 
   "fields": {
     "kingdom": 101, 
     "name": "in_tuto", 
+    "value": 1.0
+  }
+},
+{
+  "pk": 721, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 101, 
+    "name": "total_soldats", 
+    "value": 10.0
+  }
+},
+{
+  "pk": 722, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 101, 
+    "name": "tuto_recrutement", 
+    "value": 1.0
+  }
+},
+{
+  "pk": 723, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 101, 
+    "name": "tuto_caissesvides", 
+    "value": 1.0
+  }
+},
+{
+  "pk": 724, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 101, 
+    "name": "tuto_forcertitre_random", 
+    "value": 1.0
+  }
+},
+{
+  "pk": 725, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 101, 
+    "name": "tuto_facheux_fantome", 
     "value": 1.0
   }
 },
@@ -7524,8 +7560,8 @@
     "loyalty": 65, 
     "spouse": null, 
     "quality_set": [
-      10, 
-      1
+      1, 
+      10
     ], 
     "mentor": null
   }
@@ -7552,6 +7588,88 @@
     "spouse": null, 
     "quality_set": [
       38
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7338, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 101, 
+    "fight": 12, 
+    "first_name": "Bertrand", 
+    "last_name": "de Hardanges", 
+    "diplomacy": 9, 
+    "father": null, 
+    "plot": 6, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 16, 
+    "birth": "2013-08-31T15:25:12.758", 
+    "mother": null, 
+    "loyalty": 50, 
+    "spouse": null, 
+    "quality_set": [
+      22, 
+      38
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7339, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 101, 
+    "fight": 9, 
+    "first_name": "Aur\u00e8le", 
+    "last_name": "d'Anch\u00e9", 
+    "diplomacy": 8, 
+    "father": null, 
+    "plot": 6, 
+    "scholarship": 11, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 24, 
+    "birth": "2013-08-31T15:25:54.953", 
+    "mother": null, 
+    "loyalty": 75, 
+    "spouse": null, 
+    "quality_set": [
+      12, 
+      36
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7340, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 101, 
+    "fight": 8, 
+    "first_name": "Anth\u00e8lme", 
+    "last_name": "de Sonnaz", 
+    "diplomacy": 12, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 9, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 12, 
+    "birth": "2013-08-31T15:27:22.242", 
+    "mother": null, 
+    "loyalty": 50, 
+    "spouse": null, 
+    "quality_set": [
+      22, 
+      24, 
+      36
     ], 
     "mentor": null
   }
@@ -10294,6 +10412,116 @@
   }
 },
 {
+  "pk": 1417, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 101, 
+    "content": "J'ai mit sur pied un petit bataillon, et accept\u00e9 l'all\u00e9geance du chevalier . Les gueux me reconnaissent maintenant comme leur seigneur et ma\u00eetre.", 
+    "created": "2013-10-05T15:25:38.554", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1418, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 101, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-10-05T15:25:41.528", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1419, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 101, 
+    "content": "Vous pouvez d\u00e9sormais nommer un tr\u00e9sorier.", 
+    "created": "2013-10-05T15:25:49.675", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1420, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 101, 
+    "content": "Il est urgent de charger un [tr\u00e9sorier](#title) de r\u00e9gler nos probl\u00e8mes d'argent", 
+    "created": "2013-10-05T15:25:49.787", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1421, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 101, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-10-05T15:25:55.158", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1422, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 101, 
+    "content": "Le p\u00e8re Aur\u00e8le d'Anch\u00e9 a rejoint ma cour en tant que cur\u00e9 du ch\u00e2teau.", 
+    "created": "2013-10-05T15:25:58.402", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1423, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 101, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-10-05T15:26:01.025", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1424, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 101, 
+    "content": "Vous pouvez d\u00e9sormais nommer un ma\u00eetre espion.", 
+    "created": "2013-10-05T15:27:19.942", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1425, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 101, 
+    "content": "Mon fils  et le Bertrand de Hardanges sont \u00e0 couteaux tir\u00e9s. Je pourrais regler le probl\u00e8me en [d\u00e9barassant](mission) ma cour du chevalier.", 
+    "created": "2013-10-05T15:27:20.003", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1426, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 101, 
+    "content": "Un mois s'est \u00e9coul\u00e9.", 
+    "created": "2013-10-05T15:27:22.410", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
   "pk": 1, 
   "model": "title.title", 
   "fields": {
@@ -10745,6 +10973,36 @@
   }
 },
 {
+  "pk": 378, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 101, 
+    "last_folk": null, 
+    "folk": null, 
+    "title": 7
+  }
+},
+{
+  "pk": 379, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 101, 
+    "last_folk": 7339, 
+    "folk": 7339, 
+    "title": 3
+  }
+},
+{
+  "pk": 380, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 101, 
+    "last_folk": null, 
+    "folk": null, 
+    "title": 5
+  }
+},
+{
   "pk": 1, 
   "model": "internal.trigger", 
   "fields": {
@@ -10752,6 +11010,7 @@
     "description": "Initialise les comptes", 
     "prestige_threshold": 0, 
     "fired": [
+      101, 
       71, 
       74, 
       76, 
@@ -10760,11 +11019,10 @@
       81, 
       87, 
       88, 
-      59, 
-      101
+      59
     ], 
     "money_threshold": 0, 
-    "on_fire": "# Cr\u00e9ation du ch\u00e2telain\nseigneur = call_function(\"creer_folk\", kingdom=kingdom, fight_min=7, plot_min=7, diplomacy_min=7, scholarship_min=7, max_carac=36, loyalty=99, sex=Folk.MALE, last_name=kingdom.user.username, birth=datetime.now() - timedelta(days=35), trait=random_in(['piquier','archer','cavalier']))\n\nkingdom.unlock_title(\"chatelain\")\nseigneur.add_title(\"chatelain\")\n\n# Son fils\nfils = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=17), trait=random_in(['piquier','archer','cavalier']), )\n\n# Sa fille\nfille = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=16))\n\n# Compagnon\ncompagnon = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE,birth=datetime.now() - timedelta(days=35), trait=random_in(['piquier','archer','cavalier']))\n\n\n# Adversaire du tuto\nlast_name = LastName.objects.all().order_by('?')[0].name\nfirst_name = FirstName.objects.all().order_by('?')[0].name\nkingdom.set_value(\"adversaire_tuto\", first_name  + \" \" + last_name)\nkingdom.set_value(\"tuto_dynasty_PNJ\", last_name)\n\n# Lancement de l'event\npe = kingdom.create_pending_event(\"tuto_intro\")\npe.set_value(\"fils\", fils)\npe.set_value(\"fille\", fille)\npe.set_value(\"compagnon\", compagnon)\n\npe.start()\n\n# Kingdom init : on intialise de maniere equilibr\u00e9e avec un peu de random pour varier\n# pour modifier l'\u00e9quilibrage bouger ces 4 coeffs\npoints_base = 200\ncoeff_population = 0.5\ncoeff_prestige = 1\ncoeff_monnaie = 1\n\n# pour modifier la variabilit\u00e9 bouger les bornes de gaussienne\nrandom1 = random_gauss(0.75,1.25)\nrandom2 = random_gauss(0.75,1.25)\n\nkingdom.money = int(points_base/(coeff_population+random1*coeff_prestige+random2*coeff_population))\nkingdom.prestige = int(kingdom.money*coeff_prestige*random1)\nkingdom.population = int(kingdom.money*coeff_population*random2)\nkingdom.soldiers=0\nkingdom.set_value('total_soldats',0)\n\nkingdom.save()\n\nkingdom.set_value(\"in_tuto\", True)\n\n\n", 
+    "on_fire": "# Cr\u00e9ation du ch\u00e2telain\nseigneur = call_function(\"creer_folk\", kingdom=kingdom, fight_min=7, plot_min=7, diplomacy_min=7, scholarship_min=7, max_carac=36, loyalty=99, sex=Folk.MALE, last_name=kingdom.user.username, birth=datetime.now() - timedelta(days=35), trait=random_in(['piquier','archer','cavalier']))\n\nkingdom.unlock_title(\"chatelain\")\nseigneur.add_title(\"chatelain\")\n\n# Son fils\nfils = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=17), trait=random_in(['piquier','archer','cavalier']), )\n\n# Sa fille\nfille = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=16))\n\n# Compagnon\ncompagnon = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE,birth=datetime.now() - timedelta(days=35), trait=random_in(['piquier','archer','cavalier']))\n\n\n# Adversaire du tuto\nlast_name = LastName.objects.all().order_by('?')[0].name\nfirst_name = FirstName.objects.all().order_by('?')[0].name\nkingdom.set_value(\"adversaire_tuto\", first_name  + \" \" + last_name)\nkingdom.set_value(\"tuto_dynasty_PNJ\", last_name)\n\n# Lancement de l'event\npe = kingdom.create_pending_event(\"tuto_intro\")\npe.set_value(\"fils\", fils)\npe.set_value(\"fille\", fille)\npe.set_value(\"compagnon\", compagnon)\n\npe.start()\n\n# Kingdom init : on intialise de maniere equilibr\u00e9e avec un peu de random pour varier\n# pour modifier l'\u00e9quilibrage bouger ces 4 coeffs\npoints_base = 200\ncoeff_population = 0.5\ncoeff_prestige = 1\ncoeff_monnaie = 1\n\n# pour modifier la variabilit\u00e9 bouger les bornes de gaussienne\nrandom1 = random_gauss(0.75,1.25)\nrandom2 = random_gauss(0.75,1.25)\n\nkingdom.money = int(points_base/(coeff_population+random1*coeff_prestige+random2*coeff_population))\nkingdom.prestige = int(kingdom.money*coeff_prestige*random1)\nkingdom.population = 0 #int(kingdom.money*coeff_population*random2)\nkingdom.soldiers=0\nkingdom.set_value('total_soldats',0)\n\nkingdom.save()\n\nkingdom.set_value(\"in_tuto\", True)\n\n\n", 
     "slug": "initialisation", 
     "condition": "\n", 
     "name": "Initialisation"
@@ -10966,9 +11224,9 @@
   "pk": 9, 
   "model": "internal.recurring", 
   "fields": {
-    "delay": 144, 
+    "delay": 120, 
     "kingdom_list": "\n", 
-    "on_fire": "pourcentage_actuel = call_function('get_pourcentage_soldats_population', kingdom=kingdom)\nif pourcentage_actuel < C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  kingdom.soldiers += C.GAIN_SOLDATS_PASSIF_AUTO * get_max_population()\n  kingdom.save()\n\n  # Ne pas d\u00e9passer la limite passive\n  kingdom.soldiers = min(kingdom.soldiers, C.POURCENTAGE_MAX_SOLDATS_PASSIF * kingdom.population / 100)\n", 
+    "on_fire": "pourcentage_actuel = call_function('get_pourcentage_soldats_population', kingdom=kingdom)\nif pourcentage_actuel < C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  virgule=kingdom.get_value('virgule')\n  nouveaux_soldats=min(C.GAIN_SOLDATS_PASSIF_AUTO * get_max_population()+vigrule,int(C.POURCENTAGE_MAX_SOLDATS_PASSIF*get_max_population() - pourcentage_actuel*get_max_population()),kingdom.population)\n  kingdom.soldiers += int(nouveaux_soldats)\n  kingdom.population -=int(nouveaux_soldats)\n  kingdom.set_value('virgule',nouveaux_soldats-int(nouveaux_soldats))\n  kingdom.save()\n", 
     "name": "Augmenter le nombre de soldats", 
     "description": "Augmente automatiquement le nombre de soldats dans le royaume"
   }
@@ -11130,7 +11388,7 @@
   "fields": {
     "params": "kingdom:Kingdom", 
     "slug": "get_pourcentage_soldats_population", 
-    "on_fire": "param = 100 * call_function('get_max_population', kingdom=kingdom) / kingdom.soldiers", 
+    "on_fire": "if call_function('get_max_population', kingdom=kingdom)==0:\n  param=100\nelse:\n  param = 100 * kingdom.get_value('total_soldats')/call_function('get_max_population', kingdom=kingdom) ", 
     "description": "Retourne le pourcentage de soldats dans la population actuelle."
   }
 },
@@ -48948,6 +49206,102 @@
   }
 },
 {
+  "pk": 795, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 101, 
+    "mission": 7
+  }
+},
+{
+  "pk": 796, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 101, 
+    "mission": 8
+  }
+},
+{
+  "pk": 797, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 101, 
+    "mission": 9
+  }
+},
+{
+  "pk": 798, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 101, 
+    "mission": 18
+  }
+},
+{
+  "pk": 799, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 101, 
+    "mission": 19
+  }
+},
+{
+  "pk": 800, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 101, 
+    "mission": 14
+  }
+},
+{
+  "pk": 801, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 101, 
+    "mission": 20
+  }
+},
+{
+  "pk": 802, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 101, 
+    "mission": 21
+  }
+},
+{
+  "pk": 803, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 101, 
+    "mission": 22
+  }
+},
+{
+  "pk": 804, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 101, 
+    "mission": 27
+  }
+},
+{
+  "pk": 805, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 101, 
+    "mission": 51
+  }
+},
+{
+  "pk": 806, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 101, 
+    "mission": 33
+  }
+},
+{
   "pk": 1, 
   "model": "event.eventcategory", 
   "fields": {
@@ -49085,9 +49439,9 @@
     "category": null, 
     "name": "Rassembler l'arm\u00e9e", 
     "weight": 1, 
-    "text": "Dans la cour du ch\u00e2teau, je marche d\u2019un pas martial au c\u00f4t\u00e9 de sire {{title.connetable.first_name}}, mon nouveau conn\u00e9table, chef de mon \u201carm\u00e9e\u201d. Les hommes qu\u2019il a recrut\u00e9 sont assis en d\u00e9sordre \u00e0 l\u2019ombre du rempart ouest. Au premier regard, je constate que la plupart ne sont que paysans mal d\u00e9grossis qui n\u2019ont probablement jamais tenu une \u00e9p\u00e9e de leur vie. Il faudra leur apprendre \u00e0 se battre, et leur inculquer la discipline, mais je suis convaincu que {{title.connetable.first_name}} sera \u00e0 la hauteur. Un homme, cependant, se d\u00e9tache du lot. Il semble en bien meilleur forme que le reste des recrues, et ses v\u00eatements sont de bonne facture, tout comme l\u2019\u00e9p\u00e9e qu\u2019il porte \u00e0 son c\u00f4t\u00e9.", 
+    "text": "Dans la cour du ch\u00e2teau, je marche d\u2019un pas martial au c\u00f4t\u00e9 de sire {{title.connetable.first_name}}, mon nouveau conn\u00e9table, chef de mon \u201carm\u00e9e\u201d. Les hommes qu\u2019il a recrut\u00e9 sont assis en d\u00e9sordre \u00e0 l\u2019ombre du rempart ouest. Au premier regard, je constate que la plupart ne sont que paysans mal d\u00e9grossis qui n\u2019ont probablement jamais tenu une \u00e9p\u00e9e de leur vie. Il faudra leur apprendre \u00e0 se battre, et leur inculquer la discipline, mais je suis convaincu que {{title.connetable.first_name}} sera \u00e0 la hauteur. Un homme, cependant, se d\u00e9tache du lot. Il semble en bien meilleur forme que le reste des recrues, et ses v\u00eatements sont de bonne facture, tout comme l\u2019\u00e9p\u00e9e qu\u2019il porte \u00e0 son c\u00f4t\u00e9.\r\n\r\n    10 de mes paysans sont d\u00e9sormais pass\u00e9 en soldats. Ils ne me rapportent plus aucun \u00e9cu et on m\u00eame un co\u00fbt d'entretien. Mais \u00e0 quoi bon avoir de l'argent si c'est pour se le faire voler.", 
     "image": "events/716.jpg", 
-    "on_fire": "\n", 
+    "on_fire": "kingdom.population-=10\nkingdom.soldiers+=10\nkingdom.set_value('total_soldats',kingdom.get_value('total_soldats')+10)\nkingdom.save()\n", 
     "slug": "tuto_recrutement", 
     "condition": " "
   }
@@ -49101,7 +49455,7 @@
     "weight": 1, 
     "text": "Il s\u2019incline respectueusement. \u201c {{knight}}, pour vous servir.\u201d Je jette un regard \u00e0  {{title.connetable.first_name}}, qui reste de marbre. \u201cVous me semblez homme aguerri. Seriez-vous d\u2019aventure chevalier?\u201d Il se redresse, et me regarde droit dans les yeux. \u201c En effet je le suis. Un chevalier fatigu\u00e9 par une longue errance, qui cherche un seigneur au c\u0153ur noble \u00e0 qui pr\u00eater son bras.\u201d J\u2019opine gravement, et pose une main ferme sur son \u00e9paule. \u201cVotre errance est termin\u00e9e, sire {{knight.first_name}}. A genoux.\u201d", 
     "image": "events/716_1.jpg", 
-    "on_fire": "#Cr\u00e9ation du chevalier\nknight = call_function(\"creer_folk\", sex=Folk.MALE, birth=(datetime.now() - timedelta(days=35)), fight_min=9, diplomacy_min=2, plot_min=2, scholarship_min=2, loyalty=50, max_carac=32, kingdom=kingdom)\nparam.set_value(\"knight\", knight)\n", 
+    "on_fire": "#Cr\u00e9ation du chevalier\nknight = call_function(\"creer_folk\", sex=Folk.MALE, birth=(datetime.now() - timedelta(days=35)), fight_min=9, diplomacy_min=2, plot_min=2, scholarship_min=2, loyalty=50, max_carac=32, kingdom=kingdom, trait=random_in(['piquier','cavalier','archer']))\nparam.set_value(\"knight\", knight)\n", 
     "slug": "tuto_recrutement_2", 
     "condition": " "
   }
@@ -49129,7 +49483,7 @@
     "weight": 1, 
     "text": "J\u2019ai envoy\u00e9 {{title.connetable.first_name}} et ses hommes, arm\u00e9s de pieds en cap, parcourir la campagne et porter la nouvelle du renouveau de {{dynasty}}. Il a fait savoir aux paysans qu\u2019ils sont sous ma protection tant qu\u2019ils m\u2019offriront l\u2019ob\u00e9issance due \u00e0 leur suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eatre d\u00e9sormais le seigneur de 90 paysans et 10 soldats.", 
     "image": "events/17.jpg", 
-    "on_fire": "kingdom.population=90\nkingdom.soldiers=10\nkingdom.save()\n", 
+    "on_fire": "kingdom.population=90\nkingdom.soldiers=10\nkingdom.set_value('total_soldats',10)\nkingdom.save()\n", 
     "slug": "tuto_recrutement_4", 
     "condition": " "
   }
@@ -55121,15 +55475,15 @@
   }
 },
 {
-  "pk": 2699, 
+  "pk": 2718, 
   "model": "event.pendingevent", 
   "fields": {
     "kingdom": 101, 
     "is_started": true, 
-    "created": "2013-10-05T15:04:18.507", 
-    "started": "2013-10-05T15:04:18.507", 
-    "text": "Dans la cour du ch\u00e2teau, je marche d\u2019un pas martial au c\u00f4t\u00e9 de sire Bertin, mon nouveau conn\u00e9table, chef de mon \u201carm\u00e9e\u201d. Les hommes qu\u2019il a recrut\u00e9 sont assis en d\u00e9sordre \u00e0 l\u2019ombre du rempart ouest. Au premier regard, je constate que la plupart ne sont que paysans mal d\u00e9grossis qui n\u2019ont probablement jamais tenu une \u00e9p\u00e9e de leur vie. Il faudra leur apprendre \u00e0 se battre, et leur inculquer la discipline, mais je suis convaincu que Bertin sera \u00e0 la hauteur. Un homme, cependant, se d\u00e9tache du lot. Il semble en bien meilleur forme que le reste des recrues, et ses v\u00eatements sont de bonne facture, tout comme l\u2019\u00e9p\u00e9e qu\u2019il porte \u00e0 son c\u00f4t\u00e9.", 
-    "event": 12
+    "created": "2013-10-05T15:27:22.230", 
+    "started": "2013-10-05T15:27:22.234", 
+    "text": "Ma cour se peuple peu \u00e0 peu mais il y a trop peu de paysans sur mes terres pour esperer lever des impots satisfaisants. Pour fid\u00e9liser mes serfs et les faire travailler plus dur, j'aurais besoin de leur insuffler une ferveur religieuse nouvelle. Pour convaincre de nouveaux paysans de s'installer sur mes terres, j'ai besoin de convaincre la populace de ma pi\u00e9t\u00e9 et de ma bienveillance. \r\n\r\nPour m'aider dans cette t\u00e2che, j'ai persuad\u00e9 le p\u00e8re Aur\u00e8le d'Anch\u00e9, un cur\u00e9 respect\u00e9 de la r\u00e9gion, de se mettre \u00e0 mon service - en plus de celui du Seigneur - pour m'aider \u00e0 d\u00e9montrer ma charit\u00e9 par des aum\u00f4nes aux plus d\u00e9munis.\r\n\r\n    Le p\u00e8re Anth\u00e8lme a rejoint ma cour.\r\n", 
+    "event": 94
   }
 },
 {
@@ -55232,14 +55586,14 @@
   }
 },
 {
-  "pk": 2879, 
+  "pk": 2905, 
   "model": "event.pendingeventaction", 
   "fields": {
-    "pending_event": 2699, 
-    "message": "", 
-    "text": "\u201cVotre nom, messire?\u201d", 
+    "pending_event": 2718, 
+    "message": "Le p\u00e8re Aur\u00e8le d'Anch\u00e9 a accept\u00e9 de devenir le [cur\u00e9](titre) de ma cour.", 
+    "text": "In nomine patris, et filii, et spiritus sancti.", 
     "folk": null, 
-    "event_action": 18
+    "event_action": 127
   }
 },
 {
@@ -55420,6 +55774,33 @@
     "pending_event": 2595, 
     "name": "slug", 
     "value": "tuto_ambition"
+  }
+},
+{
+  "pk": 6884, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2718, 
+    "name": "slug", 
+    "value": "tuto_toofewpopulation"
+  }
+},
+{
+  "pk": 6885, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2718, 
+    "name": "cure", 
+    "value": "`Folk`:7340"
+  }
+},
+{
+  "pk": 6886, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2718, 
+    "name": "deja_cure", 
+    "value": 1.0
   }
 },
 {
@@ -126202,6 +126583,175 @@
   }
 },
 {
+  "pk": 7884, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T15:18:55.772", 
+    "object_repr": "tuto_recrutement", 
+    "object_id": "12", 
+    "change_message": "Modifi\u00e9 text et on_fire. on_fire modifi\u00e9 pour event action \u00ab\u00a0\u201cVotre nom, messire?\u201d [tuto_recrutement]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7885, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T15:19:27.034", 
+    "object_repr": "tuto_recrutement", 
+    "object_id": "12", 
+    "change_message": "Modifi\u00e9 on_fire. on_fire modifi\u00e9 pour event action \u00ab\u00a0\u201cVotre nom, messire?\u201d [tuto_recrutement]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7886, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T15:20:14.131", 
+    "object_repr": "tuto_recrutement", 
+    "object_id": "12", 
+    "change_message": "Modifi\u00e9 on_fire. on_fire modifi\u00e9 pour event action \u00ab\u00a0\u201cVotre nom, messire?\u201d [tuto_recrutement]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7887, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T15:21:57.115", 
+    "object_repr": "tuto_recrutement_2", 
+    "object_id": "13", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7888, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T15:24:21.421", 
+    "object_repr": "tuto_recrutement_4", 
+    "object_id": "15", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 7889, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T15:24:45.920", 
+    "object_repr": "Initialisation", 
+    "object_id": "1", 
+    "change_message": "Modifi\u00e9 condition et on_fire.", 
+    "user": 38, 
+    "content_type": 17
+  }
+},
+{
+  "pk": 7890, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T16:02:15.093", 
+    "object_repr": "Augmenter le nombre de soldats", 
+    "object_id": "9", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 38, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7891, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T16:06:56.957", 
+    "object_repr": "get_pourcentage_soldats_population()", 
+    "object_id": "18", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 38, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7892, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T16:08:34.166", 
+    "object_repr": "get_pourcentage_soldats_population()", 
+    "object_id": "18", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 38, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7893, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T16:12:49.758", 
+    "object_repr": "Augmenter le nombre de soldats", 
+    "object_id": "9", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 38, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7894, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T16:13:31.825", 
+    "object_repr": "Augmenter le nombre de soldats", 
+    "object_id": "9", 
+    "change_message": "Modifi\u00e9 delay, kingdom_list et on_fire.", 
+    "user": 38, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 7895, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T16:13:44.575", 
+    "object_repr": "get_pourcentage_soldats_population()", 
+    "object_id": "18", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 38, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 7896, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-05T16:17:54.561", 
+    "object_repr": "Augmenter le nombre de soldats", 
+    "object_id": "9", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 38, 
+    "content_type": 20
+  }
+},
+{
   "pk": 46, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -126304,11 +126854,11 @@
   "pk": 101, 
   "model": "kingdom.kingdom", 
   "fields": {
-    "soldiers": 0, 
+    "soldiers": 22, 
     "prestige": 104, 
-    "money": 11, 
+    "money": 71, 
     "user": 38, 
-    "population": 45
+    "population": 170
   }
 }
 ]
