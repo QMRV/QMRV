@@ -11240,13 +11240,157 @@
   }
 },
 {
-  "pk": 24, 
-  "model": "kingdom.claim", 
+  "pk": 1547, 
+  "model": "kingdom.message", 
   "fields": {
-    "offended": 59, 
-    "level": 2, 
-    "created": "2013-10-05T19:20:10.471", 
-    "offender": 59
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. ", 
+    "created": "2013-10-06T13:20:11.124", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1548, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. ", 
+    "created": "2013-10-06T13:21:14.162", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1549, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. ", 
+    "created": "2013-10-06T13:24:15.110", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1550, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. ", 
+    "created": "2013-10-06T13:25:24.048", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1551, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. ", 
+    "created": "2013-10-06T13:27:02.242", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1552, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. ", 
+    "created": "2013-10-06T13:29:31.725", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1553, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. ", 
+    "created": "2013-10-06T13:30:53.406", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1554, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. ", 
+    "created": "2013-10-06T13:35:27.318", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1555, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. ", 
+    "created": "2013-10-06T13:59:49.520", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1556, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. ", 
+    "created": "2013-10-06T14:05:52.342", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1557, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. ", 
+    "created": "2013-10-06T14:08:05.728", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1558, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. ", 
+    "created": "2013-10-06T14:11:19.066", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1559, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. ", 
+    "created": "2013-10-06T14:12:40.685", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1560, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. ", 
+    "created": "2013-10-06T14:15:31.468", 
+    "read": null, 
+    "level": 1
   }
 },
 {
@@ -12216,7 +12360,7 @@
   "fields": {
     "params": "", 
     "slug": "creer_claim", 
-    "on_fire": "claim_existant=0\nclaim_existant = Claim.objects.filter(offender=offender,offended=offended).count\n\n#if claim_existant > 0:\n#  ce_claim = Claim.objects.filter(offender=offender,offended=offended)\n\n# dans ces cas on fait quelque chose  \n#if claim_existant == 0 or 0 < level:\n#  if claim_existant == 0:\n#       casus = Claim(\n #               level = level,\n  #              offender =offender,\n   #             offended =offended\n    #            )\n     #  casus.save()\n  #else:\n     # ce_claim.level = level\n  \nparam = {\n         'deja_ennemi' : claim_existant\n         }  \n  \n\n", 
+    "on_fire": "try:\n  claim_existant = Claim.objects.filter(offender=offender,offended=offended).count\nexcept:\n  claim_existant = 0  \n\nif claim_existant > 0:\n  ce_claim = Claim.objects.filter(offender=offender,offended=offended)\n  ce_claim = ce_claim[0]\n\n# dans ces cas on fait quelque chose  \nif claim_existant == 0 or 0 < level:\n  if claim_existant == 0:\n       ce_claim = Claim(\n                level = level,\n                offender =offender,\n                offended =offended\n                )\n       ce_claim.save()\n  else:\n      ce_claim.level = level\n      ce_claim.save()\n  \nparam = {\n         'ce_claim' : ce_claim,\n         'deja_ennemi' : claim_existant\n         }  \n  \n\n", 
     "description": "Fonction qui cr\u00e9\u00e9 / met \u00e0 jour un claim automatiquement\r\nRetourne un entier qui dit si un claim similaire / de niveau sup\u00e9rieur ou m\u00eame niveau existait d\u00e9j\u00e0 entre les deux royaumes. Met \u00e0 jour ou pas le claim / le cr\u00e9e en cons\u00e9quence"
   }
 },
@@ -56130,10 +56274,10 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Si ils veulent la guerre ils l'auront !", 
-    "message": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de {{kingdom_attaquant.user.username}}. {% if 11 > 0 %} Nous avons d\u00e9sormais un casus Belli contre ces rats. {% else %} Leur infamie ne connait aucune limite. {% endif %}", 
+    "message": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de {{kingdom_attaquant.user.username}}. {% if deja_en_guerre == 0 %} Nous avons d\u00e9sormais un casus Belli contre ces rats. {% else %} Leur infamie ne connait aucune limite. {% endif %}", 
     "event": 255, 
-    "condition": "\n", 
-    "on_fire": "deja_en_guerre = f(\"creer_claim\",offender = param.get_value(\"kingdom_attaquant\"),offended = param.get_value(\"kingdom_attaque\"),level=2)\n\nparam.set_value(\"deja_en_guerre\",0) \n# deja_en_guerre('deja_ennemi')\n \n"
+    "condition": "try:\n  deja_en_guerre = Claim.objects.filter(offender=param.get_value(\"kingdom_attaquant\"),offended=param.get_value(\"kingdom_attaque\")).count\nexcept:\n  deja_en_guerre = 0\n\nparam.set_value(\"deja_en_guerre\",2) \n", 
+    "on_fire": "retour_fonction = f(\"creer_claim\",offender = param.get_value(\"kingdom_attaquant\"),offended = param.get_value(\"kingdom_attaque\"),level=2)\n\n"
   }
 },
 {
@@ -56315,6 +56459,30 @@
   }
 },
 {
+  "pk": 3048, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 59, 
+    "is_started": true, 
+    "created": "2013-10-06T14:17:01.781", 
+    "started": "2013-10-06T14:17:01.786", 
+    "text": "Nos hommes sont de retour.\r\n\r\nCe soir vous me conterez votre chevauch\u00e9e autour d'une bonne tabl\u00e9e ! En attendant cet or va dans les coffres du donjon.    ", 
+    "event": 253
+  }
+},
+{
+  "pk": 3049, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 59, 
+    "is_started": true, 
+    "created": "2013-10-06T14:17:01.820", 
+    "started": "2013-10-06T14:17:01.825", 
+    "text": "C'\u00e9tait une bien jolie mansure quelques jours auparavant. D\u00e9sormais on n'y distingue plus que des amas de bois et de paille calcin\u00e9s avec en arri\u00e8re plan les cris d'affolement et de d\u00e9sespoir des b\u00eates et des hommes. \r\n\r\nA mes c\u00f4t\u00e9s le messager qui m'a amen\u00e9 sur les lieux reprend : \r\n\"L'attaque a eu lieu hier soir au cr\u00e9puscule. D'apr\u00e8s ces vilains quelques chevaliers suivis d'hommes d'armes ont surgi du bois dans cette direction et se sont pr\u00e9cipit\u00e9s sur les habitations. Sans sommation ils ont lanc\u00e9 des torches \u00e0 l\u2019int\u00e9rieur et alors que leurs occupants sortaient pour ne pas \u00e9touffer ces bandits ont commenc\u00e9 \u00e0 les massacrer. 2,0 de nos gens ont p\u00e9ris. \"\r\n\r\n\"Impossible que ce soit de simples bandit en maraude me dis-je, il y a trop de g\u00e2chis alors que mon regard se pose sur ce qui reste d'un mouton apr\u00e8s le festin des corbeaux.\"\r\n\r\nL'explication apparait bien trop claire.\r\n\r\nL'homme \u00e0 mes c\u00f4t\u00e9s reprend : \" on dit qu'avant de partir ils ont d\u00e9clar\u00e9s aux survivants. Le seigneur de belzebuth vous salue bien bas !\" \r\n\r\n \r\n\r\n", 
+    "event": 255
+  }
+},
+{
   "pk": 1705, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -56433,6 +56601,28 @@
     "text": "C'est le c\u0153ur empli de chevalerie que nous charge\u00e2mes...  ", 
     "folk": null, 
     "event_action": 297
+  }
+},
+{
+  "pk": 3260, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 3048, 
+    "message": "", 
+    "text": "Votre geste sera chant\u00e9e au repas. ", 
+    "folk": null, 
+    "event_action": 326
+  }
+},
+{
+  "pk": 3261, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 3049, 
+    "message": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. ", 
+    "text": "Si ils veulent la guerre ils l'auront !", 
+    "folk": null, 
+    "event_action": 327
   }
 },
 {
@@ -56865,6 +57055,60 @@
     "pending_event": 3005, 
     "name": "lui", 
     "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 5.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 28.0, \"attaquant\": \"`False`\", \"prestige\": 122.0, \"population\": 200.0}"
+  }
+},
+{
+  "pk": 8172, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3048, 
+    "name": "liste_attaquant", 
+    "value": "[\"`Folk`:6684\"]"
+  }
+},
+{
+  "pk": 8173, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3048, 
+    "name": "blesses_attaquant", 
+    "value": "[]"
+  }
+},
+{
+  "pk": 8174, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3049, 
+    "name": "population_perdue", 
+    "value": 2.0
+  }
+},
+{
+  "pk": 8175, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3049, 
+    "name": "kingdom_attaquant", 
+    "value": "`Kingdom`:59"
+  }
+},
+{
+  "pk": 8176, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3049, 
+    "name": "kingdom_attaque", 
+    "value": "`Kingdom`:59"
+  }
+},
+{
+  "pk": 8177, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3049, 
+    "name": "deja_en_guerre", 
+    "value": 2.0
   }
 },
 {
@@ -130540,6 +130784,448 @@
   }
 },
 {
+  "pk": 8099, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T13:19:46.765", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition, on_fire et message modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8100, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T13:20:35.789", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition, on_fire et message modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8101, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-06T13:20:51.221", 
+    "object_repr": "Claim object", 
+    "object_id": "24", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 14
+  }
+},
+{
+  "pk": 8102, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T13:23:54.535", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8103, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T13:25:02.043", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8104, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T13:26:47.004", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8105, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T13:29:12.446", 
+    "object_repr": "creer_claim()", 
+    "object_id": "27", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 8106, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T13:30:20.329", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8107, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T13:30:25.802", 
+    "object_repr": "creer_claim()", 
+    "object_id": "27", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 8108, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T13:43:47.198", 
+    "object_repr": "creer_claim()", 
+    "object_id": "27", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 8109, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T13:44:55.538", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8110, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T13:45:58.200", 
+    "object_repr": "creer_claim()", 
+    "object_id": "27", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 8111, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T13:46:43.313", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8112, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T13:47:16.097", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8113, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T13:50:43.866", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8114, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T13:51:27.754", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition, on_fire et message modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8115, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T13:54:43.871", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition, on_fire et message modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8116, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T13:59:41.625", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition, on_fire et message modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8117, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T14:02:26.859", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8118, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T14:02:57.482", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition, on_fire et message modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8119, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T14:03:52.828", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8120, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T14:05:22.760", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8121, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T14:05:43.479", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8122, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T14:07:09.782", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8123, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T14:07:38.474", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8124, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T14:10:00.315", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8125, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T14:10:32.813", 
+    "object_repr": "creer_claim()", 
+    "object_id": "27", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 8126, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T14:11:09.911", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si ils veulent la guerre ils l'auront ! [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8127, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T14:12:00.945", 
+    "object_repr": "creer_claim()", 
+    "object_id": "27", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 8128, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-06T14:12:16.188", 
+    "object_repr": "Claim object", 
+    "object_id": "26", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 14
+  }
+},
+{
+  "pk": 8129, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T14:13:33.641", 
+    "object_repr": "creer_claim()", 
+    "object_id": "27", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 8130, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T14:14:47.652", 
+    "object_repr": "creer_claim()", 
+    "object_id": "27", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 8131, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T14:15:21.947", 
+    "object_repr": "creer_claim()", 
+    "object_id": "27", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 8132, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-06T14:16:45.090", 
+    "object_repr": "Claim object", 
+    "object_id": "26", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 14
+  }
+},
+{
   "pk": 46, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -130558,7 +131244,7 @@
     "prestige": 150, 
     "money": 86, 
     "user": 42, 
-    "population": 197
+    "population": 165
   }
 },
 {
