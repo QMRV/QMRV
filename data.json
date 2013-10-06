@@ -4380,7 +4380,7 @@
     "plot": 7, 
     "scholarship": 8, 
     "sex": "m", 
-    "disabled": false, 
+    "disabled": true, 
     "death": null, 
     "avatar": 5, 
     "birth": "2013-07-23T20:41:33", 
@@ -4388,7 +4388,8 @@
     "loyalty": 99, 
     "spouse": null, 
     "quality_set": [
-      19
+      19, 
+      37
     ], 
     "mentor": null
   }
@@ -4456,7 +4457,7 @@
     "plot": 8, 
     "scholarship": 7, 
     "sex": "m", 
-    "disabled": false, 
+    "disabled": true, 
     "death": null, 
     "avatar": 1, 
     "birth": "2013-07-23T20:41:33", 
@@ -4464,7 +4465,8 @@
     "loyalty": 80, 
     "spouse": null, 
     "quality_set": [
-      20
+      20, 
+      37
     ], 
     "mentor": null
   }
@@ -4482,7 +4484,7 @@
     "plot": 11, 
     "scholarship": 8, 
     "sex": "m", 
-    "disabled": false, 
+    "disabled": true, 
     "death": null, 
     "avatar": 18, 
     "birth": "2013-07-23T21:02:55", 
@@ -4491,7 +4493,8 @@
     "spouse": null, 
     "quality_set": [
       4, 
-      5
+      5, 
+      37
     ], 
     "mentor": null
   }
@@ -6713,7 +6716,7 @@
     "plot": 10, 
     "scholarship": 6, 
     "sex": "m", 
-    "disabled": false, 
+    "disabled": true, 
     "death": null, 
     "avatar": 29, 
     "birth": "2013-08-12T21:55:14", 
@@ -11603,12 +11606,166 @@
   }
 },
 {
+  "pk": 1582, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. \r\n", 
+    "created": "2013-10-06T17:19:25.827", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1583, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Le raid sur les terres de belzebuth s'est bien pass\u00e9. Nous avons gagn\u00e9 4,0 ducats.", 
+    "created": "2013-10-06T17:19:27.591", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1584, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. \r\n", 
+    "created": "2013-10-06T17:26:26.906", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1585, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Le raid sur les terres de belzebuth s'est bien pass\u00e9. Nous avons gagn\u00e9 4,0 ducats.", 
+    "created": "2013-10-06T17:26:35.996", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1586, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Le raid sur les terres de belzebuth s'est bien pass\u00e9. Nous avons gagn\u00e9 5,0 ducats.", 
+    "created": "2013-10-06T17:29:39.814", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1587, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. \r\n", 
+    "created": "2013-10-06T17:29:41.441", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1588, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Le raid sur les terres de belzebuth s'est bien pass\u00e9. Nous avons gagn\u00e9 4,0 ducats.", 
+    "created": "2013-10-06T17:39:06.372", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1589, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. \r\n", 
+    "created": "2013-10-06T17:39:08.429", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1590, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. \r\n", 
+    "created": "2013-10-06T17:39:34.792", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1591, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Le raid sur les terres de belzebuth s'est bien pass\u00e9. Nous avons gagn\u00e9 6,0 ducats.", 
+    "created": "2013-10-06T17:39:36.553", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1592, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Le raid sur les terres de belzebuth s'est bien pass\u00e9. Nous avons gagn\u00e9 5,0 ducats.", 
+    "created": "2013-10-06T17:54:29.131", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1593, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. \r\n", 
+    "created": "2013-10-06T17:54:31.039", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1594, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Le raid sur les terres de belzebuth s'est bien pass\u00e9. Nous avons gagn\u00e9 3,0 ducats.", 
+    "created": "2013-10-06T18:17:59.876", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1595, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 59, 
+    "content": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. \r\n", 
+    "created": "2013-10-06T18:18:02.217", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
   "pk": 44, 
   "model": "kingdom.claim", 
   "fields": {
     "offended": 59, 
     "level": 2, 
-    "created": "2013-10-06T17:17:16.973", 
+    "created": "2013-10-06T18:17:41.106", 
     "offender": 59
   }
 },
@@ -12549,7 +12706,7 @@
   "fields": {
     "params": "", 
     "slug": "determiner_raid", 
-    "on_fire": "\nsomme_combat = sum_folks(liste_attaquant,'fight')\n\n# argent vol\u00e9 au defenseur\nargent_vole = int(30*((somme_combat)**0.5)/7.74*(population_defenseur/population_max_defenseur))\n# population perdue par le defenseur\npopulation_perdue = int(argent_vole/3)\n\n# proba de mourrir / d'etre bless\u00e9 des attaquants\n# random_value : un entier aleatoire entre a et b\n# random_in : un element aleatoirement pris dans un tableau\n# random_gauss : (min,max,[sigma],[mu])\nmorts_attaquant=[]\nblesses_attaquant=[]\n\nfor attaquant in liste_attaquant:\n  pourcent_mort = 0# int(((256-min(16,attaquant.fight)**0.5)*0.09/256+0.01)*100)\n  pourcent_blesse = 4*pourcent_mort\n  destin=random_value(1,100)\n  if destin<=pourcent_mort:\n    truc=truc+1\n    attaquant.die()\n    morts_attaquant.append(attaquant)\n  elif destin<=pourcent_blesse:\n    call_function(\"blesser_folk\",folk=attaquant)\n    blesses_attaquant.append(attaquant)\n\n\nparam = {\n         'argent_vole' : argent_vole,\n         'population_perdue' : population_perdue,\n         'blesses_attaquant' : blesses_attaquant,\n         'morts_attaquant' : morts_attaquant\n         }\n", 
+    "on_fire": "\nsomme_combat = sum_folks(liste_attaquant,'fight')\n\n# argent vol\u00e9 au defenseur\nargent_vole = int(30*((somme_combat)**0.5)/7.74*(population_defenseur/population_max_defenseur))\n# population perdue par le defenseur\npopulation_perdue = int(argent_vole/3)\n\n# proba de mourrir / d'etre bless\u00e9 des attaquants\n# random_value : un entier aleatoire entre a et b\n# random_in : un element aleatoirement pris dans un tableau\n# random_gauss : (min,max,[sigma],[mu])\nmorts_attaquant=[]\nblesses_attaquant=[]\n\nfor attaquant in liste_attaquant:\n  pourcent_mort = 0# int(((256-min(16,attaquant.fight)**0.5)*0.09/256+0.01)*100)\n  pourcent_blesse = 20*int(((256-min(16,attaquant.fight)**0.5)*0.09/256+0.01)*100)#pourcent_mort\n  destin=random_value(1,100)\n  if destin<=pourcent_mort:\n    truc=truc+1\n    attaquant.die()\n    morts_attaquant.append(attaquant)\n  elif destin<=pourcent_blesse:\n    call_function(\"blesser_folk\",folk=attaquant)\n    blesses_attaquant.append(attaquant)\n\n\nparam = {\n         'argent_vole' : argent_vole,\n         'population_perdue' : population_perdue,\n         'blesses_attaquant' : blesses_attaquant,\n         'morts_attaquant' : morts_attaquant\n         }\n", 
     "description": "d\u00e9terminer r\u00e9sultat d'un raid : \r\n- population d\u00e9fenseur tu\u00e9e\r\n- argent gagn\u00e9e par le vainqueur\r\n- bless\u00e9s attaquant\r\n- tu\u00e9s attaquant\r\n"
   }
 },
@@ -48510,7 +48667,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent - cible acceptable ? )\nnok = 0\nif kingdom.money < 10:\n  nok = 1\nelif kingdom.user.username==target.user.username:\n  nok = 0\n  \n\nif nok == 0:\n  kingdom.money-=10\n  # Retrieve the claim\n  try:\n    claim = Claim.objects.get(offender=kingdom, offended=target)\n    kingdom.prestige-=30\n    kingdom.save()\n  except:\n    #add claim lvl 1 Claim.objects.set(offender=kingdom, offended=target)\n    #claim.save()\n    pass\n\n  retour_fonction = call_function('determiner_raid',\n                                  liste_attaquant=grids['attaquants'],\n                                  argent_defenseur = target.money,\n                                  population_defenseur = target.population,\n                                  population_max_defenseur = f('get_max_population',kingdom=target)\n                                  )\n  \n  # le raid entraine un casus belli \n  retour_fonction2 = f(\"creer_claim\",offender = kingdom,offended = target,level=2)\n  \n  target.population-=retour_fonction['population_perdue']\n  # kingdom.save()\n  target.save()\n  \n  kingdom.money+= retour_fonction['argent_vole']\n  # target.save()\n  # kingdom.save()\n  \n  \n  # gestion des evenements de retour du raid pour l'attaquant et d'avertissement de raid pour la cible\n  # cas d'un raid qui tourne tr\u00e8s mal (des morts ...)\n  if (len(retour_fonction['morts_attaquant'])>0):\n     # evenement pour l'attaquant\n     pa = kingdom.create_pending_event(\"retour_raid_morts\")\n     pa.set_value(\"morts_attaquant\", retour_fonction['morts_attaquant'])\n     pa.start()\n     # evenement pour la cible\n     pc = target.create_pending_event(\"cible_raid_morts\")\n     pc.set_value(\"population_perdue\", retour_fonction['population_perdue'])\n     pc.start()\n  # cas d'un raid sans encombre  \n  else:\n     # evenement du retour pour l'attaquant\n     pa = kingdom.create_pending_event(\"retour_raid_ok\")\n     pa.set_value(\"argent_gagne\", retour_fonction['argent_vole'])\n     pa.set_value(\"attaque\", target)\n     pa.set_value(\"liste_attaquant\", grids['attaquants'])\n     pa.set_value(\"blesses_attaquant\", retour_fonction['blesses_attaquant'])\n     try:\n       blesses = retour_fonction['blesses_attaquant'][0]\n       blesses = retour_fonction['blesses_attaquant'].count\n     except:\n       blesses = 0\n     pa.set_value(\"Nb_blesses_attaquant\", blesses)   \n     pa.start()\n     # evenement pour la cible\n     pc = target.create_pending_event(\"cible_raid_ok\")\n     pc.set_value(\"population_perdue\", int(retour_fonction['population_perdue']))\n     pc.set_value(\"kingdom_attaquant\", kingdom)\n     pc.set_value(\"kingdom_attaque\", target)\n     #status = retour_fonction2['deja_ennemi']\n     pc.set_value(\"deja_ennemi\", retour_fonction2['deja_ennemi'])\n     pc.start()           \n  \n  \n\nelif nok==1 :\n  status=\"Vous n'avez pas suffisamment d'argent pour lancer cette mission.\"  \nelif nok==2 :status=\"On n'organise pas de raid sur son domaine, il y a les imp\u00f4ts et le droit de cuissage pour \u00e7a !\"  \n\n", 
+    "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent - cible acceptable ? )\nnok = 0\nif kingdom.money < 10:\n  nok = 1\nelif kingdom.user.username==target.user.username:\n  nok = 0\n  \n\nif nok == 0:\n  kingdom.money-=10\n\n  retour_fonction = call_function('determiner_raid',\n                                  liste_attaquant=grids['attaquants'],\n                                  argent_defenseur = target.money,\n                                  population_defenseur = target.population,\n                                  population_max_defenseur = f('get_max_population',kingdom=target)\n                                  )\n  \n  # le raid entraine un casus belli \n  retour_fonction2 = f(\"creer_claim\",offender = kingdom,offended = target,level=2)\n  \n  target.population-=retour_fonction['population_perdue']\n  # kingdom.save()\n  target.save()\n  \n  kingdom.money+= retour_fonction['argent_vole']\n  # target.save()\n  # kingdom.save()\n  \n  \n  # gestion des evenements de retour du raid pour l'attaquant et d'avertissement de raid pour la cible\n  # cas d'un raid qui tourne tr\u00e8s mal (des morts ...)\n  if (len(retour_fonction['morts_attaquant'])>0):\n     # evenement pour l'attaquant\n     pa = kingdom.create_pending_event(\"retour_raid_morts\")\n     pa.set_value(\"morts_attaquant\", retour_fonction['morts_attaquant'])\n     pa.start()\n     # evenement pour la cible\n     pc = target.create_pending_event(\"cible_raid_morts\")\n     pc.set_value(\"population_perdue\", retour_fonction['population_perdue'])\n     pc.start()\n  # cas d'un raid sans encombre  \n  else:\n     # evenement du retour pour l'attaquant\n     pa = kingdom.create_pending_event(\"retour_raid_ok\")\n     pa.set_value(\"argent_gagne\", retour_fonction['argent_vole'])\n     pa.set_value(\"attaque\", target)\n     pa.set_value(\"liste_attaquant\", grids['attaquants'])\n     pa.set_value(\"blesses_attaquant\", retour_fonction['blesses_attaquant'])\n     try:\n       blesse1 = retour_fonction['blesses_attaquant'][0]\n       blesses = 1\n     except:\n       blesses = 0\n     pa.set_value(\"Nb_blesses_attaquant\", blesses)   \n     pa.start()\n     # evenement pour la cible\n     pc = target.create_pending_event(\"cible_raid_ok\")\n     pc.set_value(\"population_perdue\", int(retour_fonction['population_perdue']))\n     pc.set_value(\"kingdom_attaquant\", kingdom)\n     pc.set_value(\"kingdom_attaque\", target)\n     pc.set_value(\"deja_ennemi\", retour_fonction2['deja_ennemi'])\n     pc.start()           \n  \n  \n\nelif nok==1 :\n  status=\"Vous n'avez pas suffisamment d'argent pour lancer cette mission.\"  \nelif nok==2 :status=\"On n'organise pas de raid sur son domaine, il y a les imp\u00f4ts et le droit de cuissage pour \u00e7a !\"  \n\n", 
     "has_target": true, 
     "is_team": false, 
     "title": null, 
@@ -49722,31 +49879,15 @@
   }
 },
 {
-  "pk": 434, 
+  "pk": 440, 
   "model": "mission.pendingmission", 
   "fields": {
     "kingdom": 59, 
     "is_started": true, 
     "target": 59, 
-    "created": "2013-10-06T17:14:15.492", 
-    "started": "2013-10-06T17:17:16.894", 
+    "created": "2013-10-06T17:43:22.922", 
+    "started": "2013-10-06T18:17:41.045", 
     "last_target": 59, 
-    "mission": 26, 
-    "value": 0, 
-    "is_finished": false, 
-    "last_value": 0
-  }
-},
-{
-  "pk": 435, 
-  "model": "mission.pendingmission", 
-  "fields": {
-    "kingdom": 59, 
-    "is_started": false, 
-    "target": null, 
-    "created": "2013-10-06T17:14:18.266", 
-    "started": null, 
-    "last_target": null, 
     "mission": 26, 
     "value": 0, 
     "is_finished": false, 
@@ -49817,11 +49958,11 @@
   }
 },
 {
-  "pk": 772, 
+  "pk": 779, 
   "model": "mission.pendingmissionaffectation", 
   "fields": {
-    "pending_mission": 434, 
-    "folk": 6688, 
+    "pending_mission": 440, 
+    "folk": 7036, 
     "mission_grid": 26
   }
 },
@@ -53529,7 +53670,7 @@
     "category": null, 
     "name": "Retour de raid", 
     "weight": 1, 
-    "text": "Nos hommes sont de retour apr\u00e8s le raid dans les terres de {{attaque.user.username}}. \r\n\r\nJe vais \u00e0 la rencontre de mes fid\u00e8les serviteurs entrain de d\u00e9monter et de d\u00e9sarmer. \r\n{% if Nb_blesses_attaquant == 0 %} En approchant je les entends se vanter de leur exploits. Apparemment l'attaque s'est bien pass\u00e9e. {% else %} En approchant j\u2019entends des beuglements. Arriv\u00e9 dans la basse cour je vois les sieurs  {% for perso in blesses_attaquant %} {{perso.first_name}},{% endfor %}grima\u00e7ants sur des tas de paille tandis qu'une servante leur sert du vin.  {% endif %}\r\n\r\nApr\u00e8s avoir aval\u00e9 une gorg\u00e9e {{blesses_attaquant.first_name}} me d\u00e9clare : \" L'attaque s'est bien d\u00e9roul\u00e9e Mon seigneur mais ces p\u00e9cores avaient plus de r\u00e9pondant qu'on ne pensait.\"\r\n\r\n++ {% for perso in blesses_attaquant %} {{perso.first_name}},{% endfor %} bless\u00e9s.\r\n++ {{argent_gagne}} ducats gagn\u00e9s.", 
+    "text": "Nos hommes sont de retour apr\u00e8s le raid dans les terres de {{attaque.user.username}}. \r\n\r\nJe vais \u00e0 la rencontre de mes fid\u00e8les serviteurs en train de d\u00e9monter et de d\u00e9sarmer. \r\n{% if Nb_blesses_attaquant == 0 %} En approchant je les entends se vanter de leur exploits. L'attaque s'est vraisemblablement bien pass\u00e9e. Arrivant dans la cour je d\u00e9clare, r\u00e9joui : \"Reposez vous mes amis, je vous veux en forme pour me conter vos exploits ce soir. \"{% else %} En approchant j\u2019entends des beuglements. Arriv\u00e9 dans la basse cour je vois {% if blesses_attaquant|length > 1 %}les sieurs  {% for perso in blesses_attaquant %} {{perso.first_name}} {{perso.last_name}},{% endfor %}grima\u00e7ants sur des tas de paille tandis qu'une servante leur sert du vin. {% else %} le sieur  {{blesse1.first_name}} {{blesse1.last_name}} grima\u00e7ant sur un tas de paille tandis qu'une servante lui sert du vin. {% endif %}\r\n\r\nApr\u00e8s avoir aval\u00e9 une gorg\u00e9e {{blesse1.first_name}} {{blesse1.last_name}} me d\u00e9clare : \" L'attaque s'est bien pass\u00e9e, Mon seigneur mais ces p\u00e9cores avaient plus de r\u00e9pondant qu'on ne pensait.\"\r\n{% endif %}\r\n\r\n{% if Nb_blesses_attaquant > 1 %}\r\n+ {% for perso in blesses_attaquant %} {{perso.first_name}} {{perso.last_name}},{% endfor %} \r\nbless\u00e9s. \r\n{% elif Nb_blesses_attaquant > 0 %}\r\n+ {{blesse1.first_name}} {{blesse1.last_name}} bless\u00e9. \r\n{% endif %}\r\n\r\n+ {{argent_gagne}} ducats gagn\u00e9s.", 
     "image": "events/retour_raid_2.jpg", 
     "on_fire": "\n", 
     "slug": "retour_raid_ok", 
@@ -53557,7 +53698,7 @@
     "category": null, 
     "name": "Nous sommes vicitime d'un raid ! ", 
     "weight": 1, 
-    "text": "{% if deja_ennemi = 0 %}C'\u00e9tait une bien jolie mansure quelques jours auparavant. D\u00e9sormais on n'y distingue plus que des amas de bois et de paille calcin\u00e9s avec en arri\u00e8re plan les cris d'affolement et de d\u00e9sespoir des b\u00eates et des hommes. \r\n\r\nA mes c\u00f4t\u00e9s le messager qui m'a amen\u00e9 sur les lieux reprend : \r\n\"L'attaque a eu lieu hier soir au cr\u00e9puscule. D'apr\u00e8s ces vilains quelques chevaliers suivis d'hommes d'armes ont surgi du bois dans cette direction et se sont pr\u00e9cipit\u00e9s sur les habitations. Sans sommation ils ont lanc\u00e9 des torches \u00e0 l\u2019int\u00e9rieur et alors que leurs occupants sortaient pour ne pas \u00e9touffer ces bandits ont commenc\u00e9 \u00e0 les massacrer. {{population_perdue}} de nos gens ont p\u00e9ris. \"\r\n\r\n\"Impossible que ce soit de simples bandit en maraude me dis-je, il y a trop de g\u00e2chis alors que mon regard se pose sur ce qui reste d'un mouton apr\u00e8s le festin des corbeaux.\"\r\n\r\nL'explication apparait bien trop claire.\r\n\r\nL'homme \u00e0 mes c\u00f4t\u00e9s reprend : \" on dit qu'avant de partir ils ont d\u00e9clar\u00e9s aux survivants. Le seigneur de {{kingdom_attaquant.user.username}} vous salue bien bas !\" \r\n\r\n{% else %}\r\nAvec mon escorte nous contemplons un nouveau spectacle de d\u00e9solation. Ce hameau n'est plus que ruine. Un autre raid perpetr\u00e9 par les hommes de {{kingdom_attaquant.user.username}} sur mes terres ... cela ne peut plus durer, me dis-je alors que mes doigts se serrent sur le pommeau de mon \u00e9p\u00e9e.  \r\n{% endif %}\r\n \r\n\r\n", 
+    "text": "{% if deja_ennemi = 0 %}C'\u00e9tait une bien jolie mansure quelques jours auparavant. D\u00e9sormais on n'y distingue plus que des amas de bois et de paille calcin\u00e9s avec en arri\u00e8re plan les cris d'affolement et de d\u00e9sespoir des b\u00eates et des hommes. \r\n\r\nA mes c\u00f4t\u00e9s le messager qui m'a amen\u00e9 sur les lieux reprend : \r\n\"L'attaque a eu lieu hier soir au cr\u00e9puscule. D'apr\u00e8s ces vilains quelques chevaliers suivis d'hommes d'armes ont surgi du bois dans cette direction et se sont pr\u00e9cipit\u00e9s sur les habitations. Sans sommation ils ont lanc\u00e9 des torches \u00e0 l\u2019int\u00e9rieur et alors que leurs occupants sortaient pour ne pas \u00e9touffer ces bandits ont commenc\u00e9 \u00e0 les massacrer. {{population_perdue}} de nos gens ont p\u00e9ris. \"\r\n\r\n\"Impossible que ce soit de simples bandit en maraude me dis-je, il y a trop de g\u00e2chis alors que mon regard se pose sur ce qui reste d'un mouton apr\u00e8s le festin des corbeaux.\"\r\n\r\nL'explication apparait bien trop claire.\r\n\r\nL'homme \u00e0 mes c\u00f4t\u00e9s reprend : \" on dit qu'avant de partir ils ont d\u00e9clar\u00e9s aux survivants. Le seigneur de {{kingdom_attaquant.user.username}} vous salue bien bas !\" \r\n\r\n\r\n+ {{population_perdue}} population perdue\r\n+ Casus Belli guerre ouverte gagn\u00e9 contre {{kingdom_attaquant.user.username}}\r\n\r\n{% else %}\r\nAvec mon escorte nous contemplons un nouveau spectacle de d\u00e9solation. Ce hameau n'est plus que ruine. Un autre raid perpetr\u00e9 par les hommes de {{kingdom_attaquant.user.username}} sur mes terres ... cela ne peut plus durer, me dis-je alors que mes doigts se serrent sur le pommeau de mon \u00e9p\u00e9e.  \r\n{% endif %}\r\n \r\n\r\n+ {{population_perdue}} population perdue\r\n", 
     "image": "events/village_pille_1.jpg", 
     "on_fire": "\n", 
     "slug": "cible_raid_ok", 
@@ -56522,7 +56663,7 @@
   "pk": 326, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Votre geste sera chant\u00e9e au repas. ", 
+    "text": "{% if Nb_blesses_attaquant == 0 %}Votre geste sera chant\u00e9e au repas. {% else %}Reposez vous, fid\u00e8les soldats. {% endif %}", 
     "message": "Le raid sur les terres de {{attaque.user.username}} s'est bien pass\u00e9. Nous avons gagn\u00e9 {{argent_gagne}} ducats.", 
     "event": 253, 
     "condition": "\n", 
@@ -56719,30 +56860,6 @@
   }
 },
 {
-  "pk": 3134, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 59, 
-    "is_started": true, 
-    "created": "2013-10-06T17:17:16.992", 
-    "started": "2013-10-06T17:17:17.002", 
-    "text": "Nos hommes sont de retour apr\u00e8s le raid dans les terres de belzebuth. \r\n\r\nJe vais \u00e0 la rencontre de mes fid\u00e8les serviteurs entrain de d\u00e9monter et de d\u00e9sarmer. \r\n En approchant je les entends se vanter de leur exploits. Apparemment l'attaque s'est bien pass\u00e9e. \r\n\r\nApr\u00e8s avoir aval\u00e9 une gorg\u00e9e  me d\u00e9clare : \" L'attaque s'est bien d\u00e9roul\u00e9e Mon seigneur mais ces p\u00e9cores avaient plus de r\u00e9pondant qu'on ne pensait.\"\r\n\r\n++  bless\u00e9s.\r\n++ 4,0 ducats gagn\u00e9s.", 
-    "event": 253
-  }
-},
-{
-  "pk": 3135, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 59, 
-    "is_started": true, 
-    "created": "2013-10-06T17:17:17.050", 
-    "started": "2013-10-06T17:17:17.056", 
-    "text": "\r\nAvec mon escorte nous contemplons un nouveau spectacle de d\u00e9solation. Ce hameau n'est plus que ruine. Un autre raid perpetr\u00e9 par les hommes de belzebuth sur mes terres ... cela ne peut plus durer, me dis-je alors que mes doigts se serrent sur le pommeau de mon \u00e9p\u00e9e.  \r\n\r\n \r\n\r\n", 
-    "event": 255
-  }
-},
-{
   "pk": 1705, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -56861,28 +56978,6 @@
     "text": "C'est le c\u0153ur empli de chevalerie que nous charge\u00e2mes...  ", 
     "folk": null, 
     "event_action": 297
-  }
-},
-{
-  "pk": 3326, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 3134, 
-    "message": "Le raid sur les terres de belzebuth s'est bien pass\u00e9. Nous avons gagn\u00e9 4,0 ducats.", 
-    "text": "Votre geste sera chant\u00e9e au repas. ", 
-    "folk": null, 
-    "event_action": 326
-  }
-},
-{
-  "pk": 3327, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 3135, 
-    "message": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de belzebuth.  Leur infamie ne connait aucune limite. \r\n", 
-    "text": "Cela ne peut plus durer !", 
-    "folk": null, 
-    "event_action": 327
   }
 },
 {
@@ -57315,87 +57410,6 @@
     "pending_event": 3005, 
     "name": "lui", 
     "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 5.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 28.0, \"attaquant\": \"`False`\", \"prestige\": 122.0, \"population\": 200.0}"
-  }
-},
-{
-  "pk": 8427, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3134, 
-    "name": "argent_gagne", 
-    "value": 4.0
-  }
-},
-{
-  "pk": 8428, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3134, 
-    "name": "attaque", 
-    "value": "`Kingdom`:59"
-  }
-},
-{
-  "pk": 8429, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3134, 
-    "name": "liste_attaquant", 
-    "value": "[\"`Folk`:6688\"]"
-  }
-},
-{
-  "pk": 8430, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3134, 
-    "name": "blesses_attaquant", 
-    "value": "[]"
-  }
-},
-{
-  "pk": 8431, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3134, 
-    "name": "Nb_blesses_attaquant", 
-    "value": 0.0
-  }
-},
-{
-  "pk": 8432, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3135, 
-    "name": "population_perdue", 
-    "value": 1.0
-  }
-},
-{
-  "pk": 8433, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3135, 
-    "name": "kingdom_attaquant", 
-    "value": "`Kingdom`:59"
-  }
-},
-{
-  "pk": 8434, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3135, 
-    "name": "kingdom_attaque", 
-    "value": "`Kingdom`:59"
-  }
-},
-{
-  "pk": 8435, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3135, 
-    "name": "deja_ennemi", 
-    "value": 1.0
   }
 },
 {
@@ -132566,6 +132580,318 @@
   }
 },
 {
+  "pk": 8214, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T17:19:10.966", 
+    "object_repr": "retour_raid_ok", 
+    "object_id": "253", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Votre geste sera chant\u00e9e au repas.  [retour_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8215, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T17:22:16.720", 
+    "object_repr": "retour_raid_ok", 
+    "object_id": "253", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition, on_fire et text modifi\u00e9 pour event action \u00ab\u00a0{% if Nb_blesses_attaquant == 0 %}Votre geste sera [retour_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8216, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T17:24:21.494", 
+    "object_repr": "retour_raid_ok", 
+    "object_id": "253", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0{% if Nb_blesses_attaquant == 0 %}Votre geste sera [retour_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8217, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T17:24:54.941", 
+    "object_repr": "retour_raid_ok", 
+    "object_id": "253", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition, on_fire et text modifi\u00e9 pour event action \u00ab\u00a0{% if Nb_blesses_attaquant == 0 %}Votre geste sera [retour_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8218, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T17:25:30.277", 
+    "object_repr": "retour_raid_ok", 
+    "object_id": "253", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition, on_fire et text modifi\u00e9 pour event action \u00ab\u00a0{% if Nb_blesses_attaquant == 0 %}Votre geste sera [retour_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8219, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T17:25:54.715", 
+    "object_repr": "retour_raid_ok", 
+    "object_id": "253", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0{% if Nb_blesses_attaquant == 0 %}Votre geste sera [retour_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8220, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T17:27:43.428", 
+    "object_repr": "retour_raid_ok", 
+    "object_id": "253", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0{% if Nb_blesses_attaquant == 0 %}Votre geste sera [retour_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8221, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T17:28:39.509", 
+    "object_repr": "determiner_raid()", 
+    "object_id": "24", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 8222, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T17:29:33.617", 
+    "object_repr": "determiner_raid()", 
+    "object_id": "24", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 42, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 8223, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T17:32:09.456", 
+    "object_repr": "retour_raid_ok", 
+    "object_id": "253", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0{% if Nb_blesses_attaquant == 0 %}Votre geste sera [retour_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8224, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T17:32:40.050", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8225, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T17:34:31.696", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8226, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T17:36:02.963", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8227, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T17:36:18.685", 
+    "object_repr": "retour_raid_ok", 
+    "object_id": "253", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0{% if Nb_blesses_attaquant == 0 %}Votre geste sera [retour_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8228, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T17:39:01.010", 
+    "object_repr": "retour_raid_ok", 
+    "object_id": "253", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0{% if Nb_blesses_attaquant == 0 %}Votre geste sera [retour_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8229, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T17:42:07.529", 
+    "object_repr": "retour_raid_ok", 
+    "object_id": "253", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0{% if Nb_blesses_attaquant == 0 %}Votre geste sera [retour_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8230, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T17:43:16.976", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8231, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T17:47:05.328", 
+    "object_repr": "cible_raid_ok", 
+    "object_id": "255", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0{% if deja_ennemi = 0 %}Si ils veulent la guerre i [cible_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8232, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T17:47:49.359", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8233, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T18:01:10.553", 
+    "object_repr": "retour_raid_ok", 
+    "object_id": "253", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0{% if Nb_blesses_attaquant == 0 %}Votre geste sera [retour_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8234, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T18:06:54.282", 
+    "object_repr": "retour_raid_ok", 
+    "object_id": "253", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0{% if Nb_blesses_attaquant == 0 %}Votre geste sera [retour_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8235, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T18:16:46.010", 
+    "object_repr": "retour_raid_ok", 
+    "object_id": "253", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0{% if Nb_blesses_attaquant == 0 %}Votre geste sera [retour_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8236, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T18:17:05.894", 
+    "object_repr": "retour_raid_ok", 
+    "object_id": "253", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0{% if Nb_blesses_attaquant == 0 %}Votre geste sera [retour_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8237, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T18:17:37.203", 
+    "object_repr": "retour_raid_ok", 
+    "object_id": "253", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0{% if Nb_blesses_attaquant == 0 %}Votre geste sera [retour_raid_ok]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
   "pk": 46, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -132584,7 +132910,7 @@
     "prestige": 150, 
     "money": 86, 
     "user": 42, 
-    "population": 137
+    "population": 130
   }
 },
 {
