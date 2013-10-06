@@ -6012,10 +6012,10 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Si ils veulent la guerre ils l'auront !", 
-    "message": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de {{kingdom_attaquant.user.username}}. {% if 11 > 0 %} Nous avons d\u00e9sormais un casus Belli contre ces rats. {% else %} Leur infamie ne connait aucune limite. {% endif %}", 
+    "message": "Nous avons \u00e9t\u00e9s l\u00e2chement attaqu\u00e9s par les hommes de {{kingdom_attaquant.user.username}}. {% if deja_en_guerre == 0 %} Nous avons d\u00e9sormais un casus Belli contre ces rats. {% else %} Leur infamie ne connait aucune limite. {% endif %}", 
     "event": 255, 
-    "condition": "\n", 
-    "on_fire": "deja_en_guerre = f(\"creer_claim\",offender = param.get_value(\"kingdom_attaquant\"),offended = param.get_value(\"kingdom_attaque\"),level=2)\n\nparam.set_value(\"deja_en_guerre\",0) \n# deja_en_guerre('deja_ennemi')\n \n"
+    "condition": "try:\n  deja_en_guerre = Claim.objects.filter(offender=param.get_value(\"kingdom_attaquant\"),offended=param.get_value(\"kingdom_attaque\")).count\nexcept:\n  deja_en_guerre = 0\n\nparam.set_value(\"deja_en_guerre\",2) \n", 
+    "on_fire": "retour_fonction = f(\"creer_claim\",offender = param.get_value(\"kingdom_attaquant\"),offended = param.get_value(\"kingdom_attaque\"),level=2)\n\n"
   }
 },
 {

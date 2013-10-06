@@ -35797,7 +35797,7 @@
   "fields": {
     "params": "", 
     "slug": "creer_claim", 
-    "on_fire": "claim_existant=0\nclaim_existant = Claim.objects.filter(offender=offender,offended=offended).count\n\n#if claim_existant > 0:\n#  ce_claim = Claim.objects.filter(offender=offender,offended=offended)\n\n# dans ces cas on fait quelque chose  \n#if claim_existant == 0 or 0 < level:\n#  if claim_existant == 0:\n#       casus = Claim(\n #               level = level,\n  #              offender =offender,\n   #             offended =offended\n    #            )\n     #  casus.save()\n  #else:\n     # ce_claim.level = level\n  \nparam = {\n         'deja_ennemi' : claim_existant\n         }  \n  \n\n", 
+    "on_fire": "try:\n  claim_existant = Claim.objects.filter(offender=offender,offended=offended).count\nexcept:\n  claim_existant = 0  \n\nif claim_existant > 0:\n  ce_claim = Claim.objects.filter(offender=offender,offended=offended)\n  ce_claim = ce_claim[0]\n\n# dans ces cas on fait quelque chose  \nif claim_existant == 0 or 0 < level:\n  if claim_existant == 0:\n       ce_claim = Claim(\n                level = level,\n                offender =offender,\n                offended =offended\n                )\n       ce_claim.save()\n  else:\n      ce_claim.level = level\n      ce_claim.save()\n  \nparam = {\n         'ce_claim' : ce_claim,\n         'deja_ennemi' : claim_existant\n         }  \n  \n\n", 
     "description": "Fonction qui cr\u00e9\u00e9 / met \u00e0 jour un claim automatiquement\r\nRetourne un entier qui dit si un claim similaire / de niveau sup\u00e9rieur ou m\u00eame niveau existait d\u00e9j\u00e0 entre les deux royaumes. Met \u00e0 jour ou pas le claim / le cr\u00e9e en cons\u00e9quence"
   }
 }
