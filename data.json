@@ -1533,7 +1533,7 @@
   "pk": "r5gynxg6yudatb2lcrehb56lmalt04ic", 
   "model": "sessions.session", 
   "fields": {
-    "expire_date": "2013-10-20T12:11:23.354", 
+    "expire_date": "2013-10-20T22:04:20.829", 
     "session_data": "MWFkMjc4ZjViY2VkNDkxNTlmOGRlNTA3OTc4NTI3Y2Q1NWQxYTA3YzqAAn1xAShVDV9hdXRoX3VzZXJfaWRLJlUSX2F1dGhfdXNlcl9iYWNrZW5kVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHECdS4="
   }
 },
@@ -56889,15 +56889,15 @@
   }
 },
 {
-  "pk": 3005, 
+  "pk": 3170, 
   "model": "event.pendingevent", 
   "fields": {
     "kingdom": 112, 
     "is_started": true, 
-    "created": "2013-10-06T12:10:22.719", 
-    "started": "2013-10-06T12:10:22.791", 
-    "text": "Le combat se d\u00e9roula en for\u00eat.\r\n\r\nNous \u00e9tions forts de 6,0 soldats. Gislebert de Civray et Boh\u00e9mond de jules commandaient les cavaliers alors que Colin de Bermerain commandait l'infanterie.\r\n\r\nDe leur c\u00f4t\u00e9 on pouvait d\u00e9nombrer 5,0 soldats. Adam d'Olendon et Herchambaut de Rimling commandaient les archers alors que Herv\u00e9 de Gavisse commandait les cavaliers.\r\n\r\n Nous avions l'avantage du nombre et nos g\u00e9n\u00e9raux \u00e9taient plus aguerris.\r\n\r\nNos cavaliers allaient faire des ravages dans leurs archers.\r\n\r\n\r\n    G\u00e9n\u00e9raux : moi (puissance g\u00e9n\u00e9raux 36,0  + bonus tactique 2,0) contre lui (puissance g\u00e9n\u00e9raux 28,0 + bonus tactique 0,0) \r\n    Troupes : mes 6,0 soldats contre ses 5,0 soldats.", 
-    "event": 231
+    "created": "2013-10-06T22:11:27.352", 
+    "started": "2013-10-06T22:11:27.395", 
+    "text": "Il n'y a pas d'urgence en ce moment. \r\n\r\n    N'h\u00e9sitez pas \u00e0 utiliser cette pause narrative pour aller voir ce que vous pouvez faire dans l'onglet mission !", 
+    "event": 225
   }
 },
 {
@@ -57011,14 +57011,14 @@
   }
 },
 {
-  "pk": 3223, 
+  "pk": 3348, 
   "model": "event.pendingeventaction", 
   "fields": {
-    "pending_event": 3005, 
+    "pending_event": 3170, 
     "message": "", 
-    "text": "C'est le c\u0153ur empli de chevalerie que nous charge\u00e2mes...  ", 
+    "text": "J'attends que quelque chose attire mon attention.", 
     "folk": null, 
-    "event_action": 297
+    "event_action": 293
   }
 },
 {
@@ -57337,120 +57337,138 @@
   }
 },
 {
-  "pk": 8046, 
+  "pk": 8614, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 3005, 
-    "name": "is_victory", 
-    "value": 1.0
-  }
-},
-{
-  "pk": 8047, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3005, 
-    "name": "attaquant", 
-    "value": 1.0
-  }
-},
-{
-  "pk": 8048, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3005, 
-    "name": "gagnant", 
-    "value": "{\"combattants\": \"[\\\"`Folk`:7429\\\", null, \\\"`Folk`:7418\\\"]\", \"troupes\": 6.0, \"bonus_tactique\": 2.0, \"dynastie_adverse\": \"de Hary\", \"puissance_generaux\": 36.0, \"attaquant\": \"`True`\", \"prestige\": 122.0, \"population\": 173.0}"
-  }
-},
-{
-  "pk": 8049, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3005, 
-    "name": "perdant", 
-    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 5.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 28.0, \"attaquant\": \"`False`\", \"prestige\": 122.0, \"population\": 200.0}"
-  }
-},
-{
-  "pk": 8050, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3005, 
-    "name": "liste_perdant", 
-    "value": "Adam d'Olendon et Herchambaut de Rimling commandaient les archers alors que Herv\u00e9 de Gavisse commandait les cavaliers."
-  }
-},
-{
-  "pk": 8051, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3005, 
-    "name": "liste_gagnant", 
-    "value": "Gislebert de Civray et Boh\u00e9mond de jules commandaient les cavaliers alors que Colin de Bermerain commandait l'infanterie."
-  }
-},
-{
-  "pk": 8052, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3005, 
-    "name": "delta", 
-    "value": "{\"perdant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[null]\\\", \\\"prestige\\\": -15.0, \\\"pertes_troupe\\\": 1.0, \\\"population\\\": 24.0}\", \"A_tuer\": \"[null]\", \"gagnant\": \"{\\\"morts\\\": \\\"[null]\\\", \\\"blesses\\\": \\\"[]\\\", \\\"prestige\\\": 15.0, \\\"pertes_troupe\\\": 1.0, \\\"thune\\\": 8.0}\", \"A_blesser\": \"[null]\"}"
-  }
-},
-{
-  "pk": 8053, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3005, 
+    "pending_event": 3170, 
     "name": "bataille", 
     "value": "{\"PRV\": \"[\\\"[1.0, 0.0, 0.0]\\\", \\\"[0.0, 0.0, 0.0]\\\"]\", \"destiny_makes_difference\": \"`False`\", \"facteur_chance\": 0.0, \"marge\": 24.0}"
   }
 },
 {
-  "pk": 8054, 
+  "pk": 8615, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 3005, 
-    "name": "commandement", 
-    "value": "{\"perdant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": null}\", \"gagnant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`True`\\\", \\\"general\\\": \\\"`Folk`:7418\\\"}\"}"
+    "pending_event": 3170, 
+    "name": "tuto_adversaire", 
+    "value": "Landri de Hary"
   }
 },
 {
-  "pk": 8055, 
+  "pk": 8616, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 3005, 
+    "pending_event": 3170, 
     "name": "tuto_rapport_espion", 
     "value": 0.0
   }
 },
 {
-  "pk": 8056, 
+  "pk": 8617, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 3005, 
-    "name": "tuto_conflit", 
-    "value": 1.0
+    "pending_event": 3170, 
+    "name": "gagnant", 
+    "value": "{\"combattants\": \"[\\\"`Folk`:7429\\\", null, \\\"`Folk`:7418\\\"]\", \"troupes\": 6.0, \"bonus_tactique\": 2.0, \"dynastie_adverse\": \"de Hary\", \"puissance_generaux\": 36.0, \"attaquant\": \"`True`\", \"prestige\": 122.0, \"population\": 173.0}"
   }
 },
 {
-  "pk": 8057, 
+  "pk": 8618, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 3005, 
+    "pending_event": 3170, 
+    "name": "perdant", 
+    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 5.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 28.0, \"attaquant\": \"`False`\", \"prestige\": 122.0, \"population\": 200.0}"
+  }
+},
+{
+  "pk": 8619, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3170, 
     "name": "moi", 
     "value": "{\"combattants\": \"[\\\"`Folk`:7429\\\", null, \\\"`Folk`:7418\\\"]\", \"troupes\": 6.0, \"bonus_tactique\": 2.0, \"dynastie_adverse\": \"de Hary\", \"puissance_generaux\": 36.0, \"attaquant\": \"`True`\", \"prestige\": 122.0, \"population\": 173.0}"
   }
 },
 {
-  "pk": 8058, 
+  "pk": 8620, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 3005, 
+    "pending_event": 3170, 
+    "name": "liste_perdant", 
+    "value": "Adam d'Olendon et Herchambaut de Rimling commandaient les archers alors que Herv\u00e9 de Gavisse commandait les cavaliers."
+  }
+},
+{
+  "pk": 8621, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3170, 
+    "name": "commandement", 
+    "value": "{\"perdant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": null}\", \"gagnant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`True`\\\", \\\"general\\\": \\\"`Folk`:7418\\\"}\"}"
+  }
+},
+{
+  "pk": 8622, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3170, 
+    "name": "delta", 
+    "value": "{\"perdant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[null]\\\", \\\"prestige\\\": -15.0, \\\"pertes_troupe\\\": 1.0, \\\"population\\\": 24.0}\", \"A_tuer\": \"[null]\", \"gagnant\": \"{\\\"morts\\\": \\\"[null]\\\", \\\"blesses\\\": \\\"[]\\\", \\\"prestige\\\": 15.0, \\\"pertes_troupe\\\": 1.0, \\\"thune\\\": 8.0}\", \"A_blesser\": \"[null]\"}"
+  }
+},
+{
+  "pk": 8623, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3170, 
     "name": "lui", 
     "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 5.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 28.0, \"attaquant\": \"`False`\", \"prestige\": 122.0, \"population\": 200.0}"
+  }
+},
+{
+  "pk": 8624, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3170, 
+    "name": "attaquant", 
+    "value": 1.0
+  }
+},
+{
+  "pk": 8625, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3170, 
+    "name": "is_victory", 
+    "value": 1.0
+  }
+},
+{
+  "pk": 8626, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3170, 
+    "name": "tuto_conflit", 
+    "value": 1.0
+  }
+},
+{
+  "pk": 8627, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3170, 
+    "name": "liste_gagnant", 
+    "value": "Gislebert de Civray et Boh\u00e9mond de jules commandaient les cavaliers alors que Colin de Bermerain commandait l'infanterie."
+  }
+},
+{
+  "pk": 8628, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3170, 
+    "name": "slug", 
+    "value": "tuto_scanjoueur_fantome"
   }
 },
 {
@@ -84337,7 +84355,7 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-10-06T12:11:23.350", 
+    "last_login": "2013-10-06T22:04:20.795", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$10000$SlRZsPYEixZ4$74mKi8WFqceBKTSlwQ9w1eOPPeLya7SJQz0igVPzZKQ=", 
