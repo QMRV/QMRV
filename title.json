@@ -19,7 +19,7 @@
     "name": "Conn\u00e9table", 
     "on_defect": "folk.loyalty -= 6\nfolk.save()\n", 
     "on_affect": "folk.loyalty += 5\nfolk.save()", 
-    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un conn\u00e9table.\")\n# AvailableMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"chasse\")).save()\nkingdom.unlock_mission(\"organiser_raid\")", 
+    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un conn\u00e9table.\")\n# AvailableMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"chasse\")).save()\nkingdom.unlock_mission(\"chasse\")\nkingdom.unlock_mission(\"recruter\")\nkingdom.unlock_mission(\"renvoyer\")", 
     "slug": "connetable", 
     "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age()<C.MAJORITE:\n  status = S.TOO_YOUNG\n", 
     "description": "En tant que premier conseiller militaire, le conn\u00e9table supervise le recrutement et l'entra\u00eenement de vos hommes d'arme.\r\n\r\nUn conn\u00e9table a besoin d'un haut Combat pour \u00eatre efficace."
@@ -45,7 +45,7 @@
     "name": "Chambellan", 
     "on_defect": "folk.loyalty -= 6\nfolk.save()", 
     "on_affect": "folk.loyalty += 5\nfolk.save()", 
-    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un chambellan.\")", 
+    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un chambellan.\")\nkingdom.unlock_mission(\"accepter_courtisan\")\nkingdom.unlock_mission(\"organiser_banquet\")", 
     "slug": "chambellan", 
     "condition": "if folk.sex == Folk.FEMALE:\n  status = \"Un homme est attendu \u00e0 ce poste\"\n", 
     "description": "Le chambellan est votre ma\u00eetre du protocole. Il vous d\u00e9charge des affaires courantes concernant la vie au ch\u00e2teau, s'assure de la loyaut\u00e9 de vos courtisans et prot\u00e8ge votre image publique.\r\n\r\nUn chambellan a besoin d'une haute Diplomatie pour \u00eatre efficace."
@@ -58,7 +58,7 @@
     "name": "Ma\u00eetre espion", 
     "on_defect": "folk.loyalty -= 6\nfolk.save()", 
     "on_affect": "folk.loyalty += 5\nfolk.save()", 
-    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un ma\u00eetre espion.\")\nkingdom.unlock_mission(\"espionner\")", 
+    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un ma\u00eetre espion.\")\nkingdom.unlock_mission(\"compromettre\")", 
     "slug": "maitre_espion", 
     "condition": "\n", 
     "description": "Le ma\u00eetre espion vous tient inform\u00e9 des ragots de votre cour et des machinations de vos rivaux. Il s'occupe \u00e9galement des basses besognes qui demandent de la discr\u00e9tion et du doigt\u00e9.\r\n\r\nUn ma\u00eetre espion a besoin d'une haute Intrigue pour \u00eatre efficace."
@@ -71,7 +71,7 @@
     "name": "Ambassadeur", 
     "on_defect": "folk.loyalty -= 6\nfolk.save()", 
     "on_affect": "folk.loyalty += 5\nfolk.save()", 
-    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un ambassadeur.\")\n\nkingdom.unlock_mission(\"tuto_recrutement\")\nkingdom.unlock_mission(\"tuto_getaffront_diplomatie\")\n", 
+    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un ambassadeur.\")\n\nkingdom.unlock_mission(\"recruter_dame\")\nkingdom.unlock_mission(\"recruter_chevalier\")\nkingdom.create_pending_mission(\"tuto_getaffront_diplomatie\")\n", 
     "slug": "ambassadeur", 
     "condition": "if folk.sex == Folk.FEMALE:\n  status = \"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG", 
     "description": "L'ambassadeur est responsable des relations diplomatiques avec le reste du royaume.\r\n\r\nUn ambassadeur a besoin d'une haute Diplomatie pour \u00eatre efficace."
@@ -84,7 +84,7 @@
     "name": "Tr\u00e9sorier", 
     "on_defect": "folk.loyalty -= 6\nfolk.save()\n", 
     "on_affect": "folk.loyalty += 5\nfolk.save()\n", 
-    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un tr\u00e9sorier.\")\n\nkingdom.unlock_mission(\"emprunt\")\nkingdom.unlock_mission(\"taxepaysanne\")\nkingdom.unlock_mission(\"taxecour\")", 
+    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un tr\u00e9sorier.\")\nkingdom.unlock_mission(\"taxepaysanne\")\nkingdom.unlock_mission(\"taxecour\")", 
     "slug": "tresorier", 
     "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG\n", 
     "description": "Le tr\u00e9sorier est responsable de la gestion quotidienne de vos finances et de la collecte des taxes.\r\n\r\nUn tr\u00e9sorier a besoin d'une haute \u00c9rudition pour \u00eatre efficace."
