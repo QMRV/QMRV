@@ -1533,8 +1533,8 @@
   "pk": "r5gynxg6yudatb2lcrehb56lmalt04ic", 
   "model": "sessions.session", 
   "fields": {
-    "expire_date": "2013-10-19T21:14:21.525", 
-    "session_data": "MmIwNzU1ZTg2YjgxYmNhOGNhOWU4MDNmZGQxZWMyMjQ5MjJiNmNmOTqAAn1xAShYCgAAAHRlc3Rjb29raWVYBgAAAHdvcmtlZHECVRJfYXV0aF91c2VyX2JhY2tlbmRVKWRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kVQ1fYXV0aF91c2VyX2lkSyZ1Lg=="
+    "expire_date": "2013-10-20T09:35:45.072", 
+    "session_data": "MWFkMjc4ZjViY2VkNDkxNTlmOGRlNTA3OTc4NTI3Y2Q1NWQxYTA3YzqAAn1xAShVDV9hdXRoX3VzZXJfaWRLJlUSX2F1dGhfdXNlcl9iYWNrZW5kVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHECdS4="
   }
 },
 {
@@ -3870,12 +3870,21 @@
   }
 },
 {
-  "pk": 876, 
+  "pk": 882, 
   "model": "kingdom._kingdomvariable", 
   "fields": {
     "kingdom": 105, 
     "name": "total_soldats", 
-    "value": 5.0
+    "value": 4.0
+  }
+},
+{
+  "pk": 883, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 105, 
+    "name": "tuto_conflit", 
+    "value": 1.0
   }
 },
 {
@@ -7648,7 +7657,7 @@
     "plot": 10, 
     "scholarship": 7, 
     "sex": "m", 
-    "disabled": false, 
+    "disabled": true, 
     "death": null, 
     "avatar": 6, 
     "birth": "2013-09-18T22:06:18.888", 
@@ -7657,6 +7666,7 @@
     "spouse": null, 
     "quality_set": [
       4, 
+      37, 
       38
     ], 
     "mentor": null
@@ -7812,7 +7822,7 @@
     "plot": 7, 
     "scholarship": 11, 
     "sex": "f", 
-    "disabled": false, 
+    "disabled": true, 
     "death": null, 
     "avatar": 46, 
     "birth": "2013-08-31T22:55:24.513", 
@@ -7822,7 +7832,8 @@
     "quality_set": [
       2, 
       3, 
-      11
+      11, 
+      37
     ], 
     "mentor": null
   }
@@ -11949,7 +11960,7 @@
   "fields": {
     "params": "", 
     "slug": "determiner_modifications_combat", 
-    "on_fire": "#variables\nlimit_difference_prestige=100\ngain_maxi_prestige=30\npourcentage_troupes_meurt=40\nperte_population_perdant=0\ngain_thune_gagnant=0\npourcent_mort=10\npourcent_blesse=30\n\n#gain et perte de prestige\n#cas attaquant gagne\n#gain prestige\nif attaquant_est_gagnant:\n  if gagnant[\"prestige\"]-perdant[\"prestige\"]>limit_difference_prestige:\n    gain_prestige_gagnant=-1/float(float(gagnant[\"prestige\"]-perdant[\"prestige\"])-limit_difference_prestige+1/float(gain_maxi_prestige))-gain_maxi_prestige\n    gain_prestige_perdant=0 #on ne va pas faire en sorte de donner du prestige pour perdre\n  elif gagnant[\"prestige\"]-perdant[\"prestige\"]<-limit_difference_prestige:\n    gain_prestige_gagnant=gain_maxi_prestige\n    gain_prestige_perdant=-gain_maxi_prestige\n  else:\n    difference_prestige=(gagnant[\"prestige\"]-perdant[\"prestige\"])*gain_maxi_prestige/(2*limit_difference_prestige)+gain_maxi_prestige/2\n    gain_prestige_gagnant=difference_prestige\n    gain_prestige_perdant=-difference_prestige\n\n  #gain thune/perte population\n  perte_population_perdant=perdant[\"population\"]*(0.05+0.15*(marge*0.01)**0.5)\n  gain_thune_gagnant=perte_population_perdant/float(3)\n\n#cas d\u00e9fenseur gagne\n#gain prestige\nelse:\n  if gagnant[\"prestige\"]-perdant[\"prestige\"]>limit_difference_prestige:\n    gain_prestige_gagnant=0 #on ne p\u00e9nalise pas un joueur de s'\u00eatre fait attaquer...\n    gain_prestige_perdant=-gain_maxi_prestige*0.5 #on p\u00e9nalise l'idiot qui a tent\u00e9\n  elif gagnant[\"prestige\"]-perdant[\"prestige\"]<-limit_difference_prestige:\n    gain_prestige_gagnant=gain_maxi_prestige\n    gain_prestige_perdant=-gain_maxi_prestige\n  elif gagnant[\"prestige\"]-perdant[\"prestige\"]<0:\n    difference_prestige=(gagnant[\"prestige\"]-perdant[\"prestige\"])*gain_maxi_prestige/(2*limit_difference_prestige)+gain_maxi_prestige/2\n    gain_prestige_gagnant=difference_prestige\n    gain_prestige_perdant=-gain_maxi_prestige/2\n  else:\n    difference_prestige=(gagnant[\"prestige\"]-perdant[\"prestige\"])*gain_maxi_prestige/(2*limit_difference_prestige)+gain_maxi_prestige/2\n    gain_prestige_gagnant=difference_prestige\n    gain_prestige_perdant=-difference_prestige\n    \n#perte population\nnb_morts=random_value(max(pourcentage_troupes_meurt-10,0),min(pourcentage_troupes_meurt+10,100))*0.01*(gagnant[\"troupes\"]+perdant[\"troupes\"])\nperte_troupe_gagnant=perdant[\"troupes\"]/(gagnant[\"troupes\"]+perdant[\"troupes\"])*nb_morts\nperte_troupe_perdant=gagnant[\"troupes\"]/(gagnant[\"troupes\"]+perdant[\"troupes\"])*nb_morts\n\n  \n#liste des morts et bless\u00e9s gagnant\nblesses_gagnant=[]\nmorts_gagnant=[]\nA_blesser=[]\nA_tuer=[]\n\nnb_tests=len(gagnant[\"combattants\"])*(100-marge)/float(100)\ni=0\nfor gagnant in gagnant[\"combattants\"]:\n  i+=1\n  if i<nb_tests:\n    destin=random_value(1,100)\n    if destin<pourcent_mort:\n      morts_gagnant.append(u\"%s %s\" % (gagnant.first_name, gagnant.last_name))\n      A_tuer.append(gagnant)\n    elif destin<pourcent_blesse:\n      blesses_gagnant.append(u\"%s %s\" % (gagnant.first_name, gagnant.last_name))\n      A_blesser.append(gagnant)\n    \n#liste des morts et bless\u00e9s perdant\nblesses_perdant=[]\nmorts_perdant=[]\n\nfor perdant in perdant[\"combattants\"]:\n  destin=random_value(1,100)\n  if destin<=pourcent_mort:\n    morts_perdant.append(u\"%s %s\" % (perdant.first_name, perdant.last_name))\n    A_tuer.append(perdant)\n  elif destin<=pourcent_blesse:\n    blesses_perdant.append(u\"%s %s\" % (perdant.first_name, perdant.last_name))\n    A_blesser.append(perdant)\n    \n#calcul des  sorties\n\n    \nparam = {\n         'perdant': {\n                     'prestige': int(gain_prestige_perdant),\n                     'morts': morts_perdant,\n                     'blesses': blesses_perdant,\n                     'pertes_troupe': int(perte_troupe_perdant),\n                     'population': int(perte_population_perdant),\n                    \n                     },\n         'gagnant': {\n                     'prestige': int(gain_prestige_gagnant),\n                     'morts': morts_gagnant,\n                     'blesses': blesses_gagnant,\n                     'pertes_troupe': int(perte_troupe_gagnant),\n                     'thune': int(gain_thune_gagnant),\n                     },\n         'A_tuer':A_tuer,\n         'A_blesser':A_blesser,\n   \n     }\n\n\n", 
+    "on_fire": "#variables\nlimit_difference_prestige=100\ngain_maxi_prestige=30\npourcentage_troupes_meurt=40\nperte_population_perdant=0\ngain_thune_gagnant=0\npourcent_mort=10\npourcent_blesse=30\n\n#gain et perte de prestige\n#cas attaquant gagne\n#gain prestige\nif attaquant_est_gagnant:\n  if gagnant[\"prestige\"]-perdant[\"prestige\"]>limit_difference_prestige:\n    gain_prestige_gagnant=-1/float(float(gagnant[\"prestige\"]-perdant[\"prestige\"])-limit_difference_prestige+1/float(gain_maxi_prestige))-gain_maxi_prestige\n    gain_prestige_perdant=0 #on ne va pas faire en sorte de donner du prestige pour perdre\n  elif gagnant[\"prestige\"]-perdant[\"prestige\"]<-limit_difference_prestige:\n    gain_prestige_gagnant=gain_maxi_prestige\n    gain_prestige_perdant=-gain_maxi_prestige\n  else:\n    difference_prestige=(gagnant[\"prestige\"]-perdant[\"prestige\"])*gain_maxi_prestige/(2*limit_difference_prestige)+gain_maxi_prestige/2\n    gain_prestige_gagnant=difference_prestige\n    gain_prestige_perdant=-difference_prestige\n\n  #gain thune/perte population\n  perte_population_perdant=perdant[\"population\"]*(0.05+0.15*(marge*0.01)**0.5)\n  gain_thune_gagnant=perte_population_perdant/float(3)\n\n#cas d\u00e9fenseur gagne\n#gain prestige\nelse:\n  if gagnant[\"prestige\"]-perdant[\"prestige\"]>limit_difference_prestige:\n    gain_prestige_gagnant=0 #on ne p\u00e9nalise pas un joueur de s'\u00eatre fait attaquer...\n    gain_prestige_perdant=-gain_maxi_prestige*0.5 #on p\u00e9nalise l'idiot qui a tent\u00e9\n  elif gagnant[\"prestige\"]-perdant[\"prestige\"]<-limit_difference_prestige:\n    gain_prestige_gagnant=gain_maxi_prestige\n    gain_prestige_perdant=-gain_maxi_prestige\n  elif gagnant[\"prestige\"]-perdant[\"prestige\"]<0:\n    difference_prestige=(gagnant[\"prestige\"]-perdant[\"prestige\"])*gain_maxi_prestige/(2*limit_difference_prestige)+gain_maxi_prestige/2\n    gain_prestige_gagnant=difference_prestige\n    gain_prestige_perdant=-gain_maxi_prestige/2\n  else:\n    difference_prestige=(gagnant[\"prestige\"]-perdant[\"prestige\"])*gain_maxi_prestige/(2*limit_difference_prestige)+gain_maxi_prestige/2\n    gain_prestige_gagnant=difference_prestige\n    gain_prestige_perdant=-difference_prestige\n    \n#perte population\nnb_morts=random_value(max(pourcentage_troupes_meurt-10,0),min(pourcentage_troupes_meurt+10,100))*0.01*(gagnant[\"troupes\"]+perdant[\"troupes\"])\nperte_troupe_gagnant=perdant[\"troupes\"]/(gagnant[\"troupes\"]+perdant[\"troupes\"])*nb_morts\nperte_troupe_perdant=gagnant[\"troupes\"]/(gagnant[\"troupes\"]+perdant[\"troupes\"])*nb_morts\n\n  \n#liste des morts et bless\u00e9s gagnant\nblesses_gagnant=[]\nmorts_gagnant=[]\nA_blesser=[]\nA_tuer=[]\n\nnb_tests=len(gagnant[\"combattants\"])*(100-marge)/float(100)\ni=0\nfor gagnant in gagnant[\"combattants\"]:\n  i+=1\n  if i<nb_tests:\n    destin=random_value(1,100)\n    if destin<pourcent_mort:\n      #morts_gagnant.append(u\"%s %s\" % (gagnant.first_name, gagnant.last_name))\n      morts_gagnant.append(gagnant)\n      A_tuer.append(gagnant)\n    elif destin<pourcent_blesse:\n      #blesses_gagnant.append(u\"%s %s\" % (gagnant.first_name, gagnant.last_name))\n      blesses_gagnant.append(gagnant)\n      A_blesser.append(gagnant)\n    \n#liste des morts et bless\u00e9s perdant\nblesses_perdant=[]\nmorts_perdant=[]\n\nfor perdant in perdant[\"combattants\"]:\n  destin=random_value(1,100)\n  if destin<=pourcent_mort:\n    #morts_perdant.append(u\"%s %s\" % (perdant.first_name, perdant.last_name))\n    morts_perdant.append(perdant)\n    A_tuer.append(perdant)\n  elif destin<=pourcent_blesse:\n    #blesses_perdant.append(u\"%s %s\" % (perdant.first_name,perdant.last_name))\n    blesses_perdant.append(perdant)\n    A_blesser.append(perdant)\n    \n#calcul des  sorties\n\n    \nparam = {\n         'perdant': {\n                     'prestige': int(gain_prestige_perdant),\n                     'morts': morts_perdant,\n                     'blesses': blesses_perdant,\n                     'pertes_troupe': int(perte_troupe_perdant),\n                     'population': int(perte_population_perdant),\n                    \n                     },\n         'gagnant': {\n                     'prestige': int(gain_prestige_gagnant),\n                     'morts': morts_gagnant,\n                     'blesses': blesses_gagnant,\n                     'pertes_troupe': int(perte_troupe_gagnant),\n                     'thune': int(gain_thune_gagnant),\n                     },\n         'A_tuer':A_tuer,\n         'A_blesser':A_blesser,\n   \n     }\n\n\n", 
     "description": "D\u00e9finit les modifications qui devront \u00eatre appliqu\u00e9es apr\u00e8s un combat.\r\n\r\nresolution_combat:\r\n\tgagnant = {\r\n\t\ttroupes:1,\r\n\t\tcombattants:[],\r\n                prestige,\r\n                population,\r\n\t}\r\n\r\n\tperdant = {\r\n\t\ttroupes:1,\r\n\t\tcombattants:[],\r\n                prestige,\r\n                population,\r\n\t}\r\n\r\n\tpourcentage_victoire\r\n\r\n\t----> {\r\n\t\tgagnant: {\r\n\t\t\tblesses: [],\r\n\t\t\ttues: [],\r\n\t\t\tpertes: 1\r\n\t\t\tprestige: -15\r\n                        gain_thunes\r\n\t\t},\r\n\t\tperdant: {\r\n\t\t\tblesses: [],\r\n\t\t\ttues: [],\r\n\t\t\tpertes: 1,\r\n\t\t\tprestige: 15\r\n                        perte_population\r\n\t\t}\r\n\t}"
   }
 },
@@ -49142,22 +49153,6 @@
   }
 },
 {
-  "pk": 377, 
-  "model": "mission.pendingmission", 
-  "fields": {
-    "kingdom": 105, 
-    "is_started": false, 
-    "target": null, 
-    "created": "2013-10-05T23:45:41.070", 
-    "started": null, 
-    "last_target": null, 
-    "mission": 41, 
-    "value": 0, 
-    "is_finished": false, 
-    "last_value": 0
-  }
-},
-{
   "pk": 519, 
   "model": "mission.pendingmissionaffectation", 
   "fields": {
@@ -49218,24 +49213,6 @@
     "pending_mission": 324, 
     "folk": 7213, 
     "mission_grid": 54
-  }
-},
-{
-  "pk": 691, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 377, 
-    "folk": 7359, 
-    "mission_grid": 42
-  }
-},
-{
-  "pk": 692, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 377, 
-    "folk": 7363, 
-    "mission_grid": 42
   }
 },
 {
@@ -56092,27 +56069,63 @@
   }
 },
 {
-  "pk": 2871, 
+  "pk": 2887, 
   "model": "event.pendingevent", 
   "fields": {
     "kingdom": 105, 
     "is_started": true, 
-    "created": "2013-10-05T23:27:45.220", 
-    "started": "2013-10-05T23:27:45.269", 
-    "text": "Le combat se d\u00e9roula en for\u00eat.\r\n\r\nNous \u00e9tions forts de 2,0 soldats. B\u00e9rard de jules et Adelphe\u00a0 de Noni\u00e8res commandaient les lanciers alors que Ebble de Revonnas commandait l'infanterie.\r\n\r\nDe leur c\u00f4t\u00e9 on pouvait d\u00e9nombrer 4,0 soldats. Chidelric de Willies commandait les archers alors que Doat de Fromental et Adelphe\u00a0 d'Ittenheim commandaient les lanciers.\r\n\r\nNous \u00e9tions en sous nombre mais nos g\u00e9n\u00e9raux semblaient plus hardis.\r\nN. Mais c'\u00e9tait sans comparaison avec ce que leurs archers allaient faire \u00e0 nos lanciers.\r\n\r\n    G\u00e9n\u00e9raux : moi (puissance g\u00e9n\u00e9raux 33,0  + bonus tactique 0,0) contre lui (puissance g\u00e9n\u00e9raux 30,0 + bonus tactique 3,0) \r\n    Troupes : mes 2,0 soldats contre ses 4,0 soldats.\r\n", 
-    "event": 230
+    "created": "2013-10-06T10:09:31.361", 
+    "started": "2013-10-06T10:09:31.418", 
+    "text": "Il n'y a pas d'urgence en ce moment. \r\n\r\n    N'h\u00e9sitez pas \u00e0 utiliser cette pause narrative pour aller voir ce que vous pouvez faire dans l'onglet mission !", 
+    "event": 225
   }
 },
 {
-  "pk": 2875, 
+  "pk": 2888, 
   "model": "event.pendingevent", 
   "fields": {
     "kingdom": 105, 
     "is_started": true, 
-    "created": "2013-10-05T23:43:03.577", 
-    "started": "2013-10-05T23:43:03.662", 
-    "text": "Le combat se d\u00e9roula en for\u00eat.\r\n\r\nNous \u00e9tions forts de 1,0 soldats. Adelphe\u00a0 de Noni\u00e8res commandait les lanciers, Hardouin de jules commandait les cavaliers alors que Ebble de Revonnas commandait l'infanterie.\r\n\r\nDe leur c\u00f4t\u00e9 on pouvait d\u00e9nombrer 4,0 soldats. Arthaud de H\u00e8res commandait les archers alors que Roland de Dalstein et Trotin d'Espins commandaient les lanciers.\r\n\r\nNous \u00e9tions en sous nombre mais nos g\u00e9n\u00e9raux semblaient plus hardis.\r\nNos cavaliers allaient \u00eatre une plaie pour leurs archers. Mais c'\u00e9tait sans comparaison avec ce que leurs archers allaient faire \u00e0 nos lanciers et ce que  leurs lanciers allaient faire \u00e0 nos cavaliers.\r\n\r\n    G\u00e9n\u00e9raux : moi (puissance g\u00e9n\u00e9raux 36,0  + bonus tactique 2,0) contre lui (puissance g\u00e9n\u00e9raux 30,0 + bonus tactique 7,0) \r\n    Troupes : mes 1,0 soldats contre ses 4,0 soldats.\r\n", 
-    "event": 230
+    "created": "2013-10-06T10:09:36.315", 
+    "started": "2013-10-06T10:09:36.363", 
+    "text": "Il n'y a pas d'urgence en ce moment. \r\n\r\n    N'h\u00e9sitez pas \u00e0 utiliser cette pause narrative pour aller voir ce que vous pouvez faire dans l'onglet mission !", 
+    "event": 225
+  }
+},
+{
+  "pk": 2890, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 105, 
+    "is_started": true, 
+    "created": "2013-10-06T10:10:04.178", 
+    "started": "2013-10-06T10:10:04.219", 
+    "text": "Il n'y a pas d'urgence en ce moment. \r\n\r\n    N'h\u00e9sitez pas \u00e0 utiliser cette pause narrative pour aller voir ce que vous pouvez faire dans l'onglet mission !", 
+    "event": 225
+  }
+},
+{
+  "pk": 2894, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 105, 
+    "is_started": true, 
+    "created": "2013-10-06T10:12:41.255", 
+    "started": "2013-10-06T10:12:41.308", 
+    "text": "Il n'y a pas d'urgence en ce moment. \r\n\r\n    N'h\u00e9sitez pas \u00e0 utiliser cette pause narrative pour aller voir ce que vous pouvez faire dans l'onglet mission !", 
+    "event": 225
+  }
+},
+{
+  "pk": 2895, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 105, 
+    "is_started": true, 
+    "created": "2013-10-06T10:12:47.950", 
+    "started": "2013-10-06T10:12:47.999", 
+    "text": "Il n'y a pas d'urgence en ce moment. \r\n\r\n    N'h\u00e9sitez pas \u00e0 utiliser cette pause narrative pour aller voir ce que vous pouvez faire dans l'onglet mission !", 
+    "event": 225
   }
 },
 {
@@ -56215,25 +56228,58 @@
   }
 },
 {
-  "pk": 3075, 
+  "pk": 3084, 
   "model": "event.pendingeventaction", 
   "fields": {
-    "pending_event": 2871, 
-    "message": "", 
-    "text": "C'est le c\u0153ur empli de chevalerie que nous charge\u00e2mes...  ", 
+    "pending_event": 2887, 
+    "message": "Un mois s'est \u00e9coul\u00e9. \r\nVotre domaine compte  paysans de plus.\r\nVous recevez  \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.\r\n paysans sont maintenant des soldats.\r\n", 
+    "text": "J'attends que quelque chose attire mon attention.", 
     "folk": null, 
-    "event_action": 296
+    "event_action": 293
   }
 },
 {
-  "pk": 3076, 
+  "pk": 3085, 
   "model": "event.pendingeventaction", 
   "fields": {
-    "pending_event": 2875, 
-    "message": "", 
-    "text": "C'est le c\u0153ur empli de chevalerie que nous charge\u00e2mes...  ", 
+    "pending_event": 2888, 
+    "message": "Un mois s'est \u00e9coul\u00e9. \r\nVotre domaine compte  paysans de plus.\r\nVous recevez  \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.\r\n paysans sont maintenant des soldats.\r\n", 
+    "text": "J'attends que quelque chose attire mon attention.", 
     "folk": null, 
-    "event_action": 296
+    "event_action": 293
+  }
+},
+{
+  "pk": 3086, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 2890, 
+    "message": "Un mois s'est \u00e9coul\u00e9. \r\nVotre domaine compte  paysans de plus.\r\nVous recevez  \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.\r\n paysans sont maintenant des soldats.\r\n", 
+    "text": "J'attends que quelque chose attire mon attention.", 
+    "folk": null, 
+    "event_action": 293
+  }
+},
+{
+  "pk": 3089, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 2894, 
+    "message": "Un mois s'est \u00e9coul\u00e9. \r\nVotre domaine compte  paysans de plus.\r\nVous recevez  \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.\r\n paysans sont maintenant des soldats.\r\n", 
+    "text": "J'attends que quelque chose attire mon attention.", 
+    "folk": null, 
+    "event_action": 293
+  }
+},
+{
+  "pk": 3090, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 2895, 
+    "message": "Un mois s'est \u00e9coul\u00e9. \r\nVotre domaine compte  paysans de plus.\r\nVous recevez  \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.\r\n paysans sont maintenant des soldats.\r\n", 
+    "text": "J'attends que quelque chose attire mon attention.", 
+    "folk": null, 
+    "event_action": 293
   }
 },
 {
@@ -56417,219 +56463,633 @@
   }
 },
 {
-  "pk": 7373, 
+  "pk": 7577, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2871, 
+    "pending_event": 2887, 
     "name": "bataille", 
-    "value": "{\"PRV\": \"[\\\"[0.0, 0.0, 0.0]\\\", \\\"[0.0, 1.0, 0.0]\\\"]\", \"destiny_makes_difference\": \"`False`\", \"facteur_chance\": 2.0, \"marge\": 30.0}"
+    "value": "{\"PRV\": \"[\\\"[0.0, 0.0, 0.0]\\\", \\\"[0.0, 0.0, 0.0]\\\"]\", \"destiny_makes_difference\": \"`False`\", \"facteur_chance\": 0.0, \"marge\": 113.0}"
   }
 },
 {
-  "pk": 7374, 
+  "pk": 7578, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2871, 
-    "name": "gagnant", 
-    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 4.0, \"bonus_tactique\": 3.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 30.0, \"attaquant\": \"`False`\", \"prestige\": 100.0, \"population\": 200.0}"
+    "pending_event": 2887, 
+    "name": "perdant_survivants", 
+    "value": 0.0
   }
 },
 {
-  "pk": 7375, 
+  "pk": 7579, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2871, 
-    "name": "perdant", 
-    "value": "{\"combattants\": \"[\\\"`Folk`:7359\\\", \\\"`Folk`:7362\\\", \\\"`Folk`:7364\\\"]\", \"troupes\": 2.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": \"d'Olley\", \"puissance_generaux\": 33.0, \"attaquant\": \"`True`\", \"prestige\": 100.0, \"population\": 91.0}"
-  }
-},
-{
-  "pk": 7376, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2871, 
-    "name": "liste_perdant", 
-    "value": "B\u00e9rard de jules et Adelphe\u00a0 de Noni\u00e8res commandaient les lanciers alors que Ebble de Revonnas commandait l'infanterie."
-  }
-},
-{
-  "pk": 7377, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2871, 
-    "name": "commandement", 
-    "value": "{\"perdant\": \"{\\\"connetable\\\": \\\"`True`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": \\\"`Folk`:7362\\\"}\", \"gagnant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": null}\"}"
-  }
-},
-{
-  "pk": 7378, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2871, 
-    "name": "delta", 
-    "value": "{\"perdant\": \"{\\\"morts\\\": \\\"[\\\\\\\"B\\\\\\\\u00e9rard de jules\\\\\\\"]\\\", \\\"blesses\\\": \\\"[]\\\", \\\"prestige\\\": -15.0, \\\"pertes_troupe\\\": 1.0, \\\"population\\\": 0.0}\", \"A_tuer\": \"[\\\"`Folk`:7359\\\"]\", \"gagnant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[]\\\", \\\"prestige\\\": 15.0, \\\"pertes_troupe\\\": 0.0, \\\"thune\\\": 0.0}\", \"A_blesser\": \"[]\"}"
-  }
-},
-{
-  "pk": 7380, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2871, 
+    "pending_event": 2887, 
     "name": "is_victory", 
     "value": 0.0
   }
 },
 {
-  "pk": 7381, 
+  "pk": 7580, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2871, 
-    "name": "liste_gagnant", 
-    "value": "Chidelric de Willies commandait les archers alors que Doat de Fromental et Adelphe\u00a0 d'Ittenheim commandaient les lanciers."
+    "pending_event": 2887, 
+    "name": "perdant", 
+    "value": "{\"combattants\": \"[\\\"`Folk`:7365\\\", \\\"`Folk`:7360\\\"]\", \"troupes\": 0.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": \"d'Olley\", \"puissance_generaux\": 15.0, \"attaquant\": \"`True`\", \"prestige\": 55.0, \"population\": 91.0}"
   }
 },
 {
-  "pk": 7382, 
+  "pk": 7581, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2871, 
+    "pending_event": 2887, 
+    "name": "moi", 
+    "value": "{\"combattants\": \"[\\\"`Folk`:7365\\\", \\\"`Folk`:7360\\\"]\", \"troupes\": 0.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": \"d'Olley\", \"puissance_generaux\": 15.0, \"attaquant\": \"`True`\", \"prestige\": 55.0, \"population\": 91.0}"
+  }
+},
+{
+  "pk": 7582, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2887, 
+    "name": "liste_perdant", 
+    "value": "Foi de jules et Emillane de jules commandaient l'infanterie."
+  }
+},
+{
+  "pk": 7583, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2887, 
+    "name": "commandement", 
+    "value": "{\"perdant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": \\\"`Folk`:7360\\\"}\", \"gagnant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": null}\"}"
+  }
+},
+{
+  "pk": 7584, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2887, 
+    "name": "delta", 
+    "value": "{\"perdant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[\\\\\\\"Foi de jules\\\\\\\"]\\\", \\\"prestige\\\": -15.0, \\\"pertes_troupe\\\": 0.0, \\\"population\\\": 0.0}\", \"A_tuer\": \"[]\", \"gagnant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[]\\\", \\\"prestige\\\": 15.0, \\\"pertes_troupe\\\": 0.0, \\\"thune\\\": 0.0}\", \"A_blesser\": \"[\\\"`Folk`:7365\\\"]\"}"
+  }
+},
+{
+  "pk": 7585, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2887, 
     "name": "test", 
     "value": 0.0
   }
 },
 {
-  "pk": 7384, 
+  "pk": 7586, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2871, 
+    "pending_event": 2887, 
+    "name": "lui", 
+    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 2.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 21.0, \"attaquant\": \"`False`\", \"prestige\": 55.0, \"population\": 200.0}"
+  }
+},
+{
+  "pk": 7587, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2887, 
     "name": "attaquant", 
     "value": 1.0
   }
 },
 {
-  "pk": 7385, 
+  "pk": 7588, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2871, 
-    "name": "moi", 
-    "value": "{\"combattants\": \"[\\\"`Folk`:7359\\\", \\\"`Folk`:7362\\\", \\\"`Folk`:7364\\\"]\", \"troupes\": 2.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": \"d'Olley\", \"puissance_generaux\": 33.0, \"attaquant\": \"`True`\", \"prestige\": 100.0, \"population\": 91.0}"
+    "pending_event": 2887, 
+    "name": "gagnant", 
+    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 2.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 21.0, \"attaquant\": \"`False`\", \"prestige\": 55.0, \"population\": 200.0}"
   }
 },
 {
-  "pk": 7386, 
+  "pk": 7589, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2871, 
-    "name": "lui", 
-    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 4.0, \"bonus_tactique\": 3.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 30.0, \"attaquant\": \"`False`\", \"prestige\": 100.0, \"population\": 200.0}"
+    "pending_event": 2887, 
+    "name": "liste_gagnant", 
+    "value": "B\u00e9ranger de Wimmenau commandait les archers alors que Ga\u00ebl d'Ousse et Lothaire de Saint-C\u00f4me commandaient les lanciers."
   }
 },
 {
-  "pk": 7426, 
+  "pk": 7590, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2875, 
+    "pending_event": 2887, 
+    "name": "slug", 
+    "value": "tuto_scanjoueur_fantome"
+  }
+},
+{
+  "pk": 7591, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2888, 
+    "name": "bataille", 
+    "value": "{\"PRV\": \"[\\\"[0.0, 0.0, 0.0]\\\", \\\"[0.0, 1.0, 0.0]\\\"]\", \"destiny_makes_difference\": \"`False`\", \"facteur_chance\": 0.0, \"marge\": 128.0}"
+  }
+},
+{
+  "pk": 7592, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2888, 
+    "name": "perdant_survivants", 
+    "value": 0.0
+  }
+},
+{
+  "pk": 7593, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2888, 
     "name": "is_victory", 
     "value": 0.0
   }
 },
 {
-  "pk": 7428, 
+  "pk": 7594, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2875, 
-    "name": "gagnant", 
-    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 4.0, \"bonus_tactique\": 7.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 30.0, \"attaquant\": \"`False`\", \"prestige\": 85.0, \"population\": 200.0}"
-  }
-},
-{
-  "pk": 7429, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2875, 
+    "pending_event": 2888, 
     "name": "perdant", 
-    "value": "{\"combattants\": \"[\\\"`Folk`:7364\\\", \\\"`Folk`:7362\\\", \\\"`Folk`:7358\\\"]\", \"troupes\": 1.0, \"bonus_tactique\": 2.0, \"dynastie_adverse\": \"d'Olley\", \"puissance_generaux\": 36.0, \"attaquant\": \"`True`\", \"prestige\": 85.0, \"population\": 91.0}"
+    "value": "{\"combattants\": \"[\\\"`Folk`:7363\\\", \\\"`Folk`:7359\\\"]\", \"troupes\": 0.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": \"d'Olley\", \"puissance_generaux\": 13.0, \"attaquant\": \"`True`\", \"prestige\": 40.0, \"population\": 91.0}"
   }
 },
 {
-  "pk": 7430, 
+  "pk": 7595, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2875, 
+    "pending_event": 2888, 
+    "name": "moi", 
+    "value": "{\"combattants\": \"[\\\"`Folk`:7363\\\", \\\"`Folk`:7359\\\"]\", \"troupes\": 0.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": \"d'Olley\", \"puissance_generaux\": 13.0, \"attaquant\": \"`True`\", \"prestige\": 40.0, \"population\": 91.0}"
+  }
+},
+{
+  "pk": 7596, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2888, 
     "name": "liste_perdant", 
-    "value": "Adelphe\u00a0 de Noni\u00e8res commandait les lanciers, Hardouin de jules commandait les cavaliers alors que Ebble de Revonnas commandait l'infanterie."
+    "value": "B\u00e9rard de jules commandait les lanciers alors que  le pretre Tristan de Wittisheim commandait l'infanterie."
   }
 },
 {
-  "pk": 7431, 
+  "pk": 7597, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2875, 
-    "name": "liste_gagnant", 
-    "value": "Arthaud de H\u00e8res commandait les archers alors que Roland de Dalstein et Trotin d'Espins commandaient les lanciers."
+    "pending_event": 2888, 
+    "name": "commandement", 
+    "value": "{\"perdant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": \\\"`Folk`:7363\\\"}\", \"gagnant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": null}\"}"
   }
 },
 {
-  "pk": 7432, 
+  "pk": 7598, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2875, 
+    "pending_event": 2888, 
     "name": "delta", 
-    "value": "{\"perdant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[\\\\\\\"Ebble de Revonnas\\\\\\\", \\\\\\\"Adelphe\\\\\\\\u00a0 de Noni\\\\\\\\u00e8res\\\\\\\"]\\\", \\\"prestige\\\": -15.0, \\\"pertes_troupe\\\": 1.0, \\\"population\\\": 0.0}\", \"A_tuer\": \"[]\", \"gagnant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[]\\\", \\\"prestige\\\": 15.0, \\\"pertes_troupe\\\": 0.0, \\\"thune\\\": 0.0}\", \"A_blesser\": \"[\\\"`Folk`:7364\\\", \\\"`Folk`:7362\\\"]\"}"
+    "value": "{\"perdant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[\\\\\\\"`Folk`:7359\\\\\\\"]\\\", \\\"prestige\\\": -15.0, \\\"pertes_troupe\\\": 0.0, \\\"population\\\": 0.0}\", \"A_tuer\": \"[]\", \"gagnant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[]\\\", \\\"prestige\\\": 15.0, \\\"pertes_troupe\\\": 0.0, \\\"thune\\\": 0.0}\", \"A_blesser\": \"[\\\"`Folk`:7359\\\"]\"}"
   }
 },
 {
-  "pk": 7433, 
+  "pk": 7599, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2875, 
+    "pending_event": 2888, 
+    "name": "test", 
+    "value": 0.0
+  }
+},
+{
+  "pk": 7600, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2888, 
+    "name": "lui", 
+    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 1.0, \"bonus_tactique\": 3.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 21.0, \"attaquant\": \"`False`\", \"prestige\": 40.0, \"population\": 200.0}"
+  }
+},
+{
+  "pk": 7601, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2888, 
+    "name": "attaquant", 
+    "value": 1.0
+  }
+},
+{
+  "pk": 7602, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2888, 
+    "name": "gagnant", 
+    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 1.0, \"bonus_tactique\": 3.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 21.0, \"attaquant\": \"`False`\", \"prestige\": 40.0, \"population\": 200.0}"
+  }
+},
+{
+  "pk": 7603, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2888, 
+    "name": "liste_gagnant", 
+    "value": "Bertin de Champsecret commandait les archers alors que Thimot\u00e9e de Serpaize et Colin d'Avignon commandaient les lanciers."
+  }
+},
+{
+  "pk": 7604, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2888, 
+    "name": "slug", 
+    "value": "tuto_scanjoueur_fantome"
+  }
+},
+{
+  "pk": 7618, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2890, 
+    "name": "bataille", 
+    "value": "{\"PRV\": \"[\\\"[0.0, 0.0, 0.0]\\\", \\\"[0.0, 1.0, 0.0]\\\"]\", \"destiny_makes_difference\": \"`False`\", \"facteur_chance\": 0.0, \"marge\": 81.0}"
+  }
+},
+{
+  "pk": 7619, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2890, 
+    "name": "perdant_survivants", 
+    "value": 0.0
+  }
+},
+{
+  "pk": 7620, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2890, 
+    "name": "gagnant", 
+    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 3.0, \"bonus_tactique\": 3.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 21.0, \"attaquant\": \"`False`\", \"prestige\": 70.0, \"population\": 200.0}"
+  }
+},
+{
+  "pk": 7621, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2890, 
+    "name": "perdant", 
+    "value": "{\"combattants\": \"[\\\"`Folk`:7363\\\", \\\"`Folk`:7359\\\"]\", \"troupes\": 1.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": \"d'Olley\", \"puissance_generaux\": 13.0, \"attaquant\": \"`True`\", \"prestige\": 70.0, \"population\": 91.0}"
+  }
+},
+{
+  "pk": 7622, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2890, 
+    "name": "moi", 
+    "value": "{\"combattants\": \"[\\\"`Folk`:7363\\\", \\\"`Folk`:7359\\\"]\", \"troupes\": 1.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": \"d'Olley\", \"puissance_generaux\": 13.0, \"attaquant\": \"`True`\", \"prestige\": 70.0, \"population\": 91.0}"
+  }
+},
+{
+  "pk": 7623, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2890, 
+    "name": "liste_perdant", 
+    "value": "B\u00e9rard de jules commandait les lanciers alors que  le pretre Tristan de Wittisheim commandait l'infanterie."
+  }
+},
+{
+  "pk": 7624, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2890, 
+    "name": "commandement", 
+    "value": "{\"perdant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": \\\"`Folk`:7363\\\"}\", \"gagnant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": null}\"}"
+  }
+},
+{
+  "pk": 7625, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2890, 
+    "name": "delta", 
+    "value": "{\"perdant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[]\\\", \\\"prestige\\\": -15.0, \\\"pertes_troupe\\\": 1.0, \\\"population\\\": 0.0}\", \"A_tuer\": \"[]\", \"gagnant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[]\\\", \\\"prestige\\\": 15.0, \\\"pertes_troupe\\\": 0.0, \\\"thune\\\": 0.0}\", \"A_blesser\": \"[]\"}"
+  }
+},
+{
+  "pk": 7626, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2890, 
+    "name": "test", 
+    "value": 0.0
+  }
+},
+{
+  "pk": 7627, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2890, 
+    "name": "lui", 
+    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 3.0, \"bonus_tactique\": 3.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 21.0, \"attaquant\": \"`False`\", \"prestige\": 70.0, \"population\": 200.0}"
+  }
+},
+{
+  "pk": 7628, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2890, 
+    "name": "attaquant", 
+    "value": 1.0
+  }
+},
+{
+  "pk": 7629, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2890, 
+    "name": "is_victory", 
+    "value": 0.0
+  }
+},
+{
+  "pk": 7630, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2890, 
+    "name": "liste_gagnant", 
+    "value": "Poncet de Tr\u00e8ves commandait les archers alors que Balot de Vabre et Audebert de Zuani commandaient les lanciers."
+  }
+},
+{
+  "pk": 7631, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2890, 
+    "name": "slug", 
+    "value": "tuto_ennemi_casusbelli_2"
+  }
+},
+{
+  "pk": 7671, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2894, 
     "name": "bataille", 
     "value": "{\"PRV\": \"[\\\"[1.0, 0.0, 0.0]\\\", \\\"[0.0, 1.0, 1.0]\\\"]\", \"destiny_makes_difference\": \"`False`\", \"facteur_chance\": 1.0, \"marge\": 60.0}"
   }
 },
 {
-  "pk": 7434, 
+  "pk": 7672, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2875, 
-    "name": "commandement", 
-    "value": "{\"perdant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`True`\\\", \\\"general\\\": \\\"`Folk`:7358\\\"}\", \"gagnant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": null}\"}"
-  }
-},
-{
-  "pk": 7435, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 2875, 
-    "name": "test", 
+    "pending_event": 2894, 
+    "name": "perdant_survivants", 
     "value": 0.0
   }
 },
 {
-  "pk": 7437, 
+  "pk": 7673, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2875, 
-    "name": "attaquant", 
-    "value": 1.0
+    "pending_event": 2894, 
+    "name": "is_victory", 
+    "value": 0.0
   }
 },
 {
-  "pk": 7438, 
+  "pk": 7674, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2875, 
+    "pending_event": 2894, 
+    "name": "perdant", 
+    "value": "{\"combattants\": \"[\\\"`Folk`:7364\\\", \\\"`Folk`:7362\\\", \\\"`Folk`:7358\\\"]\", \"troupes\": 1.0, \"bonus_tactique\": 2.0, \"dynastie_adverse\": \"d'Olley\", \"puissance_generaux\": 36.0, \"attaquant\": \"`True`\", \"prestige\": 85.0, \"population\": 91.0}"
+  }
+},
+{
+  "pk": 7675, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2894, 
     "name": "moi", 
     "value": "{\"combattants\": \"[\\\"`Folk`:7364\\\", \\\"`Folk`:7362\\\", \\\"`Folk`:7358\\\"]\", \"troupes\": 1.0, \"bonus_tactique\": 2.0, \"dynastie_adverse\": \"d'Olley\", \"puissance_generaux\": 36.0, \"attaquant\": \"`True`\", \"prestige\": 85.0, \"population\": 91.0}"
   }
 },
 {
-  "pk": 7439, 
+  "pk": 7676, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 2875, 
+    "pending_event": 2894, 
+    "name": "liste_perdant", 
+    "value": "Adelphe\u00a0 de Noni\u00e8res commandait les lanciers, Hardouin de jules commandait les cavaliers alors que Ebble de Revonnas commandait l'infanterie."
+  }
+},
+{
+  "pk": 7677, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2894, 
+    "name": "commandement", 
+    "value": "{\"perdant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`True`\\\", \\\"general\\\": \\\"`Folk`:7358\\\"}\", \"gagnant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": null}\"}"
+  }
+},
+{
+  "pk": 7678, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2894, 
+    "name": "delta", 
+    "value": "{\"perdant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[\\\\\\\"Ebble de Revonnas\\\\\\\", \\\\\\\"Adelphe\\\\\\\\u00a0 de Noni\\\\\\\\u00e8res\\\\\\\"]\\\", \\\"prestige\\\": -15.0, \\\"pertes_troupe\\\": 1.0, \\\"population\\\": 0.0}\", \"A_tuer\": \"[]\", \"gagnant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[]\\\", \\\"prestige\\\": 15.0, \\\"pertes_troupe\\\": 0.0, \\\"thune\\\": 0.0}\", \"A_blesser\": \"[\\\"`Folk`:7364\\\", \\\"`Folk`:7362\\\"]\"}"
+  }
+},
+{
+  "pk": 7679, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2894, 
+    "name": "test", 
+    "value": 0.0
+  }
+},
+{
+  "pk": 7680, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2894, 
     "name": "lui", 
     "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 4.0, \"bonus_tactique\": 7.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 30.0, \"attaquant\": \"`False`\", \"prestige\": 85.0, \"population\": 200.0}"
+  }
+},
+{
+  "pk": 7681, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2894, 
+    "name": "attaquant", 
+    "value": 1.0
+  }
+},
+{
+  "pk": 7682, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2894, 
+    "name": "gagnant", 
+    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 4.0, \"bonus_tactique\": 7.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 30.0, \"attaquant\": \"`False`\", \"prestige\": 85.0, \"population\": 200.0}"
+  }
+},
+{
+  "pk": 7683, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2894, 
+    "name": "liste_gagnant", 
+    "value": "Arthaud de H\u00e8res commandait les archers alors que Roland de Dalstein et Trotin d'Espins commandaient les lanciers."
+  }
+},
+{
+  "pk": 7684, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2894, 
+    "name": "slug", 
+    "value": "tuto_scanjoueur_fantome"
+  }
+},
+{
+  "pk": 7685, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2895, 
+    "name": "bataille", 
+    "value": "{\"PRV\": \"[\\\"[0.0, 0.0, 0.0]\\\", \\\"[0.0, 1.0, 0.0]\\\"]\", \"destiny_makes_difference\": \"`False`\", \"facteur_chance\": 2.0, \"marge\": 30.0}"
+  }
+},
+{
+  "pk": 7686, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2895, 
+    "name": "perdant_survivants", 
+    "value": 1.0
+  }
+},
+{
+  "pk": 7687, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2895, 
+    "name": "is_victory", 
+    "value": 0.0
+  }
+},
+{
+  "pk": 7688, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2895, 
+    "name": "perdant", 
+    "value": "{\"combattants\": \"[\\\"`Folk`:7359\\\", \\\"`Folk`:7362\\\", \\\"`Folk`:7364\\\"]\", \"troupes\": 2.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": \"d'Olley\", \"puissance_generaux\": 33.0, \"attaquant\": \"`True`\", \"prestige\": 100.0, \"population\": 91.0}"
+  }
+},
+{
+  "pk": 7689, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2895, 
+    "name": "moi", 
+    "value": "{\"combattants\": \"[\\\"`Folk`:7359\\\", \\\"`Folk`:7362\\\", \\\"`Folk`:7364\\\"]\", \"troupes\": 2.0, \"bonus_tactique\": 0.0, \"dynastie_adverse\": \"d'Olley\", \"puissance_generaux\": 33.0, \"attaquant\": \"`True`\", \"prestige\": 100.0, \"population\": 91.0}"
+  }
+},
+{
+  "pk": 7690, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2895, 
+    "name": "liste_perdant", 
+    "value": "B\u00e9rard de jules et Adelphe\u00a0 de Noni\u00e8res commandaient les lanciers alors que Ebble de Revonnas commandait l'infanterie."
+  }
+},
+{
+  "pk": 7691, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2895, 
+    "name": "commandement", 
+    "value": "{\"perdant\": \"{\\\"connetable\\\": \\\"`True`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": \\\"`Folk`:7362\\\"}\", \"gagnant\": \"{\\\"connetable\\\": \\\"`False`\\\", \\\"chatelain\\\": \\\"`False`\\\", \\\"general\\\": null}\"}"
+  }
+},
+{
+  "pk": 7692, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2895, 
+    "name": "delta", 
+    "value": "{\"perdant\": \"{\\\"morts\\\": \\\"[\\\\\\\"B\\\\\\\\u00e9rard de jules\\\\\\\"]\\\", \\\"blesses\\\": \\\"[]\\\", \\\"prestige\\\": -15.0, \\\"pertes_troupe\\\": 1.0, \\\"population\\\": 0.0}\", \"A_tuer\": \"[\\\"`Folk`:7359\\\"]\", \"gagnant\": \"{\\\"morts\\\": \\\"[]\\\", \\\"blesses\\\": \\\"[]\\\", \\\"prestige\\\": 15.0, \\\"pertes_troupe\\\": 0.0, \\\"thune\\\": 0.0}\", \"A_blesser\": \"[]\"}"
+  }
+},
+{
+  "pk": 7693, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2895, 
+    "name": "test", 
+    "value": 0.0
+  }
+},
+{
+  "pk": 7694, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2895, 
+    "name": "lui", 
+    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 4.0, \"bonus_tactique\": 3.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 30.0, \"attaquant\": \"`False`\", \"prestige\": 100.0, \"population\": 200.0}"
+  }
+},
+{
+  "pk": 7695, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2895, 
+    "name": "attaquant", 
+    "value": 1.0
+  }
+},
+{
+  "pk": 7696, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2895, 
+    "name": "gagnant", 
+    "value": "{\"combattants\": \"[null, null, null]\", \"troupes\": 4.0, \"bonus_tactique\": 3.0, \"dynastie_adverse\": \"dynastie advserse\", \"puissance_generaux\": 30.0, \"attaquant\": \"`False`\", \"prestige\": 100.0, \"population\": 200.0}"
+  }
+},
+{
+  "pk": 7697, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2895, 
+    "name": "liste_gagnant", 
+    "value": "Chidelric de Willies commandait les archers alors que Doat de Fromental et Adelphe\u00a0 d'Ittenheim commandaient les lanciers."
+  }
+},
+{
+  "pk": 7698, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 2895, 
+    "name": "slug", 
+    "value": "tuto_scanjoueur_fantome"
   }
 },
 {
@@ -82267,6 +82727,48 @@
   }
 },
 {
+  "pk": 10110, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 105, 
+    "stack_level": 1, 
+    "object_pk": 41, 
+    "object_type": "Mission", 
+    "object_attr": "on_resolution", 
+    "direct_queries": 1, 
+    "time": 31, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10111, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 105, 
+    "stack_level": 1, 
+    "object_pk": 41, 
+    "object_type": "Mission", 
+    "object_attr": "on_resolution", 
+    "direct_queries": 1, 
+    "time": 36, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10112, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 105, 
+    "stack_level": 1, 
+    "object_pk": 41, 
+    "object_type": "Mission", 
+    "object_attr": "on_resolution", 
+    "direct_queries": 1, 
+    "time": 4, 
+    "queries": 1
+  }
+},
+{
   "pk": 1, 
   "model": "auth.permission", 
   "fields": {
@@ -83446,7 +83948,7 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-10-05T14:41:25.646", 
+    "last_login": "2013-10-06T09:35:45.069", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$10000$SlRZsPYEixZ4$74mKi8WFqceBKTSlwQ9w1eOPPeLya7SJQz0igVPzZKQ=", 
@@ -129481,6 +129983,58 @@
   }
 },
 {
+  "pk": 8041, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T09:58:35.602", 
+    "object_repr": "determiner_modifications_combat()", 
+    "object_id": "21", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 38, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 8042, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T10:04:36.811", 
+    "object_repr": "determiner_modifications_combat()", 
+    "object_id": "21", 
+    "change_message": "Modifi\u00e9 on_fire.", 
+    "user": 38, 
+    "content_type": 34
+  }
+},
+{
+  "pk": 8043, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T10:12:27.847", 
+    "object_repr": "tuto_escarmouche_defaite_2", 
+    "object_id": "257", 
+    "change_message": "Modifi\u00e9 text et condition. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ok [tuto_escarmouche_defaite_2]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8044, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-06T10:13:00.930", 
+    "object_repr": "tuto_escarmouche_defaite_2", 
+    "object_id": "257", 
+    "change_message": "Modifi\u00e9 text et condition. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ok [tuto_escarmouche_defaite_2]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
   "pk": 46, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -129583,8 +130137,8 @@
   "pk": 105, 
   "model": "kingdom.kingdom", 
   "fields": {
-    "soldiers": 4, 
-    "prestige": 70, 
+    "soldiers": 3, 
+    "prestige": 25, 
     "money": 27, 
     "user": 38, 
     "population": 91
