@@ -3021,8 +3021,8 @@
     "category": 1, 
     "name": "retour de raid sanglant", 
     "weight": 1, 
-    "text": "Nos hommes sont morts pour vous, votre seigneurie. ", 
-    "image": "", 
+    "text": "Un cr\u00e9puscule pluvieux sur le ch\u00e2teau. Des coups sourds et affol\u00e9s r\u00e9sonnent \u00e0 ma porte. J'ouvre pour trouver devant moi un messager essouffl\u00e9 qui me d\u00e9clare : \" les hommes sont revenus votre seigneurie\". \r\n\r\nremettant mes laines imbib\u00e9es par l'humidit\u00e9 je vais \u00e0 la rencontre des hommes dans la cour. L\u2019atmosph\u00e8re est sinistre et je constate bien vite que les sieurs {% for perso in morts_attaquant %}{{perso.first_name}} {{perso.last_name}}, \r\n{% endfor %} manquent \u00e0 l'appel. \r\n\r\n\"Les terres de {{target.user.username}} \u00e9taient mieux prot\u00e9g\u00e9es qu'on ne le croyait ma seigneurie ... l'attaque a mal tourn\u00e9e. Ces braves vous ont loyalement servis jusqu\u2019au bout.   \"\r\n\r\n+ {% for perso in morts_attaquant %}{{perso.first_name}} {{perso.last_name}}, \r\n{% endfor %} sont morts.\r\n+ \r\n{% if blesses_attaquant|length > 1  %}\r\n+ {% for perso in blesses_attaquant %} {{perso.first_name}} {{perso.last_name}},{% endfor %} \r\nbless\u00e9s. \r\n{% elif blesses_attaquant|length > 0 %}\r\n+ {{blesse1.first_name}} {{blesse1.last_name}} bless\u00e9. \r\n{% endif %}\r\n+ {{argent_gagne}} \u00e9cus gagn\u00e9s.\r\n\r\n", 
+    "image": "events/village_pille_2.jpg", 
     "on_fire": "\n", 
     "slug": "retour_raid_morts", 
     "condition": "\n"
@@ -3049,8 +3049,8 @@
     "category": null, 
     "name": "Nous avons \u00e9t\u00e9 raid\u00e9s mais ...", 
     "weight": 1, 
-    "text": "Seigneur, c'est terrible ! \r\n\r\nNos terres ont \u00e9t\u00e9 attaqu\u00e9es mais plusieurs l\u00e2ches sont all\u00e9s en enfer pour leur forfait. ", 
-    "image": "", 
+    "text": "{% if deja_ennemi = 0 %}Le sol a mes pieds est rouge de sang.\r\n\r\nA mes c\u00f4t\u00e9s le messager qui m'a amen\u00e9 sur les lieux reprend : \r\n\"L'attaque a eu lieu hier soir au cr\u00e9puscule. D'apr\u00e8s ces vilains quelques chevaliers suivis d'hommes d'armes ont surgi du bois dans cette direction et se sont pr\u00e9cipit\u00e9s sur les habitations. Sans sommation ils ont lanc\u00e9 des torches \u00e0 l\u2019int\u00e9rieur et alors que leurs occupants sortaient pour ne pas \u00e9touffer ces bandits ont commenc\u00e9 \u00e0 les attaquer l\u00e2chement. {{population_perdue}} de nos gens ont p\u00e9ris.\"\r\n\r\n\"Impossible que ce soit de simples bandit en maraude me dis-je, il y a trop de g\u00e2chis alors que mon regard se pose sur ce qui reste d'un mouton apr\u00e8s le festin des corbeaux.\"\r\n\r\nL'homme \u00e0 mes c\u00f4t\u00e9s reprend : \"Cependant quelques uns de nos homme d'armes du poste de garde voisin sont accourus en entendant les cris et ont r\u00e9ussi \u00e0 prendre \u00e0 revers ces gredins. Au dire du sergent qui les commandait l'un d'eux a \u00e9t\u00e9 transperc\u00e9 de l\u2019\u00e9p\u00e9e d'un de nos hommes. \"\r\n\r\nJe contemple un d\u00e9bris de blason a mes pieds. Bien qu'a moiti\u00e9 bris\u00e9 et t\u00e2ch\u00e9 de sang, impossible de s'y m\u00e9prendre. Il s'agit des armes de {{kingdom_attaquant.user.username}}.  \r\n\r\n\r\n+ {{population_perdue}} population perdue.\r\n+ Casus Belli guerre ouverte gagn\u00e9 contre {{kingdom_attaquant.user.username}}.\r\n+ Un des attaquants a vraisemblablement p\u00e9ri dans l'attaque. \r\n\r\n{% else %}\r\nAvec mon escorte nous contemplons un nouveau spectacle de d\u00e9solation. Ce hameau n'est plus que ruine. Un autre raid perpetr\u00e9 par les hommes de {{kingdom_attaquant.user.username}} sur mes terres ... mais ces forbans l'ont pay\u00e9 au prix du sang cette fois-ci. Le corps sans vie d'un des hommes du f\u00e9lon {{kingdom_attaquant.user.username}} repose \u00e0 mes pieds, l'\u00e9paule transperc\u00e9e de part en part par une pointe de lance.\r\n\r\nPlus tard au ch\u00e2teau. Le blason de l'assassin en question a \u00e9t\u00e9 identifi\u00e9 : il s'agit bien de {{mort_attaquant1.first_name}} {{mort_attaquant1.last_name}}.\r\n\r\n\r\n+ {{population_perdue}} population perdue.\r\n+ Le bandit {{mort_attaquant1.first_name}} {{mort_attaquant1.last_name}} a p\u00e9ri dans l'attaque. \r\n{% endif %}", 
+    "image": "events/village_pille_3.jpg", 
     "on_fire": "\n", 
     "slug": "cible_raid_morts", 
     "condition": "\n"
@@ -6022,7 +6022,7 @@
   "pk": 328, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Qu'il y brulent pour l'eternit\u00e9. ", 
+    "text": "{% if deja_ennemi = 0 %} En tout cas je le souhaite ardemment.{% else %}L'enfer est d\u00e9sormais ton royaume, sc\u00e9lerat !{% endif}", 
     "message": "", 
     "event": 256, 
     "condition": "\n", 
@@ -6038,6 +6038,17 @@
     "event": 257, 
     "condition": "\n", 
     "on_fire": "if (param.get_value(\"attaquant\")==False):\n  pe=param.next_event(\"tuto_escarmouche_misasac\").start()\nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",False)==False):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",False)==False):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n\n"
+  }
+},
+{
+  "pk": 330, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Leurs sacrifice ne sera pas vain", 
+    "message": "", 
+    "event": 254, 
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 }
 ]
