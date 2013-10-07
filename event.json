@@ -6022,7 +6022,7 @@
   "pk": 328, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "{% if deja_ennemi = 0 %} En tout cas je le souhaite ardemment.{% else %}L'enfer est d\u00e9sormais ton royaume, sc\u00e9lerat !{% endif}", 
+    "text": "{% if deja_ennemi = 0 %} En tout cas je le souhaite ardemment.{% else %}L'enfer est d\u00e9sormais ton royaume, sc\u00e9lerat !{% endif %}", 
     "message": "", 
     "event": 256, 
     "condition": "\n", 
