@@ -1533,7 +1533,7 @@
   "pk": "r5gynxg6yudatb2lcrehb56lmalt04ic", 
   "model": "sessions.session", 
   "fields": {
-    "expire_date": "2013-10-22T20:56:46.644", 
+    "expire_date": "2013-10-22T21:28:49.205", 
     "session_data": "MWFkMjc4ZjViY2VkNDkxNTlmOGRlNTA3OTc4NTI3Y2Q1NWQxYTA3YzqAAn1xAShVDV9hdXRoX3VzZXJfaWRLJlUSX2F1dGhfdXNlcl9iYWNrZW5kVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHECdS4="
   }
 },
@@ -48340,7 +48340,7 @@
     "has_value": false, 
     "on_resolution": "kingdom.soldiers+=param.get_value('retour_troupes')\n", 
     "value_description": "", 
-    "on_start": "#mise en forme des param\u00e8tres \u00e0 passer aux fonctions de calcul\nattaquant = {\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * kingdom.soldiers / 100),\n  'combattants': affected,\n  'population': kingdom.population,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':kingdom.get_value('tuto_dynasty_PNJ')\n}\n\n# R\u00e9cuperer les cinq meilleurs combattants de l'attaquant\ndate_majorite = datetime.now() - timedelta(days=C.MAJORITE)\ncinq_meilleurs = kingdom.folk_set.filter(sex=Folk.MALE, disabled=False, birth__lte=date_majorite).order_by('-fight')[0:5]\nmoyenne_meilleurs_fight = avg_folks(cinq_meilleurs, 'fight')\n\ncombattants = [Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight)]\nmap(lambda f: f.save(), combattants)\ntype_adversaire=kingdom.get_value(\"tuto_type_PNJ\")\ncombattants[0].add_quality(type_adversaire)\ncombattants[1].add_quality(type_adversaire)\ncombattants[2].add_quality(random_in(['piquier','cavalier','archer']))\n\ndefenseur = {\n  # Dans le cadre du tuto,\n  # Les troupes du d\u00e9fenseur correspondent \u00e0 80% des troupes maximales disponibles pour ce Kingdom\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * 0.8 * C.POURCENTAGE_MAX_SOLDATS_PASSIF * call_function(\"get_max_population\", kingdom=kingdom) / (100 * 100)),\n  'combattants': combattants,\n  'population': 200,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':\"dynastie advserse\",\n}\n\n#fonctions pour calculer ce qu'il se passe sans appliquer\ngagnant, perdant, bataille = f(\"determiner_vainqueur_combat\", attaquant=attaquant, defenseur=defenseur)\nis_victory = gagnant == attaquant\ndelta = f(\"determiner_modifications_combat\", gagnant=gagnant, perdant=perdant, marge=bataille['marge'], attaquant_est_gagnant=is_victory)\nif is_victory:\n  commandement={\n                'gagnant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                'perdant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                }\nelse:\n  commandement={\n                'gagnant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                'perdant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                }  \n#application gain_prestige\nif is_victory:\n  kingdom.prestige += delta['gagnant']['prestige']\nelse:\n  kingdom.prestige += delta['perdant']['prestige']\nkingdom.save()\n\n#d\u00e9terminantion prochain event\nif kingdom.get_value(\"tuto_firstbattle_attack\", False) == False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_attack\")\nelif is_victory:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \n#passage d'arguments\npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\", True)\npe.set_value(\"gagnant\",gagnant)\npe.set_value(\"perdant\",perdant)\npe.set_value(\"liste_perdant\",f(\"liste_nom_avec_specialite\", commandants=perdant['combattants']))\npe.set_value(\"liste_gagnant\",f(\"liste_nom_avec_specialite\", commandants=gagnant['combattants']))\npe.set_value(\"delta\",delta)\npe.set_value(\"bataille\",bataille)\npe.set_value(\"commandement\",commandement)\npe.start()\n  \n#tuer les gens qui ne sont pas de la famille r\u00e9gnante, blesser tous les bless\u00e9s\nfamille=kingdom.get_folk_in_title('chatelain').last_name\nfor mort in delta['A_tuer']:\n  if mort.last_name <> famille:\n    mort.die()\n    mort.save()\nfor blesse in delta['A_blesser']:\n  call_function(\"blesser_folk\",folk=blesse)\n\n#gain thune en cas de pillage\nif is_victory:\n  kingdom.money+=delta['gagnant']['thune']\n  \n#pertes de soldats\nif is_victory:\n  kingdom.soldiers-=gagnant['troupes']\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')-delta['gagnant']['pertes_troupe'])\n  param.set_value('retour_troupes',gagnant['troupes']-delta['gagnant']['pertes_troupe'])\nelse:\n  kingdom.soldiers-=perdant['troupes']\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')-delta['perdant']['pertes_troupe'])\n  param.set_value('retour_troupes',perdant['troupes']-delta['perdant']['pertes_troupe'])\n\nkingdom.save()\n\nmap(lambda f: f.delete(), combattants)", 
+    "on_start": "#mise en forme des param\u00e8tres \u00e0 passer aux fonctions de calcul\nattaquant = {\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * kingdom.soldiers / 100),\n  'combattants': affected,\n  'population': kingdom.population,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':kingdom.get_value('tuto_dynasty_PNJ')\n}\n\n# R\u00e9cuperer les cinq meilleurs combattants de l'attaquant\ndate_majorite = datetime.now() - timedelta(days=C.MAJORITE)\ncinq_meilleurs = kingdom.folk_set.filter(sex=Folk.MALE, disabled=False, birth__lte=date_majorite).order_by('-fight')[0:5]\nmoyenne_meilleurs_fight = avg_folks(cinq_meilleurs, 'fight')\n\ncombattants = [Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight)]\nmap(lambda f: f.save(), combattants)\ntype_adversaire=kingdom.get_value(\"tuto_type_PNJ\",'piquier')\ncombattants[0].add_quality(type_adversaire)\ncombattants[1].add_quality(type_adversaire)\ncombattants[2].add_quality(random_in(['piquier','cavalier','archer']))\n\ndefenseur = {\n  # Dans le cadre du tuto,\n  # Les troupes du d\u00e9fenseur correspondent \u00e0 80% des troupes maximales disponibles pour ce Kingdom\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * 0.8 * C.POURCENTAGE_MAX_SOLDATS_PASSIF * call_function(\"get_max_population\", kingdom=kingdom) / (100 * 100)),\n  'combattants': combattants,\n  'population': kingdom.prestige*2,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':\"dynastie advserse\",\n}\n\n#fonctions pour calculer ce qu'il se passe sans appliquer\ngagnant, perdant, bataille = f(\"determiner_vainqueur_combat\", attaquant=attaquant, defenseur=defenseur)\nis_victory = gagnant == attaquant\ndelta = f(\"determiner_modifications_combat\", gagnant=gagnant, perdant=perdant, marge=bataille['marge'], attaquant_est_gagnant=is_victory)\nif is_victory:\n  commandement={\n                'gagnant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                'perdant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                }\nelse:\n  commandement={\n                'gagnant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                'perdant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                }  \n#application gain_prestige\nif is_victory:\n  kingdom.prestige += delta['gagnant']['prestige']\nelse:\n  kingdom.prestige += delta['perdant']['prestige']\nkingdom.save()\n\n#d\u00e9terminantion prochain event\nif kingdom.get_value(\"tuto_firstbattle_attack\", False) == False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_attack\")\nelif is_victory:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \n#passage d'arguments\npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\", True)\npe.set_value(\"gagnant\",gagnant)\npe.set_value(\"perdant\",perdant)\npe.set_value(\"liste_perdant\",f(\"liste_nom_avec_specialite\", commandants=perdant['combattants']))\npe.set_value(\"liste_gagnant\",f(\"liste_nom_avec_specialite\", commandants=gagnant['combattants']))\npe.set_value(\"delta\",delta)\npe.set_value(\"bataille\",bataille)\npe.set_value(\"commandement\",commandement)\npe.start()\n  \n#tuer les gens qui ne sont pas de la famille r\u00e9gnante, blesser tous les bless\u00e9s\nfamille=kingdom.get_folk_in_title('chatelain').last_name\nfor mort in delta['A_tuer']:\n  if mort.last_name <> famille:\n    mort.die()\nfor blesse in delta['A_blesser']:\n  call_function(\"blesser_folk\",folk=blesse)\n\n#gain thune en cas de pillage\nif is_victory:\n  kingdom.money+=delta['gagnant']['thune']\n  \n#pertes de soldats\nif is_victory:\n  kingdom.soldiers-=gagnant['troupes']\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')-delta['gagnant']['pertes_troupe'])\n  param.set_value('retour_troupes',gagnant['troupes']-delta['gagnant']['pertes_troupe'])\nelse:\n  kingdom.soldiers-=perdant['troupes']\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')-delta['perdant']['pertes_troupe'])\n  param.set_value('retour_troupes',perdant['troupes']-delta['perdant']['pertes_troupe'])\n\nkingdom.save()\n\nmap(lambda f: f.delete(), combattants)", 
     "has_target": false, 
     "is_team": false, 
     "title": null, 
@@ -49253,6 +49253,38 @@
   }
 },
 {
+  "pk": 449, 
+  "model": "mission.pendingmission", 
+  "fields": {
+    "kingdom": 59, 
+    "is_started": false, 
+    "target": 59, 
+    "created": "2013-10-08T21:28:02.932", 
+    "started": null, 
+    "last_target": 59, 
+    "mission": 26, 
+    "value": 0, 
+    "is_finished": false, 
+    "last_value": 0
+  }
+},
+{
+  "pk": 450, 
+  "model": "mission.pendingmission", 
+  "fields": {
+    "kingdom": 59, 
+    "is_started": false, 
+    "target": null, 
+    "created": "2013-10-08T21:30:20.637", 
+    "started": null, 
+    "last_target": null, 
+    "mission": 41, 
+    "value": 0, 
+    "is_finished": false, 
+    "last_value": 0
+  }
+},
+{
   "pk": 519, 
   "model": "mission.pendingmissionaffectation", 
   "fields": {
@@ -49313,6 +49345,24 @@
     "pending_mission": 324, 
     "folk": 7213, 
     "mission_grid": 54
+  }
+},
+{
+  "pk": 790, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 449, 
+    "folk": 6685, 
+    "mission_grid": 26
+  }
+},
+{
+  "pk": 792, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 450, 
+    "folk": 6684, 
+    "mission_grid": 42
   }
 },
 {
@@ -50008,6 +50058,14 @@
   "model": "mission.availablemission", 
   "fields": {
     "kingdom": 112, 
+    "mission": 41
+  }
+},
+{
+  "pk": 860, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 59, 
     "mission": 41
   }
 },
@@ -55807,7 +55865,7 @@
     "message": "", 
     "event": 234, 
     "condition": "\n", 
-    "on_fire": "is_victory=random_value(0,1)\nif is_victory:\n  kingdom.prestige+=20\n  kingdom.save()\nelse:\n  kingdom.prestige-=15\n  kingdom.save()\n\nif kingdom.get_value(\"tuto_firstbattle_defense\",False)==False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_defense\")\nelif is_victory:  \n  pe=kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe=kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\",False)\npe.start()\n  \n"
+    "on_fire": "#mise en forme des param\u00e8tres \u00e0 passer aux fonctions de calcul\ndefenseur = {\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * kingdom.soldiers / 100),\n  'combattants': affected,\n  'population': kingdom.population,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':kingdom.get_value('tuto_dynasty_PNJ')\n}\n\n# R\u00e9cuperer les cinq meilleurs combattants de l'attaquant\ndate_majorite = datetime.now() - timedelta(days=C.MAJORITE)\ncinq_meilleurs = kingdom.folk_set.filter(sex=Folk.MALE, disabled=False, birth__lte=date_majorite).order_by('-fight')[0:5]\nmoyenne_meilleurs_fight = avg_folks(cinq_meilleurs, 'fight')\n\ncombattants = [Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight)]\nmap(lambda f: f.save(), combattants)\ntype_adversaire=kingdom.get_value(\"tuto_type_PNJ\",'piquier')\ncombattants[0].add_quality(type_adversaire)\ncombattants[1].add_quality(type_adversaire)\ncombattants[2].add_quality(random_in(['piquier','cavalier','archer']))\n\nattaquant = {\n  # Dans le cadre du tuto,\n  # Les troupes du d\u00e9fenseur correspondent \u00e0 80% des troupes maximales disponibles pour ce Kingdom\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * 0.8 * C.POURCENTAGE_MAX_SOLDATS_PASSIF * call_function(\"get_max_population\", kingdom=kingdom) / (100 * 100)),\n  'combattants': combattants,\n  'population': kingdom.prestige*2,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':\"dynastie advserse\",\n}\n\n#fonctions pour calculer ce qu'il se passe sans appliquer\ngagnant, perdant, bataille = f(\"determiner_vainqueur_combat\", attaquant=attaquant, defenseur=defenseur)\nis_victory = gagnant <> attaquant\ndelta = f(\"determiner_modifications_combat\", gagnant=gagnant, perdant=perdant, marge=bataille['marge'], attaquant_est_gagnant=not(is_victory))\nif is_victory:\n  commandement={\n                'gagnant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                'perdant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                }\nelse:\n  commandement={\n                'gagnant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                'perdant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                }  \n#application gain_prestige\nif is_victory:\n  kingdom.prestige += delta['gagnant']['prestige']\nelse:\n  kingdom.prestige += delta['perdant']['prestige']\nkingdom.save()\n\n#d\u00e9terminantion prochain event\nif kingdom.get_value(\"tuto_firstbattle_attack\", False) == False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_attack\")\nelif is_victory:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \n#passage d'arguments\npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\", True)\npe.set_value(\"gagnant\",gagnant)\npe.set_value(\"perdant\",perdant)\npe.set_value(\"liste_perdant\",f(\"liste_nom_avec_specialite\", commandants=perdant['combattants']))\npe.set_value(\"liste_gagnant\",f(\"liste_nom_avec_specialite\", commandants=gagnant['combattants']))\npe.set_value(\"delta\",delta)\npe.set_value(\"bataille\",bataille)\npe.set_value(\"commandement\",commandement)\npe.start()\n  \n#tuer les gens qui ne sont pas de la famille r\u00e9gnante, blesser tous les bless\u00e9s\nfamille=kingdom.get_folk_in_title('chatelain').last_name\nfor mort in delta['A_tuer']:\n  if mort.last_name <> famille:\n    mort.die()\nfor blesse in delta['A_blesser']:\n  call_function(\"blesser_folk\",folk=blesse)\n\n#gain thune en cas de pillage\nif is_victory==False:\n  kingdom.money+=delta['perdant']['population']\n  \n#pertes de soldats\nif is_victory:\n  kingdom.soldiers-=gagnant['troupes']\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')-delta['gagnant']['pertes_troupe'])\n  param.set_value('retour_troupes',gagnant['troupes']-delta['gagnant']['pertes_troupe'])\nelse:\n  kingdom.soldiers-=perdant['troupes']\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')-delta['perdant']['pertes_troupe'])\n  param.set_value('retour_troupes',perdant['troupes']-delta['perdant']['pertes_troupe'])\n\nkingdom.save()\n\nmap(lambda f: f.delete(), combattants)\n"
   }
 },
 {
@@ -56220,30 +56278,6 @@
   }
 },
 {
-  "pk": 3192, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 59, 
-    "is_started": true, 
-    "created": "2013-10-07T22:31:37.845", 
-    "started": "2013-10-07T22:31:37.854", 
-    "text": "Un cr\u00e9puscule pluvieux sur le ch\u00e2teau. Des coups sourds et affol\u00e9s r\u00e9sonnent \u00e0 ma porte. J'ouvre pour trouver devant moi un messager essouffl\u00e9 qui me d\u00e9clare : \" les hommes sont revenus votre seigneurie\". \r\n\r\nremettant mes laines imbib\u00e9es par l'humidit\u00e9 je vais \u00e0 la rencontre des hommes dans la cour. L\u2019atmosph\u00e8re est sinistre et je constate bien vite que les sieurs Sorin de Nonac, \r\n manquent \u00e0 l'appel. \r\n\r\n\"Les terres de  \u00e9taient mieux prot\u00e9g\u00e9es qu'on ne le croyait ma seigneurie ... l'attaque a mal tourn\u00e9e. Ces braves vous ont loyalement servis jusqu\u2019au bout.   \"\r\n\r\n+ Sorin de Nonac, \r\n sont morts.\r\n+ \r\n\r\n+  \r\nbless\u00e9s. \r\n\r\n+ 10,0 \u00e9cus gagn\u00e9s.\r\n\r\n", 
-    "event": 254
-  }
-},
-{
-  "pk": 3193, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 59, 
-    "is_started": true, 
-    "created": "2013-10-07T22:31:37.906", 
-    "started": "2013-10-07T22:31:37.914", 
-    "text": "Le sol a mes pieds est rouge de sang.\r\n\r\nA mes c\u00f4t\u00e9s le messager qui m'a amen\u00e9 sur les lieux reprend : \r\n\"L'attaque a eu lieu hier soir au cr\u00e9puscule. D'apr\u00e8s ces vilains quelques chevaliers suivis d'hommes d'armes ont surgi du bois dans cette direction et se sont pr\u00e9cipit\u00e9s sur les habitations. Sans sommation ils ont lanc\u00e9 des torches \u00e0 l\u2019int\u00e9rieur et alors que leurs occupants sortaient pour ne pas \u00e9touffer ces bandits ont commenc\u00e9 \u00e0 les attaquer l\u00e2chement. 3,0 de nos gens ont p\u00e9ris.\"\r\n\r\n\"Impossible que ce soit de simples bandit en maraude me dis-je, il y a trop de g\u00e2chis alors que mon regard se pose sur ce qui reste d'un mouton apr\u00e8s le festin des corbeaux.\"\r\n\r\nL'homme \u00e0 mes c\u00f4t\u00e9s reprend : \"Cependant quelques uns de nos homme d'armes du poste de garde voisin sont accourus en entendant les cris et ont r\u00e9ussi \u00e0 prendre \u00e0 revers ces gredins. Au dire du sergent qui les commandait l'un d'eux a \u00e9t\u00e9 transperc\u00e9 de l\u2019\u00e9p\u00e9e d'un de nos hommes. \"\r\n\r\nJe contemple un d\u00e9bris de blason a mes pieds. Bien qu'a moiti\u00e9 bris\u00e9 et t\u00e2ch\u00e9 de sang, impossible de s'y m\u00e9prendre. Il s'agit des armes de belzebuth.  \r\n\r\n\r\n+ 3,0 population perdue.\r\n+ Casus Belli guerre ouverte gagn\u00e9 contre belzebuth.\r\n+ Un des attaquants a vraisemblablement p\u00e9ri dans l'attaque. \r\n\r\n", 
-    "event": 256
-  }
-},
-{
   "pk": 1705, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -56362,28 +56396,6 @@
     "text": "J'attends que quelque chose attire mon attention.", 
     "folk": null, 
     "event_action": 293
-  }
-},
-{
-  "pk": 3361, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 3192, 
-    "message": "", 
-    "text": "Leurs sacrifice ne sera pas vain", 
-    "folk": null, 
-    "event_action": 330
-  }
-},
-{
-  "pk": 3362, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 3193, 
-    "message": "", 
-    "text": " En tout cas je le souhaite ardemment.", 
-    "folk": null, 
-    "event_action": 328
   }
 },
 {
@@ -56834,96 +56846,6 @@
     "pending_event": 3170, 
     "name": "slug", 
     "value": "tuto_scanjoueur_fantome"
-  }
-},
-{
-  "pk": 8772, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3192, 
-    "name": "morts_attaquant", 
-    "value": "[null]"
-  }
-},
-{
-  "pk": 8773, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3192, 
-    "name": "argent_gagne", 
-    "value": 10.0
-  }
-},
-{
-  "pk": 8774, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3192, 
-    "name": "attaque", 
-    "value": "`Kingdom`:59"
-  }
-},
-{
-  "pk": 8775, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3192, 
-    "name": "liste_attaquant", 
-    "value": "[null]"
-  }
-},
-{
-  "pk": 8776, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3192, 
-    "name": "Nb_blesses_attaquant", 
-    "value": 0.0
-  }
-},
-{
-  "pk": 8777, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3193, 
-    "name": "mort_attaquant1", 
-    "value": null
-  }
-},
-{
-  "pk": 8778, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3193, 
-    "name": "population_perdue", 
-    "value": 3.0
-  }
-},
-{
-  "pk": 8779, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3193, 
-    "name": "kingdom_attaquant", 
-    "value": "`Kingdom`:59"
-  }
-},
-{
-  "pk": 8780, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3193, 
-    "name": "kingdom_attaque", 
-    "value": "`Kingdom`:59"
-  }
-},
-{
-  "pk": 8781, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3193, 
-    "name": "deja_ennemi", 
-    "value": 0.0
   }
 },
 {
@@ -84106,7 +84028,7 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-10-08T20:56:46.639", 
+    "last_login": "2013-10-08T21:28:49.202", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$10000$SlRZsPYEixZ4$74mKi8WFqceBKTSlwQ9w1eOPPeLya7SJQz0igVPzZKQ=", 
@@ -133063,6 +132985,71 @@
     "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
     "user": 42, 
     "content_type": 23
+  }
+},
+{
+  "pk": 8266, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-08T21:30:03.912", 
+    "object_repr": "Lancer le combat contre le PNJ [belzebuth]", 
+    "object_id": "860", 
+    "change_message": "", 
+    "user": 42, 
+    "content_type": 27
+  }
+},
+{
+  "pk": 8267, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-08T21:32:52.227", 
+    "object_repr": "tuto_escarmouche", 
+    "object_id": "41", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0tuto_escarmouche [Combattants (3)]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8268, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-08T21:42:51.085", 
+    "object_repr": "tuto_escarmouche", 
+    "object_id": "41", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0tuto_escarmouche [Combattants (3)]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8269, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-08T21:47:03.721", 
+    "object_repr": "tuto_escarmouche", 
+    "object_id": "41", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0tuto_escarmouche [Combattants (3)]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8270, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-08T21:47:09.960", 
+    "object_repr": "tuto_attaque_par_pnj", 
+    "object_id": "234", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ok [tuto_attaque_par_pnj]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 29
   }
 },
 {
