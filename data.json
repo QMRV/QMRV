@@ -1533,7 +1533,7 @@
   "pk": "r5gynxg6yudatb2lcrehb56lmalt04ic", 
   "model": "sessions.session", 
   "fields": {
-    "expire_date": "2013-10-20T22:04:20.829", 
+    "expire_date": "2013-10-22T20:56:46.644", 
     "session_data": "MWFkMjc4ZjViY2VkNDkxNTlmOGRlNTA3OTc4NTI3Y2Q1NWQxYTA3YzqAAn1xAShVDV9hdXRoX3VzZXJfaWRLJlUSX2F1dGhfdXNlcl9iYWNrZW5kVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHECdS4="
   }
 },
@@ -1759,6 +1759,14 @@
   "fields": {
     "expire_date": "2013-07-29T14:54:19.610", 
     "session_data": "OThhOTdlYTY5ZjEwMDFmN2M0Yzc3MjU2ZjVkZGIyMGY4N2U3NzYxZDqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLAnUu"
+  }
+},
+{
+  "pk": "us5osf4lhg4r14russj8fp46hxb1gmhh", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-22T21:11:32.063", 
+    "session_data": "ZmRiYjJhNjg4MzI5ZWE1NGUyZDQ0MDc1NDVkZGEwZjIwNGQwOWJmYTqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLAXUu"
   }
 },
 {
@@ -84062,7 +84070,7 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-10-02T09:51:49.204", 
+    "last_login": "2013-10-08T21:11:32.055", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$10000$w1xrhj3ElnfD$+bQJ2AwJEX/23fEu+2Y5pz367dh1QwFgF2d2H7RwIaE=", 
@@ -84098,7 +84106,7 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-10-06T22:04:20.795", 
+    "last_login": "2013-10-08T20:56:46.639", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$10000$SlRZsPYEixZ4$74mKi8WFqceBKTSlwQ9w1eOPPeLya7SJQz0igVPzZKQ=", 
