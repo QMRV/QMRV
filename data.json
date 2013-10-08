@@ -7833,9 +7833,9 @@
     "loyalty": 95, 
     "spouse": null, 
     "quality_set": [
+      3, 
       15, 
-      23, 
-      3
+      23
     ], 
     "mentor": null
   }
@@ -7861,8 +7861,8 @@
     "loyalty": 65, 
     "spouse": null, 
     "quality_set": [
-      23, 
-      8
+      8, 
+      23
     ], 
     "mentor": null
   }
@@ -7940,8 +7940,8 @@
     "loyalty": 40, 
     "spouse": null, 
     "quality_set": [
-      7, 
       1, 
+      7, 
       36
     ], 
     "mentor": null
