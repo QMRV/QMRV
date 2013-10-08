@@ -1674,6 +1674,14 @@
   }
 },
 {
+  "pk": "tqy5wnt4uhbgoo121luhcea1yqfrd1f2", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-22T17:25:04.554", 
+    "session_data": "NmQwNmQ1NDhkM2VmOThmYTVmMjExZWQ1NDNjZWE4MWUwOTVhMDEzZTqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLLnUu"
+  }
+},
+{
   "pk": "txnxnqm5jvhbpxulv8kbibnla7bm6jwf", 
   "model": "sessions.session", 
   "fields": {
@@ -84234,7 +84242,7 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-09-16T09:31:43.235", 
+    "last_login": "2013-10-08T17:25:04.541", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$10000$otGRkvJCaBg8$oDGg7HX0DGAH2kaZcxzKKUHtepsV8cFK2Sz4VZPPxZk=", 
