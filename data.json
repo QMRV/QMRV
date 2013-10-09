@@ -970,6 +970,14 @@
   }
 },
 {
+  "pk": "c36ecsh7wv1xzcph9fpa1pjdpothr85y", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-23T19:10:17.674", 
+    "session_data": "ZmRiYjJhNjg4MzI5ZWE1NGUyZDQ0MDc1NDVkZGEwZjIwNGQwOWJmYTqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLAXUu"
+  }
+},
+{
   "pk": "cf4snt95arzbbqef9rvforir80s8rd73", 
   "model": "sessions.session", 
   "fields": {
@@ -1530,6 +1538,14 @@
   }
 },
 {
+  "pk": "r3tirmju119qzyatmq1topqt4mavgf2a", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-23T19:18:00.252", 
+    "session_data": "ZDliM2ZkODE4MjhlODMwMTExOWFkMzQxMzEzOTM5N2I3MTZhODM0ZTqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLMnUu"
+  }
+},
+{
   "pk": "r6a3yn3mzpzlkzzrfvvz195nbbe4yvl1", 
   "model": "sessions.session", 
   "fields": {
@@ -1975,6 +1991,14 @@
   "fields": {
     "expire_date": "2013-10-08T23:41:09.587", 
     "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
+  "pk": "zv1cwio1k6kktbjuq6aymb7pqtswxthi", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-23T19:12:00.054", 
+    "session_data": "ZDliM2ZkODE4MjhlODMwMTExOWFkMzQxMzEzOTM5N2I3MTZhODM0ZTqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLMnUu"
   }
 },
 {
@@ -3973,6 +3997,51 @@
     "kingdom": 113, 
     "name": "virgule_thune", 
     "value": 0.5496745696509517
+  }
+},
+{
+  "pk": 1201, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 114, 
+    "name": "tuto_adversaire", 
+    "value": "Isarn d'Ebersmunster"
+  }
+},
+{
+  "pk": 1202, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 114, 
+    "name": "tuto_dynasty_PNJ", 
+    "value": "d'Ebersmunster"
+  }
+},
+{
+  "pk": 1203, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 114, 
+    "name": "tuto_type_PNJ", 
+    "value": "cavalier"
+  }
+},
+{
+  "pk": 1204, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 114, 
+    "name": "total_soldats", 
+    "value": 0.0
+  }
+},
+{
+  "pk": 1205, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 114, 
+    "name": "in_tuto", 
+    "value": 1.0
   }
 },
 {
@@ -8031,6 +8100,114 @@
   }
 },
 {
+  "pk": 7469, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 114, 
+    "fight": 8, 
+    "first_name": "Herlvin", 
+    "last_name": "de julien", 
+    "diplomacy": 10, 
+    "father": null, 
+    "plot": 9, 
+    "scholarship": 9, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 18, 
+    "birth": "2013-09-04T19:11:19.697", 
+    "mother": null, 
+    "loyalty": 99, 
+    "spouse": null, 
+    "quality_set": [
+      10, 
+      38
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7470, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 114, 
+    "fight": 11, 
+    "first_name": "Tancr\u00e8de", 
+    "last_name": "de julien", 
+    "diplomacy": 8, 
+    "father": 7469, 
+    "plot": 10, 
+    "scholarship": 11, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 12, 
+    "birth": "2013-09-22T19:11:20.317", 
+    "mother": null, 
+    "loyalty": 50, 
+    "spouse": null, 
+    "quality_set": [
+      2, 
+      38
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7471, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 114, 
+    "fight": 10, 
+    "first_name": "Aalais", 
+    "last_name": "de julien", 
+    "diplomacy": 7, 
+    "father": 7469, 
+    "plot": 9, 
+    "scholarship": 6, 
+    "sex": "f", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 37, 
+    "birth": "2013-09-23T19:11:20.395", 
+    "mother": null, 
+    "loyalty": 80, 
+    "spouse": null, 
+    "quality_set": [
+      10
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7472, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 114, 
+    "fight": 7, 
+    "first_name": "Beuve", 
+    "last_name": "de Lorp", 
+    "diplomacy": 6, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 6, 
+    "birth": "2013-09-04T19:11:20.460", 
+    "mother": null, 
+    "loyalty": 85, 
+    "spouse": null, 
+    "quality_set": [
+      47, 
+      14, 
+      40
+    ], 
+    "mentor": null
+  }
+},
+{
   "pk": 1, 
   "model": "kingdom.qualitycategory", 
   "fields": {
@@ -11915,6 +12092,16 @@
   }
 },
 {
+  "pk": 423, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 114, 
+    "last_folk": 7469, 
+    "folk": 7469, 
+    "title": 1
+  }
+},
+{
   "pk": 1, 
   "model": "internal.trigger", 
   "fields": {
@@ -11924,6 +12111,7 @@
     "fired": [
       113, 
       59, 
+      114, 
       74, 
       76, 
       80, 
@@ -56590,6 +56778,18 @@
   }
 },
 {
+  "pk": 3274, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 114, 
+    "is_started": true, 
+    "created": "2013-10-09T19:11:20.758", 
+    "started": "2013-10-09T19:11:20.965", 
+    "text": "En arrivant au sommet de la cr\u00eate, nous tirons sur nos brides et nous nous autorisons enfin une pause, afin de contempler le ch\u00e2teau qui se dessine en contrebas. Aalais, \u00e0 ma droite, \u00e0 les joues rougies par le froid de l\u2019hiver. \r\n\u201cEst-ce celui-ci, p\u00e8re? Sommes-nous arriv\u00e9?\u201d. Sa voix n\u2019est qu\u2019un murmure dans lequel perce l'excitation de la jeunesse. \r\n\u201cOui, ma fille. julien. La terre de nos a\u00efeux.\u201d \r\nSans un regard en arri\u00e8re, je guide mon cheval sur le sentier qui serpente jusque dans la vall\u00e9e. Aalais m'embo\u00eete le pas, suivit de pr\u00e8s par son fr\u00e8re Tancr\u00e8de et par Beuve, mon compagnon de toujours qui garde sa main sur le pommeau de son \u00e9p\u00e9e.", 
+    "event": 3
+  }
+},
+{
   "pk": 2276, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -56719,6 +56919,17 @@
     "text": " En tout cas je le souhaite ardemment.", 
     "folk": null, 
     "event_action": 328
+  }
+},
+{
+  "pk": 3458, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 3274, 
+    "message": "", 
+    "text": "Notre voyage s'ach\u00e8ve.", 
+    "folk": null, 
+    "event_action": 5
   }
 },
 {
@@ -57340,6 +57551,33 @@
     "pending_event": 3273, 
     "name": "deja_ennemi", 
     "value": 0.0
+  }
+},
+{
+  "pk": 9145, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3274, 
+    "name": "fils", 
+    "value": "`Folk`:7470"
+  }
+},
+{
+  "pk": 9146, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3274, 
+    "name": "fille", 
+    "value": "`Folk`:7471"
+  }
+},
+{
+  "pk": 9147, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3274, 
+    "name": "compagnon", 
+    "value": "`Folk`:7472"
   }
 },
 {
@@ -84822,7 +85060,7 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-10-08T21:11:32.055", 
+    "last_login": "2013-10-09T19:10:17.648", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$10000$w1xrhj3ElnfD$+bQJ2AwJEX/23fEu+2Y5pz367dh1QwFgF2d2H7RwIaE=", 
@@ -84990,6 +85228,24 @@
     "password": "pbkdf2_sha256$10000$bonrAHizWTFS$GZas/fmbXOzee8R5nTBH1xeeybuJ3R58HQ92AXPcfU8=", 
     "email": "", 
     "date_joined": "2013-10-08T22:32:54.437"
+  }
+},
+{
+  "pk": 50, 
+  "model": "auth.user", 
+  "fields": {
+    "username": "julien", 
+    "first_name": "Julien", 
+    "last_name": "", 
+    "is_active": true, 
+    "is_superuser": true, 
+    "is_staff": false, 
+    "last_login": "2013-10-09T19:18:00.249", 
+    "groups": [], 
+    "user_permissions": [], 
+    "password": "pbkdf2_sha256$10000$gjsWpd7DJAi0$8x9wMnz8yv7gcdMEYM4wPTzZoAgDK2BAaCo4v+6uytE=", 
+    "email": "", 
+    "date_joined": "2013-10-09T19:10:59"
   }
 },
 {
@@ -134211,6 +134467,45 @@
   }
 },
 {
+  "pk": 8307, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-09T19:10:59.655", 
+    "object_repr": "julien", 
+    "object_id": "50", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 3
+  }
+},
+{
+  "pk": 8308, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-09T19:11:05.768", 
+    "object_repr": "julien", 
+    "object_id": "50", 
+    "change_message": "Modifi\u00e9 password, first_name et is_superuser.", 
+    "user": 1, 
+    "content_type": 3
+  }
+},
+{
+  "pk": 8309, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-09T19:11:21.120", 
+    "object_repr": "julien kingdom", 
+    "object_id": "114", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 8
+  }
+},
+{
   "pk": 59, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -134307,6 +134602,17 @@
     "money": 136, 
     "user": 49, 
     "population": 170
+  }
+},
+{
+  "pk": 114, 
+  "model": "kingdom.kingdom", 
+  "fields": {
+    "soldiers": 0, 
+    "prestige": 103, 
+    "money": 108, 
+    "user": 50, 
+    "population": 0
   }
 }
 ]
