@@ -4389,20 +4389,83 @@
   }
 },
 {
-  "pk": 1526, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 117, 
-    "name": "total_soldats", 
-    "value": 10
-  }
-},
-{
   "pk": 1527, 
   "model": "kingdom._kingdomvariable", 
   "fields": {
     "kingdom": 117, 
     "name": "tuto_recrutement", 
+    "value": 1
+  }
+},
+{
+  "pk": 1534, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 117, 
+    "name": "tuto_caissesvides", 
+    "value": 1
+  }
+},
+{
+  "pk": 1545, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 117, 
+    "name": "tuto_facheux_fantome", 
+    "value": 1
+  }
+},
+{
+  "pk": 1547, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 117, 
+    "name": "tuto_nb_passage_timewarp", 
+    "value": 9
+  }
+},
+{
+  "pk": 1549, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 117, 
+    "name": "virgule_population", 
+    "value": 0.23930215491579032
+  }
+},
+{
+  "pk": 1551, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 117, 
+    "name": "total_soldats", 
+    "value": 13
+  }
+},
+{
+  "pk": 1553, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 117, 
+    "name": "virgule_soldiers", 
+    "value": 0.06000000000000005
+  }
+},
+{
+  "pk": 1555, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 117, 
+    "name": "virgule_thune", 
+    "value": 0.7352133056742964
+  }
+},
+{
+  "pk": 1556, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 117, 
+    "name": "tuto_toofewpopulation", 
     "value": 1
   }
 },
@@ -8648,7 +8711,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 10, 
-    "birth": "2013-09-05T00:04:29.407", 
+    "birth": "2013-09-04T18:04:29.407", 
     "mother": null, 
     "loyalty": 99, 
     "spouse": null, 
@@ -8667,7 +8730,7 @@
     "fight": 12, 
     "first_name": "Barthelemy", 
     "last_name": "de hugo", 
-    "diplomacy": 7, 
+    "diplomacy": 5, 
     "father": 7532, 
     "plot": 8, 
     "scholarship": 7, 
@@ -8675,13 +8738,15 @@
     "disabled": false, 
     "death": null, 
     "avatar": 7, 
-    "birth": "2013-09-23T00:04:30.078", 
+    "birth": "2013-09-22T18:04:30.078", 
     "mother": null, 
-    "loyalty": 85, 
+    "loyalty": 80, 
     "spouse": null, 
     "quality_set": [
       26, 
-      40
+      40, 
+      47, 
+      37
     ], 
     "mentor": null
   }
@@ -8702,7 +8767,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 40, 
-    "birth": "2013-09-24T00:04:30.158", 
+    "birth": "2013-09-23T18:04:30.158", 
     "mother": null, 
     "loyalty": 80, 
     "spouse": null, 
@@ -8726,9 +8791,9 @@
     "disabled": false, 
     "death": null, 
     "avatar": 14, 
-    "birth": "2013-09-05T00:04:30.191", 
+    "birth": "2013-09-04T18:04:30.191", 
     "mother": null, 
-    "loyalty": 80, 
+    "loyalty": 85, 
     "spouse": null, 
     "quality_set": [
       33, 
@@ -8738,27 +8803,53 @@
   }
 },
 {
-  "pk": 7536, 
+  "pk": 7537, 
   "model": "kingdom.folk", 
   "fields": {
     "kingdom": 117, 
-    "fight": 16, 
-    "first_name": "Robert", 
-    "last_name": "de Trouville", 
-    "diplomacy": 6, 
+    "fight": 11, 
+    "first_name": "Aimeri", 
+    "last_name": "de Bolqu\u00e8re", 
+    "diplomacy": 10, 
     "father": null, 
-    "plot": 7, 
-    "scholarship": 6, 
+    "plot": 6, 
+    "scholarship": 5, 
     "sex": "m", 
     "disabled": false, 
     "death": null, 
-    "avatar": 24, 
-    "birth": "2013-09-05T00:08:14.191", 
+    "avatar": 26, 
+    "birth": "2013-09-05T00:21:36.985", 
     "mother": null, 
-    "loyalty": 60, 
+    "loyalty": 53, 
     "spouse": null, 
     "quality_set": [
-      12, 
+      36
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7538, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 117, 
+    "fight": 11, 
+    "first_name": "Aymon", 
+    "last_name": "d'Oinville", 
+    "diplomacy": 6, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 9, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 4, 
+    "birth": "2013-09-09T00:21:17.210", 
+    "mother": null, 
+    "loyalty": 59, 
+    "spouse": null, 
+    "quality_set": [
+      23, 
       39
     ], 
     "mentor": null
@@ -12283,6 +12374,94 @@
   }
 },
 {
+  "pk": 1743, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 117, 
+    "content": "Un mois s'est \u00e9coul\u00e9. Votre domaine compte 2 paysans de plus.Vous recevez 9 \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.1 paysans sont maintenant des soldats.", 
+    "created": "2013-10-10T00:19:11.905", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1744, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 117, 
+    "content": "Vous pouvez d\u00e9sormais nommer un tr\u00e9sorier.", 
+    "created": "2013-10-10T00:19:14.300", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1745, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 117, 
+    "content": "Il est urgent de charger un [tr\u00e9sorier](#title) de r\u00e9gler nos probl\u00e8mes d'argent", 
+    "created": "2013-10-10T00:19:14.364", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1746, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 117, 
+    "content": "Un mois s'est \u00e9coul\u00e9. Votre domaine compte 3 paysans de plus.Vous recevez 10 \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.1 paysans sont maintenant des soldats.", 
+    "created": "2013-10-10T00:19:15.854", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1747, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 117, 
+    "content": "Mon fils a \u00e9t\u00e9 Bless\u00e9 par None en duel. Le chevalier a quitt\u00e9 ma cour, laissant mon fils amer.", 
+    "created": "2013-10-10T00:21:29.611", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1748, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 117, 
+    "content": "Un mois s'est \u00e9coul\u00e9. Votre domaine compte 3 paysans de plus.Vous recevez 15 \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.1 paysans sont maintenant des soldats.", 
+    "created": "2013-10-10T00:21:36.962", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1749, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 117, 
+    "content": "Le chevalier Aymon d'Oinville a rejoint ma cour.", 
+    "created": "2013-10-10T00:23:42.160", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1750, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 117, 
+    "content": "Le p\u00e8re Aimeri de Bolqu\u00e8re a accept\u00e9 de devenir le [cur\u00e9](titre) de ma cour.", 
+    "created": "2013-10-10T00:24:05.309", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
   "pk": 1, 
   "model": "title.title", 
   "fields": {
@@ -12811,6 +12990,36 @@
     "last_folk": 7533, 
     "folk": 7533, 
     "title": 2
+  }
+},
+{
+  "pk": 447, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 117, 
+    "last_folk": 7535, 
+    "folk": 7535, 
+    "title": 7
+  }
+},
+{
+  "pk": 448, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 117, 
+    "last_folk": 7537, 
+    "folk": 7537, 
+    "title": 3
+  }
+},
+{
+  "pk": 449, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 117, 
+    "last_folk": null, 
+    "folk": null, 
+    "title": 6
   }
 },
 {
@@ -51376,6 +51585,54 @@
   }
 },
 {
+  "pk": 925, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 117, 
+    "mission": 8
+  }
+},
+{
+  "pk": 926, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 117, 
+    "mission": 9
+  }
+},
+{
+  "pk": 927, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 117, 
+    "mission": 18
+  }
+},
+{
+  "pk": 928, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 117, 
+    "mission": 48
+  }
+},
+{
+  "pk": 929, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 117, 
+    "mission": 49
+  }
+},
+{
+  "pk": 930, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 117, 
+    "mission": 47
+  }
+},
+{
   "pk": 1, 
   "model": "event.eventcategory", 
   "fields": {
@@ -53529,7 +53786,7 @@
     "category": null, 
     "name": "Allegeance chevalier", 
     "weight": 1, 
-    "text": "{{title.ambassadeur.first_name}}, mon ambassadeur, se tient aux c\u00f4t\u00e9 du chevalier en armure. \"Mon seigneur, permettez-moi de vous pr\u00e9senter sire {{chevalier}}. Un homme de valeur qui a accept\u00e9 de s'allier \u00e0 notre cause\". Le chevalier opine, et met un genou \u00e0 terre. \"Votre honneur est connu \u00e0 travers le pays, sire {{title.chatelain.last_name}}. Mon bras est \u00e0 votre service\".\r\n\r\n    {{chevalier.fight}}(C) {{chevalier.plot}}(I) {{chevalier.diplomacy}}(D) {{chevalier.scholarship}}(\u00c9) {{chevalier.loyalty}}(L)\r\n{% for quality in chevalier.quality_set.all %}    {{quality.name}}\r\n{% endfor %}", 
+    "text": "{{title.ambassadeur.first_name}}, mon ambassadeur, se tient aux c\u00f4t\u00e9 du chevalier en armure. \"Mon seigneur, permettez-moi de vous pr\u00e9senter sire {{chevalier}}. Un homme de valeur qui a accept\u00e9 de s'allier \u00e0 notre cause\". Le chevalier opine, et met un genou \u00e0 terre. \"Votre honneur est connu \u00e0 travers le pays, sire {{title.chatelain.last_name}}. Mon bras est \u00e0 votre service\".\r\n\r\n{{chevalier|folk_details}}", 
     "image": "events/102_1.jpg", 
     "on_fire": "\n", 
     "slug": "allegeance_chevalier", 
@@ -53543,7 +53800,7 @@
     "category": null, 
     "name": "Allegeance noble dame", 
     "weight": 1, 
-    "text": "La noble dame m'offre une profonde r\u00e9v\u00e9rence, alors que {{title.ambassadeur.first_name}}, mon ambassadeur, se tient en retrait. \"Messire, je me nome {{dame}}. Votre \u00e9missaire m'a fait part de votre offre, et j'ai song\u00e9 que m'installer dans votre cour m'apporterai un changement bienvenu\". Elle me sourit, guettant ma r\u00e9ponse.\r\n\r\n    {{dame.fight}}(C) {{dame.plot}}(I) {{dame.diplomacy}}(D) {{dame.scholarship}}(\u00c9) {{dame.loyalty}}(L)\r\n{% for quality in dame.quality_set.all %}    {{quality.name}}\r\n{% endfor %}", 
+    "text": "La noble dame m'offre une profonde r\u00e9v\u00e9rence, alors que {{title.ambassadeur.first_name}}, mon ambassadeur, se tient en retrait. \"Messire, je me nome {{dame}}. Votre \u00e9missaire m'a fait part de votre offre, et j'ai song\u00e9 que m'installer dans votre cour m'apporterai un changement bienvenu\". Elle me sourit, guettant ma r\u00e9ponse.\r\n\r\n{{dame|folk_details}}", 
     "image": "events/102_2.jpg", 
     "on_fire": "\n", 
     "slug": "allegeance_dame", 
@@ -53571,7 +53828,7 @@
     "category": null, 
     "name": "Allegeance pretre", 
     "weight": 1, 
-    "text": "L'homme d'\u00e9glise se tient devant mon tr\u00f4ne, la t\u00eate baiss\u00e9e avec humilit\u00e9. Le p\u00e8re {{title.cure.first_name}} s'avance. \"Mon seigneur, permettez-moi de vous pr\u00e9senter le p\u00e8re {{pretre}}, envoy\u00e9  par l'\u00e9v\u00each\u00e9 \u00e0 votre demande\".\r\n\r\n    {{pretre.fight}}(C) {{pretre.plot}}(I) {{pretre.diplomacy}}(D) {{pretre.scholarship}}(\u00c9) {{pretre.loyalty}}(L)\r\n{% for quality in pretre.quality_set.all %}    {{quality.name}}\r\n{% endfor %}", 
+    "text": "L'homme d'\u00e9glise se tient devant mon tr\u00f4ne, la t\u00eate baiss\u00e9e avec humilit\u00e9. Le p\u00e8re {{title.cure.first_name}} s'avance. \"Mon seigneur, permettez-moi de vous pr\u00e9senter le p\u00e8re {{pretre}}, envoy\u00e9  par l'\u00e9v\u00each\u00e9 \u00e0 votre demande\".\r\n\r\n{{pretre|folk_details}}", 
     "image": "events/102_3.jpg", 
     "on_fire": "\n", 
     "slug": "allegeance_pretre", 
@@ -53921,7 +54178,7 @@
     "category": null, 
     "name": "facheux", 
     "weight": 1, 
-    "text": "Son cheval sell\u00e9, il a franchit le pont levis sans un regard en arri\u00e8re. \r\n\r\nMon fils a \u00e9t\u00e9 port\u00e9 dans la chapelle, o\u00f9 le pr\u00eatre lui a apport\u00e9 les soins d'urgence. Je me tiens \u00e0 son chevet, une main pos\u00e9e sur l'\u00e9paule de {{folk.2.first_name}} qui pleure en silence, agenouill\u00e9e au pied du lit. Dans mon dos, la voix de l'homme d'\u00e9glise se veut rassurante. \"Il est jeune et vigoureux, mon seigneur. Avec l'aide de Dieu, il s'en remettra.\". J'hoche la t\u00eate en silence, me for\u00e7ant a rester impassible malgr\u00e9 mon chagrin.\r\n\r\n    {{folk.1}} re\u00e7oit les traits bless\u00e9 et amer.", 
+    "text": "Son cheval sell\u00e9, il a franchit le pont levis sans un regard en arri\u00e8re. \r\n\r\nMon fils a \u00e9t\u00e9 port\u00e9 dans la chapelle, o\u00f9 le pr\u00eatre lui a apport\u00e9 les soins d'urgence. Je me tiens \u00e0 son chevet, une main pos\u00e9e sur l'\u00e9paule de {{folks.2.first_name}} qui pleure en silence, agenouill\u00e9e au pied du lit. Dans mon dos, la voix de l'homme d'\u00e9glise se veut rassurante. \"Il est jeune et vigoureux, mon seigneur. Avec l'aide de Dieu, il s'en remettra.\". J'hoche la t\u00eate en silence, me for\u00e7ant a rester impassible malgr\u00e9 mon chagrin.\r\n\r\n    {{folks.1}} re\u00e7oit les traits bless\u00e9 et amer.", 
     "image": "", 
     "on_fire": "facheux = param.get_value(\"facheux\")\nfacheux.delete()\n\nfolks[1].add_quality(\"amer\")\nfolks[1].add_quality(\"blesse\")\n", 
     "slug": "tuto_facheux_duel_sonloose_3", 
@@ -54355,7 +54612,7 @@
     "category": null, 
     "name": "Un nouveau courtisan est arriv\u00e9", 
     "weight": 1, 
-    "text": "{{folk}} a frapp\u00e9 \u00e0 la porte du ch\u00e2teau.\r\nSes stats sont {{folk.fight}}(C) {{folk.plot}}(I) {{folk.diplomacy}}(D) {{folk.scholarship}}(\u00c9) {{folk.loyalty}}(L)\r\nSes traits sont:\r\n{% for quality in folk.quality_set.all %}\r\n* {{quality.name}}\r\n{% endfor %}", 
+    "text": "{{folk}} a frapp\u00e9 \u00e0 la porte du ch\u00e2teau.\r\n\r\n{{folk|folk_details}}", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "nouveau_courtisan", 
@@ -57659,13 +57916,13 @@
   }
 },
 {
-  "pk": 3469, 
+  "pk": 3483, 
   "model": "event.pendingevent", 
   "fields": {
     "kingdom": 117, 
     "is_started": true, 
-    "created": "2013-10-10T00:08:20.094", 
-    "started": "2013-10-10T00:08:20.097", 
+    "created": "2013-10-10T00:24:05.283", 
+    "started": "2013-10-10T00:24:05.286", 
     "text": "Il n'y a pas d'urgence en ce moment. \r\n\r\n    N'h\u00e9sitez pas \u00e0 utiliser cette pause narrative pour aller voir ce que vous pouvez faire dans l'onglet mission !", 
     "event": 225
   }
@@ -57825,10 +58082,10 @@
   }
 },
 {
-  "pk": 3692, 
+  "pk": 3713, 
   "model": "event.pendingeventaction", 
   "fields": {
-    "pending_event": 3469, 
+    "pending_event": 3483, 
     "message": "", 
     "text": "J'attends que quelque chose attire mon attention.", 
     "folk": null, 
@@ -58277,12 +58534,12 @@
   }
 },
 {
-  "pk": 9939, 
+  "pk": 9975, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 3469, 
+    "pending_event": 3483, 
     "name": "slug", 
-    "value": "tuto_caissesvides"
+    "value": "tuto_forcertitre_random"
   }
 },
 {
@@ -87007,6 +87264,944 @@
     "direct_queries": 19, 
     "time": 68, 
     "queries": 30
+  }
+},
+{
+  "pk": 10343, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 1, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10344, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 1, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10345, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 1, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10346, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 18, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 3, 
+    "time": 6, 
+    "queries": 3
+  }
+},
+{
+  "pk": 10347, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 2, 
+    "object_pk": 18, 
+    "object_type": "Event", 
+    "object_attr": "on_fire", 
+    "direct_queries": 4, 
+    "time": 3, 
+    "queries": 4
+  }
+},
+{
+  "pk": 10348, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 2, 
+    "object_pk": 116, 
+    "object_type": "EventAction", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 4, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10349, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 2, 
+    "object_pk": 24, 
+    "object_type": "EventAction", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 4, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10350, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 293, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 80, 
+    "time": 284, 
+    "queries": 89
+  }
+},
+{
+  "pk": 10351, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 2, 
+    "object_pk": 7, 
+    "object_type": "Title", 
+    "object_attr": "on_unlock", 
+    "direct_queries": 9, 
+    "time": 11, 
+    "queries": 9
+  }
+},
+{
+  "pk": 10352, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 14, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 16, 
+    "time": 45, 
+    "queries": 16
+  }
+},
+{
+  "pk": 10353, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 116, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 71, 
+    "queries": 30
+  }
+},
+{
+  "pk": 10354, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 1, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10355, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 1, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10356, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 1, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10357, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 18, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 3, 
+    "time": 8, 
+    "queries": 3
+  }
+},
+{
+  "pk": 10358, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 2, 
+    "object_pk": 172, 
+    "object_type": "Event", 
+    "object_attr": "on_fire", 
+    "direct_queries": 28, 
+    "time": 123, 
+    "queries": 28
+  }
+},
+{
+  "pk": 10359, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 293, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 94, 
+    "time": 326, 
+    "queries": 125
+  }
+},
+{
+  "pk": 10360, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 7, 
+    "object_type": "Title", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 2, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10361, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 7, 
+    "object_type": "Title", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 6, 
+    "queries": 3
+  }
+},
+{
+  "pk": 10362, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 2, 
+    "object_pk": 216, 
+    "object_type": "EventAction", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 7, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10363, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 213, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 22, 
+    "time": 64, 
+    "queries": 23
+  }
+},
+{
+  "pk": 10364, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 215, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 20, 
+    "time": 42, 
+    "queries": 20
+  }
+},
+{
+  "pk": 10365, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 2, 
+    "object_pk": 210, 
+    "object_type": "Event", 
+    "object_attr": "on_fire", 
+    "direct_queries": 9, 
+    "time": 11, 
+    "queries": 9
+  }
+},
+{
+  "pk": 10366, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 275, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 20, 
+    "time": 59, 
+    "queries": 29
+  }
+},
+{
+  "pk": 10367, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 2, 
+    "object_pk": 282, 
+    "object_type": "EventAction", 
+    "object_attr": "condition", 
+    "direct_queries": 3, 
+    "time": 7, 
+    "queries": 3
+  }
+},
+{
+  "pk": 10368, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 2, 
+    "object_pk": 290, 
+    "object_type": "EventAction", 
+    "object_attr": "condition", 
+    "direct_queries": 4, 
+    "time": 11, 
+    "queries": 4
+  }
+},
+{
+  "pk": 10369, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 276, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 33, 
+    "time": 87, 
+    "queries": 40
+  }
+},
+{
+  "pk": 10370, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 281, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 34, 
+    "time": 61, 
+    "queries": 34
+  }
+},
+{
+  "pk": 10371, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 3, 
+    "object_pk": 47, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 4, 
+    "time": 11, 
+    "queries": 4
+  }
+},
+{
+  "pk": 10372, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 2, 
+    "object_pk": 214, 
+    "object_type": "Event", 
+    "object_attr": "on_fire", 
+    "direct_queries": 28, 
+    "time": 118, 
+    "queries": 32
+  }
+},
+{
+  "pk": 10373, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 283, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 32, 
+    "time": 189, 
+    "queries": 64
+  }
+},
+{
+  "pk": 10374, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 14, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 16, 
+    "time": 32, 
+    "queries": 16
+  }
+},
+{
+  "pk": 10375, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 285, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 35, 
+    "queries": 17
+  }
+},
+{
+  "pk": 10376, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 28, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 5, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10377, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 1, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10378, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 1, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10379, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 1, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10380, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 18, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 3, 
+    "time": 7, 
+    "queries": 3
+  }
+},
+{
+  "pk": 10381, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 4, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10382, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 4, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 14, 
+    "queries": 5
+  }
+},
+{
+  "pk": 10383, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 15, 
+    "time": 66, 
+    "queries": 20
+  }
+},
+{
+  "pk": 10384, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 3, 
+    "object_pk": 3, 
+    "object_type": "Title", 
+    "object_attr": "on_unlock", 
+    "direct_queries": 8, 
+    "time": 8, 
+    "queries": 8
+  }
+},
+{
+  "pk": 10385, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 3, 
+    "object_pk": 3, 
+    "object_type": "Title", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10386, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 3, 
+    "object_pk": 3, 
+    "object_type": "Title", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 7, 
+    "queries": 3
+  }
+},
+{
+  "pk": 10387, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 2, 
+    "object_pk": 94, 
+    "object_type": "Event", 
+    "object_attr": "on_fire", 
+    "direct_queries": 19, 
+    "time": 120, 
+    "queries": 51
+  }
+},
+{
+  "pk": 10388, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 293, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 100, 
+    "time": 342, 
+    "queries": 155
+  }
+},
+{
+  "pk": 10389, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 6, 
+    "object_type": "Title", 
+    "object_attr": "on_unlock", 
+    "direct_queries": 8, 
+    "time": 8, 
+    "queries": 8
+  }
+},
+{
+  "pk": 10390, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 48, 
+    "object_type": "MissionGrid", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 2, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10391, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 48, 
+    "object_type": "MissionGrid", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 2, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10392, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 48, 
+    "object_type": "MissionGrid", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10394, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 3, 
+    "object_type": "Title", 
+    "object_attr": "on_defect", 
+    "direct_queries": 3, 
+    "time": 8, 
+    "queries": 3
+  }
+},
+{
+  "pk": 10395, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 6, 
+    "object_type": "Title", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 2, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10396, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 6, 
+    "object_type": "Title", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 7, 
+    "queries": 3
+  }
+},
+{
+  "pk": 10397, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 47, 
+    "object_type": "Mission", 
+    "object_attr": "on_start", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10398, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10399, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 23, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 8, 
+    "queries": 3
+  }
+},
+{
+  "pk": 10400, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 39, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 6, 
+    "queries": 3
+  }
+},
+{
+  "pk": 10401, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 15, 
+    "queries": 5
+  }
+},
+{
+  "pk": 10402, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 22, 
+    "time": 104, 
+    "queries": 33
+  }
+},
+{
+  "pk": 10403, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 2, 
+    "object_pk": 248, 
+    "object_type": "EventAction", 
+    "object_attr": "condition", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10404, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 47, 
+    "object_type": "Mission", 
+    "object_attr": "on_resolution", 
+    "direct_queries": 22, 
+    "time": 170, 
+    "queries": 55
+  }
+},
+{
+  "pk": 10405, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 247, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 15, 
+    "queries": 5
+  }
+},
+{
+  "pk": 10406, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 14, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 16, 
+    "time": 31, 
+    "queries": 16
+  }
+},
+{
+  "pk": 10407, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 127, 
+    "object_type": "EventAction", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 33, 
+    "queries": 17
+  }
+},
+{
+  "pk": 10408, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 6, 
+    "object_type": "Title", 
+    "object_attr": "on_defect", 
+    "direct_queries": 3, 
+    "time": 6, 
+    "queries": 3
+  }
+},
+{
+  "pk": 10409, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 3, 
+    "object_type": "Title", 
+    "object_attr": "condition", 
+    "direct_queries": 1, 
+    "time": 4, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10410, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 3, 
+    "object_type": "Title", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 21, 
+    "queries": 3
   }
 },
 {
@@ -138665,6 +139860,84 @@
   }
 },
 {
+  "pk": 8393, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-10T00:21:17.298", 
+    "object_repr": "tuto_facheux_duel_sonloose_3", 
+    "object_id": "214", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si seulement il avait \u00e9t\u00e9 raisonnable... [tuto_facheux_duel_sonloose_3]\u00a0\u00bb. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Si seulement il s'\u00e9tait battu comme un homme.... [tuto_facheux_duel_sonloose_3]\u00a0\u00bb.", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8394, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-10T00:22:12.918", 
+    "object_repr": "allegeance_chevalier", 
+    "object_id": "179", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Soyez le bienvenu dans ma cour, mon brave. `Le che [allegeance_chevalier]\u00a0\u00bb. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Navr\u00e9, mais je n'ai pas de place pour vous. {{titl [allegeance_chevalier]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8395, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-10T00:22:23.104", 
+    "object_repr": "Ambassadeur [hugo kingdom]", 
+    "object_id": "449", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 16
+  }
+},
+{
+  "pk": 8396, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-10T00:24:03.442", 
+    "object_repr": "allegeance_dame", 
+    "object_id": "180", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0\"Soyez la bienvenue sous mon toit.\" `Dame {{dame.f [allegeance_dame]\u00a0\u00bb. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0\"Malheureusement, cette offre ne tient plus. Perme [allegeance_dame]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8397, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-10T00:24:12.016", 
+    "object_repr": "allegeance_pretre", 
+    "object_id": "182", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0\"Vous etiez attendu, mon p\u00e8re. Les serviteurs vont [allegeance_pretre]\u00a0\u00bb. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0\"Je regrette, mais les choses ont chang\u00e9es et vos  [allegeance_pretre]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8398, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-10T00:24:39.718", 
+    "object_repr": "nouveau_courtisan", 
+    "object_id": "251", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Tr\u00e8s bien, cette personne me sera utile ! [nouveau_courtisan]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
   "pk": 74, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -138767,11 +140040,11 @@
   "pk": 117, 
   "model": "kingdom.kingdom", 
   "fields": {
-    "soldiers": 10, 
+    "soldiers": 13, 
     "prestige": 102, 
-    "money": 5, 
+    "money": 39, 
     "user": 41, 
-    "population": 140
+    "population": 145
   }
 }
 ]
