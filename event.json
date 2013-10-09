@@ -3071,6 +3071,48 @@
   }
 },
 {
+  "pk": 258, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Compromission r\u00e9ussie", 
+    "weight": 1, 
+    "text": "{{compromis}} est bien compromis !", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "compromettre_success", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 259, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Echec de la compromission", 
+    "weight": 1, 
+    "text": "Malgr\u00e9 tous nos effort, le personne n'a pas baiss\u00e9 en r\u00e9putation", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "compromettre_failure", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 260, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Backstab_compromission", 
+    "weight": 1, 
+    "text": "Je me suis fait rod\u00e9 !\r\n\r\n\r\n    {{perte}} de loyaut\u00e9 !", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "compromettre_big_failure", 
+    "condition": "\n"
+  }
+},
+{
   "pk": 5, 
   "model": "event.eventaction", 
   "fields": {
@@ -6047,6 +6089,39 @@
     "text": "Leurs sacrifice ne sera pas vain", 
     "message": "", 
     "event": 254, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 331, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Parfait !", 
+    "message": "", 
+    "event": 258, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 332, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Erf !", 
+    "message": "", 
+    "event": 259, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 333, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Oups !", 
+    "message": "", 
+    "event": 260, 
     "condition": "\n", 
     "on_fire": "\n"
   }
