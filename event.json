@@ -5265,7 +5265,7 @@
     "message": "", 
     "event": 175, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_demandemariage_3\").start()"
+    "on_fire": "param.next_event(\"tuto_demandemariage_3\").start()\npms = kingdom.pendingmission_set.filter(mission__slug=\"marier\")\nfor pm in pms:\n  pm.delete()\n"
   }
 },
 {
@@ -5364,7 +5364,7 @@
     "message": "Le p\u00e8re {{pretre}} a rejoint ma cour.", 
     "event": 182, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "pretre = param.get_value(\"pretre\")\npretre.kingdom = kingdom\npretre.save()\n"
   }
 },
 {
