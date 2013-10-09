@@ -8,9 +8,9 @@
     "prestige_threshold": 0, 
     "fired": [
       113, 
-      59, 
       114, 
       115, 
+      116, 
       74, 
       76, 
       80, 
@@ -1390,7 +1390,7 @@
   "pk": 2, 
   "model": "internal.recurring", 
   "fields": {
-    "delay": 770, 
+    "delay": 77, 
     "kingdom_list": "#param = kingdom.objects.get(pk=58)\nparam = []\n", 
     "on_fire": "blesses = folks.filter(quality_slug=\"blesse\")\nsoigneurs = target.folks.filter(sex=Folk.FEMALE, mission = None, birth__lte=datetime.now() - timedelta(days=C.MAJORITE))\nsoigneurs += target.folks.filter(sex=Folk.MALE, mission = None, birth__lte=datetime.now() - timedelta(days=C.MAJORITE), quality__slug=\"pretre\")\nsoigneurs = soigneurs.order_by(\"scholarship\")\nmoy_erudition = avg_folks(soigneurs, \"scholarship\")\nimport math\nsoin = 99 - moy_erudition/20 * 8 * max(1, len(soigneurs) / math.sqrt(blesses.count()))\ni = 0\nfor blesse in blesses:\n  fate = random_value(1,100)\n  if fate == 1 : #il meurt\n    blesse.die()\n  elif fate > soin : #il n'est plus bless\u00e9, mais gagne un autre trait\n    blesse.remove_quality(\"blesse\")\n    choix_trait = random_value(1,100)\n    chances_handicap = 30 - soigneurs[i % len(soigneurs)].scholarship * max(1,len(soigneurs)/ math.sqrt(blesses.count()))\n    if choix_trait < chances_handicap : #il est infirme\n      choix_handicap = random_in(Quality.objects.filter(quality_category__name=\"Handicap\"))\n      blesse.quality_set.add(choix_handicap)\n    else: #il est gu\u00e9rit\n      pass\n  #else on attendant 30 minutes qu'il retente sa chance\n  i += 1\n", 
     "name": "Les bless\u00e9s peuvent mourir", 
@@ -1401,8 +1401,8 @@
   "pk": 3, 
   "model": "internal.recurring", 
   "fields": {
-    "delay": 1440, 
-    "kingdom_list": "", 
+    "delay": 144, 
+    "kingdom_list": "\n", 
     "on_fire": "#on r\u00e9cup\u00e8re le ch\u00e2telain\nc = kingdom.get_folk_in_title(\"ch\u00e2telain\")\n\n#nombre max de personnes\ncapa = (kingdom.prestige/10) + 1\n\n#moyenne de loyaut\u00e9 de la cour\nmoy = 0\npeuple = 0\nfor f in Folk.objects.filter(kingdom=kingdom, death=None):\n  #on doit exclure le ch\u00e2telain du calcul car il ne peut pas \u00eatre supprim\u00e9\n  if c != f:\n    moy += f.loyalty\n    peuple += 1\nmoy = moy/peuple\n\n#on supprime des gens jusqu'\u00e0 en avoir un nombre acceptable\n#pour le moment, on se contente de mettre leur kingdom \u00e0 None\nwhile(peuple > capa):\n  defecteurs = Folk.objects.filter(kingdom=kingdom, death=None, loyalty__lt=moy)\n  #on peut probablement remplacer par random_in(defecteurs).delete() -> A verifier sans config/scripts/random_scripts\n  n = random_value(0, len(defecteurs)-1)\n  if defecteurs[n] != c:\n    defecteurs[n].kingdom = None\n    kingdom.save()\n  peuple -= 1\n", 
     "name": "Cour Max", 
     "description": "Faire respecter le nombre maximal de personnes dans une cour en enlevant des personnes avec moin de loyaut\u00e9 que la moyenne.\r\n\r\nTest\u00e9 (enfin, un peu), semble marcher pour le  moment"
@@ -1412,10 +1412,10 @@
   "pk": 4, 
   "model": "internal.recurring", 
   "fields": {
-    "delay": 960, 
-    "kingdom_list": "", 
-    "on_fire": "#Comment savoir l'\u00e2ge du gosse ? Comment sont g\u00e9r\u00e9es les dates de naissance et le temps courant ? \nbinf = datetime.now()\nbinf.days -= 16\nbsup = datetime.now()\nbsup.days -= 6\n\n#On s\u00e9lectionne tous les enfants de 6 \u00e0 16 ans:\n#Pour le test, on rajoute pk=\nenfants = Folk.objects.filter(kingdom=kingdom, death=None, birth__lte=bsup, birth__gte=binf)\n\nfor e in enfants:\n  r1 = random_value(1,10)\n  if r1 < 9 and mentor != None:\n    #les nouvelles caract\u00e9ristiques d\u00e9pendent de celles du mentor\n    potfight = max(e.mentor.fight - e.fight, 0)\n    potdiplo = max(e.mentor.diplomacy - e.diplomacy, 0)\n    potplot = max(e.mentor.plot - e.plot, 0) # nan, c'est pas un dictateur !\n    potschol = max(e.mentor.scholarship - e.scholarship, 0)\n    \n    total = potfight + potdiplo + potplot + potschol\n    r2  = random_value(1,100)\n    if r2 < (potfight*100/total):\n      e.fight += 1\n    elif r2 < ((potfight + potdiplo)*100/total):\n      e.diplomacy += 1\n    elif r2 < ((potfight + potdiplo + potplot)*100/total):\n      e.plot += 1\n    elif r2 < ((potfight + potdiplo + potplot + potschol)*100/total):\n      e.schol += 1\n    else:\n      #dirty, but should work\n      r1 = 10\n  if r1 > 8 or e.mentor == None:\n    #on est oblig\u00e9 de s\u00e9lectionner la carac \u00e0 la main\n    c = random_value(1, 4)\n    if c == 1:\n      e.fight += 1\n    elif c == 2:\n      e.diplomacy += 1\n    elif c == 3:\n      e.plot += 1\n    elif c == 4:\n      e.scholarship += 1\n  \nkingdom.save()\n", 
-    "name": "Entra\u00eenement", 
+    "delay": 96, 
+    "kingdom_list": "param=Kingdom.objects.filter(_kingdomVariable__name='in_tuto')", 
+    "on_fire": "f('education',kingdom=kingdom)", 
+    "name": "Education", 
     "description": "Calcule les augmentations de caract\u00e9ristiques des enfants entre 6 et 16 ans.\r\nLa fr\u00e9quence est toutes les 16h."
   }
 },
@@ -1478,11 +1478,22 @@
   "pk": 10, 
   "model": "internal.recurring", 
   "fields": {
-    "delay": 1440, 
+    "delay": 144, 
     "kingdom_list": "\n", 
     "on_fire": "nb_prisonniers = folks.filter(quality_set__slug__contains=\"prisonnier\").count()\ncout_total = nb_prisonniers * C.COUT_PRISONNIER\nkingdom.money -= cout_total\nkingdom.save()\nkingdom.message(\"Vos prisionniers vous ont co\u00fbt\u00e9 \" + cout_total + \" \u00e9cus cette ann\u00e9e.\")\n", 
     "name": "Cout des prisonniers", 
     "description": "Les prisonniers coutent ch\u00e8re"
+  }
+},
+{
+  "pk": 11, 
+  "model": "internal.recurring", 
+  "fields": {
+    "delay": 72, 
+    "kingdom_list": "param = Kingdom.objects.filter(_kingdomvariable__name='in_tuto')\n", 
+    "on_fire": "for folk in folks:\n  folk.birth += timedelta(hours=12)\n  folk.save()\n", 
+    "name": "tuto_stop_age", 
+    "description": "Rajeunir les folk autant qu'il viellissent"
   }
 },
 {
@@ -35767,7 +35778,7 @@
   "fields": {
     "params": "", 
     "slug": "determiner_raid", 
-    "on_fire": "\nsomme_combat = sum_folks(liste_attaquant,'fight')\n\n# argent vol\u00e9 au defenseur\nargent_vole = int(30*((somme_combat)**0.5)/7.74*(population_defenseur/population_max_defenseur))\n# population perdue par le defenseur\npopulation_perdue = int(argent_vole/3)\n\n# proba de mourrir / d'etre bless\u00e9 des attaquants\n# random_value : un entier aleatoire entre a et b\n# random_in : un element aleatoirement pris dans un tableau\n# random_gauss : (min,max,[sigma],[mu])\nmorts_attaquant=[]\nblesses_attaquant=[]\n\nfor attaquant in liste_attaquant:\n  pourcent_mort = 30*int(((256-min(16,attaquant.fight)**0.5)*0.09/256+0.01)*100)\n  pourcent_blesse = 20*int(((256-min(16,attaquant.fight)**0.5)*0.09/256+0.01)*100)#pourcent_mort\n  destin=random_value(1,100)\n  if destin<=pourcent_mort:\n    morts_attaquant.append(attaquant)\n  elif destin<=pourcent_blesse:\n    call_function(\"blesser_folk\",folk=attaquant)\n    blesses_attaquant.append(attaquant)\n\n\nparam = {\n         'argent_vole' : argent_vole,\n         'population_perdue' : population_perdue,\n         'blesses_attaquant' : blesses_attaquant,\n         'morts_attaquant' : morts_attaquant\n         }\n", 
+    "on_fire": "\nsomme_combat = sum_folks(liste_attaquant,'fight')\n\n# argent vol\u00e9 au defenseur\nargent_vole = int(30*((somme_combat)**0.5)/7.74*(population_defenseur/population_max_defenseur))\n# population perdue par le defenseur\npopulation_perdue = int(argent_vole/3)\n\n# proba de mourrir / d'etre bless\u00e9 des attaquants\n# random_value : un entier aleatoire entre a et b\n# random_in : un element aleatoirement pris dans un tableau\n# random_gauss : (min,max,[sigma],[mu])\nmorts_attaquant=[]\nblesses_attaquant=[]\n\nfor attaquant in liste_attaquant:\n  pourcent_mort = 0# 30*int(((256-min(16,attaquant.fight)**0.5)*0.09/256+0.01)*100)\n  pourcent_blesse = 20*int(((256-min(16,attaquant.fight)**0.5)*0.09/256+0.01)*100)#pourcent_mort\n  destin=random_value(1,100)\n  if destin<=pourcent_mort:\n    morts_attaquant.append(attaquant)\n  elif destin<=pourcent_blesse:\n    call_function(\"blesser_folk\",folk=attaquant)\n    blesses_attaquant.append(attaquant)\n\n\nparam = {\n         'argent_vole' : argent_vole,\n         'population_perdue' : population_perdue,\n         'blesses_attaquant' : blesses_attaquant,\n         'morts_attaquant' : morts_attaquant\n         }\n", 
     "description": "d\u00e9terminer r\u00e9sultat d'un raid : \r\n- population d\u00e9fenseur tu\u00e9e\r\n- argent gagn\u00e9e par le vainqueur\r\n- bless\u00e9s attaquant\r\n- tu\u00e9s attaquant\r\n"
   }
 },
@@ -35797,8 +35808,18 @@
   "fields": {
     "params": "", 
     "slug": "creer_claim", 
-    "on_fire": "try :\n  ce_claim = Claim.objects.filter(offender=offender,offended=offended)[0]\n  claim_existant = 1\nexcept:  \n  claim_existant = 0\n\nif claim_existant == 1:\n  if ce_claim.level < level:\n    ce_claim.level = level\nelse:\n  ce_claim = Claim(\n                level = level,\n                offender =offender,\n                offended =offended\n                )  \n\nce_claim.save()\n  \nparam = {\n         'ce_claim' : ce_claim,\n         'deja_ennemi' : claim_existant\n         }  \n  \n\n", 
+    "on_fire": "try :\n  ce_claim = Claim.objects.filter(offender=offender,offended=offended)[0]\n  claim_existant = 1\nexcept:  \n  claim_existant = 0\n\nif claim_existant == 1:\n  if ce_claim.level < level:\n    ce_claim.level = level\nelse:\n  ce_claim = Claim(\n                level = level,\n                offender =offender,\n                offended =offended\n                )  \n\nce_claim.save()\n\n# si le claim est un  claim de guerre ouverte on cre\u00e9 aussi le claim dans le sens oppos\u00e9\nif level == 2:\n  f(\"creer_claim\",offender=offended,offended=offender,level=2)\n  \nparam = {\n         'ce_claim' : ce_claim,\n         'deja_ennemi' : claim_existant\n         }  \n  \n\n", 
     "description": "Fonction qui cr\u00e9\u00e9 / met \u00e0 jour un claim automatiquement\r\nRetourne un entier qui dit si un claim similaire / de niveau sup\u00e9rieur ou m\u00eame niveau existait d\u00e9j\u00e0 entre les deux royaumes. Met \u00e0 jour ou pas le claim / le cr\u00e9e en cons\u00e9quence"
+  }
+},
+{
+  "pk": 28, 
+  "model": "internal.function", 
+  "fields": {
+    "params": "kingdom:Kingdom", 
+    "slug": "education", 
+    "on_fire": "#Comment savoir l'\u00e2ge du gosse ? Comment sont g\u00e9r\u00e9es les dates de naissance et le temps courant ? \n#binf = datetime.now()\n#binf.days -= 16\n#bsup = datetime.now()\n#bsup.days -= 6\nbinf = datetime.now() - timedelta(days=16)\nbsup = datetime.now() - timedelta(days=6)\n\n#On s\u00e9lectionne tous les enfants de 6 \u00e0 16 ans:\n#Pour le test, on rajoute pk=\nenfants = Folk.objects.filter(kingdom=kingdom, birth__lte=bsup, birth__gte=binf)\n\nfor e in enfants:\n  r1 = random_value(1,10)\n  mentor=e.mentor\n  if r1 < 9 and mentor != None:\n    #les nouvelles caract\u00e9ristiques d\u00e9pendent de celles du mentor\n    potfight = max(mentor.fight - e.fight, 0)\n    potdiplo = max(mentor.diplomacy - e.diplomacy, 0)\n    potplot = max(mentor.plot - e.plot, 0) # nan, c'est pas un dictateur !\n    potschol = max(mentor.scholarship - e.scholarship, 0)\n    \n    total = potfight + potdiplo + potplot + potschol\n    r2  = random_value(1,100)\n    if r2 < (potfight*100/total):\n      e.fight += 1\n    elif r2 < ((potfight + potdiplo)*100/total):\n      e.diplomacy += 1\n    elif r2 < ((potfight + potdiplo + potplot)*100/total):\n      e.plot += 1\n    elif r2 < ((potfight + potdiplo + potplot + potschol)*100/total):\n      e.schol += 1\n    else:\n      #dirty, but should work\n      r1 = 10\n  if r1 > 8 or mentor == None:\n    #on est oblig\u00e9 de s\u00e9lectionner la carac \u00e0 la main\n    c = random_value(1, 4)\n    if c == 1:\n      e.fight += 1\n    elif c == 2:\n      e.diplomacy += 1\n    elif c == 3:\n      e.plot += 1\n    elif c == 4:\n      e.scholarship += 1\n  if e.age==16:\n    # Attribuer l'avatar d'adulte\n    caracs = {\n      'fight': folk.fight,\n      'diplomacy': folk.diplomacy,\n      'plot': folk.plot,\n      'scholarship': folk.scholarship\n    }\n\n    best_carac = sorted(caracs.items(), key=lambda c: c[1])[0]\n\n    params = {\n      best_carac[0]: Avatar.FORBIDDEN\n    }\n\n    folk.avatar = Avatar.objects.filter(sex=folk.sex, child='').exclude(**params).order_by('?')[0]\n\n  e.save()", 
+    "description": "Un r\u00e9curring passe toutes les 16 heures et est aussi appell\u00e9 dans le tuto"
   }
 }
 ]
