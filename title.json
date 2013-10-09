@@ -19,7 +19,7 @@
     "name": "Conn\u00e9table", 
     "on_defect": "folk.loyalty -= 6\nfolk.save()\n", 
     "on_affect": "folk.loyalty += 5\nfolk.save()", 
-    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un conn\u00e9table.\")\n# AvailableMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"chasse\")).save()\nkingdom.unlock_mission(\"chasse\")\nkingdom.unlock_mission(\"recruter\")\nkingdom.unlock_mission(\"renvoyer\")", 
+    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un conn\u00e9table.\")\n# AvailableMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"chasse\")).save()\nkingdom.unlock_mission(\"chasse\")\nkingdom.unlock_mission(\"recruter_troupes\")\nkingdom.unlock_mission(\"renvoyer\")", 
     "slug": "connetable", 
     "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age()<C.MAJORITE:\n  status = S.TOO_YOUNG\n", 
     "description": "En tant que premier conseiller militaire, le conn\u00e9table supervise le recrutement et l'entra\u00eenement de vos hommes d'arme.\r\n\r\nUn conn\u00e9table a besoin d'un haut Combat pour \u00eatre efficace."

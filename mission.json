@@ -743,9 +743,9 @@
     "target_list": "\n", 
     "text": "Recruter des soldats (fait perdre des paysans)", 
     "has_value": false, 
-    "on_resolution": "\n", 
+    "on_resolution": "delta = param.get_value(\"delta\")\nkingdom.soldiers += delta\nkingdom.save\nkingdom.message(\"%s soldats ont rejoint votre cour. Vous \u00eates maintenant \u00e0 la t\u00eate d'une arm\u00e9e de %s soldats.\" % (delta, kingdom.soldiers))\n", 
     "value_description": "", 
-    "on_start": "POURCENTAGE_MAX_MISSION_RECRUTEMENT = 5\ndelta = sum_folks(affected, 'fight') / 3\n\n# On ne peut pas d\u00e9passer le max de troupes possible\nmax_troupes = call_function('get_max_soldats', kingdom=kingdom)\ndelta = min(delta, max_troupes - kingdom.soldiers)\n\n# On ne peut pas gagner plus de 5% de la population maximale en une fois\nmax_population = call_function('get_max_population', kingdom=kingdom)\nmax_gain_soldats = max_population * POURCENTAGE_MAX_MISSION_RECRUTEMENT / 100\ndelta = min(delta, max_gain_soldats)\n\n# On ne peut pas avoir un nombre n\u00e9gatif de paysans !\ndelta = min(delta, kingdom.population)\n\n# On ne peut perdre plus d'argents que notre tr\u00e9sorerie actuelle\ndelta = min(delta, kingdom.money)\n\nkingdom.money -= delta\nkingdom.soldiers += delta\nkingdom.population -= delta\nkingdom.save()\n\nkingdom.message_set.add(Message(\n  content=\"%s soldats ont rejoint votre cour. Vous \u00eates maintenant \u00e0 la t\u00eate d'une arm\u00e9e de %s soldats.\" % (delta, kingdom.soldiers)\n))\n", 
+    "on_start": "POURCENTAGE_MAX_MISSION_RECRUTEMENT = 5\ndelta = sum_folks(affected, 'fight') / 3\n\n# On ne peut pas d\u00e9passer le max de troupes possible\nmax_troupes = call_function('get_max_soldats', kingdom=kingdom)\ndelta = min(delta, max_troupes - kingdom.soldiers)\n\n# On ne peut pas gagner plus de 5% de la population maximale en une fois\nmax_population = call_function('get_max_population', kingdom=kingdom)\nmax_gain_soldats = max_population * POURCENTAGE_MAX_MISSION_RECRUTEMENT / 100\ndelta = min(delta, max_gain_soldats)\n\n# On ne peut pas avoir un nombre n\u00e9gatif de paysans !\ndelta = min(delta, kingdom.population)\n\n# On ne peut perdre plus d'argents que notre tr\u00e9sorerie actuelle\ndelta = min(delta, kingdom.money)\n\nkingdom.money -= delta\nkingdom.population -= delta\nkingdom.save()\n\nparam.set_value(\"delta\", delta)\n\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 2, 
@@ -754,7 +754,7 @@
     "is_cancellable": true, 
     "duration": 360, 
     "on_cancel": "\n", 
-    "slug": "recruter", 
+    "slug": "recruter_troupes", 
     "on_init": "\n"
   }
 },
@@ -1481,19 +1481,6 @@
     "allow_empty": false, 
     "slug": "defenseurs", 
     "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Depuis des temps imm\u00e9moriaux les femmes ont persuad\u00e9 les hommes que c'\u00e9taient \u00e0 eux de mourrir. On ne revient pas sur des privil\u00e8ges durement gagn\u00e9s.\""
-  }
-},
-{
-  "pk": 37, 
-  "model": "mission.missiongrid", 
-  "fields": {
-    "allow_disabled": false, 
-    "name": "Recruteurs", 
-    "mission": 37, 
-    "length": 20, 
-    "allow_empty": false, 
-    "slug": "recruteurs", 
-    "condition": "\n"
   }
 },
 {

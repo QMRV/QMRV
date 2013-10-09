@@ -11,11 +11,11 @@
       114, 
       115, 
       116, 
+      117, 
       74, 
       76, 
       80, 
       87, 
-      88, 
       112
     ], 
     "money_threshold": 0, 
@@ -35718,7 +35718,7 @@
   "fields": {
     "params": "kingdom:Kingdom", 
     "slug": "get_max_soldats", 
-    "on_fire": "param = POURCENTAGE_MAX_SOLDATS_ACTIF * kingdom.population / 100", 
+    "on_fire": "param = C.POURCENTAGE_MAX_SOLDATS_ACTIF * kingdom.population / 100", 
     "description": "Retourne le nombre maximal de soldats accessibles sur ce Kingdom (de fa\u00e7on active)"
   }
 },
