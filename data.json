@@ -8104,8 +8104,8 @@
     "spouse": null, 
     "quality_set": [
       3, 
-      40, 
-      12
+      12, 
+      40
     ], 
     "mentor": null
   }
@@ -8158,8 +8158,8 @@
     "loyalty": 45, 
     "spouse": null, 
     "quality_set": [
-      25, 
       3, 
+      25, 
       36
     ], 
     "mentor": null
@@ -8239,8 +8239,8 @@
     "loyalty": 25, 
     "spouse": null, 
     "quality_set": [
-      29, 
-      3
+      3, 
+      29
     ], 
     "mentor": null
   }
@@ -8370,8 +8370,8 @@
     "loyalty": 69, 
     "spouse": null, 
     "quality_set": [
-      15, 
       2, 
+      15, 
       38
     ], 
     "mentor": null
@@ -8398,8 +8398,8 @@
     "loyalty": 97, 
     "spouse": null, 
     "quality_set": [
-      12, 
       7, 
+      12, 
       38
     ], 
     "mentor": null
@@ -8585,8 +8585,8 @@
     "loyalty": 45, 
     "spouse": null, 
     "quality_set": [
-      11, 
-      3
+      3, 
+      11
     ], 
     "mentor": null
   }
@@ -8743,10 +8743,10 @@
     "loyalty": 80, 
     "spouse": null, 
     "quality_set": [
-      26, 
-      40, 
       47, 
-      37
+      26, 
+      37, 
+      40
     ], 
     "mentor": null
   }
