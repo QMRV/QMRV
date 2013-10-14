@@ -1484,7 +1484,7 @@
     "text": " ", 
     "image": "", 
     "on_fire": "titres = [vs.title.slug for vs in AvailableTitle.objects.filter(kingdom=kingdom)]\n\nif \"cure\" not in titres:\n  kingdom.start_pending_event(\"tuto_pretre_eveche\")\nelif \"ambassadeur\" not in titres:\n  kingdom.start_pending_event(\"tuto_toofewcourtisants\")\nelif \"tresorier\" not in titres:\n  kingdom.start_pending_event(\"tuto_toomuchecus\")\nelse:\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_forcertitre_random\")\n  \nstatus = S.GHOST_EVENT\n", 
-    "slug": "tuto_forcertitre_random", 
+    "slug": "tuto_forcertitre_random_fantome", 
     "condition": " "
   }
 },
@@ -2567,20 +2567,6 @@
   }
 },
 {
-  "pk": 216, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "Tuto conflit", 
-    "weight": 1, 
-    "text": "{{dynasty}} a \u00e9t\u00e9 attaqu\u00e9. Cet affront, ma famille se doit de le laver. Sur le plan diplomatique, nous pouvons nous permettre de simplement riposter, mais j'envisage de d\u00e9clarer  une guerre ouverte \u00e0 {{ennemi}}. Cela nous permetrai d'attaquer le faquin \u00e0 volont\u00e9, sans avoir \u00e0 nous soucier de fabriquer un cassus belli \u00e0 chaque occasion. Bien s\u00fbr, {{ennemi.last_name}} pourra faire de m\u00eame. Sommes-nous assez fort pour relever le d\u00e9fi?\r\n\r\n    Un cassus belli a \u00e9t\u00e9 obtenu envers {{ennemi}}\r\n    Nouvelles missions.", 
-    "image": "events/463_2.jpg", 
-    "on_fire": null, 
-    "slug": "tuto_conflit", 
-    "condition": null
-  }
-},
-{
   "pk": 218, 
   "model": "event.event", 
   "fields": {
@@ -2591,34 +2577,6 @@
     "image": "", 
     "on_fire": null, 
     "slug": "tuto_espionnage", 
-    "condition": null
-  }
-},
-{
-  "pk": 220, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "Tuto diplomatie r\u00e9sultat", 
-    "weight": 1, 
-    "text": "(matching + perd un courtisan, gagne un courtisan \u00e0 marier + donne la mission mariage specifique)", 
-    "image": "", 
-    "on_fire": null, 
-    "slug": "tuto_diplomacy", 
-    "condition": null
-  }
-},
-{
-  "pk": 221, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "Mariage diplomatique", 
-    "weight": 1, 
-    "text": "(fin de tuto)", 
-    "image": "", 
-    "on_fire": null, 
-    "slug": "tuto_diplomacy_mariage", 
     "condition": null
   }
 },
@@ -2757,7 +2715,7 @@
     "weight": 1, 
     "text": "F\u00e9licitations, vous avez termin\u00e9 le tuto.", 
     "image": "", 
-    "on_fire": "\"\"\"\nHERE BE DRAGONS.\nNe pas copier coller ce code qui va toucher les m\u00e9caniques internes du jeu...\n\"\"\"\n\n# Title to unlock\n#titles = ('chatelain', 'cure', 'chambellan', 'tresorier', 'ambassadeur', 'maitre_espion', 'connetable', )\n# Missions to manually unlock\n#missions = ('escarmouche', )\n\n# Unlock titles\n#for title in titles:\n#  kingdom.unlock_title(title)\n\n# Unlock PVP missions\n#for mission in missions:\n#  kingdom.unlock_mission(mission)\n\n# First, resolve all current pending mission\n#pending_missions = kingdom.pendingmission_set.filter(started__isnull=False)\n#for pending_mission in pending_missions:\n#  pending_mission.resolve()\n\n# Remove \"tuto_\" missions from AvailableMission and PendingMission\n#kingdom.availablemission_set.filter(mission__slug__startswith=\"tuto_\").delete()\n#kingdom.pendingmission_set.filter(mission__slug__startswith=\"tuto_\").delete()\n\n# Remove \"tuto_\" variables set on the kingdom\nkingdom._kingdomvariable_set.filter(key__startswith=\"tuto_\")\nkingdom.set_value(\"in_tuto\", False)", 
+    "on_fire": "\"\"\"\nHERE BE DRAGONS.\nNe pas copier coller ce code qui va toucher les m\u00e9caniques internes du jeu...\n\"\"\"\n\n# Title to unlock\ntitles = ('chatelain', 'cure', 'chambellan', 'tresorier', 'ambassadeur', 'maitre_espion', 'connetable', )\n# Missions to manually unlock\nmissions = ('escarmouche', )\n\n# Unlock titles\nfor title in titles:\n  kingdom.unlock_title(title)\n\n# Unlock missions\nfor mission in missions:\n  kingdom.unlock_mission(mission)\n\n# First, resolve all current pending mission\npending_missions = kingdom.pendingmission_set.filter(started__isnull=False)\nfor pending_mission in pending_missions:\n  pending_mission.resolve()\n\n# Remove \"tuto_\" missions from AvailableMission and PendingMission\nkingdom.availablemission_set.filter(mission__slug__startswith=\"tuto_\").delete()\nkingdom.pendingmission_set.filter(mission__slug__startswith=\"tuto_\").delete()\n\n# Remove \"tuto_\" variables set on the kingdom\nkingdom._kingdomvariable_set.filter(key__startswith=\"tuto_\")\nkingdom.set_value(\"in_tuto\", False)", 
     "slug": "tuto_fin_tuto", 
     "condition": "\n"
   }
@@ -5684,28 +5642,6 @@
     "event": 215, 
     "condition": "\n", 
     "on_fire": "\n"
-  }
-},
-{
-  "pk": 288, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "Je dois y r\u00e9fl\u00e9chir s\u00e9rieusement.", 
-    "message": "En r\u00e9ponse \u00e0 l'attaque de {{ennemi}}, je peux [riposter](#mission) ou d\u00e9clarer un [conflit](#mission) ouvert.", 
-    "event": 216, 
-    "condition": null, 
-    "on_fire": null
-  }
-},
-{
-  "pk": 289, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "Cela demanderait un ambassadeur talentueux.", 
-    "message": "En r\u00e9ponse \u00e0 l'attaque de {{ennemi}}, je peux [riposter](#mission) ou nommer un [ambassadeur](#title)d\u00e9clarer un [conflit](#mission) ouvert.", 
-    "event": 216, 
-    "condition": null, 
-    "on_fire": null
   }
 },
 {

@@ -1,28 +1,5 @@
 [
 {
-  "pk": 2, 
-  "model": "mission.mission", 
-  "fields": {
-    "name": "Se d\u00e9fendre des brigands", 
-    "target_list": "  ", 
-    "text": "Alignez vos combattants pour vous d\u00e9fendre !\r\n[Glissez des personnages de votre cour dans la grille, puis lancez la mission.\r\nUne d\u00e9fense perdue fait perdre du prestige et des \u00e9cus. Une bataille gagn\u00e9e fait gagner du prestige. Dans tous les cas, un pourcentage de votre population et les d\u00e9fenseurs jouent leur vie dans cette bataille.]", 
-    "has_value": false, 
-    "on_resolution": "somme_combat=sum_folks(grids['defenseurs'], \"fight\")\n\npeuple_immobilise=param.get_value(\"population_immobilisee\")\n  \nif somme_combat>15:\n  type_glorieux=random_in(grids['defenseurs'])\n  param.set_value(\"type_glorieux\", type_glorieux)\n  #param.next_event(\"tuto_bandits_gagne\").start()\nelif somme_combat>9:\n  pass #param.next_event(\"tuto_bandits_bofgagne\").start()\nelse:\n  pass #param.next_event(\"tuto_bandits_perdu\").start()\n", 
-    "value_description": "Valeur :", 
-    "on_start": "peuple_immobilise=kingdom.population*0.1\nkingdom.population-=peuple_immobilise\nkingdom.save()\nparam.set_value(\"population_immobilisee\", peuple_immobilise)\n#d\u00e9clencher un \u00e9v\u00e8nement au d\u00e9part des troupes : ", 
-    "has_target": false, 
-    "is_team": false, 
-    "title": 2, 
-    "target_description": "Cible", 
-    "timeout": 1440, 
-    "is_cancellable": true, 
-    "duration": 5, 
-    "on_cancel": "\n", 
-    "slug": "dummy_tuto_brigand_defense", 
-    "on_init": "  "
-  }
-},
-{
   "pk": 3, 
   "model": "mission.mission", 
   "fields": {
@@ -55,7 +32,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": "kingdom.start_pending_event(\"tuto_recrutement\")   ", 
+    "on_start": "kingdom.start_pending_event(\"tuto_recrutement\")\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 2, 
@@ -66,29 +43,6 @@
     "on_cancel": "status=\"gofuck\"\n", 
     "slug": "tuto_recrutement", 
     "on_init": "  "
-  }
-},
-{
-  "pk": 5, 
-  "model": "mission.mission", 
-  "fields": {
-    "name": "Escarmouche", 
-    "target_list": "param = Kingdom.objects.filter(offender_set__offended=kingdom)\n", 
-    "text": "Une escarmouche est une petite bataille entre deux seigneurs. C'est le cas classique de bataille pour l'honneur et un peu de butin. Les lois de l'honneur vous permettent d'envoyer une partie de votre population et jusqu'\u00e0 4 hommes de votre cour pour les commander. Les frais pour le voyage, les vivres et la remise en \u00e9tat du mat\u00e9riel s'\u00e9l\u00e8vent \u00e0 30 \u00e9cus.\r\n[Pour chaque joueur : \r\n**score=[somme des combats des commandeurs+population_envoy\u00e9e+bonus_cavalerie+bonus_strat\u00e8ge]+/- 10%**\r\n**population envoy\u00e9e**=10% de population max\r\n**bonus_cavalerie** : +1 pour chacun de vos cavaliers\r\n**bonus_strat\u00e8ge** :\r\npour chacun de vos archer : +3 (1 fois/piquer adverse max)\r\npour chacun de vos piquier : +4 (1 fois/cavalier adverse max)\r\npour chacun de vos cavalier : +2 (1 fois/archer adverse max)\r\n\r\nLe joueur ayant le meilleur score de combat gagne du prestige, l'autre joueur en perds. Le joueur qui attaque a besoin d'un affront contre l'autre joueur pour effectuer la mission, s'il gagne il gagne de l'or mais ne peux pas en perdre. Aucun combattant n'est \u00e0 l'abri de se faire blesser ou tuer au cours d'une escarmouche...\r\n\r\n***exemple de calcul de bonus** : si vous avez 2 piquiers et un archer et votre adversaire un [\u00e9p\u00e9iste ou sans sp\u00e9cialisation], un cavalier et un lancier.\r\n-Votre adversaire gagne +1 parce qu'il a un cavalier, +2 suppl\u00e9mentaires parce qu'il a un cavalier et que vous avez un archer. Son piquier aurait pu lui donner +4 si vous aviez un cavalier mais vous n'en avez pas donc +0 et son dernier personnage ne lui donne pas de bonus. Il a au total un +3.\r\n-Avec vos piquiers vous auriez pu gagner deux fois +4 si votre adversaire avait 2 cavaliers mais il n'en a qu'un, donc vous \u00eates limit\u00e9 \u00e0 un seul +4. Votre archer a un bonus de +3 contre le piquier adverse. Vous totalisez un bonus de +7.*]", 
-    "has_value": false, 
-    "on_resolution": "grille_defenseur=param.get_value(\"grille_defenseur\")\nretour_fonction=call_function(\"resolution_combat\",\n                population_envoyee_attaquant=param.get_value(\"population_envoyee_attaquant\"),\n                population_envoyee_defenseur=param.get_value(\"population_envoyee_defenseur\"),\n                grille_attaquant=grids['combattants'],\n                grille_defenseur=grille_defenseur,\n                royaume_attaquant=kingdom,\n                royaume_defenseur=target,\n                pourcent_mort=30,\n                pourcent_blesse=80,\n                pourcentage_pop_meurt_base=30,\n                pourcentage_population=8,\n                gain_maxi_prestige=30,\n                limit_difference_prestige=100)\n              \n\n#si chatelain est dans la grille alors chatelain, sinon si connetable est dans la mission alors connetable, sinon le mec qui la le plus gros combat\ntest=0\n\nchatelain_gagnant=False\nchatelain_perdant=False\nconnetable_gagnant=False\nconnetable_perdant=False\n\n#on part du principe de le gagnant est le vainqueur\n\nif kingdom.get_folk_in_title(\"chatelain\") in grids['combattants']:\n  test=1\n  general_attaquant=personnage\n  chatelain_gagnant=True\n\nif test==0:\n    if kingdom.get_folk_in_title(\"connetable\") in grids['combattants']:\n      connetable_gagnant=True\n      test=1\n      general_attaquant=personnage\n\nif test==0:\n  combat_min=0\n  for personnage in grids['combattants']:\n    if personnage.fight>combat_min:\n      combat_min=personnage.fight\n      general_attaquant=personnage\n\ntest=0      \nif target.get_folk_in_title(\"chatelain\") in grille_defenseur:\n    test=1\n    chatelain_perdant=True\n    general_defenseur=personnage\n\nif test==0:\n  if target.get_folk_in_title(\"conn\u00e9table\") in grille_defenseur:\n    test=1\n    connetable_perdant=True\n    general_defenseur=personnage\n\nif test==0:\n  combat_min=0\n  for personnage in grille_defenseur:\n    if personnage.fight>combat_min:\n      combat_min=personnage.fight\n      general_defenseur=personnage\n\n#si ce n'est pas le cas on inverse      \nif retour_fonction[\"attaquant_egal_vainqueur\"]==False:\n  connetable_attaquant=connetable_perdant\n  connetable_perdant=connetable_gagnant\n  connetable_gagnant=connetable_attaquant\n  connetable_defenseur=connetable_gagnant\n  chatelain_attaquant=chatelain_perdant\n  chatelain_perdant=chatelain_gagnant\n  chatelain_gagnant=chatelain_attaquant\n  chatelain_defenseur=chatelain_gagnant\n  general_attaquant=general_perdant\n  general_perdant=general_vainqueur\n  general_vainqueur=general_attaquant\n  general_defenseur=general_vainqueur\nelse:\n  connetable_attaquant=connetable_gagnant\n  connetable_defenseur=connetable_perdant\n  chatelain_attaquant=chatelain_gagnant\n  chatelain_defenseur=chatelain_perdant\n  general_attaquant=general_vainqueur\n  general_defenseur=general_perdant   \n\npe=PendingEvent(event=Event.objects.get(slug=\"escarmouche_attaque\"),kingdom=kingdom,started=None)\npe.save()\npe.set_value(\"vainqueur\",retour_fonction[\"vainqueur\"])\npe.set_value(\"perdant\",retour_fonction[\"perdant\"])\npe.set_value(\"chatelain_defenseur\",target.get_folk_in_title(\"chatelain\"))\npe.set_value(\"vainqueur_est_attaquant\",retour_fonction[\"attaquant_egal_vainqueur\"])\nif retour_fonction[\"attaquant_egal_vainqueur\"]:\n  pe.set_value(\"pop_envoyee_gagnant\",retour_fonction[\"population_envoyee_attaquant\"])\n  pe.set_value(\"pop_envoyee_perdant\",retour_fonction[\"population_envoyee_defenseur\"])\nelse:\n  pe.set_value(\"pop_envoyee_gagnant\",retour_fonction[\"population_envoyee_defenseur\"])\n  pe.set_value(\"pop_envoyee_perdant\",retour_fonction[\"population_envoyee_attaquant\"]) \npe.set_value(\"pop_pertes_vainqueur\",retour_fonction[\"perte_population_vainqueur\"])\npe.set_value(\"pop_pertes_perdant\",retour_fonction[\"perte_population_perdant\"])\npe.set_value(\"chatelain_in_mission_vainqueur\",chatelain_gagnant)\npe.set_value(\"connetable_in_mission_vainqueur\",connetable_gagnant)\npe.set_value(\"chatelain_in_mission_perdant\",chatelain_perdant)\npe.set_value(\"connetable_in_mission_perdant\",connetable_perdant)\npe.set_value(\"chatelain_in_mission_attaquant\",chatelain_attaquant)\npe.set_value(\"connetable_in_mission_attaquant\",connetable_attaquant)\n#pe.set_value(\"chatelain_in_mission_defenseur\",chatelain_defenseur)\n#pe.set_value(\"connetable_in_mission_defenseur\",connetable_defenseur)\npe.set_value(\"general_attaquant\",general_attaquant)\npe.set_value(\"general_vainqueur\",general_vainqueur)\npe.set_value(\"general_perdant\",general_perdant)\npe.set_value(\"morts_gagnant\",retour_fonction[\"morts_gagnant\"])\npe.set_value(\"blesses_gagnant\",retour_fonction[\"blesses_gagnant\"])\npe.set_value(\"morts_perdants\",retour_fonction[\"morts_perdant\"])\npe.set_value(\"blesses_perdants\",retour_fonction[\"blesses_perdant\"])\npe.set_value(\"gain_monnaie_attaquant\",retour_fonction[\"gain_monnaie_attaquant\"])\npe.set_value(\"gain_prestige_vainqueur\",retour_fonction[\"gain_prestige_vainqueur\"])\npe.set_value(\"perte_prestige_perdant\",retour_fonction[\"perte_prestige_perdant\"])\npe.start()\n#declencher affichage pour la defense\n\npe=PendingEvent(event=Event.objects.get(slug=\"escarmouche_defense\"),kingdom=target,started=None)\npe.save()\npe.set_value(\"vainqueur\",retour_fonction[\"vainqueur\"])\npe.set_value(\"perdant\",retour_fonction[\"perdant\"])\npe.set_value(\"vainqueur_est_attaquant\",retour_fonction[\"attaquant_egal_vainqueur\"])\nif retour_fonction[\"attaquant_egal_vainqueur\"]:\n  pe.set_value(\"pop_envoyee_gagnant\",retour_fonction[\"population_envoyee_attaquant\"])\n  pe.set_value(\"pop_envoyee_perdant\",retour_fonction[\"population_envoyee_defenseur\"])\nelse:\n  pe.set_value(\"pop_envoyee_gagnant\",retour_fonction[\"population_envoyee_defenseur\"])\n  pe.set_value(\"pop_envoyee_perdant\",retour_fonction[\"population_envoyee_attaquant\"])\npe.set_value(\"pop_pertes_vainqueur\",retour_fonction[\"perte_population_vainqueur\"])\npe.set_value(\"pop_pertes_perdant\",retour_fonction[\"perte_population_perdant\"])\npe.set_value(\"chatelain_in_mission_vainqueur\",chatelain_gagnant)\npe.set_value(\"connetable_in_mission_gagnant\",connetable_gagnant)\npe.set_value(\"chatelain_in_mission_perdant\",chatelain_perdant)\npe.set_value(\"connetable_in_mission_perdant\",connetable_perdant)\n#pe.set_value(\"chatelain_in_mission_attaquant\",chatelain_attaquant)\n#pe.set_value(\"connetable_in_mission_attaquant\",connetable_attaquant)\npe.set_value(\"chatelain_in_mission_defenseur\",chatelain_defenseur)\npe.set_value(\"connetable_in_mission_defenseur\",connetable_defenseur)\npe.set_value(\"general_defenseur\",general_defenseur)\npe.set_value(\"general_vainqueur\",general_vainqueur)\npe.set_value(\"general_perdant\",general_perdant)\npe.set_value(\"morts_gagnant\",retour_fonction[\"morts_gagnant\"])\npe.set_value(\"blesses_gagnant\",retour_fonction[\"blesses_gagnant\"])\npe.set_value(\"morts_perdants\",retour_fonction[\"morts_perdant\"])\npe.set_value(\"blesses_perdants\",retour_fonction[\"blesses_perdant\"])\npe.set_value(\"gain_monnaie_attaquant\",retour_fonction[\"gain_monnaie_attaquant\"])\npe.set_value(\"gain_prestige_vainqueur\",retour_fonction[\"gain_prestige_vainqueur\"])\npe.set_value(\"perte_prestige_perdant\",retour_fonction[\"perte_prestige_perdant\"])\npe.start()\n", 
-    "value_description": " ", 
-    "on_start": "if Claim.objects.filter(offended=kingdom,level__gte=Claim.CLAIM,offender=target).count()==0:\n  status=\"Ce voisin l\u00e0 m\u00e9riterait surement qu'on lui d\u00e9clare la guerre, mais seulement une fois que j'aurais un affront \u00e0 laver. Quitte \u00e0 aller chercher cet affront s'il le faut.\"\nelse:\n  population_envoyee_attaquant=kingdom.population*0.1\n  kingdom.population-=population_envoyee_attaquant\n  param.set_value(\"population_envoyee_attaquant\",population_envoyee_attaquant)\n  kingdom.money-=30\n  kingdom.save()\n  pe=PendingEvent(event=Event.objects.get(slug=\"escarmouche_warning\"),kingdom=target,started=None)\n  pe.save()\n  pe.set_value(\"kingdom_attaquant\",kingdom)\n  pe.set_value(\"mission_attaque\",param)\n  pe.start()\n", 
-    "has_target": true, 
-    "is_team": false, 
-    "title": 2, 
-    "target_description": "Le seigneur que vous vous d\u00e9cidez \u00e0 affronter", 
-    "timeout": null, 
-    "is_cancellable": true, 
-    "duration": 1440, 
-    "on_cancel": "\n", 
-    "slug": "escarmouche", 
-    "on_init": "if Claim.objects.filter(offended=kingdom).count()==0:\n  status=\"il vous faut un affront pour d\u00e9clencher une escarmouche\"\n"
   }
 },
 {
@@ -111,29 +65,6 @@
     "duration": 5, 
     "on_cancel": "\n", 
     "slug": "tuto_potsdevin", 
-    "on_init": " "
-  }
-},
-{
-  "pk": 7, 
-  "model": "mission.mission", 
-  "fields": {
-    "name": "Emprunt", 
-    "target_list": " ", 
-    "text": "Charger le tr\u00e9sorier de trouver des cr\u00e9anciers dispos\u00e9s \u00e0 nous pr\u00eater de l'argent.", 
-    "has_value": false, 
-    "on_resolution": " ", 
-    "value_description": "Valeur :", 
-    "on_start": " ", 
-    "has_target": false, 
-    "is_team": false, 
-    "title": 7, 
-    "target_description": "Cible", 
-    "timeout": null, 
-    "is_cancellable": true, 
-    "duration": 5, 
-    "on_cancel": "\n", 
-    "slug": "emprunt", 
     "on_init": " "
   }
 },
@@ -230,29 +161,6 @@
   }
 },
 {
-  "pk": 13, 
-  "model": "mission.mission", 
-  "fields": {
-    "name": "Nommer les d\u00e9fenseurs", 
-    "target_list": " ", 
-    "text": "Une escarmouche est une petite bataille entre deux seigneurs. C'est le cas classique de bataille pour l'honneur et un peu de butin. Les lois de l'honneur vous permettent d'envoyer une partie de votre population et jusqu'\u00e0 4 hommes de votre cour pour les commander. Vous avez peu de temps pour pr\u00e9parer la d\u00e9fense.\r\n[Pour chaque joueur : \r\n**score=[somme des combats des commandeurs+population_envoy\u00e9e+bonus_cavalerie+bonus_strat\u00e8ge]+/- 10%**\r\n**population envoy\u00e9e**=10% de population max\r\n**bonus_cavalerie** : +1 pour chacun de vos cavaliers\r\n**bonus_strat\u00e8ge** :\r\npour chacun de vos archer : +3 (1 fois/piquer adverse max)\r\npour chacun de vos piquier : +4 (1 fois/cavalier adverse max)\r\npour chacun de vos cavalier : +2 (1 fois/archer adverse max)\r\n\r\nLe joueur ayant le meilleur score de combat gagne du prestige, l'autre joueur en perds. Le joueur qui attaque a besoin d'un affront contre l'autre joueur pour effectuer la mission, s'il gagne il gagne de l'or mais ne peux pas en perdre. Aucun combattant n'est \u00e0 l'abri de se faire blesser ou tuer au cours d'une escarmouche...\r\n\r\n***exemple de calcul de bonus** : si vous avez 2 piquiers et un archer et votre adversaire un [\u00e9p\u00e9iste ou sans sp\u00e9cialisation], un cavalier et un lancier.\r\n-Votre adversaire gagne +1 parce qu'il a un cavalier, +2 suppl\u00e9mentaires parce qu'il a un cavalier et que vous avez un archer. Son piquier aurait pu lui donner +4 si vous aviez un cavalier mais vous n'en avez pas donc +0 et son dernier personnage ne lui donne pas de bonus. Il a au total un +3.\r\n-Avec vos piquiers vous auriez pu gagner deux fois +4 si votre adversaire avait 2 cavaliers mais il n'en a qu'un, donc vous \u00eates limit\u00e9 \u00e0 un seul +4. Votre archer a un bonus de +3 contre le piquier adverse. Vous totalisez un bonus de +7.*]", 
-    "has_value": false, 
-    "on_resolution": " #gerer le tiemout\n", 
-    "value_description": "Valeur :", 
-    "on_start": "param.get_value(\"mission_attaque\").set_value(\"grille_defenseur\",grids['defenseurs'])\npopulation_envoyee_defenseur=kingdom.population*0.1\nkingdom.population-=population_envoyee_defenseur\nparam.get_value(\"mission_attaque\").set_value(\"population_envoyee_defenseur\",population_envoyee_defenseur)\nkingdom.save()\n", 
-    "has_target": false, 
-    "is_team": false, 
-    "title": 2, 
-    "target_description": "Cible", 
-    "timeout": 1440, 
-    "is_cancellable": true, 
-    "duration": 60, 
-    "on_cancel": "\n", 
-    "slug": "escarmouche_defense", 
-    "on_init": " "
-  }
-},
-{
   "pk": 14, 
   "model": "mission.mission", 
   "fields": {
@@ -272,52 +180,6 @@
     "duration": 0, 
     "on_cancel": "\n", 
     "slug": "bannir_folk", 
-    "on_init": " "
-  }
-},
-{
-  "pk": 15, 
-  "model": "mission.mission", 
-  "fields": {
-    "name": "Trouver des pr\u00eatres", 
-    "target_list": " ", 
-    "text": "Nous sommes en manque d'homme d'Eglise ! Allons en chercher dans les bois", 
-    "has_value": false, 
-    "on_resolution": "pretre = call_function(\"creer_folk\", kingdom=kingdom, plot_min=2, fight_min=2, scholarship_min=8, diplomacy_min=6, max_carac =32, sex=Folk.MALE, loyalty=60, birth=(datetime.now() - timedelta(days=35)), trait=\"pretre\")\n", 
-    "value_description": "Valeur :", 
-    "on_start": " ", 
-    "has_target": false, 
-    "is_team": false, 
-    "title": 3, 
-    "target_description": "Cible", 
-    "timeout": null, 
-    "is_cancellable": true, 
-    "duration": 120, 
-    "on_cancel": "\n", 
-    "slug": "trouver_pretre", 
-    "on_init": " "
-  }
-},
-{
-  "pk": 16, 
-  "model": "mission.mission", 
-  "fields": {
-    "name": "entr\u00e9e dans les ordres", 
-    "target_list": " ", 
-    "text": "J'envoie un de mes hommes se former dans les ordres", 
-    "has_value": false, 
-    "on_resolution": "call_function(\"unlock_cure\", kingdom=kingdom)\nfolks[0].add_quality(\"pretre\")\nfolks[0].save()\n", 
-    "value_description": "Valeur :", 
-    "on_start": " ", 
-    "has_target": false, 
-    "is_team": false, 
-    "title": 3, 
-    "target_description": "Cible", 
-    "timeout": null, 
-    "is_cancellable": true, 
-    "duration": 1440, 
-    "on_cancel": "\n", 
-    "slug": "entree_ordre", 
     "on_init": " "
   }
 },
@@ -365,29 +227,6 @@
     "on_cancel": null, 
     "slug": "charite", 
     "on_init": "\n"
-  }
-},
-{
-  "pk": 19, 
-  "model": "mission.mission", 
-  "fields": {
-    "name": "Soigner un bless\u00e9", 
-    "target_list": " ", 
-    "text": "Je veux vider mon h\u00f4pital", 
-    "has_value": false, 
-    "on_resolution": "grids['blesse'][0].remove_quality(\"blesse\")\nif random_value(1,10) == 1:\n  grids['blesse'][0].add_quality(\"estropie\")\nparam.started = datetime.now() - timedelta(minutes=60*random_value(0,1))\n", 
-    "value_description": "Valeur :", 
-    "on_start": "\n", 
-    "has_target": false, 
-    "is_team": false, 
-    "title": 3, 
-    "target_description": "Cible", 
-    "timeout": null, 
-    "is_cancellable": true, 
-    "duration": 120, 
-    "on_cancel": "\n", 
-    "slug": "soigner_blesse", 
-    "on_init": " "
   }
 },
 {
@@ -483,52 +322,6 @@
   }
 },
 {
-  "pk": 24, 
-  "model": "mission.mission", 
-  "fields": {
-    "name": "Investir", 
-    "target_list": " ", 
-    "text": "Je veux faire fructifier mon argent.", 
-    "has_value": true, 
-    "on_resolution": "pe = PendingEvent(event=Event.objects.get(slug=\"retour_investissement\"), kingdom=kingdom, started=None)\npe.started = datetime.now() + timedelta(hours=2)\npe.save()\npe.set_value(\"monnaie_investie\", param.get_value(\"monnaie_investie\"))\n", 
-    "value_description": "Valeur :", 
-    "on_start": "if kingom.money < param.get_value(\"value\"):\n  status = \"Vous ne pouvez pas investir cette somme\"\nelse: \n  param.set_value(\"monnaie_investie\", param.get_value(\"value\"))\n  param.set_value(\"mensualit\u00e9s\", kingdom.money / 100)\n  param.set_value(\"nb_mois\", 12)\n  kingdom.money *= 0.9\n  kingdom.save()\n", 
-    "has_target": false, 
-    "is_team": false, 
-    "title": 7, 
-    "target_description": "Cible", 
-    "timeout": null, 
-    "is_cancellable": true, 
-    "duration": 0, 
-    "on_cancel": "\n", 
-    "slug": "investir", 
-    "on_init": "\n"
-  }
-},
-{
-  "pk": 25, 
-  "model": "mission.mission", 
-  "fields": {
-    "name": "Chercher une cible", 
-    "target_list": " ", 
-    "text": "Qui veut la paix pr\u00e9pare la guerre. Il me faut conna\u00eetre mes ennemis.", 
-    "has_value": false, 
-    "on_resolution": "# Similar prestige\nks = Kingdom.objects.filter(prestige__gte=kingdom.prestige*0.9, prestige__lte=kingdom.prestige*1.1)\n\n# Exclude myself\nks = ks.exclude(id=kingdom.id)\n\n# Exclude people i already have Claim\nks = ks.exclude(offended_set__offender=kingdom)\n\nfor k in ks:\n  kingdom.add_claim(k, Claim.REACHABLE)\n\n#Appel de l'\u00e9v\u00e8nement pour afficher le r\u00e9sultat\npe = kingdom.create_pending_event(\"resultat_recherche_claim\")\npe.set_value(\"results\", ks)\npe.start()\n", 
-    "value_description": "Valeur :", 
-    "on_start": " ", 
-    "has_target": false, 
-    "is_team": false, 
-    "title": 6, 
-    "target_description": "Cible", 
-    "timeout": null, 
-    "is_cancellable": true, 
-    "duration": 5, 
-    "on_cancel": "\n", 
-    "slug": "chercher_cibles", 
-    "on_init": " "
-  }
-},
-{
   "pk": 26, 
   "model": "mission.mission", 
   "fields": {
@@ -541,7 +334,7 @@
     "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent - cible acceptable ? )\nnok = 0\nif kingdom.money < 10:\n  nok = 1\nelif kingdom.user.username==target.user.username:\n  nok = 0\n  \n\nif nok == 0:\n  kingdom.money-=10\n\n  retour_fonction = call_function('determiner_raid',\n                                  liste_attaquant=grids['attaquants'],\n                                  argent_defenseur = target.money,\n                                  population_defenseur = target.population,\n                                  population_max_defenseur = f('get_max_population',kingdom=target)\n                                  )\n  \n  # le raid entraine un casus belli \n  retour_fonction2 = f(\"creer_claim\",offender = kingdom,offended = target,level=1)\n  \n  target.population-=retour_fonction['population_perdue']\n  # kingdom.save()\n  target.save()\n  \n  kingdom.money+= retour_fonction['argent_vole']\n  # target.save()\n  # kingdom.save()\n  \n  param.set_value('morts_attaquant',[])\n  \n  # gestion des evenements de retour du raid pour l'attaquant et d'avertissement de raid pour la cible\n  # cas d'un raid qui tourne tr\u00e8s mal (des morts ...)\n  if (len(retour_fonction['morts_attaquant'])>0):\n    # evenement pour l'attaquant\n    # liste des noms des morts\n    morts_nom = []\n    for perso in retour_fonction['morts_attaquant']:\n      morts_nom.append(perso.first_name + \" \" + perso.last_name)\n      grids['attaquants']= grids['attaquants'].remove(perso)\n    pa = kingdom.create_pending_event(\"retour_raid_morts\")\n    pa.set_value(\"argent_gagne\", retour_fonction['argent_vole'])\n    pa.set_value(\"attaque\", target)\n    pa.set_value(\"liste_attaquant\", grids['attaquants'])\n    pa.set_value(\"blesses_attaquant\", retour_fonction['blesses_attaquant'])      \n    pa.set_value(\"morts_nom\",morts_nom)   \n    pa.start()\n    # evenement pour la cible\n    pc = target.create_pending_event(\"cible_raid_morts\")\n    pc.set_value(\"mort1_name\", retour_fonction['morts_attaquant'][0].first_name + \" \"+retour_fonction['morts_attaquant'][0].last_name) \n    pc.set_value(\"population_perdue\", retour_fonction['population_perdue'])\n    pc.set_value(\"kingdom_attaquant\", kingdom)\n    pc.set_value(\"kingdom_attaque\", target)\n    pc.set_value(\"deja_ennemi\", retour_fonction2['deja_ennemi'])   \n    pc.start()\n    # et on les tuera \u00e0 la fin\n    param.set_value(\"morts_attaquant\"  , retour_fonction['morts_attaquant'])\n  ###      \n  # cas d'un raid sans encombre  \n  else:\n     # evenement du retour pour l'attaquant\n    pa = kingdom.create_pending_event(\"retour_raid_ok\")\n    pa.set_value(\"argent_gagne\", retour_fonction['argent_vole'])\n    pa.set_value(\"attaque\", target)\n    pa.set_value(\"liste_attaquant\", grids['attaquants'])\n    pa.set_value(\"blesses_attaquant\", retour_fonction['blesses_attaquant'])  \n    pa.start()\n    # evenement pour la cible\n    pc = target.create_pending_event(\"cible_raid_ok\")\n    pc.set_value(\"population_perdue\", int(retour_fonction['population_perdue']))\n    pc.set_value(\"kingdom_attaquant\", kingdom)\n    pc.set_value(\"kingdom_attaque\", target)\n    pc.set_value(\"deja_ennemi\", retour_fonction2['deja_ennemi'])\n    pc.start()           \n  \n  \n\nelif nok==1 :\n  status=\"Vous n'avez pas suffisamment d'argent pour lancer cette mission.\"  \nelif nok==2 :status=\"On n'organise pas de raid sur son domaine, il y a les imp\u00f4ts et le droit de cuissage pour \u00e7a !\"  \n\n", 
     "has_target": true, 
     "is_team": false, 
-    "title": null, 
+    "title": 2, 
     "target_description": "Cible", 
     "timeout": null, 
     "is_cancellable": true, 
@@ -559,41 +352,18 @@
     "target_list": "param = Kingdom.objects.filter(offended_set__offender=kingdom)", 
     "text": "Je suis quelqu'un de suspicieux. Je veux les espionner", 
     "has_value": false, 
-    "on_resolution": "a = 0\nfor folk in grids['espion']:\n  a += folk.plot\nd = 0\ntry :\n  d += target.get_folk_in_title(\"maitre_espion\").plot *3\nexcept:\n  pass \nd += sum_folks(folks.filter(mission = None, birth__gte= datetime.now() - timedelta(days=C.MAJORITE\"))), \"plot\nd *= 0.7\n\nmarge = min(100, 100 * 4/float(3) * 1/float(2) * ( 1 + ( (a-d) / float((a+d)) ) ) )\n\nmoney = target.money + max(-target.money, target.money * random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100)))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\nfolk = max(5, min(target.folk_set.count() * incertitude, target.prestige/10))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\npopulation =  max(5, min(target.population * incertitude, call_function(\"population_max\",kingdom=target)))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\narchers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"archer\").count() * incertitude, folk * 2/3))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\npiquiers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"piquier\").count() * incertitude, folk * 2/3))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\ncavaliers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"cavalier\").count() * incertitude, folk * 2/3))\n\npe = PendingEvent(event = Event.objects.get(slug=\"rapport_espionnage\"), kingdom=kingdom, started=None)\npe.save()\npe.set_value(\"money\", money)\npe.set_value(\"folk\", folk)\npe.set_value(\"population\", population)\npe.set_value(\"piquiers\", piquiers)\npe.set_value(\"cavaliers\", cavaliers)\npe.set_value(\"archers\", archers)\npe.set_value(\"target\", target)\npe.start()\n", 
+    "on_resolution": "a = 0\nfor folk in grids['espion']:\n  a += folk.plot\nd = 0\ntry :\n  d += target.get_folk_in_title(\"maitre_espion\").plot *3\nexcept:\n  pass \nd += sum_folks(folks.filter(mission = None, birth__gte= datetime.now() - timedelta(days=C.MAJORITE)), 'plot')\nd *= 0.7\n\nmarge = min(100, 100 * 4/float(3) * 1/float(2) * ( 1 + ( (a-d) / float((a+d)) ) ) )\n\nmoney = target.money + max(-target.money, target.money * random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100)))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\nfolk = max(5, min(target.folk_set.count() * incertitude, target.prestige/10))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\npopulation =  max(5, min(target.population * incertitude, call_function(\"population_max\",kingdom=target)))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\narchers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"archer\").count() * incertitude, folk * 2/3))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\npiquiers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"piquier\").count() * incertitude, folk * 2/3))\n\nincertitude = (100 + random_value(-(100-marge)*(100-marge)/float(100), (100-marge)*(100-marge)/float(100))) / float(100)\ncavaliers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"cavalier\").count() * incertitude, folk * 2/3))\n\npe = PendingEvent(event = Event.objects.get(slug=\"rapport_espionnage\"), kingdom=kingdom, started=None)\npe.save()\npe.set_value(\"money\", money)\npe.set_value(\"folk\", folk)\npe.set_value(\"population\", population)\npe.set_value(\"piquiers\", piquiers)\npe.set_value(\"cavaliers\", cavaliers)\npe.set_value(\"archers\", archers)\npe.set_value(\"target\", target)\npe.start()\n", 
     "value_description": " ", 
     "on_start": "\n", 
     "has_target": true, 
     "is_team": false, 
-    "title": null, 
+    "title": 5, 
     "target_description": "Chateau \u00e0 observer", 
     "timeout": null, 
     "is_cancellable": true, 
     "duration": 60, 
     "on_cancel": "\n", 
     "slug": "espionner", 
-    "on_init": "\n"
-  }
-},
-{
-  "pk": 29, 
-  "model": "mission.mission", 
-  "fields": {
-    "name": "Escarmouche", 
-    "target_list": " ", 
-    "text": "Une escarmouche est une petite bataille entre deux seigneurs. C'est le cas classique de bataille pour l'honneur et un peu de butin. Les lois de l'honneur vous permettent d'envoyer une partie de votre population et jusqu'\u00e0 4 hommes de votre cour pour les commander. Les frais pour le voyage, les vivres et la remise en \u00e9tat du mat\u00e9riel s'\u00e9l\u00e8vent \u00e0 30 \u00e9cus.\r\n[Pour chaque joueur : \r\n**score=[somme des combats des commandeurs+population_envoy\u00e9e+bonus_cavalerie+bonus_strat\u00e8ge]+/- 10%**\r\n**population envoy\u00e9e**=10% de population max\r\n**bonus_cavalerie** : +1 pour chacun de vos cavaliers\r\n**bonus_strat\u00e8ge** :\r\npour chacun de vos archer : +3 (1 fois/piquer adverse max)\r\npour chacun de vos piquier : +4 (1 fois/cavalier adverse max)\r\npour chacun de vos cavalier : +2 (1 fois/archer adverse max)\r\n\r\nLe joueur ayant le meilleur score de combat gagne du prestige, l'autre joueur en perds. Le joueur qui attaque a besoin d'un affront contre l'autre joueur pour effectuer la mission, s'il gagne il gagne de l'or mais ne peux pas en perdre. Aucun combattant n'est \u00e0 l'abri de se faire blesser ou tuer au cours d'une escarmouche...\r\n\r\n***exemple de calcul de bonus** : si vous avez 2 piquiers et un archer et votre adversaire un [\u00e9p\u00e9iste ou sans sp\u00e9cialisation], un cavalier et un lancier.\r\n-Votre adversaire gagne +1 parce qu'il a un cavalier, +2 suppl\u00e9mentaires parce qu'il a un cavalier et que vous avez un archer. Son piquier aurait pu lui donner +4 si vous aviez un cavalier mais vous n'en avez pas donc +0 et son dernier personnage ne lui donne pas de bonus. Il a au total un +3.\r\n-Avec vos piquiers vous auriez pu gagner deux fois +4 si votre adversaire avait 2 cavaliers mais il n'en a qu'un, donc vous \u00eates limit\u00e9 \u00e0 un seul +4. Votre archer a un bonus de +3 contre le piquier adverse. Vous totalisez un bonus de +7.*]", 
-    "has_value": false, 
-    "on_resolution": " ", 
-    "value_description": "Valeur :", 
-    "on_start": "population_envoyee_attaquant=kingdom.population*0.1\nkingdom.population-=population_envoyee_attaquant\nkingdom.money-=30\nkingdom.save()\n\n\ntarget=Kingdom.objects.get(user__username=\"le_pnj_du_jeu\")\ngrille_defenseur=Folk.objects.filter(kingdom=target).order_by('?')[0:3]\npopulation_pnj=kingdom.get_value(\"population_pnj\")*0.1\n#population_pnj=(1+(pop_toi-pop_adverse)/(pop_toi+pop_adversaire))*pop_base_adverse\nretour_fonction=call_function(\"resolution_combat\",\n                population_envoyee_attaquant=population_envoyee_attaquant,\n                population_envoyee_defenseur=population_pnj,\n                grille_attaquant=grids['combattants_tuto'],\n                grille_defenseur=grille_defenseur,\n                royaume_attaquant=kingdom,\n                royaume_defenseur=target,\n                pourcent_mort=10,\n                pourcent_blesse=30,\n                pourcentage_pop_meurt_base=30,\n                pourcentage_population=8,\n                gain_maxi_prestige=30,\n                limit_difference_prestige=100)\n              \n\n#si chatelain est dans la grille alors chatelain, sinon si connetable est dans la mission alors connetable, sinon le mec qui la le plus gros combat\ntest=0\n\nchatelain_gagnant=False\nchatelain_perdant=False\nconnetable_gagnant=False\nconnetable_perdant=False\ngeneral_attaquant= None\ngeneral_perdant=None\n#on part du principe de le gagnant est le vainqueur\n\nif kingdom.get_folk_in_title(\"chatelain\") in grids['combattants_tuto']:\n  test=1\n  general_vainqueur=kingdom.get_folk_in_title(\"chatelain\")\n  chatelain_gagnant=True\n\nif test==0:\n    if kingdom.get_folk_in_title(\"connetable\") in grids['combattants_tuto']:\n      connetable_gagnant=True\n      test=1\n      general_vainqueur=kingdom.get_folk_in_title(\"connetable\")\nif test==0:\n  combat_min=0\n  for personnage in grids['combattants_tuto']:\n    if personnage.fight>combat_min:\n      combat_min=personnage.fight\n      general_vainqueur=personnage\n\n\n#si ce n'est pas le cas on inverse      \nif retour_fonction[\"attaquant_egal_vainqueur\"]==False:\n  connetable_attaquant=connetable_perdant\n  connetable_perdant=connetable_gagnant\n  connetable_gagnant=connetable_attaquant\n  connetable_defenseur=connetable_gagnant\n  chatelain_attaquant=chatelain_perdant\n  chatelain_perdant=chatelain_gagnant\n  chatelain_gagnant=chatelain_attaquant\n  chatelain_defenseur=chatelain_gagnant\n  vainqueur=general_perdant\n  general_attaquant=general_vainqueur\n  general_defenseur=general_perdant\nelse:\n  connetable_attaquant=connetable_gagnant\n  connetable_defenseur=connetable_perdant\n  chatelain_attaquant=chatelain_gagnant\n  chatelain_defenseur=chatelain_perdant\n  general_attaquant=general_perdant\n  general_defenseur=general_vainqueur   \n\n  \nif kingdom.prestige>150:  \n  pe=PendingEvent(event=Event.objects.get(slug=\"raser_chateau_ennemi\"),kingdom=kingdom,started=None)\n  pe.save()\n  pe.set_value(\"vainqueur\",retour_fonction[\"vainqueur\"])\n  pe.set_value(\"perdant\",retour_fonction[\"perdant\"])\n  pe.set_value(\"chatelain_defenseur\",target.get_folk_in_title(\"chatelain\"))\n  pe.set_value(\"vainqueur_est_attaquant\",retour_fonction[\"attaquant_egal_vainqueur\"])\n  if retour_fonction[\"attaquant_egal_vainqueur\"]:\n    pe.set_value(\"pop_envoyee_gagnant\",retour_fonction[\"population_envoyee_attaquant\"])\n    pe.set_value(\"pop_envoyee_perdant\",retour_fonction[\"population_envoyee_defenseur\"])\n  else:\n    pe.set_value(\"pop_envoyee_gagnant\",retour_fonction[\"population_envoyee_defenseur\"])\n    pe.set_value(\"pop_envoyee_perdant\",retour_fonction[\"population_envoyee_attaquant\"])\n  pe.set_value(\"pop_pertes_vainqueur\",retour_fonction[\"perte_population_vainqueur\"])\n  pe.set_value(\"pop_pertes_perdant\",retour_fonction[\"perte_population_perdant\"])\n  pe.set_value(\"chatelain_in_mission_vainqueur\",chatelain_gagnant)\n  pe.set_value(\"connetable_in_mission_vainqueur\",connetable_gagnant)\n  pe.set_value(\"chatelain_in_mission_perdant\",chatelain_perdant)\n  pe.set_value(\"connetable_in_mission_perdant\",connetable_perdant)\n  pe.set_value(\"chatelain_in_mission_attaquant\",chatelain_attaquant)\n  pe.set_value(\"connetable_in_mission_attaquant\",connetable_attaquant)\n  #pe.set_value(\"chatelain_in_mission_defenseur\",chatelain_defenseur)\n  #pe.set_value(\"connetable_in_mission_defenseur\",connetable_defenseur)\n  pe.set_value(\"general_attaquant\",general_attaquant)\n  pe.set_value(\"general_vainqueur\",general_vainqueur)\n  pe.set_value(\"general_perdant\",general_perdant)\n  pe.set_value(\"morts_gagnant\",retour_fonction[\"morts_gagnant\"])\n  pe.set_value(\"blesses_gagnant\",retour_fonction[\"blesses_gagnant\"])\n  pe.set_value(\"morts_perdants\",retour_fonction[\"morts_perdant\"])\n  pe.set_value(\"blesses_perdants\",retour_fonction[\"blesses_perdant\"])\n  pe.set_value(\"gain_monnaie_attaquant\",retour_fonction[\"gain_monnaie_attaquant\"])\n  pe.set_value(\"gain_prestige_vainqueur\",retour_fonction[\"gain_prestige_vainqueur\"])\n  pe.set_value(\"perte_prestige_perdant\",retour_fonction[\"perte_prestige_perdant\"])\n  pe.start()\n  \n  #suppresseion availablemission : tutoriel\n  \nelse:\n  pe=PendingEvent(event=Event.objects.get(slug=\"escarmouche_attaque\"),kingdom=kingdom,started=None)\n  pe.save()\n  pe.set_value(\"vainqueur\",retour_fonction[\"vainqueur\"])\n  pe.set_value(\"perdant\",retour_fonction[\"perdant\"])\n  pe.set_value(\"chatelain_defenseur\",target.get_folk_in_title(\"chatelain\"))\n  pe.set_value(\"vainqueur_est_attaquant\",retour_fonction[\"attaquant_egal_vainqueur\"])\n  if retour_fonction[\"attaquant_egal_vainqueur\"]:\n    pe.set_value(\"pop_envoyee_gagnant\",retour_fonction[\"population_envoyee_attaquant\"])\n    pe.set_value(\"pop_envoyee_perdant\",retour_fonction[\"population_envoyee_defenseur\"])\n  else:\n    pe.set_value(\"pop_envoyee_gagnant\",retour_fonction[\"population_envoyee_defenseur\"])\n    pe.set_value(\"pop_envoyee_perdant\",retour_fonction[\"population_envoyee_attaquant\"])\n  pe.set_value(\"pop_pertes_vainqueur\",retour_fonction[\"perte_population_vainqueur\"])\n  pe.set_value(\"pop_pertes_perdant\",retour_fonction[\"perte_population_perdant\"])\n  pe.set_value(\"chatelain_in_mission_vainqueur\",chatelain_gagnant)\n  pe.set_value(\"connetable_in_mission_vainqueur\",connetable_gagnant)\n  pe.set_value(\"chatelain_in_mission_perdant\",chatelain_perdant)\n  pe.set_value(\"connetable_in_mission_perdant\",connetable_perdant)\n  pe.set_value(\"chatelain_in_mission_attaquant\",chatelain_attaquant)\n  pe.set_value(\"connetable_in_mission_attaquant\",connetable_attaquant)\n  #pe.set_value(\"chatelain_in_mission_defenseur\",chatelain_defenseur)\n  #pe.set_value(\"connetable_in_mission_defenseur\",connetable_defenseur)\n  pe.set_value(\"general_attaquant\",general_attaquant)\n  pe.set_value(\"general_vainqueur\",general_vainqueur)\n  pe.set_value(\"general_perdant\",general_perdant)\n  pe.set_value(\"morts_gagnant\",retour_fonction[\"morts_gagnant\"])\n  pe.set_value(\"blesses_gagnant\",retour_fonction[\"blesses_gagnant\"])\n  pe.set_value(\"morts_perdants\",retour_fonction[\"morts_perdant\"])\n  pe.set_value(\"blesses_perdants\",retour_fonction[\"blesses_perdant\"])\n  pe.set_value(\"gain_monnaie_attaquant\",retour_fonction[\"gain_monnaie_attaquant\"])\n  pe.set_value(\"gain_prestige_vainqueur\",retour_fonction[\"gain_prestige_vainqueur\"])\n  pe.set_value(\"perte_prestige_perdant\",retour_fonction[\"perte_prestige_perdant\"])\n  pe.start()\n", 
-    "has_target": false, 
-    "is_team": false, 
-    "title": 2, 
-    "target_description": " ", 
-    "timeout": null, 
-    "is_cancellable": true, 
-    "duration": 60, 
-    "on_cancel": "\n", 
-    "slug": "tuto_dummy_escarmouche", 
     "on_init": "\n"
   }
 },
@@ -656,59 +426,13 @@
     "on_start": "\n", 
     "has_target": false, 
     "is_team": false, 
-    "title": null, 
+    "title": 4, 
     "target_description": " ", 
     "timeout": null, 
     "is_cancellable": true, 
     "duration": 10, 
     "on_cancel": "\n", 
     "slug": "chasse", 
-    "on_init": "\n"
-  }
-},
-{
-  "pk": 33, 
-  "model": "mission.mission", 
-  "fields": {
-    "name": "Assassiner", 
-    "target_list": "\n", 
-    "text": "A faire", 
-    "has_value": false, 
-    "on_resolution": "\n", 
-    "value_description": "", 
-    "on_start": "\n", 
-    "has_target": false, 
-    "is_team": false, 
-    "title": null, 
-    "target_description": "", 
-    "timeout": null, 
-    "is_cancellable": true, 
-    "duration": 5, 
-    "on_cancel": null, 
-    "slug": "assassiner", 
-    "on_init": "\n"
-  }
-},
-{
-  "pk": 34, 
-  "model": "mission.mission", 
-  "fields": {
-    "name": "Votre voisin vous attaque !", 
-    "target_list": "\n", 
-    "text": "Une escarmouche est une petite bataille entre deux seigneurs. C'est le cas classique de bataille pour l'honneur et un peu de butin. Les lois de l'honneur vous permettent d'envoyer une partie de votre population et jusqu'\u00e0 4 hommes de votre cour pour les commander. Vous avez peu de temps pour pr\u00e9parer la d\u00e9fense.\r\n[Pour chaque joueur : \r\n**score=[somme des combats des commandeurs+population_envoy\u00e9e+bonus_cavalerie+bonus_strat\u00e8ge]+/- 10%**\r\n**population envoy\u00e9e**=10% de population max\r\n**bonus_cavalerie** : +1 pour chacun de vos cavaliers\r\n**bonus_strat\u00e8ge** :\r\npour chacun de vos archer : +3 (1 fois/piquer adverse max)\r\npour chacun de vos piquier : +4 (1 fois/cavalier adverse max)\r\npour chacun de vos cavalier : +2 (1 fois/archer adverse max)\r\n\r\nLe joueur ayant le meilleur score de combat gagne du prestige, l'autre joueur en perds. Le joueur qui attaque a besoin d'un affront contre l'autre joueur pour effectuer la mission, s'il gagne il gagne de l'or mais ne peux pas en perdre. Aucun combattant n'est \u00e0 l'abri de se faire blesser ou tuer au cours d'une escarmouche...\r\n\r\n***exemple de calcul de bonus** : si vous avez 2 piquiers et un archer et votre adversaire un [\u00e9p\u00e9iste ou sans sp\u00e9cialisation], un cavalier et un lancier.\r\n-Votre adversaire gagne +1 parce qu'il a un cavalier, +2 suppl\u00e9mentaires parce qu'il a un cavalier et que vous avez un archer. Son piquier aurait pu lui donner +4 si vous aviez un cavalier mais vous n'en avez pas donc +0 et son dernier personnage ne lui donne pas de bonus. Il a au total un +3.\r\n-Avec vos piquiers vous auriez pu gagner deux fois +4 si votre adversaire avait 2 cavaliers mais il n'en a qu'un, donc vous \u00eates limit\u00e9 \u00e0 un seul +4. Votre archer a un bonus de +3 contre le piquier adverse. Vous totalisez un bonus de +7.*]", 
-    "has_value": false, 
-    "on_resolution": "\n", 
-    "value_description": "", 
-    "on_start": "population_envoyee_attaquant=kingdom.population*0.1\nkingdom.population-=population_envoyee_attaquant\nkingdom.save()\n\n\ntarget=Kingdom.objects.get(user__username=\"le_pnj_du_jeu\")\ngrille_defenseur=Folk.objects.filter(kingdom=target).order_by('?')[0:3]\npopulation_pnj=kingdom.get_value(\"population_pnj\")*0.1\n#population_pnj=(1+(pop_toi-pop_adverse)/(pop_toi+pop_adversaire))*pop_base_adverse\nretour_fonction=call_function(\"resolution_combat\",\n                population_envoyee_attaquant=population_envoyee_attaquant,\n                population_envoyee_defenseur=population_pnj,\n                grille_attaquant=grids['defenseurs_tuto'],\n                grille_defenseur=grille_defenseur,\n                royaume_attaquant=kingdom,\n                royaume_defenseur=target,\n                pourcent_mort=10,\n                pourcent_blesse=30,\n                pourcentage_pop_meurt_base=30,\n                pourcentage_population=8,\n                gain_maxi_prestige=30,\n                limit_difference_prestige=100)\n              \n\n#si chatelain est dans la grille alors chatelain, sinon si connetable est dans la mission alors connetable, sinon le mec qui la le plus gros combat\ntest=0\n\nchatelain_gagnant=False\nchatelain_perdant=False\nconnetable_gagnant=False\nconnetable_perdant=False\ngeneral_attaquant= None\ngeneral_perdant=None\n#on part du principe de le gagnant est le vainqueur\n\nif kingdom.get_folk_in_title(\"chatelain\") in grids['defenseurs_tuto']:\n  test=1\n  general_vainqueur=kingdom.get_folk_in_title(\"chatelain\")\n  chatelain_gagnant=True\n\nif test==0:\n    if kingdom.get_folk_in_title(\"connetable\") in grids['defenseurs_tuto']:\n      connetable_gagnant=True\n      test=1\n      general_vainqueur=kingdom.get_folk_in_title(\"connetable\")\nif test==0:\n  combat_min=0\n  for personnage in grids['defenseurs_tuto']:\n    if personnage.fight>combat_min:\n      combat_min=personnage.fight\n      general_vainqueur=personnage\n\n\n#si ce n'est pas le cas on inverse      \nif retour_fonction[\"attaquant_egal_vainqueur\"]:\n  connetable_attaquant=connetable_perdant\n  connetable_perdant=connetable_gagnant\n  connetable_gagnant=connetable_attaquant\n  connetable_defenseur=connetable_gagnant\n  chatelain_attaquant=chatelain_perdant\n  chatelain_perdant=chatelain_gagnant\n  chatelain_gagnant=chatelain_attaquant\n  chatelain_defenseur=chatelain_gagnant\n  vainqueur=general_perdant\n  general_attaquant=general_vainqueur\n  general_defenseur=general_perdant\nelse:\n  connetable_attaquant=connetable_gagnant\n  connetable_defenseur=connetable_perdant\n  chatelain_attaquant=chatelain_gagnant\n  chatelain_defenseur=chatelain_perdant\n  general_attaquant=general_perdant\n  general_defenseur=general_vainqueur   \n\nif not retour_fonction[\"attaquant_egal_vainqueur\"]:\n  kingdom.population-=20\n  kingdom.save()\n  \n\npe=PendingEvent(event=Event.objects.get(slug=\"escarmouche_defense\"),kingdom=kingdom,started=None)\npe.save()\npe.set_value(\"vainqueur\",retour_fonction[\"vainqueur\"])\npe.set_value(\"perdant\",retour_fonction[\"perdant\"])\npe.set_value(\"chatelain_defenseur\",kingdom.get_folk_in_title(\"chatelain\"))\npe.set_value(\"chatelain_attaquant\",target.get_folk_in_title(\"chatelain\"))\npe.set_value(\"vainqueur_est_attaquant\",not retour_fonction[\"attaquant_egal_vainqueur\"])\nif not retour_fonction[\"attaquant_egal_vainqueur\"]:\n  pe.set_value(\"pop_envoyee_gagnant\",retour_fonction[\"population_envoyee_attaquant\"])\n  pe.set_value(\"pop_envoyee_perdant\",retour_fonction[\"population_envoyee_defenseur\"])\nelse:\n  pe.set_value(\"pop_envoyee_gagnant\",retour_fonction[\"population_envoyee_defenseur\"])\n  pe.set_value(\"pop_envoyee_perdant\",retour_fonction[\"population_envoyee_attaquant\"])\npe.set_value(\"pop_pertes_vainqueur\",retour_fonction[\"perte_population_vainqueur\"])\npe.set_value(\"pop_pertes_perdant\",retour_fonction[\"perte_population_perdant\"])\npe.set_value(\"chatelain_in_mission_vainqueur\",chatelain_gagnant)\npe.set_value(\"connetable_in_mission_vainqueur\",connetable_gagnant)\npe.set_value(\"chatelain_in_mission_perdant\",chatelain_perdant)\npe.set_value(\"connetable_in_mission_perdant\",connetable_perdant)\npe.set_value(\"chatelain_in_mission_attaquant\",chatelain_attaquant)\npe.set_value(\"connetable_in_mission_attaquant\",connetable_attaquant)\npe.set_value(\"chatelain_in_mission_defenseur\",chatelain_defenseur)\npe.set_value(\"connetable_in_mission_defenseur\",connetable_defenseur)\npe.set_value(\"general_defenseur\",general_defenseur)\npe.set_value(\"general_attaquant\",general_attaquant)\npe.set_value(\"general_vainqueur\",general_vainqueur)\npe.set_value(\"general_perdant\",general_perdant)\npe.set_value(\"morts_gagnant\",retour_fonction[\"morts_gagnant\"])\npe.set_value(\"blesses_gagnant\",retour_fonction[\"blesses_gagnant\"])\npe.set_value(\"morts_perdants\",retour_fonction[\"morts_perdant\"])\npe.set_value(\"blesses_perdants\",retour_fonction[\"blesses_perdant\"])\npe.set_value(\"gain_prestige_vainqueur\",retour_fonction[\"gain_prestige_vainqueur\"])\npe.set_value(\"perte_prestige_perdant\",retour_fonction[\"perte_prestige_perdant\"])\npe.start()\n\n\n", 
-    "has_target": false, 
-    "is_team": false, 
-    "title": 2, 
-    "target_description": "", 
-    "timeout": 1440, 
-    "is_cancellable": true, 
-    "duration": 60, 
-    "on_cancel": "\n", 
-    "slug": "tuto_contre_attaque_PNJ", 
     "on_init": "\n"
   }
 },
@@ -840,7 +564,7 @@
     "on_start": "#mise en forme des param\u00e8tres \u00e0 passer aux fonctions de calcul\nattaquant = {\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * kingdom.soldiers / 100),\n  'combattants': affected,\n  'population': kingdom.population,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':kingdom.get_value('tuto_dynasty_PNJ')\n}\n\n# R\u00e9cuperer les cinq meilleurs combattants de l'attaquant\ndate_majorite = datetime.now() - timedelta(days=C.MAJORITE)\ncinq_meilleurs = kingdom.folk_set.filter(sex=Folk.MALE, disabled=False, birth__lte=date_majorite).order_by('-fight')[0:5]\nmoyenne_meilleurs_fight = avg_folks(cinq_meilleurs, 'fight')\n\ncombattants = [Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight)]\nmap(lambda f: f.save(), combattants)\ntype_adversaire=kingdom.get_value(\"tuto_type_PNJ\",'piquier')\ncombattants[0].add_quality(type_adversaire)\ncombattants[1].add_quality(type_adversaire)\ncombattants[2].add_quality(random_in(['piquier','cavalier','archer']))\n\ndefenseur = {\n  # Dans le cadre du tuto,\n  # Les troupes du d\u00e9fenseur correspondent \u00e0 80% des troupes maximales disponibles pour ce Kingdom\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * 0.8 * C.POURCENTAGE_MAX_SOLDATS_PASSIF * call_function(\"get_max_population\", kingdom=kingdom) / (100 * 100)),\n  'combattants': combattants,\n  'population': kingdom.prestige*2,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':\"dynastie advserse\",\n}\n\n#fonctions pour calculer ce qu'il se passe sans appliquer\ngagnant, perdant, bataille = f(\"determiner_vainqueur_combat\", attaquant=attaquant, defenseur=defenseur)\nis_victory = gagnant == attaquant\ndelta = f(\"determiner_modifications_combat\", gagnant=gagnant, perdant=perdant, marge=bataille['marge'], attaquant_est_gagnant=is_victory)\nif is_victory:\n  commandement={\n                'gagnant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                'perdant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                }\nelse:\n  commandement={\n                'gagnant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                'perdant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                }  \n#application gain_prestige\nif is_victory:\n  kingdom.prestige += delta['gagnant']['prestige']\nelse:\n  kingdom.prestige += delta['perdant']['prestige']\nkingdom.save()\n\n#d\u00e9terminantion prochain event\nif kingdom.get_value(\"tuto_firstbattle_attack\", False) == False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_attack\")\nelif is_victory:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \n#passage d'arguments\npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\", True)\npe.set_value(\"gagnant\",gagnant)\npe.set_value(\"perdant\",perdant)\npe.set_value(\"liste_perdant\",f(\"liste_nom_avec_specialite\", commandants=perdant['combattants']))\npe.set_value(\"liste_gagnant\",f(\"liste_nom_avec_specialite\", commandants=gagnant['combattants']))\npe.set_value(\"delta\",delta)\npe.set_value(\"bataille\",bataille)\npe.set_value(\"commandement\",commandement)\npe.start()\n  \n#tuer les gens qui ne sont pas de la famille r\u00e9gnante, blesser tous les bless\u00e9s\nfamille=kingdom.get_folk_in_title('chatelain').last_name\nfor mort in delta['A_tuer']:\n  if mort.last_name <> famille:\n    mort.die()\nfor blesse in delta['A_blesser']:\n  call_function(\"blesser_folk\",folk=blesse)\n\n#gain thune en cas de pillage\nif is_victory:\n  kingdom.money+=delta['gagnant']['thune']\n  \n#pertes de soldats\nif is_victory:\n  kingdom.soldiers-=gagnant['troupes']\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')-delta['gagnant']['pertes_troupe'])\n  param.set_value('retour_troupes',gagnant['troupes']-delta['gagnant']['pertes_troupe'])\nelse:\n  kingdom.soldiers-=perdant['troupes']\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')-delta['perdant']['pertes_troupe'])\n  param.set_value('retour_troupes',perdant['troupes']-delta['perdant']['pertes_troupe'])\n\nkingdom.save()\n\nmap(lambda f: f.delete(), combattants)", 
     "has_target": false, 
     "is_team": false, 
-    "title": null, 
+    "title": 2, 
     "target_description": "", 
     "timeout": null, 
     "is_cancellable": false, 
@@ -939,29 +663,6 @@
     "duration": 120, 
     "on_cancel": "\n", 
     "slug": "espionner_chateau", 
-    "on_init": "\n"
-  }
-},
-{
-  "pk": 46, 
-  "model": "mission.mission", 
-  "fields": {
-    "name": "Nommer les soigneurs", 
-    "target_list": "\n", 
-    "text": "Nommer les personnes qui seront charg\u00e9 de soigner les bless\u00e9s.", 
-    "has_value": false, 
-    "on_resolution": "\n", 
-    "value_description": "", 
-    "on_start": "\n", 
-    "has_target": false, 
-    "is_team": true, 
-    "title": 3, 
-    "target_description": "", 
-    "timeout": null, 
-    "is_cancellable": true, 
-    "duration": 5, 
-    "on_cancel": "\n", 
-    "slug": "team_soigneurs", 
     "on_init": "\n"
   }
 },
@@ -1081,19 +782,6 @@
   }
 },
 {
-  "pk": 2, 
-  "model": "mission.missiongrid", 
-  "fields": {
-    "allow_disabled": false, 
-    "name": "D\u00e9fenseurs", 
-    "mission": 2, 
-    "length": 3, 
-    "allow_empty": false, 
-    "slug": "defenseurs", 
-    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()<=C.MAJORITE:\n  status=\"La guerre, c'est une histoire d'adultes !\"\n"
-  }
-},
-{
   "pk": 3, 
   "model": "mission.missiongrid", 
   "fields": {
@@ -1104,32 +792,6 @@
     "allow_empty": false, 
     "slug": "chercheurs_noises", 
     "condition": "if folk.age() >= C.MAJORITE:\n  status=\"Laisse les grands jouer \u00e0 ce jeu\""
-  }
-},
-{
-  "pk": 4, 
-  "model": "mission.missiongrid", 
-  "fields": {
-    "allow_disabled": false, 
-    "name": "combattants", 
-    "mission": 5, 
-    "length": 4, 
-    "allow_empty": false, 
-    "slug": "combattants", 
-    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()<=C.MAJORITE:\n  status=\"La guerre, c'est une histoire d'adultes !\"\n"
-  }
-},
-{
-  "pk": 6, 
-  "model": "mission.missiongrid", 
-  "fields": {
-    "allow_disabled": false, 
-    "name": "Missionnaire d'emprunt", 
-    "mission": 7, 
-    "length": 1, 
-    "allow_empty": false, 
-    "slug": "missionnaire_emprunt", 
-    "condition": "\n"
   }
 },
 {
@@ -1159,19 +821,6 @@
   }
 },
 {
-  "pk": 9, 
-  "model": "mission.missiongrid", 
-  "fields": {
-    "allow_disabled": false, 
-    "name": "Defenseurs", 
-    "mission": 13, 
-    "length": 4, 
-    "allow_empty": false, 
-    "slug": "defenseurs", 
-    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()>=C.MAJORITE:\n  status=\"La guerre, c'est une histoire d'adultes !\""
-  }
-},
-{
   "pk": 10, 
   "model": "mission.missiongrid", 
   "fields": {
@@ -1182,32 +831,6 @@
     "allow_empty": false, 
     "slug": "banni", 
     "condition": "\n"
-  }
-},
-{
-  "pk": 11, 
-  "model": "mission.missiongrid", 
-  "fields": {
-    "allow_disabled": false, 
-    "name": "Recruteur", 
-    "mission": 15, 
-    "length": 1, 
-    "allow_empty": false, 
-    "slug": "recruteur", 
-    "condition": "if folk.age() < C.MAJORITE or folk.has_quality(\"pretre\"):\n  status = \"Cette personne ne peut pas effectuer cette mission\"\n"
-  }
-},
-{
-  "pk": 12, 
-  "model": "mission.missiongrid", 
-  "fields": {
-    "allow_disabled": false, 
-    "name": "L'envoy\u00e9 dans les ordres", 
-    "mission": 16, 
-    "length": 1, 
-    "allow_empty": false, 
-    "slug": "envoye_dans_ordres", 
-    "condition": "if folk.sex == Folk.FEMALE:\n  Status = \"Seul un homme peut \u00eatre pr\u00eatre\"\n"
   }
 },
 {
@@ -1234,19 +857,6 @@
     "allow_empty": false, 
     "slug": "femme", 
     "condition": "if folk.age < C.MAJORITE:\n  status = S.TOO_YOUNG\nelif folk.sex == Folk.MALE:\n  status = \"La femme doit \u00eatre une femme\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
-  }
-},
-{
-  "pk": 15, 
-  "model": "mission.missiongrid", 
-  "fields": {
-    "allow_disabled": false, 
-    "name": "Bl\u00e9ss\u00e9", 
-    "mission": 19, 
-    "length": 1, 
-    "allow_empty": false, 
-    "slug": "blesse", 
-    "condition": "if folk.has_quality(\"blesse\") == False:\n  status = \"Cette personne n'a pas besoin d'\u00eatre soign\u00e9e\"\n"
   }
 },
 {
@@ -1354,19 +964,6 @@
   }
 },
 {
-  "pk": 27, 
-  "model": "mission.missiongrid", 
-  "fields": {
-    "allow_disabled": false, 
-    "name": "combattants_tuto", 
-    "mission": 29, 
-    "length": 4, 
-    "allow_empty": false, 
-    "slug": "combattants_tuto", 
-    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()>=C.MAJORITE:\n  status=\"La guerre, c'est une histoire d'adultes !\""
-  }
-},
-{
   "pk": 28, 
   "model": "mission.missiongrid", 
   "fields": {
@@ -1415,7 +1012,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "chatelain", 
-    "condition": "if folk != kingdom.get_folk_in_title(\"chatelain\"):\n  status = \"Seul le chatelain peut endosser ce role pour lancer cette mission\"\n"
+    "condition": "if folk != kingdom.get_folk_in_title(\"chatelain\"):\n  status = \"Seul le chatelain peut endosser ce r\u00f4le pour lancer cette mission\"\n"
   }
 },
 {
@@ -1428,20 +1025,7 @@
     "length": 10, 
     "allow_empty": false, 
     "slug": "chasseurs", 
-    "condition": "if folk.sex==Folk.FEMALE or folk.has_quality(\"pretre\") or folk.age()<C.MAJORITE:\n  status = \"Le chasseur doit etre un chevalier adulte\"\n"
-  }
-},
-{
-  "pk": 33, 
-  "model": "mission.missiongrid", 
-  "fields": {
-    "allow_disabled": false, 
-    "name": "chercheur", 
-    "mission": 25, 
-    "length": 20, 
-    "allow_empty": false, 
-    "slug": "chercheur", 
-    "condition": "if folk.age() < C.MAJORITE: \n  status = S.TOO_YOUNG\n"
+    "condition": "if folk.sex == Folk.FEMALE or folk.has_quality(\"pretre\") or folk.age() < C.MAJORITE:\n  status = \"Le chasseur doit \u00eatre un chevalier adulte\"\n"
   }
 },
 {
@@ -1455,19 +1039,6 @@
     "allow_empty": false, 
     "slug": "reparateurs", 
     "condition": "\n"
-  }
-},
-{
-  "pk": 35, 
-  "model": "mission.missiongrid", 
-  "fields": {
-    "allow_disabled": false, 
-    "name": "Defenseurs_tuto", 
-    "mission": 34, 
-    "length": 4, 
-    "allow_empty": false, 
-    "slug": "defenseurs_tuto", 
-    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Depuis des temps imm\u00e9moriaux, les femmes ont persuad\u00e9 les hommes que c'\u00e9tait \u00e0 eux de se battre. Les choses n'ont pas chang\u00e9 depuis...\"\n  \nif folk.age()<=C.MAJORITE:\n  status=\"La guerre, c'est une histoire d'adultes !\"\n"
   }
 },
 {
@@ -1598,19 +1169,6 @@
     "allow_empty": false, 
     "slug": "espions", 
     "condition": "if folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG\n"
-  }
-},
-{
-  "pk": 47, 
-  "model": "mission.missiongrid", 
-  "fields": {
-    "allow_disabled": true, 
-    "name": "Soigneurs", 
-    "mission": 46, 
-    "length": 2000, 
-    "allow_empty": false, 
-    "slug": "soigneurs", 
-    "condition": "if folk.sex == Folk.MALE and not folk.has_quality(\"pretre\"):\n  status = \"Seul les femmes et les pr\u00eatres peuvent soigner les bl\u00e9ss\u00e9s\"\n"
   }
 },
 {
