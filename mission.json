@@ -214,7 +214,7 @@
     "target_list": " ", 
     "text": "Je fais une offrande aux paysans pour qu'ils reviennent sur mes terres. Mais \u00e7a va me co\u00fbter 10 \u00e9cus.\r\n\r\n```+10 population```", 
     "has_value": false, 
-    "on_resolution": "kingdom.population+=10\nkingdom.save()\n", 
+    "on_resolution": "kingdom.population+=10\nkingdom.save()\n\npe = kingdom.create_pending_event(\"charite\")\npe.start()\n", 
     "value_description": "Valeur :", 
     "on_start": "if kingdom.money < 10 :\n  status = \"Vous n'avez pas assez d'argent pour lancer cette mission\"\nelse:\n  kingdom.money-=10\n  kingdom.save()\n", 
     "has_target": false, 
@@ -224,7 +224,7 @@
     "timeout": null, 
     "is_cancellable": true, 
     "duration": 5, 
-    "on_cancel": null, 
+    "on_cancel": "\n", 
     "slug": "charite", 
     "on_init": "\n"
   }
@@ -308,7 +308,7 @@
     "has_value": false, 
     "on_resolution": " ", 
     "value_description": "Valeur :", 
-    "on_start": "grids['enfant'][0].mentor= grids['mentor'][0]\ngrids['enfant'][0].save()\n", 
+    "on_start": "grids['enfant'][0].mentor = grids['mentor'][0]\ngrids['enfant'][0].save()\n\npe = kingdom.create_pending_event(\"education\")\npe.set_value('pupil', grids['enfant'][0])\npe.set_value('mentor', grids['mentor'][0])\npe.start()\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 4, 
@@ -364,29 +364,6 @@
     "duration": 60, 
     "on_cancel": "\n", 
     "slug": "espionner", 
-    "on_init": "\n"
-  }
-},
-{
-  "pk": 30, 
-  "model": "mission.mission", 
-  "fields": {
-    "name": "Chercher des noises tuto", 
-    "target_list": "\n", 
-    "text": "Aller chercher des noises \u00e0 votre voisin.\r\n\r\nTUTO\r\n[co\u00fbt 25 ecus pour lancer la mission]", 
-    "has_value": false, 
-    "on_resolution": "#a = 0\n#for folk in grids['chercheurs_merde']:\n#  a += folk.diplomacy\n#cible=Kingdom.objects.get(user__username=\"le_pnj_du_jeu\")\n#nb_def=random_value(3,6)\n#d = sum_folks(Folk.objects.filter(kingdom=cible).order_by('?')[0:nb_def], \"diplomacy\")\n#d *= 0.3\n\n\n#if a>d:\n  #kingdom.add_claim(cible, Claim.REACHABLE)\npe = PendingEvent(event=Event.objects.get(slug=\"tuto_getaffront_diplomatie_kingdomsuccess\"),kingdom=kingdom,started=None)\npe.save()\npe.set_value(\"defenseur\",cible)\npe.start()\n  \n\n  \n   \n#else:\n#  pe = PendingEvent(Event.objects.get(slug=\"tuto_getaffront_diplomatie_kingdomfailure\"),kingdom=kingdom,started=None)\n#  pe.save()\n#  pe.set_value(\"attaquant\",kingdom)\n#  pe.start()\n\nkingdom.money-=25\nkingdom.save()\n", 
-    "value_description": "Valeur :", 
-    "on_start": "\n", 
-    "has_target": false, 
-    "is_team": false, 
-    "title": 6, 
-    "target_description": " ", 
-    "timeout": null, 
-    "is_cancellable": true, 
-    "duration": 15, 
-    "on_cancel": "\n", 
-    "slug": "tuto_getaffront_diplomatie", 
     "on_init": "\n"
   }
 },
@@ -584,10 +561,10 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "#ne part pas si pas le chatelain dans la mission\nkingdom.create_pending_event(\"tuto_fin_tuto\").start()\n", 
+    "on_start": "if kingdom.get_folk_in_title(\"chatelain\") not in folks:\n  stop(\"Le ch\u00e2telain doit faire partie de la mission\")\n\nkingdom.create_pending_event(\"tuto_fin_tuto\").start()\n", 
     "has_target": false, 
     "is_team": false, 
-    "title": null, 
+    "title": 2, 
     "target_description": "", 
     "timeout": null, 
     "is_cancellable": true, 
@@ -961,19 +938,6 @@
     "allow_empty": false, 
     "slug": "attaquants", 
     "condition": "if folk.age() < C.MAJORITE:\n  status = \"Vous ne pouvez pas affecter un enfant \u00e0 cette mission.\"\nelif folk.sex == Folk.FEMALE:\n  status = \"Vous ne pouvez pas affecter de femme \u00e0 cette mission\"\n"
-  }
-},
-{
-  "pk": 28, 
-  "model": "mission.missiongrid", 
-  "fields": {
-    "allow_disabled": false, 
-    "name": "chercheurs de merde", 
-    "mission": 30, 
-    "length": 20, 
-    "allow_empty": false, 
-    "slug": "chercheurs_merde", 
-    "condition": "if folk.age()<C.MAJORITE:\n  status=\"Laisse les grands jouer \u00e0 ce jeu\"\nelif folk.sex==Folk.FEMALE:\n  status = \"Une femme ne peut pas aller se battre\"\n"
   }
 },
 {
