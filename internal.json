@@ -12,7 +12,7 @@
       115, 
       116, 
       117, 
-      118, 
+      119, 
       74, 
       76, 
       80, 
@@ -1393,7 +1393,7 @@
   "fields": {
     "delay": 3, 
     "kingdom_list": "param = Kingdom.objects.filter(pk=117)\n#param = []\n", 
-    "on_fire": "blesses = folks.filter(quality_set__slug=\"blesse\")\nsoigneurs = folks.filter(kingdom=kingdom, sex=Folk.FEMALE, mission = None, birth__lte=datetime.now() - timedelta(days=C.MAJORITE))\nsoigneurs += folks.filter(kingdom=kingdom, sex=Folk.MALE, mission = None, birth__lte=datetime.now() - timedelta(days=C.MAJORITE), quality_set__slug=\"pretre\")\nsoigneurs = soigneurs.order_by(\"-scholarship\")[1:len(blesses)+1]\nmoy_erudition = avg_folks(soigneurs, \"scholarship\")\nimport math\nsoin = 99 - moy_erudition/20 * 8 * max(1, len(soigneurs) / math.sqrt(blesses.count()))\n\nfor blesse in blesses:\n  fate = random_value(1,100)\n  if fate == 1 : #il meurt\n    blesse.die()\n  elif fate > soin : #il n'est plus bless\u00e9, mais gagne un autre trait\n    blesse.remove_quality(\"blesse\")\n    choix_trait = random_value(1,100)\n    chances_handicap = 30 - moy_erudition * max(1,len(soigneurs)/ math.sqrt(blesses.count()))\n    if choix_trait < chances_handicap : #il est infirme\n      choix_handicap = random_in(Quality.objects.filter(quality_category__name=\"Handicap\"))\n      blesse.quality_set.add(choix_handicap)\n    else: #il est gu\u00e9rit\n      blesse.remove_quality(\"blesse\")\n  #else on attendant 30 minutes qu'il retente sa chance\n", 
+    "on_fire": "blesses = folks.filter(quality_set__slug=\"blesse\")\nsoigneurs = folks.filter(kingdom=kingdom, mission = None, birth__lte=datetime.now() - timedelta(days=C.MAJORITE))\nsoigneurs = soigneurs.filter(Q(sex=Folk.FEMALE) | Q(quality_set__slug=\"pretre\", sex=Folk.MALE))\nsoigneurs = soigneurs.order_by(\"-scholarship\")[1:len(blesses)+1]\n\nmoy_erudition = avg_folks(soigneurs, \"scholarship\")\nimport math\nsoin = 99 - moy_erudition/20 * 8 * max(1, len(soigneurs) / math.sqrt(blesses.count()))\n\nfor blesse in blesses:\n  fate = random_value(1,100)\n  if fate == 1 : #il meurt\n    pe = kingdom.create_pending_event(\"rapport_blesse_mort\")\n    pe.set_value(\"prenom\", blesse.first_name)\n    pe.set_value(\"nom\", blesse.last_name)\n    pe.start()\n    blesse.die()\n  elif fate > soin : #il n'est plus bless\u00e9, mais gagne un autre trait\n    blesse.remove_quality(\"blesse\")\n    choix_trait = random_value(1,100)\n    chances_handicap = 30 - moy_erudition * max(1,len(soigneurs)/ math.sqrt(blesses.count()))\n    if choix_trait < chances_handicap : #il est infirme\n      choix_handicap = random_in(Quality.objects.filter(quality_category__name=\"Handicap\"))\n      blesse.quality_set.add(choix_handicap)\n      pe = kingdom.create_pending_event(\"rapport_blesse_handicap\")\n      pe.set_value(\"blesse\", blesse)\n      pe.set_value(\"handicap\", choix_handicap)\n      pe.start()\n    else: #il est gu\u00e9rit\n      pe = kingdom.create_pending_event(\"rapport_blesse_guerit\")\n      pe.set_value(\"blesse\",blesse)\n      pe.start()\n  #else on attendant 30 minutes qu'il retente sa chance\n", 
     "name": "Les bless\u00e9s peuvent mourir", 
     "description": "Fais mourir (ou pas) les bless\u00e9s"
   }

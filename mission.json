@@ -193,7 +193,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": "if (grids['mari'][0].last_name == kingdom.user.username or grids['femme'][0].last_name == kingdom.user.username):\n  prix = 5*folks.filter(mission__isnull=True).count()\n  if kingdom.money < prix:\n    status=\"Vous n'avez pas assez d'argent pour payer le banquet\"\n    stop()\n  else:\n    kingdom.money -= prix\n    kingdom.save()\ngrids['mari'][0].spouse = grids['femme'][0]\ngrids['femme'][0].spouse = grids['mari'][0]\ngrids['mari'][0].save()\ngrids['femme'][0].save()\nif grids['mari'][0]==folks[3] and grids['femme'][0]==folks[2]:\n  kingdom.set_value(\"tuto_mariage_fait\",True)\n  pe=kingdom.create_pending_event(\"banquet\")\n  pe.set_value(\"banquet_mariage_tuto\",True)\n  pe.start()\n  \n", 
+    "on_start": "if (grids['mari'][0].last_name == kingdom.user.username or grids['femme'][0].last_name == kingdom.user.username):\n  prix = 5*folks.filter(mission__isnull=True).count()\n  if kingdom.money < prix:\n    stop(\"Vous n'avez pas assez d'argent pour payer le banquet\")\n\n  kingdom.money -= prix\n  kingdom.save()\n\ngrids['mari'][0].spouse = grids['femme'][0]\ngrids['femme'][0].spouse = grids['mari'][0]\ngrids['mari'][0].save()\ngrids['femme'][0].save()\nif grids['mari'][0]==folks[3] and grids['femme'][0]==folks[2]:\n  kingdom.set_value(\"tuto_mariage_fait\",True)\n  pe=kingdom.create_pending_event(\"banquet\")\n  pe.set_value(\"banquet_mariage_tuto\",True)\n  pe.start()\n  \n", 
     "has_target": false, 
     "is_team": false, 
     "title": 3, 
@@ -759,6 +759,29 @@
   }
 },
 {
+  "pk": 52, 
+  "model": "mission.mission", 
+  "fields": {
+    "name": "Tuto espionnage", 
+    "target_list": null, 
+    "text": "mission pour espionner le PNJ", 
+    "has_value": false, 
+    "on_resolution": null, 
+    "value_description": "", 
+    "on_start": "kingdom.start_pending_event(\"tuto_rapport_espion\")", 
+    "has_target": false, 
+    "is_team": false, 
+    "title": 5, 
+    "target_description": "", 
+    "timeout": null, 
+    "is_cancellable": false, 
+    "duration": 5, 
+    "on_cancel": null, 
+    "slug": "tuto_espionnage", 
+    "on_init": null
+  }
+},
+{
   "pk": 3, 
   "model": "mission.missiongrid", 
   "fields": {
@@ -833,7 +856,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "femme", 
-    "condition": "if folk.age < C.MAJORITE:\n  stop(S.TOO_YOUNG)\nelif folk.sex == Folk.MALE:\n  stop(\"La femme doit \u00eatre une femme\")\nelif folk.spouse != None and folk.spouse.death == None:\n  stop(\"Cette personne est d\u00e9j\u00e0 mari\u00e9e\")\n"
+    "condition": "if folk.age < C.MAJORITE:\n  stop(S.TOO_YOUNG)\nelif folk.sex == Folk.MALE:\n  stop(\"La mari\u00e9e doit \u00eatre une femme\")\nelif folk.spouse != None and folk.spouse.death == None:\n  stop(\"Cette personne est d\u00e9j\u00e0 mari\u00e9e\")\n"
   }
 },
 {
@@ -1224,6 +1247,19 @@
     "allow_empty": false, 
     "slug": "comprometeurs", 
     "condition": "\n"
+  }
+},
+{
+  "pk": 55, 
+  "model": "mission.missiongrid", 
+  "fields": {
+    "allow_disabled": false, 
+    "name": "espions", 
+    "mission": 52, 
+    "length": 3, 
+    "allow_empty": false, 
+    "slug": "espions", 
+    "condition": null
   }
 }
 ]
