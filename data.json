@@ -402,6 +402,14 @@
   }
 },
 {
+  "pk": "0ng52401e3eclddqoc3v9b05z9a33xts", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T22:12:47.491", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "12hh4wudumegfo8sy6n1p75y56jlmj7w", 
   "model": "sessions.session", 
   "fields": {
@@ -415,6 +423,14 @@
   "fields": {
     "expire_date": "2013-09-14T19:55:29.806", 
     "session_data": "ZDVhYmUzZmY4NjE4YzUzODJjYmFhMmNkN2Y3NjczMmE3YjQ0ZGVjODqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLKXUu"
+  }
+},
+{
+  "pk": "1dmu0g0k2kqxpo8bp5lzh9qvtdeg8cbt", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T22:14:25.953", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
 {
@@ -682,6 +698,22 @@
   }
 },
 {
+  "pk": "5756qv3i9icxekm5wadqy2o96uw7qkn9", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T21:49:11.444", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
+  "pk": "57l4x24klqrvsaqz7m33y74y5ig8wd74", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T21:45:23.255", 
+    "session_data": "ZDVhYmUzZmY4NjE4YzUzODJjYmFhMmNkN2Y3NjczMmE3YjQ0ZGVjODqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLKXUu"
+  }
+},
+{
   "pk": "5ahasbvehdknj73u52ljec5odzkg03cu", 
   "model": "sessions.session", 
   "fields": {
@@ -902,6 +934,14 @@
   "model": "sessions.session", 
   "fields": {
     "expire_date": "2013-10-08T23:28:31.754", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
+  "pk": "agoa8f8ws9blkdha5ulcxj4m6zu45uzv", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T22:08:24.838", 
     "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
@@ -1146,6 +1186,14 @@
   }
 },
 {
+  "pk": "ehqdvdoaqwclai109ar5hv2m0t5d0rov", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T21:56:16.087", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "ekhop615pyd3y0swvne2kn5lv21rjjzp", 
   "model": "sessions.session", 
   "fields": {
@@ -1198,6 +1246,14 @@
   "model": "sessions.session", 
   "fields": {
     "expire_date": "2013-10-08T22:11:27.717", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
+  "pk": "g1a0acuc00crq4y1exh59b0lcdcqqdq1", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T22:13:16.211", 
     "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
@@ -1338,6 +1394,14 @@
   }
 },
 {
+  "pk": "j5r7cyyfsbsp2a6280n23em2t0od7gbe", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T21:47:19.094", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "j82gqpqy4qnf1ksnjxxc0vfhyliuw61a", 
   "model": "sessions.session", 
   "fields": {
@@ -1418,6 +1482,22 @@
   }
 },
 {
+  "pk": "k8sdz7lep9rwkkb00z095d2p5cn2te49", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T22:00:37.714", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
+  "pk": "kjy78avask49hwexem3q4x98v6k81yuz", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T22:11:07.388", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "kq0noszb95l972emg0ozf0uuieqrrrjh", 
   "model": "sessions.session", 
   "fields": {
@@ -1479,6 +1559,14 @@
   "fields": {
     "expire_date": "2013-09-28T20:23:36.274", 
     "session_data": "NmQwNmQ1NDhkM2VmOThmYTVmMjExZWQ1NDNjZWE4MWUwOTVhMDEzZTqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLLnUu"
+  }
+},
+{
+  "pk": "m0s9ym07lmo3bm42p04md3u4amgpj30h", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T21:55:30.895", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
 {
@@ -1690,6 +1778,14 @@
   }
 },
 {
+  "pk": "r43t2h900yeg9jygo1h58m6yytq97gui", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T22:13:19.875", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "r6a3yn3mzpzlkzzrfvvz195nbbe4yvl1", 
   "model": "sessions.session", 
   "fields": {
@@ -1702,6 +1798,14 @@
   "model": "sessions.session", 
   "fields": {
     "expire_date": "2013-10-23T22:15:11.119", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
+  "pk": "rhjmde13kqr40og7muk2l20xxzt2ts4y", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T21:47:39.549", 
     "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
@@ -1791,6 +1895,14 @@
   "fields": {
     "expire_date": "2013-08-22T23:06:43.956", 
     "session_data": "YmE5OTdkMjdlZjk4NTIxY2U1ODY0Y2YyMzI1YzJhZmQzNWY5ZjMxMDqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLKHUu"
+  }
+},
+{
+  "pk": "sll0jkwlbmzqirsedagfljx1tiivlj33", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T21:56:20.955", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
 {
@@ -1994,6 +2106,14 @@
   }
 },
 {
+  "pk": "vf37tyusgvnu61w6g759lb7l91e5mwv1", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T21:51:49.852", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "vfqugq3p9gc65wby8mzzrxjdr3jg9b7f", 
   "model": "sessions.session", 
   "fields": {
@@ -2106,6 +2226,14 @@
   }
 },
 {
+  "pk": "xvjyaljg8olzr74dqsftx65rzpunfd3v", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T22:14:39.399", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "xyjo38yck2kcppio1b69nz08bzg78pqm", 
   "model": "sessions.session", 
   "fields": {
@@ -2170,6 +2298,14 @@
   }
 },
 {
+  "pk": "yvhc6xh9rjbqcz5xj6njp0nuf6t2zkae", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T21:56:45.663", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "z6py0cascok91m0sjbxii37awg0sw0js", 
   "model": "sessions.session", 
   "fields": {
@@ -2181,8 +2317,8 @@
   "pk": "z6rxuhx89k6hs3cqk2817j1n82grrddo", 
   "model": "sessions.session", 
   "fields": {
-    "expire_date": "2013-10-28T19:34:45.101", 
-    "session_data": "YmE5OTdkMjdlZjk4NTIxY2U1ODY0Y2YyMzI1YzJhZmQzNWY5ZjMxMDqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLKHUu"
+    "expire_date": "2013-10-28T22:16:04.590", 
+    "session_data": "NWYwZGYzYWYyYjQ2ODQyOGE0ZDM1NjBhZjA3ZGFiMjQ4YTM3MTllMjqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZFUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmRxAlUNX2F1dGhfdXNlcl9pZEsodS4="
   }
 },
 {
@@ -4554,6 +4690,51 @@
   "fields": {
     "kingdom": 117, 
     "name": "tuto_toofewpopulation", 
+    "value": 1
+  }
+},
+{
+  "pk": 1557, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 118, 
+    "name": "tuto_adversaire", 
+    "value": "Blancheflor de Seigy"
+  }
+},
+{
+  "pk": 1558, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 118, 
+    "name": "tuto_dynasty_PNJ", 
+    "value": "de Seigy"
+  }
+},
+{
+  "pk": 1559, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 118, 
+    "name": "tuto_type_PNJ", 
+    "value": "cavalier"
+  }
+},
+{
+  "pk": 1560, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 118, 
+    "name": "total_soldats", 
+    "value": 0
+  }
+},
+{
+  "pk": 1561, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 118, 
+    "name": "in_tuto", 
     "value": 1
   }
 },
@@ -8944,6 +9125,110 @@
   }
 },
 {
+  "pk": 7539, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 118, 
+    "fight": 8, 
+    "first_name": "Gontran", 
+    "last_name": "de remi", 
+    "diplomacy": 10, 
+    "father": null, 
+    "plot": 10, 
+    "scholarship": 8, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 16, 
+    "birth": "2013-09-09T22:15:26.803", 
+    "mother": null, 
+    "loyalty": 99, 
+    "spouse": null, 
+    "quality_set": [
+      38
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7540, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 118, 
+    "fight": 7, 
+    "first_name": "Albald", 
+    "last_name": "de remi", 
+    "diplomacy": 10, 
+    "father": 7539, 
+    "plot": 7, 
+    "scholarship": 9, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 5, 
+    "birth": "2013-09-27T22:15:27.116", 
+    "mother": null, 
+    "loyalty": 80, 
+    "spouse": null, 
+    "quality_set": [
+      33, 
+      38
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7541, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 118, 
+    "fight": 4, 
+    "first_name": "Suphitia", 
+    "last_name": "de remi", 
+    "diplomacy": 11, 
+    "father": 7539, 
+    "plot": 9, 
+    "scholarship": 8, 
+    "sex": "f", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 31, 
+    "birth": "2013-09-28T22:15:27.217", 
+    "mother": null, 
+    "loyalty": 80, 
+    "spouse": null, 
+    "quality_set": [], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7542, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 118, 
+    "fight": 7, 
+    "first_name": "Balot", 
+    "last_name": "d'Essertenne", 
+    "diplomacy": 10, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 8, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 24, 
+    "birth": "2013-09-09T22:15:27.250", 
+    "mother": null, 
+    "loyalty": 80, 
+    "spouse": null, 
+    "quality_set": [
+      8, 
+      38
+    ], 
+    "mentor": null
+  }
+},
+{
   "pk": 1, 
   "model": "kingdom.qualitycategory", 
   "fields": {
@@ -12554,7 +12839,7 @@
   "model": "title.title", 
   "fields": {
     "name": "Ch\u00e2telain", 
-    "on_defect": "status=\"Ola ! On se calme. D'abord c'est mon tr\u00f4ne et ensuite c'est MON ch\u00e2teau !\"\n", 
+    "on_defect": "stop(\"Ola ! On se calme. D'abord c'est mon tr\u00f4ne et ensuite c'est MON ch\u00e2teau !\")\n", 
     "on_affect": "\n", 
     "on_unlock": "# unlock code", 
     "slug": "chatelain", 
@@ -12571,7 +12856,7 @@
     "on_affect": "folk.loyalty += 5\nfolk.save()", 
     "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un conn\u00e9table.\")\n# AvailableMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"chasse\")).save()\nkingdom.unlock_mission(\"chasse\")\nkingdom.unlock_mission(\"recruter_troupes\")\nkingdom.unlock_mission(\"renvoyer\")", 
     "slug": "connetable", 
-    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age()<C.MAJORITE:\n  status = S.TOO_YOUNG\n", 
+    "condition": "if folk.sex==Folk.FEMALE:\n  stop(\"Un homme est attendu \u00e0 ce poste\")\n  \nif folk.age()<C.MAJORITE:\n  stop(S.TOO_YOUNG)\n", 
     "description": "En tant que premier conseiller militaire, le conn\u00e9table supervise le recrutement et l'entra\u00eenement de vos hommes d'arme.\r\n\r\nUn conn\u00e9table a besoin d'un haut Combat pour \u00eatre efficace."
   }
 },
@@ -12584,7 +12869,7 @@
     "on_affect": "folk.loyalty += 5\nfolk.save()", 
     "on_unlock": "kingdom.unlock_mission(\"charite\")\nkingdom.unlock_mission(\"recruter_pretre\")", 
     "slug": "cure", 
-    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Un homme est attendu \u00e0 ce poste\"\nif folk.has_quality(\"pretre\")==False:\n  status=\"Un pr\u00eatre est attendu \u00e0 ce poste\"\n", 
+    "condition": "if folk.sex == Folk.FEMALE:\n  stop(\"Un homme est attendu \u00e0 ce poste\")\n  \nif not folk.has_quality(\"pretre\"):\n  stop(\"Un pr\u00eatre est attendu \u00e0 ce poste\")\n", 
     "description": "Cet homme d'\u00e9glise s'occupe de toutes les affaires religieuses de votre cour.\r\n\r\nUn cur\u00e9 a besoin d'une haute \u00c9rudition pour \u00eatre efficace."
   }
 },
@@ -12597,7 +12882,7 @@
     "on_affect": "folk.loyalty += 5\nfolk.save()", 
     "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un chambellan.\")\nkingdom.unlock_mission(\"accepter_courtisan\")\nkingdom.unlock_mission(\"organiser_banquet\")", 
     "slug": "chambellan", 
-    "condition": "if folk.sex == Folk.FEMALE:\n  status = \"Un homme est attendu \u00e0 ce poste\"\n", 
+    "condition": "if folk.sex == Folk.FEMALE:\n  stop(\"Un homme est attendu \u00e0 ce poste\")\n", 
     "description": "Le chambellan est votre ma\u00eetre du protocole. Il vous d\u00e9charge des affaires courantes concernant la vie au ch\u00e2teau, s'assure de la loyaut\u00e9 de vos courtisans et prot\u00e8ge votre image publique.\r\n\r\nUn chambellan a besoin d'une haute Diplomatie pour \u00eatre efficace."
   }
 },
@@ -12623,7 +12908,7 @@
     "on_affect": "folk.loyalty += 5\nfolk.save()", 
     "on_unlock": "kingdom.unlock_mission(\"recruter_dame\")\nkingdom.unlock_mission(\"recruter_chevalier\")\n", 
     "slug": "ambassadeur", 
-    "condition": "if folk.sex == Folk.FEMALE:\n  status = \"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG", 
+    "condition": "if folk.sex == Folk.FEMALE:\n  stop(\"Un homme est attendu \u00e0 ce poste\")\n  \nif folk.age() < C.MAJORITE:\n  stop(S.TOO_YOUNG)", 
     "description": "L'ambassadeur est responsable des relations diplomatiques avec le reste du royaume.\r\n\r\nUn ambassadeur a besoin d'une haute Diplomatie pour \u00eatre efficace."
   }
 },
@@ -12636,7 +12921,7 @@
     "on_affect": "folk.loyalty += 5\nfolk.save()\n", 
     "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un tr\u00e9sorier.\")\nkingdom.unlock_mission(\"taxepaysanne\")\nkingdom.unlock_mission(\"taxecour\")", 
     "slug": "tresorier", 
-    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Un homme est attendu \u00e0 ce poste\"\n  \nif folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG\n", 
+    "condition": "if folk.sex==Folk.FEMALE:\n  stop(\"Un homme est attendu \u00e0 ce poste\")\n  \nif folk.age() < C.MAJORITE:\n  stop(S.TOO_YOUNG)\n", 
     "description": "Le tr\u00e9sorier est responsable de la gestion quotidienne de vos finances et de la collecte des taxes.\r\n\r\nUn tr\u00e9sorier a besoin d'une haute \u00c9rudition pour \u00eatre efficace."
   }
 },
@@ -13111,6 +13396,16 @@
   }
 },
 {
+  "pk": 450, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 118, 
+    "last_folk": 7539, 
+    "folk": 7539, 
+    "title": 1
+  }
+},
+{
   "pk": 1, 
   "model": "internal.trigger", 
   "fields": {
@@ -13123,6 +13418,7 @@
       115, 
       116, 
       117, 
+      118, 
       74, 
       76, 
       80, 
@@ -13255,9 +13551,9 @@
   "pk": 2, 
   "model": "internal.recurring", 
   "fields": {
-    "delay": 77, 
-    "kingdom_list": "#param = kingdom.objects.get(pk=58)\nparam = []\n", 
-    "on_fire": "blesses = folks.filter(quality_slug=\"blesse\")\nsoigneurs = target.folks.filter(sex=Folk.FEMALE, mission = None, birth__lte=datetime.now() - timedelta(days=C.MAJORITE))\nsoigneurs += target.folks.filter(sex=Folk.MALE, mission = None, birth__lte=datetime.now() - timedelta(days=C.MAJORITE), quality__slug=\"pretre\")\nsoigneurs = soigneurs.order_by(\"scholarship\")\nmoy_erudition = avg_folks(soigneurs, \"scholarship\")\nimport math\nsoin = 99 - moy_erudition/20 * 8 * max(1, len(soigneurs) / math.sqrt(blesses.count()))\ni = 0\nfor blesse in blesses:\n  fate = random_value(1,100)\n  if fate == 1 : #il meurt\n    blesse.die()\n  elif fate > soin : #il n'est plus bless\u00e9, mais gagne un autre trait\n    blesse.remove_quality(\"blesse\")\n    choix_trait = random_value(1,100)\n    chances_handicap = 30 - soigneurs[i % len(soigneurs)].scholarship * max(1,len(soigneurs)/ math.sqrt(blesses.count()))\n    if choix_trait < chances_handicap : #il est infirme\n      choix_handicap = random_in(Quality.objects.filter(quality_category__name=\"Handicap\"))\n      blesse.quality_set.add(choix_handicap)\n    else: #il est gu\u00e9rit\n      pass\n  #else on attendant 30 minutes qu'il retente sa chance\n  i += 1\n", 
+    "delay": 3, 
+    "kingdom_list": "param = Kingdom.objects.filter(pk=117)\n#param = []\n", 
+    "on_fire": "blesses = folks.filter(quality_set__slug=\"blesse\")\nsoigneurs = folks.filter(kingdom=kingdom, sex=Folk.FEMALE, mission = None, birth__lte=datetime.now() - timedelta(days=C.MAJORITE))\nsoigneurs += folks.filter(kingdom=kingdom, sex=Folk.MALE, mission = None, birth__lte=datetime.now() - timedelta(days=C.MAJORITE), quality_set__slug=\"pretre\")\nsoigneurs = soigneurs.order_by(\"-scholarship\")[1:len(blesses)+1]\nmoy_erudition = avg_folks(soigneurs, \"scholarship\")\nimport math\nsoin = 99 - moy_erudition/20 * 8 * max(1, len(soigneurs) / math.sqrt(blesses.count()))\n\nfor blesse in blesses:\n  fate = random_value(1,100)\n  if fate == 1 : #il meurt\n    blesse.die()\n  elif fate > soin : #il n'est plus bless\u00e9, mais gagne un autre trait\n    blesse.remove_quality(\"blesse\")\n    choix_trait = random_value(1,100)\n    chances_handicap = 30 - moy_erudition * max(1,len(soigneurs)/ math.sqrt(blesses.count()))\n    if choix_trait < chances_handicap : #il est infirme\n      choix_handicap = random_in(Quality.objects.filter(quality_category__name=\"Handicap\"))\n      blesse.quality_set.add(choix_handicap)\n    else: #il est gu\u00e9rit\n      blesse.remove_quality(\"blesse\")\n  #else on attendant 30 minutes qu'il retente sa chance\n", 
     "name": "Les bless\u00e9s peuvent mourir", 
     "description": "Fais mourir (ou pas) les bless\u00e9s"
   }
@@ -49040,7 +49336,7 @@
     "timeout": null, 
     "is_cancellable": true, 
     "duration": 5, 
-    "on_cancel": "status=\"gofuck\"\n", 
+    "on_cancel": "stop(\"gofuck\")\n", 
     "slug": "tuto_recrutement", 
     "on_init": "  "
   }
@@ -49216,7 +49512,7 @@
     "has_value": false, 
     "on_resolution": "kingdom.population+=10\nkingdom.save()\n\npe = kingdom.create_pending_event(\"charite\")\npe.start()\n", 
     "value_description": "Valeur :", 
-    "on_start": "if kingdom.money < 10 :\n  status = \"Vous n'avez pas assez d'argent pour lancer cette mission\"\nelse:\n  kingdom.money-=10\n  kingdom.save()\n", 
+    "on_start": "if kingdom.money < 10 :\n  stop(\"Vous n'avez pas assez d'argent pour lancer cette mission\")\nelse:\n  kingdom.money-=10\n  kingdom.save()\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 3, 
@@ -49326,12 +49622,12 @@
   "model": "mission.mission", 
   "fields": {
     "name": "Faire un raid", 
-    "target_list": "param = Kingdom.objects.all()\n", 
+    "target_list": "\n", 
     "text": "Allons attaquer !", 
     "has_value": false, 
-    "on_resolution": "if len(param.get_value(\"morts_attaquant\"))>0:\n  for perso in param.get_value(\"morts_attaquant\"):\n    perso.die()\n  \n", 
+    "on_resolution": "if len(param.get_value(\"morts_attaquant\")) > 0:\n  for perso in param.get_value(\"morts_attaquant\"):\n    perso.die()\n  \n", 
     "value_description": "Valeur :", 
-    "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent - cible acceptable ? )\nnok = 0\nif kingdom.money < 10:\n  nok = 1\nelif kingdom.user.username==target.user.username:\n  nok = 0\n  \n\nif nok == 0:\n  kingdom.money-=10\n\n  retour_fonction = call_function('determiner_raid',\n                                  liste_attaquant=grids['attaquants'],\n                                  argent_defenseur = target.money,\n                                  population_defenseur = target.population,\n                                  population_max_defenseur = f('get_max_population',kingdom=target)\n                                  )\n  \n  # le raid entraine un casus belli \n  retour_fonction2 = f(\"creer_claim\",offender = kingdom,offended = target,level=1)\n  \n  target.population-=retour_fonction['population_perdue']\n  # kingdom.save()\n  target.save()\n  \n  kingdom.money+= retour_fonction['argent_vole']\n  # target.save()\n  # kingdom.save()\n  \n  param.set_value('morts_attaquant',[])\n  \n  # gestion des evenements de retour du raid pour l'attaquant et d'avertissement de raid pour la cible\n  # cas d'un raid qui tourne tr\u00e8s mal (des morts ...)\n  if (len(retour_fonction['morts_attaquant'])>0):\n    # evenement pour l'attaquant\n    # liste des noms des morts\n    morts_nom = []\n    for perso in retour_fonction['morts_attaquant']:\n      morts_nom.append(perso.first_name + \" \" + perso.last_name)\n      grids['attaquants']= grids['attaquants'].remove(perso)\n    pa = kingdom.create_pending_event(\"retour_raid_morts\")\n    pa.set_value(\"argent_gagne\", retour_fonction['argent_vole'])\n    pa.set_value(\"attaque\", target)\n    pa.set_value(\"liste_attaquant\", grids['attaquants'])\n    pa.set_value(\"blesses_attaquant\", retour_fonction['blesses_attaquant'])      \n    pa.set_value(\"morts_nom\",morts_nom)   \n    pa.start()\n    # evenement pour la cible\n    pc = target.create_pending_event(\"cible_raid_morts\")\n    pc.set_value(\"mort1_name\", retour_fonction['morts_attaquant'][0].first_name + \" \"+retour_fonction['morts_attaquant'][0].last_name) \n    pc.set_value(\"population_perdue\", retour_fonction['population_perdue'])\n    pc.set_value(\"kingdom_attaquant\", kingdom)\n    pc.set_value(\"kingdom_attaque\", target)\n    pc.set_value(\"deja_ennemi\", retour_fonction2['deja_ennemi'])   \n    pc.start()\n    # et on les tuera \u00e0 la fin\n    param.set_value(\"morts_attaquant\"  , retour_fonction['morts_attaquant'])\n  ###      \n  # cas d'un raid sans encombre  \n  else:\n     # evenement du retour pour l'attaquant\n    pa = kingdom.create_pending_event(\"retour_raid_ok\")\n    pa.set_value(\"argent_gagne\", retour_fonction['argent_vole'])\n    pa.set_value(\"attaque\", target)\n    pa.set_value(\"liste_attaquant\", grids['attaquants'])\n    pa.set_value(\"blesses_attaquant\", retour_fonction['blesses_attaquant'])  \n    pa.start()\n    # evenement pour la cible\n    pc = target.create_pending_event(\"cible_raid_ok\")\n    pc.set_value(\"population_perdue\", int(retour_fonction['population_perdue']))\n    pc.set_value(\"kingdom_attaquant\", kingdom)\n    pc.set_value(\"kingdom_attaque\", target)\n    pc.set_value(\"deja_ennemi\", retour_fonction2['deja_ennemi'])\n    pc.start()           \n  \n  \n\nelif nok==1 :\n  status=\"Vous n'avez pas suffisamment d'argent pour lancer cette mission.\"  \nelif nok==2 :status=\"On n'organise pas de raid sur son domaine, il y a les imp\u00f4ts et le droit de cuissage pour \u00e7a !\"  \n\n", 
+    "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent)\nif kingdom.money < 10:\n  stop(\"Vous n'avez pas suffisamment d'argent pour lancer cette mission.\")\n  \n\n  kingdom.money -= 10\n\n  retour_fonction = call_function('determiner_raid',\n                                  liste_attaquant=grids['attaquants'],\n                                  argent_defenseur = target.money,\n                                  population_defenseur = target.population,\n                                  population_max_defenseur = f('get_max_population', kingdom=target)\n                                  )\n  \n  # le raid entraine un casus belli \n  retour_fonction2 = f(\"creer_claim\", offender = kingdom,offended = target,level=1)\n  \n  target.population -= retour_fonction['population_perdue']\n  # kingdom.save()\n  target.save()\n  \n  kingdom.money += retour_fonction['argent_vole']\n  # target.save()\n  # kingdom.save()\n  \n  param.set_value('morts_attaquant',[])\n  \n  # gestion des evenements de retour du raid pour l'attaquant et d'avertissement de raid pour la cible\n  # cas d'un raid qui tourne tr\u00e8s mal (des morts ...)\n  if len(retour_fonction['morts_attaquant']) > 0:\n    # evenement pour l'attaquant\n    # liste des noms des morts\n    morts_nom = []\n    for perso in retour_fonction['morts_attaquant']:\n      morts_nom.append(perso.first_name + \" \" + perso.last_name)\n      grids['attaquants']= grids['attaquants'].remove(perso)\n    pa = kingdom.create_pending_event(\"retour_raid_morts\")\n    pa.set_value(\"argent_gagne\", retour_fonction['argent_vole'])\n    pa.set_value(\"attaque\", target)\n    pa.set_value(\"liste_attaquant\", grids['attaquants'])\n    pa.set_value(\"blesses_attaquant\", retour_fonction['blesses_attaquant'])      \n    pa.set_value(\"morts_nom\",morts_nom)   \n    pa.start()\n    # evenement pour la cible\n    pc = target.create_pending_event(\"cible_raid_morts\")\n    pc.set_value(\"mort1_name\", retour_fonction['morts_attaquant'][0].first_name + \" \"+retour_fonction['morts_attaquant'][0].last_name) \n    pc.set_value(\"population_perdue\", retour_fonction['population_perdue'])\n    pc.set_value(\"kingdom_attaquant\", kingdom)\n    pc.set_value(\"kingdom_attaque\", target)\n    pc.set_value(\"deja_ennemi\", retour_fonction2['deja_ennemi'])   \n    pc.start()\n    # et on les tuera \u00e0 la fin\n    param.set_value(\"morts_attaquant\"  , retour_fonction['morts_attaquant'])\n  ###      \n  # cas d'un raid sans encombre  \n  else:\n     # evenement du retour pour l'attaquant\n    pa = kingdom.create_pending_event(\"retour_raid_ok\")\n    pa.set_value(\"argent_gagne\", retour_fonction['argent_vole'])\n    pa.set_value(\"attaque\", target)\n    pa.set_value(\"liste_attaquant\", grids['attaquants'])\n    pa.set_value(\"blesses_attaquant\", retour_fonction['blesses_attaquant'])  \n    pa.start()\n    # evenement pour la cible\n    pc = target.create_pending_event(\"cible_raid_ok\")\n    pc.set_value(\"population_perdue\", int(retour_fonction['population_perdue']))\n    pc.set_value(\"kingdom_attaquant\", kingdom)\n    pc.set_value(\"kingdom_attaque\", target)\n    pc.set_value(\"deja_ennemi\", retour_fonction2['deja_ennemi'])\n    pc.start()           \n\n", 
     "has_target": true, 
     "is_team": false, 
     "title": 2, 
@@ -49377,7 +49673,7 @@
     "has_value": false, 
     "on_resolution": "kingdom.create_pending_event(\"banquet\")\npe.set_value(\"raison\", \"initiative\")\npe.start()\n", 
     "value_description": "Valeur :", 
-    "on_start": "nb_convives = folks.filter(mission=None).count()\nif kingdom.money < nb_convives * 2:\n  status = \"Vous n'avez pas les moyens d'organiser un banquet de cette envergure\"\n  if sum_folks(affected, \"diplomacy\") <= 10:\n    status = \"Les convives ne seront pas disponibles, il manquent probablement de motivation\"\nif status != \"ok\":\n  kingdom.money -= nb_convives * 2\n  kingdom.save()\n", 
+    "on_start": "nb_convives = folks.filter(mission=None).count()\nif kingdom.money < nb_convives * 2:\n  stop(\"Vous n'avez pas les moyens d'organiser un banquet de cette envergure\")\n  \nkingdom.money -= nb_convives * 2\nkingdom.save()\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 4, 
@@ -49423,7 +49719,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "if kingdom.get_folk_in_title(\"chatelain\") not in grids['defenseurs'] or kingdom.get_folk_in_title(\"connetable\") not in grids['defenseurs']:\n  status = \"Le ch\u00e2telain et le conn\u00e9table se doivent de participer \u00e0 cette mission\"\n  \ncombattants = grids['defenseurs'][0:]\ncombattants.remove(folks[0])\ncombattant=random_in(combattants)\nif combattant.fight>8:\n  intrepide=True\n  fleche=False\nelse:\n  intrepide=False  \n  fleche=True\n\npe=PendingEvent(event=Event.objects.get(slug=\"tuto_bandits_bataille\"),kingdom=kingdom,started=None)\npe.save()\npe.set_value(\"somme_fight\",sum_folks(grids['defenseurs'],\"fight\"))\npe.set_value(\"combattant\",combattant)\npe.set_value(\"intrepide\",intrepide)\npe.set_value(\"fleche\",fleche)\npe.start()\n", 
+    "on_start": "if kingdom.get_folk_in_title(\"chatelain\") not in grids['defenseurs'] or kingdom.get_folk_in_title(\"connetable\") not in grids['defenseurs']:\n  stop(\"Le ch\u00e2telain et le conn\u00e9table se doivent de participer \u00e0 cette mission\")\n  \ncombattants = grids['defenseurs'][0:]\ncombattants.remove(folks[0])\ncombattant=random_in(combattants)\nif combattant.fight>8:\n  intrepide=True\n  fleche=False\nelse:\n  intrepide=False  \n  fleche=True\n\npe=PendingEvent(event=Event.objects.get(slug=\"tuto_bandits_bataille\"),kingdom=kingdom,started=None)\npe.save()\npe.set_value(\"somme_fight\",sum_folks(grids['defenseurs'],\"fight\"))\npe.set_value(\"combattant\",combattant)\npe.set_value(\"intrepide\",intrepide)\npe.set_value(\"fleche\",fleche)\npe.start()\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 2, 
@@ -49515,7 +49811,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "if sum_folks(affected, \"diplomacy\") < 20:\n  status=\"Il va falloir \u00eatre un peu plus diplomate\"\n  stop()\n\nkingdom.set_value(\"tuto_has_claim\", True)\nkingdom.create_pending_event(\"tuto_casusbelli_success\").start()\n", 
+    "on_start": "if sum_folks(affected, \"diplomacy\") < 20:\n  stop(\"Il va falloir \u00eatre un peu plus diplomate\")\n\nkingdom.set_value(\"tuto_has_claim\", True)\nkingdom.start_pending_event(\"tuto_casusbelli_success\")\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 6, 
@@ -49653,7 +49949,7 @@
     "has_value": false, 
     "on_resolution": "age = random_gauss(16,40)\n\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nqualities.append(random_in([\"archer\", \"cavalier\", \"piquier\"]))\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"diplomacy\")-23)/37) + random_value(-10, 10)\nchevalier = f(\"creer_folk\", kingdom=None, fight_min=7, plot_min=1, diplomacy_min=1, scholarship_min=1, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\npe = kingdom.create_pending_event(\"allegeance_chevalier\")\npe.set_value(\"chevalier\", chevalier)\npe.start()\n", 
     "value_description": "", 
-    "on_start": "cout = 15 + 10 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"ambassadeur\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  status = \"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\"\n", 
+    "on_start": "cout = 15 + 10 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"ambassadeur\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  stop(\"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\")\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 6, 
@@ -49676,7 +49972,7 @@
     "has_value": false, 
     "on_resolution": "age = random_gauss(16, 40)\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nqualities.append(\"pretre\")\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"scholarship\")-23)/37) + random_value(-10, 10)\n\npretre = f(\"creer_folk\", kingdom=None, fight_min=2, plot_min=4, diplomacy_min=4, scholarship_min=7, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\n\npe = kingdom.create_pending_event(\"allegeance_pretre\")\npe.set_value(\"pretre\", pretre)\npe.start()", 
     "value_description": "", 
-    "on_start": "cout = 15 + 5 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"cure\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  status = \"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\"", 
+    "on_start": "cout = 15 + 5 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"cure\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  stop(\"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\")", 
     "has_target": false, 
     "is_team": false, 
     "title": 3, 
@@ -49699,7 +49995,7 @@
     "has_value": false, 
     "on_resolution": "age = random_gauss(16,40)\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nchoix_baisee = (40-age)/24*100\nif choix_baisee <= random_value(1,100):\n  qualities.append(\"jouvancelle\")\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"diplomacy\")-23)/37) + random_value(-10, 10)\n\ndame= f(\"creer_folk\", kingdom=None, fight_min=2, plot_min=2, diplomacy_min=2, scholarship_min=2, loyalty=loyalty, max_carac=max_carac, sex=Folk.FEMALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\n\npe = kingdom.create_pending_event(\"allegeance_dame\")\npe.set_value(\"dame\", dame)\npe.start()", 
     "value_description": "", 
-    "on_start": "cout = 15 + 10 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"ambassadeur\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  status = \"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\"", 
+    "on_start": "cout = 15 + 10 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"ambassadeur\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  stop(\"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\")", 
     "has_target": false, 
     "is_team": false, 
     "title": 6, 
@@ -49745,7 +50041,7 @@
     "has_value": false, 
     "on_resolution": "comprometeurs = grids['comprometeurs']\ncout_mission = 5 + 5 * len(comprometeurs)\nkingdom.money -= cout_mission\nkingdom.save()\ncompromis = grids['compromis'][0]\n\ndefense = (compromis.plot + compromis.diplomacy) * 1.5\nattaque = sum_folks(folks, 'plot')\nreussite = max(attaque/defense, 1) * 100 - 10\nif  reussite < random_value(1,100):\n  #R\u00e9ussite\n  if compromis.has_quality(\"adule\"):\n    compromis.remove_quality(\"adule\")\n    compromis.add_quality(\"respecte\")\n  elif compromis.has_quality(\"respecte\"):\n    compromis.remove_quality(\"respecte\")\n  elif compromis.has_quality(\"meprise\"):\n    compromis.remove_quality(\"meprise\")\n    compromis.add_quality(\"deteste\")\n  else:\n    compromis.add_quality(\"deteste\")\n  pe = kingdom.create_pending_event(\"compromettre_success\")\n  pe.set_value(\"compromis\", compromis)\n  pe.set_value(\"comprometeurs\", comprometeurs)\n  pe.start()\nelse:\n  if 100 - reussite < random_value (1,100):\n    #gros echec\n    def perte(facteur, kingdom=kingdom):\n      call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=C.PERTE_LOYAUTE_BANNISSEMENT*facteur, perte_max=C.PERTE_LOYAUTE_BANNISSEMENT*facteur)\n      return C.PERTE_LOYAUTE_BANNISSEMENT*facteur\n    \n    perte_loyaute = 0 \n    \n    if compromis.has_quality(\"adule\"):\n      perte_loyaute -= perte(2)\n    elif compromis.has_quality(\"respecte\"):\n      perte_loyaute -= perte(1.5)   \n    else :\n      perte_loyaute -= perte(1)\n      \n    pe = kingdom.create_pending_event(\"compromettre_big_failure\")\n    pe.set_value(\"compromis\", compromis)\n    pe.set_value(\"comprometeurs\", comprometeurs)\n    pe.set_value(\"perte\", perte_loyaute)\n    pe.start()\n\n  else:\n    #echec simple\n    pe = kingdom.create_pending_event(\"compromettre_failure\")\n    pe.set_value(\"compromis\", compromis)\n    pe.set_value(\"comprometeurs\", comprometeurs)\n    pe.start()\n\n  \n", 
     "value_description": "", 
-    "on_start": "cout_mission = 5 + 5 * len(grids['comprometeurs'])\nif grids['compromis'][0].has_quality(\"deteste\"):\n  status = \"Cette personne est d\u00e9j\u00e0 d\u00e9test\u00e9e, il n'est pas utile de la salir encore plus\"\nif kingdom.money < cout_mission:\n  status = \"Nous n'avez pas assez d'argent pour lancer cette mission (\" + cout_mission + \" \u00e9cus).\"\n", 
+    "on_start": "cout_mission = 5 + 5 * len(grids['comprometeurs'])\nif grids['compromis'][0].has_quality(\"deteste\"):\n  stop(\"Cette personne est d\u00e9j\u00e0 d\u00e9test\u00e9e, il n'est pas utile de la salir encore plus\")\nif kingdom.money < cout_mission:\n  stop(\"Nous n'avez pas assez d'argent pour lancer cette mission (\" + cout_mission + \" \u00e9cus).\")\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 5, 
@@ -49768,7 +50064,7 @@
     "length": 20, 
     "allow_empty": false, 
     "slug": "chercheurs_noises", 
-    "condition": "if folk.age() >= C.MAJORITE:\n  status=\"Laisse les grands jouer \u00e0 ce jeu\""
+    "condition": "if folk.age() >= C.MAJORITE:\n  stop(\"Laisse les grands jouer \u00e0 ce jeu\")"
   }
 },
 {
@@ -49820,7 +50116,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "mari", 
-    "condition": "if folk.age < C.MAJORITE : \n  status = S.TOO_YOUNG\nelif folk.sex == Folk.FEMALE :\n  status = \"Le mari doit \u00eatre un homme\"\nelif folk.has_quality(\"pretre\") :\n  status = \"Un pr\u00eatre ne peut pas se marier\"\nelif (kingdom.get_value(\"in_tuto\") == True and folk==folks[0]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre chatelain\"\nelif (kingdom.get_value(\"passage_proposition_mariage\", False) and  folk==folks[1]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre fils\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
+    "condition": "if folk.age < C.MAJORITE : \n  stop(S.TOO_YOUNG)\nelif folk.sex == Folk.FEMALE :\n  stop(\"Le mari doit \u00eatre un homme\")\nelif folk.has_quality(\"pretre\") :\n  stop(\"Un pr\u00eatre ne peut pas se marier\")\nelif (kingdom.get_value(\"in_tuto\") == True and folk==folks[0]):\n  stop(\"Il est encore trop tot pour songer \u00e0 marier votre chatelain\")\nelif (kingdom.get_value(\"passage_proposition_mariage\", False) and  folk==folks[1]):\n  stop(\"Il est encore trop tot pour songer \u00e0 marier votre fils\")\nelif folk.spouse != None and folk.spouse.death == None:\n  stop(\"Cette personne est d\u00e9j\u00e0 mari\u00e9e\")\n"
   }
 },
 {
@@ -49833,7 +50129,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "femme", 
-    "condition": "if folk.age < C.MAJORITE:\n  status = S.TOO_YOUNG\nelif folk.sex == Folk.MALE:\n  status = \"La femme doit \u00eatre une femme\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
+    "condition": "if folk.age < C.MAJORITE:\n  stop(S.TOO_YOUNG)\nelif folk.sex == Folk.MALE:\n  stop(\"La femme doit \u00eatre une femme\")\nelif folk.spouse != None and folk.spouse.death == None:\n  stop(\"Cette personne est d\u00e9j\u00e0 mari\u00e9e\")\n"
   }
 },
 {
@@ -49859,7 +50155,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "libere", 
-    "condition": "if folk.has_quality(\"prisonnier\") is False:\n  status=\"Cette personne est d\u00e9j\u00e0 libre\"\n"
+    "condition": "if folk.has_quality(\"prisonnier\") is False:\n  stop(\"Cette personne est d\u00e9j\u00e0 libre\")\n"
   }
 },
 {
@@ -49872,7 +50168,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "mentor", 
-    "condition": "if folk.age()< C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+    "condition": "if folk.age()< C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
   }
 },
 {
@@ -49885,7 +50181,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "enfant", 
-    "condition": "if folk.age() > C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+    "condition": "if folk.age() > C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
   }
 },
 {
@@ -49898,7 +50194,7 @@
     "length": 20, 
     "allow_empty": false, 
     "slug": "recruteurs", 
-    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"il faut une homme\"\n"
+    "condition": "if folk.sex==Folk.FEMALE:\n  stop(\"il faut une homme\")\n"
   }
 },
 {
@@ -49924,7 +50220,7 @@
     "length": 200, 
     "allow_empty": false, 
     "slug": "espion", 
-    "condition": "if PendingMissionAffectation.objects.filter(pending_mission=param.pending_mission, mission_grid=param.mission_grid).count() > kingdom.prestige / 10:\n  status = \"Vous ne pouvez plus rajouter de personne \u00e0 cette mission\"\nif folk.age < C.MAJORITE:\n  status = \"Un enfant ne peut pas effectuer cette mission\"\n\n"
+    "condition": "if PendingMissionAffectation.objects.filter(pending_mission=param.pending_mission, mission_grid=param.mission_grid).count() > kingdom.prestige / 10:\n  stop(\"Vous ne pouvez plus rajouter de personne \u00e0 cette mission\")\nif folk.age < C.MAJORITE:\n  stop(\"Un enfant ne peut pas effectuer cette mission\")\n\n"
   }
 },
 {
@@ -49937,7 +50233,7 @@
     "length": 4, 
     "allow_empty": false, 
     "slug": "attaquants", 
-    "condition": "if folk.age() < C.MAJORITE:\n  status = \"Vous ne pouvez pas affecter un enfant \u00e0 cette mission.\"\nelif folk.sex == Folk.FEMALE:\n  status = \"Vous ne pouvez pas affecter de femme \u00e0 cette mission\"\n"
+    "condition": "if folk.age() < C.MAJORITE:\n  stop(\"Vous ne pouvez pas affecter un enfant \u00e0 cette mission.\")\nelif folk.sex == Folk.FEMALE:\n  stop(\"Vous ne pouvez pas affecter de femme \u00e0 cette mission\")\n"
   }
 },
 {
@@ -49963,7 +50259,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "organisateurs", 
-    "condition": "if folk.age() < C.MAJORITE:\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"\n"
+    "condition": "if folk.age() < C.MAJORITE:\n  stop(\"Grandis un peu, gamin, et reviens un peu plus tard !\")\n"
   }
 },
 {
@@ -49976,7 +50272,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "chatelain", 
-    "condition": "if folk != kingdom.get_folk_in_title(\"chatelain\"):\n  status = \"Seul le chatelain peut endosser ce r\u00f4le pour lancer cette mission\"\n"
+    "condition": "if folk != kingdom.get_folk_in_title(\"chatelain\"):\n  stop(\"Seul le chatelain peut endosser ce r\u00f4le pour lancer cette mission\")\n"
   }
 },
 {
@@ -49989,7 +50285,7 @@
     "length": 10, 
     "allow_empty": false, 
     "slug": "chasseurs", 
-    "condition": "if folk.sex == Folk.FEMALE or folk.has_quality(\"pretre\") or folk.age() < C.MAJORITE:\n  status = \"Le chasseur doit \u00eatre un chevalier adulte\"\n"
+    "condition": "if folk.sex == Folk.FEMALE or folk.has_quality(\"pretre\") or folk.age() < C.MAJORITE:\n  stop(\"Le chasseur doit \u00eatre un chevalier adulte\")\n"
   }
 },
 {
@@ -50015,7 +50311,7 @@
     "length": 4, 
     "allow_empty": false, 
     "slug": "defenseurs", 
-    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Depuis des temps imm\u00e9moriaux les femmes ont persuad\u00e9 les hommes que c'\u00e9taient \u00e0 eux de mourrir. On ne revient pas sur des privil\u00e8ges durement gagn\u00e9s.\""
+    "condition": "if folk.sex==Folk.FEMALE:\n  stop(\"Depuis des temps imm\u00e9moriaux les femmes ont persuad\u00e9 les hommes que c'\u00e9taient \u00e0 eux de mourrir. On ne revient pas sur des privil\u00e8ges durement gagn\u00e9s.\")"
   }
 },
 {
@@ -50041,7 +50337,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "enfant", 
-    "condition": "if folk.age() > C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+    "condition": "if folk.age() > C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
   }
 },
 {
@@ -50054,7 +50350,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "mentor", 
-    "condition": "if folk.age()< C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+    "condition": "if folk.age()< C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
   }
 },
 {
@@ -50106,7 +50402,7 @@
     "length": 1000, 
     "allow_empty": false, 
     "slug": "defenseurs", 
-    "condition": "if folk.age()< C.MAJORITE:\n  status = S.TOO_YOUNG\nif folk.sex == Folk.FEMALE:\n  status = \"Seul un homme peut \u00eatre choisi pour d\u00e9fendre la cit\u00e9.\"\n"
+    "condition": "if folk.age()< C.MAJORITE:\n  stop(S.TOO_YOUNG)\nif folk.sex == Folk.FEMALE:\n  stop(\"Seul un homme peut \u00eatre choisi pour d\u00e9fendre la cit\u00e9.\")\n"
   }
 },
 {
@@ -50119,7 +50415,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "espions", 
-    "condition": "if folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+    "condition": "if folk.age() < C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
   }
 },
 {
@@ -50132,7 +50428,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "espions", 
-    "condition": "if folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+    "condition": "if folk.age() < C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
   }
 },
 {
@@ -50145,7 +50441,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "recruteurs", 
-    "condition": "if folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+    "condition": "if folk.age() < C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
   }
 },
 {
@@ -50158,7 +50454,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "recruteurs", 
-    "condition": "if folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+    "condition": "if folk.age() < C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
   }
 },
 {
@@ -50171,7 +50467,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "recruteurs", 
-    "condition": "if folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+    "condition": "if folk.age() < C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
   }
 },
 {
@@ -50184,7 +50480,7 @@
     "length": 2, 
     "allow_empty": false, 
     "slug": "accueil", 
-    "condition": "if folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+    "condition": "if folk.age() < C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
   }
 },
 {
@@ -51814,7 +52110,7 @@
     "weight": 1, 
     "text": "Votre cour est presque vide", 
     "image": "", 
-    "on_fire": "choose_event = random_value(1,3)\n\n# R\u00e9cup\u00e9rer un homme majeur qui n'est pas de ma famille et n'est pas un pr\u00eatre.\n# Optimiser pour faire en sorte qu'on puisse ensuite r\u00e9cup\u00e9rer le type cr\u00e9e pour le tuto facheux.\nfacheux = folks.filter(sex=Folk.MALE, birth__lte=datetime.now()-timedelta(days=C.MAJORITE))\nfacheux = facheux.exclude(id__in=[folks[0].id, folks[1].id, folks[3].id])\nfacheux = facheux.exclude(quality_set__slug=\"pretre\")\nfacheux = facheux.order_by('?')\nif not facheux:\n  choose_event = 3\n\nif choose_event == 1:\n  pe=kingdom.create_pending_event(\"tuto_allegeance_dame\")\n  pe.set_value(\"chevalier\",facheux[0])\n  pe.start()\nelif choose_event == 2:\n  kingdom.create_pending_event(\"tuto_allegeance_pretre\").start()\nelse:\n  kingdom.create_pending_event(\"tuto_allegeance_chevalier\").start()\n\nstatus = S.GHOST_EVENT\n", 
+    "on_fire": "choose_event = random_value(1,3)\n\n# R\u00e9cup\u00e9rer un homme majeur qui n'est pas de ma famille et n'est pas un pr\u00eatre.\n# Optimiser pour faire en sorte qu'on puisse ensuite r\u00e9cup\u00e9rer le type cr\u00e9e pour le tuto facheux.\nfacheux = folks.filter(sex=Folk.MALE, birth__lte=datetime.now()-timedelta(days=C.MAJORITE))\nfacheux = facheux.exclude(id__in=[folks[0].id, folks[1].id, folks[3].id])\nfacheux = facheux.exclude(quality_set__slug=\"pretre\")\nfacheux = facheux.order_by('?')\nif not facheux:\n  choose_event = 3\n\nif choose_event == 1:\n  pe=kingdom.create_pending_event(\"tuto_allegeance_dame\")\n  pe.set_value(\"chevalier\",facheux[0])\n  pe.start()\nelif choose_event == 2:\n  kingdom.create_pending_event(\"tuto_allegeance_pretre\").start()\nelse:\n  kingdom.create_pending_event(\"tuto_allegeance_chevalier\").start()\n\nstop(S.GHOST_EVENT)\n", 
     "slug": "tuto_cour_basse_fantome", 
     "condition": "\n"
   }
@@ -51942,7 +52238,7 @@
     "image": "", 
     "on_fire": "chevalier = Folk.objects.filter(kingdom=kingdom, sex=Folk.MALE, fight__gte=9).order_by('?')[0]\nparam.set_value(\"chevalier\", chevalier)\nchoose_arme = random_in(['une pique', 'un arc', 'un cheval'])\nparam.set_value(\"arme\", choose_arme)\n", 
     "slug": "specialisation_militaire", 
-    "condition": "if Folk.objects.filter(kingdom=kingdom, sex=Folk.MALE, fight__gte=9).count() == 0:\n  status=\"vous n'avez aucun chevalier assez qualifi\u00e9\"\n"
+    "condition": "if Folk.objects.filter(kingdom=kingdom, sex=Folk.MALE, fight__gte=9).count() == 0:\n  stop(\"vous n'avez aucun chevalier assez qualifi\u00e9\")\n"
   }
 },
 {
@@ -52528,7 +52824,7 @@
     "weight": 1, 
     "text": " ", 
     "image": "", 
-    "on_fire": "titres = [vs.title.slug for vs in AvailableTitle.objects.filter(kingdom=kingdom)]\n\nif \"cure\" not in titres:\n  kingdom.start_pending_event(\"tuto_pretre_eveche\")\nelif \"ambassadeur\" not in titres:\n  kingdom.start_pending_event(\"tuto_toofewcourtisants\")\nelif \"tresorier\" not in titres:\n  kingdom.start_pending_event(\"tuto_toomuchecus\")\nelse:\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_forcertitre_random\")\n  \nstatus = S.GHOST_EVENT\n", 
+    "on_fire": "titres = [vs.title.slug for vs in AvailableTitle.objects.filter(kingdom=kingdom)]\n\nif \"cure\" not in titres:\n  kingdom.start_pending_event(\"tuto_pretre_eveche\")\nelif \"ambassadeur\" not in titres:\n  kingdom.start_pending_event(\"tuto_toofewcourtisants\")\nelif \"tresorier\" not in titres:\n  kingdom.start_pending_event(\"tuto_toomuchecus\")\nelse:\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_forcertitre_random\")\n  \nstop(S.GHOST_EVENT)\n", 
     "slug": "tuto_forcertitre_random_fantome", 
     "condition": " "
   }
@@ -52542,7 +52838,7 @@
     "weight": 1, 
     "text": " ", 
     "image": "", 
-    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchoose_banquet = random_value(1,3)\ndanseuses = Folk.objects.filter(mission = None,\n                                kingdom=kingdom,\n                                sex=Folk.FEMALE,\n                                birth__lte=datetime.now() - timedelta(days=C.MAJORITE)).count()\n#recherche des possibilit\u00e9s de suite\nchatelain=kingdom.get_folk_in_title(\"chatelain\")\ntoast = False\nfuckers = Folk.objects.filter(kingdom=kingdom,\n                              mission=None,\n                              birth__lte=datetime.now() - timedelta(days=C.MAJORITE),\n                              sex=Folk.MALE,\n                              loyalty__lte=20).order_by('?')\nloyaux = Folk.objects.filter(kingdom=kingdom,\n                             mission=None,\n                             birth__lte=datetime.now() - timedelta(days=C.MAJORITE),\n                             sex=Folk.MALE,\n                             loyalty__gte=80).exclude(id=chatelain.id)\n\nif chatelain.diplomacy >=9 or fuckers.count() >= 1 or loyaux.count() >= 1:\n  toast = True\n\nif choose_banquet == 1 and danseuses != 0:\n  kingdom.create_pending_event(\"banquet_danse\").start()\nelif choose_banquet <= 2 and toast == True:\n  nb_folk_actuels = Folk.objects.filter(kingdom=kingdom,\n                                     mission=None,\n                                     birth__lte=datetime.now() - timedelta(days=C.MAJORITE),\n                                     ).count()\n  choose_toast = random_value (1, nb_folk_actuels)\n  if choose_toast > fuckers and choose_toast < loyaux:\n    kingdom.create_pending_event(\"banquet_toast_chatelain\").start()\n  elif choose_toast <= fuckers.count():\n    pe = kingdom.create_pending_event(\"banquet_toast_fucker\")\n    pe.set_value(\"fucker\", fuckers[0])\n    pe.start()\n  else:\n    pe = kingdom.create_pending_event(\"banquet_toast_loyaliste\")\n    pe.set_value(\"loyaliste\", loyaux[0])\n    pe.start()           \nelse:\n  kingdom.create_pending_event(\"banquet_beuverie\").start()\nstatus = S.GHOST_EVENT\n", 
+    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchoose_banquet = random_value(1,3)\ndanseuses = Folk.objects.filter(mission = None,\n                                kingdom=kingdom,\n                                sex=Folk.FEMALE,\n                                birth__lte=datetime.now() - timedelta(days=C.MAJORITE)).count()\n#recherche des possibilit\u00e9s de suite\nchatelain=kingdom.get_folk_in_title(\"chatelain\")\ntoast = False\nfuckers = Folk.objects.filter(kingdom=kingdom,\n                              mission=None,\n                              birth__lte=datetime.now() - timedelta(days=C.MAJORITE),\n                              sex=Folk.MALE,\n                              loyalty__lte=20).order_by('?')\nloyaux = Folk.objects.filter(kingdom=kingdom,\n                             mission=None,\n                             birth__lte=datetime.now() - timedelta(days=C.MAJORITE),\n                             sex=Folk.MALE,\n                             loyalty__gte=80).exclude(id=chatelain.id)\n\nif chatelain.diplomacy >=9 or fuckers.count() >= 1 or loyaux.count() >= 1:\n  toast = True\n\nif choose_banquet == 1 and danseuses != 0:\n  kingdom.create_pending_event(\"banquet_danse\").start()\nelif choose_banquet <= 2 and toast == True:\n  nb_folk_actuels = Folk.objects.filter(kingdom=kingdom,\n                                     mission=None,\n                                     birth__lte=datetime.now() - timedelta(days=C.MAJORITE),\n                                     ).count()\n  choose_toast = random_value (1, nb_folk_actuels)\n  if choose_toast > fuckers and choose_toast < loyaux:\n    kingdom.create_pending_event(\"banquet_toast_chatelain\").start()\n  elif choose_toast <= fuckers.count():\n    pe = kingdom.create_pending_event(\"banquet_toast_fucker\")\n    pe.set_value(\"fucker\", fuckers[0])\n    pe.start()\n  else:\n    pe = kingdom.create_pending_event(\"banquet_toast_loyaliste\")\n    pe.set_value(\"loyaliste\", loyaux[0])\n    pe.start()           \nelse:\n  kingdom.create_pending_event(\"banquet_beuverie\").start()\nstop(S.GHOST_EVENT)\n", 
     "slug": "banquet_fantome", 
     "condition": " "
   }
@@ -52962,7 +53258,7 @@
     "weight": 1, 
     "text": " ", 
     "image": "", 
-    "on_fire": "if kingdom.get_folk_in_title(\"maitre_espion\") is None:\n  kingdom.start_pending_event(\"tuto_scandale_fille\")\nelse:\n  if kingdom.get_folk_in_title(\"maitre_espion\")==folks[2] or kingdom.get_folk_in_title(\"maitre_espion\")==folks[3]:\n    kingdom.start_pending_event(\"tuto_scandale_fils_warning\")\n  else:\n    kingdom.start_pending_event(\"tuto_scandale_fille_warning\")\nstatus = S.GHOST_EVENT\n", 
+    "on_fire": "if kingdom.get_folk_in_title(\"maitre_espion\") is None:\n  kingdom.start_pending_event(\"tuto_scandale_fille\")\nelse:\n  if kingdom.get_folk_in_title(\"maitre_espion\")==folks[2] or kingdom.get_folk_in_title(\"maitre_espion\")==folks[3]:\n    kingdom.start_pending_event(\"tuto_scandale_fils_warning\")\n  else:\n    kingdom.start_pending_event(\"tuto_scandale_fille_warning\")\nstop(S.GHOST_EVENT)\n", 
     "slug": "tuto_scandale_fantome", 
     "condition": "\n"
   }
@@ -53088,7 +53384,7 @@
     "weight": 1, 
     "text": " ", 
     "image": "", 
-    "on_fire": "facheux = folks.filter(sex=Folk.MALE, birth__lte=datetime.now()-timedelta(days=C.MAJORITE))\nfacheux = facheux.exclude(id__in=[folks[0].id, folks[1].id, folks[3].id])\nfacheux = facheux.exclude(quality_set__slug=\"pretre\")\nfacheux = facheux.order_by('?')\nif not facheux:\n  \n  kingdom.start_pending_event(\"tuto_facheux_chevalier\")\n  \n  \nelse:\n  param.set_value(\"facheux\", facheux[0])\n  param.next_event(\"tuto_facheux\").start()\n\nstatus = S.GHOST_EVENT\n", 
+    "on_fire": "facheux = folks.filter(sex=Folk.MALE, birth__lte=datetime.now()-timedelta(days=C.MAJORITE))\nfacheux = facheux.exclude(id__in=[folks[0].id, folks[1].id, folks[3].id])\nfacheux = facheux.exclude(quality_set__slug=\"pretre\")\nfacheux = facheux.order_by('?')\nif not facheux:\n  \n  kingdom.start_pending_event(\"tuto_facheux_chevalier\")\n  \n  \nelse:\n  param.set_value(\"facheux\", facheux[0])\n  param.next_event(\"tuto_facheux\").start()\n\nstop(S.GHOST_EVENT)\n", 
     "slug": "tuto_facheux_fantome", 
     "condition": "\n"
   }
@@ -53270,7 +53566,7 @@
     "weight": 1, 
     "text": "Permet de lancer le bon texte", 
     "image": "", 
-    "on_fire": "if kingdom.get_folk_in_title(\"connetable\"):\n  param.next_event(\"tuto_bandits_connetable\").start()\nelif kingdom.get_folk_in_title(\"maitre_espion\"):\n  param.next_event(\"tuto_bandits_maitre_espion\").start()\nelif kingdom.get_folk_in_title(\"chambellan\"):\n  param.next_event(\"tuto_bandits_chambellan\").start()\nelse:\n  param.next_event(\"tuto_bandits_cure\").start()\n\nstatus = \"bandits fantome\"\n      ", 
+    "on_fire": "if kingdom.get_folk_in_title(\"connetable\"):\n  param.next_event(\"tuto_bandits_connetable\").start()\nelif kingdom.get_folk_in_title(\"maitre_espion\"):\n  param.next_event(\"tuto_bandits_maitre_espion\").start()\nelif kingdom.get_folk_in_title(\"chambellan\"):\n  param.next_event(\"tuto_bandits_chambellan\").start()\nelse:\n  param.next_event(\"tuto_bandits_cure\").start()\n\nstop(\"bandits fantome\")\n      ", 
     "slug": "tuto_bandits_fantome", 
     "condition": "\n"
   }
@@ -53298,7 +53594,7 @@
     "weight": 1, 
     "text": "bla", 
     "image": "", 
-    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\n# Qu'arrive-t-il au nourrisson ? \nr = random_value(1,100)\n\n#For test purposes only\nr = 88\n\nif r < 78:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  naissance = param.next_event('naissance_unique')\n  naissance.start() \n  \nelif r < 88:\n  # l'enfant est mort n\u00e9 (un soulagement pour certains, une grande peine pour d'autres, c'est toujours mieux que ce qui vient apr\u00e8s)\n  mort_ne = param.next_event('mort_ne')\n  mort_ne.start()\n\nelif r < 91:\n  # les deux meurent (putain, \u00e7a c'est vraiment pas de bol!)\n  bloodbath = param.next_event('mort_couches_double')\n  bloodbath.start()\n  \nelif r < 100:\n  # Ce sont des jumeaux qui naissent (oups, deux bouches au lieu d'une)\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nelif r == 100:\n  # Et bim, des tripl\u00e9s, tu vas voir la gueule de ton budget couches !!!\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nstatus = S.GHOST_EVENT\n", 
+    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\n# Qu'arrive-t-il au nourrisson ? \nr = random_value(1,100)\n\n#For test purposes only\nr = 88\n\nif r < 78:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  naissance = param.next_event('naissance_unique')\n  naissance.start() \n  \nelif r < 88:\n  # l'enfant est mort n\u00e9 (un soulagement pour certains, une grande peine pour d'autres, c'est toujours mieux que ce qui vient apr\u00e8s)\n  mort_ne = param.next_event('mort_ne')\n  mort_ne.start()\n\nelif r < 91:\n  # les deux meurent (putain, \u00e7a c'est vraiment pas de bol!)\n  bloodbath = param.next_event('mort_couches_double')\n  bloodbath.start()\n  \nelif r < 100:\n  # Ce sont des jumeaux qui naissent (oups, deux bouches au lieu d'une)\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nelif r == 100:\n  # Et bim, des tripl\u00e9s, tu vas voir la gueule de ton budget couches !!!\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nstop(S.GHOST_EVENT)\n", 
     "slug": "accouchement_fantome", 
     "condition": "\n"
   }
@@ -53662,7 +53958,7 @@
     "weight": 1, 
     "text": "Fant\u00f4me", 
     "image": "", 
-    "on_fire": "if kingdom.get_value(\"tuto_mariage_fait\"):\n  param.next_event(\"mariagelunedemiel_success\").start()\nelse:\n  param.next_event(\"demandemariage_doublecheck\").start()\n  \nstatus = S.GHOST_EVENT\n", 
+    "on_fire": "if kingdom.get_value(\"tuto_mariage_fait\"):\n  param.next_event(\"mariagelunedemiel_success\").start()\nelse:\n  param.next_event(\"demandemariage_doublecheck\").start()\n  \nstop(S.GHOST_EVENT)\n", 
     "slug": "tuto_mariage_fille_accepte_fantome", 
     "condition": "\n"
   }
@@ -53676,7 +53972,7 @@
     "weight": 1, 
     "text": "Second fant\u00f4me du mariage", 
     "image": "", 
-    "on_fire": "if kingdom.get_value(\"tuto_mariage_fait\"):\n  param.next_event(\"mariagelunedemiel_success\").start()\nelse:\n  param.next_event(\"demandemariage_terminated\").start()\n  \nstatus = S.GHOST_EVENT\n", 
+    "on_fire": "if kingdom.get_value(\"tuto_mariage_fait\"):\n  param.next_event(\"mariagelunedemiel_success\").start()\nelse:\n  param.next_event(\"demandemariage_terminated\").start()\n  \nstop(S.GHOST_EVENT)\n", 
     "slug": "tuto_mariage_fille_accepte_fantome_2", 
     "condition": "\n"
   }
@@ -53774,7 +54070,7 @@
     "weight": 1, 
     "text": "check si le joueur peut subir une attaque si oui il se fait attaquer sinon on lui donne des ressources", 
     "image": "", 
-    "on_fire": "#gar\u00e7ons qui ont au moins 8 en combat, sont adultes et pas disable\nnb_chevaliers_dispo=kingdom.folk_set.all().count()\nseuil_troupes_min=0.8*0.07*float(kingdom.prestige*2)\nthune_mini=10 #de quoi recruter 2 chevaliers\n\nif ((kingdom.soldiers>seuil_troupes_min and nb_chevaliers_dispo>=3) or kingdom.get_value(\"tuto_warning_incapable_subir_attaque\",False)):\n  kingdom.create_pending_event(\"tuto_attaque_par_pnj\").start()\n  kingdom.set_value(\"tuto_warning_incapable_subir_attaque\",False)\nelse:\n  kingdom.set_value(\"tuto_warning_incapable_subir_attaque\",True)\n  param.next_event(\"tuto_regeneration_armee\").start()\n\nstatus = S.GHOST_EVENT\n", 
+    "on_fire": "#gar\u00e7ons qui ont au moins 8 en combat, sont adultes et pas disable\nnb_chevaliers_dispo=kingdom.folk_set.all().count()\nseuil_troupes_min=0.8*0.07*float(kingdom.prestige*2)\nthune_mini=10 #de quoi recruter 2 chevaliers\n\nif ((kingdom.soldiers>seuil_troupes_min and nb_chevaliers_dispo>=3) or kingdom.get_value(\"tuto_warning_incapable_subir_attaque\",False)):\n  kingdom.create_pending_event(\"tuto_attaque_par_pnj\").start()\n  kingdom.set_value(\"tuto_warning_incapable_subir_attaque\",False)\nelse:\n  kingdom.set_value(\"tuto_warning_incapable_subir_attaque\",True)\n  param.next_event(\"tuto_regeneration_armee\").start()\n\nstop(S.GHOST_EVENT)\n", 
     "slug": "tuto_scanjoueur_fantome", 
     "condition": "\n"
   }
@@ -53814,8 +54110,8 @@
     "category": null, 
     "name": "Rapport d'espionnage", 
     "weight": 1, 
-    "text": "Le voisin a des fils et filles \u00e0 marier,  il est possible que nous puissions r\u00e9soudre la guerre par un mariage.", 
-    "image": "", 
+    "text": "{{title.maitre_espion}}, mon ma\u00eetre espion, s'avance avec un sourire satisfait. \"Mes agents ont bien travaill\u00e9, messire\". Je saisit la missive qu'{{title.maitre_espion|feminize:\"il,elle\"}} me tend, et sourit \u00e0 mon tour en d\u00e9couvrant son contenu.\"Je vois... Ils ont assez r\u00e9serve pour se battre encore longtemps. Comme nous le pensions, les forces {{dynastie_ennemi}} sont principalement constitu\u00e9es {{type_pnj|elide:\"de,d'\"}}{{type_pnj}}s. {% if type_pnj == archer %}Si nous parvenons \u00e0 les engager avec notre cavalerie, ils d\u00e9taleront comme des lapins.{% elif type_pnj == cavalier %}Si nous brisons leur charge sur un rang de piquiers, la victoire sera notre.{% else %}Avec suffisamment d'archers, nous devrions pouvoir les d\u00e9cimer avant qu'ils n\u2019atteignent le corps \u00e0 corps.{% endif %}. \" {{title.maitre_espion|feminize:\"Il,Elle\"}} opine en silence, et semble h\u00e9siter \u00e0 prendre la parole. Je '{{title.maitre_espion|feminize:\"le,la\"}} d\u00e9visage et fronce les sourcils.  \"Avez-vous d\u00e9couvert autre chose?\"", 
+    "image": "events/475.jpg", 
     "on_fire": "kingdom.set_value(\"tuto_rapport_espion\",True)\n", 
     "slug": "tuto_rapport_espion", 
     "condition": "\n"
@@ -54270,7 +54566,7 @@
     "text": "Je vais demander \u00e0 {{title.tresorier}} d\u2019\u00e9tudier la question.  ", 
     "message": "", 
     "event": 18, 
-    "condition": "if kingdom.get_folk_in_title(\"tresorier\") is None:\n  status =\"n'a pas de tr\u00e9sorier\"\n", 
+    "condition": "if kingdom.get_folk_in_title(\"tresorier\") is None:\n  stop(\"n'a pas de tr\u00e9sorier\")\n", 
     "on_fire": "\npe = kingdom.create_pending_event(\"tuto_caissesvides_2\")\npe.started = datetime.now() + timedelta(minutes=2)\npe.start()\n"
   }
 },
@@ -54447,7 +54743,7 @@
     "message": "", 
     "event": 41, 
     "condition": " ", 
-    "on_fire": "if param.get_value(\"attaquant\"):\n  pe=param.next_event(\"tuto_escarmouche_pillage\").start()  \nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n"
+    "on_fire": "if param.get_value(\"attaquant\"):\n  pe=param.next_event(\"tuto_escarmouche_pillage\").start()  \nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_espionnage\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n"
   }
 },
 {
@@ -54864,7 +55160,7 @@
     "text": "Je vais nommer un tr\u00e9sorier pour optimiser mes d\u00e9penses et trouver de nouvelles sources de revenu.", 
     "message": "Il est urgent de charger un [tr\u00e9sorier](#title) de r\u00e9gler nos probl\u00e8mes d'argent", 
     "event": 18, 
-    "condition": "if kingdom.get_folk_in_title(\"tresorier\") is not None:\n  status =\"a d\u00e9j\u00e0 un tr\u00e9sorier\"\n", 
+    "condition": "if kingdom.get_folk_in_title(\"tresorier\") is not None:\n  stop(\"a d\u00e9j\u00e0 un tr\u00e9sorier\")\n", 
     "on_fire": "kingdom.unlock_title(\"tresorier\")\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_caissesvides\")\n"
   }
 },
@@ -55029,7 +55325,7 @@
     "text": "{{convive|feminize:\"Tant pis pour lui, Tant pis pour elle\"}}.", 
     "message": "", 
     "event": 101, 
-    "condition": "convive = param.get_value(\"convive\")\nchatelain = kingdom.get_folk_in_title(\"chatelain\")\nif convive.loyalty <= 30 or chatelain.diplomacy <= 3:\n  status = \"trop d'estime pour faire ca\"\n", 
+    "condition": "convive = param.get_value(\"convive\")\nchatelain = kingdom.get_folk_in_title(\"chatelain\")\nif convive.loyalty <= 30 or chatelain.diplomacy <= 3:\n  stop(\"trop d'estime pour faire ca\")\n", 
     "on_fire": "param.next_event(\"banquet_fantome\").start()"
   }
 },
@@ -55040,7 +55336,7 @@
     "text": "{{convive|feminize:\"Qu'il aille au diable!,Pimb\u00e8che...\"}} `-2 de Loyaut\u00e9`", 
     "message": "{{convive}} n'a aucune intention de parler avec moi. ```-2 de Loyaut\u00e9```", 
     "event": 101, 
-    "condition": "convive = param.get_value(\"convive\")\nchatelain = kingdom.get_folk_in_title(\"chatelain\")\nif convive.loyalty > 30 and chatelain.diplomacy < 3:\n  status = \"Il ne m\u00e9rite pas tant\"\n", 
+    "condition": "convive = param.get_value(\"convive\")\nchatelain = kingdom.get_folk_in_title(\"chatelain\")\nif convive.loyalty > 30 and chatelain.diplomacy < 3:\n  stop(\"Il ne m\u00e9rite pas tant\")\n", 
     "on_fire": "convive = param.get_value(\"convive\")\nconvive.loyalty -= 2\nconvive.save()\nparam.next_event(\"banquet_fantome\").start()"
   }
 },
@@ -55095,7 +55391,7 @@
     "text": "Inviter {{danseuse1}} \u00e0 danser.", 
     "message": "", 
     "event": 105, 
-    "condition": "try:\n  param.get_value(\"danseuse1\")\nexcept:\n  status =\"il n'y a pas de deuxi\u00e8me danseuse\"", 
+    "condition": "try:\n  param.get_value(\"danseuse1\")\nexcept:\n  stop(\"il n'y a pas de deuxi\u00e8me danseuse\")", 
     "on_fire": "danseuse = param.get_value(\"danseuse1\")\nparam.set_value(\"danseuse\", danseuse)\nchatelain = kingdom.get_folk_in_title(\"chatelain\")\n\nif danseuse.loyalty <= 30 :\n  param.next_event(\"banquet_danse_rateau\").start()\nelif chatelain.diplomacy <= 7:\n  param.next_event(\"banquet_danse_failure\").start()\nelse:\n  param.next_event(\"banquet_danse_success\").start()"
   }
 },
@@ -55106,7 +55402,7 @@
     "text": "Je pr\u00e9f\u00e8re danser avec {{danseuse2}}.", 
     "message": "", 
     "event": 105, 
-    "condition": "try:\n  param.get_value(\"danseuse2\")\nexcept:\n  status =\"il n'y a pas de deuxi\u00e8me danseuse\"\n", 
+    "condition": "try:\n  param.get_value(\"danseuse2\")\nexcept:\n  stop(\"il n'y a pas de deuxi\u00e8me danseuse\")\n", 
     "on_fire": "danseuse = param.get_value(\"danseuse2\")\nparam.set_value(\"danseuse\", danseuse)\nchatelain = kingdom.get_folk_in_title(\"chatelain\")\n\nif danseuse.loyalty <= 30 :\n  param.next_event(\"banquet_danse_rateau\").start()\nelif chatelain.diplomacy <= 7:\n  param.next_event(\"banquet_danse_failure\").start()\nelse:\n  param.next_event(\"banquet_danse_success\").start()\n"
   }
 },
@@ -55150,7 +55446,7 @@
     "text": "L\u2019arr\u00eater tout net.", 
     "message": "", 
     "event": 109, 
-    "condition": "if kingdom.get_folk_in_title(\"chatelain\").diplomacy > 10:\n  status=\"pas assez de diplomatie pour ne pas le vexer\"\n", 
+    "condition": "if kingdom.get_folk_in_title(\"chatelain\").diplomacy > 10:\n  stop(\"pas assez de diplomatie pour ne pas le vexer\")\n", 
     "on_fire": "param.next_event(\"banquet_beuverie_vexe\").start()\n"
   }
 },
@@ -55161,7 +55457,7 @@
     "text": "Refuser avec tact.", 
     "message": "", 
     "event": 109, 
-    "condition": "if kingdom.get_folk_in_title(\"chatelain\").diplomacy <= 10:\n  status=\"trop de diplomatie pour le vexer\"\n", 
+    "condition": "if kingdom.get_folk_in_title(\"chatelain\").diplomacy <= 10:\n  stop(\"trop de diplomatie pour le vexer\")\n", 
     "on_fire": "param.next_event(\"banquet_ending\").start()\n"
   }
 },
@@ -55414,7 +55710,7 @@
     "text": "Je veux danser avec ma femme {{femme_chatelain.first_name}}", 
     "message": "", 
     "event": 105, 
-    "condition": "if kingdom.get_folk_in_title(\"chatelain\").spouse == None:\n  status = \"Le chatelain n'a pas d'\u00e9pouse\"\n", 
+    "condition": "if kingdom.get_folk_in_title(\"chatelain\").spouse == None:\n  stop(\"Le chatelain n'a pas d'\u00e9pouse\")\n", 
     "on_fire": "danseuse = title.chatelain.spouse\nparam.set_value(\"danseuse\", danseuse)\nchatelain = kingdom.get_folk_in_title(\"chatelain\")\n\nif danseuse.loyalty <= 30 :\n  param.next_event(\"banquet_danse_rateau\").start()\nelif chatelain.diplomacy <= 7:\n  param.next_event(\"banquet_danse_failure\").start()\nelse:\n  param.next_event(\"banquet_danse_success\").start()\n\n\n"
   }
 },
@@ -55469,7 +55765,7 @@
     "text": "Mensonge : \"Le plaisir est partag\u00e9, ma soeur. Cela fait bien trop longtemps\".", 
     "message": "", 
     "event": 133, 
-    "condition": "if kingdom.get_folk_in_title(\"chatelain\").plot <= 8:\n  status = \"pas assez d'intrigue\"\n", 
+    "condition": "if kingdom.get_folk_in_title(\"chatelain\").plot <= 8:\n  stop(\"pas assez d'intrigue\")\n", 
     "on_fire": "soeur = param.get_value(\"soeur\")\nsoeur.loyalty += 10\nsoeur.save()\n\nparam.set_value(\"compliment\", True)\nparam.set_value(\"injure\", False)\n\n\nparam.next_event(\"tuto_soeurette_3\").start()\n"
   }
 },
@@ -55876,7 +56172,7 @@
     "text": "R\u00e9unir les deux inconscients pour les convaincre de faire la paix.", 
     "message": "", 
     "event": 154, 
-    "condition": "if kingdom.get_folk_in_title(\"chatelain\").diplomacy<9:\n  status=\"Ce message n'apparaitra pas\"\n", 
+    "condition": "if kingdom.get_folk_in_title(\"chatelain\").diplomacy<9:\n  stop(\"Ce message n'apparaitra pas\")\n", 
     "on_fire": "param.next_event(\"tuto_facheux_settle\").start()"
   }
 },
@@ -55898,7 +56194,7 @@
     "text": "Peu importe ce qu'ils en pensent, c'est la s\u00e9curit\u00e9 de mon fils qui est en jeu!", 
     "message": "Mon fils {{folk.1.first_name}} et le {{facheux}} sont \u00e0 couteaux tir\u00e9s. Je pourrais regler le probl\u00e8me en [d\u00e9barassant](mission) ma cour du chevalier.", 
     "event": 155, 
-    "condition": "if param.get_value(\"come_from\") != 5:\n  status = \"ce choix n'apparait pas\"\n", 
+    "condition": "if param.get_value(\"come_from\") != 5:\n  stop(\"ce choix n'apparait pas\")\n", 
     "on_fire": "param.set_value(\"come_from\", 3)\nparam.next_event(\"tuto_facheux_7\").start()\n"
   }
 },
@@ -55920,7 +56216,7 @@
     "text": "Je ne peux pas me permettre de me mettre ma cour \u00e0 dos. Laissons la situation se r\u00e9soudre par elle m\u00eame.", 
     "message": "Mon fils {{folk.1.first_name}} et le {{facheux}} sont \u00e0 couteaux tir\u00e9s.", 
     "event": 155, 
-    "condition": "if param.get_value(\"come_from\") == 5:\n  status = \"ce choix n'apparait pas\"\n", 
+    "condition": "if param.get_value(\"come_from\") == 5:\n  stop(\"ce choix n'apparait pas\")\n", 
     "on_fire": "param.set_value(\"come_from\", 3)\nparam.next_event(\"tuto_facheux_5\").start()"
   }
 },
@@ -56184,7 +56480,7 @@
     "text": "Navr\u00e9, mais je n'ai pas de place pour vous. {{title.ambassadeur.first_name}} va vous d\u00e9domager pour votre peine. `-30 ecus`.", 
     "message": "Je n'ai pas voulu du chevalier {{chevalier}} dans ma cour. ```-30 \u00e9cus de compensation.```", 
     "event": 179, 
-    "condition": "if kingdom.money < 30:\n  status = \"Not enough minerals\"\n", 
+    "condition": "if kingdom.money < 30:\n  stop(\"Not enough minerals\")\n", 
     "on_fire": "kingdom.money -= 30\nkingdom.save()\n"
   }
 },
@@ -56206,7 +56502,7 @@
     "text": "\"Malheureusement, cette offre ne tient plus. Permettez que {{title.ambassadeur.first_name}} vous d\u00e9dommage pour votre p\u00e9riple\". `-30 ecus`.", 
     "message": "Je n'ai pas voulu de dame {{dame}} dans ma cour. ```-30 \u00e9cus de compensation.```", 
     "event": 180, 
-    "condition": "if kingdom.money < 30:\n  status = \"Not enough minerals\"\n", 
+    "condition": "if kingdom.money < 30:\n  stop(\"Not enough minerals\")\n", 
     "on_fire": "kingdom.money -= 30\nkingdom.save()"
   }
 },
@@ -56239,7 +56535,7 @@
     "text": "\"Je regrette, mais les choses ont chang\u00e9es et vos services ne sont plus necessaires... Voici une obole \u00e0 remettre \u00e0 monseigneur l'\u00e9v\u00eaque, avec mes humbles excuses\". `-30 ecus`.", 
     "message": "Je n'ai pas voulu du p\u00e8re {{pretre}} dans ma cour. ```-30 \u00e9cus de compensation.```", 
     "event": 182, 
-    "condition": "if kingdom.money < 30:\n  status = \"Not enough minerals\"\n", 
+    "condition": "if kingdom.money < 30:\n  stop(\"Not enough minerals\")\n", 
     "on_fire": "kingdom.money -= 30\nkingdom.save()\n"
   }
 },
@@ -56338,7 +56634,7 @@
     "text": "Prendre le temps d'en discuter davantage, en essayant de les r\u00e9concilier.", 
     "message": "", 
     "event": 192, 
-    "condition": "if kingdom.get_folk_in_title(\"chatelain\").diplomacy<12:\n  status=\"Ce message n'apparaitra pas\"", 
+    "condition": "if kingdom.get_folk_in_title(\"chatelain\").diplomacy<12:\n  stop(\"Ce message n'apparaitra pas\")", 
     "on_fire": "param.next_event(\"tuto_facheux_settle_3\").start()"
   }
 },
@@ -56492,7 +56788,7 @@
     "text": "\"ASSEZ\" Faisant fi des r\u00e8gles du duel, j'avance d'un pas et pointe un doigt furieux sur sire {{facheux.first_name}}. \"Chevalier {{facheux.last_name}}, vous avez vers\u00e9 le premier sang. Cela devra vous suffire!\"", 
     "message": "", 
     "event": 212, 
-    "condition": "if param.get_value(\"duelist_lessfight\") == folks[1]:\n  status = \"error\"\n", 
+    "condition": "if param.get_value(\"duelist_lessfight\") == folks[1]:\n  stop(\"error\")\n", 
     "on_fire": "param.set_value(\"detourne\", True)\nparam.next_event(\"tuto_facheux_duel_interrupt\").start()"
   }
 },
@@ -56558,7 +56854,7 @@
     "text": "\"ASSEZ!\" Faisant fi des r\u00e8gles du duel, j'avance d'un pas et pointe un doigt furieux sur sire {{facheux.first_name}}. \"Chevalier {{facheux.last_name}}, mon fils a vers\u00e9 le premier sang. Je le d\u00e9clare vainqueur de ce duel !\"", 
     "message": "", 
     "event": 212, 
-    "condition": "if param.get_value(\"duelist_lessfight\") == param.get_value(\"facheux\"):\n  status = \"error\"\n", 
+    "condition": "if param.get_value(\"duelist_lessfight\") == param.get_value(\"facheux\"):\n  stop(\"error\")\n", 
     "on_fire": "\n"
   }
 },
@@ -56569,7 +56865,7 @@
     "text": "Je dois agir.", 
     "message": "", 
     "event": 158, 
-    "condition": "if param.get_value(\"come_from\") != 2:\n  status = \"ce boutton n'apparait pas\"\n", 
+    "condition": "if param.get_value(\"come_from\") != 2:\n  stop(\"ce boutton n'apparait pas\")\n", 
     "on_fire": "param.set_value(\"come_from\", 5)\nparam.next_event(\"tuto_facheux_3\").start()"
   }
 },
@@ -56580,7 +56876,7 @@
     "text": "Je dois agir.", 
     "message": "", 
     "event": 158, 
-    "condition": "if param.get_value(\"come_from\") == 2:\n  status = \"ce boutton n'apparait pas\"\n", 
+    "condition": "if param.get_value(\"come_from\") == 2:\n  stop(\"ce boutton n'apparait pas\")\n", 
     "on_fire": "param.set_value(\"come_from\", 5)\nparam.next_event(\"tuto_facheux_7\").start()\n"
   }
 },
@@ -56691,7 +56987,7 @@
     "message": "", 
     "event": 236, 
     "condition": "\n", 
-    "on_fire": "if (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()"
+    "on_fire": "if (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_espionnage\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()"
   }
 },
 {
@@ -56702,18 +56998,18 @@
     "message": "", 
     "event": 237, 
     "condition": "\n", 
-    "on_fire": "if (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()"
+    "on_fire": "if (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_espionnage\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()"
   }
 },
 {
   "pk": 305, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "ok", 
-    "message": "", 
+    "text": "\"En effet, mon seigneur...\"", 
+    "message": "Mon ma\u00eetre espion est formel : l'arm\u00e9e de {ennemi}} contient de nombreux {{type_pnj}}. Ils peuvent \u00eatre contr\u00e9 par des", 
     "event": 238, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "param.next_event(\"tuto_rapport_espion_2\").start()\n"
   }
 },
 {
@@ -56922,7 +57218,7 @@
     "message": "", 
     "event": 257, 
     "condition": "\n", 
-    "on_fire": "if (param.get_value(\"attaquant\")==False):\n  pe=param.next_event(\"tuto_escarmouche_misasac\").start()\nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",False)==False):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",False)==False):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n\n"
+    "on_fire": "if (param.get_value(\"attaquant\")==False):\n  pe=param.next_event(\"tuto_escarmouche_misasac\").start()\nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",False)==False):\n  pe=param.next_event(\"tuto_espionnage\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",False)==False):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n\n"
   }
 },
 {
@@ -57138,6 +57434,18 @@
   }
 },
 {
+  "pk": 3484, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 118, 
+    "is_started": true, 
+    "created": "2013-10-14T22:15:27.474", 
+    "started": "2013-10-14T22:15:27.599", 
+    "text": "En arrivant au sommet de la cr\u00eate, nous tirons sur nos brides et nous nous autorisons enfin une pause, afin de contempler le ch\u00e2teau qui se dessine en contrebas. Suphitia, \u00e0 ma droite, \u00e0 les joues rougies par le froid de l\u2019hiver. \r\n\u201cEst-ce celui-ci, p\u00e8re? Sommes-nous arriv\u00e9?\u201d. Sa voix n\u2019est qu\u2019un murmure dans lequel perce l'excitation de la jeunesse. \r\n\u201cOui, ma fille. remi. La terre de nos a\u00efeux.\u201d \r\nSans un regard en arri\u00e8re, je guide mon cheval sur le sentier qui serpente jusque dans la vall\u00e9e. Suphitia m'embo\u00eete le pas, suivit de pr\u00e8s par son fr\u00e8re Albald et par Balot, mon compagnon de toujours qui garde sa main sur le pommeau de son \u00e9p\u00e9e.", 
+    "event": 3
+  }
+},
+{
   "pk": 2276, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -57300,6 +57608,17 @@
     "text": "J'attends que quelque chose attire mon attention.", 
     "folk": null, 
     "event_action": 293
+  }
+},
+{
+  "pk": 3714, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 3484, 
+    "message": "", 
+    "text": "Notre voyage s'ach\u00e8ve.", 
+    "folk": null, 
+    "event_action": 5
   }
 },
 {
@@ -57750,6 +58069,33 @@
     "pending_event": 3483, 
     "name": "slug", 
     "value": "tuto_forcertitre_random"
+  }
+},
+{
+  "pk": 9976, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3484, 
+    "name": "fils", 
+    "value": "`Folk`:7540"
+  }
+},
+{
+  "pk": 9977, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3484, 
+    "name": "fille", 
+    "value": "`Folk`:7541"
+  }
+},
+{
+  "pk": 9978, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3484, 
+    "name": "compagnon", 
+    "value": "`Folk`:7542"
   }
 },
 {
@@ -87835,6 +88181,230 @@
   }
 },
 {
+  "pk": 10653, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10654, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 14, 
+    "queries": 5
+  }
+},
+{
+  "pk": 10655, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 14, 
+    "time": 236, 
+    "queries": 19
+  }
+},
+{
+  "pk": 10656, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 118, 
+    "stack_level": 2, 
+    "object_pk": 1, 
+    "object_type": "Title", 
+    "object_attr": "on_unlock", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10657, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10658, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 118, 
+    "stack_level": 3, 
+    "object_pk": 33, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 6, 
+    "queries": 3
+  }
+},
+{
+  "pk": 10659, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 12, 
+    "queries": 5
+  }
+},
+{
+  "pk": 10660, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 21, 
+    "time": 99, 
+    "queries": 29
+  }
+},
+{
+  "pk": 10661, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10662, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 12, 
+    "queries": 5
+  }
+},
+{
+  "pk": 10663, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 8, 
+    "time": 31, 
+    "queries": 13
+  }
+},
+{
+  "pk": 10664, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10665, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 118, 
+    "stack_level": 3, 
+    "object_pk": 8, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 7, 
+    "queries": 3
+  }
+},
+{
+  "pk": 10666, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 13, 
+    "queries": 5
+  }
+},
+{
+  "pk": 10667, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 22, 
+    "time": 92, 
+    "queries": 30
+  }
+},
+{
+  "pk": 10668, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 118, 
+    "stack_level": 1, 
+    "object_pk": 1, 
+    "object_type": "Trigger", 
+    "object_attr": "on_fire", 
+    "direct_queries": 56, 
+    "time": 951, 
+    "queries": 147
+  }
+},
+{
   "pk": 1, 
   "model": "auth.permission", 
   "fields": {
@@ -89026,13 +89596,13 @@
   "pk": 40, 
   "model": "auth.user", 
   "fields": {
-    "username": "remi", 
+    "username": "Remi", 
     "first_name": "R\u00e9mi", 
     "last_name": "Haglund", 
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-10-14T19:34:45.081", 
+    "last_login": "2013-10-14T22:16:04", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$10000$o6OwLPDRj9Ph$BLOjIokBkTlDkxak8lSIZH2k3ePXVWBeXBEcy8/hz0w=", 
@@ -89050,7 +89620,7 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-09-27T14:36:54.090", 
+    "last_login": "2013-10-14T21:45:23.251", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$10000$yINKp6NRHK8F$dc6Q/6j7MRoi3I+KbeQakISZfrlBcOUR3nYfj71TRb4=", 
@@ -140179,6 +140749,448 @@
   }
 },
 {
+  "pk": 8446, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T21:48:23.801", 
+    "object_repr": "Les bless\u00e9s peuvent mourir", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 8447, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T21:49:39.263", 
+    "object_repr": "tuto_rapport_espion", 
+    "object_id": "238", 
+    "change_message": "Modifi\u00e9 image, text, condition et on_fire. condition, on_fire, text et message modifi\u00e9 pour event action \u00ab\u00a0\"En effet, mon seigneur...\" [tuto_rapport_espion]\u00a0\u00bb.", 
+    "user": 40, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8448, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:02:22.181", 
+    "object_repr": "Les bless\u00e9s peuvent mourir", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 8449, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:04:17.140", 
+    "object_repr": "Les bless\u00e9s peuvent mourir", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 8450, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:04:25.707", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8451, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:04:44.391", 
+    "object_repr": "Les bless\u00e9s peuvent mourir", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 8452, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:04:58.974", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8453, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:05:14.183", 
+    "object_repr": "Les bless\u00e9s peuvent mourir", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 delay, kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 8454, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:05:44.874", 
+    "object_repr": "Les bless\u00e9s peuvent mourir", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 8455, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:06:01.089", 
+    "object_repr": "Les bless\u00e9s peuvent mourir", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 8456, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:06:20.439", 
+    "object_repr": "Les bless\u00e9s peuvent mourir", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 8457, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:06:53.403", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8458, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:07:11.669", 
+    "object_repr": "organiser_raid", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_raid [Attaquants (4)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8459, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:07:37.615", 
+    "object_repr": "tuto_escarmouche_defaite_2", 
+    "object_id": "257", 
+    "change_message": "Modifi\u00e9 condition. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ok [tuto_escarmouche_defaite_2]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8460, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:07:39.728", 
+    "object_repr": "Les bless\u00e9s peuvent mourir", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 8461, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:07:56.495", 
+    "object_repr": "tuto_escarmouche_misasac", 
+    "object_id": "236", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0ok [tuto_escarmouche_misasac]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8462, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:08:23.245", 
+    "object_repr": "tuto_claim", 
+    "object_id": "40", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0tuto_claim [Diplomates (20)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8463, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:08:47.443", 
+    "object_repr": "Les bless\u00e9s peuvent mourir", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 8464, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:08:59.662", 
+    "object_repr": "Les bless\u00e9s peuvent mourir", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 8465, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:09:31.655", 
+    "object_repr": "Les bless\u00e9s peuvent mourir", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 8466, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:09:43.093", 
+    "object_repr": "Les bless\u00e9s peuvent mourir", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 8467, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:10:45.006", 
+    "object_repr": "Les bless\u00e9s peuvent mourir", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 8468, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:10:47.708", 
+    "object_repr": "organiser_banquet", 
+    "object_id": "31", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0organiser_banquet [Organisateurs (20)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8469, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:10:55.433", 
+    "object_repr": "tuto_escarmouche_misasac", 
+    "object_id": "236", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0ok [tuto_escarmouche_misasac]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8470, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:11:22.091", 
+    "object_repr": "Les bless\u00e9s peuvent mourir", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 8471, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:11:47.048", 
+    "object_repr": "tuto_escarmouche_pillage", 
+    "object_id": "237", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Vae victis [tuto_escarmouche_pillage]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8472, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:12:17.114", 
+    "object_repr": "tuto_escarmouche_victoire_2", 
+    "object_id": "41", 
+    "change_message": "on_fire modifi\u00e9 pour event action \u00ab\u00a0{% if is_victory %}A nous le butin!{% else %}Nous  [tuto_escarmouche_victoire_2]\u00a0\u00bb.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8473, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:14:47.998", 
+    "object_repr": "Tr\u00e9sorier", 
+    "object_id": "7", 
+    "change_message": "Modifi\u00e9 on_unlock, condition, on_affect et on_defect.", 
+    "user": 1, 
+    "content_type": 15
+  }
+},
+{
+  "pk": 8474, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:15:18.752", 
+    "object_repr": "Conn\u00e9table", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 on_unlock, condition, on_affect et on_defect.", 
+    "user": 1, 
+    "content_type": 15
+  }
+},
+{
+  "pk": 8475, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-14T22:15:28.406", 
+    "object_repr": "remi kingdom", 
+    "object_id": "118", 
+    "change_message": "", 
+    "user": 40, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 8476, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:15:59.372", 
+    "object_repr": "Cur\u00e9", 
+    "object_id": "3", 
+    "change_message": "Modifi\u00e9 on_unlock, condition, on_affect et on_defect.", 
+    "user": 1, 
+    "content_type": 15
+  }
+},
+{
+  "pk": 8477, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:17:54.692", 
+    "object_repr": "Remi", 
+    "object_id": "40", 
+    "change_message": "Modifi\u00e9 username et password.", 
+    "user": 40, 
+    "content_type": 3
+  }
+},
+{
+  "pk": 8478, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:18:16.581", 
+    "object_repr": "Les bless\u00e9s peuvent mourir", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 8479, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:18:18.410", 
+    "object_repr": "tuto_intro", 
+    "object_id": "3", 
+    "change_message": "Modifi\u00e9 text et on_fire. on_fire et text modifi\u00e9 pour event action \u00ab\u00a0Une nouvelle histoire commence.  [tuto_intro]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
   "pk": 74, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -140286,6 +141298,17 @@
     "money": 39, 
     "user": 41, 
     "population": 145
+  }
+},
+{
+  "pk": 118, 
+  "model": "kingdom.kingdom", 
+  "fields": {
+    "soldiers": 0, 
+    "prestige": 107, 
+    "money": 88, 
+    "user": 40, 
+    "population": 0
   }
 }
 ]
