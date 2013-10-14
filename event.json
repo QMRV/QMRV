@@ -2643,9 +2643,9 @@
     "category": null, 
     "name": "Rapport d'espionnage", 
     "weight": 1, 
-    "text": "{{title.maitre_espion}}, mon ma\u00eetre espion, s'avance avec un sourire satisfait. \"Bonsoir, messire\". Je saisit la missive qu'{{title.maitre_espion|feminize:\"il,elle\"}} me tend, et sourit \u00e0 mon tour en d\u00e9couvrant son contenu.\"Je vois... Ils ont assez r\u00e9serve pour se battre encore longtemps. Comme nous le pensions, les forces {{dynastie_ennemi}} sont principalement constitu\u00e9es {{type_pnj|elide:\"de,d'\"}}{{type_pnj}}s. {% if type_pnj == archer %}Si nous parvenons \u00e0 les engager avec notre cavalerie, ils d\u00e9taleront comme des lapins.{% elif type_pnj == cavalier %}Si nous brisons leur charge sur un rang de piquiers, la victoire sera notre.{% else %}Avec suffisamment d'archers, nous devrions pouvoir les d\u00e9cimer avant qu'ils n\u2019atteignent le corps \u00e0 corps.{% endif %}. \" {{title.maitre_espion|feminize:\"Il,Elle\"}} opine en silence, et semble h\u00e9siter \u00e0 prendre la parole. Je '{{title.maitre_espion|feminize:\"le,la\"}} d\u00e9visage et fronce les sourcils.  \"Avez-vous d\u00e9couvert autre chose?\"", 
+    "text": "{{title.maitre_espion}}, mon ma\u00eetre espion, s'avance avec un sourire satisfait.\r\n\"Bonsoir, messire\".\r\n\r\nJe saisis la missive qu'{{title.maitre_espion|feminize:\"il,elle\"}} me tend, et sourit \u00e0 mon tour en d\u00e9couvrant son contenu.\r\n\"Je vois... Ils ont assez de r\u00e9serve pour se battre encore longtemps. Comme nous le pensions, les forces {{ennemi_last_name}} sont principalement constitu\u00e9es {{type_pnj|elide:\"de,d'\"}}{{type_pnj}}s. {% if type_pnj == \"archer\" %}Si nous parvenons \u00e0 les engager avec notre cavalerie, ils d\u00e9taleront comme des lapins.{% elif type_pnj == \"cavalier\" %}Si nous brisons leur charge sur un rang de piquiers, la victoire sera notre.{% else %}Avec suffisamment d'archers, nous devrions pouvoir les d\u00e9cimer avant qu'ils n\u2019atteignent le corps \u00e0 corps.{% endif %}. \"\r\n\r\n{{title.maitre_espion|feminize:\"Il,Elle\"}} opine en silence, et semble h\u00e9siter \u00e0 prendre la parole. Je {{title.maitre_espion|feminize:\"le,la\"}} d\u00e9visage et fronce les sourcils.  \"Avez-vous d\u00e9couvert autre chose ?\"", 
     "image": "events/475.jpg", 
-    "on_fire": "kingdom.set_value(\"tuto_rapport_espion\",True)\n", 
+    "on_fire": "param.set_value(\"tuto_rapport_espion\", True)\nparam.set_value(\"ennemi_last_name\", kingdom.get_value(\"tuto_dynasty_PNJ\"))\nparam.set_value(\"type_pnj\", kingdom.get_value(\"tuto_type_PNJ\"))\n\n", 
     "slug": "tuto_rapport_espion", 
     "condition": "\n"
   }
@@ -2923,7 +2923,7 @@
     "category": null, 
     "name": "Rapport de bl\u00e9ss\u00e9s", 
     "weight": 1, 
-    "text": "haha ", 
+    "text": "{% if morts|length > 0 %}\r\nMort(s):\r\n{{morts|folks_list}}\r\n{% endif %}\r\n\r\n{% if soignes|length > 0 %}\r\nSoign\u00e9(s):\r\n{{soignes|folks_list}}\r\n{% endif %}\r\n\r\n{% if handicapes|length > 0 %}\r\nHandicap\u00e9(s):\r\n{% for handicape in handicapes %}\r\n{{handicape.0}} est d\u00e9sormais {{handicape.1}}.\r\n{% endfor %} \r\n{% endif %}", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "rapport_blesses", 
