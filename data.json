@@ -410,6 +410,14 @@
   }
 },
 {
+  "pk": "0r0d5ohvqj251qx0680hbyju6sm51let", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T23:13:19.455", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "12hh4wudumegfo8sy6n1p75y56jlmj7w", 
   "model": "sessions.session", 
   "fields": {
@@ -602,6 +610,14 @@
   }
 },
 {
+  "pk": "437tidruga5a03a60d7971co7yibvy1a", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T23:04:26.343", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "445c1e9e13ce6a8f8dc8c093d21215e9", 
   "model": "sessions.session", 
   "fields": {
@@ -630,6 +646,14 @@
   "model": "sessions.session", 
   "fields": {
     "expire_date": "2013-09-12T20:44:01.625", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
+  "pk": "4f5jmkg59intg5mk16hzs799oysd0iuv", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T23:08:27.317", 
     "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
@@ -714,6 +738,14 @@
   }
 },
 {
+  "pk": "5a47gccsc5jyair1at66raxwj3jvmzpg", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T23:08:08.899", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "5ahasbvehdknj73u52ljec5odzkg03cu", 
   "model": "sessions.session", 
   "fields": {
@@ -726,6 +758,14 @@
   "model": "sessions.session", 
   "fields": {
     "expire_date": "2013-10-23T20:10:18.288", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
+  "pk": "5kiweipjoefu4iizm8gba1nyl6d8nvqw", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T23:15:29.309", 
     "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
@@ -743,6 +783,14 @@
   "fields": {
     "expire_date": "2013-07-21T13:38:15.331", 
     "session_data": "ZmRiYjJhNjg4MzI5ZWE1NGUyZDQ0MDc1NDVkZGEwZjIwNGQwOWJmYTqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED\nVQ1fYXV0aF91c2VyX2lkcQRLAXUu\n"
+  }
+},
+{
+  "pk": "6aasl0d3odeon6ibm2xmkfqo68s7jeze", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T23:13:05.441", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
 {
@@ -766,6 +814,14 @@
   "model": "sessions.session", 
   "fields": {
     "expire_date": "2013-09-18T17:37:37.090", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
+  "pk": "6t7bit8upgthex2dbjknh4vo112h87l8", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T23:12:38.335", 
     "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
@@ -886,6 +942,14 @@
   "model": "sessions.session", 
   "fields": {
     "expire_date": "2013-07-24T16:15:34.883", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
+  "pk": "8oi1nzlx6f940bwjd1q0n09x5122p7do", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T22:36:29.518", 
     "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
@@ -1130,6 +1194,14 @@
   }
 },
 {
+  "pk": "dfa943whpomhrilhrogzf3g8z8yd7syx", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T22:36:21.449", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "dj9szut8hhyeeqdaut2utguzg4zuqugr", 
   "model": "sessions.session", 
   "fields": {
@@ -1282,6 +1354,14 @@
   }
 },
 {
+  "pk": "h68q9oo1xejfx6qa8aflfy2lrpcuiajg", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T22:32:23.832", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "hcgsm67de0op7muuiljpaj6ko8vnysfw", 
   "model": "sessions.session", 
   "fields": {
@@ -1402,6 +1482,14 @@
   }
 },
 {
+  "pk": "j5sz00dwv1xjea24puidyf6j8q5c6v7j", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T23:04:23.968", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "j82gqpqy4qnf1ksnjxxc0vfhyliuw61a", 
   "model": "sessions.session", 
   "fields": {
@@ -1490,10 +1578,26 @@
   }
 },
 {
+  "pk": "ki5h762wbvk9d6wbcpyk547iqc2zr8d6", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T22:36:08.086", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "kjy78avask49hwexem3q4x98v6k81yuz", 
   "model": "sessions.session", 
   "fields": {
     "expire_date": "2013-10-28T22:11:07.388", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
+  "pk": "kobu15dhjjw958lvuxkrkogj8xifnnvt", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T23:08:31.119", 
     "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
@@ -1634,6 +1738,14 @@
   }
 },
 {
+  "pk": "nlytapnrvw1he2fwpci5qwolblzpt6uk", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T22:51:54.519", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "np38zpamj9pzidtq2baj3eeh5pmvfqgk", 
   "model": "sessions.session", 
   "fields": {
@@ -1759,6 +1871,14 @@
   "fields": {
     "expire_date": "2013-09-30T01:12:54.300", 
     "session_data": "MDIyODVmMjA0NzlmNjY0YmJjOWFhNmNkN2E3OTI1M2Y2Zjk3ODg4ZDqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLLXUu"
+  }
+},
+{
+  "pk": "qtzm794fvbg6nkpxcz1yquta9rpts3qo", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T22:32:18.628", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
 {
@@ -1919,6 +2039,14 @@
   "fields": {
     "expire_date": "2013-07-25T21:14:16.403", 
     "session_data": "YjJmZWVlZDcwMTQ0NTU0Yjk0YmM5MWExYmJkNGM3Y2QzOWExNjNhYTqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLCnUu"
+  }
+},
+{
+  "pk": "suktkppfb4thlspmytskxz6d45jxa4u1", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T22:49:12.626", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
 {
@@ -2130,6 +2258,14 @@
   }
 },
 {
+  "pk": "vme5y07p0rllfn1lo6jt8m9f2ylv7shy", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T23:16:19.187", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
   "pk": "wde1sij1jj69irz4m2mp4usorvqgnb3b", 
   "model": "sessions.session", 
   "fields": {
@@ -2317,7 +2453,7 @@
   "pk": "z6rxuhx89k6hs3cqk2817j1n82grrddo", 
   "model": "sessions.session", 
   "fields": {
-    "expire_date": "2013-10-28T22:16:04.590", 
+    "expire_date": "2013-10-28T22:19:45.544", 
     "session_data": "NWYwZGYzYWYyYjQ2ODQyOGE0ZDM1NjBhZjA3ZGFiMjQ4YTM3MTllMjqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZFUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmRxAlUNX2F1dGhfdXNlcl9pZEsodS4="
   }
 },
@@ -2327,6 +2463,22 @@
   "fields": {
     "expire_date": "2013-07-24T16:23:48.129", 
     "session_data": "MjJmYTk4YjllZDc1MDUyNzBlYmY0ODJlZTEwZjYwM2RjYmQwMWE4NjqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLFXUu"
+  }
+},
+{
+  "pk": "zicgxsag6mb43qn7kztm55a9l6bbbak9", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T22:51:06.695", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
+  }
+},
+{
+  "pk": "zkhsquoats2cxdt171q11iv80b4g009g", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-28T22:51:44.451", 
+    "session_data": "Nzc2MzgxM2M5MWM1Mjk1MTBmYWNhNzY5ZmViMDQzZDUyZmRmZDIwYjqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu"
   }
 },
 {
@@ -4694,46 +4846,46 @@
   }
 },
 {
-  "pk": 1557, 
+  "pk": 1562, 
   "model": "kingdom._kingdomvariable", 
   "fields": {
-    "kingdom": 118, 
+    "kingdom": 119, 
     "name": "tuto_adversaire", 
-    "value": "Blancheflor de Seigy"
+    "value": "Renaude de Cerisy"
   }
 },
 {
-  "pk": 1558, 
+  "pk": 1563, 
   "model": "kingdom._kingdomvariable", 
   "fields": {
-    "kingdom": 118, 
+    "kingdom": 119, 
     "name": "tuto_dynasty_PNJ", 
-    "value": "de Seigy"
+    "value": "de Cerisy"
   }
 },
 {
-  "pk": 1559, 
+  "pk": 1564, 
   "model": "kingdom._kingdomvariable", 
   "fields": {
-    "kingdom": 118, 
+    "kingdom": 119, 
     "name": "tuto_type_PNJ", 
     "value": "cavalier"
   }
 },
 {
-  "pk": 1560, 
+  "pk": 1565, 
   "model": "kingdom._kingdomvariable", 
   "fields": {
-    "kingdom": 118, 
+    "kingdom": 119, 
     "name": "total_soldats", 
     "value": 0
   }
 },
 {
-  "pk": 1561, 
+  "pk": 1566, 
   "model": "kingdom._kingdomvariable", 
   "fields": {
-    "kingdom": 118, 
+    "kingdom": 119, 
     "name": "in_tuto", 
     "value": 1
   }
@@ -9113,34 +9265,35 @@
     "disabled": false, 
     "death": null, 
     "avatar": 4, 
-    "birth": "2013-09-09T00:21:17.210", 
+    "birth": "2013-09-09T00:21:17", 
     "mother": null, 
     "loyalty": 59, 
     "spouse": null, 
     "quality_set": [
       23, 
+      37, 
       39
     ], 
     "mentor": null
   }
 },
 {
-  "pk": 7539, 
+  "pk": 7543, 
   "model": "kingdom.folk", 
   "fields": {
-    "kingdom": 118, 
+    "kingdom": 119, 
     "fight": 8, 
-    "first_name": "Gontran", 
-    "last_name": "de remi", 
+    "first_name": "Giefroi", 
+    "last_name": "de Remi", 
     "diplomacy": 10, 
     "father": null, 
-    "plot": 10, 
-    "scholarship": 8, 
+    "plot": 9, 
+    "scholarship": 9, 
     "sex": "m", 
     "disabled": false, 
     "death": null, 
-    "avatar": 16, 
-    "birth": "2013-09-09T22:15:26.803", 
+    "avatar": 22, 
+    "birth": "2013-09-09T22:22:33.765", 
     "mother": null, 
     "loyalty": 99, 
     "spouse": null, 
@@ -9151,49 +9304,49 @@
   }
 },
 {
-  "pk": 7540, 
+  "pk": 7544, 
   "model": "kingdom.folk", 
   "fields": {
-    "kingdom": 118, 
-    "fight": 7, 
-    "first_name": "Albald", 
-    "last_name": "de remi", 
-    "diplomacy": 10, 
-    "father": 7539, 
-    "plot": 7, 
-    "scholarship": 9, 
+    "kingdom": 119, 
+    "fight": 9, 
+    "first_name": "Ga\u00ebl", 
+    "last_name": "de Remi", 
+    "diplomacy": 7, 
+    "father": 7543, 
+    "plot": 4, 
+    "scholarship": 10, 
     "sex": "m", 
     "disabled": false, 
     "death": null, 
-    "avatar": 5, 
-    "birth": "2013-09-27T22:15:27.116", 
+    "avatar": 26, 
+    "birth": "2013-09-27T22:22:33.854", 
     "mother": null, 
-    "loyalty": 80, 
+    "loyalty": 90, 
     "spouse": null, 
     "quality_set": [
-      33, 
+      6, 
       38
     ], 
     "mentor": null
   }
 },
 {
-  "pk": 7541, 
+  "pk": 7545, 
   "model": "kingdom.folk", 
   "fields": {
-    "kingdom": 118, 
-    "fight": 4, 
-    "first_name": "Suphitia", 
-    "last_name": "de remi", 
-    "diplomacy": 11, 
-    "father": 7539, 
+    "kingdom": 119, 
+    "fight": 7, 
+    "first_name": "Etiennette", 
+    "last_name": "de Remi", 
+    "diplomacy": 8, 
+    "father": 7543, 
     "plot": 9, 
     "scholarship": 8, 
     "sex": "f", 
     "disabled": false, 
     "death": null, 
-    "avatar": 31, 
-    "birth": "2013-09-28T22:15:27.217", 
+    "avatar": 49, 
+    "birth": "2013-09-28T22:22:33.940", 
     "mother": null, 
     "loyalty": 80, 
     "spouse": null, 
@@ -9202,27 +9355,27 @@
   }
 },
 {
-  "pk": 7542, 
+  "pk": 7546, 
   "model": "kingdom.folk", 
   "fields": {
-    "kingdom": 118, 
-    "fight": 7, 
-    "first_name": "Balot", 
-    "last_name": "d'Essertenne", 
-    "diplomacy": 10, 
+    "kingdom": 119, 
+    "fight": 9, 
+    "first_name": "Edmond", 
+    "last_name": "d'Andouque", 
+    "diplomacy": 9, 
     "father": null, 
-    "plot": 7, 
-    "scholarship": 8, 
+    "plot": 9, 
+    "scholarship": 7, 
     "sex": "m", 
     "disabled": false, 
     "death": null, 
-    "avatar": 24, 
-    "birth": "2013-09-09T22:15:27.250", 
+    "avatar": 11, 
+    "birth": "2013-09-09T22:22:33.979", 
     "mother": null, 
     "loyalty": 80, 
     "spouse": null, 
     "quality_set": [
-      8, 
+      22, 
       38
     ], 
     "mentor": null
@@ -12835,6 +12988,17 @@
   }
 },
 {
+  "pk": 1751, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 116, 
+    "content": "Aymon de Ch\u00e2teauroux \u00e0 rejoint votre cour", 
+    "created": "2013-10-14T23:11:54.264", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
   "pk": 1, 
   "model": "title.title", 
   "fields": {
@@ -13396,12 +13560,12 @@
   }
 },
 {
-  "pk": 450, 
+  "pk": 451, 
   "model": "title.availabletitle", 
   "fields": {
-    "kingdom": 118, 
-    "last_folk": 7539, 
-    "folk": 7539, 
+    "kingdom": 119, 
+    "last_folk": 7543, 
+    "folk": 7543, 
     "title": 1
   }
 },
@@ -13418,7 +13582,7 @@
       115, 
       116, 
       117, 
-      118, 
+      119, 
       74, 
       76, 
       80, 
@@ -13553,7 +13717,7 @@
   "fields": {
     "delay": 3, 
     "kingdom_list": "param = Kingdom.objects.filter(pk=117)\n#param = []\n", 
-    "on_fire": "blesses = folks.filter(quality_set__slug=\"blesse\")\nsoigneurs = folks.filter(kingdom=kingdom, sex=Folk.FEMALE, mission = None, birth__lte=datetime.now() - timedelta(days=C.MAJORITE))\nsoigneurs += folks.filter(kingdom=kingdom, sex=Folk.MALE, mission = None, birth__lte=datetime.now() - timedelta(days=C.MAJORITE), quality_set__slug=\"pretre\")\nsoigneurs = soigneurs.order_by(\"-scholarship\")[1:len(blesses)+1]\nmoy_erudition = avg_folks(soigneurs, \"scholarship\")\nimport math\nsoin = 99 - moy_erudition/20 * 8 * max(1, len(soigneurs) / math.sqrt(blesses.count()))\n\nfor blesse in blesses:\n  fate = random_value(1,100)\n  if fate == 1 : #il meurt\n    blesse.die()\n  elif fate > soin : #il n'est plus bless\u00e9, mais gagne un autre trait\n    blesse.remove_quality(\"blesse\")\n    choix_trait = random_value(1,100)\n    chances_handicap = 30 - moy_erudition * max(1,len(soigneurs)/ math.sqrt(blesses.count()))\n    if choix_trait < chances_handicap : #il est infirme\n      choix_handicap = random_in(Quality.objects.filter(quality_category__name=\"Handicap\"))\n      blesse.quality_set.add(choix_handicap)\n    else: #il est gu\u00e9rit\n      blesse.remove_quality(\"blesse\")\n  #else on attendant 30 minutes qu'il retente sa chance\n", 
+    "on_fire": "blesses = folks.filter(quality_set__slug=\"blesse\")\nsoigneurs = folks.filter(kingdom=kingdom, mission = None, birth__lte=datetime.now() - timedelta(days=C.MAJORITE))\nsoigneurs = soigneurs.filter(Q(sex=Folk.FEMALE) | Q(quality_set__slug=\"pretre\", sex=Folk.MALE))\nsoigneurs = soigneurs.order_by(\"-scholarship\")[1:len(blesses)+1]\n\nmoy_erudition = avg_folks(soigneurs, \"scholarship\")\nimport math\nsoin = 99 - moy_erudition/20 * 8 * max(1, len(soigneurs) / math.sqrt(blesses.count()))\n\nfor blesse in blesses:\n  fate = random_value(1,100)\n  if fate == 1 : #il meurt\n    pe = kingdom.create_pending_event(\"rapport_blesse_mort\")\n    pe.set_value(\"prenom\", blesse.first_name)\n    pe.set_value(\"nom\", blesse.last_name)\n    pe.start()\n    blesse.die()\n  elif fate > soin : #il n'est plus bless\u00e9, mais gagne un autre trait\n    blesse.remove_quality(\"blesse\")\n    choix_trait = random_value(1,100)\n    chances_handicap = 30 - moy_erudition * max(1,len(soigneurs)/ math.sqrt(blesses.count()))\n    if choix_trait < chances_handicap : #il est infirme\n      choix_handicap = random_in(Quality.objects.filter(quality_category__name=\"Handicap\"))\n      blesse.quality_set.add(choix_handicap)\n      pe = kingdom.create_pending_event(\"rapport_blesse_handicap\")\n      pe.set_value(\"blesse\", blesse)\n      pe.set_value(\"handicap\", choix_handicap)\n      pe.start()\n    else: #il est gu\u00e9rit\n      pe = kingdom.create_pending_event(\"rapport_blesse_guerit\")\n      pe.set_value(\"blesse\",blesse)\n      pe.start()\n  #else on attendant 30 minutes qu'il retente sa chance\n", 
     "name": "Les bless\u00e9s peuvent mourir", 
     "description": "Fais mourir (ou pas) les bless\u00e9s"
   }
@@ -49489,7 +49653,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": "if (grids['mari'][0].last_name == kingdom.user.username or grids['femme'][0].last_name == kingdom.user.username):\n  prix = 5*folks.filter(mission__isnull=True).count()\n  if kingdom.money < prix:\n    status=\"Vous n'avez pas assez d'argent pour payer le banquet\"\n    stop()\n  else:\n    kingdom.money -= prix\n    kingdom.save()\ngrids['mari'][0].spouse = grids['femme'][0]\ngrids['femme'][0].spouse = grids['mari'][0]\ngrids['mari'][0].save()\ngrids['femme'][0].save()\nif grids['mari'][0]==folks[3] and grids['femme'][0]==folks[2]:\n  kingdom.set_value(\"tuto_mariage_fait\",True)\n  pe=kingdom.create_pending_event(\"banquet\")\n  pe.set_value(\"banquet_mariage_tuto\",True)\n  pe.start()\n  \n", 
+    "on_start": "if (grids['mari'][0].last_name == kingdom.user.username or grids['femme'][0].last_name == kingdom.user.username):\n  prix = 5*folks.filter(mission__isnull=True).count()\n  if kingdom.money < prix:\n    stop(\"Vous n'avez pas assez d'argent pour payer le banquet\")\n\n  kingdom.money -= prix\n  kingdom.save()\n\ngrids['mari'][0].spouse = grids['femme'][0]\ngrids['femme'][0].spouse = grids['mari'][0]\ngrids['mari'][0].save()\ngrids['femme'][0].save()\nif grids['mari'][0]==folks[3] and grids['femme'][0]==folks[2]:\n  kingdom.set_value(\"tuto_mariage_fait\",True)\n  pe=kingdom.create_pending_event(\"banquet\")\n  pe.set_value(\"banquet_mariage_tuto\",True)\n  pe.start()\n  \n", 
     "has_target": false, 
     "is_team": false, 
     "title": 3, 
@@ -50055,6 +50219,29 @@
   }
 },
 {
+  "pk": 52, 
+  "model": "mission.mission", 
+  "fields": {
+    "name": "Tuto espionnage", 
+    "target_list": null, 
+    "text": "mission pour espionner le PNJ", 
+    "has_value": false, 
+    "on_resolution": null, 
+    "value_description": "", 
+    "on_start": "kingdom.start_pending_event(\"tuto_rapport_espion\")", 
+    "has_target": false, 
+    "is_team": false, 
+    "title": 5, 
+    "target_description": "", 
+    "timeout": null, 
+    "is_cancellable": false, 
+    "duration": 5, 
+    "on_cancel": null, 
+    "slug": "tuto_espionnage", 
+    "on_init": null
+  }
+},
+{
   "pk": 3, 
   "model": "mission.missiongrid", 
   "fields": {
@@ -50129,7 +50316,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "femme", 
-    "condition": "if folk.age < C.MAJORITE:\n  stop(S.TOO_YOUNG)\nelif folk.sex == Folk.MALE:\n  stop(\"La femme doit \u00eatre une femme\")\nelif folk.spouse != None and folk.spouse.death == None:\n  stop(\"Cette personne est d\u00e9j\u00e0 mari\u00e9e\")\n"
+    "condition": "if folk.age < C.MAJORITE:\n  stop(S.TOO_YOUNG)\nelif folk.sex == Folk.MALE:\n  stop(\"La mari\u00e9e doit \u00eatre une femme\")\nelif folk.spouse != None and folk.spouse.death == None:\n  stop(\"Cette personne est d\u00e9j\u00e0 mari\u00e9e\")\n"
   }
 },
 {
@@ -50520,6 +50707,19 @@
     "allow_empty": false, 
     "slug": "comprometeurs", 
     "condition": "\n"
+  }
+},
+{
+  "pk": 55, 
+  "model": "mission.missiongrid", 
+  "fields": {
+    "allow_disabled": false, 
+    "name": "espions", 
+    "mission": 52, 
+    "length": 3, 
+    "allow_empty": false, 
+    "slug": "espions", 
+    "condition": null
   }
 },
 {
@@ -51506,7 +51706,7 @@
     "category": null, 
     "name": "Introduction", 
     "weight": 1, 
-    "text": "En arrivant au sommet de la cr\u00eate, nous tirons sur nos brides et nous nous autorisons enfin une pause, afin de contempler le ch\u00e2teau qui se dessine en contrebas. {{ fille.first_name }}, \u00e0 ma droite, \u00e0 les joues rougies par le froid de l\u2019hiver. \r\n\u201cEst-ce celui-ci, p\u00e8re? Sommes-nous arriv\u00e9?\u201d. Sa voix n\u2019est qu\u2019un murmure dans lequel perce l'excitation de la jeunesse. \r\n\u201cOui, ma fille. {{dynasty}}. La terre de nos a\u00efeux.\u201d \r\nSans un regard en arri\u00e8re, je guide mon cheval sur le sentier qui serpente jusque dans la vall\u00e9e. {{fille.first_name}} m'embo\u00eete le pas, suivit de pr\u00e8s par son fr\u00e8re {{fils.first_name}} et par {{compagnon.first_name}}, mon compagnon de toujours qui garde sa main sur le pommeau de son \u00e9p\u00e9e.", 
+    "text": "En arrivant au sommet de la cr\u00eate, nous tirons sur nos brides et nous nous autorisons enfin une pause, afin de contempler le ch\u00e2teau qui se dessine en contrebas. {{ fille.first_name }}, \u00e0 ma droite, \u00e0 les joues rougies par le froid de l\u2019hiver. \r\n\u201cEst-ce celui-ci, p\u00e8re? Sommes-nous arriv\u00e9s ?\u201d. Sa voix n\u2019est qu\u2019un murmure dans lequel perce l'excitation de la jeunesse. \r\n\u201cOui, ma fille. La terre de nos a\u00efeux. Le domaine revenant de droit \u00e0 la maison {{dynasty}}.\u201d \r\nSans un regard en arri\u00e8re, je guide mon cheval sur le sentier qui serpente jusque dans la vall\u00e9e. {{fille.first_name}} m'embo\u00eete le pas, suivie de pr\u00e8s par son fr\u00e8re {{fils.first_name}} et par {{compagnon.first_name}}, mon compagnon de toujours qui garde sa main sur le pommeau de son \u00e9p\u00e9e.\r\n\r\nNotre long voyage s'ach\u00e8ve.", 
     "image": "events/543.jpg", 
     "on_fire": "\n\n", 
     "slug": "tuto_intro", 
@@ -51520,7 +51720,7 @@
     "category": null, 
     "name": "Introduction", 
     "weight": 1, 
-    "text": "\u201cCet endroit est une ruine!\u201d  Ignorant les paroles de {{fils.first_name}}, j\u2019enjambe les d\u00e9bris de ce qui devait \u00eatre une porte, et p\u00e9n\u00e8tre dans la grande salle. La lumi\u00e8re blafarde qui tombe d\u2019une lucarne accroche les grains de poussi\u00e8res soulev\u00e9s par mes pas, et me r\u00e9v\u00e8le un sol couvert de gravats, de planches pourries et de meubles bris\u00e9s. \r\n\u201cVotre fils dit vrai, sire.\u201d La voix de {{compagnon.first_name}} est grave. \u201cLes remparts tiennent \u00e0 peine debout, et la cour est assaillie par les mauvaises herbes. Personne n\u2019a r\u00e9gn\u00e9 en ces lieux depuis des ann\u00e9es. Des d\u00e9cennies peut-\u00eatre. Les paysans alentours ne se souviennent probablement pas du seul nom de {{dynasty}}.\u201d\r\nJe fais quelque pas dans la pi\u00e8ce, appr\u00e9ciant l'\u00e9cho de notre nouvelle demeure. \r\n\u201cNous le leur rappelleront, mon ami.\u201d De ma poche, je sort le rouleau de parchemin scell\u00e9 d\u2019une fleur de lys. \u201cNous avons pour nous la parole du Roi, et les 100 \u00e9cus qu\u2019il nous a confi\u00e9. Ce ch\u00e2teau sera remis en \u00e9tat, et notre nom retrouvera enfin sa juste place parmi les plus grands du royaume de France.\u201d", 
+    "text": "\u201cCet endroit est une ruine!\u201d  Ignorant les paroles de {{fils.first_name}}, j\u2019enjambe les d\u00e9bris de ce qui devait \u00eatre une porte, et p\u00e9n\u00e8tre dans la grande salle. La lumi\u00e8re blafarde qui tombe d\u2019une lucarne accroche les grains de poussi\u00e8re soulev\u00e9s par mes pas et me r\u00e9v\u00e8le un sol couvert de gravats, de planches pourries et de meubles bris\u00e9s. \r\n\u201cVotre fils dit vrai, sire.\u201d La voix de {{compagnon.first_name}} est grave. \u201cLes remparts tiennent \u00e0 peine debout, et la cour est assaillie par les mauvaises herbes. Personne n\u2019a r\u00e9gn\u00e9 en ces lieux depuis des ann\u00e9es. Des d\u00e9cennies peut-\u00eatre. Les paysans alentours ne se souviennent probablement m\u00eame pas du nom de {{dynasty}}.\u201d\r\nJe fais quelques pas dans la pi\u00e8ce, appr\u00e9ciant l'\u00e9cho de notre nouvelle demeure. \r\n\u201cNous le leurs rappelleront, mon ami.\u201d De ma poche, je sort le rouleau de parchemin scell\u00e9 d\u2019une fleur de lys. \u201cNous avons pour nous la parole du Roi, et les 100 \u00e9cus qu\u2019il nous a confi\u00e9. Ce ch\u00e2teau sera remis en \u00e9tat, et notre nom retrouvera enfin sa juste place parmi les plus grands du royaume de France.\u201d", 
     "image": "events/422.jpg", 
     "on_fire": " ", 
     "slug": "tuto_intro_2", 
@@ -51534,7 +51734,7 @@
     "category": null, 
     "name": "Au travail", 
     "weight": 1, 
-    "text": "    -85 \u00e9cus\r\n\r\nAssis sur un tr\u00f4ne fra\u00eechement install\u00e9, je contemple d\u2019un \u0153il satisfait les r\u00e9parations que les ma\u00e7ons ont apport\u00e9 aux murs de la grande salle. Le toit demande encore quelques planches et l\u2019aile ouest du ch\u00e2teau n\u2019a toujours pas \u00e9t\u00e9 d\u00e9blay\u00e9e, mais les travaux avancent \u00e0 grands pas. Les serviteurs qui s\u2019aff\u00e8rent de toute part ont \u00e9t\u00e9 engag\u00e9s par {{compagnon.first_name}} dans le village voisin, qui fr\u00e9mit toujours de la nouvelle du retour de ma famille. Notre argent est presque \u00e9puis\u00e9, et nous allons avoir grand besoin de l\u2019ob\u00e9issance de ces gueux. Notre nom et la lettre du roi seront des atouts pr\u00e9cieux, mais je devrais utiliser les \u00e9cus qui me reste pour mettre toutes les chances de notre c\u00f4t\u00e9...", 
+    "text": "Printemps. Nos terres sont couvertes de fleurs et dans les champs les labours ont d\u00e9marr\u00e9s. \r\n\r\nAssis sur un tr\u00f4ne fra\u00eechement install\u00e9, je contemple d\u2019un \u0153il satisfait les r\u00e9parations que les ma\u00e7ons ont apport\u00e9 aux murs de la grande salle. Le toit demande encore quelques planches et l\u2019aile ouest du ch\u00e2teau n\u2019a toujours pas \u00e9t\u00e9 d\u00e9blay\u00e9e mais les travaux avancent \u00e0 grands pas. Les serviteurs qui s\u2019aff\u00e8rent de toute part ont \u00e9t\u00e9 engag\u00e9s par {{compagnon.first_name}} dans le village voisin qui fr\u00e9mit toujours de la nouvelle du retour de ma famille. Du moins La residence de notre famile est elle de nouveau vivable. \r\n\r\nNotre argent est presque \u00e9puis\u00e9, et nous allons avoir grand besoin de l\u2019ob\u00e9issance de ces gueux. Notre nom et la lettre du roi seront des atouts pr\u00e9cieux, mais je devrais utiliser les \u00e9cus qui me reste pour mettre toutes les chances de notre c\u00f4t\u00e9...\r\n\r\n+  Le ch\u00e2teau de {{dynasty}} est en partie remis en \u00e9tat mais cela m'a cout\u00e9 85 \u00e9cus\r\n", 
     "image": "events/362.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_intro_3", 
@@ -51604,7 +51804,7 @@
     "category": null, 
     "name": "Rassembler l'arm\u00e9e", 
     "weight": 1, 
-    "text": "Dans la cour du ch\u00e2teau, je marche d\u2019un pas martial au c\u00f4t\u00e9 de sire {{title.connetable.first_name}}, mon nouveau conn\u00e9table, chef de mon \u201carm\u00e9e\u201d. Les hommes qu\u2019il a recrut\u00e9 sont assis en d\u00e9sordre \u00e0 l\u2019ombre du rempart ouest. Au premier regard, je constate que la plupart ne sont que paysans mal d\u00e9grossis qui n\u2019ont probablement jamais tenu une \u00e9p\u00e9e de leur vie. Il faudra leur apprendre \u00e0 se battre, et leur inculquer la discipline, mais je suis convaincu que {{title.connetable.first_name}} sera \u00e0 la hauteur. Un homme, cependant, se d\u00e9tache du lot. Il semble en bien meilleur forme que le reste des recrues, et ses v\u00eatements sont de bonne facture, tout comme l\u2019\u00e9p\u00e9e qu\u2019il porte \u00e0 son c\u00f4t\u00e9.", 
+    "text": "Dans la cour du ch\u00e2teau, je marche d\u2019un pas martial au c\u00f4t\u00e9 de sire {{title.connetable.first_name}}, mon nouveau conn\u00e9table, chef de mon \u201carm\u00e9e\u201d. Les hommes qu\u2019il a recrut\u00e9 sont assis en d\u00e9sordre \u00e0 l\u2019ombre du rempart ouest. Au premier regard je constate que la plupart ne sont que paysans mal d\u00e9grossis qui n\u2019ont probablement jamais tenu une \u00e9p\u00e9e de leur vie. Probablement ne cherchent ils juste qu'un travail moins p\u00e9nible que celui des champs et un meilleur salaire. \r\n\r\nIl faudra leur apprendre \u00e0 se battre et leur inculquer la discipline mais je suis convaincu que {{title.connetable.first_name}} sera \u00e0 la hauteur. Un homme cependant, se d\u00e9tache du lot. Il semble en bien meilleure forme que le reste des recrues et ses v\u00eatements sont de bonne facture tout comme l\u2019\u00e9p\u00e9e qu\u2019il porte \u00e0 son c\u00f4t\u00e9.", 
     "image": "events/716.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_recrutement", 
@@ -51618,7 +51818,7 @@
     "category": null, 
     "name": "Rassembler l'arm\u00e9e", 
     "weight": 1, 
-    "text": "Il s\u2019incline respectueusement. \u201c {{knight}}, pour vous servir.\u201d Je jette un regard \u00e0  {{title.connetable.first_name}}, qui reste de marbre. \u201cVous me semblez homme aguerri. Seriez-vous d\u2019aventure chevalier?\u201d Il se redresse, et me regarde droit dans les yeux. \u201c En effet je le suis. Un chevalier fatigu\u00e9 par une longue errance, qui cherche un seigneur au c\u0153ur noble \u00e0 qui pr\u00eater son bras.\u201d J\u2019opine gravement, et pose une main ferme sur son \u00e9paule. \u201cVotre errance est termin\u00e9e, sire {{knight.first_name}}. A genoux.\u201d", 
+    "text": "Il s\u2019incline respectueusement. \u201c {{knight}}, pour vous servir.\u201d Je jette un regard \u00e0  {{title.connetable.first_name}} qui reste de marbre. \u201cVous me semblez un homme aguerri. Seriez-vous d\u2019aventure chevalier ?\u201d Il se redresse, et me regarde droit dans les yeux. \u201c En effet je le suis. Un chevalier fatigu\u00e9 par une longue errance qui cherche un seigneur au c\u0153ur noble \u00e0 qui pr\u00eater son bras.\u201d J\u2019opine gravement et pose une main ferme sur son \u00e9paule. \u201cVotre errance est termin\u00e9e, sire {{knight.first_name}}. A genoux.\u201d", 
     "image": "events/716_1.jpg", 
     "on_fire": "#Cr\u00e9ation du chevalier\nknight = call_function(\"creer_folk\", sex=Folk.MALE, birth=(datetime.now() - timedelta(days=35)), fight_min=9, diplomacy_min=2, plot_min=2, scholarship_min=2, loyalty=50, max_carac=32, kingdom=kingdom, trait=random_in(['piquier','cavalier','archer']))\nparam.set_value(\"knight\", knight)\n", 
     "slug": "tuto_recrutement_2", 
@@ -51632,7 +51832,7 @@
     "category": null, 
     "name": "Rassembler l'arm\u00e9e", 
     "weight": 1, 
-    "text": "Je prononce les paroles d\u2019usage, et il y r\u00e9pond sans h\u00e9siter jurant de me servir tant que son bras en aura la force. \u201cRelevez-vous, messire. La maison de {{dynasty}} accepte votre all\u00e9geance.\u201d\r\n\r\n    {{knight}} a rejoint ma cour.", 
+    "text": "Je prononce les paroles d\u2019usage et il y r\u00e9pond sans h\u00e9siter jurant de me servir tant que son bras en aura la force. \u201cRelevez-vous, messire. La maison de {{dynasty}} accepte votre all\u00e9geance.\u201d\r\n\r\n    {{knight}} a rejoint ma cour.", 
     "image": "events/716_2.jpg", 
     "on_fire": "knight = param.get_value(\"knight\")\nknight.kingdom = kingdom\nknight.save()\n", 
     "slug": "tuto_recrutement_3", 
@@ -51646,7 +51846,7 @@
     "category": null, 
     "name": "Rassembler l'arm\u00e9e", 
     "weight": 1, 
-    "text": "J\u2019ai envoy\u00e9 {{title.connetable.first_name}} et ses hommes, arm\u00e9s de pieds en cap, parcourir la campagne et porter la nouvelle du renouveau de {{dynasty}}. Il a fait savoir aux paysans qu\u2019ils sont sous ma protection tant qu\u2019ils m\u2019offriront l\u2019ob\u00e9issance due \u00e0 leur suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eatre d\u00e9sormais le seigneur de 140 paysans et 10 soldats.", 
+    "text": "J\u2019ai envoy\u00e9 {{title.connetable.first_name}} et ses hommes, arm\u00e9s de pied en cap, parcourir la campagne et porter la nouvelle du renouveau de {{dynasty}}. Il a fait savoir aux paysans qu\u2019ils sont sous ma protection tant qu\u2019ils m\u2019offriront l\u2019ob\u00e9issance due \u00e0 leur suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eates d\u00e9sormais le seigneur de 140 paysans et 10 soldats.", 
     "image": "events/17.jpg", 
     "on_fire": "kingdom.population=140\nkingdom.soldiers=10\nkingdom.set_value('total_soldats',10)\nkingdom.save()\n", 
     "slug": "tuto_recrutement_4", 
@@ -51660,7 +51860,7 @@
     "category": null, 
     "name": "Pot de vin", 
     "weight": 1, 
-    "text": "{{folks.3}}, mon fils {{folks.1.first_name}} et ma fille {{folks.2.first_name}} se tiennent devant moi, alors que j\u2019ach\u00e8ve de leur exposer mon projet.  \u201c...la seconde moiti\u00e9 du paiement sera vers\u00e9e une fois que le village m\u2019aura publiquement reconnu comme son seigneur l\u00e9gitime. Je vais avoir besoin que l\u2019un de vous trois me serve de ma\u00eetre espion et s\u2019occupe de cette affaire avec doigt\u00e9 et discr\u00e9tion.\u201d\r\n\r\n    Faites glisser un de vos suivants depuis l\u2019onglet Titre pour le nommer Ma\u00eetre Espion.", 
+    "text": "{{folks.3}}, mon fils {{folks.1.first_name}} et ma fille {{folks.2.first_name}} se tiennent devant moi alors que j\u2019ach\u00e8ve de leur exposer mon projet.  \u201c...la seconde moiti\u00e9 du paiement sera vers\u00e9e une fois que le village m\u2019aura publiquement reconnu comme son seigneur l\u00e9gitime. Je vais avoir besoin que l\u2019un de vous trois me serve de ma\u00eetre espion et s\u2019occupe de cette affaire avec doigt\u00e9 et discr\u00e9tion.\u201d\r\n\r\n    Faites glisser un de vos suivants depuis l\u2019onglet Titre pour le nommer Ma\u00eetre Espion.", 
     "image": "events/451_1.jpg", 
     "on_fire": "kingdom.unlock_title(\"maitre_espion\")\nkingdom.create_pending_mission(\"tuto_potsdevin\")", 
     "slug": "tuto_intro_choixintrigue", 
@@ -51758,7 +51958,7 @@
     "category": 2, 
     "name": "Introduction", 
     "weight": 1, 
-    "text": "Ayant eut vent de mon projet, le p\u00e8re {{cure.first_name}}, cur\u00e9 du village, s\u2019est pr\u00e9sent\u00e9 \u00e0 la porte du ch\u00e2teau. Je suis all\u00e9 \u00e0 sa rencontre dans la cour, et nous avons \u00e9chang\u00e9 quelques mot sur l\u2019histoire de son \u00e9glise et de la r\u00e9gion. Il m\u2019a pr\u00e9sent\u00e9 sa gratitude pour les travaux \u00e0 venir, et je lui ai propos\u00e9 sans h\u00e9siter de les superviser. Il a sourit, m\u2019a b\u00e9ni d\u2019un geste de la main droite et a d\u00e9clar\u00e9 qu\u2019il serait heureux de m\u2019accompagner dans le travail du Seigneur.\r\n\r\n    Vous avez \u00e9t\u00e9 rejoint par le p\u00e8re {{cure.first_name}}. Le Titre de Cur\u00e9 lui \u00e9choit (voir onglet Titre)", 
+    "text": "Ayant eut vent de mon projet, le p\u00e8re {{cure.first_name}}, cur\u00e9 du village, s\u2019est pr\u00e9sent\u00e9 \u00e0 la porte du ch\u00e2teau. Je suis all\u00e9 \u00e0 sa rencontre dans la cour et nous avons \u00e9chang\u00e9 quelques mot sur l\u2019histoire de son \u00e9glise et de la r\u00e9gion. Il m\u2019a pr\u00e9sent\u00e9 sa gratitude pour les travaux \u00e0 venir, et je lui ai propos\u00e9 sans h\u00e9siter de les superviser. Il a souri, m\u2019a b\u00e9ni d\u2019un geste de la main droite et a d\u00e9clar\u00e9 qu\u2019il serait heureux de m\u2019accompagner dans le travail du Seigneur.\r\n\r\n    Vous avez \u00e9t\u00e9 rejoint par le p\u00e8re {{cure.first_name}}. Le Titre de Cur\u00e9 lui \u00e9choit (voir onglet Titre)", 
     "image": "events/709.jpg", 
     "on_fire": "kingdom.unlock_title(\"cure\")\ncure = call_function(\"creer_folk\", kingdom=kingdom, plot_min=2, fight_min=2, scholarship_min=8, diplomacy_min=6, max_carac =32, sex=Folk.MALE, loyalty=60, birth=(datetime.now() - timedelta(days=35)), trait=\"pretre\")\ncure.add_title(\"cure\")\nparam.set_value(\"cure\", cure)\n", 
     "slug": "tuto_intro_choixerudition", 
@@ -51800,7 +52000,7 @@
     "category": null, 
     "name": "R\u00e9parer l'\u00e9glise", 
     "weight": 1, 
-    "text": "La messe termin\u00e9e, le p\u00e8re {{title.cure.first_name}} s'approche, un sourire bienveillant aux l\u00e8vres. Il me remercie \u00e0 nouveau pour mon patronage, et m'affirme que les paysans seront reconnaissant de servir un seigneur qui a ainsi d\u00e9montr\u00e9 sa pi\u00e9t\u00e9. Il m'invite \u00e0 visiter son \u00e9glise  aussi souvent que je le souhaite, et me promet de venir officier au ch\u00e2teau si j'en ressent le besoin.\r\n\r\n    Vous \u00eatre d\u00e9sormais le seigneur de 145 paysans et 5 soldats.", 
+    "text": "La messe termin\u00e9e, le p\u00e8re {{title.cure.first_name}} s'approche, un sourire bienveillant aux l\u00e8vres. Il me remercie \u00e0 nouveau pour mon patronage et m'affirme que les paysans seront reconnaissants de servir un seigneur qui a ainsi d\u00e9montr\u00e9 sa pi\u00e9t\u00e9. Il m'invite \u00e0 visiter son \u00e9glise aussi souvent que je le souhaite et me promet de venir officier au ch\u00e2teau si j'en ressens le besoin.\r\n\r\n    Vous \u00eates d\u00e9sormais le seigneur de 145 paysans et 5 soldats.", 
     "image": "events/89_1.jpg", 
     "on_fire": "kingdom.population=145\nkingdom.soldiers=5\nkingdom.set_value('total_soldats',5)\nkingdom.save()", 
     "slug": "tuto_eglise_2", 
@@ -51842,7 +52042,7 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "{{title.chambellan.first_name}} a fait arracher les mauvaises herbes de la cour, et les serviteurs y ont dress\u00e9 de grandes tables dont les nappes blanches ondulent dans la brise du soir. Des fleurs fra\u00eechement cueillies ont \u00e9t\u00e9 dispos\u00e9es entre les plats et les tonnelets de vin d\u2019Anjou. Je me tient au milieu de la cour, pour accueillir les paysans qui s\u2019avancent d\u2019un pas timide. Ils semblent impressionn\u00e9s par le faste du banquet, et leurs yeux d\u00e9vorent les victuailles savamment expos\u00e9es. Un duo de troubadours entame un air joyeux.", 
+    "text": "{{title.chambellan.first_name}} a fait arracher les mauvaises herbes de la cour, et les serviteurs y ont dress\u00e9 de grandes tables dont les nappes blanches ondulent dans la brise du soir. Des fleurs fra\u00eechement cueillies ont \u00e9t\u00e9 dispos\u00e9es entre les plats et les tonnelets de vin d\u2019Anjou. Je me tiens au milieu de la cour pour accueillir les paysans qui s\u2019avancent d\u2019un pas h\u00e9sitant. Ils semblent impressionn\u00e9s par le faste du banquet et leurs yeux d\u00e9vorent les victuailles savamment expos\u00e9es. Un duo de troubadours entame un air joyeux.", 
     "image": "events/717.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_banquet", 
@@ -51856,7 +52056,7 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "Les gueux ripaillent, rient et dansent au son de la musique. Ils ont \u00e9t\u00e9 plusieurs a lever haut leur coupe \u00e0 ma sant\u00e9 et \u00e0 celle de la maison {{dynastie}}. Ils ont l\u2019air profond\u00e9ment soulag\u00e9s de d\u00e9couvrir leur nouveau seigneur si affable et g\u00e9n\u00e9reux, et le vin commence \u00e0 leur monter \u00e0 la t\u00eate. L'atmosph\u00e8re est \u00e0 l\u2019optimisme et l'all\u00e9gresse, les langues se d\u00e9lient et les m\u0153urs se rel\u00e2chent. {{folks.2.first_name}} danse sagement avec {{folks.3.first_name}}, mais {{folks.1.first_name}} rie aux \u00e9clats avec une femme qui pique mon int\u00e9r\u00eat. Sa robe est cousu de fil d\u2019argent, et ses mani\u00e8res la d\u00e9marque des paysannes mal d\u00e9grossies qui se sont jet\u00e9 sur le buffet.\r\n", 
+    "text": "Les gueux ripaillent, rient et dansent au son de la musique. Ils ont \u00e9t\u00e9 plusieurs \u00e0 lever haut leurs coupes \u00e0 ma sant\u00e9 et \u00e0 celle de la maison {{dynastie}}. Ils ont l\u2019air profond\u00e9ment soulag\u00e9s de d\u00e9couvrir leur nouveau seigneur si affable et g\u00e9n\u00e9reux et le vin commence \u00e0 leurs monter \u00e0 la t\u00eate. L'atmosph\u00e8re est \u00e0 l\u2019optimisme et l'all\u00e9gresse, les langues se d\u00e9lient et les m\u0153urs se rel\u00e2chent. \r\n\r\n{{folks.2.first_name}} danse sagement avec {{folks.3.first_name}}, mais {{folks.1.first_name}} rie aux \u00e9clats avec une femme qui pique mon int\u00e9r\u00eat. Sa robe est cousue de fils de soie, et ses mani\u00e8res la d\u00e9marque nettement des paysannes mal d\u00e9grossies qui se sont jet\u00e9es sur le buffet.\r\n", 
     "image": "events/000.jpg", 
     "on_fire": " \n", 
     "slug": "tuto_banquet_2", 
@@ -51870,7 +52070,7 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "A mon approche, elle se l\u00e8ve et m\u2019offre une petite r\u00e9v\u00e9rence. Je discute un moment avec elle, et apprend qu\u2019elle se nomme {{lady.first_name}} {{lady.last_name}}, et qu\u2019elle est la cadette d\u2019un petit seigneur de province. Elle est de retour d\u2019un p\u00e8lerinage \u00e0 sainte Madeleine, mais confesse en rougissant qu\u2019elle n\u2019est en rien press\u00e9e de rejoindre le domaine de son p\u00e8re qui, selon elle, entend l\u2019envoyer au couvent plut\u00f4t que de payer sa dot. Lorsque je lui propose de rester pour un temps au ch\u00e2teau, elle sourit et accepte de bon coeur.\r\n```\r\n{{lady}} a rejoint ma cour\r\n```", 
+    "text": "A mon approche, elle se l\u00e8ve et m\u2019offre une petite r\u00e9v\u00e9rence. Je discute un moment avec elle et apprend qu\u2019elle se nomme {{lady.first_name}} {{lady.last_name}} et qu\u2019elle est la cadette d\u2019un petit seigneur de province. Elle est de retour d\u2019un p\u00e8lerinage \u00e0 Sainte Madeleine, mais confesse en rougissant qu\u2019elle n\u2019est en rien press\u00e9e de rejoindre le domaine de son p\u00e8re qui, selon elle, entend l\u2019envoyer au couvent plut\u00f4t que de payer sa dot. Lorsque je lui propose de rester pour un temps au ch\u00e2teau, elle sourit et accepte de bon c\u0153ur.\r\n```\r\n{{lady}} a rejoint ma cour\r\n```", 
     "image": "events/000_1.jpg", 
     "on_fire": "#Cr\u00e9ation de la dame\nlady = call_function(\"creer_folk\", kingdom=kingdom, fight_min=6, plot_min=6, diplomacy_min=6, scholarship_min=6, max_carac=32, loyalty=50, sex=Folk.FEMALE, birth=datetime.now() - timedelta(days=25))\n\nparam.set_value(\"lady\", lady)\n", 
     "slug": "tuto_banquet_3", 
@@ -51898,7 +52098,7 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "La f\u00eate s\u2019est termin\u00e9e dans la gaiet\u00e9, et les paysans ont \u00e9t\u00e9 h\u00e9berg\u00e9s dans les chambres vides du ch\u00e2teau. Il sont repartit au matin, titubant mais ravis, et ont rependu sur mes terre le r\u00e9cit de ma bienveillance. Ces braves gueux m\u2019ont accept\u00e9 sans r\u00e9serve pour leur souverain l\u00e9gitime.\r\n\r\n    Vous \u00eatre d\u00e9sormais le seigneur de 143 paysans et 7 soldats.", 
+    "text": "La f\u00eate s\u2019est termin\u00e9e dans la gaiet\u00e9, et les paysans ont \u00e9t\u00e9 h\u00e9berg\u00e9s dans les pi\u00e8ces vides du ch\u00e2teau. Il sont repartis au matin, titubant mais ravis et ont rependu sur mes terres le r\u00e9cit de ma bienveillance. Ces braves gueux m\u2019ont accept\u00e9 sans r\u00e9serve comme leur suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eatre d\u00e9sormais le seigneur de 143 paysans et 7 soldats.", 
     "image": "events/127.jpg", 
     "on_fire": "kingdom.population=143\nkingdom.soldiers=7\nkingdom.set_value('total_soldats',7)\nkingdom.save()\n", 
     "slug": "tuto_banquet_4", 
@@ -54387,7 +54587,7 @@
   "pk": 5, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Notre voyage s'ach\u00e8ve.", 
+    "text": "Une nouvelle histoire commence. ", 
     "message": "", 
     "event": 3, 
     "condition": " ", 
@@ -54497,7 +54697,7 @@
   "pk": 18, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\u201cVotre nom, messire?\u201d", 
+    "text": "\u201cVotre nom, messire ?\u201d", 
     "message": "", 
     "event": 12, 
     "condition": " ", 
@@ -54508,7 +54708,7 @@
   "pk": 19, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Il s'ex\u00e9cute, et me pr\u00e9sente son \u00e9p\u00e9e.", 
+    "text": "Il s'ex\u00e9cute et me pr\u00e9sente son \u00e9p\u00e9e.", 
     "message": "", 
     "event": 13, 
     "condition": " ", 
@@ -54652,7 +54852,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Un brave homme.", 
-    "message": "J'ai assist\u00e9 \u00e0 la messe du p\u00e8re {{title.cure.first_name}} dans l'\u00e9glise restaur\u00e9e. Les paysans m'ont accept\u00e9 sans r\u00e9serves comme leur nouveau suzerain.", 
+    "message": "J'ai assist\u00e9 \u00e0 la messe du p\u00e8re {{title.cure.first_name}} dans l'\u00e9glise restaur\u00e9e. Les paysans m'ont accept\u00e9 sans r\u00e9serve comme leur nouveau suzerain.", 
     "event": 29, 
     "condition": " ", 
     "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_eglise\")"
@@ -57006,7 +57206,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "\"En effet, mon seigneur...\"", 
-    "message": "Mon ma\u00eetre espion est formel : l'arm\u00e9e de {ennemi}} contient de nombreux {{type_pnj}}. Ils peuvent \u00eatre contr\u00e9 par des", 
+    "message": "Mon ma\u00eetre espion est formel, l'arm\u00e9e de {ennemi}} contient de nombreux {{type_pnj}}. Ils peuvent \u00eatre contr\u00e9 par des {% if type_pnj == archer %}cavaliers{% elif type_pnj == cavalier %}piquiers{% else %}archers{% endif %}.", 
     "event": 238, 
     "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_rapport_espion_2\").start()\n"
@@ -57266,6 +57466,17 @@
   }
 },
 {
+  "pk": 334, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "C'est une id\u00e9e qui me plait.", 
+    "message": "", 
+    "event": 218, 
+    "condition": null, 
+    "on_fire": "kingdom.create_pending_mission(\"tuto_espionnage\")\nkingdom.unlock_title(\"maitre_espion\")"
+  }
+},
+{
   "pk": 2099, 
   "model": "event.pendingevent", 
   "fields": {
@@ -57410,18 +57621,6 @@
   }
 },
 {
-  "pk": 3457, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 116, 
-    "is_started": true, 
-    "created": "2013-10-09T23:55:19.325", 
-    "started": "2013-10-09T23:55:19.329", 
-    "text": "Aymon de Ch\u00e2teauroux a frapp\u00e9 \u00e0 la porte du ch\u00e2teau.\r\nSes stats sont 11(C) 9(I) 11(D) 4(\u00c9) 52(L)\r\nSes traits sont:\r\n\r\n* Patient\r\n", 
-    "event": 251
-  }
-},
-{
   "pk": 3483, 
   "model": "event.pendingevent", 
   "fields": {
@@ -57434,14 +57633,14 @@
   }
 },
 {
-  "pk": 3484, 
+  "pk": 3485, 
   "model": "event.pendingevent", 
   "fields": {
-    "kingdom": 118, 
+    "kingdom": 119, 
     "is_started": true, 
-    "created": "2013-10-14T22:15:27.474", 
-    "started": "2013-10-14T22:15:27.599", 
-    "text": "En arrivant au sommet de la cr\u00eate, nous tirons sur nos brides et nous nous autorisons enfin une pause, afin de contempler le ch\u00e2teau qui se dessine en contrebas. Suphitia, \u00e0 ma droite, \u00e0 les joues rougies par le froid de l\u2019hiver. \r\n\u201cEst-ce celui-ci, p\u00e8re? Sommes-nous arriv\u00e9?\u201d. Sa voix n\u2019est qu\u2019un murmure dans lequel perce l'excitation de la jeunesse. \r\n\u201cOui, ma fille. remi. La terre de nos a\u00efeux.\u201d \r\nSans un regard en arri\u00e8re, je guide mon cheval sur le sentier qui serpente jusque dans la vall\u00e9e. Suphitia m'embo\u00eete le pas, suivit de pr\u00e8s par son fr\u00e8re Albald et par Balot, mon compagnon de toujours qui garde sa main sur le pommeau de son \u00e9p\u00e9e.", 
+    "created": "2013-10-14T22:22:34.089", 
+    "started": "2013-10-14T22:22:34.095", 
+    "text": "En arrivant au sommet de la cr\u00eate, nous tirons sur nos brides et nous nous autorisons enfin une pause, afin de contempler le ch\u00e2teau qui se dessine en contrebas. Etiennette, \u00e0 ma droite, \u00e0 les joues rougies par le froid de l\u2019hiver. \r\n\u201cEst-ce celui-ci, p\u00e8re? Sommes-nous arriv\u00e9s ?\u201d. Sa voix n\u2019est qu\u2019un murmure dans lequel perce l'excitation de la jeunesse. \r\n\u201cOui, ma fille. La terre de nos a\u00efeux. Le domaine revenant de droit \u00e0 la maison Remi.\u201d \r\nSans un regard en arri\u00e8re, je guide mon cheval sur le sentier qui serpente jusque dans la vall\u00e9e. Etiennette m'embo\u00eete le pas, suivie de pr\u00e8s par son fr\u00e8re Ga\u00ebl et par Edmond, mon compagnon de toujours qui garde sa main sur le pommeau de son \u00e9p\u00e9e.\r\n\r\nNotre long voyage s'ach\u00e8ve.", 
     "event": 3
   }
 },
@@ -57589,17 +57788,6 @@
   }
 },
 {
-  "pk": 3677, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 3457, 
-    "message": "Aymon de Ch\u00e2teauroux \u00e0 rejoint votre cour", 
-    "text": "Tr\u00e8s bien, cette personne me sera utile !", 
-    "folk": null, 
-    "event_action": 324
-  }
-},
-{
   "pk": 3713, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -57611,12 +57799,12 @@
   }
 },
 {
-  "pk": 3714, 
+  "pk": 3715, 
   "model": "event.pendingeventaction", 
   "fields": {
-    "pending_event": 3484, 
+    "pending_event": 3485, 
     "message": "", 
-    "text": "Notre voyage s'ach\u00e8ve.", 
+    "text": "Une nouvelle histoire commence. ", 
     "folk": null, 
     "event_action": 5
   }
@@ -58054,15 +58242,6 @@
   }
 },
 {
-  "pk": 9916, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3457, 
-    "name": "folk", 
-    "value": "`Folk`:7530"
-  }
-},
-{
   "pk": 9975, 
   "model": "event._pendingeventvariable", 
   "fields": {
@@ -58072,30 +58251,30 @@
   }
 },
 {
-  "pk": 9976, 
+  "pk": 9979, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 3484, 
+    "pending_event": 3485, 
     "name": "fils", 
-    "value": "`Folk`:7540"
+    "value": "`Folk`:7544"
   }
 },
 {
-  "pk": 9977, 
+  "pk": 9980, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 3484, 
+    "pending_event": 3485, 
     "name": "fille", 
-    "value": "`Folk`:7541"
+    "value": "`Folk`:7545"
   }
 },
 {
-  "pk": 9978, 
+  "pk": 9981, 
   "model": "event._pendingeventvariable", 
   "fields": {
-    "pending_event": 3484, 
+    "pending_event": 3485, 
     "name": "compagnon", 
-    "value": "`Folk`:7542"
+    "value": "`Folk`:7546"
   }
 },
 {
@@ -88226,7 +88405,7 @@
   "pk": 10656, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 118, 
+    "kingdom": null, 
     "stack_level": 2, 
     "object_pk": 1, 
     "object_type": "Title", 
@@ -88254,7 +88433,7 @@
   "pk": 10658, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 118, 
+    "kingdom": null, 
     "stack_level": 3, 
     "object_pk": 33, 
     "object_type": "Quality", 
@@ -88352,7 +88531,7 @@
   "pk": 10665, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 118, 
+    "kingdom": null, 
     "stack_level": 3, 
     "object_pk": 8, 
     "object_type": "Quality", 
@@ -88394,13 +88573,265 @@
   "pk": 10668, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 118, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 1, 
     "object_type": "Trigger", 
     "object_attr": "on_fire", 
     "direct_queries": 56, 
     "time": 951, 
+    "queries": 147
+  }
+},
+{
+  "pk": 10669, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "kingdom_list", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10670, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 3, 
+    "time": 16, 
+    "queries": 3
+  }
+},
+{
+  "pk": 10671, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10672, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 15, 
+    "queries": 5
+  }
+},
+{
+  "pk": 10673, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 14, 
+    "time": 59, 
+    "queries": 19
+  }
+},
+{
+  "pk": 10674, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 119, 
+    "stack_level": 2, 
+    "object_pk": 1, 
+    "object_type": "Title", 
+    "object_attr": "on_unlock", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10675, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10676, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 119, 
+    "stack_level": 3, 
+    "object_pk": 6, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 8, 
+    "queries": 3
+  }
+},
+{
+  "pk": 10677, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 14, 
+    "queries": 5
+  }
+},
+{
+  "pk": 10678, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 21, 
+    "time": 83, 
+    "queries": 29
+  }
+},
+{
+  "pk": 10679, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10680, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 14, 
+    "queries": 5
+  }
+},
+{
+  "pk": 10681, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 8, 
+    "time": 37, 
+    "queries": 13
+  }
+},
+{
+  "pk": 10682, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 10683, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 119, 
+    "stack_level": 3, 
+    "object_pk": 22, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 7, 
+    "queries": 3
+  }
+},
+{
+  "pk": 10684, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 14, 
+    "queries": 5
+  }
+},
+{
+  "pk": 10685, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 22, 
+    "time": 93, 
+    "queries": 30
+  }
+},
+{
+  "pk": 10686, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 119, 
+    "stack_level": 1, 
+    "object_pk": 1, 
+    "object_type": "Trigger", 
+    "object_attr": "on_fire", 
+    "direct_queries": 56, 
+    "time": 381, 
     "queries": 147
   }
 },
@@ -89602,7 +90033,7 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-10-14T22:16:04", 
+    "last_login": "2013-10-14T22:19:45.541", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$10000$o6OwLPDRj9Ph$BLOjIokBkTlDkxak8lSIZH2k3ePXVWBeXBEcy8/hz0w=", 
@@ -141191,6 +141622,357 @@
   }
 },
 {
+  "pk": 8480, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:19:04.035", 
+    "object_repr": "Aymon d'Oinville", 
+    "object_id": "7538", 
+    "change_message": "Modifi\u00e9 quality_set.", 
+    "user": 41, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 8481, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:19:19.732", 
+    "object_repr": "marier", 
+    "object_id": "17", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0marier [Le mari (1)]\u00a0\u00bb. condition modifi\u00e9 pour mission grid \u00ab\u00a0marier [La femme (1)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8482, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:19:32.559", 
+    "object_repr": "marier", 
+    "object_id": "17", 
+    "change_message": "Modifi\u00e9 on_start, on_resolution, on_cancel et target_list. condition modifi\u00e9 pour mission grid \u00ab\u00a0marier [Le mari (1)]\u00a0\u00bb. condition modifi\u00e9 pour mission grid \u00ab\u00a0marier [La femme (1)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8483, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:19:59.953", 
+    "object_repr": "tuto_intro_2", 
+    "object_id": "4", 
+    "change_message": "Modifi\u00e9 text. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Mettons nous au travail. [tuto_intro_2]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8484, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-14T22:22:10.927", 
+    "object_repr": "Remi kingdom", 
+    "object_id": "118", 
+    "change_message": "", 
+    "user": 40, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 8485, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-14T22:22:34.149", 
+    "object_repr": "Remi kingdom", 
+    "object_id": "119", 
+    "change_message": "", 
+    "user": 40, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 8486, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:23:22.988", 
+    "object_repr": "Les bless\u00e9s peuvent mourir", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 8487, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:31:54.591", 
+    "object_repr": "Les bless\u00e9s peuvent mourir", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 8488, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:32:04.734", 
+    "object_repr": "Les bless\u00e9s peuvent mourir", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 8489, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:33:25.873", 
+    "object_repr": "Les bless\u00e9s peuvent mourir", 
+    "object_id": "2", 
+    "change_message": "Modifi\u00e9 kingdom_list et on_fire.", 
+    "user": 41, 
+    "content_type": 20
+  }
+},
+{
+  "pk": 8490, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:34:10.727", 
+    "object_repr": "tuto_rapport_espion", 
+    "object_id": "238", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition, on_fire et message modifi\u00e9 pour event action \u00ab\u00a0\"En effet, mon seigneur...\" [tuto_rapport_espion]\u00a0\u00bb.", 
+    "user": 40, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8491, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:34:21.905", 
+    "object_repr": "tuto_espionnage", 
+    "object_id": "218", 
+    "change_message": "event action \u00ab\u00a0C'est une id\u00e9e qui me plait. [tuto_espionnage]\u00a0\u00bb ajout\u00e9.", 
+    "user": 38, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8492, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-14T22:34:40.951", 
+    "object_repr": "rapport_blesse_mort", 
+    "object_id": "261", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8493, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:37:50.759", 
+    "object_repr": "tuto_intro_3", 
+    "object_id": "6", 
+    "change_message": "Modifi\u00e9 text, condition et on_fire. on_fire modifi\u00e9 pour event action \u00ab\u00a0Les gueux respectent la force. Je vais faire armer [tuto_intro_3]\u00a0\u00bb. on_fire modifi\u00e9 pour event action \u00ab\u00a0Les gueux aiment l\u2019argent. Je vais soudoyer les no [tuto_intro_3]\u00a0\u00bb. on_fire modifi\u00e9 pour event action \u00ab\u00a0Je vais essayer la mani\u00e8re douce, et offrir au vil [tuto_intro_3]\u00a0\u00bb. on_fire modifi\u00e9 pour event action \u00ab\u00a0{{folks.1.first_name}} m\u2019a dit que l\u2019\u00e9glise du vil [tuto_intro_3]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8494, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:43:12.306", 
+    "object_repr": "tuto_intro_choixerudition", 
+    "object_id": "26", 
+    "change_message": "Modifi\u00e9 text et on_fire. on_fire modifi\u00e9 pour event action \u00ab\u00a0Amen! [tuto_intro_choixerudition]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8495, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:44:02.619", 
+    "object_repr": "tuto_intro_choixintrigue", 
+    "object_id": "16", 
+    "change_message": "Modifi\u00e9 text et on_fire. on_fire modifi\u00e9 pour event action \u00ab\u00a0Je devrais nommer le meilleur intriguant. [tuto_intro_choixintrigue]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8496, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:45:59.705", 
+    "object_repr": "tuto_banquet", 
+    "object_id": "32", 
+    "change_message": "Modifi\u00e9 text et on_fire.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8497, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-14T22:48:46.648", 
+    "object_repr": "tuto_espionnage", 
+    "object_id": "52", 
+    "change_message": "", 
+    "user": 38, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8498, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:50:06.203", 
+    "object_repr": "tuto_banquet_2", 
+    "object_id": "33", 
+    "change_message": "Modifi\u00e9 text et on_fire.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8499, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:54:41.586", 
+    "object_repr": "tuto_banquet_3", 
+    "object_id": "34", 
+    "change_message": "Modifi\u00e9 text et on_fire.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8500, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T22:56:02.304", 
+    "object_repr": "tuto_banquet_4", 
+    "object_id": "36", 
+    "change_message": "Modifi\u00e9 text et on_fire.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8501, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T23:00:43.047", 
+    "object_repr": "tuto_recrutement", 
+    "object_id": "12", 
+    "change_message": "Modifi\u00e9 text et on_fire. on_fire et text modifi\u00e9 pour event action \u00ab\u00a0\u201cVotre nom, messire ?\u201d [tuto_recrutement]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8502, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T23:01:42.507", 
+    "object_repr": "tuto_recrutement_2", 
+    "object_id": "13", 
+    "change_message": "Modifi\u00e9 text et on_fire. text modifi\u00e9 pour event action \u00ab\u00a0Il s'ex\u00e9cute et me pr\u00e9sente son \u00e9p\u00e9e. [tuto_recrutement_2]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8503, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T23:02:15.875", 
+    "object_repr": "tuto_recrutement_3", 
+    "object_id": "14", 
+    "change_message": "Modifi\u00e9 text et on_fire. on_fire modifi\u00e9 pour event action \u00ab\u00a0Une heureuse rencontre. [tuto_recrutement_3]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8504, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T23:03:17.126", 
+    "object_repr": "tuto_recrutement_4", 
+    "object_id": "15", 
+    "change_message": "Modifi\u00e9 text et on_fire.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8505, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T23:06:20.517", 
+    "object_repr": "tuto_eglise_2", 
+    "object_id": "29", 
+    "change_message": "Modifi\u00e9 text et on_fire. message modifi\u00e9 pour event action \u00ab\u00a0Un brave homme. [tuto_eglise_2]\u00a0\u00bb.", 
+    "user": 42, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8506, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-14T23:17:40.518", 
+    "object_repr": "rapport_blesse_mort", 
+    "object_id": "261", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 29
+  }
+},
+{
   "pk": 74, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -141301,12 +142083,12 @@
   }
 },
 {
-  "pk": 118, 
+  "pk": 119, 
   "model": "kingdom.kingdom", 
   "fields": {
     "soldiers": 0, 
-    "prestige": 107, 
-    "money": 88, 
+    "prestige": 105, 
+    "money": 90, 
     "user": 40, 
     "population": 0
   }
