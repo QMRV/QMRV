@@ -49214,7 +49214,7 @@
     "target_list": " ", 
     "text": "Je fais une offrande aux paysans pour qu'ils reviennent sur mes terres. Mais \u00e7a va me co\u00fbter 10 \u00e9cus.\r\n\r\n```+10 population```", 
     "has_value": false, 
-    "on_resolution": "kingdom.population+=10\nkingdom.save()\n", 
+    "on_resolution": "kingdom.population+=10\nkingdom.save()\n\npe = kingdom.create_pending_event(\"charite\")\npe.start()\n", 
     "value_description": "Valeur :", 
     "on_start": "if kingdom.money < 10 :\n  status = \"Vous n'avez pas assez d'argent pour lancer cette mission\"\nelse:\n  kingdom.money-=10\n  kingdom.save()\n", 
     "has_target": false, 
@@ -49224,7 +49224,7 @@
     "timeout": null, 
     "is_cancellable": true, 
     "duration": 5, 
-    "on_cancel": null, 
+    "on_cancel": "\n", 
     "slug": "charite", 
     "on_init": "\n"
   }
@@ -49308,7 +49308,7 @@
     "has_value": false, 
     "on_resolution": " ", 
     "value_description": "Valeur :", 
-    "on_start": "grids['enfant'][0].mentor= grids['mentor'][0]\ngrids['enfant'][0].save()\n", 
+    "on_start": "grids['enfant'][0].mentor = grids['mentor'][0]\ngrids['enfant'][0].save()\n\npe = kingdom.create_pending_event(\"education\")\npe.set_value('pupil', grids['enfant'][0])\npe.set_value('mentor', grids['mentor'][0])\npe.start()\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 4, 
@@ -49364,29 +49364,6 @@
     "duration": 60, 
     "on_cancel": "\n", 
     "slug": "espionner", 
-    "on_init": "\n"
-  }
-},
-{
-  "pk": 30, 
-  "model": "mission.mission", 
-  "fields": {
-    "name": "Chercher des noises tuto", 
-    "target_list": "\n", 
-    "text": "Aller chercher des noises \u00e0 votre voisin.\r\n\r\nTUTO\r\n[co\u00fbt 25 ecus pour lancer la mission]", 
-    "has_value": false, 
-    "on_resolution": "#a = 0\n#for folk in grids['chercheurs_merde']:\n#  a += folk.diplomacy\n#cible=Kingdom.objects.get(user__username=\"le_pnj_du_jeu\")\n#nb_def=random_value(3,6)\n#d = sum_folks(Folk.objects.filter(kingdom=cible).order_by('?')[0:nb_def], \"diplomacy\")\n#d *= 0.3\n\n\n#if a>d:\n  #kingdom.add_claim(cible, Claim.REACHABLE)\npe = PendingEvent(event=Event.objects.get(slug=\"tuto_getaffront_diplomatie_kingdomsuccess\"),kingdom=kingdom,started=None)\npe.save()\npe.set_value(\"defenseur\",cible)\npe.start()\n  \n\n  \n   \n#else:\n#  pe = PendingEvent(Event.objects.get(slug=\"tuto_getaffront_diplomatie_kingdomfailure\"),kingdom=kingdom,started=None)\n#  pe.save()\n#  pe.set_value(\"attaquant\",kingdom)\n#  pe.start()\n\nkingdom.money-=25\nkingdom.save()\n", 
-    "value_description": "Valeur :", 
-    "on_start": "\n", 
-    "has_target": false, 
-    "is_team": false, 
-    "title": 6, 
-    "target_description": " ", 
-    "timeout": null, 
-    "is_cancellable": true, 
-    "duration": 15, 
-    "on_cancel": "\n", 
-    "slug": "tuto_getaffront_diplomatie", 
     "on_init": "\n"
   }
 },
@@ -49584,10 +49561,10 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "#ne part pas si pas le chatelain dans la mission\nkingdom.create_pending_event(\"tuto_fin_tuto\").start()\n", 
+    "on_start": "if kingdom.get_folk_in_title(\"chatelain\") not in folks:\n  stop(\"Le ch\u00e2telain doit faire partie de la mission\")\n\nkingdom.create_pending_event(\"tuto_fin_tuto\").start()\n", 
     "has_target": false, 
     "is_team": false, 
-    "title": null, 
+    "title": 2, 
     "target_description": "", 
     "timeout": null, 
     "is_cancellable": true, 
@@ -49961,19 +49938,6 @@
     "allow_empty": false, 
     "slug": "attaquants", 
     "condition": "if folk.age() < C.MAJORITE:\n  status = \"Vous ne pouvez pas affecter un enfant \u00e0 cette mission.\"\nelif folk.sex == Folk.FEMALE:\n  status = \"Vous ne pouvez pas affecter de femme \u00e0 cette mission\"\n"
-  }
-},
-{
-  "pk": 28, 
-  "model": "mission.missiongrid", 
-  "fields": {
-    "allow_disabled": false, 
-    "name": "chercheurs de merde", 
-    "mission": 30, 
-    "length": 20, 
-    "allow_empty": false, 
-    "slug": "chercheurs_merde", 
-    "condition": "if folk.age()<C.MAJORITE:\n  status=\"Laisse les grands jouer \u00e0 ce jeu\"\nelif folk.sex==Folk.FEMALE:\n  status = \"Une femme ne peut pas aller se battre\"\n"
   }
 },
 {
@@ -50431,14 +50395,6 @@
   }
 },
 {
-  "pk": 688, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 80, 
-    "mission": 30
-  }
-},
-{
   "pk": 690, 
   "model": "mission.availablemission", 
   "fields": {
@@ -50604,14 +50560,6 @@
   "fields": {
     "kingdom": 76, 
     "mission": 4
-  }
-},
-{
-  "pk": 769, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 76, 
-    "mission": 30
   }
 },
 {
@@ -51480,48 +51428,6 @@
   }
 },
 {
-  "pk": 21, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "Emprunt", 
-    "weight": 1, 
-    "text": "{{title.tresorier}} souffle sur le parchemin que je viens de signer pour en faire s\u00e9cher l\u2019encre, puis le roule et me laisse y apposer mon cachet. Je viens d\u2019accepter un pr\u00eat de 100 \u00e9cus remboursables en 2 ans, avec 25% d\u2019int\u00e9r\u00eat. Mon tr\u00e9sorier s\u2019incline et emporte la missive vers mes nouveaux cr\u00e9anciers.", 
-    "image": "events/66.jpg", 
-    "on_fire": "\n", 
-    "slug": "emprunt", 
-    "condition": " "
-  }
-},
-{
-  "pk": 22, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "Emprunt", 
-    "weight": 1, 
-    "text": "{{title.tresorier}} m\u2019a fait savoir que le d\u00e9lai de remboursement du pr\u00eat touche \u00e0 sa fin. Les cr\u00e9anciers attendent r\u00e9solument leurs 125 \u00e9cus.", 
-    "image": "events/464_1.jpg", 
-    "on_fire": " ", 
-    "slug": "emprunt_due", 
-    "condition": " "
-  }
-},
-{
-  "pk": 23, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "Emprunt", 
-    "weight": 1, 
-    "text": "\u201cSire, les cr\u00e9anciers sont \u00e0 bout de patience. Nous devons absolument payer les 150 \u00e9cus que nous leur devons ou votre nom sera tra\u00een\u00e9 dans la boue.\u201d", 
-    "image": "events/464_2.jpg", 
-    "on_fire": "  ", 
-    "slug": "emprunt_overdue", 
-    "condition": "  "
-  }
-},
-{
   "pk": 24, 
   "model": "event.event", 
   "fields": {
@@ -51704,48 +51610,6 @@
   }
 },
 {
-  "pk": 38, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "Escarmouche", 
-    "weight": 1, 
-    "text": "Le petit bataillon a atteint les terres du seigneur {%if tuto%}  {{tuto_adversaire}} {%else%} {{chatelain_defenseur}} {%endif%}\u00e0 la tomb\u00e9e de la nuit, profitant  de l'obscurit\u00e9 pour traverser la rivi\u00e8re glac\u00e9e sans attirer l'attention des sentinelles. Rassembl\u00e9s autour de leurs maigres feux de camp, les hommes ont dormi quelques heures avant d'\u00eatre r\u00e9veill\u00e9s par leurs officiers. Il se sont mit rapidement en formation, leurs mains crisp\u00e9es sur leurs armes. \r\n{% if chatelain_in_mission_attaquant %}Levant bien haut mon \u00e9p\u00e9e, j'ai\r\n{% elif connetable_in_mission_attaquant %}Le soleil du matin brillant sur son heaume, sire{\r\n{title.Conn\u00e9table}} a\r\n{% else %}D'une d\u00e9marche martiale, sire {{general_attaquant}} a{% endif %}\r\n march\u00e9 devant eux et d\u00e9clar\u00e9 d'une voix forte que l'ennemi avait \u00e9t\u00e9 rep\u00e9r\u00e9 \u00e0 quelque lieues d'ici, et que le combat \u00e9tait imminent. Apr\u00e8s un discours bref mais plein de morgue, les soldats ont cri\u00e9 mon nom \u00e0 pleins poumons et se sont mit en mouvement.", 
-    "image": "events/117.jpg", 
-    "on_fire": "param.set_value(\"tuto_adversaire\", kingdom.get_value(\"tuto_adversaire\"))\n", 
-    "slug": "escarmouche_attaque", 
-    "condition": " "
-  }
-},
-{
-  "pk": 39, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "Aux armes!", 
-    "weight": 1, 
-    "text": "Le rapport est formel, le seigneur {{chatelain_ennemi}} a mit ses menaces a ex\u00e9cution. Le d\u00e9tachement qui se dirige vers mes terres est de taille trop modeste pour menacer directement mon ch\u00e2teau, mais ce n'est pas son but. Il esp\u00e8re mettre \u00e0 sac mon domaine, ravageant sans piti\u00e9 les villages p\u00e9riph\u00e9riques et les fermes isol\u00e9s, et se replier avec son butin avant que j'ai le temps de rassembler le gros de mes troupes. Si j'envoie un petit contingent \u00e0 leur rencontre, il aura peut-\u00eatre une chance de les arr\u00eater \u00e0 temps.", 
-    "image": "events/451_3.jpg", 
-    "on_fire": "param.set_value(\"chatelain_ennemi\", param.get_value(\"kingdom_attaquant\").get_folk_in_title(\"Ch\u00e2telain\"))\n", 
-    "slug": "escarmouche_warning", 
-    "condition": "\n"
-  }
-},
-{
-  "pk": 40, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "Escarmouche", 
-    "weight": 1, 
-    "text": "Le d\u00e9tachement rassembl\u00e9 \u00e0 la h\u00e2te a pass\u00e9 une courte nuit dans la clairi\u00e8re, apr\u00e8s une ext\u00e9nuante marche forc\u00e9e. La fatigue n'a balay\u00e9e ni la discipline ni la hargne de mes hommes, cependant.  {% if chatelain_in_mission_defenseur %}Je les harangue une derni\u00e8re fois, alors que l'ennemi approche, et je peux lire dans leurs yeux qu'ils sont pr\u00eat \u00e0 se battre pour{% elif connetable_in_mission_defenseur %}Lorsque sire {{title.connetable}} leur lance d'une voix f\u00e9roce que l'ennemi approche et qu'il faudra de le recevoir comme convient, leur cris ne laisse pas douter qu'ils sont pr\u00eats \u00e0{% else %}Alors que sire {{general_defenseur}} les met en formation face \u00e0 l'ennemi qui se lance \u00e0 l'assaut, ils serrent leurs armes et se pr\u00e9parent \u00e0{% endif %} d\u00e9fendre leurs familles et l'honneur de {{dynastie}}.\r\n", 
-    "image": "events/117_1.jpg", 
-    "on_fire": " ", 
-    "slug": "escarmouche_defense", 
-    "condition": "\n"
-  }
-},
-{
   "pk": 41, 
   "model": "event.event", 
   "fields": {
@@ -51756,48 +51620,6 @@
     "image": "events/10_1.jpg", 
     "on_fire": "param.set_value(\"tuto_adversaire\",kingdom.get_value(\"tuto_adversaire\"))", 
     "slug": "tuto_escarmouche_victoire_2", 
-    "condition": " "
-  }
-},
-{
-  "pk": 42, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "Escarmouche", 
-    "weight": 1, 
-    "text": "Mes hommes se sont dispers\u00e9s pour mieux vider et saccager les fermes et villages  frontaliers de {{perdant.user.username}}, passant par le fer {{pop_pertes_perdant}} paysans assez sots pour r\u00e9sister. Leur butin a \u00e9t\u00e9 entass\u00e9 dans les chariots qui seront en route pour mon ch\u00e2teau avant que {{chatelain_defenseur}} ne puisse organiser une contre-attaque. Il est probable qu'il cherche revanche un jour ou l'autre, mais pour l'heure, {{dynastie}} en sort plus craint et plus riche.\r\n```\r\n+{{gain_monnaie_attaquant}} \u00e9cus\r\n+{{gain_prestige_vainqueur}} de prestige, {{perte_prestige_perdant}} pour {{perdant.user.username}}```", 
-    "image": "events/713.jpg", 
-    "on_fire": " ", 
-    "slug": "escarmouche_pillage", 
-    "condition": "\n"
-  }
-},
-{
-  "pk": 43, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "Escarmouche", 
-    "weight": 1, 
-    "text": "Les mis\u00e9rables... Je me tiens \u00e0 pr\u00e9sent sur la place centrale de ce qui a \u00e9t\u00e9 un village paisible \u00e0 la limite de mes terres, et  ne peux que constater, impuissant, l'\u00e9tendue du d\u00e9sastre. {{pop_pertes_perdant}} hommes, femmes et enfants ont \u00e9t\u00e9 massacr\u00e9s, et leurs fermes ont \u00e9t\u00e9 pill\u00e9es de toutes leurs maigres richesses avant que les ruffians n'y mettent le feu. {{kingdom}} a \u00e9t\u00e9 souill\u00e9 et humili\u00e9.\r\n\r\n{{perte_prestige_perdant}} de prestige.\r\n+{{gain_monnaie_attaquant}} \u00e9cus et +{{gain_prestige_vainqueur}} pour {{vainqueur.user.username}}.", 
-    "image": "events/355.jpg", 
-    "on_fire": "\n", 
-    "slug": "escarmouche_misasac", 
-    "condition": " "
-  }
-},
-{
-  "pk": 44, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "Escarmouche", 
-    "weight": 1, 
-    "text": "Sur les {{pop_envoyee_perdant}} hommes d'armes qui s'\u00e9taient \u00e9lanc\u00e9s dans la bataille, seuls {{pop_envoyee_perdant - pop_pertes_perdant }} avait r\u00e9ussir \u00e0 s'enfuir, laissant le champ de bataille aux mains de l'ennemi. {{dynasty}} avait \u00e9t\u00e9 battu\r\n{% if morts_gagnant|length == 1 %}\r\net le corps de {{morts_perdants|folks_list}}, tomb\u00e9 au milieu des combats, avait du \u00eatre laiss\u00e9 au main de l'ennemi.\r\n{% elif morts_perdants|length >= 2 %}\r\n, et {{morts_perdants|folks_list}} l'avaient pay\u00e9s de leur vie.\r\n{% else %}.{% endif %}\r\n{% if blesses_gagnant|length == 1 %}\r\n{{blesses_perdants|folks_list}} avait \u00e9t\u00e9 gravement touch\u00e9, mais avait pu \u00eatre port\u00e9 hors des combats avant que le morale de mes troupes ne se brise.\r\n{% elif morts_perdants|length >= 2 %}\r\n{{morts_perdants|folks_list}} avaient encaiss\u00e9 plusieurs blessures, mais avaient r\u00e9ussit \u00e0 suivre mes troupes dans leur d\u00e9route.\r\n{% endif %}{% if blesses_gagnant|length >= 1 %}Chez l'adversaire, {{blesses_perdants|folks_list}} avai{{blesses_gagnant|pluralize:\"t,ent\"}} \u00e9t\u00e9 cruellement bless\u00e9{{blesses_gagnant|pluralize}} d\u00e8s le premier assaut. {% endif %}Les {{pop_pertes_gagnant}} soldats ennemis tu\u00e9s {% if morts_perdants|length >= 1 %}et la mort de {{mort_perdants|folks_list}}{% endif %} ne suffisaient pas \u00e0 att\u00e9nuer l'amertume de la d\u00e9faite...\r\n{% if chatelain_in_mission_perdant %}\r\nRavalant ma col\u00e8re, je ralliais mes hommes en fuite{% else %}\r\n{{general_perdant.first_name}}, surmontant la fatigue qui le tenaillait, se redressa sur sa selle pour hurler aux hommes en fuite de se rassembler\r\n{% endif %} pour entamer le retour au ch\u00e2teau.\r\n{% if vainqueur_est_attaquant %} {% if tuto %}{{tuto_adversaire}}{% else %}{{gagnant}}{% endif %} allait pouvoir mettre mes terres \u00e0 sac en toute impunit\u00e9.{% endif %}", 
-    "image": "events/69_1.jpg", 
-    "on_fire": " ", 
-    "slug": "escarmouche_defaite", 
     "condition": " "
   }
 },
@@ -52992,20 +52814,6 @@
   }
 },
 {
-  "pk": 151, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "destruction PNJ", 
-    "weight": 1, 
-    "text": "Le PNJ n'est plus accessible \u00e0 partir de maintenant", 
-    "image": "", 
-    "on_fire": "\n", 
-    "slug": "raser_chateau_ennemi", 
-    "condition": "\n"
-  }
-},
-{
   "pk": 152, 
   "model": "event.event", 
   "fields": {
@@ -53282,20 +53090,6 @@
     "image": "", 
     "on_fire": "facheux = folks.filter(sex=Folk.MALE, birth__lte=datetime.now()-timedelta(days=C.MAJORITE))\nfacheux = facheux.exclude(id__in=[folks[0].id, folks[1].id, folks[3].id])\nfacheux = facheux.exclude(quality_set__slug=\"pretre\")\nfacheux = facheux.order_by('?')\nif not facheux:\n  \n  kingdom.start_pending_event(\"tuto_facheux_chevalier\")\n  \n  \nelse:\n  param.set_value(\"facheux\", facheux[0])\n  param.next_event(\"tuto_facheux\").start()\n\nstatus = S.GHOST_EVENT\n", 
     "slug": "tuto_facheux_fantome", 
-    "condition": "\n"
-  }
-},
-{
-  "pk": 173, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "tuto presque fin", 
-    "weight": 1, 
-    "text": "trololo\r\n", 
-    "image": "", 
-    "on_fire": "kingdom.set_value(\"tuto_conflit\",False)\nkingdom.set_value(\"tuto_firstbattle_attack\",False)\nkingdom.set_value(\"test\",False)\n\n\n\n#if kingdom.get_value(\"tuto_facheux_refus\") is not None:\n#  kingdom.start_pending_event(\"tuto_facheux_fantome\")\n#else:\n#  if kingdom.get_value(\"tuto_ambition\")is None:\n#    kingdom.start_pending_event(\"tuto_ambition\")\n#  else:\n#    kingdom.create_pending_mission(\"tuto_getaffront_diplomacy\")\n#\nstatus = S.GHOST_EVENT\n", 
-    "slug": "dumb_tuto_presque_fin", 
     "condition": "\n"
   }
 },
@@ -53938,7 +53732,7 @@
     "weight": 1, 
     "text": "F\u00e9licitations, vous avez termin\u00e9 le tuto.", 
     "image": "", 
-    "on_fire": "\"\"\"\nHERE BE DRAGONS.\nNe pas copier coller ce code qui va toucher les m\u00e9caniques internes du jeu...\n\"\"\"\n\n# Title to unlock\ntitles = ('chatelain', 'cure', 'chambellan', 'tresorier', 'ambassadeur', 'maitre_espion', 'connetable', )\n# Missions to manually unlock\nmissions = ('escarmouche', )\n\n# Unlock titles\nfor title in titles:\n  kingdom.unlock_title(title)\n\n# Unlock missions\nfor mission in missions:\n  kingdom.unlock_mission(mission)\n\n# First, resolve all current pending mission\npending_missions = kingdom.pendingmission_set.filter(started__isnull=False)\nfor pending_mission in pending_missions:\n  pending_mission.resolve()\n\n# Remove \"tuto_\" missions from AvailableMission and PendingMission\nkingdom.availablemission_set.filter(mission__slug__startswith=\"tuto_\").delete()\nkingdom.pendingmission_set.filter(mission__slug__startswith=\"tuto_\").delete()\n\n# Remove \"tuto_\" variables set on the kingdom\nkingdom._kingdomvariable_set.filter(key__startswith=\"tuto_\")\nkingdom.set_value(\"in_tuto\", False)", 
+    "on_fire": "\"\"\"\nHERE BE DRAGONS.\nNe pas copier coller ce code qui va toucher les m\u00e9caniques internes du jeu...\n\"\"\"\n\n# Title to unlock\ntitles = ('chatelain', 'cure', 'chambellan', 'tresorier', 'ambassadeur', 'maitre_espion', 'connetable', )\n# Missions to manually unlock\nmissions = ('escarmouche', )\n\n# Unlock titles\nfor title in titles:\n  kingdom.unlock_title(title)\n\n# Unlock missions\nfor mission in missions:\n  kingdom.unlock_mission(mission)\n\n# First, resolve all current pending mission\npending_missions = kingdom.pendingmission_set.filter(started__isnull=False, mission__slug__startswith=\"tuto_\")\nfor pending_mission in pending_missions:\n  pending_mission.resolve()\n\n# Remove \"tuto_\" missions from AvailableMission and PendingMission\nkingdom.availablemission_set.filter(mission__slug__startswith=\"tuto_\").delete()\nkingdom.pendingmission_set.filter(mission__slug__startswith=\"tuto_\").delete()\n\n# Remove \"tuto_\" variables set on the kingdom\nkingdom._kingdomvariable_set.filter(key__startswith=\"tuto_\")\nkingdom.set_value(\"in_tuto\", False)", 
     "slug": "tuto_fin_tuto", 
     "condition": "\n"
   }
@@ -54499,40 +54293,7 @@
     "message": "Je peux charger mon tr\u00e9sorier d'effectuer un [emprunt](#mission), de [taxer mes paysans](#mission) ou m\u00eame de [puiser dans les frais du chateau](#mission).", 
     "event": 20, 
     "condition": " ", 
-    "on_fire": "kingdom.unlock_mission(\"emprunt\")\nkingdom.unlock_mission(\"taxepaysanne\")\nkingdom.unlock_mission(\"taxecour\")\n\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_caissesvides\")"
-  }
-},
-{
-  "pk": 28, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": " Cela nous permettra de respirer pour un temps.", 
-    "message": "J'ai emprunt\u00e9 100 \u00e9cus. Dans deux ans, 125 devront \u00eatre rembours\u00e9s.", 
-    "event": 21, 
-    "condition": " ", 
-    "on_fire": "kingdom.money += 100\nkingdom.save()\nparam.next_event(\"emprunt_due\")\nparam.started = datetime.now() + timedelta(days=2)\nparam.save()"
-  }
-},
-{
-  "pk": 29, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "{% if kingdom.money >= 125 %} Bien entendu. Envoyez leur l\u2019argent avec mes compliments. {% else %} Hmmm... expliquez-leur que nous ne pouvons pas payer pour l\u2019instant. Nous leur rembourserons 150 \u00e9cus l\u2019ann\u00e9e prochaine. {% endif %}", 
-    "message": "{% if kingdom.money >= 125 %} J'ai rembours\u00e9 ma dette. -125 \u00e9cus{% else %}Incapable de rembourser ma dette, j'ai promis de payer 150 \u00e9cus comptant dans un an jour pour jour. {% endif %}", 
-    "event": 22, 
-    "condition": " ", 
-    "on_fire": "if kingdom.money >= 125:\n  kingdom.money -= 125\n  kingdom.save()\nelse:\n  param.next_event(\"emprunt_overdue\")\n  param.started = datetime.now() + timedelta(days=2)\n  param.save()\n"
-  }
-},
-{
-  "pk": 30, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "{% if kingdom.money >= 150 %} Je n\u2019ai pas vraiment le choix... {% else %} Qu\u2019ils aillent au diable! {% endif %}", 
-    "message": "{% if kingdom.money >= 150 %} Ma dette a \u00e9t\u00e9 rembours\u00e9e, avec les int\u00e9r\u00eats.{% else %}Je n'ai pas pu remourser ma dette, et mes cr\u00e9ancier l'on fait savoir au royaume.{% endif %}", 
-    "event": 23, 
-    "condition": " ", 
-    "on_fire": "if kingdom.money >= 150:\n  kingdom.money -= 150\n  kingdom.save()\nelse:\n  kingdom.prestige -= 50\n  kingdom.save()\n"
+    "on_fire": "kingdom.unlock_mission(\"taxepaysanne\")\nkingdom.unlock_mission(\"taxecour\")\n\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_caissesvides\")"
   }
 },
 {
@@ -54679,39 +54440,6 @@
   }
 },
 {
-  "pk": 44, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "\"A L'ATTAQUE!\"", 
-    "message": "", 
-    "event": 38, 
-    "condition": "  ", 
-    "on_fire": "if param.get_value(\"vainqueur_est_attaquant\"):\n  param.next_event(\"escarmouche_victoire\").start()\nelse:\n  param.next_event(\"escarmouche_defaite\").start()"
-  }
-},
-{
-  "pk": 45, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "Je dois agir.", 
-    "message": "", 
-    "event": 39, 
-    "condition": " ", 
-    "on_fire": "pm=kingdom.create_pending_mission(\"escarmouche_defense\")\npm.set_value(\"kingdom_attaquant\", param.get_value(\"kingdom_attaquant\"))\npm.set_value(\"mission_attaque\", param.get_value(\"mission_attaque\"))\npm.started=datetime.now() - param.pending_event.created\npm.save()"
-  }
-},
-{
-  "pk": 46, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "\"PAS DE QUARTIER!\"", 
-    "message": "", 
-    "event": 40, 
-    "condition": " ", 
-    "on_fire": "if param.get_value(\"vainqueur_est_attaquant\"):\n  param.next_event(\"escarmouche_defaite\").start()\nelse:\n  param.next_event(\"escarmouche_victoire\").start()"
-  }
-},
-{
   "pk": 47, 
   "model": "event.eventaction", 
   "fields": {
@@ -54720,28 +54448,6 @@
     "event": 41, 
     "condition": " ", 
     "on_fire": "if param.get_value(\"attaquant\"):\n  pe=param.next_event(\"tuto_escarmouche_pillage\").start()  \nelif (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None):\n  pe=param.next_event(\"tuto_rapport_espion\").start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 150\nelif kingdom.prestige>150:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n  pe.start()\n"
-  }
-},
-{
-  "pk": 48, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "Vae victis!", 
-    "message": null, 
-    "event": 42, 
-    "condition": " ", 
-    "on_fire": " "
-  }
-},
-{
-  "pk": 53, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "Mon honneur r\u00e9clame vengeance...", 
-    "message": null, 
-    "event": 43, 
-    "condition": " ", 
-    "on_fire": " "
   }
 },
 {
@@ -55086,21 +54792,10 @@
   }
 },
 {
-  "pk": 105, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "ouiiin j'ai perdu :(", 
-    "message": "", 
-    "event": 44, 
-    "condition": " ", 
-    "on_fire": "if param.get_value(\"vainqueur_est_attaquant\"):\n  param.next_event(\"escarmouche_misasac\").start()"
-  }
-},
-{
   "pk": 106, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Il ne m'inspre pas confiance et je ne veux pas payer pour un incompetent", 
+    "text": "Il ne m'inspre pas confiance et je ne veux pas payer pour un incomp\u00e9tent", 
     "message": "", 
     "event": 78, 
     "condition": " ", 
@@ -56131,17 +55826,6 @@
   }
 },
 {
-  "pk": 211, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "OK", 
-    "message": "", 
-    "event": 151, 
-    "condition": "\n", 
-    "on_fire": "\n"
-  }
-},
-{
   "pk": 212, 
   "model": "event.eventaction", 
   "fields": {
@@ -56270,7 +55954,7 @@
     "message": "Mon fils {{folk.1.first_name}} et le {{facheux}} sont \u00e0 couteaux tir\u00e9s. Je pourrais regler le probl\u00e8me en [d\u00e9barassant](mission) ma cour du chevalier.", 
     "event": 157, 
     "condition": "\n", 
-    "on_fire": "if kingdom.get_folk_in_title(\"maitre_espion\") is None:\n  kingdom.unlock_title(\"maitre_espion\")\n  \nkingdom.unlock_mission(\"compromettre\")\nkingdom.unlock_mission(\"assassiner\")\n\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")\n"
+    "on_fire": "if kingdom.get_folk_in_title(\"maitre_espion\") is None:\n  kingdom.unlock_title(\"maitre_espion\")\n  \nkingdom.unlock_mission(\"compromettre\")\n\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")\n"
   }
 },
 {
@@ -140217,6 +139901,279 @@
     "object_repr": "entree_ordre", 
     "object_id": "16", 
     "change_message": "", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8425, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-14T20:25:11.914", 
+    "object_repr": "tuto_getaffront_diplomatie", 
+    "object_id": "30", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8426, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-14T20:25:42.006", 
+    "object_repr": "dumb_tuto_presque_fin", 
+    "object_id": "173", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8427, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T20:26:13.142", 
+    "object_repr": "tuto_caissesvides_2", 
+    "object_id": "20", 
+    "change_message": "on_fire modifi\u00e9 pour event action \u00ab\u00a0Il faut que j\u2019y r\u00e9fl\u00e9chisse... [tuto_caissesvides_2]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8428, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T20:26:55.927", 
+    "object_repr": "tuto_facheux_6", 
+    "object_id": "157", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Ces id\u00e9es me r\u00e9voltent! [tuto_facheux_6]\u00a0\u00bb. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Je vais y r\u00e9fl\u00e9chir s\u00e9rieusement. [tuto_facheux_6]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8429, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-14T20:31:10.238", 
+    "object_repr": "escarmouche_attaque", 
+    "object_id": "38", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8430, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-14T20:31:10.240", 
+    "object_repr": "escarmouche_defaite", 
+    "object_id": "44", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8431, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-14T20:31:10.241", 
+    "object_repr": "escarmouche_defense", 
+    "object_id": "40", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8432, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-14T20:31:10.243", 
+    "object_repr": "escarmouche_misasac", 
+    "object_id": "43", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8433, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-14T20:31:10.244", 
+    "object_repr": "escarmouche_pillage", 
+    "object_id": "42", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8434, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-14T20:31:10.245", 
+    "object_repr": "escarmouche_warning", 
+    "object_id": "39", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8435, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T20:32:22.909", 
+    "object_repr": "specialisation_militaire", 
+    "object_id": "78", 
+    "change_message": "Modifi\u00e9 condition et on_fire. on_fire et text modifi\u00e9 pour event action \u00ab\u00a0Il ne m'inspre pas confiance et je ne veux pas pay [specialisation_militaire]\u00a0\u00bb. on_fire modifi\u00e9 pour event action \u00ab\u00a0Qu'on lui ach\u00e8te ce dont {{chevalier.first_name}}  [specialisation_militaire]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8436, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-14T20:33:16.008", 
+    "object_repr": "raser_chateau_ennemi", 
+    "object_id": "151", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8437, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T20:35:21.573", 
+    "object_repr": "nommer_mentor", 
+    "object_id": "23", 
+    "change_message": "Modifi\u00e9 on_start et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0nommer_mentor [Enfant (1)]\u00a0\u00bb. condition modifi\u00e9 pour mission grid \u00ab\u00a0nommer_mentor [Mentor (1)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8438, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T20:36:21.584", 
+    "object_repr": "nommer_mentor", 
+    "object_id": "23", 
+    "change_message": "Modifi\u00e9 on_start et on_cancel. condition modifi\u00e9 pour mission grid \u00ab\u00a0nommer_mentor [Enfant (1)]\u00a0\u00bb. condition modifi\u00e9 pour mission grid \u00ab\u00a0nommer_mentor [Mentor (1)]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8439, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T20:37:41.607", 
+    "object_repr": "charite", 
+    "object_id": "18", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution et on_cancel.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8440, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T20:37:59.880", 
+    "object_repr": "charite", 
+    "object_id": "18", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution et on_cancel.", 
+    "user": 1, 
+    "content_type": 23
+  }
+},
+{
+  "pk": 8441, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-14T20:38:38.600", 
+    "object_repr": "emprunt", 
+    "object_id": "21", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8442, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-14T20:38:38.602", 
+    "object_repr": "emprunt_due", 
+    "object_id": "22", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8443, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-14T20:38:38.603", 
+    "object_repr": "emprunt_overdue", 
+    "object_id": "23", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8444, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T20:58:52.819", 
+    "object_repr": "tuto_fin_tuto", 
+    "object_id": "232", 
+    "change_message": "Modifi\u00e9 condition et on_fire. condition et on_fire modifi\u00e9 pour event action \u00ab\u00a0Il est maintenant temps d'aller affronter le monde [tuto_fin_tuto]\u00a0\u00bb.", 
+    "user": 1, 
+    "content_type": 29
+  }
+},
+{
+  "pk": 8445, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-14T21:02:05.392", 
+    "object_repr": "tuto_achever_voisin", 
+    "object_id": "42", 
+    "change_message": "Modifi\u00e9 on_init, on_start, on_resolution, on_cancel, target_list et title. condition modifi\u00e9 pour mission grid \u00ab\u00a0tuto_achever_voisin [sneaky bitches (20)]\u00a0\u00bb.", 
     "user": 1, 
     "content_type": 23
   }
