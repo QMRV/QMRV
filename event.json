@@ -2069,7 +2069,7 @@
     "category": null, 
     "name": "Charit\u00e9", 
     "weight": 1, 
-    "text": "Le p\u00e8re {{title.cure.first_name}} a fait porter aux paysans du village {% if random <= 33 %}une douzaine de vache \u00e0 lait achet\u00e9es \u00e0 une foire voisine.{% elif random <= 66 %}une  charette de pains frais cuis dans les fours du chateau.{% else %}une bourse d'\u00e9cus bien remplie, qui a \u00e9t\u00e9 partag\u00e9e entre les misereux.{% endif %}. Les braves gueux ont accept\u00e9 cette aumone avec gratitude,  et {% if random2 <= 33 %}un nouveau n\u00e9 a \u00e9t\u00e9 nomm\u00e9 {{title.chatelain.first_namme}} en mon honneur.{% if random2 <= 66 %}une petite f\u00eate a \u00e9t\u00e9 donn\u00e9e en mon nom.{% else %}une petite d\u00e9l\u00e9gation s'est pr\u00e9sent\u00e9e pour me remercier en personne.{% endif %}. La nouvelle de ma charit\u00e9 s'est rapidement r\u00e9pandue, et davantage de serfs souhaitent profiter de mes largesses et de ma protection.\r\n\r\n    -50 \u00e9cus.\r\n    +20 paysans.", 
+    "text": "Le p\u00e8re {{title.cure.first_name}} a fait porter aux paysans du village {% if random <= 33 %}une douzaine de vache \u00e0 lait achet\u00e9es \u00e0 une foire voisine.{% elif random <= 66 %}une  charette de pains frais cuis dans les fours du chateau.{% else %}une bourse d'\u00e9cus bien remplie, qui a \u00e9t\u00e9 partag\u00e9e entre les misereux.{% endif %}. Les braves gueux ont accept\u00e9 cette aumone avec gratitude,  et {% if random2 <= 33 %}un nouveau n\u00e9 a \u00e9t\u00e9 nomm\u00e9 {{title.chatelain.first_namme}} en mon honneur.{% endif %}{% if random2 <= 66 %}une petite f\u00eate a \u00e9t\u00e9 donn\u00e9e en mon nom.{% else %}une petite d\u00e9l\u00e9gation s'est pr\u00e9sent\u00e9e pour me remercier en personne.{% endif %}. La nouvelle de ma charit\u00e9 s'est rapidement r\u00e9pandue, et davantage de serfs souhaitent profiter de mes largesses et de ma protection.\r\n\r\n    -{{perte_ecus}} \u00e9cus.\r\n    {{gain_paysans}} paysans.", 
     "image": "events/14_1.jpg", 
     "on_fire": "\n", 
     "slug": "charite", 
@@ -2643,7 +2643,7 @@
     "category": null, 
     "name": "Rapport d'espionnage", 
     "weight": 1, 
-    "text": "{{title.maitre_espion}}, mon ma\u00eetre espion, s'avance avec un sourire satisfait. \"Mes agents ont bien travaill\u00e9, messire\". Je saisit la missive qu'{{title.maitre_espion|feminize:\"il,elle\"}} me tend, et sourit \u00e0 mon tour en d\u00e9couvrant son contenu.\"Je vois... Ils ont assez r\u00e9serve pour se battre encore longtemps. Comme nous le pensions, les forces {{dynastie_ennemi}} sont principalement constitu\u00e9es {{type_pnj|elide:\"de,d'\"}}{{type_pnj}}s. {% if type_pnj == archer %}Si nous parvenons \u00e0 les engager avec notre cavalerie, ils d\u00e9taleront comme des lapins.{% elif type_pnj == cavalier %}Si nous brisons leur charge sur un rang de piquiers, la victoire sera notre.{% else %}Avec suffisamment d'archers, nous devrions pouvoir les d\u00e9cimer avant qu'ils n\u2019atteignent le corps \u00e0 corps.{% endif %}. \" {{title.maitre_espion|feminize:\"Il,Elle\"}} opine en silence, et semble h\u00e9siter \u00e0 prendre la parole. Je '{{title.maitre_espion|feminize:\"le,la\"}} d\u00e9visage et fronce les sourcils.  \"Avez-vous d\u00e9couvert autre chose?\"", 
+    "text": "{{title.maitre_espion}}, mon ma\u00eetre espion, s'avance avec un sourire satisfait. \"Bonsoir, messire\". Je saisit la missive qu'{{title.maitre_espion|feminize:\"il,elle\"}} me tend, et sourit \u00e0 mon tour en d\u00e9couvrant son contenu.\"Je vois... Ils ont assez r\u00e9serve pour se battre encore longtemps. Comme nous le pensions, les forces {{dynastie_ennemi}} sont principalement constitu\u00e9es {{type_pnj|elide:\"de,d'\"}}{{type_pnj}}s. {% if type_pnj == archer %}Si nous parvenons \u00e0 les engager avec notre cavalerie, ils d\u00e9taleront comme des lapins.{% elif type_pnj == cavalier %}Si nous brisons leur charge sur un rang de piquiers, la victoire sera notre.{% else %}Avec suffisamment d'archers, nous devrions pouvoir les d\u00e9cimer avant qu'ils n\u2019atteignent le corps \u00e0 corps.{% endif %}. \" {{title.maitre_espion|feminize:\"Il,Elle\"}} opine en silence, et semble h\u00e9siter \u00e0 prendre la parole. Je '{{title.maitre_espion|feminize:\"le,la\"}} d\u00e9visage et fronce les sourcils.  \"Avez-vous d\u00e9couvert autre chose?\"", 
     "image": "events/475.jpg", 
     "on_fire": "kingdom.set_value(\"tuto_rapport_espion\",True)\n", 
     "slug": "tuto_rapport_espion", 
@@ -2811,7 +2811,7 @@
     "category": null, 
     "name": "Retour de raid", 
     "weight": 1, 
-    "text": "Nos hommes sont de retour apr\u00e8s le raid dans les terres de {{attaque.user.username}}. \r\n\r\nJe vais \u00e0 la rencontre de mes fid\u00e8les serviteurs en train de d\u00e9monter et de d\u00e9sarmer. \r\n{% if blesses_attaquant|length == 0 %} En approchant je les entends se vanter de leur exploits. L'attaque s'est vraisemblablement bien pass\u00e9e. Arrivant dans la cour je d\u00e9clare, r\u00e9joui : \"Reposez vous mes amis, je vous veux en forme pour me conter vos exploits ce soir. \"{% else %} En approchant j\u2019entends des beuglements. Arriv\u00e9 dans la basse cour je vois {% if blesses_attaquant|length > 1 %}les sieurs  {% for perso in blesses_attaquant %} {{perso.first_name}} {{perso.last_name}}, {% endfor %}grima\u00e7ants sur des tas de paille tandis qu'une servante leur sert du vin. Apr\u00e8s avoir aval\u00e9 une gorg\u00e9e {{blesses_attaquant.0.first_name}} {{blesses_attaquant.0.last_name}} me d\u00e9clare : \" L'attaque s'est bien pass\u00e9e, Mon seigneur mais ces p\u00e9cores avaient plus de r\u00e9pondant qu'on ne pensait.\"{% else %} le sieur  {{blesses_attaquant.0.first_name}} {{blesses_attaquant.0.last_name}} grima\u00e7ant sur un tas de paille tandis qu'une servante lui sert du vin. Apr\u00e8s avoir aval\u00e9 une gorg\u00e9e celui-ci me d\u00e9clare : \" L'attaque s'est bien pass\u00e9e, Mon seigneur mais que voulez vous ce sont les risques de ce genre d'aventures.\"{% endif %}\r\n\r\n\r\n{% endif %}\r\n\r\n{% if blesses_attaquant|length > 1  %}\r\n+ {% for perso in blesses_attaquant %} {{perso.first_name}} {{perso.last_name}},{% endfor %} \r\nbless\u00e9s. \r\n{% elif blesses_attaquant|length > 0 %}\r\n+ {{blesses_attaquant.0.first_name}} {{blesses_attaquant.0.last_name}} bless\u00e9. \r\n{% endif %}\r\n\r\n+ {{argent_gagne}} \u00e9cus gagn\u00e9s.", 
+    "text": "Nos hommes sont de retour apr\u00e8s le raid dans les terres de {{attaque.user.username}}. \r\n\r\nJe vais \u00e0 la rencontre de mes fid\u00e8les serviteurs en train de d\u00e9monter et de d\u00e9sarmer. \r\n{% if blesses_attaquant|length == 0 %} En approchant je les entends se vanter de leur exploits. L'attaque s'est vraisemblablement bien pass\u00e9e. Arrivant dans la cour je d\u00e9clare, r\u00e9joui : \"Reposez vous mes amis, je vous veux en forme pour me conter vos exploits ce soir. \"{% else %} En approchant j\u2019entends des beuglements. Arriv\u00e9 dans la basse cour je vois {% if blesses_attaquant|length > 1 %}les sieurs  {% for perso in blesses_attaquant %} {{perso.first_name}} {{perso.last_name}}, {% endfor %}grima\u00e7ants sur des tas de paille tandis qu'une servante leur sert du vin. Apr\u00e8s avoir aval\u00e9 une gorg\u00e9e {{blesses_attaquant.0.first_name}} {{blesses_attaquant.0.last_name}} me d\u00e9clare : \" L'attaque s'est bien pass\u00e9e, Mon seigneur mais ces p\u00e9cores avaient plus de r\u00e9pondant qu'on ne pensait.\"{% else %} le sieur  {{blesses_attaquant.0.first_name}} {{blesses_attaquant.0.last_name}} grima\u00e7ant sur un tas de paille tandis qu'une servante lui sert du vin. Apr\u00e8s avoir aval\u00e9 une gorg\u00e9e celui-ci me d\u00e9clare : \" L'attaque s'est bien pass\u00e9e, Mon seigneur mais que voulez vous ce sont les risques de ce genre d'aventures.\"{% endif %}\r\n\r\n\r\n{% endif %}\r\n\r\n{% if blesses_attaquant|length > 1  %}\r\n+ {% for perso in blesses_attaquant %} {{perso.first_name}} {{perso.last_name}},{% endfor %} \r\nbless\u00e9s. \r\n{% elif blesses_attaquant|length > 0 %}\r\n+ {{blesses_attaquant.0.first_name}} {{blesses_attaquant.0.last_name}} bless\u00e9. \r\n{% endif %}\r\n+ {{argent_gagne}} \u00e9cus gagn\u00e9s.\r\n{% if perte_prestige > 20 %}+ Vous avez perdu {{perte_prestige}} pour attaquer l\u00e2chement les petits dans la cour d'\u00e9cole.}}{% elif perte_prestige > 0 %}+ Vous avez perdu {{perte_prestige}} pour attaquer l\u00e2chement vos voisins.}}  {% endif %}", 
     "image": "events/retour_raid_2.jpg", 
     "on_fire": "\n", 
     "slug": "retour_raid_ok", 
@@ -2825,7 +2825,7 @@
     "category": 1, 
     "name": "retour de raid sanglant", 
     "weight": 1, 
-    "text": "Un cr\u00e9puscule pluvieux sur le ch\u00e2teau. Des coups sourds et affol\u00e9s r\u00e9sonnent \u00e0 ma porte. J'ouvre pour trouver devant moi un messager essouffl\u00e9 qui me d\u00e9clare : \" les hommes sont revenus votre seigneurie\". \r\n\r\nremettant mes laines imbib\u00e9es par l'humidit\u00e9 je vais \u00e0 la rencontre des hommes dans la cour. L\u2019atmosph\u00e8re est sinistre et je constate bien vite que les sieurs {% for perso in morts_nom %}{{perso}}, \r\n{% endfor %} manquent \u00e0 l'appel. \r\n\r\n\"Les terres de {{target.user.username}} \u00e9taient mieux prot\u00e9g\u00e9es qu'on ne le croyait ma seigneurie ... l'attaque a mal tourn\u00e9e. {morts_attaquant|length,pluralize:\"Il vous a servi loyalement jusqu'\u00e0 son dernier souffle.\",\"Ces braves vous ont loyalement servis jusqu\u2019au bout.\"}\r\n\r\n+ {% for perso in morts_nom %}{{perso}}, \r\n{% endfor %} sont morts.\r\n+ \r\n{% if blesses_attaquant|length > 1  %}\r\n+ {% for perso in blesses_attaquant %} {{perso.first_name}} {{perso.last_name}},{% endfor %} \r\nbless\u00e9s. \r\n{% elif blesses_attaquant|length > 0 %}\r\n+ {{blesses_attaquant.0.first_name}} {{blesses_attaquant.0.last_name}} bless\u00e9. \r\n{% endif %}\r\n+ {{argent_gagne}} \u00e9cus gagn\u00e9s.\r\n\r\n", 
+    "text": "Un cr\u00e9puscule pluvieux sur le ch\u00e2teau. Des coups sourds et affol\u00e9s r\u00e9sonnent \u00e0 ma porte. J'ouvre pour trouver devant moi un messager essouffl\u00e9 qui me d\u00e9clare : \" les hommes sont revenus votre seigneurie\". \r\n\r\nremettant mes laines imbib\u00e9es par l'humidit\u00e9 je vais \u00e0 la rencontre des hommes dans la cour. L\u2019atmosph\u00e8re est sinistre et je constate bien vite que les sieurs {% for perso in morts_nom %}{{perso}}, \r\n{% endfor %} manquent \u00e0 l'appel. \r\n\r\n\"Les terres de {{target.user.username}} \u00e9taient mieux prot\u00e9g\u00e9es qu'on ne le croyait ma seigneurie ... l'attaque a mal tourn\u00e9e. {morts_attaquant|length,pluralize:\"Il vous a servi loyalement jusqu'\u00e0 son dernier souffle.\",\"Ces braves vous ont loyalement servis jusqu\u2019au bout.\"}\r\n\r\n+ {% for perso in morts_nom %}{{perso}}, \r\n{% endfor %} sont morts.\r\n+ \r\n{% if blesses_attaquant|length > 1  %}\r\n+ {% for perso in blesses_attaquant %} {{perso.first_name}} {{perso.last_name}},{% endfor %} \r\nbless\u00e9s. \r\n{% elif blesses_attaquant|length > 0 %}\r\n+ {{blesses_attaquant.0.first_name}} {{blesses_attaquant.0.last_name}} bless\u00e9. \r\n{% endif %}\r\n+ {{argent_gagne}} \u00e9cus gagn\u00e9s.\r\n{% if perte_prestige > 20 %}+ Vous avez perdu {{perte_prestige}} pour attaquer l\u00e2chement les petits dans la cour d'\u00e9cole.}}{% elif perte_prestige > 0 %}+ Vous avez perdu {{perte_prestige}} pour attaquer l\u00e2chement vos voisins.}}  {% endif %}\r\n", 
     "image": "events/village_pille_2.jpg", 
     "on_fire": "\n", 
     "slug": "retour_raid_morts", 
@@ -2913,6 +2913,62 @@
     "image": "", 
     "on_fire": "\n", 
     "slug": "compromettre_big_failure", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 262, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Rapport de bl\u00e9ss\u00e9s", 
+    "weight": 1, 
+    "text": "haha ", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "rapport_blesses", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 263, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Jurer all\u00e9geance", 
+    "weight": 1, 
+    "text": "Vous \u00eates maintenant le vassal de {{ suzerain }}.", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "jurer_allegeance", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 264, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "rapport", 
+    "weight": 1, 
+    "text": "\"...Avant son tr\u00e9pas, feu la femme du seigneur {{ennemi_lastname}} lui a donn\u00e9 trois enfants. L'a\u00een\u00e9e, 18 ans, est connue pour sa pi\u00e9t\u00e9. Elle supplie son p\u00e8re de la laisser rejoindre un couvent depuis plusieurs ann\u00e9es. Le second est un gaillard de 17 ans au temp\u00e9rament tr\u00e8s vif, et la cadette est  une beaut\u00e9 de 16 ans qu'on dit \u00eatre la moins sage du trio.\" Je croise les bras, pensif. \"Aucun d'eux n'est mari\u00e9?\" Il secoue la t\u00eate. \"Non, seigneur. Les fian\u00e7ailles du fils ont \u00e9t\u00e9 annul\u00e9es l'ann\u00e9e derni\u00e8re.\" Je reste silencieux un long moment. Cette information ouvre de nouvelles perspectives auxquelles je dois r\u00e9fl\u00e9chir. \"Ce sera tout, {{title.maitre_espion.first_name}}. Bon travail.\"", 
+    "image": "events/475_1.jpg", 
+    "on_fire": null, 
+    "slug": "tuto_rapport_espion_2", 
+    "condition": null
+  }
+},
+{
+  "pk": 265, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Annuler allegeance", 
+    "weight": 1, 
+    "text": "Vous \u00eates maintenant votre propre ma\u00eetre.", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "annuler_allegeance", 
     "condition": "\n"
   }
 },
@@ -5099,7 +5155,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Il est bon d'\u00eatre aim\u00e9 de ses gens.", 
-    "message": "J'ai fait acte de charit\u00e9 envers mes paysans. ```\r\n-50 \u00e9cus.\r\n+20 paysans.\r\n```", 
+    "message": "J'ai fait acte de charit\u00e9 envers mes paysans.\r\n    -{{perte_ecus}} \u00e9cus.\r\n    {{gain_paysans}} paysans.", 
     "event": 185, 
     "condition": "\n", 
     "on_fire": "\n"
@@ -5509,7 +5565,7 @@
     "message": "", 
     "event": 234, 
     "condition": "\n", 
-    "on_fire": "#mise en forme des param\u00e8tres \u00e0 passer aux fonctions de calcul\naffected=kingdom.get_team(\"ligne_defense\")[\"affected\"][0:3]\ndefenseur = {\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * kingdom.soldiers / 100),\n  'combattants': kingdom.get_team(\"ligne_defense\")[\"affected\"],\n  'population': kingdom.population,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':kingdom.get_value('tuto_dynasty_PNJ')\n}\n\n# R\u00e9cuperer les cinq meilleurs combattants de l'attaquant\ndate_majorite = datetime.now() - timedelta(days=C.MAJORITE)\ncinq_meilleurs = kingdom.folk_set.filter(sex=Folk.MALE, disabled=False, birth__lte=date_majorite).order_by('-fight')[0:5]\nmoyenne_meilleurs_fight = avg_folks(cinq_meilleurs, 'fight')\n\ncombattants = [Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight)]\nmap(lambda f: f.save(), combattants)\ntype_adversaire=kingdom.get_value(\"tuto_type_PNJ\",'piquier')\ncombattants[0].add_quality(type_adversaire)\ncombattants[1].add_quality(type_adversaire)\ncombattants[2].add_quality(random_in(['piquier','cavalier','archer']))\n\nattaquant = {\n  # Dans le cadre du tuto,\n  # Les troupes du d\u00e9fenseur correspondent \u00e0 80% des troupes maximales disponibles pour ce Kingdom\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * 0.8 * C.POURCENTAGE_MAX_SOLDATS_PASSIF * call_function(\"get_max_population\", kingdom=kingdom) / (100 * 100)),\n  'combattants': combattants,\n  'population': kingdom.prestige*2,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':\"dynastie advserse\",\n}\n\n#fonctions pour calculer ce qu'il se passe sans appliquer\ngagnant, perdant, bataille = f(\"determiner_vainqueur_combat\", attaquant=attaquant, defenseur=defenseur)\nis_victory = gagnant == attaquant\ndelta = f(\"determiner_modifications_combat\", gagnant=gagnant, perdant=perdant, marge=bataille['marge'], attaquant_est_gagnant=is_victory)\nif is_victory==False:\n  commandement={\n                'gagnant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                'perdant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                }\nelse:\n  commandement={\n                'gagnant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                'perdant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                }  \n#application gain_prestige\nif is_victory==False:\n  kingdom.prestige += delta['gagnant']['prestige']\nelse:\n  kingdom.prestige += delta['perdant']['prestige']\nkingdom.save()\n\n#d\u00e9terminantion prochain event\nif kingdom.get_value(\"tuto_firstbattle_defense\", False) == False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_defense\")\nelif is_victory==False:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \n#passage d'arguments\npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\", False)\npe.set_value(\"gagnant\",gagnant)\npe.set_value(\"perdant\",perdant)\npe.set_value(\"liste_perdant\",f(\"liste_nom_avec_specialite\", commandants=perdant['combattants']))\npe.set_value(\"liste_gagnant\",f(\"liste_nom_avec_specialite\", commandants=gagnant['combattants']))\npe.set_value(\"delta\",delta)\npe.set_value(\"bataille\",bataille)\npe.set_value(\"commandement\",commandement)\npe.start()\n  \n#tuer les gens qui ne sont pas de la famille r\u00e9gnante, blesser tous les bless\u00e9s\nfamille=kingdom.get_folk_in_title('chatelain').last_name\nfor mort in delta['A_tuer']:\n  if mort.last_name <> famille:\n    mort.die()\nfor blesse in delta['A_blesser']:\n  call_function(\"blesser_folk\",folk=blesse)\n\n#gain thune en cas de pillage\nif is_victory:\n  kingdom.money+=delta['perdant']['population']\n  \n#pertes de soldats\nif is_victory==False:\n  kingdom.soldiers-=delta['gagnant']['pertes_troupe']\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')-delta['gagnant']['pertes_troupe'])\nelse:\n  kingdom.soldiers-=delta['perdant']['pertes_troupe']\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')-delta['perdant']['pertes_troupe'])\n\nkingdom.save()\n\nmap(lambda f: f.delete(), combattants)\n"
+    "on_fire": "#mise en forme des param\u00e8tres \u00e0 passer aux fonctions de calcul\naffected=kingdom.get_team(\"ligne_defense\")[\"affected\"][0:3]\ndefenseur = {\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * kingdom.soldiers / 100),\n  'combattants': kingdom.get_team(\"ligne_defense\")[\"affected\"],\n  'population': kingdom.population,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':kingdom.get_value('tuto_dynasty_PNJ')\n}\n\n# R\u00e9cuperer les cinq meilleurs combattants de l'attaquant\ndate_majorite = datetime.now() - timedelta(days=C.MAJORITE)\ncinq_meilleurs = kingdom.folk_set.filter(sex=Folk.MALE, disabled=False, birth__lte=date_majorite).order_by('-fight')[0:5]\nmoyenne_meilleurs_fight = avg_stats(cinq_meilleurs, 'fight')\n\ncombattants = [Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight)]\nmap(lambda f: f.save(), combattants)\ntype_adversaire=kingdom.get_value(\"tuto_type_PNJ\",'piquier')\ncombattants[0].add_quality(type_adversaire)\ncombattants[1].add_quality(type_adversaire)\ncombattants[2].add_quality(random_in(['piquier','cavalier','archer']))\n\nattaquant = {\n  # Dans le cadre du tuto,\n  # Les troupes du d\u00e9fenseur correspondent \u00e0 80% des troupes maximales disponibles pour ce Kingdom\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * 0.8 * C.POURCENTAGE_MAX_SOLDATS_PASSIF * call_function(\"get_max_population\", kingdom=kingdom) / (100 * 100)),\n  'combattants': combattants,\n  'population': kingdom.prestige*2,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':\"dynastie advserse\",\n}\n\n#fonctions pour calculer ce qu'il se passe sans appliquer\ngagnant, perdant, bataille = f(\"determiner_vainqueur_combat\", attaquant=attaquant, defenseur=defenseur)\nis_victory = gagnant == attaquant\ndelta = f(\"determiner_modifications_combat\", gagnant=gagnant, perdant=perdant, marge=bataille['marge'], attaquant_est_gagnant=is_victory)\nif is_victory==False:\n  commandement={\n                'gagnant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                'perdant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                }\nelse:\n  commandement={\n                'gagnant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                'perdant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                }  \n#application gain_prestige\nif is_victory==False:\n  kingdom.prestige += delta['gagnant']['prestige']\nelse:\n  kingdom.prestige += delta['perdant']['prestige']\nkingdom.save()\n\n#d\u00e9terminantion prochain event\nif kingdom.get_value(\"tuto_firstbattle_defense\", False) == False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_defense\")\nelif is_victory==False:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \n#passage d'arguments\npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\", False)\npe.set_value(\"gagnant\",gagnant)\npe.set_value(\"perdant\",perdant)\npe.set_value(\"liste_perdant\",f(\"liste_nom_avec_specialite\", commandants=perdant['combattants']))\npe.set_value(\"liste_gagnant\",f(\"liste_nom_avec_specialite\", commandants=gagnant['combattants']))\npe.set_value(\"delta\",delta)\npe.set_value(\"bataille\",bataille)\npe.set_value(\"commandement\",commandement)\npe.start()\n  \n#tuer les gens qui ne sont pas de la famille r\u00e9gnante, blesser tous les bless\u00e9s\nfamille=kingdom.get_folk_in_title('chatelain').last_name\nfor mort in delta['A_tuer']:\n  if mort.last_name <> famille:\n    mort.die()\nfor blesse in delta['A_blesser']:\n  call_function(\"blesser_folk\",folk=blesse)\n\n#gain thune en cas de pillage\nif is_victory:\n  kingdom.money+=delta['perdant']['population']\n  \n#pertes de soldats\nif is_victory==False:\n  kingdom.soldiers-=delta['gagnant']['pertes_troupe']\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')-delta['gagnant']['pertes_troupe'])\nelse:\n  kingdom.soldiers-=delta['perdant']['pertes_troupe']\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')-delta['perdant']['pertes_troupe'])\n\nkingdom.save()\n\nmap(lambda f: f.delete(), combattants)\n"
   }
 },
 {
@@ -5807,6 +5863,50 @@
     "event": 218, 
     "condition": null, 
     "on_fire": "kingdom.create_pending_mission(\"tuto_espionnage\")\nkingdom.unlock_title(\"maitre_espion\")"
+  }
+},
+{
+  "pk": 336, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "ok !", 
+    "message": "", 
+    "event": 262, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 337, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "J'esp\u00e8re qu'il saura m'utiliser \u00e0 ma juste valeur", 
+    "message": "Je suis dor\u00e9navant le vassal de {{ suzerain }}.", 
+    "event": 263, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 338, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "{{title.maitre_espion|feminize:\"Il,Elle\"}} referme la porte sans un bruit.", 
+    "message": "", 
+    "event": 264, 
+    "condition": null, 
+    "on_fire": "param.next_event(\"tuto_rapport_espion_3\").start()"
+  }
+},
+{
+  "pk": 339, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Parfait", 
+    "message": "Vous n'avez plus de suzerain.", 
+    "event": 265, 
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 }
 ]
