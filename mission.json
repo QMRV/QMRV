@@ -40,7 +40,7 @@
     "timeout": null, 
     "is_cancellable": true, 
     "duration": 5, 
-    "on_cancel": "status=\"gofuck\"\n", 
+    "on_cancel": "stop(\"gofuck\")\n", 
     "slug": "tuto_recrutement", 
     "on_init": "  "
   }
@@ -216,7 +216,7 @@
     "has_value": false, 
     "on_resolution": "kingdom.population+=10\nkingdom.save()\n\npe = kingdom.create_pending_event(\"charite\")\npe.start()\n", 
     "value_description": "Valeur :", 
-    "on_start": "if kingdom.money < 10 :\n  status = \"Vous n'avez pas assez d'argent pour lancer cette mission\"\nelse:\n  kingdom.money-=10\n  kingdom.save()\n", 
+    "on_start": "if kingdom.money < 10 :\n  stop(\"Vous n'avez pas assez d'argent pour lancer cette mission\")\nelse:\n  kingdom.money-=10\n  kingdom.save()\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 3, 
@@ -326,12 +326,12 @@
   "model": "mission.mission", 
   "fields": {
     "name": "Faire un raid", 
-    "target_list": "param = Kingdom.objects.all()\n", 
+    "target_list": "\n", 
     "text": "Allons attaquer !", 
     "has_value": false, 
-    "on_resolution": "if len(param.get_value(\"morts_attaquant\"))>0:\n  for perso in param.get_value(\"morts_attaquant\"):\n    perso.die()\n  \n", 
+    "on_resolution": "if len(param.get_value(\"morts_attaquant\")) > 0:\n  for perso in param.get_value(\"morts_attaquant\"):\n    perso.die()\n  \n", 
     "value_description": "Valeur :", 
-    "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent - cible acceptable ? )\nnok = 0\nif kingdom.money < 10:\n  nok = 1\nelif kingdom.user.username==target.user.username:\n  nok = 0\n  \n\nif nok == 0:\n  kingdom.money-=10\n\n  retour_fonction = call_function('determiner_raid',\n                                  liste_attaquant=grids['attaquants'],\n                                  argent_defenseur = target.money,\n                                  population_defenseur = target.population,\n                                  population_max_defenseur = f('get_max_population',kingdom=target)\n                                  )\n  \n  # le raid entraine un casus belli \n  retour_fonction2 = f(\"creer_claim\",offender = kingdom,offended = target,level=1)\n  \n  target.population-=retour_fonction['population_perdue']\n  # kingdom.save()\n  target.save()\n  \n  kingdom.money+= retour_fonction['argent_vole']\n  # target.save()\n  # kingdom.save()\n  \n  param.set_value('morts_attaquant',[])\n  \n  # gestion des evenements de retour du raid pour l'attaquant et d'avertissement de raid pour la cible\n  # cas d'un raid qui tourne tr\u00e8s mal (des morts ...)\n  if (len(retour_fonction['morts_attaquant'])>0):\n    # evenement pour l'attaquant\n    # liste des noms des morts\n    morts_nom = []\n    for perso in retour_fonction['morts_attaquant']:\n      morts_nom.append(perso.first_name + \" \" + perso.last_name)\n      grids['attaquants']= grids['attaquants'].remove(perso)\n    pa = kingdom.create_pending_event(\"retour_raid_morts\")\n    pa.set_value(\"argent_gagne\", retour_fonction['argent_vole'])\n    pa.set_value(\"attaque\", target)\n    pa.set_value(\"liste_attaquant\", grids['attaquants'])\n    pa.set_value(\"blesses_attaquant\", retour_fonction['blesses_attaquant'])      \n    pa.set_value(\"morts_nom\",morts_nom)   \n    pa.start()\n    # evenement pour la cible\n    pc = target.create_pending_event(\"cible_raid_morts\")\n    pc.set_value(\"mort1_name\", retour_fonction['morts_attaquant'][0].first_name + \" \"+retour_fonction['morts_attaquant'][0].last_name) \n    pc.set_value(\"population_perdue\", retour_fonction['population_perdue'])\n    pc.set_value(\"kingdom_attaquant\", kingdom)\n    pc.set_value(\"kingdom_attaque\", target)\n    pc.set_value(\"deja_ennemi\", retour_fonction2['deja_ennemi'])   \n    pc.start()\n    # et on les tuera \u00e0 la fin\n    param.set_value(\"morts_attaquant\"  , retour_fonction['morts_attaquant'])\n  ###      \n  # cas d'un raid sans encombre  \n  else:\n     # evenement du retour pour l'attaquant\n    pa = kingdom.create_pending_event(\"retour_raid_ok\")\n    pa.set_value(\"argent_gagne\", retour_fonction['argent_vole'])\n    pa.set_value(\"attaque\", target)\n    pa.set_value(\"liste_attaquant\", grids['attaquants'])\n    pa.set_value(\"blesses_attaquant\", retour_fonction['blesses_attaquant'])  \n    pa.start()\n    # evenement pour la cible\n    pc = target.create_pending_event(\"cible_raid_ok\")\n    pc.set_value(\"population_perdue\", int(retour_fonction['population_perdue']))\n    pc.set_value(\"kingdom_attaquant\", kingdom)\n    pc.set_value(\"kingdom_attaque\", target)\n    pc.set_value(\"deja_ennemi\", retour_fonction2['deja_ennemi'])\n    pc.start()           \n  \n  \n\nelif nok==1 :\n  status=\"Vous n'avez pas suffisamment d'argent pour lancer cette mission.\"  \nelif nok==2 :status=\"On n'organise pas de raid sur son domaine, il y a les imp\u00f4ts et le droit de cuissage pour \u00e7a !\"  \n\n", 
+    "on_start": "# tester la possibilit\u00e9 pour l'attaquant d'attaquer (assez d'argent)\nif kingdom.money < 10:\n  stop(\"Vous n'avez pas suffisamment d'argent pour lancer cette mission.\")\n  \n\n  kingdom.money -= 10\n\n  retour_fonction = call_function('determiner_raid',\n                                  liste_attaquant=grids['attaquants'],\n                                  argent_defenseur = target.money,\n                                  population_defenseur = target.population,\n                                  population_max_defenseur = f('get_max_population', kingdom=target)\n                                  )\n  \n  # le raid entraine un casus belli \n  retour_fonction2 = f(\"creer_claim\", offender = kingdom,offended = target,level=1)\n  \n  target.population -= retour_fonction['population_perdue']\n  # kingdom.save()\n  target.save()\n  \n  kingdom.money += retour_fonction['argent_vole']\n  # target.save()\n  # kingdom.save()\n  \n  param.set_value('morts_attaquant',[])\n  \n  # gestion des evenements de retour du raid pour l'attaquant et d'avertissement de raid pour la cible\n  # cas d'un raid qui tourne tr\u00e8s mal (des morts ...)\n  if len(retour_fonction['morts_attaquant']) > 0:\n    # evenement pour l'attaquant\n    # liste des noms des morts\n    morts_nom = []\n    for perso in retour_fonction['morts_attaquant']:\n      morts_nom.append(perso.first_name + \" \" + perso.last_name)\n      grids['attaquants']= grids['attaquants'].remove(perso)\n    pa = kingdom.create_pending_event(\"retour_raid_morts\")\n    pa.set_value(\"argent_gagne\", retour_fonction['argent_vole'])\n    pa.set_value(\"attaque\", target)\n    pa.set_value(\"liste_attaquant\", grids['attaquants'])\n    pa.set_value(\"blesses_attaquant\", retour_fonction['blesses_attaquant'])      \n    pa.set_value(\"morts_nom\",morts_nom)   \n    pa.start()\n    # evenement pour la cible\n    pc = target.create_pending_event(\"cible_raid_morts\")\n    pc.set_value(\"mort1_name\", retour_fonction['morts_attaquant'][0].first_name + \" \"+retour_fonction['morts_attaquant'][0].last_name) \n    pc.set_value(\"population_perdue\", retour_fonction['population_perdue'])\n    pc.set_value(\"kingdom_attaquant\", kingdom)\n    pc.set_value(\"kingdom_attaque\", target)\n    pc.set_value(\"deja_ennemi\", retour_fonction2['deja_ennemi'])   \n    pc.start()\n    # et on les tuera \u00e0 la fin\n    param.set_value(\"morts_attaquant\"  , retour_fonction['morts_attaquant'])\n  ###      \n  # cas d'un raid sans encombre  \n  else:\n     # evenement du retour pour l'attaquant\n    pa = kingdom.create_pending_event(\"retour_raid_ok\")\n    pa.set_value(\"argent_gagne\", retour_fonction['argent_vole'])\n    pa.set_value(\"attaque\", target)\n    pa.set_value(\"liste_attaquant\", grids['attaquants'])\n    pa.set_value(\"blesses_attaquant\", retour_fonction['blesses_attaquant'])  \n    pa.start()\n    # evenement pour la cible\n    pc = target.create_pending_event(\"cible_raid_ok\")\n    pc.set_value(\"population_perdue\", int(retour_fonction['population_perdue']))\n    pc.set_value(\"kingdom_attaquant\", kingdom)\n    pc.set_value(\"kingdom_attaque\", target)\n    pc.set_value(\"deja_ennemi\", retour_fonction2['deja_ennemi'])\n    pc.start()           \n\n", 
     "has_target": true, 
     "is_team": false, 
     "title": 2, 
@@ -377,7 +377,7 @@
     "has_value": false, 
     "on_resolution": "kingdom.create_pending_event(\"banquet\")\npe.set_value(\"raison\", \"initiative\")\npe.start()\n", 
     "value_description": "Valeur :", 
-    "on_start": "nb_convives = folks.filter(mission=None).count()\nif kingdom.money < nb_convives * 2:\n  status = \"Vous n'avez pas les moyens d'organiser un banquet de cette envergure\"\n  if sum_folks(affected, \"diplomacy\") <= 10:\n    status = \"Les convives ne seront pas disponibles, il manquent probablement de motivation\"\nif status != \"ok\":\n  kingdom.money -= nb_convives * 2\n  kingdom.save()\n", 
+    "on_start": "nb_convives = folks.filter(mission=None).count()\nif kingdom.money < nb_convives * 2:\n  stop(\"Vous n'avez pas les moyens d'organiser un banquet de cette envergure\")\n  \nkingdom.money -= nb_convives * 2\nkingdom.save()\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 4, 
@@ -423,7 +423,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "if kingdom.get_folk_in_title(\"chatelain\") not in grids['defenseurs'] or kingdom.get_folk_in_title(\"connetable\") not in grids['defenseurs']:\n  status = \"Le ch\u00e2telain et le conn\u00e9table se doivent de participer \u00e0 cette mission\"\n  \ncombattants = grids['defenseurs'][0:]\ncombattants.remove(folks[0])\ncombattant=random_in(combattants)\nif combattant.fight>8:\n  intrepide=True\n  fleche=False\nelse:\n  intrepide=False  \n  fleche=True\n\npe=PendingEvent(event=Event.objects.get(slug=\"tuto_bandits_bataille\"),kingdom=kingdom,started=None)\npe.save()\npe.set_value(\"somme_fight\",sum_folks(grids['defenseurs'],\"fight\"))\npe.set_value(\"combattant\",combattant)\npe.set_value(\"intrepide\",intrepide)\npe.set_value(\"fleche\",fleche)\npe.start()\n", 
+    "on_start": "if kingdom.get_folk_in_title(\"chatelain\") not in grids['defenseurs'] or kingdom.get_folk_in_title(\"connetable\") not in grids['defenseurs']:\n  stop(\"Le ch\u00e2telain et le conn\u00e9table se doivent de participer \u00e0 cette mission\")\n  \ncombattants = grids['defenseurs'][0:]\ncombattants.remove(folks[0])\ncombattant=random_in(combattants)\nif combattant.fight>8:\n  intrepide=True\n  fleche=False\nelse:\n  intrepide=False  \n  fleche=True\n\npe=PendingEvent(event=Event.objects.get(slug=\"tuto_bandits_bataille\"),kingdom=kingdom,started=None)\npe.save()\npe.set_value(\"somme_fight\",sum_folks(grids['defenseurs'],\"fight\"))\npe.set_value(\"combattant\",combattant)\npe.set_value(\"intrepide\",intrepide)\npe.set_value(\"fleche\",fleche)\npe.start()\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 2, 
@@ -515,7 +515,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "if sum_folks(affected, \"diplomacy\") < 20:\n  status=\"Il va falloir \u00eatre un peu plus diplomate\"\n  stop()\n\nkingdom.set_value(\"tuto_has_claim\", True)\nkingdom.create_pending_event(\"tuto_casusbelli_success\").start()\n", 
+    "on_start": "if sum_folks(affected, \"diplomacy\") < 20:\n  stop(\"Il va falloir \u00eatre un peu plus diplomate\")\n\nkingdom.set_value(\"tuto_has_claim\", True)\nkingdom.start_pending_event(\"tuto_casusbelli_success\")\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 6, 
@@ -653,7 +653,7 @@
     "has_value": false, 
     "on_resolution": "age = random_gauss(16,40)\n\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nqualities.append(random_in([\"archer\", \"cavalier\", \"piquier\"]))\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"diplomacy\")-23)/37) + random_value(-10, 10)\nchevalier = f(\"creer_folk\", kingdom=None, fight_min=7, plot_min=1, diplomacy_min=1, scholarship_min=1, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\npe = kingdom.create_pending_event(\"allegeance_chevalier\")\npe.set_value(\"chevalier\", chevalier)\npe.start()\n", 
     "value_description": "", 
-    "on_start": "cout = 15 + 10 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"ambassadeur\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  status = \"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\"\n", 
+    "on_start": "cout = 15 + 10 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"ambassadeur\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  stop(\"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\")\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 6, 
@@ -676,7 +676,7 @@
     "has_value": false, 
     "on_resolution": "age = random_gauss(16, 40)\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nqualities.append(\"pretre\")\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"scholarship\")-23)/37) + random_value(-10, 10)\n\npretre = f(\"creer_folk\", kingdom=None, fight_min=2, plot_min=4, diplomacy_min=4, scholarship_min=7, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\n\npe = kingdom.create_pending_event(\"allegeance_pretre\")\npe.set_value(\"pretre\", pretre)\npe.start()", 
     "value_description": "", 
-    "on_start": "cout = 15 + 5 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"cure\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  status = \"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\"", 
+    "on_start": "cout = 15 + 5 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"cure\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  stop(\"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\")", 
     "has_target": false, 
     "is_team": false, 
     "title": 3, 
@@ -699,7 +699,7 @@
     "has_value": false, 
     "on_resolution": "age = random_gauss(16,40)\nmax_carac = 32+int((age-16)/5)\n#liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nchoix_baisee = (40-age)/24*100\nif choix_baisee <= random_value(1,100):\n  qualities.append(\"jouvancelle\")\n#liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\n\nloyalty = 50 + 30 * int((sum_folks(affected, \"diplomacy\")-23)/37) + random_value(-10, 10)\n\ndame= f(\"creer_folk\", kingdom=None, fight_min=2, plot_min=2, diplomacy_min=2, scholarship_min=2, loyalty=loyalty, max_carac=max_carac, sex=Folk.FEMALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits = no_qualities)\n\npe = kingdom.create_pending_event(\"allegeance_dame\")\npe.set_value(\"dame\", dame)\npe.start()", 
     "value_description": "", 
-    "on_start": "cout = 15 + 10 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"ambassadeur\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  status = \"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\"", 
+    "on_start": "cout = 15 + 10 * len(affected)\nif kingdom.money < cout :\n  statut = \"Vous n'avez pas les moyen de lancer cette mission.\"\n  stop()\n\nbonus = 0\nif kingdom.get_folk_in_title(\"ambassadeur\") in affected:\n  bonus += 4\nif sum_folks(affected, \"diplomacy\") + bonus < 24:\n  stop(\"Il vous faudra une plus grande force de persuasion pour recruter un chevalier.\")", 
     "has_target": false, 
     "is_team": false, 
     "title": 6, 
@@ -745,7 +745,7 @@
     "has_value": false, 
     "on_resolution": "comprometeurs = grids['comprometeurs']\ncout_mission = 5 + 5 * len(comprometeurs)\nkingdom.money -= cout_mission\nkingdom.save()\ncompromis = grids['compromis'][0]\n\ndefense = (compromis.plot + compromis.diplomacy) * 1.5\nattaque = sum_folks(folks, 'plot')\nreussite = max(attaque/defense, 1) * 100 - 10\nif  reussite < random_value(1,100):\n  #R\u00e9ussite\n  if compromis.has_quality(\"adule\"):\n    compromis.remove_quality(\"adule\")\n    compromis.add_quality(\"respecte\")\n  elif compromis.has_quality(\"respecte\"):\n    compromis.remove_quality(\"respecte\")\n  elif compromis.has_quality(\"meprise\"):\n    compromis.remove_quality(\"meprise\")\n    compromis.add_quality(\"deteste\")\n  else:\n    compromis.add_quality(\"deteste\")\n  pe = kingdom.create_pending_event(\"compromettre_success\")\n  pe.set_value(\"compromis\", compromis)\n  pe.set_value(\"comprometeurs\", comprometeurs)\n  pe.start()\nelse:\n  if 100 - reussite < random_value (1,100):\n    #gros echec\n    def perte(facteur, kingdom=kingdom):\n      call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=C.PERTE_LOYAUTE_BANNISSEMENT*facteur, perte_max=C.PERTE_LOYAUTE_BANNISSEMENT*facteur)\n      return C.PERTE_LOYAUTE_BANNISSEMENT*facteur\n    \n    perte_loyaute = 0 \n    \n    if compromis.has_quality(\"adule\"):\n      perte_loyaute -= perte(2)\n    elif compromis.has_quality(\"respecte\"):\n      perte_loyaute -= perte(1.5)   \n    else :\n      perte_loyaute -= perte(1)\n      \n    pe = kingdom.create_pending_event(\"compromettre_big_failure\")\n    pe.set_value(\"compromis\", compromis)\n    pe.set_value(\"comprometeurs\", comprometeurs)\n    pe.set_value(\"perte\", perte_loyaute)\n    pe.start()\n\n  else:\n    #echec simple\n    pe = kingdom.create_pending_event(\"compromettre_failure\")\n    pe.set_value(\"compromis\", compromis)\n    pe.set_value(\"comprometeurs\", comprometeurs)\n    pe.start()\n\n  \n", 
     "value_description": "", 
-    "on_start": "cout_mission = 5 + 5 * len(grids['comprometeurs'])\nif grids['compromis'][0].has_quality(\"deteste\"):\n  status = \"Cette personne est d\u00e9j\u00e0 d\u00e9test\u00e9e, il n'est pas utile de la salir encore plus\"\nif kingdom.money < cout_mission:\n  status = \"Nous n'avez pas assez d'argent pour lancer cette mission (\" + cout_mission + \" \u00e9cus).\"\n", 
+    "on_start": "cout_mission = 5 + 5 * len(grids['comprometeurs'])\nif grids['compromis'][0].has_quality(\"deteste\"):\n  stop(\"Cette personne est d\u00e9j\u00e0 d\u00e9test\u00e9e, il n'est pas utile de la salir encore plus\")\nif kingdom.money < cout_mission:\n  stop(\"Nous n'avez pas assez d'argent pour lancer cette mission (\" + cout_mission + \" \u00e9cus).\")\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 5, 
@@ -768,7 +768,7 @@
     "length": 20, 
     "allow_empty": false, 
     "slug": "chercheurs_noises", 
-    "condition": "if folk.age() >= C.MAJORITE:\n  status=\"Laisse les grands jouer \u00e0 ce jeu\""
+    "condition": "if folk.age() >= C.MAJORITE:\n  stop(\"Laisse les grands jouer \u00e0 ce jeu\")"
   }
 },
 {
@@ -820,7 +820,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "mari", 
-    "condition": "if folk.age < C.MAJORITE : \n  status = S.TOO_YOUNG\nelif folk.sex == Folk.FEMALE :\n  status = \"Le mari doit \u00eatre un homme\"\nelif folk.has_quality(\"pretre\") :\n  status = \"Un pr\u00eatre ne peut pas se marier\"\nelif (kingdom.get_value(\"in_tuto\") == True and folk==folks[0]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre chatelain\"\nelif (kingdom.get_value(\"passage_proposition_mariage\", False) and  folk==folks[1]):\n  status = \"Il est encore trop tot pour songer \u00e0 marier votre fils\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
+    "condition": "if folk.age < C.MAJORITE : \n  stop(S.TOO_YOUNG)\nelif folk.sex == Folk.FEMALE :\n  stop(\"Le mari doit \u00eatre un homme\")\nelif folk.has_quality(\"pretre\") :\n  stop(\"Un pr\u00eatre ne peut pas se marier\")\nelif (kingdom.get_value(\"in_tuto\") == True and folk==folks[0]):\n  stop(\"Il est encore trop tot pour songer \u00e0 marier votre chatelain\")\nelif (kingdom.get_value(\"passage_proposition_mariage\", False) and  folk==folks[1]):\n  stop(\"Il est encore trop tot pour songer \u00e0 marier votre fils\")\nelif folk.spouse != None and folk.spouse.death == None:\n  stop(\"Cette personne est d\u00e9j\u00e0 mari\u00e9e\")\n"
   }
 },
 {
@@ -833,7 +833,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "femme", 
-    "condition": "if folk.age < C.MAJORITE:\n  status = S.TOO_YOUNG\nelif folk.sex == Folk.MALE:\n  status = \"La femme doit \u00eatre une femme\"\nelif folk.spouse != None and folk.spouse.death == None:\n  status = \"Cette personne est d\u00e9j\u00e0 mari\u00e9e\"\n"
+    "condition": "if folk.age < C.MAJORITE:\n  stop(S.TOO_YOUNG)\nelif folk.sex == Folk.MALE:\n  stop(\"La femme doit \u00eatre une femme\")\nelif folk.spouse != None and folk.spouse.death == None:\n  stop(\"Cette personne est d\u00e9j\u00e0 mari\u00e9e\")\n"
   }
 },
 {
@@ -859,7 +859,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "libere", 
-    "condition": "if folk.has_quality(\"prisonnier\") is False:\n  status=\"Cette personne est d\u00e9j\u00e0 libre\"\n"
+    "condition": "if folk.has_quality(\"prisonnier\") is False:\n  stop(\"Cette personne est d\u00e9j\u00e0 libre\")\n"
   }
 },
 {
@@ -872,7 +872,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "mentor", 
-    "condition": "if folk.age()< C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+    "condition": "if folk.age()< C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
   }
 },
 {
@@ -885,7 +885,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "enfant", 
-    "condition": "if folk.age() > C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+    "condition": "if folk.age() > C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
   }
 },
 {
@@ -898,7 +898,7 @@
     "length": 20, 
     "allow_empty": false, 
     "slug": "recruteurs", 
-    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"il faut une homme\"\n"
+    "condition": "if folk.sex==Folk.FEMALE:\n  stop(\"il faut une homme\")\n"
   }
 },
 {
@@ -924,7 +924,7 @@
     "length": 200, 
     "allow_empty": false, 
     "slug": "espion", 
-    "condition": "if PendingMissionAffectation.objects.filter(pending_mission=param.pending_mission, mission_grid=param.mission_grid).count() > kingdom.prestige / 10:\n  status = \"Vous ne pouvez plus rajouter de personne \u00e0 cette mission\"\nif folk.age < C.MAJORITE:\n  status = \"Un enfant ne peut pas effectuer cette mission\"\n\n"
+    "condition": "if PendingMissionAffectation.objects.filter(pending_mission=param.pending_mission, mission_grid=param.mission_grid).count() > kingdom.prestige / 10:\n  stop(\"Vous ne pouvez plus rajouter de personne \u00e0 cette mission\")\nif folk.age < C.MAJORITE:\n  stop(\"Un enfant ne peut pas effectuer cette mission\")\n\n"
   }
 },
 {
@@ -937,7 +937,7 @@
     "length": 4, 
     "allow_empty": false, 
     "slug": "attaquants", 
-    "condition": "if folk.age() < C.MAJORITE:\n  status = \"Vous ne pouvez pas affecter un enfant \u00e0 cette mission.\"\nelif folk.sex == Folk.FEMALE:\n  status = \"Vous ne pouvez pas affecter de femme \u00e0 cette mission\"\n"
+    "condition": "if folk.age() < C.MAJORITE:\n  stop(\"Vous ne pouvez pas affecter un enfant \u00e0 cette mission.\")\nelif folk.sex == Folk.FEMALE:\n  stop(\"Vous ne pouvez pas affecter de femme \u00e0 cette mission\")\n"
   }
 },
 {
@@ -963,7 +963,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "organisateurs", 
-    "condition": "if folk.age() < C.MAJORITE:\n  status=\"Grandis un peu, gamin, et reviens un peu plus tard !\"\n"
+    "condition": "if folk.age() < C.MAJORITE:\n  stop(\"Grandis un peu, gamin, et reviens un peu plus tard !\")\n"
   }
 },
 {
@@ -976,7 +976,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "chatelain", 
-    "condition": "if folk != kingdom.get_folk_in_title(\"chatelain\"):\n  status = \"Seul le chatelain peut endosser ce r\u00f4le pour lancer cette mission\"\n"
+    "condition": "if folk != kingdom.get_folk_in_title(\"chatelain\"):\n  stop(\"Seul le chatelain peut endosser ce r\u00f4le pour lancer cette mission\")\n"
   }
 },
 {
@@ -989,7 +989,7 @@
     "length": 10, 
     "allow_empty": false, 
     "slug": "chasseurs", 
-    "condition": "if folk.sex == Folk.FEMALE or folk.has_quality(\"pretre\") or folk.age() < C.MAJORITE:\n  status = \"Le chasseur doit \u00eatre un chevalier adulte\"\n"
+    "condition": "if folk.sex == Folk.FEMALE or folk.has_quality(\"pretre\") or folk.age() < C.MAJORITE:\n  stop(\"Le chasseur doit \u00eatre un chevalier adulte\")\n"
   }
 },
 {
@@ -1015,7 +1015,7 @@
     "length": 4, 
     "allow_empty": false, 
     "slug": "defenseurs", 
-    "condition": "if folk.sex==Folk.FEMALE:\n  status=\"Depuis des temps imm\u00e9moriaux les femmes ont persuad\u00e9 les hommes que c'\u00e9taient \u00e0 eux de mourrir. On ne revient pas sur des privil\u00e8ges durement gagn\u00e9s.\""
+    "condition": "if folk.sex==Folk.FEMALE:\n  stop(\"Depuis des temps imm\u00e9moriaux les femmes ont persuad\u00e9 les hommes que c'\u00e9taient \u00e0 eux de mourrir. On ne revient pas sur des privil\u00e8ges durement gagn\u00e9s.\")"
   }
 },
 {
@@ -1041,7 +1041,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "enfant", 
-    "condition": "if folk.age() > C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+    "condition": "if folk.age() > C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
   }
 },
 {
@@ -1054,7 +1054,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "mentor", 
-    "condition": "if folk.age()< C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+    "condition": "if folk.age()< C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
   }
 },
 {
@@ -1106,7 +1106,7 @@
     "length": 1000, 
     "allow_empty": false, 
     "slug": "defenseurs", 
-    "condition": "if folk.age()< C.MAJORITE:\n  status = S.TOO_YOUNG\nif folk.sex == Folk.FEMALE:\n  status = \"Seul un homme peut \u00eatre choisi pour d\u00e9fendre la cit\u00e9.\"\n"
+    "condition": "if folk.age()< C.MAJORITE:\n  stop(S.TOO_YOUNG)\nif folk.sex == Folk.FEMALE:\n  stop(\"Seul un homme peut \u00eatre choisi pour d\u00e9fendre la cit\u00e9.\")\n"
   }
 },
 {
@@ -1119,7 +1119,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "espions", 
-    "condition": "if folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+    "condition": "if folk.age() < C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
   }
 },
 {
@@ -1132,7 +1132,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "espions", 
-    "condition": "if folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+    "condition": "if folk.age() < C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
   }
 },
 {
@@ -1145,7 +1145,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "recruteurs", 
-    "condition": "if folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+    "condition": "if folk.age() < C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
   }
 },
 {
@@ -1158,7 +1158,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "recruteurs", 
-    "condition": "if folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+    "condition": "if folk.age() < C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
   }
 },
 {
@@ -1171,7 +1171,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "recruteurs", 
-    "condition": "if folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+    "condition": "if folk.age() < C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
   }
 },
 {
@@ -1184,7 +1184,7 @@
     "length": 2, 
     "allow_empty": false, 
     "slug": "accueil", 
-    "condition": "if folk.age() < C.MAJORITE:\n  status = S.TOO_YOUNG\n"
+    "condition": "if folk.age() < C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
   }
 },
 {

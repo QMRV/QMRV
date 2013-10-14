@@ -12,6 +12,7 @@
       115, 
       116, 
       117, 
+      118, 
       74, 
       76, 
       80, 
@@ -1390,9 +1391,9 @@
   "pk": 2, 
   "model": "internal.recurring", 
   "fields": {
-    "delay": 77, 
-    "kingdom_list": "#param = kingdom.objects.get(pk=58)\nparam = []\n", 
-    "on_fire": "blesses = folks.filter(quality_slug=\"blesse\")\nsoigneurs = target.folks.filter(sex=Folk.FEMALE, mission = None, birth__lte=datetime.now() - timedelta(days=C.MAJORITE))\nsoigneurs += target.folks.filter(sex=Folk.MALE, mission = None, birth__lte=datetime.now() - timedelta(days=C.MAJORITE), quality__slug=\"pretre\")\nsoigneurs = soigneurs.order_by(\"scholarship\")\nmoy_erudition = avg_folks(soigneurs, \"scholarship\")\nimport math\nsoin = 99 - moy_erudition/20 * 8 * max(1, len(soigneurs) / math.sqrt(blesses.count()))\ni = 0\nfor blesse in blesses:\n  fate = random_value(1,100)\n  if fate == 1 : #il meurt\n    blesse.die()\n  elif fate > soin : #il n'est plus bless\u00e9, mais gagne un autre trait\n    blesse.remove_quality(\"blesse\")\n    choix_trait = random_value(1,100)\n    chances_handicap = 30 - soigneurs[i % len(soigneurs)].scholarship * max(1,len(soigneurs)/ math.sqrt(blesses.count()))\n    if choix_trait < chances_handicap : #il est infirme\n      choix_handicap = random_in(Quality.objects.filter(quality_category__name=\"Handicap\"))\n      blesse.quality_set.add(choix_handicap)\n    else: #il est gu\u00e9rit\n      pass\n  #else on attendant 30 minutes qu'il retente sa chance\n  i += 1\n", 
+    "delay": 3, 
+    "kingdom_list": "param = Kingdom.objects.filter(pk=117)\n#param = []\n", 
+    "on_fire": "blesses = folks.filter(quality_set__slug=\"blesse\")\nsoigneurs = folks.filter(kingdom=kingdom, sex=Folk.FEMALE, mission = None, birth__lte=datetime.now() - timedelta(days=C.MAJORITE))\nsoigneurs += folks.filter(kingdom=kingdom, sex=Folk.MALE, mission = None, birth__lte=datetime.now() - timedelta(days=C.MAJORITE), quality_set__slug=\"pretre\")\nsoigneurs = soigneurs.order_by(\"-scholarship\")[1:len(blesses)+1]\nmoy_erudition = avg_folks(soigneurs, \"scholarship\")\nimport math\nsoin = 99 - moy_erudition/20 * 8 * max(1, len(soigneurs) / math.sqrt(blesses.count()))\n\nfor blesse in blesses:\n  fate = random_value(1,100)\n  if fate == 1 : #il meurt\n    blesse.die()\n  elif fate > soin : #il n'est plus bless\u00e9, mais gagne un autre trait\n    blesse.remove_quality(\"blesse\")\n    choix_trait = random_value(1,100)\n    chances_handicap = 30 - moy_erudition * max(1,len(soigneurs)/ math.sqrt(blesses.count()))\n    if choix_trait < chances_handicap : #il est infirme\n      choix_handicap = random_in(Quality.objects.filter(quality_category__name=\"Handicap\"))\n      blesse.quality_set.add(choix_handicap)\n    else: #il est gu\u00e9rit\n      blesse.remove_quality(\"blesse\")\n  #else on attendant 30 minutes qu'il retente sa chance\n", 
     "name": "Les bless\u00e9s peuvent mourir", 
     "description": "Fais mourir (ou pas) les bless\u00e9s"
   }
