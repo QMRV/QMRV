@@ -5036,60 +5036,6 @@
   }
 },
 {
-  "pk": 1567, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 116, 
-    "name": "tuto_soeurette", 
-    "value": 1
-  }
-},
-{
-  "pk": 1569, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 116, 
-    "name": "tuto_nb_passage_timewarp", 
-    "value": 8
-  }
-},
-{
-  "pk": 1571, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 116, 
-    "name": "virgule_population", 
-    "value": 0.5295265002610297
-  }
-},
-{
-  "pk": 1573, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 116, 
-    "name": "total_soldats", 
-    "value": 9
-  }
-},
-{
-  "pk": 1575, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 116, 
-    "name": "virgule_soldiers", 
-    "value": 0.600000000000001
-  }
-},
-{
-  "pk": 1577, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 116, 
-    "name": "virgule_thune", 
-    "value": 0.3234120073241584
-  }
-},
-{
   "pk": 1578, 
   "model": "kingdom._kingdomvariable", 
   "fields": {
@@ -5140,6 +5086,78 @@
   "fields": {
     "kingdom": 120, 
     "name": "in_tuto", 
+    "value": 1
+  }
+},
+{
+  "pk": 1604, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 116, 
+    "name": "tuto_soeurette", 
+    "value": 1
+  }
+},
+{
+  "pk": 1625, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 116, 
+    "name": "tuto_facheux_fantome", 
+    "value": 1
+  }
+},
+{
+  "pk": 1627, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 116, 
+    "name": "tuto_nb_passage_timewarp", 
+    "value": 12
+  }
+},
+{
+  "pk": 1629, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 116, 
+    "name": "virgule_population", 
+    "value": 0.2419131059020856
+  }
+},
+{
+  "pk": 1631, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 116, 
+    "name": "total_soldats", 
+    "value": 13
+  }
+},
+{
+  "pk": 1633, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 116, 
+    "name": "virgule_soldiers", 
+    "value": 0.4000000000000017
+  }
+},
+{
+  "pk": 1635, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 116, 
+    "name": "virgule_thune", 
+    "value": 0.2272878792725912
+  }
+},
+{
+  "pk": 1636, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 116, 
+    "name": "tuto_has_claim", 
     "value": 1
   }
 },
@@ -6756,7 +6774,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 1, 
-    "birth": "2013-09-04T07:11:53.811", 
+    "birth": "2013-09-03T23:11:53.811", 
     "mother": null, 
     "loyalty": 69, 
     "spouse": null, 
@@ -6784,7 +6802,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 30, 
-    "birth": "2013-09-22T07:11:53.987", 
+    "birth": "2013-09-21T23:11:53.987", 
     "mother": null, 
     "loyalty": 97, 
     "spouse": null, 
@@ -6812,7 +6830,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 35, 
-    "birth": "2013-09-23T07:11:54.099", 
+    "birth": "2013-09-22T23:11:54.099", 
     "mother": null, 
     "loyalty": 80, 
     "spouse": null, 
@@ -6838,7 +6856,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 7, 
-    "birth": "2013-09-04T07:11:54.162", 
+    "birth": "2013-09-03T23:11:54.162", 
     "mother": null, 
     "loyalty": 82, 
     "spouse": null, 
@@ -6864,7 +6882,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 10, 
-    "birth": "2013-09-04T07:14:04.569", 
+    "birth": "2013-09-03T23:14:04.569", 
     "mother": null, 
     "loyalty": 63, 
     "spouse": null, 
@@ -6892,7 +6910,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 65, 
-    "birth": "2013-09-22T04:28:59.785", 
+    "birth": "2013-09-21T20:28:59.785", 
     "mother": null, 
     "loyalty": 44, 
     "spouse": null, 
@@ -6918,7 +6936,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 24, 
-    "birth": "2013-09-04T19:39:31.933", 
+    "birth": "2013-09-04T11:39:31.933", 
     "mother": null, 
     "loyalty": 55, 
     "spouse": null, 
@@ -6945,7 +6963,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 53, 
-    "birth": "2013-09-04T21:40:20.396", 
+    "birth": "2013-09-04T13:40:20.396", 
     "mother": null, 
     "loyalty": 45, 
     "spouse": null, 
@@ -6961,7 +6979,7 @@
   "model": "kingdom.folk", 
   "fields": {
     "kingdom": 116, 
-    "fight": 5, 
+    "fight": 6, 
     "first_name": "Baudoin", 
     "last_name": "de Fressies", 
     "diplomacy": 5, 
@@ -6972,14 +6990,14 @@
     "disabled": false, 
     "death": null, 
     "avatar": 44, 
-    "birth": "2013-09-29T21:40:20.580", 
+    "birth": "2013-09-29T13:40:20.580", 
     "mother": null, 
     "loyalty": 65, 
     "spouse": null, 
     "quality_set": [
       26
     ], 
-    "mentor": 7520
+    "mentor": 7550
   }
 },
 {
@@ -6987,7 +7005,7 @@
   "model": "kingdom.folk", 
   "fields": {
     "kingdom": 116, 
-    "fight": 4, 
+    "fight": 5, 
     "first_name": "Azela\u00efs", 
     "last_name": "de Fressies", 
     "diplomacy": 1, 
@@ -6998,14 +7016,14 @@
     "disabled": false, 
     "death": null, 
     "avatar": 43, 
-    "birth": "2013-10-08T21:40:20.649", 
+    "birth": "2013-10-08T13:40:20.649", 
     "mother": null, 
     "loyalty": 45, 
     "spouse": null, 
     "quality_set": [
       16
     ], 
-    "mentor": null
+    "mentor": 7520
   }
 },
 {
@@ -7024,7 +7042,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 11, 
-    "birth": "2013-09-17T02:19:02.119", 
+    "birth": "2013-09-16T18:19:02.119", 
     "mother": null, 
     "loyalty": 57, 
     "spouse": null, 
@@ -7315,7 +7333,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 1, 
-    "birth": "2013-09-23T20:06:29.449", 
+    "birth": "2013-09-23T12:06:29.449", 
     "mother": null, 
     "loyalty": 65, 
     "spouse": null, 
@@ -7343,7 +7361,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 30, 
-    "birth": "2013-09-18T03:53:40.875", 
+    "birth": "2013-09-17T19:53:40.875", 
     "mother": null, 
     "loyalty": 54, 
     "spouse": null, 
@@ -7369,9 +7387,9 @@
     "disabled": false, 
     "death": null, 
     "avatar": 4, 
-    "birth": "2013-09-19T23:48:42.717", 
+    "birth": "2013-09-19T15:48:42.717", 
     "mother": null, 
-    "loyalty": 50, 
+    "loyalty": 55, 
     "spouse": null, 
     "quality_set": [
       3
@@ -11214,6 +11232,94 @@
   }
 },
 {
+  "pk": 1764, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 116, 
+    "content": "Un mois s'est \u00e9coul\u00e9. Votre domaine compte 3 paysans de plus.Vous recevez 16 \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.1 paysans sont maintenant des soldats.", 
+    "created": "2013-10-15T07:55:58.929", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1765, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 116, 
+    "content": "Un mois s'est \u00e9coul\u00e9. Votre domaine compte 3 paysans de plus.Vous recevez 17 \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.1 paysans sont maintenant des soldats.", 
+    "created": "2013-10-15T08:01:15.793", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1766, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 116, 
+    "content": "Un mois s'est \u00e9coul\u00e9. Votre domaine compte 3 paysans de plus.Vous recevez 16 \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.1 paysans sont maintenant des soldats.", 
+    "created": "2013-10-15T08:04:26.165", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1767, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 116, 
+    "content": "Vous pouvez d\u00e9sormais nommer un ma\u00eetre espion.", 
+    "created": "2013-10-15T08:09:07.550", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1768, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 116, 
+    "content": "Mon fils  et le Hagrold de Haute sont \u00e0 couteaux tir\u00e9s. Je pourrais regler le probl\u00e8me en [d\u00e9barassant](mission) ma cour du chevalier.", 
+    "created": "2013-10-15T08:09:07.595", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1769, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 116, 
+    "content": "Un mois s'est \u00e9coul\u00e9. Votre domaine compte 3 paysans de plus.Vous recevez 17 \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.1 paysans sont maintenant des soldats.", 
+    "created": "2013-10-15T08:10:01.512", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1770, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 116, 
+    "content": "Les r\u00e9parations de belzebuth sont termin\u00e9es et il est temps de r\u00e9fl\u00e9chir \u00e0 s'agrandir. Je vais charger mes diplomates de [justifier diplomatiquement](#mission) une attaque sur notre voisin, le seigneur None.\r\n\r\n", 
+    "created": "2013-10-15T08:12:06.673", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1771, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 116, 
+    "content": "Un casus belli envers le seigneur None sera bient\u00f4t officiel. Je devrais pr\u00e9parer mes troupes pour une attaque contre ses terres.", 
+    "created": "2013-10-15T08:13:15.673", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
   "pk": 58, 
   "model": "kingdom.claim", 
   "fields": {
@@ -11795,6 +11901,16 @@
   }
 },
 {
+  "pk": 453, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 116, 
+    "last_folk": 7550, 
+    "folk": 7550, 
+    "title": 5
+  }
+},
+{
   "pk": 1, 
   "model": "internal.trigger", 
   "fields": {
@@ -11802,6 +11918,7 @@
     "description": "Initialise les comptes", 
     "prestige_threshold": 0, 
     "fired": [
+      116, 
       115, 
       119, 
       76, 
@@ -11810,7 +11927,6 @@
       74, 
       113, 
       112, 
-      116, 
       120, 
       117
     ], 
@@ -49952,6 +50068,46 @@
   }
 },
 {
+  "pk": 937, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 116, 
+    "mission": 14
+  }
+},
+{
+  "pk": 938, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 116, 
+    "mission": 20
+  }
+},
+{
+  "pk": 939, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 116, 
+    "mission": 21
+  }
+},
+{
+  "pk": 940, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 116, 
+    "mission": 22
+  }
+},
+{
+  "pk": 941, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 116, 
+    "mission": 51
+  }
+},
+{
   "pk": 1, 
   "model": "event.eventcategory", 
   "fields": {
@@ -56018,18 +56174,6 @@
   }
 },
 {
-  "pk": 3504, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 116, 
-    "is_started": true, 
-    "created": "2013-10-14T23:48:50.120", 
-    "started": "2013-10-14T23:48:50.123", 
-    "text": "Il n'y a pas d'urgence en ce moment. \r\n\r\n    N'h\u00e9sitez pas \u00e0 utiliser cette pause narrative pour aller voir ce que vous pouvez faire dans l'onglet mission !", 
-    "event": 225
-  }
-},
-{
   "pk": 3523, 
   "model": "event.pendingevent", 
   "fields": {
@@ -56087,6 +56231,42 @@
     "started": "2013-10-15T06:00:06.197", 
     "text": "\r\n\r\n\r\nSoign\u00e9(s):\r\nHenri d'Attignat\r\n\r\n\r\n", 
     "event": 262
+  }
+},
+{
+  "pk": 3546, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 116, 
+    "is_started": true, 
+    "created": "2013-10-15T08:00:40.790", 
+    "started": "2013-10-15T08:00:40.812", 
+    "text": "Il n'y a pas d'urgence en ce moment. \r\n\r\n    N'h\u00e9sitez pas \u00e0 utiliser cette pause narrative pour aller voir ce que vous pouvez faire dans l'onglet mission !", 
+    "event": 225
+  }
+},
+{
+  "pk": 3547, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 116, 
+    "is_started": true, 
+    "created": "2013-10-15T08:01:07.426", 
+    "started": "2013-10-15T08:01:07.429", 
+    "text": "Il n'y a pas d'urgence en ce moment. \r\n\r\n    N'h\u00e9sitez pas \u00e0 utiliser cette pause narrative pour aller voir ce que vous pouvez faire dans l'onglet mission !", 
+    "event": 225
+  }
+},
+{
+  "pk": 3559, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 116, 
+    "is_started": true, 
+    "created": "2013-10-15T08:13:15.637", 
+    "started": "2013-10-15T08:13:15.645", 
+    "text": "Il n'y a pas d'urgence en ce moment. \r\n\r\n    N'h\u00e9sitez pas \u00e0 utiliser cette pause narrative pour aller voir ce que vous pouvez faire dans l'onglet mission !", 
+    "event": 225
   }
 },
 {
@@ -56244,17 +56424,6 @@
   }
 },
 {
-  "pk": 3725, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 3504, 
-    "message": "", 
-    "text": "J'attends que quelque chose attire mon attention.", 
-    "folk": null, 
-    "event_action": 293
-  }
-},
-{
   "pk": 3744, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -56307,6 +56476,39 @@
     "text": "ok !", 
     "folk": null, 
     "event_action": 336
+  }
+},
+{
+  "pk": 3768, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 3546, 
+    "message": "", 
+    "text": "J'attends que quelque chose attire mon attention.", 
+    "folk": null, 
+    "event_action": 293
+  }
+},
+{
+  "pk": 3769, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 3547, 
+    "message": "", 
+    "text": "J'attends que quelque chose attire mon attention.", 
+    "folk": null, 
+    "event_action": 293
+  }
+},
+{
+  "pk": 3788, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 3559, 
+    "message": "", 
+    "text": "J'attends que quelque chose attire mon attention.", 
+    "folk": null, 
+    "event_action": 293
   }
 },
 {
@@ -56751,15 +56953,6 @@
   }
 },
 {
-  "pk": 9988, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3504, 
-    "name": "slug", 
-    "value": "tuto_facheux_fantome"
-  }
-},
-{
   "pk": 10051, 
   "model": "event._pendingeventvariable", 
   "fields": {
@@ -56901,6 +57094,60 @@
     "pending_event": 3541, 
     "name": "soignes", 
     "value": "[\"`Folk`:7503\"]"
+  }
+},
+{
+  "pk": 10118, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3546, 
+    "name": "come_from", 
+    "value": 2
+  }
+},
+{
+  "pk": 10119, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3546, 
+    "name": "facheux", 
+    "value": "`Folk`:7549"
+  }
+},
+{
+  "pk": 10121, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3546, 
+    "name": "slug", 
+    "value": "tuto_facheux_3"
+  }
+},
+{
+  "pk": 10122, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3547, 
+    "name": "slug", 
+    "value": "tuto_forcertitre_random_fantome"
+  }
+},
+{
+  "pk": 10149, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3559, 
+    "name": "ennemi", 
+    "value": null
+  }
+},
+{
+  "pk": 10150, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3559, 
+    "name": "slug", 
+    "value": "tuto_casusbelli_effective"
   }
 },
 {
@@ -145975,11 +146222,11 @@
   "pk": 116, 
   "model": "kingdom.kingdom", 
   "fields": {
-    "soldiers": 9, 
+    "soldiers": 13, 
     "prestige": 95, 
-    "money": 86, 
+    "money": 152, 
     "user": 42, 
-    "population": 153
+    "population": 161
   }
 },
 {
