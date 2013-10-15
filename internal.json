@@ -7,6 +7,7 @@
     "description": "Initialise les comptes", 
     "prestige_threshold": 0, 
     "fired": [
+      116, 
       115, 
       119, 
       76, 
@@ -15,7 +16,6 @@
       74, 
       113, 
       112, 
-      116, 
       120, 
       117
     ], 
