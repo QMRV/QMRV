@@ -5385,10 +5385,10 @@
   "model": "kingdom.folk", 
   "fields": {
     "kingdom": 80, 
-    "fight": 2, 
+    "fight": 1, 
     "first_name": "H\u00e9lo\u00efse", 
     "last_name": "de hk", 
-    "diplomacy": 8, 
+    "diplomacy": 6, 
     "father": 6970, 
     "plot": 11, 
     "scholarship": 11, 
@@ -5403,7 +5403,7 @@
     "quality_set": [
       47, 
       4, 
-      37
+      41
     ], 
     "mentor": null
   }
@@ -11802,17 +11802,17 @@
     "description": "Initialise les comptes", 
     "prestige_threshold": 0, 
     "fired": [
-      113, 
-      114, 
       115, 
-      116, 
       119, 
-      120, 
-      117, 
-      74, 
       76, 
       80, 
-      112
+      114, 
+      74, 
+      113, 
+      112, 
+      116, 
+      120, 
+      117
     ], 
     "money_threshold": 0, 
     "on_fire": "#d\u00e9termination du type d'adversaire dans le tuto :\ntableau_PRV=['piquier','archer','cavalier']\nType_adversaire=random_in([0,1,2])\nAnti_adversaire=Type_adversaire+1\nif Anti_adversaire==3:\n  Anti_adversaire=0\n\n\n# Cr\u00e9ation du ch\u00e2telain\nseigneur = call_function(\"creer_folk\", kingdom=kingdom, fight_min=7, plot_min=7, diplomacy_min=7, scholarship_min=7, max_carac=36, loyalty=99, sex=Folk.MALE, last_name=kingdom.user.username, birth=datetime.now() - timedelta(days=35), trait=tableau_PRV[Anti_adversaire],)\n\nkingdom.unlock_title(\"chatelain\")\nseigneur.add_title(\"chatelain\")\n\n# Son fils\nfils = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=17), trait=tableau_PRV[Anti_adversaire], )\n\n# Sa fille\nfille = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=16))\n\n# Compagnon\ncompagnon = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE,birth=datetime.now() - timedelta(days=35), trait=random_in(['piquier','archer','cavalier']))\n\n\n# Adversaire du tuto\nlast_name = LastName.objects.all().order_by('?')[0].name\nfirst_name = FirstName.objects.all().order_by('?')[0].name\nkingdom.set_value(\"tuto_adversaire\", first_name  + \" \" + last_name)\nkingdom.set_value(\"tuto_dynasty_PNJ\", last_name)\nkingdom.set_value(\"tuto_type_PNJ\", tableau_PRV[Type_adversaire])\n\n# Lancement de l'event\npe = kingdom.create_pending_event(\"tuto_intro\")\npe.set_value(\"fils\", fils)\npe.set_value(\"fille\", fille)\npe.set_value(\"compagnon\", compagnon)\n\npe.start()\n\n# Kingdom init : on intialise de maniere equilibr\u00e9e avec un peu de random pour varier\n# pour modifier l'\u00e9quilibrage bouger ces 4 coeffs\npoints_base = 200\ncoeff_population = 0.5\ncoeff_prestige = 1\ncoeff_monnaie = 1\n\n# pour modifier la variabilit\u00e9 bouger les bornes de gaussienne\nrandom1 = random_gauss(0.75,1.25)\nrandom2 = random_gauss(0.75,1.25)\n\nkingdom.money = int(points_base/(coeff_population+random1*coeff_prestige+random2*coeff_population))\nkingdom.prestige = int(kingdom.money*coeff_prestige*random1)\nkingdom.population = 0 #int(kingdom.money*coeff_population*random2) on initialise dans la fin d'une des 4 branches de d\u00e9part la population\nkingdom.soldiers=0\nkingdom.set_value('total_soldats',0)\n\nkingdom.save()\n\nkingdom.set_value(\"in_tuto\", True)\n\n\n", 
@@ -56054,6 +56054,18 @@
   }
 },
 {
+  "pk": 3539, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 80, 
+    "is_started": true, 
+    "created": "2013-10-15T01:20:03.180", 
+    "started": "2013-10-15T01:20:03.186", 
+    "text": "\r\n\r\n\r\nSoign\u00e9(s):\r\nH\u00e9lo\u00efse de hk\r\n\r\n\r\n", 
+    "event": 262
+  }
+},
+{
   "pk": 2276, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -56238,6 +56250,17 @@
     "text": "Une nouvelle histoire commence. ", 
     "folk": null, 
     "event_action": 5
+  }
+},
+{
+  "pk": 3758, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 3539, 
+    "message": "", 
+    "text": "ok !", 
+    "folk": null, 
+    "event_action": 336
   }
 },
 {
@@ -56751,6 +56774,33 @@
     "pending_event": 3524, 
     "name": "compagnon", 
     "value": "`Folk`:7554"
+  }
+},
+{
+  "pk": 10100, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3539, 
+    "name": "morts", 
+    "value": "[]"
+  }
+},
+{
+  "pk": 10101, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3539, 
+    "name": "handicapes", 
+    "value": "[]"
+  }
+},
+{
+  "pk": 10102, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3539, 
+    "name": "soignes", 
+    "value": "[\"`Folk`:6972\"]"
   }
 },
 {
@@ -87845,6 +87895,328 @@
 },
 {
   "pk": 10740, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10741, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 115, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 4, 
+    "time": 56, 
+    "queries": 4
+  }
+},
+{
+  "pk": 10742, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 119, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 4, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10743, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 76, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 4, 
+    "time": 15, 
+    "queries": 4
+  }
+},
+{
+  "pk": 10744, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 80, 
+    "stack_level": 2, 
+    "object_pk": 41, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 4, 
+    "time": 10, 
+    "queries": 4
+  }
+},
+{
+  "pk": 10745, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 80, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 34, 
+    "time": 88, 
+    "queries": 38
+  }
+},
+{
+  "pk": 10746, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 114, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 4, 
+    "time": 20, 
+    "queries": 4
+  }
+},
+{
+  "pk": 10747, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 74, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 4, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10748, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 113, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 4, 
+    "time": 28, 
+    "queries": 4
+  }
+},
+{
+  "pk": 10749, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 112, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 4, 
+    "time": 16, 
+    "queries": 4
+  }
+},
+{
+  "pk": 10750, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 116, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 4, 
+    "time": 15, 
+    "queries": 4
+  }
+},
+{
+  "pk": 10751, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 120, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10752, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 117, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10753, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 115, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 4, 
+    "time": 27, 
+    "queries": 4
+  }
+},
+{
+  "pk": 10754, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 119, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 4, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10755, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 76, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 4, 
+    "time": 36, 
+    "queries": 4
+  }
+},
+{
+  "pk": 10756, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 80, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 19, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10757, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 114, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 4, 
+    "time": 54, 
+    "queries": 4
+  }
+},
+{
+  "pk": 10758, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 74, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 8, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10759, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 113, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 4, 
+    "time": 21, 
+    "queries": 4
+  }
+},
+{
+  "pk": 10760, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 112, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 4, 
+    "time": 16, 
+    "queries": 4
+  }
+},
+{
+  "pk": 10761, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 116, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 4, 
+    "time": 14, 
+    "queries": 4
+  }
+},
+{
+  "pk": 10762, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 120, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 10763, 
   "model": "reporting.scriptlog", 
   "fields": {
     "kingdom": 117, 
