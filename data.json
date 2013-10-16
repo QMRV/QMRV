@@ -2626,6 +2626,14 @@
   }
 },
 {
+  "pk": "yo9x9wf9l6fmhtmkos1r6vv7d01px4i0", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-10-30T23:32:08.633", 
+    "session_data": "ZDVhYmUzZmY4NjE4YzUzODJjYmFhMmNkN2Y3NjczMmE3YjQ0ZGVjODqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLKXUu"
+  }
+},
+{
   "pk": "yp5uafh44f6amzkpb0lp1rajdgq7drz8", 
   "model": "sessions.session", 
   "fields": {
@@ -4847,15 +4855,6 @@
   }
 },
 {
-  "pk": 1485, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 116, 
-    "name": "tuto_forcertitre_random", 
-    "value": 1
-  }
-},
-{
   "pk": 1496, 
   "model": "kingdom._kingdomvariable", 
   "fields": {
@@ -4869,123 +4868,6 @@
   "model": "kingdom._kingdomvariable", 
   "fields": {
     "kingdom": 116, 
-    "name": "tuto_toofewpopulation", 
-    "value": 1
-  }
-},
-{
-  "pk": 1520, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 117, 
-    "name": "tuto_adversaire", 
-    "value": "Raimon de Gondeville"
-  }
-},
-{
-  "pk": 1521, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 117, 
-    "name": "tuto_dynasty_PNJ", 
-    "value": "de Gondeville"
-  }
-},
-{
-  "pk": 1522, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 117, 
-    "name": "tuto_type_PNJ", 
-    "value": "piquier"
-  }
-},
-{
-  "pk": 1524, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 117, 
-    "name": "in_tuto", 
-    "value": 1
-  }
-},
-{
-  "pk": 1527, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 117, 
-    "name": "tuto_recrutement", 
-    "value": 1
-  }
-},
-{
-  "pk": 1534, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 117, 
-    "name": "tuto_caissesvides", 
-    "value": 1
-  }
-},
-{
-  "pk": 1545, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 117, 
-    "name": "tuto_facheux_fantome", 
-    "value": 1
-  }
-},
-{
-  "pk": 1547, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 117, 
-    "name": "tuto_nb_passage_timewarp", 
-    "value": 9
-  }
-},
-{
-  "pk": 1549, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 117, 
-    "name": "virgule_population", 
-    "value": 0.23930215491579032
-  }
-},
-{
-  "pk": 1551, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 117, 
-    "name": "total_soldats", 
-    "value": 13
-  }
-},
-{
-  "pk": 1553, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 117, 
-    "name": "virgule_soldiers", 
-    "value": 0.06000000000000005
-  }
-},
-{
-  "pk": 1555, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 117, 
-    "name": "virgule_thune", 
-    "value": 0.7352133056742964
-  }
-},
-{
-  "pk": 1556, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 117, 
     "name": "tuto_toofewpopulation", 
     "value": 1
   }
@@ -5108,56 +4990,209 @@
   }
 },
 {
-  "pk": 1627, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 116, 
-    "name": "tuto_nb_passage_timewarp", 
-    "value": 12
-  }
-},
-{
-  "pk": 1629, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 116, 
-    "name": "virgule_population", 
-    "value": 0.2419131059020856
-  }
-},
-{
-  "pk": 1631, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 116, 
-    "name": "total_soldats", 
-    "value": 13
-  }
-},
-{
-  "pk": 1633, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 116, 
-    "name": "virgule_soldiers", 
-    "value": 0.4000000000000017
-  }
-},
-{
-  "pk": 1635, 
-  "model": "kingdom._kingdomvariable", 
-  "fields": {
-    "kingdom": 116, 
-    "name": "virgule_thune", 
-    "value": 0.2272878792725912
-  }
-},
-{
   "pk": 1636, 
   "model": "kingdom._kingdomvariable", 
   "fields": {
     "kingdom": 116, 
     "name": "tuto_has_claim", 
+    "value": 1
+  }
+},
+{
+  "pk": 1648, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 116, 
+    "name": "tuto_nb_passage_timewarp", 
+    "value": 14
+  }
+},
+{
+  "pk": 1650, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 116, 
+    "name": "virgule_population", 
+    "value": 0.09810640872261356
+  }
+},
+{
+  "pk": 1652, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 116, 
+    "name": "total_soldats", 
+    "value": 15
+  }
+},
+{
+  "pk": 1654, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 116, 
+    "name": "virgule_soldiers", 
+    "value": 0.30000000000000204
+  }
+},
+{
+  "pk": 1656, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 116, 
+    "name": "virgule_thune", 
+    "value": 0.1489196609167145
+  }
+},
+{
+  "pk": 1658, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 116, 
+    "name": "tuto_forcertitre_random", 
+    "value": 1
+  }
+},
+{
+  "pk": 1709, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 121, 
+    "name": "tuto_adversaire", 
+    "value": "Art\u00e9mise de Peintures"
+  }
+},
+{
+  "pk": 1710, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 121, 
+    "name": "tuto_dynasty_PNJ", 
+    "value": "de Peintures"
+  }
+},
+{
+  "pk": 1711, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 121, 
+    "name": "tuto_type_PNJ", 
+    "value": "piquier"
+  }
+},
+{
+  "pk": 1713, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 121, 
+    "name": "in_tuto", 
+    "value": 1
+  }
+},
+{
+  "pk": 1716, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 121, 
+    "name": "tuto_recrutement", 
+    "value": 1
+  }
+},
+{
+  "pk": 1745, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 121, 
+    "name": "tuto_toofewpopulation", 
+    "value": 1
+  }
+},
+{
+  "pk": 1756, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 121, 
+    "name": "tuto_scandale_fantome", 
+    "value": 1
+  }
+},
+{
+  "pk": 1768, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 121, 
+    "name": "tuto_cour_basse", 
+    "value": 1
+  }
+},
+{
+  "pk": 1779, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 121, 
+    "name": "tuto_soeurette", 
+    "value": 1
+  }
+},
+{
+  "pk": 1791, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 121, 
+    "name": "tuto_forcertitre_random", 
+    "value": 1
+  }
+},
+{
+  "pk": 1793, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 121, 
+    "name": "tuto_nb_passage_timewarp", 
+    "value": 8
+  }
+},
+{
+  "pk": 1795, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 121, 
+    "name": "virgule_population", 
+    "value": 0.8315339708652218
+  }
+},
+{
+  "pk": 1799, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 121, 
+    "name": "virgule_soldiers", 
+    "value": 0.52
+  }
+},
+{
+  "pk": 1801, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 121, 
+    "name": "virgule_thune", 
+    "value": 0.09765583831112146
+  }
+},
+{
+  "pk": 1803, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 121, 
+    "name": "total_soldats", 
+    "value": 16
+  }
+},
+{
+  "pk": 1804, 
+  "model": "kingdom._kingdomvariable", 
+  "fields": {
+    "kingdom": 121, 
+    "name": "tuto_bandits_fantome", 
     "value": 1
   }
 },
@@ -6771,7 +6806,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 1, 
-    "birth": "2013-09-03T23:11:53.811", 
+    "birth": "2013-09-03T19:11:53.811", 
     "mother": null, 
     "loyalty": 69, 
     "spouse": null, 
@@ -6799,7 +6834,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 30, 
-    "birth": "2013-09-21T23:11:53.987", 
+    "birth": "2013-09-21T19:11:53.987", 
     "mother": null, 
     "loyalty": 97, 
     "spouse": null, 
@@ -6827,7 +6862,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 35, 
-    "birth": "2013-09-22T23:11:54.099", 
+    "birth": "2013-09-22T19:11:54.099", 
     "mother": null, 
     "loyalty": 80, 
     "spouse": null, 
@@ -6853,7 +6888,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 7, 
-    "birth": "2013-09-03T23:11:54.162", 
+    "birth": "2013-09-03T19:11:54.162", 
     "mother": null, 
     "loyalty": 82, 
     "spouse": null, 
@@ -6907,7 +6942,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 65, 
-    "birth": "2013-09-21T20:28:59.785", 
+    "birth": "2013-09-21T16:28:59.785", 
     "mother": null, 
     "loyalty": 44, 
     "spouse": null, 
@@ -6933,7 +6968,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 24, 
-    "birth": "2013-09-04T11:39:31.933", 
+    "birth": "2013-09-04T07:39:31.933", 
     "mother": null, 
     "loyalty": 55, 
     "spouse": null, 
@@ -6960,7 +6995,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 53, 
-    "birth": "2013-09-04T13:40:20.396", 
+    "birth": "2013-09-04T09:40:20.396", 
     "mother": null, 
     "loyalty": 45, 
     "spouse": null, 
@@ -6987,7 +7022,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 44, 
-    "birth": "2013-09-29T13:40:20.580", 
+    "birth": "2013-09-29T09:40:20.580", 
     "mother": null, 
     "loyalty": 65, 
     "spouse": null, 
@@ -7013,7 +7048,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 43, 
-    "birth": "2013-10-08T13:40:20.649", 
+    "birth": "2013-10-08T09:40:20.649", 
     "mother": null, 
     "loyalty": 45, 
     "spouse": null, 
@@ -7039,173 +7074,12 @@
     "disabled": false, 
     "death": null, 
     "avatar": 11, 
-    "birth": "2013-09-16T18:19:02.119", 
+    "birth": "2013-09-16T14:19:02.119", 
     "mother": null, 
     "loyalty": 57, 
     "spouse": null, 
     "quality_set": [
       22
-    ], 
-    "mentor": null
-  }
-},
-{
-  "pk": 7532, 
-  "model": "kingdom.folk", 
-  "fields": {
-    "kingdom": 117, 
-    "fight": 9, 
-    "first_name": "Eustache", 
-    "last_name": "de hugo", 
-    "diplomacy": 9, 
-    "father": null, 
-    "plot": 10, 
-    "scholarship": 9, 
-    "sex": "m", 
-    "disabled": false, 
-    "death": null, 
-    "avatar": 10, 
-    "birth": "2013-09-04T18:04:29", 
-    "mother": null, 
-    "loyalty": 99, 
-    "spouse": null, 
-    "quality_set": [
-      10, 
-      40
-    ], 
-    "mentor": null
-  }
-},
-{
-  "pk": 7533, 
-  "model": "kingdom.folk", 
-  "fields": {
-    "kingdom": 117, 
-    "fight": 12, 
-    "first_name": "Barthelemy", 
-    "last_name": "de hugo", 
-    "diplomacy": 5, 
-    "father": 7532, 
-    "plot": 8, 
-    "scholarship": 7, 
-    "sex": "m", 
-    "disabled": false, 
-    "death": null, 
-    "avatar": 7, 
-    "birth": "2013-09-22T18:04:30", 
-    "mother": null, 
-    "loyalty": 80, 
-    "spouse": null, 
-    "quality_set": [
-      47, 
-      26, 
-      40
-    ], 
-    "mentor": null
-  }
-},
-{
-  "pk": 7534, 
-  "model": "kingdom.folk", 
-  "fields": {
-    "kingdom": 117, 
-    "fight": 3, 
-    "first_name": "Eulalie", 
-    "last_name": "de hugo", 
-    "diplomacy": 9, 
-    "father": 7532, 
-    "plot": 13, 
-    "scholarship": 7, 
-    "sex": "f", 
-    "disabled": false, 
-    "death": null, 
-    "avatar": 40, 
-    "birth": "2013-09-23T18:04:30", 
-    "mother": null, 
-    "loyalty": 80, 
-    "spouse": null, 
-    "quality_set": [], 
-    "mentor": null
-  }
-},
-{
-  "pk": 7535, 
-  "model": "kingdom.folk", 
-  "fields": {
-    "kingdom": 117, 
-    "fight": 2, 
-    "first_name": "Martin", 
-    "last_name": "de Noyellette", 
-    "diplomacy": 4, 
-    "father": null, 
-    "plot": 10, 
-    "scholarship": 12, 
-    "sex": "m", 
-    "disabled": false, 
-    "death": null, 
-    "avatar": 14, 
-    "birth": "2013-09-04T18:04:30", 
-    "mother": null, 
-    "loyalty": 85, 
-    "spouse": null, 
-    "quality_set": [
-      33, 
-      40, 
-      41
-    ], 
-    "mentor": null
-  }
-},
-{
-  "pk": 7537, 
-  "model": "kingdom.folk", 
-  "fields": {
-    "kingdom": 117, 
-    "fight": 5, 
-    "first_name": "Aimeri", 
-    "last_name": "de Bolqu\u00e8re", 
-    "diplomacy": 8, 
-    "father": null, 
-    "plot": 6, 
-    "scholarship": 5, 
-    "sex": "m", 
-    "disabled": false, 
-    "death": null, 
-    "avatar": 26, 
-    "birth": "2013-09-05T00:21:36", 
-    "mother": null, 
-    "loyalty": 53, 
-    "spouse": null, 
-    "quality_set": [
-      36, 
-      41
-    ], 
-    "mentor": null
-  }
-},
-{
-  "pk": 7538, 
-  "model": "kingdom.folk", 
-  "fields": {
-    "kingdom": 117, 
-    "fight": 11, 
-    "first_name": "Aymon", 
-    "last_name": "d'Oinville", 
-    "diplomacy": 6, 
-    "father": null, 
-    "plot": 7, 
-    "scholarship": 9, 
-    "sex": "m", 
-    "disabled": false, 
-    "death": null, 
-    "avatar": 4, 
-    "birth": "2013-09-09T00:21:17", 
-    "mother": null, 
-    "loyalty": 59, 
-    "spouse": null, 
-    "quality_set": [
-      23, 
-      39
     ], 
     "mentor": null
   }
@@ -7330,7 +7204,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 1, 
-    "birth": "2013-09-23T12:06:29.449", 
+    "birth": "2013-09-23T08:06:29.449", 
     "mother": null, 
     "loyalty": 65, 
     "spouse": null, 
@@ -7358,7 +7232,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 30, 
-    "birth": "2013-09-17T19:53:40.875", 
+    "birth": "2013-09-17T15:53:40.875", 
     "mother": null, 
     "loyalty": 54, 
     "spouse": null, 
@@ -7384,7 +7258,7 @@
     "disabled": false, 
     "death": null, 
     "avatar": 4, 
-    "birth": "2013-09-19T15:48:42.717", 
+    "birth": "2013-09-19T11:48:42.717", 
     "mother": null, 
     "loyalty": 55, 
     "spouse": null, 
@@ -7497,6 +7371,351 @@
     "quality_set": [
       11, 
       38
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7555, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 121, 
+    "fight": 13, 
+    "first_name": "Hagrold", 
+    "last_name": "de hugo", 
+    "diplomacy": 10, 
+    "father": null, 
+    "plot": 11, 
+    "scholarship": 11, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 29, 
+    "birth": "2013-09-11T07:34:46.872", 
+    "mother": null, 
+    "loyalty": 69, 
+    "spouse": null, 
+    "quality_set": [
+      2, 
+      40
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7556, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 121, 
+    "fight": 8, 
+    "first_name": "Henri", 
+    "last_name": "de hugo", 
+    "diplomacy": 6, 
+    "father": 7555, 
+    "plot": 9, 
+    "scholarship": 9, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 26, 
+    "birth": "2013-09-29T07:34:47.145", 
+    "mother": null, 
+    "loyalty": 80, 
+    "spouse": null, 
+    "quality_set": [
+      45, 
+      40
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7557, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 121, 
+    "fight": 6, 
+    "first_name": "Agelberte", 
+    "last_name": "de hugo", 
+    "diplomacy": 11, 
+    "father": 7555, 
+    "plot": 7, 
+    "scholarship": 9, 
+    "sex": "f", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 38, 
+    "birth": "2013-09-30T07:34:47.221", 
+    "mother": null, 
+    "loyalty": 80, 
+    "spouse": null, 
+    "quality_set": [
+      7
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7558, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 121, 
+    "fight": 11, 
+    "first_name": "Bertin", 
+    "last_name": "de Ventenac", 
+    "diplomacy": 8, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 6, 
+    "birth": "2013-09-11T07:34:47.285", 
+    "mother": null, 
+    "loyalty": 85, 
+    "spouse": null, 
+    "quality_set": [
+      39
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7559, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 121, 
+    "fight": 14, 
+    "first_name": "Audibert", 
+    "last_name": "de Noailhac", 
+    "diplomacy": 6, 
+    "father": null, 
+    "plot": 7, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 7, 
+    "birth": "2013-09-11T07:36:14.747", 
+    "mother": null, 
+    "loyalty": 50, 
+    "spouse": null, 
+    "quality_set": [
+      5, 
+      40, 
+      12
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7560, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 121, 
+    "fight": 5, 
+    "first_name": "Gr\u00e9goire", 
+    "last_name": "de Viriville", 
+    "diplomacy": 13, 
+    "father": null, 
+    "plot": 2, 
+    "scholarship": 12, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 12, 
+    "birth": "2013-09-11T09:37:20.970", 
+    "mother": null, 
+    "loyalty": 64, 
+    "spouse": null, 
+    "quality_set": [
+      8, 
+      36
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7561, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 121, 
+    "fight": 3, 
+    "first_name": "Cathau", 
+    "last_name": "d'Oberlarg", 
+    "diplomacy": 12, 
+    "father": null, 
+    "plot": 8, 
+    "scholarship": 8, 
+    "sex": "f", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 63, 
+    "birth": "2013-09-30T11:39:11.366", 
+    "mother": null, 
+    "loyalty": 50, 
+    "spouse": null, 
+    "quality_set": [
+      15, 
+      43
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7562, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 121, 
+    "fight": 10, 
+    "first_name": "Thomassin", 
+    "last_name": "d'Iffendic", 
+    "diplomacy": 7, 
+    "father": null, 
+    "plot": 4, 
+    "scholarship": 8, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 29, 
+    "birth": "2013-09-11T13:43:06.293", 
+    "mother": null, 
+    "loyalty": 65, 
+    "spouse": null, 
+    "quality_set": [
+      14, 
+      36
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7563, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 121, 
+    "fight": 7, 
+    "first_name": "Ada", 
+    "last_name": "de Gagnac", 
+    "diplomacy": 7, 
+    "father": null, 
+    "plot": 8, 
+    "scholarship": 12, 
+    "sex": "f", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 65, 
+    "birth": "2013-09-30T17:43:40.062", 
+    "mother": null, 
+    "loyalty": 60, 
+    "spouse": null, 
+    "quality_set": [
+      17, 
+      43
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7564, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 121, 
+    "fight": 7, 
+    "first_name": "Nantechilde", 
+    "last_name": "de hugo", 
+    "diplomacy": 13, 
+    "father": null, 
+    "plot": 6, 
+    "scholarship": 6, 
+    "sex": "f", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 36, 
+    "birth": "2013-09-11T19:43:50.299", 
+    "mother": null, 
+    "loyalty": 75, 
+    "spouse": null, 
+    "quality_set": [
+      15, 
+      3
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7565, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 5, 
+    "first_name": "Mayeul", 
+    "last_name": "de Charbonni\u00e8res", 
+    "diplomacy": 9, 
+    "father": null, 
+    "plot": 10, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 44, 
+    "birth": "2013-10-16T23:43:50.385", 
+    "mother": null, 
+    "loyalty": 65, 
+    "spouse": null, 
+    "quality_set": [
+      15
+    ], 
+    "mentor": null
+  }
+},
+{
+  "pk": 7566, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 121, 
+    "fight": 5, 
+    "first_name": "Gauvain", 
+    "last_name": "de hugo", 
+    "diplomacy": 5, 
+    "father": 7565, 
+    "plot": 3, 
+    "scholarship": 7, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 44, 
+    "birth": "2013-10-06T19:43:50.444", 
+    "mother": 7564, 
+    "loyalty": 65, 
+    "spouse": null, 
+    "quality_set": [], 
+    "mentor": 7558
+  }
+},
+{
+  "pk": 7567, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": 121, 
+    "fight": 9, 
+    "first_name": "Hersent", 
+    "last_name": "de hugo", 
+    "diplomacy": 3, 
+    "father": 7565, 
+    "plot": 3, 
+    "scholarship": 3, 
+    "sex": "f", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 43, 
+    "birth": "2013-10-15T19:43:50.476", 
+    "mother": 7564, 
+    "loyalty": 35, 
+    "spouse": null, 
+    "quality_set": [
+      2
     ], 
     "mentor": null
   }
@@ -10976,138 +11195,6 @@
   }
 },
 {
-  "pk": 1739, 
-  "model": "kingdom.message", 
-  "fields": {
-    "kingdom": 117, 
-    "content": "Vous pouvez d\u00e9sormais nommer un conn\u00e9table.", 
-    "created": "2013-10-10T00:07:44.259", 
-    "read": null, 
-    "level": 1
-  }
-},
-{
-  "pk": 1740, 
-  "model": "kingdom.message", 
-  "fields": {
-    "kingdom": 117, 
-    "content": "Grace au soutien du Roi de France, ma famille s'est install\u00e9e \u00e0 hugo, la demeure de mes anc\u00eatres. J'ai d\u00e9bours\u00e9 85 \u00e9cus pour entamer des r\u00e9parations et recruter des serviteurs.", 
-    "created": "2013-10-10T00:07:44.398", 
-    "read": null, 
-    "level": 1
-  }
-},
-{
-  "pk": 1741, 
-  "model": "kingdom.message", 
-  "fields": {
-    "kingdom": 117, 
-    "content": "Nommer un [conn\u00e9table](#title) me permettra de [recruter des hommes d'armes](#mission).", 
-    "created": "2013-10-10T00:07:45.822", 
-    "read": null, 
-    "level": 1
-  }
-},
-{
-  "pk": 1742, 
-  "model": "kingdom.message", 
-  "fields": {
-    "kingdom": 117, 
-    "content": "J'ai mit sur pied un petit bataillon, et accept\u00e9 l'all\u00e9geance du chevalier . Les gueux me reconnaissent maintenant comme leur seigneur et ma\u00eetre.", 
-    "created": "2013-10-10T00:08:20.121", 
-    "read": null, 
-    "level": 1
-  }
-},
-{
-  "pk": 1743, 
-  "model": "kingdom.message", 
-  "fields": {
-    "kingdom": 117, 
-    "content": "Un mois s'est \u00e9coul\u00e9. Votre domaine compte 2 paysans de plus.Vous recevez 9 \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.1 paysans sont maintenant des soldats.", 
-    "created": "2013-10-10T00:19:11.905", 
-    "read": null, 
-    "level": 1
-  }
-},
-{
-  "pk": 1744, 
-  "model": "kingdom.message", 
-  "fields": {
-    "kingdom": 117, 
-    "content": "Vous pouvez d\u00e9sormais nommer un tr\u00e9sorier.", 
-    "created": "2013-10-10T00:19:14.300", 
-    "read": null, 
-    "level": 1
-  }
-},
-{
-  "pk": 1745, 
-  "model": "kingdom.message", 
-  "fields": {
-    "kingdom": 117, 
-    "content": "Il est urgent de charger un [tr\u00e9sorier](#title) de r\u00e9gler nos probl\u00e8mes d'argent", 
-    "created": "2013-10-10T00:19:14.364", 
-    "read": null, 
-    "level": 1
-  }
-},
-{
-  "pk": 1746, 
-  "model": "kingdom.message", 
-  "fields": {
-    "kingdom": 117, 
-    "content": "Un mois s'est \u00e9coul\u00e9. Votre domaine compte 3 paysans de plus.Vous recevez 10 \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.1 paysans sont maintenant des soldats.", 
-    "created": "2013-10-10T00:19:15.854", 
-    "read": null, 
-    "level": 1
-  }
-},
-{
-  "pk": 1747, 
-  "model": "kingdom.message", 
-  "fields": {
-    "kingdom": 117, 
-    "content": "Mon fils a \u00e9t\u00e9 Bless\u00e9 par None en duel. Le chevalier a quitt\u00e9 ma cour, laissant mon fils amer.", 
-    "created": "2013-10-10T00:21:29.611", 
-    "read": null, 
-    "level": 1
-  }
-},
-{
-  "pk": 1748, 
-  "model": "kingdom.message", 
-  "fields": {
-    "kingdom": 117, 
-    "content": "Un mois s'est \u00e9coul\u00e9. Votre domaine compte 3 paysans de plus.Vous recevez 15 \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.1 paysans sont maintenant des soldats.", 
-    "created": "2013-10-10T00:21:36.962", 
-    "read": null, 
-    "level": 1
-  }
-},
-{
-  "pk": 1749, 
-  "model": "kingdom.message", 
-  "fields": {
-    "kingdom": 117, 
-    "content": "Le chevalier Aymon d'Oinville a rejoint ma cour.", 
-    "created": "2013-10-10T00:23:42.160", 
-    "read": null, 
-    "level": 1
-  }
-},
-{
-  "pk": 1750, 
-  "model": "kingdom.message", 
-  "fields": {
-    "kingdom": 117, 
-    "content": "Le p\u00e8re Aimeri de Bolqu\u00e8re a accept\u00e9 de devenir le [cur\u00e9](titre) de ma cour.", 
-    "created": "2013-10-10T00:24:05.309", 
-    "read": null, 
-    "level": 1
-  }
-},
-{
   "pk": 1751, 
   "model": "kingdom.message", 
   "fields": {
@@ -11312,6 +11399,281 @@
     "kingdom": 116, 
     "content": "Un casus belli envers le seigneur None sera bient\u00f4t officiel. Je devrais pr\u00e9parer mes troupes pour une attaque contre ses terres.", 
     "created": "2013-10-15T08:13:15.673", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1772, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 116, 
+    "content": "Un mois s'est \u00e9coul\u00e9. Votre domaine compte 3 paysans de plus.Vous recevez 16 \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.1 paysans sont maintenant des soldats.", 
+    "created": "2013-10-16T22:53:56.723", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1773, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 116, 
+    "content": "Un mois s'est \u00e9coul\u00e9. Votre domaine compte 3 paysans de plus.Vous recevez 17 \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.1 paysans sont maintenant des soldats.", 
+    "created": "2013-10-16T22:54:01.251", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1779, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "Vous pouvez d\u00e9sormais nommer un conn\u00e9table.", 
+    "created": "2013-10-16T23:35:29.202", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1780, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "Grace au soutien du Roi de France, ma famille s'est install\u00e9e \u00e0 hugo, la demeure de mes anc\u00eatres. J'ai d\u00e9bours\u00e9 85 \u00e9cus pour entamer des r\u00e9parations et recruter des serviteurs.", 
+    "created": "2013-10-16T23:35:29.365", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1781, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "Nommer un [conn\u00e9table](#title) me permettra de [recruter des hommes d'armes](#mission).", 
+    "created": "2013-10-16T23:35:36.135", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1782, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "J'ai mit sur pied un petit bataillon, et accept\u00e9 l'all\u00e9geance du chevalier . Les gueux me reconnaissent maintenant comme leur seigneur et ma\u00eetre.", 
+    "created": "2013-10-16T23:36:35.165", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1783, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "Un mois s'est \u00e9coul\u00e9. Votre domaine compte 2 paysans de plus.Vous recevez 10 \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.0 paysans sont maintenant des soldats.", 
+    "created": "2013-10-16T23:37:20.939", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1784, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "Le p\u00e8re Gr\u00e9goire de Viriville a rejoint ma cour en tant que cur\u00e9 du ch\u00e2teau.", 
+    "created": "2013-10-16T23:39:09.229", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1785, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "Un mois s'est \u00e9coul\u00e9. Votre domaine compte 4 paysans de plus.Vous recevez 11 \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.1 paysans sont maintenant des soldats.", 
+    "created": "2013-10-16T23:39:11.317", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1786, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "Dame Cathau d'Oberlarg a rejoint ma cour.", 
+    "created": "2013-10-16T23:43:03.343", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1787, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "Un mois s'est \u00e9coul\u00e9. Votre domaine compte 3 paysans de plus.Vous recevez 11 \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.1 paysans sont maintenant des soldats.", 
+    "created": "2013-10-16T23:43:06.265", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1788, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "Le p\u00e8re Gr\u00e9goire de Viriville a accept\u00e9 de devenir le [cur\u00e9](titre) de ma cour.", 
+    "created": "2013-10-16T23:43:12.720", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1789, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "Un mois s'est \u00e9coul\u00e9. Votre domaine compte 4 paysans de plus.Vous recevez 10 \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.1 paysans sont maintenant des soldats.", 
+    "created": "2013-10-16T23:43:14.574", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1790, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "J'ai pr\u00e9fer\u00e9 refuser \u00e0  la main de ma fille. ```-10 de Loyaut\u00e9.```", 
+    "created": "2013-10-16T23:43:37.916", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1791, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "Un mois s'est \u00e9coul\u00e9. Votre domaine compte 4 paysans de plus.Vous recevez 11 \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.1 paysans sont maintenant des soldats.", 
+    "created": "2013-10-16T23:43:40.012", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1792, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "Dame Ada de Gagnac a rejoint ma cour.", 
+    "created": "2013-10-16T23:43:48.757", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1793, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "Un mois s'est \u00e9coul\u00e9. Votre domaine compte 3 paysans de plus.Vous recevez 11 \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.1 paysans sont maintenant des soldats.", 
+    "created": "2013-10-16T23:43:50.272", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1794, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "Nantechilde de hugo, Gauvain de hugo et Hersent de hugo ont rejoint ma cour.", 
+    "created": "2013-10-16T23:44:39.466", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1795, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "Vous pouvez d\u00e9sormais nommer un chambellan.", 
+    "created": "2013-10-16T23:44:41.102", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1796, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "Je dois [d\u00e9signer un mentor](mission) pour s'occuper de l'\u00e9ducation de Gauvain de hugo.", 
+    "created": "2013-10-16T23:44:41.374", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1797, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "Un mois s'est \u00e9coul\u00e9. Votre domaine compte 3 paysans de plus.Vous recevez 10 \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.1 paysans sont maintenant des soldats.", 
+    "created": "2013-10-16T23:46:24.830", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1798, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "Je peux \u00e0 pr\u00e9sent nommer un [ambassadeur](title), qui pourra [convaincre](mission) de nouveaux courtisans de rejoindre ma cour.", 
+    "created": "2013-10-16T23:46:27.331", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1799, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "Un mois s'est \u00e9coul\u00e9. Votre domaine compte 3 paysans de plus.Vous recevez 11 \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.1 paysans sont maintenant des soldats.", 
+    "created": "2013-10-16T23:46:36.409", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1800, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "Des bandits s\u2019appr\u00eatent \u00e0 mettre mes terres \u00e0 sac. Je dois [mener mes troupes \u00e0 leur rencontre](mission). ", 
+    "created": "2013-10-16T23:46:38.818", 
+    "read": null, 
+    "level": 1
+  }
+},
+{
+  "pk": 1801, 
+  "model": "kingdom.message", 
+  "fields": {
+    "kingdom": 121, 
+    "content": "J'ai vaincu les bandits. 1 de mes hommes d'armes sont tomb\u00e9s mais Audibert de Noailhac s'est illustr\u00e9 dans la bataille.    Gagne le Trait Intrepide.", 
+    "created": "2013-10-16T23:47:15.145", 
     "read": null, 
     "level": 1
   }
@@ -11828,56 +12190,6 @@
   }
 },
 {
-  "pk": 444, 
-  "model": "title.availabletitle", 
-  "fields": {
-    "kingdom": 117, 
-    "last_folk": 7532, 
-    "folk": 7532, 
-    "title": 1
-  }
-},
-{
-  "pk": 446, 
-  "model": "title.availabletitle", 
-  "fields": {
-    "kingdom": 117, 
-    "last_folk": 7533, 
-    "folk": 7533, 
-    "title": 2
-  }
-},
-{
-  "pk": 447, 
-  "model": "title.availabletitle", 
-  "fields": {
-    "kingdom": 117, 
-    "last_folk": 7535, 
-    "folk": 7535, 
-    "title": 7
-  }
-},
-{
-  "pk": 448, 
-  "model": "title.availabletitle", 
-  "fields": {
-    "kingdom": 117, 
-    "last_folk": 7537, 
-    "folk": 7537, 
-    "title": 3
-  }
-},
-{
-  "pk": 449, 
-  "model": "title.availabletitle", 
-  "fields": {
-    "kingdom": 117, 
-    "last_folk": null, 
-    "folk": null, 
-    "title": 6
-  }
-},
-{
   "pk": 451, 
   "model": "title.availabletitle", 
   "fields": {
@@ -11908,6 +12220,56 @@
   }
 },
 {
+  "pk": 455, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 121, 
+    "last_folk": 7555, 
+    "folk": 7555, 
+    "title": 1
+  }
+},
+{
+  "pk": 456, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 121, 
+    "last_folk": 7558, 
+    "folk": 7558, 
+    "title": 2
+  }
+},
+{
+  "pk": 457, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 121, 
+    "last_folk": 7562, 
+    "folk": 7562, 
+    "title": 3
+  }
+},
+{
+  "pk": 459, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 121, 
+    "last_folk": 7560, 
+    "folk": 7560, 
+    "title": 4
+  }
+},
+{
+  "pk": 460, 
+  "model": "title.availabletitle", 
+  "fields": {
+    "kingdom": 121, 
+    "last_folk": null, 
+    "folk": null, 
+    "title": 6
+  }
+},
+{
   "pk": 1, 
   "model": "internal.trigger", 
   "fields": {
@@ -11916,6 +12278,7 @@
     "prestige_threshold": 0, 
     "fired": [
       116, 
+      121, 
       115, 
       119, 
       76, 
@@ -11924,8 +12287,7 @@
       74, 
       113, 
       112, 
-      120, 
-      117
+      120
     ], 
     "money_threshold": 0, 
     "on_fire": "#d\u00e9termination du type d'adversaire dans le tuto :\ntableau_PRV=['piquier','archer','cavalier']\nType_adversaire=random_in([0,1,2])\nAnti_adversaire=Type_adversaire+1\nif Anti_adversaire==3:\n  Anti_adversaire=0\n\n\n# Cr\u00e9ation du ch\u00e2telain\nseigneur = call_function(\"creer_folk\", kingdom=kingdom, fight_min=7, plot_min=7, diplomacy_min=7, scholarship_min=7, max_carac=36, loyalty=99, sex=Folk.MALE, last_name=kingdom.user.username, birth=datetime.now() - timedelta(days=35), trait=tableau_PRV[Anti_adversaire],)\n\nkingdom.unlock_title(\"chatelain\")\nseigneur.add_title(\"chatelain\")\n\n# Son fils\nfils = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=17), trait=tableau_PRV[Anti_adversaire], )\n\n# Sa fille\nfille = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=16))\n\n# Compagnon\ncompagnon = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE,birth=datetime.now() - timedelta(days=35), trait=random_in(['piquier','archer','cavalier']))\n\n\n# Adversaire du tuto\nlast_name = LastName.objects.all().order_by('?')[0].name\nfirst_name = FirstName.objects.all().order_by('?')[0].name\nkingdom.set_value(\"tuto_adversaire\", first_name  + \" \" + last_name)\nkingdom.set_value(\"tuto_dynasty_PNJ\", last_name)\nkingdom.set_value(\"tuto_type_PNJ\", tableau_PRV[Type_adversaire])\n\n# Lancement de l'event\npe = kingdom.create_pending_event(\"tuto_intro\")\npe.set_value(\"fils\", fils)\npe.set_value(\"fille\", fille)\npe.set_value(\"compagnon\", compagnon)\n\npe.start()\n\n# Kingdom init : on intialise de maniere equilibr\u00e9e avec un peu de random pour varier\n# pour modifier l'\u00e9quilibrage bouger ces 4 coeffs\npoints_base = 200\ncoeff_population = 0.5\ncoeff_prestige = 1\ncoeff_monnaie = 1\n\n# pour modifier la variabilit\u00e9 bouger les bornes de gaussienne\nrandom1 = random_gauss(0.75,1.25)\nrandom2 = random_gauss(0.75,1.25)\n\nkingdom.money = int(points_base/(coeff_population+random1*coeff_prestige+random2*coeff_population))\nkingdom.prestige = int(kingdom.money*coeff_prestige*random1)\nkingdom.population = 0 #int(kingdom.money*coeff_population*random2) on initialise dans la fin d'une des 4 branches de d\u00e9part la population\nkingdom.soldiers=0\nkingdom.set_value('total_soldats',0)\n\nkingdom.save()\n\nkingdom.set_value(\"in_tuto\", True)\n\n\n", 
@@ -49177,6 +49539,22 @@
   }
 },
 {
+  "pk": 527, 
+  "model": "mission.pendingmission", 
+  "fields": {
+    "kingdom": 116, 
+    "is_started": true, 
+    "target": null, 
+    "created": "2013-10-16T22:55:10.898", 
+    "started": "2013-10-16T22:55:25.752", 
+    "last_target": null, 
+    "mission": 48, 
+    "value": 0, 
+    "is_finished": false, 
+    "last_value": 0
+  }
+},
+{
   "pk": 519, 
   "model": "mission.pendingmissionaffectation", 
   "fields": {
@@ -49246,6 +49624,33 @@
     "pending_mission": 483, 
     "folk": 7495, 
     "mission_grid": 52
+  }
+},
+{
+  "pk": 956, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 527, 
+    "folk": 7516, 
+    "mission_grid": 49
+  }
+},
+{
+  "pk": 957, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 527, 
+    "folk": 7517, 
+    "mission_grid": 49
+  }
+},
+{
+  "pk": 958, 
+  "model": "mission.pendingmissionaffectation", 
+  "fields": {
+    "pending_mission": 527, 
+    "folk": 7518, 
+    "mission_grid": 49
   }
 },
 {
@@ -49969,78 +50374,6 @@
   }
 },
 {
-  "pk": 922, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 117, 
-    "mission": 32
-  }
-},
-{
-  "pk": 923, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 117, 
-    "mission": 37
-  }
-},
-{
-  "pk": 924, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 117, 
-    "mission": 38
-  }
-},
-{
-  "pk": 925, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 117, 
-    "mission": 8
-  }
-},
-{
-  "pk": 926, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 117, 
-    "mission": 9
-  }
-},
-{
-  "pk": 927, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 117, 
-    "mission": 18
-  }
-},
-{
-  "pk": 928, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 117, 
-    "mission": 48
-  }
-},
-{
-  "pk": 929, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 117, 
-    "mission": 49
-  }
-},
-{
-  "pk": 930, 
-  "model": "mission.availablemission", 
-  "fields": {
-    "kingdom": 117, 
-    "mission": 47
-  }
-},
-{
   "pk": 931, 
   "model": "mission.availablemission", 
   "fields": {
@@ -50102,6 +50435,86 @@
   "fields": {
     "kingdom": 116, 
     "mission": 51
+  }
+},
+{
+  "pk": 947, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 121, 
+    "mission": 32
+  }
+},
+{
+  "pk": 948, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 121, 
+    "mission": 37
+  }
+},
+{
+  "pk": 949, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 121, 
+    "mission": 38
+  }
+},
+{
+  "pk": 950, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 121, 
+    "mission": 18
+  }
+},
+{
+  "pk": 951, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 121, 
+    "mission": 48
+  }
+},
+{
+  "pk": 952, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 121, 
+    "mission": 50
+  }
+},
+{
+  "pk": 953, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 121, 
+    "mission": 31
+  }
+},
+{
+  "pk": 954, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 121, 
+    "mission": 23
+  }
+},
+{
+  "pk": 955, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 121, 
+    "mission": 49
+  }
+},
+{
+  "pk": 956, 
+  "model": "mission.availablemission", 
+  "fields": {
+    "kingdom": 121, 
+    "mission": 47
   }
 },
 {
@@ -56147,18 +56560,6 @@
   }
 },
 {
-  "pk": 3483, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 117, 
-    "is_started": true, 
-    "created": "2013-10-10T00:24:05.283", 
-    "started": "2013-10-10T00:24:05.286", 
-    "text": "Il n'y a pas d'urgence en ce moment. \r\n\r\n    N'h\u00e9sitez pas \u00e0 utiliser cette pause narrative pour aller voir ce que vous pouvez faire dans l'onglet mission !", 
-    "event": 225
-  }
-},
-{
   "pk": 3485, 
   "model": "event.pendingevent", 
   "fields": {
@@ -56231,30 +56632,6 @@
   }
 },
 {
-  "pk": 3546, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 116, 
-    "is_started": true, 
-    "created": "2013-10-15T08:00:40.790", 
-    "started": "2013-10-15T08:00:40.812", 
-    "text": "Il n'y a pas d'urgence en ce moment. \r\n\r\n    N'h\u00e9sitez pas \u00e0 utiliser cette pause narrative pour aller voir ce que vous pouvez faire dans l'onglet mission !", 
-    "event": 225
-  }
-},
-{
-  "pk": 3547, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 116, 
-    "is_started": true, 
-    "created": "2013-10-15T08:01:07.426", 
-    "started": "2013-10-15T08:01:07.429", 
-    "text": "Il n'y a pas d'urgence en ce moment. \r\n\r\n    N'h\u00e9sitez pas \u00e0 utiliser cette pause narrative pour aller voir ce que vous pouvez faire dans l'onglet mission !", 
-    "event": 225
-  }
-},
-{
   "pk": 3559, 
   "model": "event.pendingevent", 
   "fields": {
@@ -56275,18 +56652,6 @@
     "created": "2013-10-15T15:10:03.268", 
     "started": "2013-10-15T15:10:03.521", 
     "text": "\r\n\r\n\r\nSoign\u00e9(s):\r\nAdelphe\u00a0 de Viller\u00e9al\r\n\r\n\r\n", 
-    "event": 262
-  }
-},
-{
-  "pk": 3561, 
-  "model": "event.pendingevent", 
-  "fields": {
-    "kingdom": 116, 
-    "is_started": true, 
-    "created": "2013-10-15T16:30:02.908", 
-    "started": "2013-10-15T16:30:03.026", 
-    "text": "\r\nMort(s):\r\nGarnier d'Escoire\r\n\r\n\r\n\r\n\r\n", 
     "event": 262
   }
 },
@@ -56312,6 +56677,42 @@
     "started": "2013-10-16T06:00:05.128", 
     "text": "\r\n\r\n\r\nSoign\u00e9(s):\r\nPhilibert de Durfort\r\n\r\n\r\n", 
     "event": 262
+  }
+},
+{
+  "pk": 3564, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 116, 
+    "is_started": true, 
+    "created": "2013-10-16T22:53:56.873", 
+    "started": "2013-10-16T22:53:57.033", 
+    "text": "Une mani\u00e8re d\u2019emp\u00eacher ces deux fous de s\u2019entre-tuer serait de d\u00e9barrasser ma cour de la pr\u00e9sence de Hagrold de Haute. En tant que seigneur de ces terres, je pourrais l\u00e9galement le bannir, le faire emprisonner ou m\u00eame ex\u00e9cuter! Cependant, il est certains que le reste de mes suivants percevraient de telles mesures comme une terrible injustice.\r\n\r\n    Nouvelles missions.\r\n", 
+    "event": 155
+  }
+},
+{
+  "pk": 3566, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 116, 
+    "is_started": true, 
+    "created": "2013-10-16T22:54:01.323", 
+    "started": "2013-10-16T22:54:01.325", 
+    "text": "Il n'y a pas d'urgence en ce moment. \r\n\r\n    N'h\u00e9sitez pas \u00e0 utiliser cette pause narrative pour aller voir ce que vous pouvez faire dans l'onglet mission !", 
+    "event": 225
+  }
+},
+{
+  "pk": 3607, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 121, 
+    "is_started": true, 
+    "created": "2013-10-16T23:47:15.120", 
+    "started": "2013-10-16T23:47:15.123", 
+    "text": "Il n'y a pas d'urgence en ce moment. \r\n\r\n    N'h\u00e9sitez pas \u00e0 utiliser cette pause narrative pour aller voir ce que vous pouvez faire dans l'onglet mission !", 
+    "event": 225
   }
 },
 {
@@ -56447,17 +56848,6 @@
   }
 },
 {
-  "pk": 3713, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 3483, 
-    "message": "", 
-    "text": "J'attends que quelque chose attire mon attention.", 
-    "folk": null, 
-    "event_action": 293
-  }
-},
-{
   "pk": 3715, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -56524,28 +56914,6 @@
   }
 },
 {
-  "pk": 3768, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 3546, 
-    "message": "", 
-    "text": "J'attends que quelque chose attire mon attention.", 
-    "folk": null, 
-    "event_action": 293
-  }
-},
-{
-  "pk": 3769, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 3547, 
-    "message": "", 
-    "text": "J'attends que quelque chose attire mon attention.", 
-    "folk": null, 
-    "event_action": 293
-  }
-},
-{
   "pk": 3788, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -56561,17 +56929,6 @@
   "model": "event.pendingeventaction", 
   "fields": {
     "pending_event": 3560, 
-    "message": "", 
-    "text": "ok !", 
-    "folk": null, 
-    "event_action": 336
-  }
-},
-{
-  "pk": 3790, 
-  "model": "event.pendingeventaction", 
-  "fields": {
-    "pending_event": 3561, 
     "message": "", 
     "text": "ok !", 
     "folk": null, 
@@ -56598,6 +56955,50 @@
     "text": "ok !", 
     "folk": null, 
     "event_action": 336
+  }
+},
+{
+  "pk": 3793, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 3564, 
+    "message": "", 
+    "text": "Il doit exister un moyen plus subtil de nous d\u00e9barasser de l'individu.", 
+    "folk": null, 
+    "event_action": 219
+  }
+},
+{
+  "pk": 3794, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 3564, 
+    "message": "Mon fils  et le Hagrold de Haute sont \u00e0 couteaux tir\u00e9s.", 
+    "text": "Je ne peux pas me permettre de me mettre ma cour \u00e0 dos. Laissons la situation se r\u00e9soudre par elle m\u00eame.", 
+    "folk": null, 
+    "event_action": 220
+  }
+},
+{
+  "pk": 3795, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 3566, 
+    "message": "", 
+    "text": "J'attends que quelque chose attire mon attention.", 
+    "folk": null, 
+    "event_action": 293
+  }
+},
+{
+  "pk": 3843, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 3607, 
+    "message": "", 
+    "text": "J'attends que quelque chose attire mon attention.", 
+    "folk": null, 
+    "event_action": 293
   }
 },
 {
@@ -57006,15 +57407,6 @@
   }
 },
 {
-  "pk": 9975, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3483, 
-    "name": "slug", 
-    "value": "tuto_forcertitre_random"
-  }
-},
-{
   "pk": 9979, 
   "model": "event._pendingeventvariable", 
   "fields": {
@@ -57186,42 +57578,6 @@
   }
 },
 {
-  "pk": 10118, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3546, 
-    "name": "come_from", 
-    "value": 2
-  }
-},
-{
-  "pk": 10119, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3546, 
-    "name": "facheux", 
-    "value": "`Folk`:7549"
-  }
-},
-{
-  "pk": 10121, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3546, 
-    "name": "slug", 
-    "value": "tuto_facheux_3"
-  }
-},
-{
-  "pk": 10122, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3547, 
-    "name": "slug", 
-    "value": "tuto_forcertitre_random_fantome"
-  }
-},
-{
   "pk": 10149, 
   "model": "event._pendingeventvariable", 
   "fields": {
@@ -57264,33 +57620,6 @@
     "pending_event": 3560, 
     "name": "soignes", 
     "value": "[\"`Folk`:7473\"]"
-  }
-},
-{
-  "pk": 10154, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3561, 
-    "name": "morts", 
-    "value": "[null]"
-  }
-},
-{
-  "pk": 10155, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3561, 
-    "name": "handicapes", 
-    "value": "[]"
-  }
-},
-{
-  "pk": 10156, 
-  "model": "event._pendingeventvariable", 
-  "fields": {
-    "pending_event": 3561, 
-    "name": "soignes", 
-    "value": "[]"
   }
 },
 {
@@ -57345,6 +57674,51 @@
     "pending_event": 3563, 
     "name": "soignes", 
     "value": "[\"`Folk`:7422\"]"
+  }
+},
+{
+  "pk": 10163, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3564, 
+    "name": "slug", 
+    "value": "tuto_facheux_3"
+  }
+},
+{
+  "pk": 10164, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3564, 
+    "name": "come_from", 
+    "value": 2
+  }
+},
+{
+  "pk": 10165, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3564, 
+    "name": "facheux", 
+    "value": "`Folk`:7549"
+  }
+},
+{
+  "pk": 10167, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3566, 
+    "name": "slug", 
+    "value": "tuto_ambition"
+  }
+},
+{
+  "pk": 10256, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3607, 
+    "name": "slug", 
+    "value": "tuto_cour_basse_fantome"
   }
 },
 {
@@ -88231,7 +88605,7 @@
   "pk": 10724, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 2, 
     "object_pk": 41, 
     "object_type": "Quality", 
@@ -88245,7 +88619,7 @@
   "pk": 10725, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 2, 
     "object_pk": 41, 
     "object_type": "Quality", 
@@ -88259,7 +88633,7 @@
   "pk": 10726, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -88287,7 +88661,7 @@
   "pk": 10729, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -88441,7 +88815,7 @@
   "pk": 10740, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -88609,7 +88983,7 @@
   "pk": 10752, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -88763,7 +89137,7 @@
   "pk": 10763, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -88917,7 +89291,7 @@
   "pk": 10774, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -89071,7 +89445,7 @@
   "pk": 10785, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -89225,7 +89599,7 @@
   "pk": 10796, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -89379,7 +89753,7 @@
   "pk": 10807, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -89547,7 +89921,7 @@
   "pk": 10819, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -89701,7 +90075,7 @@
   "pk": 10830, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -89869,7 +90243,7 @@
   "pk": 10842, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -90023,7 +90397,7 @@
   "pk": 10853, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -90177,7 +90551,7 @@
   "pk": 10864, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -90331,7 +90705,7 @@
   "pk": 10875, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -90485,7 +90859,7 @@
   "pk": 10886, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -90639,7 +91013,7 @@
   "pk": 10897, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -90793,7 +91167,7 @@
   "pk": 10908, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -90947,7 +91321,7 @@
   "pk": 10919, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -91101,7 +91475,7 @@
   "pk": 10930, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -91255,7 +91629,7 @@
   "pk": 10941, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -91409,7 +91783,7 @@
   "pk": 10952, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -91563,7 +91937,7 @@
   "pk": 10963, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -91717,7 +92091,7 @@
   "pk": 10974, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -91871,7 +92245,7 @@
   "pk": 10985, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -92025,7 +92399,7 @@
   "pk": 10996, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -92179,7 +92553,7 @@
   "pk": 11007, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -92333,7 +92707,7 @@
   "pk": 11018, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -92487,7 +92861,7 @@
   "pk": 11029, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -92641,7 +93015,7 @@
   "pk": 11040, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -92795,7 +93169,7 @@
   "pk": 11051, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -92949,7 +93323,7 @@
   "pk": 11062, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -93103,7 +93477,7 @@
   "pk": 11073, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -93257,7 +93631,7 @@
   "pk": 11084, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -93411,7 +93785,7 @@
   "pk": 11095, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -93565,7 +93939,7 @@
   "pk": 11106, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -93719,7 +94093,7 @@
   "pk": 11117, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -93873,7 +94247,7 @@
   "pk": 11128, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -94027,7 +94401,7 @@
   "pk": 11139, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -94181,7 +94555,7 @@
   "pk": 11150, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -94335,7 +94709,7 @@
   "pk": 11161, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -94489,7 +94863,7 @@
   "pk": 11172, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -94643,7 +95017,7 @@
   "pk": 11183, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -94797,7 +95171,7 @@
   "pk": 11194, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -94951,7 +95325,7 @@
   "pk": 11205, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -95105,7 +95479,7 @@
   "pk": 11216, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -95259,7 +95633,7 @@
   "pk": 11227, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -95413,7 +95787,7 @@
   "pk": 11238, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -95567,7 +95941,7 @@
   "pk": 11249, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -95721,7 +96095,7 @@
   "pk": 11260, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -95875,7 +96249,7 @@
   "pk": 11271, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -96029,7 +96403,7 @@
   "pk": 11282, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -96183,7 +96557,7 @@
   "pk": 11293, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -96337,7 +96711,7 @@
   "pk": 11304, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -96491,7 +96865,7 @@
   "pk": 11315, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -96645,7 +97019,7 @@
   "pk": 11326, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -96799,7 +97173,7 @@
   "pk": 11337, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -96953,7 +97327,7 @@
   "pk": 11348, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -97107,7 +97481,7 @@
   "pk": 11359, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -97261,7 +97635,7 @@
   "pk": 11370, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -97415,7 +97789,7 @@
   "pk": 11381, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -97569,7 +97943,7 @@
   "pk": 11392, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -97723,7 +98097,7 @@
   "pk": 11403, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -97877,7 +98251,7 @@
   "pk": 11414, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -98031,7 +98405,7 @@
   "pk": 11425, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -98185,7 +98559,7 @@
   "pk": 11436, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -98339,7 +98713,7 @@
   "pk": 11447, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -98493,7 +98867,7 @@
   "pk": 11458, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -98647,7 +99021,7 @@
   "pk": 11469, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -98801,7 +99175,7 @@
   "pk": 11480, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -98955,7 +99329,7 @@
   "pk": 11491, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -99109,7 +99483,7 @@
   "pk": 11502, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -99263,7 +99637,7 @@
   "pk": 11513, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -99417,7 +99791,7 @@
   "pk": 11524, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -99571,7 +99945,7 @@
   "pk": 11535, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -99725,7 +100099,7 @@
   "pk": 11546, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -99879,7 +100253,7 @@
   "pk": 11557, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -100033,7 +100407,7 @@
   "pk": 11568, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -100187,7 +100561,7 @@
   "pk": 11579, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -100341,7 +100715,7 @@
   "pk": 11590, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -100495,7 +100869,7 @@
   "pk": 11601, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -100649,7 +101023,7 @@
   "pk": 11612, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
@@ -100803,13 +101177,321 @@
   "pk": 11623, 
   "model": "reporting.scriptlog", 
   "fields": {
-    "kingdom": 117, 
+    "kingdom": null, 
     "stack_level": 1, 
     "object_pk": 2, 
     "object_type": "Recurring", 
     "object_attr": "on_fire", 
     "direct_queries": 1, 
     "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11624, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 116, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 6, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11625, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 115, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 4, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11626, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 119, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 4, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11627, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 76, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11628, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 80, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 4, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11629, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 114, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11630, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 74, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 5, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11631, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 113, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11632, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 112, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11633, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 120, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 4, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11634, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11635, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 116, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 18, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11636, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 115, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 4, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11637, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 119, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 4, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11638, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 76, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11639, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 80, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 4, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11640, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 114, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 4, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11641, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 74, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 4, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11642, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 113, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11643, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 112, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 4, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11644, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 120, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11645, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 12, 
     "queries": 1
   }
 },
@@ -102029,7 +102711,7 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-10-14T21:45:23.251", 
+    "last_login": "2013-10-16T23:32:08.581", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$10000$yINKp6NRHK8F$dc6Q/6j7MRoi3I+KbeQakISZfrlBcOUR3nYfj71TRb4=", 
@@ -156811,6 +157493,32 @@
   }
 },
 {
+  "pk": 8727, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 3, 
+    "action_time": "2013-10-16T23:34:40.166", 
+    "object_repr": "hugo kingdom", 
+    "object_id": "117", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 8728, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-16T23:34:47.623", 
+    "object_repr": "hugo kingdom", 
+    "object_id": "121", 
+    "change_message": "", 
+    "user": 41, 
+    "content_type": 8
+  }
+},
+{
   "pk": 74, 
   "model": "kingdom.kingdom", 
   "fields": {
@@ -156891,22 +157599,11 @@
   "pk": 116, 
   "model": "kingdom.kingdom", 
   "fields": {
-    "soldiers": 13, 
+    "soldiers": 15, 
     "prestige": 95, 
-    "money": 152, 
+    "money": 185, 
     "user": 42, 
-    "population": 161
-  }
-},
-{
-  "pk": 117, 
-  "model": "kingdom.kingdom", 
-  "fields": {
-    "soldiers": 13, 
-    "prestige": 102, 
-    "money": 39, 
-    "user": 41, 
-    "population": 145
+    "population": 165
   }
 },
 {
@@ -156929,6 +157626,17 @@
     "money": 104, 
     "user": 1, 
     "population": 0
+  }
+},
+{
+  "pk": 121, 
+  "model": "kingdom.kingdom", 
+  "fields": {
+    "soldiers": 16, 
+    "prestige": 94, 
+    "money": 105, 
+    "user": 41, 
+    "population": 159
   }
 }
 ]
