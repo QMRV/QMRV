@@ -106339,6 +106339,314 @@
   }
 },
 {
+  "pk": 11990, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 116, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 7, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11991, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 121, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 11, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11992, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 115, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11993, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 119, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 5, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11994, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 76, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11995, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 80, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 4, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11996, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 114, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11997, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 74, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 11, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11998, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 113, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 11999, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 112, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 7, 
+    "queries": 1
+  }
+},
+{
+  "pk": 12000, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 120, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 4, 
+    "queries": 1
+  }
+},
+{
+  "pk": 12001, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 116, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 6, 
+    "queries": 1
+  }
+},
+{
+  "pk": 12002, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 121, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 12003, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 115, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 12004, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 119, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 12005, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 76, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 12006, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 80, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 12007, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 114, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 12008, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 74, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 4, 
+    "queries": 1
+  }
+},
+{
+  "pk": 12009, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 113, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 12010, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 112, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
+  "pk": 12011, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 120, 
+    "stack_level": 1, 
+    "object_pk": 2, 
+    "object_type": "Recurring", 
+    "object_attr": "on_fire", 
+    "direct_queries": 1, 
+    "time": 3, 
+    "queries": 1
+  }
+},
+{
   "pk": 1, 
   "model": "auth.permission", 
   "fields": {
