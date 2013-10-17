@@ -7721,6 +7721,33 @@
   }
 },
 {
+  "pk": 7568, 
+  "model": "kingdom.folk", 
+  "fields": {
+    "kingdom": null, 
+    "fight": 8, 
+    "first_name": "Aubert", 
+    "last_name": "de Vantoux", 
+    "diplomacy": 8, 
+    "father": null, 
+    "plot": 6, 
+    "scholarship": 13, 
+    "sex": "m", 
+    "disabled": false, 
+    "death": null, 
+    "avatar": 30, 
+    "birth": "2013-09-22T21:24:08.715", 
+    "mother": null, 
+    "loyalty": 46, 
+    "spouse": null, 
+    "quality_set": [
+      24, 
+      36
+    ], 
+    "mentor": null
+  }
+},
+{
   "pk": 1, 
   "model": "kingdom.qualitycategory", 
   "fields": {
@@ -49539,22 +49566,6 @@
   }
 },
 {
-  "pk": 527, 
-  "model": "mission.pendingmission", 
-  "fields": {
-    "kingdom": 116, 
-    "is_started": true, 
-    "target": null, 
-    "created": "2013-10-16T22:55:10.898", 
-    "started": "2013-10-16T22:55:25.752", 
-    "last_target": null, 
-    "mission": 48, 
-    "value": 0, 
-    "is_finished": false, 
-    "last_value": 0
-  }
-},
-{
   "pk": 519, 
   "model": "mission.pendingmissionaffectation", 
   "fields": {
@@ -49624,33 +49635,6 @@
     "pending_mission": 483, 
     "folk": 7495, 
     "mission_grid": 52
-  }
-},
-{
-  "pk": 956, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 527, 
-    "folk": 7516, 
-    "mission_grid": 49
-  }
-},
-{
-  "pk": 957, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 527, 
-    "folk": 7517, 
-    "mission_grid": 49
-  }
-},
-{
-  "pk": 958, 
-  "model": "mission.pendingmissionaffectation", 
-  "fields": {
-    "pending_mission": 527, 
-    "folk": 7518, 
-    "mission_grid": 49
   }
 },
 {
@@ -56716,6 +56700,18 @@
   }
 },
 {
+  "pk": 3608, 
+  "model": "event.pendingevent", 
+  "fields": {
+    "kingdom": 116, 
+    "is_started": true, 
+    "created": "2013-10-17T04:56:02.477", 
+    "started": "2013-10-17T04:56:02.675", 
+    "text": "L'homme d'\u00e9glise se tient devant mon tr\u00f4ne, la t\u00eate baiss\u00e9e avec humilit\u00e9. Le p\u00e8re Galaad s'avance. \"Mon seigneur, permettez-moi de vous pr\u00e9senter le p\u00e8re Aubert de Vantoux, envoy\u00e9  par l'\u00e9v\u00each\u00e9 \u00e0 votre demande\".\r\n\r\n\n<table>\n\t<tr>\n\t\t<td rowspan=\"2\">\n\t\t<p>\n\t\t<img src=\"\u2642 1 [adult]\" alt=\"\" alt=\"Avatar\" />\n\t\t\t\t<span>Aubert de Vantoux</span>\n\t\t\t\t<small>( 24  ans)</small>\n\t\t\t</p>\n\t\t</td>\n\t\t<td>8 fight</td>\n\t\t<td>6  plot</td>\n\t\t<td>8 diplomacy</td>\n\t\t<td>13 scholarship</td>\n\t\t<td>46 loyalty</td>\n\t</tr>\n\t<tr>\n\t\t<td colspan=\"5\">\n\t\t\t\n\t\t\t\tBeau\n\t\t\t\n\t\t\t\tPr\u00eatre\n\t\t\t\n\t\t</td>\n\t</tr>\n</table>\n\t", 
+    "event": 182
+  }
+},
+{
   "pk": 2276, 
   "model": "event.pendingeventaction", 
   "fields": {
@@ -56999,6 +56995,28 @@
     "text": "J'attends que quelque chose attire mon attention.", 
     "folk": null, 
     "event_action": 293
+  }
+},
+{
+  "pk": 3844, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 3608, 
+    "message": "Je n'ai pas voulu du p\u00e8re Aubert de Vantoux dans ma cour. ```-30 \u00e9cus de compensation.```", 
+    "text": "\"Je regrette, mais les choses ont chang\u00e9es et vos services ne sont plus necessaires... Voici une obole \u00e0 remettre \u00e0 monseigneur l'\u00e9v\u00eaque, avec mes humbles excuses\". `-30 ecus`.", 
+    "folk": null, 
+    "event_action": 253
+  }
+},
+{
+  "pk": 3845, 
+  "model": "event.pendingeventaction", 
+  "fields": {
+    "pending_event": 3608, 
+    "message": "Le p\u00e8re Aubert de Vantoux a rejoint ma cour.", 
+    "text": "\"Vous etiez attendu, mon p\u00e8re. Les serviteurs vont vous montrer vos quartiers\". `Le p\u00e8re Aubert rejoint votre cour.`\"Vous etiez attendu, mon p\u00e8re. Les serviteurs vont vous montrer vos quartiers\". `Le p\u00e8re Aubert rejoint votre", 
+    "folk": null, 
+    "event_action": 252
   }
 },
 {
@@ -57719,6 +57737,15 @@
     "pending_event": 3607, 
     "name": "slug", 
     "value": "tuto_cour_basse_fantome"
+  }
+},
+{
+  "pk": 10257, 
+  "model": "event._pendingeventvariable", 
+  "fields": {
+    "pending_event": 3608, 
+    "name": "pretre", 
+    "value": "`Folk`:7568"
   }
 },
 {
@@ -104993,6 +105020,90 @@
     "direct_queries": 42, 
     "time": 87, 
     "queries": 42
+  }
+},
+{
+  "pk": 11896, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 7, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 11897, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 24, 
+    "object_type": "Quality", 
+    "object_attr": "on_affect", 
+    "direct_queries": 3, 
+    "time": 20, 
+    "queries": 3
+  }
+},
+{
+  "pk": 11898, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 3, 
+    "object_pk": 16, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 5, 
+    "time": 26, 
+    "queries": 5
+  }
+},
+{
+  "pk": 11899, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": null, 
+    "stack_level": 2, 
+    "object_pk": 8, 
+    "object_type": "Function", 
+    "object_attr": "on_fire", 
+    "direct_queries": 22, 
+    "time": 488, 
+    "queries": 30
+  }
+},
+{
+  "pk": 11900, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 116, 
+    "stack_level": 2, 
+    "object_pk": 253, 
+    "object_type": "EventAction", 
+    "object_attr": "condition", 
+    "direct_queries": 0, 
+    "time": 0, 
+    "queries": 0
+  }
+},
+{
+  "pk": 11901, 
+  "model": "reporting.scriptlog", 
+  "fields": {
+    "kingdom": 116, 
+    "stack_level": 1, 
+    "object_pk": 48, 
+    "object_type": "Mission", 
+    "object_attr": "on_resolution", 
+    "direct_queries": 24, 
+    "time": 1054, 
+    "queries": 54
   }
 },
 {
