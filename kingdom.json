@@ -774,14 +774,18 @@
   "model": "kingdom.quality", 
   "fields": {
     "category": 5, 
-    "description": "Cette personne est fortement respect\u00e9e dans le chateau.", 
+    "description": "Les nobles du royaume le consid\u00e8rent comme un v\u00e9ritable mod\u00e8le pour sa g\u00e9n\u00e9ration.\r\n\r\n    Le bannir, l'emprisonner ou l'ex\u00e9cuter aura de tr\u00e8s graves r\u00e9percussions sur le Loyaut\u00e9 de vos sujets.", 
     "on_defect": "\n", 
-    "female_description": "Cette personne est fortement respect\u00e9e dans le chateau.", 
+    "female_description": "Les nobles du royaume la consid\u00e8rent comme un v\u00e9ritable mod\u00e8le pour sa g\u00e9n\u00e9ration.\r\n\r\n    La bannir, l'emprisonner ou l'ex\u00e9cuter aura de tr\u00e8s graves r\u00e9percussions sur le Loyaut\u00e9 de vos sujets.", 
     "on_affect": "\n", 
-    "female_name": "Adul\u00e9e", 
-    "incompatible_qualities": [], 
-    "slug": "adule", 
-    "name": "Adul\u00e9"
+    "female_name": "Admir\u00e9e", 
+    "incompatible_qualities": [
+      52, 
+      51, 
+      50
+    ], 
+    "slug": "admire", 
+    "name": "Admir\u00e9"
   }
 },
 {
@@ -789,12 +793,16 @@
   "model": "kingdom.quality", 
   "fields": {
     "category": 5, 
-    "description": "Cette personne est respect\u00e9e dans le ch\u00e2teau.", 
+    "description": "Il a gagn\u00e9 l'approbation de ses pairs.\r\n\r\n    Le bannir, l'emprisonner ou l'ex\u00e9cuter sera vu d'un mauvais oeil par vos sujets.", 
     "on_defect": "\n", 
-    "female_description": "Cette personne est respect\u00e9e dans le ch\u00e2teau.", 
+    "female_description": "Elle a gagn\u00e9 l'approbation de ses pairs.\r\n\r\n    La bannir, l'emprisonner ou l'ex\u00e9cuter sera vu d'un mauvais oeil par vos sujets.", 
     "on_affect": "\n", 
     "female_name": "Respect\u00e9e", 
-    "incompatible_qualities": [], 
+    "incompatible_qualities": [
+      49, 
+      51, 
+      52
+    ], 
     "slug": "respecte", 
     "name": "Respect\u00e9"
   }
@@ -804,12 +812,16 @@
   "model": "kingdom.quality", 
   "fields": {
     "category": 5, 
-    "description": "Cette personne est m\u00e9pris\u00e9e dans le ch\u00e2teau.", 
+    "description": "On s'accorde \u00e0 dire qu'il n'est pas digne de son rang.\r\n\r\n    Le bannir, l'emprisonner ou l'ex\u00e9cuter sera accept\u00e9 par vos sujets avec une relative indulgence.", 
     "on_defect": "\n", 
-    "female_description": "Cette personne est m\u00e9pris\u00e9e dans le ch\u00e2teau.", 
+    "female_description": "On s'accorde \u00e0 dire qu'elle n'est pas digne de son rang.\r\n\r\n    La bannir, l'emprisonner ou l'ex\u00e9cuter sera accept\u00e9 par vos sujets avec une relative indulgence.", 
     "on_affect": "\n", 
     "female_name": "M\u00e9pris\u00e9e", 
-    "incompatible_qualities": [], 
+    "incompatible_qualities": [
+      49, 
+      52, 
+      50
+    ], 
     "slug": "meprise", 
     "name": "M\u00e9pris\u00e9"
   }
@@ -819,12 +831,16 @@
   "model": "kingdom.quality", 
   "fields": {
     "category": 5, 
-    "description": "Cette personne est d\u00e9test\u00e9e dans le ch\u00e2teau.", 
+    "description": "Il est consid\u00e9r\u00e9 par tous comme la lie de la noblesse.\r\n\r\n    Le bannir, l'emprisonner ou l'ex\u00e9cuter sera accept\u00e9 sans broncher par vos sujets.", 
     "on_defect": "\n", 
-    "female_description": "Cette personne est d\u00e9test\u00e9e dans le ch\u00e2teau.", 
+    "female_description": "Elle est consid\u00e9r\u00e9e par tous comme la lie de la noblesse.\r\n\r\n    La bannir, l'emprisonner ou l'ex\u00e9cuter sera accept\u00e9 sans broncher par vos sujets.", 
     "on_affect": "\n", 
     "female_name": "D\u00e9test\u00e9e", 
-    "incompatible_qualities": [], 
+    "incompatible_qualities": [
+      49, 
+      51, 
+      50
+    ], 
     "slug": "deteste", 
     "name": "D\u00e9test\u00e9"
   }

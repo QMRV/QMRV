@@ -8,15 +8,15 @@
     "prestige_threshold": 0, 
     "fired": [
       116, 
-      121, 
       115, 
+      121, 
       119, 
+      122, 
       76, 
       80, 
       114, 
       74, 
       113, 
-      112, 
       120
     ], 
     "money_threshold": 0, 
@@ -1401,7 +1401,7 @@
   "model": "internal.constant", 
   "fields": {
     "name": "MIN_FOLK", 
-    "value": 10, 
+    "value": 1, 
     "description": "Nombre minimum de folk qu'un joueur peu avoir quelque soit son prestige"
   }
 },
@@ -1421,10 +1421,10 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 144, 
-    "kingdom_list": "\n", 
-    "on_fire": "#on r\u00e9cup\u00e8re le ch\u00e2telain\nc = kingdom.get_folk_in_title(\"ch\u00e2telain\")\n\n#nombre max de personnes\ncapa = (kingdom.prestige/C.MAX_FOLK) + 1\n\n#moyenne de loyaut\u00e9 de la cour\nmoy = 0\npeuple = 0\nfor f in Folk.objects.filter(kingdom=kingdom, death=None):\n  #on doit exclure le ch\u00e2telain du calcul car il ne peut pas \u00eatre supprim\u00e9\n  if c != f:\n    moy += f.loyalty\n    peuple += 1\nmoy = moy/peuple\n\n#on supprime des gens jusqu'\u00e0 en avoir un nombre acceptable\n#pour le moment, on se contente de mettre leur kingdom \u00e0 None\nwhile(peuple > capa):\n  defecteurs = Folk.objects.filter(kingdom=kingdom, death=None, loyalty__lt=moy)\n  #on peut probablement remplacer par random_in(defecteurs).delete() -> A verifier sans config/scripts/random_scripts\n  n = random_value(0, len(defecteurs)-1)\n  if defecteurs[n] != c:\n    defecteurs[n].kingdom = None\n    kingdom.save()\n  peuple -= 1\n", 
+    "kingdom_list": "param = Kingdom.objects.filter(pk = 121)\n", 
+    "on_fire": "max = int(kingdom.prestige/C.MAX_FOLK)\n\nfolks = folks.filter(birth__lte=datetime.now()-timedelta(days=C.MAJORITE))\nsurplus = folks.count() - kingdom.prestige/C.MAX_FOLK\n\nif folks.count() >= C.MIN_FOLK and surplus > 0 :\n  defecteurs = list(folks.filter(loyalty__lte=avg_stats(folks, \"loyalty\"), birth__lte=datetime.now()-timedelta(days=C.MAJORITE)).exclude(last_name=kingdom.get_folk_in_title(\"chatelain\").last_name))\n  folks_qui_partent = []\n  while surplus > 0 :\n    folk_qui_part = random_in(defecteurs)\n    defecteurs.remove(folk_qui_part)\n    folk_qui_part.die()\n    folks_qui_partent.append(folk_qui_part)\n    surplus -= 1\n  pe = kingdom.create_pending_event(\"max_folk_atteint\")\n  pe.set_value(\"folksQuiPartent\",folks_qui_partent)\n  pe.start()\n", 
     "name": "Cour Max", 
-    "description": "Faire respecter le nombre maximal de personnes dans une cour en enlevant des personnes avec moin de loyaut\u00e9 que la moyenne.\r\n\r\nTest\u00e9 (enfin, un peu), semble marcher pour le  moment"
+    "description": "Faire respecter le nombre maximal de personnes dans une cour en enlevant des personnes avec moins de loyaut\u00e9 que la moyenne.\r\n"
   }
 },
 {
@@ -1477,7 +1477,7 @@
   "fields": {
     "delay": 144, 
     "kingdom_list": "\n", 
-    "on_fire": "binf = datetime.now() - timedelta(days=50)\nbsup1 = datetime.now() - timedelta(days=16)\nbsup2 = datetime.now() - timedelta(days=12)\n\n\ndef grossesse(h, f):\n  accouchement = f.kingdom.create_pending_event(\"accouchement_fantome\")\n  accouchement.set_value('pere', h)\n  accouchement.set_value('mere', f)\n  \n  accouchement.started=datetime.now() + timedelta(minutes=1)\n  accouchement.save()\n\nif kingdom.id == 2:\n  f = Folk.objects.get(id=323)\n  grossesse(f.spouse, f)\n", 
+    "on_fire": "binf = datetime.now() - timedelta(days=50)\nbsup1 = datetime.now() - timedelta(days=16)\nbsup2 = datetime.now() - timedelta(days=12)\n\n\ndef grossesse(h, f):\n  accouchement = f.kingdom.create_pending_event(\"accouchement_fantome\")\n  accouchement.set_value('pere', h)\n  accouchement.set_value('mere', f)\n  \n  accouchement.started=datetime.now() + timedelta(minutes=1)\n  accouchement.save()\n\nif kingdom.id == 74:\n  f = Folk.objects.get(id=7600)\n  grossesse(f.spouse, f)\n", 
     "name": "Test_Grossesse", 
     "description": "bla"
   }
@@ -35642,16 +35642,6 @@
   }
 },
 {
-  "pk": 5, 
-  "model": "internal.function", 
-  "fields": {
-    "params": "kingdom:Kingdom", 
-    "slug": "max_folk", 
-    "on_fire": "param = kingdom.prestige / 10", 
-    "description": "Retourne le nombre maximal de Folk que peut contenir ce royaume."
-  }
-},
-{
   "pk": 7, 
   "model": "internal.function", 
   "fields": {
@@ -35717,7 +35707,7 @@
   "fields": {
     "params": "pere:Folk le p\u00e8re de l'enfance\r\nmere:Folk la m\u00e8re\r\nkingdom:Kingdom l'object Kingdom associ\u00e9", 
     "slug": "creer_enfant", 
-    "on_fire": "# Cr\u00e9ation d'un nouveau folk\npapa = pere\nmaman = mere\n\nif maman == papa.spouse:\n  nom = papa.last_name\nelse:\n  nom = maman.last_name\n  \nbebe = call_function(\"creer_folk\", fight_min=1, plot_min=1, diplomacy_min=1, scholarship_min=1, loyalty=1, max_carac=50, kingdom=kingdom, father=papa, mother=maman, last_name=nom, birth=datetime.now() - timedelta(days=6))\n\n# on enl\u00e8ve les traits auto\nbebe.quality_set.clear()\n\n# on calcule les caracs\nr1 = random_value(13, 18)\nd = (papa.plot + maman.plot + papa.fight + maman.fight + papa.diplomacy + maman.diplomacy + papa.scholarship + maman.scholarship)\n\nbebe.plot        = min( max( (papa.plot + maman.plot + random_value(-3,3)) * r1 / d, 1) , 8)\nbebe.fight       = min( max( (papa.fight + maman.fight + random_value(-3,3)) * r1 / d, 1) , 8)\nbebe.diplomatie  = min( max( (papa.diplomacy + maman.diplomacy + random_value(-3,3)) * r1 / d, 1) , 8)\nbebe.scholarship = min( max( (papa.scholarship + maman.scholarship + random_value(-3,3)) * r1 / d, 1) , 8)\n\n#on attribue les traits\nif papa != maman.spouse:\n  bebe.add_quality(\"batard\")\n\nfor t in papa.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if random_value(1, 100) < 16:\n    bebe.add_quality(t.slug)\n    \nfor t in maman.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if random_value(1, 100) < 16:\n    bebe.add_quality(t.slug)\n    \n#for t in papa.father.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n#  if random_value(1, 100) < 6:\n#    bebe.add_quality(t.slug)\n    \n#for t in papa.mother.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n#  if random_value(1, 100) < 6:\n#    bebe.add_quality(t.slug)\n    \n#for t in maman.father.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n#  if random_value(1, 100) < 6:\n#    bebe.add_quality(t.slug)\n    \n#for t in maman.mother.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n#  if random_value(1, 100) < 6:\n#    bebe.add_quality(t.slug)\n    \nfor t in Quality.objects.filter(category__name=\"Caract\u00e8re\"):\n  if random_value(1, 200) < 6:\n    bebe.add_quality(t.slug)\n    \n#calcul du degr\u00e9 de consanguinit\u00e9\ngp1 = papa.father\ngm1 = papa.mother\ngp2 = maman.father\ngm2 = maman.mother\n#agp1 = gp1.father\n#agm1 = gp1.mother\n#agp2 = gm1.father\n#agm2 = gm1.mother\n#agp3 = gp2.father\n#agm3 = gp2.mother\n#agp4 = gm2.father\n#agm4 = gm2.mother\n\n#d1  = (agp1 == agp2) + (agp1 == agp3) + (agp1 == agp4) + (agp2 == agp3) + (agp2 == agp4) + (agp3 == agp4)\n#d1 += (agm1 == agm2) + (agm1 == agm3) + (agm1 == agm4) + (agm2 == agm3) + (agm2 == agm4) + (agm3 == agm4)\n\n#d2  = ((gp1 == gp2) + (gm1 == gm2))*2\n\n#d3  = ((papa == gp2) | (maman ==gm1))*2\n\n#d4  = ((maman == agm1) | (maman == agm2) | (papa == agp3) | (papa == agp4))\n\n#d = max(max(max(d1, d2), d3), d4)\n\n#for i in range(1, d):\n#  if random_value(1, 100) < 14:\n#    bebe.add_quality(random_in(['idiot', 'frele', 'laid']))\n    \nparam = bebe\n", 
+    "on_fire": "# Cr\u00e9ation d'un nouveau folk\npapa = pere\nmaman = mere\n\nif papa == maman.spouse:\n  nom = papa.last_name\nelse:\n  nom = maman.last_name\n  \nbebe = call_function(\"creer_folk\", fight_min=1, plot_min=1, diplomacy_min=1, scholarship_min=1, loyalty=1, max_carac=50, kingdom=kingdom, father=papa, mother=maman, last_name=nom, birth=datetime.now() - timedelta(days=6))\n\n# on enl\u00e8ve les traits auto\nbebe.quality_set.clear()\n\n# on calcule les caracs\nr1 = random_value(13, 18)\nd = (papa.plot + maman.plot + papa.fight + maman.fight + papa.diplomacy + maman.diplomacy + papa.scholarship + maman.scholarship)\n\n#bebe.plot        = min( max( (papa.plot + maman.plot + random_value(-3,3)) * r1 / d, 1) , 8)\n#bebe.fight       = min( max( (papa.fight + maman.fight + random_value(-3,3)) * r1 / d, 1) , 8)\n#bebe.diplomatie  = min( max( (papa.diplomacy + maman.diplomacy + random_value(-3,3)) * r1 / d, 1) , 8)\n#bebe.scholarship = min( max( (papa.scholarship + maman.scholarship + random_value(-3,3)) * r1 / d, 1) , 8)\n\nbebe.plot = 1\nbebe.fight = 3\nbebe.diplomatie = 3\nbebe.scholarship  =  7\n\n#on attribue les traits\nif papa != maman.spouse:\n  bebe.add_quality(\"batard\")\n\nfor t in papa.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if random_value(1, 100) < 16:\n    bebe.add_quality(t.slug)\n    \nfor t in maman.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n  if random_value(1, 100) < 16:\n    bebe.add_quality(t.slug)\n    \n#for t in papa.father.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n#  if random_value(1, 100) < 6:\n#    bebe.add_quality(t.slug)\n    \n#for t in papa.mother.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n#  if random_value(1, 100) < 6:\n#    bebe.add_quality(t.slug)\n    \n#for t in maman.father.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n#  if random_value(1, 100) < 6:\n#    bebe.add_quality(t.slug)\n    \n#for t in maman.mother.quality_set.filter(category__name=\"G\u00e9n\u00e9tique\"):\n#  if random_value(1, 100) < 6:\n#    bebe.add_quality(t.slug)\n    \nfor t in Quality.objects.filter(category__name=\"Caract\u00e8re\"):\n  if random_value(1, 200) < 6:\n    bebe.add_quality(t.slug)\n    \n#calcul du degr\u00e9 de consanguinit\u00e9\ngp1 = papa.father\ngm1 = papa.mother\ngp2 = maman.father\ngm2 = maman.mother\n#agp1 = gp1.father\n#agm1 = gp1.mother\n#agp2 = gm1.father\n#agm2 = gm1.mother\n#agp3 = gp2.father\n#agm3 = gp2.mother\n#agp4 = gm2.father\n#agm4 = gm2.mother\n\n#d1  = (agp1 == agp2) + (agp1 == agp3) + (agp1 == agp4) + (agp2 == agp3) + (agp2 == agp4) + (agp3 == agp4)\n#d1 += (agm1 == agm2) + (agm1 == agm3) + (agm1 == agm4) + (agm2 == agm3) + (agm2 == agm4) + (agm3 == agm4)\n\n#d2  = ((gp1 == gp2) + (gm1 == gm2))*2\n\n#d3  = ((papa == gp2) | (maman ==gm1))*2\n\n#d4  = ((maman == agm1) | (maman == agm2) | (papa == agp3) | (papa == agp4))\n\n#d = max(max(max(d1, d2), d3), d4)\n\n#for i in range(1, d):\n#  if random_value(1, 100) < 14:\n#    bebe.add_quality(random_in(['idiot', 'frele', 'laid']))\n    \nparam = bebe\n", 
     "description": "Cr\u00e9e un nouvel enfant \u00e0 partir des parents."
   }
 },
