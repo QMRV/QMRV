@@ -2127,7 +2127,7 @@
     "weight": 1, 
     "text": "bla", 
     "image": "", 
-    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\n# Qu'arrive-t-il au nourrisson ? \nr = random_value(1,100)\n\n#For test purposes only\nr = 88\n\nif r < 78:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  naissance = param.next_event('naissance_unique')\n  naissance.start() \n  \nelif r < 88:\n  # l'enfant est mort n\u00e9 (un soulagement pour certains, une grande peine pour d'autres, c'est toujours mieux que ce qui vient apr\u00e8s)\n  mort_ne = param.next_event('mort_ne')\n  mort_ne.start()\n\nelif r < 91:\n  # les deux meurent (putain, \u00e7a c'est vraiment pas de bol!)\n  bloodbath = param.next_event('mort_couches_double')\n  bloodbath.start()\n  \nelif r < 100:\n  # Ce sont des jumeaux qui naissent (oups, deux bouches au lieu d'une)\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nelif r == 100:\n  # Et bim, des tripl\u00e9s, tu vas voir la gueule de ton budget couches !!!\n  naissance = param.next_event('naissance_jumeaux')\n  naissance.start()\n  \nstop(S.GHOST_EVENT)\n", 
+    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\n# Qu'arrive-t-il au nourrisson ? \nr = random_value(1,100)\n\n#For test purposes only\nr = 88\n\nif r < 78:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  naissance = param.next_event(\"naissance_unique\")\n  naissance.start() \n  \nelif r < 88:\n  # l'enfant est mort n\u00e9 (un soulagement pour certains, une grande peine pour d'autres, c'est toujours mieux que ce qui vient apr\u00e8s)\n  mort_ne = param.next_event(\"mort_ne\")\n  mort_ne.start()\n\nelif r < 91:\n  # les deux meurent (putain, \u00e7a c'est vraiment pas de bol!)\n  bloodbath = param.next_event(\"mort_couches_double\")\n  bloodbath.start()\n  \nelif r < 100:\n  # Ce sont des jumeaux qui naissent (oups, deux bouches au lieu d'une)\n  naissance = param.next_event(\"naissance_jumeaux\")\n  naissance.start()\n  \nelif r == 100:\n  # Et bim, des tripl\u00e9s, tu vas voir la gueule de ton budget couches !!!\n  naissance = param.next_event(\"naissance_triples\")\n  naissance.start()\n  \nstop(S.GHOST_EVENT)\n", 
     "slug": "accouchement_fantome", 
     "condition": "\n"
   }
@@ -2951,7 +2951,7 @@
     "category": null, 
     "name": "rapport", 
     "weight": 1, 
-    "text": "\"...Avant son tr\u00e9pas, feu la femme du seigneur {{ennemi_lastname}} lui a donn\u00e9 trois enfants. L'a\u00een\u00e9e, 18 ans, est connue pour sa pi\u00e9t\u00e9. Elle supplie son p\u00e8re de la laisser rejoindre un couvent depuis plusieurs ann\u00e9es. Le second est un gaillard de 17 ans au temp\u00e9rament tr\u00e8s vif, et la cadette est  une beaut\u00e9 de 16 ans qu'on dit \u00eatre la moins sage du trio.\" Je croise les bras, pensif. \"Aucun d'eux n'est mari\u00e9?\" Il secoue la t\u00eate. \"Non, seigneur. Les fian\u00e7ailles du fils ont \u00e9t\u00e9 annul\u00e9es l'ann\u00e9e derni\u00e8re.\" Je reste silencieux un long moment. Cette information ouvre de nouvelles perspectives auxquelles je dois r\u00e9fl\u00e9chir. \"Ce sera tout, {{title.maitre_espion.first_name}}. Bon travail.\"", 
+    "text": "\"...Avant son tr\u00e9pas, feu la femme du seigneur {{ennemi_lastname}} lui a donn\u00e9 trois enfants. L'a\u00een\u00e9e, 18 ans, est connue pour sa pi\u00e9t\u00e9. Elle supplie son p\u00e8re de la laisser rejoindre un couvent depuis plusieurs ann\u00e9es. Le second est un gaillard de 17 ans au temp\u00e9rament tr\u00e8s vif, et la cadette est  une beaut\u00e9 de 16 ans qu'on dit \u00eatre la moins sage du trio.\"\r\n\r\n\"Aucun d'eux n'est mari\u00e9?\" Il secoue la t\u00eate. \"Non, seigneur. Les fian\u00e7ailles du fils ont \u00e9t\u00e9 annul\u00e9es l'ann\u00e9e derni\u00e8re.\" Je croise les bras, pensif. Cette information ouvre de nouvelles perspectives auquelles je dois reflechir. \"Ce sera tout, {{title.maitre_espion.first_name}}. Bon travail.\"\r\n\r\n    Nouvelle mission.", 
     "image": "events/475_1.jpg", 
     "on_fire": null, 
     "slug": "tuto_rapport_espion_2", 
@@ -5891,11 +5891,11 @@
   "pk": 338, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "{{title.maitre_espion|feminize:\"Il,Elle\"}} referme la porte sans un bruit.", 
-    "message": "", 
+    "text": "Comme moi, le seigneur {{ennemi_last_name}} est veuf. Comme moi il a des enfants \u00e0 marier... Il est peut-\u00eatre possible de mettre fin \u00e0 ce conflit en unissant nos familles.", 
+    "message": "Il est peut-\u00eatre possible de mettre fin au conflit contre le seigneur {{ennemi}} en lui proposant un [mariage diplomatique](mission).", 
     "event": 264, 
     "condition": null, 
-    "on_fire": "param.next_event(\"tuto_rapport_espion_3\").start()"
+    "on_fire": "\n"
   }
 },
 {
@@ -5907,6 +5907,17 @@
     "event": 265, 
     "condition": "\n", 
     "on_fire": "\n"
+  }
+},
+{
+  "pk": 340, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Gardons cette option de c\u00f4t\u00e9 pour l'instant. L'heure est au combat.", 
+    "message": "Il est peut-\u00eatre possible de mettre fin au conflit contre le seigneur {{ennemi}} en lui proposant un [mariage diplomatique](mission).", 
+    "event": 264, 
+    "condition": null, 
+    "on_fire": null
   }
 }
 ]
