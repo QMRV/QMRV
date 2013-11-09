@@ -123,9 +123,9 @@
     "category": null, 
     "name": "Soif de gloire !", 
     "weight": 1, 
-    "text": "Pench\u00e9 sur ma table de travail, j\u2019\u00e9tudie cartes de la r\u00e9gion, missives diplomatiques rapports de mes espions. Il en semblerait qu\u2019un seigneur voisin de petite stature, {{ennemi}}, ait ses greniers bien remplis. Si je pouvais trouver un pr\u00e9texte honorable pour l\u2019affronter, je pourrais \u00e0 la fois m\u2019imposer en tant que puissance militaire et remplir mes coffres.\r\n\r\n    Il est impossible d\u2019attaquer un autre seigneur sans un motif diplomatique (casus belli).\r\n    {% if not title.ambassadeur %}Un Ambassadeur pourra s'occuper des d\u00e9tails, ainsi qu'inviter davantage de nobles dans ma cour.{% endif %}", 
+    "text": "Pench\u00e9 sur ma table de travail, j\u2019\u00e9tudie cartes de la r\u00e9gion, missives diplomatiques rapports de mes espions. Il en semblerait qu\u2019un seigneur voisin de petite stature, {{kingdom.values.adversaire_tuto}}, ait ses greniers bien remplis. Si je pouvais trouver un pr\u00e9texte honorable pour l\u2019affronter, je pourrais \u00e0 la fois m\u2019imposer en tant que puissance militaire et remplir mes coffres.\r\n\r\n    Il est impossible d\u2019attaquer un autre seigneur sans un motif diplomatique (casus belli).\r\n    {% if not title.ambassadeur %}Un Ambassadeur pourra s'occuper des d\u00e9tails, ainsi qu'inviter davantage de nobles dans ma cour.{% endif %}", 
     "image": "events/900.jpg", 
-    "on_fire": "param.set_value(\"ennemi\", kingdom.get_value(\"adversaire_tuto\"))\nkingdom.unlock_title(\"ambassadeur\")\n", 
+    "on_fire": "kingdom.unlock_title(\"ambassadeur\")\n", 
     "slug": "tuto_ambition_3", 
     "condition": " "
   }
@@ -2279,9 +2279,9 @@
     "category": null, 
     "name": "Casus ", 
     "weight": 1, 
-    "text": "{{title.ambassadeur.first_name}}, mon ambassadeur, s'avance tout sourire. \"Bonne nouvelle, mon seigneur. Nos tractations diplomatiques ont port\u00e9 leurs fruits!! Nous pourrons bient\u00f4t justifier une attaque sur les terres du seigneur {{ennemi.last_name}} aux yeux du reste du royaume \". J'opine, satisfait. \"Bon travail\".\r\n\r\n    Votre casus belli envers le seigneur {{ennemi}} sera bient\u00f4t effectif. Pr\u00e9parez vos troupes.", 
+    "text": "{{title.ambassadeur.first_name}}, mon ambassadeur, s'avance tout sourire. \"Bonne nouvelle, mon seigneur. Nos tractations diplomatiques ont port\u00e9 leurs fruits!! Nous pourrons bient\u00f4t justifier une attaque sur les terres du seigneur {{kingdom.values.adversaire_tuto.last_name}} aux yeux du reste du royaume \". J'opine, satisfait. \"Bon travail\".\r\n\r\n    Votre casus belli envers le seigneur {{kingdom.values.adversaire_tuto}} sera bient\u00f4t effectif. Pr\u00e9parez vos troupes.", 
     "image": "events/464_5.jpg", 
-    "on_fire": "param.set_value(\"ennemi\", kingdom.get_value(\"adversaire_tuto\"))\n", 
+    "on_fire": "\n", 
     "slug": "tuto_casusbelli_success", 
     "condition": "\n"
   }
@@ -3090,7 +3090,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Je vais mettre mes meilleurs diplomates sur le coup.", 
-    "message": "Les r\u00e9parations de {{dynasty}} sont termin\u00e9es et il est temps de r\u00e9fl\u00e9chir \u00e0 s'agrandir. Je vais charger mes diplomates de [justifier diplomatiquement](#mission) une attaque sur notre voisin, le seigneur {{ennemi}}.\r\n\r\n{% if not title.ambassadeur %}Je peux maintenant nommer un ambassadeur pour s'occuper des d\u00e9tails et faire venir des suivants \u00e0 {{dynasty}}{% endif %}", 
+    "message": "Les r\u00e9parations de {{dynasty}} sont termin\u00e9es et il est temps de r\u00e9fl\u00e9chir \u00e0 s'agrandir. Je vais charger mes diplomates de [justifier diplomatiquement](#mission) une attaque sur notre voisin, le seigneur {{kingdom.values.adversaire_tuto}}.\r\n\r\n{% if not title.ambassadeur %}Je peux maintenant nommer un ambassadeur pour s'occuper des d\u00e9tails et faire venir des suivants \u00e0 {{dynasty}}{% endif %}", 
     "event": 11, 
     "condition": "\n", 
     "on_fire": "kingdom.create_pending_mission(\"tuto_claim\")\n"
@@ -5290,7 +5290,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Je vais devoir convoquer mon conn\u00e9table...", 
-    "message": "Un casus belli envers le seigneur {{ennemi}} sera bient\u00f4t officiel. Je devrais pr\u00e9parer mes troupes pour une attaque contre ses terres.", 
+    "message": "Un casus belli envers le seigneur {{kingdom.values.adversaire_tuto}} sera bient\u00f4t officiel. Je devrais pr\u00e9parer mes troupes pour une attaque contre ses terres.", 
     "event": 204, 
     "condition": "\n", 
     "on_fire": "#param.next_event(\"tuto_casusbelli_effective\").start()\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_casusbelli_effective\")\npe.start()\n"
