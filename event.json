@@ -3008,7 +3008,7 @@
     "name": "Mariage diplomatique", 
     "weight": 1, 
     "text": "Je les ai convoqu\u00e9 dans mes appartements ; mon fils {{folks.1.first_name}}, ma fille {{folks.2.first_name}}{% if soeurette %}, ma s\u0153ur {{kingdom.values.soeurette.first_name}}{% endif %} et mon fid\u00e8le {{folks.3.first_name}}. Nous entrons imm\u00e9diatement dans le vif du sujet.\r\n\r\n\"En affrontant le seigneur {{kingdom.values.tuto_dynasty_PNJ}}, nous avons prouv\u00e9 que {{dynasty}} n\u2019\u00e9tait pas une proie facile. Le conflit, cependant, nous coute cher. Je pense qu\u2019il est temps d\u2019y mettre fin, de n\u00e9gocier une paix pendant que nous avons l\u2019avantage.\"\r\n\r\nIl peuvent sentir que je p\u00e8se chacun de mes mots.\r\n\r\n\"La seule mani\u00e8re d\u2019obtenir une alliance durable est d\u2019unir nos familles par le sang. {{kingdom.values.tuto_adversaire}} comme sa prog\u00e9niture sont c\u00e9libataires. Il saura que nous sommes s\u00e9rieux si nous lui proposons non pas un mais deux mariages. Je dois accueillir un de ses enfants dans ma cour, et il doit faire de m\u00eame.\"\r\n\r\nMon fils se racle la gorge.\r\n\r\n\"Un \u00e9change d\u2019otage, en somme.\"\r\n\r\nJ\u2019opine.\r\n\r\n\"J\u2019ai longuement r\u00e9fl\u00e9chis \u00e0 la question\u2026\"", 
-    "image": "", 
+    "image": "events/361_11_1.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_ending", 
     "condition": "\n"
@@ -3022,7 +3022,7 @@
     "name": "ergersgzd", 
     "weight": 1, 
     "text": "\"Je\u2026 renoncer \u00e0 {{dynasty}}, p\u00e8re?\"\r\n\r\nMon fils accuse le coup. Le regard qu\u2019il me lance est bless\u00e9, {% if loyal %}d\u00e9sempar\u00e9{% else %}rageur{% endif %}, mais je le coupe avant qu\u2019il ne puisse protester.\r\n\r\n\"Tu accompliras ton devoir, mon fils. Pour l\u2019avenir de notre famille.\"\r\n\r\nJe me d\u00e9tourne, dissimulant au mieux mes propres \u00e9motions.\r\n\r\n\"En ce qui concerne le second mariage\u2026\"", 
-    "image": "", 
+    "image": "events/361_11_2.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_ending_fils", 
     "condition": "\n"
@@ -3035,10 +3035,38 @@
     "category": null, 
     "name": "sdeyhkr", 
     "weight": 1, 
-    "text": "Sans un mot, elle d\u00e9tourne le regard. Dissimulant au mieux mes propres sentiments, je poursuis :\r\n\r\n\"Quant au second mariage\u2026\"", 
-    "image": "", 
+    "text": "Sans un mot, elle d\u00e9tourne le regard. Dissimulant au mieux mes propres sentiments, je poursuis.\r\n\r\n\"Quant au second mariage\u2026\"", 
+    "image": "events/361_11_3.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_ending_femme", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 271, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "uietyiyt", 
+    "weight": 1, 
+    "text": "Un silence prolong\u00e9, que mon fid\u00e8le {{folks.3}} rompt d\u2019un ton mesur\u00e9.\r\n\r\n\"A laquelle des deux filles allez-vous vous unir, mon seigneur ?\"", 
+    "image": "events/361_11_4.jpg", 
+    "on_fire": "\n", 
+    "slug": "tuto_diplomacy_ending_chatelain", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 272, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "kkul", 
+    "weight": 1, 
+    "text": "rut", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "tuto_diplomacy_ending_2", 
     "condition": "\n"
   }
 },
@@ -6053,7 +6081,7 @@
     "message": "", 
     "event": 268, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "param.next_event(\"tuto_diplomacy_ending_fils\").start()\n"
   }
 },
 {
@@ -6064,7 +6092,7 @@
     "message": "", 
     "event": 268, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "param.next_event(\"tuto_diplomacy_ending_femme\").start()\n"
   }
 },
 {
@@ -6075,7 +6103,7 @@
     "message": "", 
     "event": 268, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "param.next_event(\"tuto_diplomacy_ending_femme\").start()\n"
   }
 },
 {
@@ -6108,18 +6136,18 @@
     "message": "", 
     "event": 269, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "param.next_event(\"tuto_diplomacy_ending_chatelain\").start()\n"
   }
 },
 {
   "pk": 352, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\"\u2026 je vais inviter le fils de {{kingdom.values.tuto_adversaire}} \u00e0 ma cour, et {{folk.2.first_name}} en fera mon gendre.\"", 
+    "text": "\"\u2026 je vais inviter le fils de {{kingdom.values.tuto_adversaire}} \u00e0 ma cour, et {{folks.2.first_name}} en fera mon gendre.\"", 
     "message": "", 
     "event": 269, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "param.next_event(\"tuto_diplomacy_ending_2\").start()\n"
   }
 },
 {
@@ -6130,7 +6158,7 @@
     "message": "", 
     "event": 269, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "param.next_event(\"tuto_diplomacy_ending_2\").start()\n"
   }
 },
 {
@@ -6141,29 +6169,29 @@
     "message": "", 
     "event": 270, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "param.next_event(\"tuto_diplomacy_ending_chatelain\").start()\n"
   }
 },
 {
   "pk": 355, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\"\u2026{{folk.1.first_name}} prendra une des filles {{kingdom.values.tuto_PNJ}} pour \u00e9pouse.\"", 
+    "text": "\"\u2026{{folks.1.first_name}} prendra {{pieuse.first_name}} l'ain\u00e9e des filles {{kingdom.values.tuto_PNJ}} pour \u00e9pouse.\"", 
     "message": "", 
     "event": 270, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "param.next_event(\"tuto_diplomacy_ending_2\").start()\n"
   }
 },
 {
   "pk": 356, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\"\u2026 je vais inviter le fils de {{kingdom.values.tuto_adversaire}} \u00e0 ma cour, et {{folk.2.first_name}} en fera mon gendre.\"", 
+    "text": "\"\u2026 je vais inviter le fils de {{kingdom.values.tuto_adversaire}} \u00e0 ma cour, et {{folks.2.first_name}} en fera mon gendre.\"", 
     "message": "", 
     "event": 270, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "param.next_event(\"tuto_diplomacy_ending_2\").start()\n"
   }
 },
 {
@@ -6174,7 +6202,29 @@
     "message": "", 
     "event": 270, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "param.next_event(\"tuto_diplomacy_ending_2\").start()\n"
+  }
+},
+{
+  "pk": 358, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "{{ainee }}, l\u2019ain\u00e9e. Sa pi\u00e9t\u00e9 fera le bonheur de la famille.", 
+    "message": "", 
+    "event": 271, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_diplomacy_ending_2\").start()\n"
+  }
+},
+{
+  "pk": 359, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "{{cadete }}, la cadette. Elle semble plus d\u00e9gourdie que sa s\u0153ur.", 
+    "message": "", 
+    "event": 271, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_diplomacy_ending_2\").start()\n"
   }
 }
 ]
