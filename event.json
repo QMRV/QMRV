@@ -879,10 +879,10 @@
     "category": null, 
     "name": "Tuto too few courtisants", 
     "weight": 1, 
-    "text": "Les r\u00e9parations du ch\u00e2teau avancent \u00e0 grands pas, mais la taille de ma cour est encore trop modeste. J'ai besoin de chevaliers et nobles dames  pour m'assister dans ma gouvernance. La meilleur solution serait probablement nommer un ambassadeur pour les inviter \u00e0 mon service.\r\n```\r\nNouveau titre : ambassadeur.\r\n```", 
+    "text": "Les r\u00e9parations du ch\u00e2teau avancent \u00e0 grands pas, mais la taille de ma cour est encore trop modeste. J'ai besoin de chevaliers et nobles dames  pour m'assister dans ma gouvernance. La meilleur solution serait probablement nommer un ambassadeur pour les inviter \u00e0 mon service.\r\n\r\n   Nouveau titre : ambassadeur.\r\n", 
     "image": "events/703.jpg", 
     "on_fire": " ", 
-    "slug": "tuto_toofewcourtisants", 
+    "slug": "tuto_toofewcourtisans", 
     "condition": " "
   }
 },
@@ -1357,7 +1357,7 @@
     "weight": 1, 
     "text": " ", 
     "image": "", 
-    "on_fire": "titres = [vs.title.slug for vs in AvailableTitle.objects.filter(kingdom=kingdom)]\n\nif \"cure\" not in titres:\n  kingdom.start_pending_event(\"tuto_pretre_eveche\")\nelif \"ambassadeur\" not in titres:\n  kingdom.start_pending_event(\"tuto_toofewcourtisants\")\nelif \"tresorier\" not in titres:\n  kingdom.start_pending_event(\"tuto_toomuchecus\")\nelse:\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_forcertitre_random\")\n  \nstop(S.GHOST_EVENT)\n", 
+    "on_fire": "titres = [vs.title.slug for vs in AvailableTitle.objects.filter(kingdom=kingdom)]\n\nif \"cure\" not in titres:\n  kingdom.start_pending_event(\"tuto_pretre_eveche\")\nelif \"ambassadeur\" not in titres:\n  kingdom.start_pending_event(\"tuto_toofewcourtisans\")\nelif \"tresorier\" not in titres:\n  kingdom.start_pending_event(\"tuto_toomuchecus\")\nelse:\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_forcertitre_random\")\n  \nstop(S.GHOST_EVENT)\n", 
     "slug": "tuto_forcertitre_random_fantome", 
     "condition": " "
   }
@@ -1861,7 +1861,7 @@
     "weight": 1, 
     "text": "La petite troupe a \u00e9t\u00e9 assembl\u00e9e \u00e0 la h\u00e2te, et \u00e9quip\u00e9e du peu d'\u00e9quipement disponible. Des paysans t\u00eatus, qui se sont port\u00e9s volontaire pour apprendre une le\u00e7on \u00e0 ces damn\u00e9s bandits. Ils manquent de discipline, mais je peux voir dans leurs yeux qu'ils ont la rage au ventre. Je me tien devant eux, v\u00eatu de mon armure, {{chevaliers|folks_list:\"short\"}} debout \u00e0 mes c\u00f4t\u00e9s. Je vais nommer l'un d'entre eux mon conn\u00e9table pour s'occuper des derniers pr\u00e9paratifs, puis je prendrai la t\u00eate de mes hommes pour aller \u00e9craser les hors la loi qui croient pouvoir sacquer nos terres.\r\n\r\n    Nouveau titre : Conn\u00e9table.\r\n    Nouvelle mission.", 
     "image": "events/716_4.jpg", 
-    "on_fire": "kingdom.unlock_title(\"connetable\")\nkingdom.create_pending_mission(\"tuto_bandits_attaque\")\n\nchevaliers = folks.exclude(quality_set__name=\"pretre\", birth__gte= datetime.now() - timedelta(days=C.MAJORITE), sex=Folk.FEMALE)\nparam.set_value(\"chevaliers\", chevaliers)\n", 
+    "on_fire": "chevaliers = folks.exclude(quality_set__name=\"pretre\", birth__gte= datetime.now() - timedelta(days=C.MAJORITE), sex=Folk.FEMALE)\nparam.set_value(\"chevaliers\", chevaliers)\n", 
     "slug": "tuto_bandits_preparatifs", 
     "condition": "\n"
   }
@@ -2335,7 +2335,7 @@
     "category": null, 
     "name": "facheux", 
     "weight": 1, 
-    "text": "L'assembl\u00e9e retient son souffle alors que {{duelist_lessfight.first_name}} s'\u00e9lance brusquement sur son adversaire. L'attaque est par\u00e9e{% if ecart_fight <= 5 %} de justesse{% else %} sans difficult\u00e9{% endif %}. {{duelist_maxfight.first_name}} feinte, contre-attaque, et fait reculer {% if duelist_maxfight == folk.1 %}le chevalier{% else %}mon fils{% endif %} de quelques pas. Sans lui laisser un instant de r\u00e9pit, il avance, frappant de gauche et de droite. Le soleil du matin fait luire sa lame alors qu'elle trace un parfait arc de cercle et cueille {{duelist_lessfight.first_name}} \u00e0 l'\u00e9paule droite. Cris de douleur. A la vue du sang, ma fille {{folk.2.first_name}}{% if duelist_maxfight == folk.2 %} laisse \u00e9chapper sa joie.{% else %} cache son visage dans ses mains.{% endif %}", 
+    "text": "L'assembl\u00e9e retient son souffle alors que {{duelist_lessfight.first_name}} s'\u00e9lance brusquement sur son adversaire. L'attaque est par\u00e9e{% if ecart_fight <= 5 %} de justesse{% else %} sans difficult\u00e9{% endif %}. {{duelist_maxfight.first_name}} feinte, contre-attaque, et fait reculer {% if duelist_maxfight == folk.1 %}le chevalier{% else %}mon fils{% endif %} de quelques pas. Sans lui laisser un instant de r\u00e9pit, il avance, frappant de gauche et de droite. Le soleil du matin fait luire sa lame alors qu'elle trace un parfait arc de cercle et cueille {{duelist_lessfight.first_name}} \u00e0 l'\u00e9paule droite. Cris de douleur. A la vue du sang, ma fille {{folks.2.first_name}}{% if duelist_maxfight == folk.2 %} laisse \u00e9chapper sa joie.{% else %} cache son visage dans ses mains.{% endif %}", 
     "image": "events/716_8.jpg", 
     "on_fire": "fils = folks[1]\nfacheux = param.get_value(\"facheux\")\necart_fight = abs(fils.fight - facheux.fight)\nif fils.fight  > facheux.fight :\n  param.set_value(\"duelist_maxfight\", fils)\n  param.set_value(\"duelist_lessfight\", facheux)\nelse :\n  param.set_value(\"duelist_maxfight\", facheux)\n  param.set_value(\"duelist_lessfight\", fils)\n\n", 
     "slug": "tuto_facheux_duel_2", 
@@ -2377,7 +2377,7 @@
     "category": null, 
     "name": "facheux", 
     "weight": 1, 
-    "text": "{% if detourne %}\r\nGrognement. Sifflement d'un coup ascendant et  bruit humide  d'une lame qui  tranche  chairs et os. Silence de mort. Lorsque je regarde \u00e0 nouveau, je peux voir le chevalier  {{facheux.last_name}} surplombant mon fils qui g\u00eet sur le sol de la cour.\r\n{% else %}\r\nImpitoyable, le chevalier porte un puissant coup ascendant qui frappe mon fils en pleine poitrine, tranchant chair et os. Sans un cris, il s'effondre sur le sol de la cour. {{facheux}} se redresse de toute sa hauteur, le front en sueur.*\r\n{% endif %}\r\nSon \u00e9p\u00e9e d\u00e9gouline de sang, et les yeux qu'il tourne vers moi sont ivres de victoire. Il  me sourit, arrogant, et m'offre une parodie de r\u00e9v\u00e9rence. \u00c9chappant \u00e0 {{folk.3}}, ma fille se pr\u00e9cipite sur son fr\u00e8re, prenant son visage dans ses mains, les \u00e9paules secou\u00e9es de sanglots. Sire {{facheux.first_name}} l'ignore superbement. \"Sire, mon honneur et satisfait. Avec permission, je vais reprendre ma route. Il n'y a plus rien pour moi ici.", 
+    "text": "{% if detourne %}\r\nGrognement. Sifflement d'un coup ascendant et  bruit humide  d'une lame qui  tranche  chairs et os. Silence de mort. Lorsque je regarde \u00e0 nouveau, je peux voir le chevalier  {{facheux.last_name}} surplombant mon fils qui g\u00eet sur le sol de la cour.\r\n{% else %}\r\nImpitoyable, le chevalier porte un puissant coup ascendant qui frappe mon fils en pleine poitrine, tranchant chair et os. Sans un cris, il s'effondre sur le sol de la cour. {{facheux}} se redresse de toute sa hauteur, le front en sueur.*\r\n{% endif %}\r\nSon \u00e9p\u00e9e d\u00e9gouline de sang, et les yeux qu'il tourne vers moi sont ivres de victoire. Il  me sourit, arrogant, et m'offre une parodie de r\u00e9v\u00e9rence. \u00c9chappant \u00e0 {{folks.3}}, ma fille se pr\u00e9cipite sur son fr\u00e8re, prenant son visage dans ses mains, les \u00e9paules secou\u00e9es de sanglots. Sire {{facheux.first_name}} l'ignore superbement. \"Sire, mon honneur et satisfait. Avec permission, je vais reprendre ma route. Il n'y a plus rien pour moi ici.", 
     "image": "events/716_11.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_facheux_duel_sonloose_2", 
@@ -2519,7 +2519,7 @@
     "weight": 1, 
     "text": "{{title.connetable.first_name}} et moi m\u00eame sommes pench\u00e9s sur ma table de travail, sur laquelle s'\u00e9talent les cartes et les rapports de troupe.\"...sur le plan diplomatique, nous ne pouvons pas nous permettre une attaque de grande envergure. Vous allez mettre sur pied un petit contingent, et faire rapine sur les fermes isol\u00e9es et les villages frontaliers en \u00e9vitant de vous approcher du ch\u00e2teau. Il est probable qu'il essaie de vous contrer\". Je m'interromps, la mine grave. \"Il ne s'agit plus de vulgaires bandits. \u00cates-vous certains que les hommes sont pr\u00eats ?\" Il soutient mon regard, s\u00fbr de lui. \"Fin pr\u00eats, mon seigneur. Je m'en porte garant\".  Je me d\u00e9tourne et rassemble les cartes. \"Bien. Commencez les pr\u00e9paratifs.\"\r\n\r\n    Nouvelle mission.", 
     "image": "", 
-    "on_fire": "kingdom.unlock_mission(\"tuto_escarmouche\")\nkingdom.create_pending_mission(\"tuto_escarmouche\")\n", 
+    "on_fire": "\n", 
     "slug": "tuto_casusbelli_effective", 
     "condition": "\n"
   }
@@ -3067,6 +3067,34 @@
     "image": "", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_ending_2", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 273, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Victoire escarmouche", 
+    "weight": 1, 
+    "text": "Le combat se d\u00e9roula en for\u00eat.\r\n\r\nNous \u00e9tions forts de {{moi.troupes}} soldats. {{liste_gagnant}}\r\n\r\nDe leur c\u00f4t\u00e9 on pouvait d\u00e9nombrer {{lui.troupes}} soldats. {{liste_perdant}}\r\n\r\n{% if moi.troupes < lui.troupes %}Nous \u00e9tions en sous nombre{% elif moi.troupes > lui.troupes %} Nous avions l'avantage du nombre{% else %}Nous \u00e9tions autant d'un c\u00f4t\u00e9 que de l'autre{% endif %}{% if moi.troupes < lui.troupes and moi.puissance_generaux < lui.puissance_generaux %} et la sup\u00e9riorit\u00e9 de ses g\u00e9n\u00e9raux \u00e9tait \u00e9vidente{% elif moi.troupes > lui.troupes and moi.puissance_generaux > lui.puissance_generaux %} et nos g\u00e9n\u00e9raux \u00e9taient plus aguerris.{% elif moi.troupes <= lui.troupes and moi.puissance_generaux > lui.puissance_generaux %} mais nos g\u00e9n\u00e9raux semblaient plus hardis.{% elif moi.troupes >= lui.troupes and moi.puissance_generaux < lui.puissance_generaux %} mais ses g\u00e9n\u00e9raux semblaient effrayant.{% else %} et les g\u00e9n\u00e9raux des deux arm\u00e9es se regardaient dans le blanc des yeux.{% endif %}\r\n{% if moi.bonus_tactique > 0 %}\r\n{% if moi.bonus_tactique >= lui.bonus_tactique %}N{% if bataille.PRV.0.0 > 0 %}os cavaliers allaient faire des ravages dans leurs archers{% if bataille.PRV.0.1 > 0 or bataille.PRV.0.2 > 0 %} et n{% endif %}{% endif %}{% if bataille.PRV.0.1 > 0 %}os archers allaient faire des ravages dans leurs lanciers{% if bataille.PRV.0.2 > 0 %} et n{% endif %}{% endif %}{% if bataille.PRV.0.2 > 0 %}os lanciers allaient faire des ravages dans leurs cavaliers{% endif %}.\r\n{% if bataille.PRV.1.0 > 0 or bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 %}De leur c\u00f4t\u00e9 {% if bataille.PRV.1.0 > 0 %}leurs cavaliers allaient \u00eatre une plaie pour nos archers{% if bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 > 1 %} et {% endif %}{% endif %}{% if bataille.PRV.1.1 > 0 %}leurs archers allaient \u00eatre une plaie pour nos lanciers{% if bataille.PRV.1.2 > 0 %} et {% endif %}{% endif %}{% if bataille.PRV.1.2 > 0 %}leurs lanciers allaient \u00eatre une plaie pour nos cavaliers{% endif %}.{% endif %}{% else %}{% if moi.bonus_tactique > 0 %}N{% endif %}{% if bataille.PRV.0.0 > 0 %}os cavaliers allaient \u00eatre une plaie pour leurs archers{% if  bataille.PRV.0.1 > 0 or bataille.PRV.0.2 > 0 %} et n{% endif %}{% endif %}{% if bataille.PRV.0.1 > 0 %}os archers allaient \u00eatre plaie pour leurs lanciers{% if bataille.PRV.0.2 > 0  %} et n{% endif %}{% endif %}{% if bataille.PRV.0.2 > 0 %}os lanciers allaient \u00eatre une plaie pour leurs cavaliers{% endif %}{% if moi.bonus_tactique > 0 %}.{% endif %}{% if bataille.PRV.1.0 > 0 or bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 %} \r\n{% if moi.bonus_tactique > 0 %}Mais c'\u00e9tait sans comparaison avec ce que {% else %}Nous redoutions ce que {% endif %}{% if bataille.PRV.1.0 > 0 %}leurs cavaliers allaient faire \u00e0 nos archers{% if bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 %} et ce que {% endif %}{% endif %}{% if bataille.PRV.1.1 > 0 %}leurs archers allaient faire \u00e0 nos lanciers{% if bataille.PRV.1.2 > 0  %} et ce que  {% endif %}{% endif %}{% if bataille.PRV.1.2 > 0 %}leurs lanciers allaient faire \u00e0 nos cavaliers{% endif %}.{% endif %}{% endif %}{% endif %}\r\n\r\n    G\u00e9n\u00e9raux : moi (puissance g\u00e9n\u00e9raux {{moi.puissance_generaux}}  + bonus tactique {{moi.bonus_tactique}}) contre lui (puissance g\u00e9n\u00e9raux {{lui.puissance_generaux}} + bonus tactique {{lui.bonus_tactique}}) \r\n    Troupes : mes {{moi.troupes}} soldats contre ses {{lui.troupes}} soldats.", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "escarmouche_victoire", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 274, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Escarmouche defaite", 
+    "weight": 1, 
+    "text": "Le combat se d\u00e9roula en for\u00eat.\r\n\r\nNous \u00e9tions forts de {{moi.troupes}} soldats. {{liste_perdant}}\r\n\r\nDe leur c\u00f4t\u00e9 on pouvait d\u00e9nombrer {{lui.troupes}} soldats. {{liste_gagnant}}\r\n\r\n{% if moi.troupes < lui.troupes %}Nous \u00e9tions en sous nombre{% elif moi.troupes > lui.troupes %} Nous avions l'avantage du nombre{% else %}Nous \u00e9tions autant d'un c\u00f4t\u00e9 que de l'autre{% endif %}{% if moi.troupes < lui.troupes and moi.puissance_generaux < lui.puissance_generaux %} et la sup\u00e9riorit\u00e9 de ses g\u00e9n\u00e9raux \u00e9tait \u00e9vidente{% elif moi.troupes > lui.troupes and moi.puissance_generaux > lui.puissance_generaux %} et nos g\u00e9n\u00e9raux \u00e9taient plus aguerris.{% elif moi.troupes <= lui.troupes and moi.puissance_generaux > lui.puissance_generaux %} mais nos g\u00e9n\u00e9raux semblaient plus hardis.{% elif moi.troupes >= lui.troupes and moi.puissance_generaux < lui.puissance_generaux %} mais ses g\u00e9n\u00e9raux semblaient plus effrayants.{% else %} et les commandants des deux arm\u00e9es se regardaient dans le blanc des yeux.{% endif %}\r\n{% if moi.bonus_tactique >= lui.bonus_tactique and moi.bonus_tactique > 0 %}{% if bataille.PRV.0.0 > 0 %}Nos cavaliers allaient faire des ravages chez leurs archers{% if bataille.PRV.0.1 > 0 or bataille.PRV.0.2 > 0 %} et n{% endif %}{% endif %}{% if bataille.PRV.0.1 > 0 %}os archers allaient faire des ravages dans leurs lanciers{% if bataille.PRV.0.2 > 0 %} et n{% endif %}{% endif %}{% if bataille.PRV.0.2 > 0 %}os lanciers allaient faire des ravages dans leurs cavaliers{% endif %}.{% if bataille.PRV.1.0 > 0 or bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 %}De leur c\u00f4t\u00e9 {% if bataille.PRV.1.0 > 0 %}leurs cavaliers allaient \u00eatre une plaie pour nos archers{% if bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 > 1 %} et {% endif %}{% endif %}{% if bataille.PRV.1.1 > 0 %}leurs archers allaient \u00eatre une plaie pour nos lanciers{% if bataille.PRV.1.2 > 0 %} et {% endif %}{% endif %}{% if bataille.PRV.1.2 > 0 %}leurs lanciers allaient \u00eatre une plaie pour nos cavaliers{% endif %}.{% endif %}{% else %}N{% if bataille.PRV.0.0 > 0 %}os cavaliers allaient \u00eatre une plaie pour leurs archers{% if  bataille.PRV.0.1 > 0 or bataille.PRV.0.2 > 0 %} et n{% endif %}{% endif %}{% if bataille.PRV.0.1 > 0 %}os archers allaient \u00eatre plaie pour leurs lanciers{% if bataille.PRV.0.2 > 0  %} et n{% endif %}{% endif %}{% if bataille.PRV.0.2 > 0 %}os lanciers allaient \u00eatre une plaie pour leurs cavaliers{% endif %}.{% if bataille.PRV.1.0 > 0 or bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 %} Mais c'\u00e9tait sans comparaison avec ce que {% if bataille.PRV.1.0 > 0 %}leurs cavaliers allaient faire \u00e0 nos archers{% if bataille.PRV.1.1 > 0 or bataille.PRV.1.2 > 0 %} et ce que {% endif %}{% endif %}{% if bataille.PRV.1.1 > 0 %}leurs archers allaient faire \u00e0 nos lanciers{% if bataille.PRV.1.2 > 0  %} et ce que  {% endif %}{% endif %}{% if bataille.PRV.1.2 > 0 %}leurs lanciers allaient faire \u00e0 nos cavaliers{% endif %}.{% endif %}{% endif %}\r\n\r\n    G\u00e9n\u00e9raux : moi (puissance g\u00e9n\u00e9raux {{moi.puissance_generaux}}  + bonus tactique {{moi.bonus_tactique}}) contre lui (puissance g\u00e9n\u00e9raux {{lui.puissance_generaux}} + bonus tactique {{lui.bonus_tactique}}) \r\n    Troupes : mes {{moi.troupes}} soldats contre ses {{lui.troupes}} soldats.\r\n", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "escarmouche_defaite", 
     "condition": "\n"
   }
 },
@@ -5036,7 +5064,7 @@
     "message": "Je doit nommer un [conn\u00e9table](title) pour bouter les bandits hors de mes terres.", 
     "event": 168, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "kingdom.unlock_title(\"connetable\")\nkingdom.create_pending_mission(\"tuto_bandits_attaque\")\n"
   }
 },
 {
@@ -5597,7 +5625,7 @@
     "message": "Je peux maintenant [attaquer](#mission) le seigneur {{ennemi}}.", 
     "event": 229, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "kingdom.unlock_mission(\"tuto_escarmouche\")\nkingdom.create_pending_mission(\"tuto_escarmouche\")\n"
   }
 },
 {
@@ -6225,6 +6253,28 @@
     "event": 271, 
     "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_diplomacy_ending_2\").start()\n"
+  }
+},
+{
+  "pk": 360, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "OK", 
+    "message": "", 
+    "event": 273, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 361, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "OK", 
+    "message": "", 
+    "event": 274, 
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 }
 ]
