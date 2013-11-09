@@ -3015,6 +3015,34 @@
   }
 },
 {
+  "pk": 269, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "ergersgzd", 
+    "weight": 1, 
+    "text": "\"Je\u2026 renoncer \u00e0 {{dynasty}}, p\u00e8re?\"\r\n\r\nMon fils accuse le coup. Le regard qu\u2019il me lance est bless\u00e9, {% if loyal %}d\u00e9sempar\u00e9{% else %}rageur{% endif %}, mais je le coupe avant qu\u2019il ne puisse protester.\r\n\r\n\"Tu accompliras ton devoir, mon fils. Pour l\u2019avenir de notre famille.\"\r\n\r\nJe me d\u00e9tourne, dissimulant au mieux mes propres \u00e9motions.\r\n\r\n\"En ce qui concerne le second mariage\u2026\"", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "tuto_diplomacy_ending_fils", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 270, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "sdeyhkr", 
+    "weight": 1, 
+    "text": "Sans un mot, elle d\u00e9tourne le regard. Dissimulant au mieux mes propres sentiments, je poursuis :\r\n\r\n\"Quant au second mariage\u2026\"", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "tuto_diplomacy_ending_femme", 
+    "condition": "\n"
+  }
+},
+{
   "pk": 5, 
   "model": "event.eventaction", 
   "fields": {
@@ -5607,7 +5635,7 @@
     "message": "", 
     "event": 234, 
     "condition": "\n", 
-    "on_fire": "#mise en forme des param\u00e8tres \u00e0 passer aux fonctions de calcul\naffected=kingdom.get_team(\"ligne_defense\")[\"affected\"][0:3]\ndefenseur = {\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * kingdom.soldiers / 100),\n  'combattants': kingdom.get_team(\"ligne_defense\")[\"affected\"],\n  'population': kingdom.population,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':kingdom.get_value('tuto_dynasty_PNJ')\n}\n\n# R\u00e9cuperer les cinq meilleurs combattants de l'attaquant\ndate_majorite = datetime.now() - timedelta(days=C.MAJORITE)\ncinq_meilleurs = kingdom.folk_set.filter(sex=Folk.MALE, disabled=False, birth__lte=date_majorite).order_by('-fight')[0:5]\nmoyenne_meilleurs_fight = avg_stats(cinq_meilleurs, 'fight')\n\ncombattants = [Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight)]\nmap(lambda f: f.save(), combattants)\ntype_adversaire=kingdom.get_value(\"tuto_type_PNJ\",'piquier')\ncombattants[0].add_quality(type_adversaire)\ncombattants[1].add_quality(type_adversaire)\ncombattants[2].add_quality(random_in(['piquier','cavalier','archer']))\n\nattaquant = {\n  # Dans le cadre du tuto,\n  # Les troupes du d\u00e9fenseur correspondent \u00e0 80% des troupes maximales disponibles pour ce Kingdom\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * 0.8 * C.POURCENTAGE_MAX_SOLDATS_PASSIF * call_function(\"get_max_population\", kingdom=kingdom) / (100 * 100)),\n  'combattants': combattants,\n  'population': kingdom.prestige*2,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':\"dynastie advserse\",\n}\n\n#fonctions pour calculer ce qu'il se passe sans appliquer\ngagnant, perdant, bataille = f(\"determiner_vainqueur_combat\", attaquant=attaquant, defenseur=defenseur)\nis_victory = gagnant == attaquant\ndelta = f(\"determiner_modifications_combat\", gagnant=gagnant, perdant=perdant, marge=bataille['marge'], attaquant_est_gagnant=is_victory)\nif is_victory==False:\n  commandement={\n                'gagnant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                'perdant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                }\nelse:\n  commandement={\n                'gagnant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                'perdant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                }  \n#application gain_prestige\nif is_victory==False:\n  kingdom.prestige += delta['gagnant']['prestige']\nelse:\n  kingdom.prestige += delta['perdant']['prestige']\nkingdom.save()\n\n#d\u00e9terminantion prochain event\nif kingdom.get_value(\"tuto_firstbattle_defense\", False) == False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_defense\")\nelif is_victory==False:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \n#passage d'arguments\npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\", False)\npe.set_value(\"gagnant\",gagnant)\npe.set_value(\"perdant\",perdant)\npe.set_value(\"liste_perdant\",f(\"liste_nom_avec_specialite\", commandants=perdant['combattants']))\npe.set_value(\"liste_gagnant\",f(\"liste_nom_avec_specialite\", commandants=gagnant['combattants']))\npe.set_value(\"delta\",delta)\npe.set_value(\"bataille\",bataille)\npe.set_value(\"commandement\",commandement)\npe.start()\n  \n#tuer les gens qui ne sont pas de la famille r\u00e9gnante, blesser tous les bless\u00e9s\nfamille=kingdom.get_folk_in_title('chatelain').last_name\nfor mort in delta['A_tuer']:\n  if mort.last_name <> famille:\n    mort.die()\nfor blesse in delta['A_blesser']:\n  call_function(\"blesser_folk\",folk=blesse)\n\n#gain thune en cas de pillage\nif is_victory:\n  kingdom.money+=delta['perdant']['population']\n  \n#pertes de soldats\nif is_victory==False:\n  kingdom.soldiers-=delta['gagnant']['pertes_troupe']\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')-delta['gagnant']['pertes_troupe'])\nelse:\n  kingdom.soldiers-=delta['perdant']['pertes_troupe']\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')-delta['perdant']['pertes_troupe'])\n\nkingdom.save()\n\nmap(lambda f: f.delete(), combattants)\n"
+    "on_fire": "#mise en forme des param\u00e8tres \u00e0 passer aux fonctions de calcul\naffected=kingdom.get_team(\"ligne_defense\")[\"affected\"][0:3]\ndefenseur = {\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * kingdom.soldiers / 100),\n  'combattants': kingdom.get_team(\"ligne_defense\")[\"affected\"],\n  'population': kingdom.population,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':kingdom.get_value('tuto_dynasty_PNJ')\n}\n\n# R\u00e9cuperer les cinq meilleurs combattants de l'attaquant\ndate_majorite = datetime.now() - timedelta(days=C.MAJORITE)\ncinq_meilleurs = kingdom.folk_set.filter(sex=Folk.MALE, disabled=False, birth__lte=date_majorite).order_by('-fight')[0:5]\nmoyenne_meilleurs_fight = avg_stats(cinq_meilleurs, 'fight')\n\ncombattants = [Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight)]\nmap(lambda f: f.save(), combattants)\ntype_adversaire=kingdom.get_value(\"tuto_type_PNJ\",'piquier')\ncombattants[0].add_quality(type_adversaire)\ncombattants[1].add_quality(type_adversaire)\ncombattants[2].add_quality(random_in(['piquier','cavalier','archer']))\n\nattaquant = {\n  # Dans le cadre du tuto,\n  # Les troupes du d\u00e9fenseur correspondent \u00e0 80% des troupes maximales disponibles pour ce Kingdom\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * 0.8 * C.POURCENTAGE_MAX_SOLDATS_PASSIF * call_function(\"get_max_population\", kingdom=kingdom) / (100 * 100)),\n  'combattants': combattants,\n  'population': kingdom.prestige*2,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':\"dynastie advserse\",\n}\n\n#fonctions pour calculer ce qu'il se passe sans appliquer\ngagnant, perdant, bataille = f(\"determiner_vainqueur_combat\", attaquant=attaquant, defenseur=defenseur)\nis_victory = gagnant == attaquant\ndelta = f(\"determiner_modifications_combat\", gagnant=gagnant, perdant=perdant, marge=bataille['marge'], attaquant_est_gagnant=is_victory)\nif is_victory==False:\n  commandement={\n                'gagnant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                'perdant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                }\nelse:\n  commandement={\n                'gagnant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                'perdant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                }  \n#application gain_prestige\nif is_victory==False:\n  kingdom.prestige += delta['gagnant']['prestige']\nelse:\n  kingdom.prestige += delta['perdant']['prestige']\nkingdom.save()\n\n#d\u00e9terminantion prochain event\nif kingdom.get_value(\"tuto_firstbattle_defense\", False) == False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_defense\")\nelif is_victory==False:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_victoire\")\nelse:\n  pe = kingdom.create_pending_event(\"tuto_escarmouche_defaite\")\n  \n#passage d'arguments\npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\", False)\npe.set_value(\"gagnant\",gagnant)\npe.set_value(\"perdant\",perdant)\npe.set_value(\"liste_perdant\",f(\"liste_nom_avec_specialite\", commandants=perdant['combattants']))\npe.set_value(\"liste_gagnant\",f(\"liste_nom_avec_specialite\", commandants=gagnant['combattants']))\npe.set_value(\"delta\",delta)\npe.set_value(\"bataille\",bataille)\npe.set_value(\"commandement\",commandement)\npe.start()\n  \n#tuer les gens qui ne sont pas de la famille r\u00e9gnante, blesser tous les bless\u00e9s\nfamille=kingdom.get_folk_in_title('chatelain').last_name\nfor mort in delta['A_tuer']:\n  if mort.last_name != famille:\n    mort.die()\nfor blesse in delta['A_blesser']:\n  call_function(\"blesser_folk\",folk=blesse)\n\n#gain thune en cas de pillage\nif is_victory:\n  kingdom.money+=delta['perdant']['population']\n  \n#pertes de soldats\nif is_victory==False:\n  kingdom.soldiers-=delta['gagnant']['pertes_troupe']\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')-delta['gagnant']['pertes_troupe'])\nelse:\n  kingdom.soldiers-=delta['perdant']['pertes_troupe']\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')-delta['perdant']['pertes_troupe'])\n\nkingdom.save()\n\nmap(lambda f: f.delete(), combattants)\n"
   }
 },
 {
@@ -6021,7 +6049,7 @@
   "pk": 346, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\u2026{{folks.1.first_name}}, mon fils. Tu dois renoncer \u00e0 me succ\u00e9der \u00e0 la t\u00eate de {{dynasty}}. Tu \u00e9pouseras une des filles {{kingdom.values.tuto_dynasty_PNJ}} et rejoindras la cour de son p\u00e8re.", 
+    "text": "\"\u2026{{folks.1.first_name}}, mon fils. Tu dois renoncer \u00e0 me succ\u00e9der \u00e0 la t\u00eate de {{dynasty}}. Tu \u00e9pouseras une des filles {{kingdom.values.tuto_dynasty_PNJ}} et rejoindras la cour de son p\u00e8re.\"", 
     "message": "", 
     "event": 268, 
     "condition": "\n", 
@@ -6032,7 +6060,7 @@
   "pk": 347, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\u2026{{folks.2.first_name}}, ma fille, je vais offrir ta main \u00e0 {{kingdom.values.'tuto_adversaire}}.", 
+    "text": "\"\u2026{{folks.2.first_name}}, ma fille, je vais offrir ta main \u00e0 {{kingdom.values.'tuto_adversaire}}.\"", 
     "message": "", 
     "event": 268, 
     "condition": "\n", 
@@ -6043,7 +6071,7 @@
   "pk": 348, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\u2026{{kingdom.values.soeurette.first_name}}, ma s\u0153ur, tu dois partir pour {{kingdom.values.tuto_PNJ}} et \u00e9pouserle seigneur des lieux.", 
+    "text": "\"\u2026{{kingdom.values.soeurette.first_name}}, ma s\u0153ur, tu dois partir pour {{kingdom.values.tuto_PNJ}} et \u00e9pouserle seigneur des lieux.\"", 
     "message": "", 
     "event": 268, 
     "condition": "\n", 
@@ -6054,7 +6082,7 @@
   "pk": 349, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\u2026et je ne peux me s\u00e9parer d\u2019aucun d\u2019entre vous. Malheuresement, la guerre doit continuer.", 
+    "text": "\"\u2026et je ne peux me s\u00e9parer d\u2019aucun d\u2019entre vous. Malheuresement, la guerre doit continuer.\"", 
     "message": "", 
     "event": 268, 
     "condition": "\n", 
@@ -6068,6 +6096,83 @@
     "text": "Ok !", 
     "message": "{{folksQuiPartent|folks_list}} ont quitt\u00e9 votre cour.", 
     "event": 266, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 351, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "\"\u2026J\u2019\u00e9pouserai moi-m\u00eame la seconde fille {{kingdom.values.tuto_PNJ}}.\"", 
+    "message": "", 
+    "event": 269, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 352, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "\"\u2026 je vais inviter le fils de {{kingdom.values.tuto_adversaire}} \u00e0 ma cour, et {{folk.2.first_name}} en fera mon gendre.\"", 
+    "message": "", 
+    "event": 269, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 353, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "\"\u2026{{kingdom.values.soeurette.first_name}} fera entrer le fils {{kingdom.values.tuto_PNJ}} dans la famille.\"", 
+    "message": "", 
+    "event": 269, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 354, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "\"\u2026J\u2019\u00e9pouserai moi-m\u00eame une des filles {{kingdom.values.tuto_PNJ}}.\"", 
+    "message": "", 
+    "event": 270, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 355, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "\"\u2026{{folk.1.first_name}} prendra une des filles {{kingdom.values.tuto_PNJ}} pour \u00e9pouse.\"", 
+    "message": "", 
+    "event": 270, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 356, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "\"\u2026 je vais inviter le fils de {{kingdom.values.tuto_adversaire}} \u00e0 ma cour, et {{folk.2.first_name}} en fera mon gendre.\"", 
+    "message": "", 
+    "event": 270, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 357, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "\"\u2026{{kingdom.values.soeurette.first_name}} fera entrer le fils {{kingdom.values.tuto_PNJ}} dans la famille.\"", 
+    "message": "", 
+    "event": 270, 
     "condition": "\n", 
     "on_fire": "\n"
   }
