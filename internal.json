@@ -8,13 +8,11 @@
     "prestige_threshold": 0, 
     "fired": [
       124, 
-      123, 
-      76, 
-      116, 
-      126
+      127, 
+      128
     ], 
     "money_threshold": 0, 
-    "on_fire": "#d\u00e9termination du type d'adversaire dans le tuto :\ntableau_PRV=['piquier','archer','cavalier']\nType_adversaire=random_in([0,1,2])\nAnti_adversaire=Type_adversaire+1\nif Anti_adversaire==3:\n  Anti_adversaire=0\n\n\n# Cr\u00e9ation du ch\u00e2telain\nseigneur = call_function(\"creer_folk\", kingdom=kingdom, fight_min=9, plot_min=9, diplomacy_min=9, scholarship_min=9, max_carac=36, loyalty=100, sex=Folk.MALE, last_name=kingdom.user.username, birth=datetime.now() - timedelta(days=35), trait=tableau_PRV[Anti_adversaire],)\n\nkingdom.unlock_title(\"chatelain\")\nseigneur.add_title(\"chatelain\")\n\n# Son fils\nfils = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=17), trait=tableau_PRV[Anti_adversaire], )\n\n# Sa fille\nfille = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=16))\n\n# Compagnon\ncompagnon = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE,birth=datetime.now() - timedelta(days=35), trait=random_in(['piquier','archer','cavalier']))\n\n\n# Adversaire du tuto\nlast_name = LastName.objects.all().order_by('?')[0].name\nfirst_name = FirstName.objects.all().order_by('?')[0].name\nkingdom.set_value(\"tuto_adversaire\", first_name  + \" \" + last_name)\nkingdom.set_value(\"tuto_dynasty_PNJ\", last_name)\nkingdom.set_value(\"tuto_type_PNJ\", tableau_PRV[Type_adversaire])\n\n# Lancement de l'event\npe = kingdom.create_pending_event(\"tuto_intro\")\npe.set_value(\"fils\", fils)\npe.set_value(\"fille\", fille)\npe.set_value(\"compagnon\", compagnon)\n\npe.start()\n\n# Kingdom init : on intialise de maniere equilibr\u00e9e avec un peu de random pour varier\n# pour modifier l'\u00e9quilibrage bouger ces 4 coeffs\npoints_base = 200\ncoeff_population = 0.5\ncoeff_prestige = 1\ncoeff_monnaie = 1\n\n# pour modifier la variabilit\u00e9 bouger les bornes de gaussienne\nrandom1 = random_gauss(0.75,1.25)\nrandom2 = random_gauss(0.75,1.25)\n\nkingdom.money = int(points_base/(coeff_population+random1*coeff_prestige+random2*coeff_population))\nkingdom.prestige = int(kingdom.money*coeff_prestige*random1)\nkingdom.population = 0 #int(kingdom.money*coeff_population*random2) on initialise dans la fin d'une des 4 branches de d\u00e9part la population\nkingdom.soldiers=0\nkingdom.set_value('total_soldats',0)\n\nkingdom.save()\n\nkingdom.set_value(\"in_tuto\", True)\n\n\n", 
+    "on_fire": "#d\u00e9termination du type d'adversaire dans le tuto :\ntableau_PRV=['piquier','archer','cavalier']\nType_adversaire=random_in([0,1,2])\nAnti_adversaire=Type_adversaire+1\nif Anti_adversaire==3:\n  Anti_adversaire=0\n\n\n# Cr\u00e9ation du ch\u00e2telain\nseigneur = call_function(\"creer_folk\", kingdom=kingdom, fight_min=9, plot_min=9, diplomacy_min=9, scholarship_min=9, max_carac=36, loyalty=100, sex=Folk.MALE, last_name=kingdom.user.username, birth=datetime.now() - timedelta(days=35), trait=tableau_PRV[Anti_adversaire],)\n\nkingdom.unlock_title(\"chatelain\")\nseigneur.add_title(\"chatelain\")\n\n# Son fils\nfils = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=17), trait=tableau_PRV[Anti_adversaire], )\n\n# Sa fille\nfille = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.user.username, father=seigneur,  birth=datetime.now() - timedelta(days=16))\n\n# Compagnon\ncompagnon = call_function(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE,birth=datetime.now() - timedelta(days=35), trait=random_in(['piquier','archer','cavalier']))\n\n\n# Adversaire du tuto\nlast_name = LastName.objects.all().order_by('?')[0].name\nfirst_name = FirstName.objects.all().order_by('?')[0].name\nkingdom.set_value(\"tuto_adversaire\", first_name  + \" \" + last_name)\nkingdom.set_value(\"tuto_dynasty_PNJ\", last_name)\nkingdom.set_value(\"tuto_PNJ\", last_name[2:].strip())\nkingdom.set_value(\"tuto_type_PNJ\", tableau_PRV[Type_adversaire])\n\n# Lancement de l'event\npe = kingdom.create_pending_event(\"tuto_intro\")\npe.set_value(\"fils\", fils)\npe.set_value(\"fille\", fille)\npe.set_value(\"compagnon\", compagnon)\n\npe.start()\n\n# Kingdom init : on intialise de maniere equilibr\u00e9e avec un peu de random pour varier\n# pour modifier l'\u00e9quilibrage bouger ces 4 coeffs\npoints_base = 200\ncoeff_population = 0.5\ncoeff_prestige = 1\ncoeff_monnaie = 1\n\n# pour modifier la variabilit\u00e9 bouger les bornes de gaussienne\nrandom1 = random_gauss(0.75,1.25)\nrandom2 = random_gauss(0.75,1.25)\n\nkingdom.money = int(points_base/(coeff_population+random1*coeff_prestige+random2*coeff_population))\nkingdom.prestige = int(kingdom.money*coeff_prestige*random1)\nkingdom.population = 0 #int(kingdom.money*coeff_population*random2) on initialise dans la fin d'une des 4 branches de d\u00e9part la population\nkingdom.soldiers=0\nkingdom.set_value('total_soldats',0)\n\nkingdom.save()\n\nkingdom.set_value(\"in_tuto\", True)\n\n\n", 
     "slug": "initialisation", 
     "condition": "\n", 
     "name": "Initialisation"
@@ -34,7 +32,7 @@
     "qualities": [], 
     "child": "", 
     "sex": "m", 
-    "adult_threshold": 16, 
+    "adult_threshold": 25, 
     "scholarship": 0
   }
 },
@@ -136,7 +134,7 @@
   "fields": {
     "plot": 1, 
     "old": "avatars/old/9.jpg", 
-    "diplomacy": 0, 
+    "diplomacy": 2, 
     "old_threshold": 45, 
     "fight": 2, 
     "hair": 0, 
@@ -1415,8 +1413,8 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 144, 
-    "kingdom_list": "param = Kingdom.objects.filter(pk = 124)\n", 
-    "on_fire": "max = int(kingdom.prestige/C.MAX_FOLK)\n\nfolksEligibles = folks.filter(birth__lte=datetime.now()-timedelta(days=C.MAJORITE))\nnbfolks = folksEligibles.count()\nsurplus = nbfolks - kingdom.prestige/C.MAX_FOLK\n\nif nbfolks >= C.MIN_FOLK and surplus > 0 :\n  folksEligibles.exclude(last_name=kingdom.get_folk_in_title(\"chatelain\").last_name)\n  defecteurs = list(folksEligibles.filter(loyalty__lte=avg_stats(folksEligibles, \"loyalty\")))\n  if len(defecteurs) == 0:\n    folksEligibles = folks.filter(birth__lte=datetime.now()-timedelta(days=C.MAJORITE))\n    defecteurs = list(folksEligibles.filter(loyalty__lte=avg_stats(folksEligibles, \"loyalty\")))\n  folks_qui_partent = []\n  while surplus > 0 and len(defecteurs) > 0:\n    folk = random_in(defecteurs)\n    defecteurs.remove(folk)\n    folk.spouse and folks_qui_partent.append(folk.spouse)\n    folks_qui_partent + list(folks.filter(Q(father=folk) | Q(mother=folk)))\n    folks_qui_partent.append(folk)\n    surplus -= 1\n  pe = kingdom.create_pending_event(\"max_folks_atteint\")\n  pe.set_value(\"folksQuiPartent\",folks_qui_partent)\n  pe.start()\n  for folk in folks_qui_partent:\n    folk.kingdom = None\n    folk.save()\n", 
+    "kingdom_list": "\n", 
+    "on_fire": "#nombres de folks comptant dans le nombre de folk actuel\nfolksEligibles = folks.filter(birth__lte=datetime.now()-timedelta(days=C.MAJORITE))\nnbfolks = folksEligibles.count()\n#nombre de personnes \u00e0 virer\nsurplus = nbfolks - int(kingdom.prestige/C.MAX_FOLK)\n\n#si il faut virer\nif nbfolks >= C.MIN_FOLK and surplus > 0 :\n  #on \u00e9vite de prendre dans la famille r\u00e9gnante\n  folksEligibles.exclude(last_name=kingdom.get_folk_in_title(\"chatelain\").last_name)\n  defecteurs = list(folksEligibles.filter(loyalty__lte=avg_stats(folksEligibles, \"loyalty\")))\n  #en cas de besoin, on tape dans la famille regnante (on exclue notre \u00e9pouse, notre fils h\u00e9riti\u00e9 et son \u00e9pouse\n  fils = folks.filter(father=kingdom.get_folk_in_title(\"chatelain\")).order_by(\"birth\")[0]\n  reserve = folks.filter(birth__lte=datetime.now()-timedelta(days=C.MAJORITE), last_name=kingdom.get_folk_in_title(\"chatelain\").last_name)\n  reserve = reserve.exclude(pk=kingdom.get_folk_in_title(\"chatelain\").pk)\n  reserve = reserve.exclude(pk=fils.pk)\n  if fils.spouse is not None :\n    reserve = reserve.exclude(pk=fils.spouse.pk)\n  #on tape dans la famille au besoin\n  while len(defecteurs) < surplus:\n    defecteurs.append(random_in(reserve))\n  folks_qui_partent = []\n  #tant qu'il y a encore des gens \u00e0 virer, que des gens sont virables, et qu'on a pas atteint de seuil minimum de folks\n  while surplus > 0 and len(defecteurs) > 0 and nbfolks > C.MIN_FOLK:\n    folks_en_partance = []\n    folk = random_in(defecteurs)\n    defecteurs.remove(folk)\n    #s'il celui qui part \u00e0 une famille, elle le suit\n    folk.spouse and folks_en_partance.append(folk.spouse)\n    folks_en_partance + list(folks.filter(Q(father=folk) | Q(mother=folk)))\n    folks_en_partance.append(folk)\n    surplus -= len(folks_en_partance)\n    nbfolks -= len(folks_en_partance)\n    folks_qui_partent += folks_en_partance\n  pe = kingdom.create_pending_event(\"max_folks_atteint\")\n  pe.set_value(\"folksQuiPartent\",folks_qui_partent)\n  pe.start()\n  for folk in folks_qui_partent:\n    folk.kingdom = None\n    folk.save()\n", 
     "name": "Cour Max", 
     "description": "Faire respecter le nombre maximal de personnes dans une cour en enlevant des personnes avec moins de loyaut\u00e9 que la moyenne.\r\n"
   }
@@ -1514,8 +1512,8 @@
   "model": "internal.recurring", 
   "fields": {
     "delay": 144, 
-    "kingdom_list": "param=Kingdom.objects.filter(pk=123)", 
-    "on_fire": "bsup = datetime.now() - timedelta(days=6)\nF1 = Folk.objects.filter(kingdom=kingdom, birth__lte=bsup)\n\n\nfor f in F1:\n  # L'\u00e2ge maximal est de 80 ans\n  r = random_gauss(0, 80*2)\n  if ( (r < f.age()) | (r > (80*2 - f.age()))):\n    mort = kingdom.create_pending_event('mort_naturelle')\n    mort.set_value('victime', f)\n    mort.started = datetime.now() + timedelta(hours=18)\n    mort.save()\n#    mort.start()\n", 
+    "kingdom_list": "param=Kingdom.objects.filter(pk=128)", 
+    "on_fire": "bsup = datetime.now() - timedelta(days=6)\nF1 = Folk.objects.filter(kingdom=kingdom, birth__lte=bsup)\n\n\nfor f in F1:\n  # L'\u00e2ge maximal est de 80 ans\n  r = random_gauss(0, 80*2)\n  if ( (r < f.age()) | (r > (80*2 - f.age()))):\n    mort = kingdom.create_pending_event('mort_naturelle')\n    mort.set_value('victime', f)\n    mort.set_value('name', f.first_name + ' ' + f.last_name)\n    mort.set_value('age', str(f.age()))\n    mort.set_value('sex', str(f.sex))\n    mort.started = datetime.now() + timedelta(hours=18)\n    mort.save()\n#    mort.start()\n", 
     "name": "Vieillesse", 
     "description": "Les gens vieillissent, certains meurent"
   }
@@ -35714,7 +35712,7 @@
   "fields": {
     "params": "folk:Folk le folk dont on veut d\u00e9finir l'avatar", 
     "slug": "attribuer_avatar", 
-    "on_fire": "if folk.age() < C.MAJORITE:\n  #Attribuer l'avatar d'enfant\n  folk.avatar = Avatar.objects.filter(sex=folk.sex).exclude(child='').order_by('?')[0]\nelse:\n  # Attribuer l'avatar d'adulte\n  caracs = {\n    'fight': folk.fight,\n    'diplomacy': folk.diplomacy,\n    'plot': folk.plot,\n    'scholarship': folk.scholarship\n  }\n\n  best_carac = sorted(caracs.items(), key=lambda c: c[1])[0]\n\n  params = {\n    best_carac[0]: Avatar.FORBIDDEN\n  }\n\n  folk.avatar = Avatar.objects.filter(sex=folk.sex, child='').exclude(**params).order_by('?')[0]\n\nfolk.save()", 
+    "on_fire": "if folk.age() < C.MAJORITE:\n  #Attribuer l'avatar d'enfant\n  folk.avatar = Avatar.objects.filter(sex=folk.sex).exclude(child='').order_by('?')[0]\nelse:\n  # Attribuer l'avatar d'adulte\n  caracs = {\n    'fight': folk.fight,\n    'diplomacy': folk.diplomacy,\n    'plot': folk.plot,\n    'scholarship': folk.scholarship\n  }\n\n  best_carac = sorted(caracs.items(), key=lambda c: c[1])[0]\n\n  params = {}\n  params[best_carac[0]] = Avatar.FORBIDDEN\n\n  folk.avatar = Avatar.objects.filter(sex=folk.sex, child='').exclude(**params).order_by('?')[0]\n\nfolk.save()", 
     "description": "Attribue un avatar \u00e0 la personne."
   }
 },
