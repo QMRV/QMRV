@@ -1861,7 +1861,7 @@
     "weight": 1, 
     "text": "La petite troupe a \u00e9t\u00e9 assembl\u00e9e \u00e0 la h\u00e2te, et \u00e9quip\u00e9e du peu d'\u00e9quipement disponible. Des paysans t\u00eatus, qui se sont port\u00e9s volontaire pour apprendre une le\u00e7on \u00e0 ces damn\u00e9s bandits. Ils manquent de discipline, mais je peux voir dans leurs yeux qu'ils ont la rage au ventre. Je me tien devant eux, v\u00eatu de mon armure, {{chevaliers|folks_list:\"short\"}} debout \u00e0 mes c\u00f4t\u00e9s. Je vais nommer l'un d'entre eux mon conn\u00e9table pour s'occuper des derniers pr\u00e9paratifs, puis je prendrai la t\u00eate de mes hommes pour aller \u00e9craser les hors la loi qui croient pouvoir sacquer nos terres.\r\n\r\n    Nouveau titre : Conn\u00e9table.\r\n    Nouvelle mission.", 
     "image": "events/716_4.jpg", 
-    "on_fire": "kingdom.unlock_title(\"connetable\")\nkingdom.create_pending_mission(\"tuto_bandits_attaque\")\n", 
+    "on_fire": "kingdom.unlock_title(\"connetable\")\nkingdom.create_pending_mission(\"tuto_bandits_attaque\")\n\nchevaliers = folks.exclude(quality_set__name=\"pretre\", birth__gte= datetime.now() - timedelta(days=C.MAJORITE), sex=Folk.FEMALE)\nparal.set_value(\"chevaliers\", chevaliers)\n", 
     "slug": "tuto_bandits_preparatifs", 
     "condition": "\n"
   }
@@ -2462,7 +2462,7 @@
     "name": "Le temps passe...", 
     "weight": 1, 
     "text": "Il n'y a pas d'urgence \u00e0 g\u00e9rer en ce moment. \r\n\r\n    N'h\u00e9sitez pas \u00e0 utiliser cette pause narrative pour aller voir ce que vous pouvez faire dans l'onglet mission !", 
-    "image": "", 
+    "image": "events/800.jpg", 
     "on_fire": "\n", 
     "slug": "_tuto_timewarp", 
     "condition": "\n"
@@ -2881,8 +2881,8 @@
     "category": null, 
     "name": "Compromission r\u00e9ussie", 
     "weight": 1, 
-    "text": "{% if random <= 33 %}\r\nLa substance d\u00e9bilitante gliss\u00e9e dans le plat de {{target}} a fait effet au beau milieu du repas. {{target|feminize:\"Il,Elle\"}} s'est mi{{target|feminize:\"t,se\"}} \u00e0 bafouiller stupidement devant l'ensemble des convives, pouss\u00e9s jusqu'\u00e0 l'hilarit\u00e9 par mes complices. {{target|feminize:\"Il,Elle\"}} est sortit en boitant, sous une pluie de quolibets.\r\n{% elif random <= 66 %}Mes complices ont {% else %}une bourse d'\u00e9cus bien remplie, qui a \u00e9t\u00e9 partag\u00e9e entre les misereux.{% endif %}", 
-    "image": "events/463_3.jpg", 
+    "text": "{% if colerique %}\r\nMes complices sont parvenu \u00e0 pousser {{target}} \u00e0 bout, jouant de son caract\u00e8re col\u00e9rique pour provoquer une s\u00e9rie de dispute entre {{target|feminize:\"lui,elle\"}} et d'autre membres de ma cour. Ils sont de moins en moins nombreux \u00e0 pouvoir le supporter.\r\n{% elif random <= 33 %}\r\nLa substance d\u00e9bilitante gliss\u00e9e dans le plat de {{target}} a fait effet au beau milieu du repas. {{target|feminize:\"Il,Elle\"}} s'est mi{{target|feminize:\"t,se\"}} \u00e0 bafouiller stupidement devant l'ensemble des convives, pouss\u00e9s jusqu'\u00e0 l'hilarit\u00e9 par mes complices. {{target|feminize:\"Il,Elle\"}} est sortit en boitant, sous une pluie de quolibets.\r\n{% elif random <= 66 %}Mes complices ont r\u00e9pendu une rumeur perfide sur le pass\u00e9 de {{target}}. Il y a quelques \u00e9t\u00e9s, {{target|feminize:\"il,elle\"}} aurait travaill\u00e9 contre les int\u00e9r\u00eats du royaume de France pour le compte d'une puissance \u00e9trang\u00e8re. Quel scandale! {% else %}Par de subtiles mensonges et demi v\u00e9rit\u00e9s, mes complice ont convaincu ma cour que les derniers d\u00e9boirs de {{dynasty}} sont enti\u00e8rement du \u00e0 l'incomp\u00e9tence de {{target}}. Incomp\u00e9tence ou malveillance dissimul\u00e9e?...{% endif %}\r\n\r\n    {% if respecte %}{{target}} perd le Trait Respect\u00e9{{target|feminize}}.{% else %}{{target}} {% if lost %}perd le Trait {{lost}}{{target|feminize}} et {% endif %}re\u00e7oit le Trait {{got}}{{target|feminize}}.{% endif %}", 
+    "image": "events/755_1.jpg", 
     "on_fire": "\n", 
     "slug": "compromettre_success", 
     "condition": "\n"
@@ -2895,8 +2895,8 @@
     "category": null, 
     "name": "Echec de la compromission", 
     "weight": 1, 
-    "text": "Malgr\u00e9 tous nos effort, le personne n'a pas baiss\u00e9 en r\u00e9putation", 
-    "image": "", 
+    "text": "{{target}} s'est montr\u00e9{{target|feminize}} trop habile pour mes agents. {{target|feminize:\"Il,Elle\"}} a d\u00e9jou\u00e9 toutes leurs tentatives de salir sa r\u00e9putation.", 
+    "image": "events/755_2.jpg", 
     "on_fire": "\n", 
     "slug": "compromettre_failure", 
     "condition": "\n"
@@ -3222,7 +3222,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Amen!", 
-    "message": "Le p\u00e8re {{cure.firs_name}} a rejoint ma cour, et occupe le titre de [cur\u00e9](title). Il peut superviser la [r\u00e9novation de l'\u00e9glise](mission).", 
+    "message": "Le p\u00e8re {{cure.first_name}} a rejoint ma cour, et occupe le titre de [cur\u00e9](title). Il peut superviser la [r\u00e9novation de l'\u00e9glise](mission).", 
     "event": 26, 
     "condition": " ", 
     "on_fire": "kingdom.create_pending_mission(\"tuto_eglise\")\n"
@@ -5839,8 +5839,8 @@
   "pk": 331, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Parfait !", 
-    "message": "", 
+    "text": "Une affaire rondement men\u00e9e.", 
+    "message": "{{target}} a \u00e9t\u00e9 compromis{{target|feminize}}. {% if respecte %}{{target|feminize:\"Il,Elle\"}} a perdu le Trait Respect\u00e9{{target|feminize}}.{% else %}{{target|feminize:\"Il,Elle\"}} {% if lost %}a perdu le Trait {{lost}}{{target|feminize}} et {% endif %}a re\u00e7u le Trait {{got}}{{target|feminize}}.{% endif %}", 
     "event": 258, 
     "condition": "\n", 
     "on_fire": "\n"
@@ -5850,8 +5850,8 @@
   "pk": 332, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Erf !", 
-    "message": "", 
+    "text": "{{target|feminize:\"Il,Elle\"}} ne perd rien pour attendre...", 
+    "message": "Mes sbires ne sont pas parvenu \u00e0 compromettre {{target}}.", 
     "event": 259, 
     "condition": "\n", 
     "on_fire": "\n"
