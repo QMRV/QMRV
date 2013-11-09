@@ -1775,7 +1775,7 @@
     "category": null, 
     "name": "Facheux", 
     "weight": 1, 
-    "text": "Sur mon ordre, mon fils {{folk.2.first_name}} et le chevalier {{facheux.last_name}} se sont assis dans deux fauteuils de ma chambre. J'ignore les regards venimeux qu'ils se lancent, et sers patiemment trois verres de vin. Voyant que {{folk.1.first_name}} s'appr\u00eate \u00e0 faire une remarque, le l\u00e8ve une main apaisante. \"Je vais d\u2019abord \u00e9couter la version du chevalier\". Il se renfrogne, mais demeure silencieux alors que {{facheux.first_name}} me relate les injures que mon fils lui a lanc\u00e9es \u00e0 la figure. Il ne dissimule rien de sa col\u00e8re, et affirme \u00eatre pr\u00eat  \u00e0 d\u00e9fendre son honneur l'arme \u00e0 la main.\"", 
+    "text": "Sur mon ordre, mon fils {{folks.2.first_name}} et le chevalier {{facheux.last_name}} se sont assis dans deux fauteuils de ma chambre. J'ignore les regards venimeux qu'ils se lancent, et sers patiemment trois verres de vin. Voyant que {{folks.1.first_name}} s'appr\u00eate \u00e0 faire une remarque, le l\u00e8ve une main apaisante. \"Je vais d\u2019abord \u00e9couter la version du chevalier\". Il se renfrogne, mais demeure silencieux alors que {{facheux.first_name}} me relate les injures que mon fils lui a lanc\u00e9es \u00e0 la figure. Il ne dissimule rien de sa col\u00e8re, et affirme \u00eatre pr\u00eat  \u00e0 d\u00e9fendre son honneur l'arme \u00e0 la main.\"", 
     "image": "events/408_6.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_facheux_settle", 
@@ -2153,9 +2153,9 @@
     "category": null, 
     "name": "Facheux", 
     "weight": 1, 
-    "text": "Doit \u00eatre connect\u00e9 tuto facheux settle 3, affich\u00e9 uniquement si on a suffisemment de diplomacy\r\n\r\nD'un ton calme, j'entreprends de dresser un portrait impartial de l'incident, insistant sur les tords de chacun.  Je r\u00e9pond \u00e0 leurs objections une par une, avec une patience infinie, et l\u2019atmosph\u00e8re d'abord lourde de tension se rel\u00e2che peu \u00e0 peu alors que chacun reconnait ses fautes. \"Votre sens de l'honneur vous honore tous les deux, mais priver {{dynasty}} d'un de ses meilleurs hommes ne profite qu'\u00e0 nos ennemis. La vraie noblesse r\u00e9side dans le pardon\". Ils c\u00e8dent peu \u00e0 peu \u00e0 mes arguments mesur\u00e9s, et finissent par trinquer avec moi, riant  de s'\u00eatre emport\u00e9s pour  une affaire aussi triviale.  Ils quittent ma  chambre r\u00e9concili\u00e9s, me laissant finir mon verre avec le sourire aux l\u00e8vres.\r\n\r\n```\r\n{{facheux}} perd le Trait Col\u00e9rique.\r\n+5 de Loyaut\u00e9 pour {{folk.2}} et {{facheux}}.\r\n```", 
+    "text": "D'un ton calme, j'entreprends de dresser un portrait impartial de l'incident, insistant sur les tords de chacun.  Je r\u00e9pond \u00e0 leurs objections une par une, avec une patience infinie, et l\u2019atmosph\u00e8re d'abord lourde de tension se rel\u00e2che peu \u00e0 peu alors que chacun reconnait ses fautes. \"Votre sens de l'honneur vous honore tous les deux, mais priver {{dynasty}} d'un de ses meilleurs hommes ne profite qu'\u00e0 nos ennemis. La vraie noblesse r\u00e9side dans le pardon\". Ils c\u00e8dent peu \u00e0 peu \u00e0 mes arguments mesur\u00e9s, et finissent par trinquer avec moi, riant  de s'\u00eatre emport\u00e9s pour  une affaire aussi triviale.  Ils quittent ma  chambre r\u00e9concili\u00e9s, me laissant finir mon verre avec le sourire aux l\u00e8vres.\r\n\r\n```\r\n{{facheux}} perd le Trait Col\u00e9rique.\r\n+5 de Loyaut\u00e9 pour {{folks.1}} et {{facheux}}.\r\n```", 
     "image": "events/408_9.jpg", 
-    "on_fire": "\n", 
+    "on_fire": "facheux = param.get_value(\"facheux\")\nfacheux.loyalty += 5\nfacheux.save()\nfacheux.remove_quality(\"colerique\")\nfolks[1].loyalty += 5\nfolks[1].save()\n", 
     "slug": "tuto_facheux_settle_4", 
     "condition": "\n"
   }
@@ -2169,9 +2169,9 @@
     "weight": 1, 
     "text": "Devant mon ton p\u00e9remptoire, ils restent silencieux un long moment. Le visage ferm\u00e9, ils se d\u00e9cident \u00e0 marmonner qu'ils en resteront l\u00e0 pour l\u2019instant, puis prennent rapidement cong\u00e9. Je reste assis, mon verre \u00e0 la main, et songe qu'un simple commandement ne suffira manifestement pas \u00e0 leur faire oublier leur querelle. Ce n'est qu'une question de temps avant qu'ils ne remettent le couvert.", 
     "image": "events/408_10.jpg", 
-    "on_fire": null, 
+    "on_fire": "\n", 
     "slug": "tuto_facheux_settle_3", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -2239,7 +2239,7 @@
     "weight": 1, 
     "text": "{{mere}} a mis au monde des jumeaux", 
     "image": "", 
-    "on_fire": "maturite = param.next_event('coming_of_age')\nmaturite.started = datetime.now() + timedelta(days=6)  \nmaturite.save()\n\nmaturite = param.next_event('coming_of_age')\nmaturite.started = datetime.now() + timedelta(days=6)  \nmaturite.save()\n", 
+    "on_fire": "# Les jumeaux et triples naissent sans mourir \u00e0 la naissance\n\nmaturite = param.next_event('coming_of_age')\nmaturite.started = datetime.now() + timedelta(days=6)  \nmaturite.save()\n\nmaturite = param.next_event('coming_of_age')\nmaturite.started = datetime.now() + timedelta(days=6)  \nmaturite.save()\n", 
     "slug": "naissance_jumeaux", 
     "condition": "\n"
   }
@@ -2433,7 +2433,7 @@
     "category": null, 
     "name": "Premi\u00e8re escarmouche", 
     "weight": 1, 
-    "text": "Le petit bataillon a atteint les terres du seigneur {%if tuto%}  {{tuto_adversaire}} {%else%} {{chatelain_defenseur}} {%endif%}\u00e0 la tomb\u00e9e de la nuit, profitant  de l'obscurit\u00e9 pour traverser la rivi\u00e8re glac\u00e9e sans attirer l'attention des sentinelles. Rassembl\u00e9s autour de leurs maigres feux de camp, les hommes ont dormi quelques heures avant d'\u00eatre r\u00e9veill\u00e9s par leurs officiers. Il se sont mis rapidement en formation, leurs mains crisp\u00e9es sur leurs armes. \r\n{% if chatelain_in_mission_attaquant %}Levant bien haut mon \u00e9p\u00e9e, j'ai\r\n{% elif connetable_in_mission_attaquant %}Le soleil du matin brillant sur son heaume sire{\r\n{title.Conn\u00e9table}} a\r\n{% else %}dD'une d\u00e9marche martiale sire {{general_attaquant}} a{% endif %}\r\n march\u00e9 devant eux et d\u00e9clar\u00e9 d'une voix forte que l'ennemi avait \u00e9t\u00e9 rep\u00e9r\u00e9 \u00e0 quelques lieues d'ici et que le combat \u00e9tait imminent. Apr\u00e8s un discours bref mais plein de morgue les soldats ont cri\u00e9 mon nom \u00e0 pleins poumons et se sont mis en mouvement.", 
+    "text": "Le petit bataillon a atteint les terres du seigneur {%if tuto%}  {{tuto_adversaire}} {%else%} {% if attaque and  is_victory %}{{commandement.perdant.general}} {% else %} {{commandement.gagnant.general}} {% endif %} {% endif %}\u00e0 la tomb\u00e9e de la nuit, profitant  de l'obscurit\u00e9 pour traverser la rivi\u00e8re glac\u00e9e sans attirer l'attention des sentinelles. Rassembl\u00e9s autour de leurs maigres feux de camp, les hommes ont dormi quelques heures avant d'\u00eatre r\u00e9veill\u00e9s par leurs officiers. Il se sont mis rapidement en formation, leurs mains crisp\u00e9es sur leurs armes. \r\n{% if chatelain_in_mission_attaquant %}Levant bien haut mon \u00e9p\u00e9e, j'ai\r\n{% elif connetable_in_mission_attaquant %}Le soleil du matin brillant sur son heaume sire{\r\n{title.Conn\u00e9table}} a\r\n{% else %}dD'une d\u00e9marche martiale sire {% if attaque and  is_victory %}{{commandement.gagnant.general}} {% else %} {{commandement.perdant.general}} {% endif %} a{% endif %}\r\n march\u00e9 devant eux et d\u00e9clar\u00e9 d'une voix forte que l'ennemi avait \u00e9t\u00e9 rep\u00e9r\u00e9 \u00e0 quelques lieues d'ici et que le combat \u00e9tait imminent. Apr\u00e8s un discours bref mais plein de morgue les soldats ont cri\u00e9 mon nom \u00e0 pleins poumons et se sont mis en mouvement.", 
     "image": "events/117_3.jpg", 
     "on_fire": "kingdom.set_value(\"tuto_firstbattle_attack\",True)", 
     "slug": "tuto_firstbattle_attack", 
@@ -2629,7 +2629,7 @@
     "category": null, 
     "name": "Escarmouche", 
     "weight": 1, 
-    "text": "Mes hommes se sont dispers\u00e9s pour mieux vider et saccager les fermes et villages frontaliers de {{moi.dynastie_adverse}}, passant par le fer {{delta.perdant.population}} paysans assez sots pour r\u00e9sister. Leur butin a \u00e9t\u00e9 entass\u00e9 dans les chariots qui seront en route pour mon ch\u00e2teau avant que {{tuto_adversaire}} ne puisse organiser une contre-attaque. Il est probable qu'il cherche revanche un jour ou l'autre, mais pour l'heure, {{dynasty}} en sort plus craint et plus riche.\r\n\r\n    +{{delta.gagnant.thune}} \u00e9cus\r\n", 
+    "text": "Mes hommes se sont dispers\u00e9s pour mieux vider et saccager les fermes et villages frontaliers de {{moi.dynastie_adverse}}, passant par le fer {{delta.perdant.population}} paysans assez sots pour r\u00e9sister. Leur butin a \u00e9t\u00e9 entass\u00e9 dans les chariots qui seront en route pour mon ch\u00e2teau avant que {{kingdom.values.tuto_adversaire}} ne puisse organiser une contre-attaque. Il est probable qu'il cherche revanche un jour ou l'autre, mais pour l'heure, {{dynasty}} en sort plus craint et plus riche.\r\n\r\n    +{{delta.gagnant.thune}} \u00e9cus\r\n", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "tuto_escarmouche_pillage", 
@@ -2951,11 +2951,11 @@
     "category": null, 
     "name": "rapport", 
     "weight": 1, 
-    "text": "\"...Avant son tr\u00e9pas, feu la femme du seigneur {{ennemi_lastname}} lui a donn\u00e9 trois enfants. L'a\u00een\u00e9e, 18 ans, est connue pour sa pi\u00e9t\u00e9. Elle supplie son p\u00e8re de la laisser rejoindre un couvent depuis plusieurs ann\u00e9es. Le second est un gaillard de 17 ans au temp\u00e9rament tr\u00e8s vif, et la cadette est  une beaut\u00e9 de 16 ans qu'on dit \u00eatre la moins sage du trio.\"\r\n\r\n\"Aucun d'eux n'est mari\u00e9?\" Il secoue la t\u00eate. \"Non, seigneur. Les fian\u00e7ailles du fils ont \u00e9t\u00e9 annul\u00e9es l'ann\u00e9e derni\u00e8re.\" Je croise les bras, pensif. Cette information ouvre de nouvelles perspectives auquelles je dois reflechir. \"Ce sera tout, {{title.maitre_espion.first_name}}. Bon travail.\"\r\n\r\n    Nouvelle mission.", 
+    "text": "\"...Avant son tr\u00e9pas, feu la femme du seigneur {{kingdom.values.tuto_dynasty_PNJ}} lui a donn\u00e9 trois enfants. L'a\u00een\u00e9e, 18 ans, est connue pour sa pi\u00e9t\u00e9. Elle supplie son p\u00e8re de la laisser rejoindre un couvent depuis plusieurs ann\u00e9es. Le second est un gaillard de 17 ans au temp\u00e9rament tr\u00e8s vif, et la cadette est  une beaut\u00e9 de 16 ans qu'on dit \u00eatre la moins sage du trio.\"\r\n\r\n\"Aucun d'eux n'est mari\u00e9?\" Il secoue la t\u00eate. \"Non, seigneur. Les fian\u00e7ailles du fils ont \u00e9t\u00e9 annul\u00e9es l'ann\u00e9e derni\u00e8re.\" Je croise les bras, pensif. Cette information ouvre de nouvelles perspectives auquelles je dois reflechir. \"Ce sera tout, {{title.maitre_espion.first_name}}. Bon travail.\"\r\n\r\n    Nouvelle mission.", 
     "image": "events/475_1.jpg", 
-    "on_fire": null, 
+    "on_fire": "\n", 
     "slug": "tuto_rapport_espion_2", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -4795,7 +4795,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Peu importe ce qu'ils en pensent, c'est la s\u00e9curit\u00e9 de mon fils qui est en jeu!", 
-    "message": "Mon fils {{folk.1.first_name}} et le {{facheux}} sont \u00e0 couteaux tir\u00e9s. Je pourrais regler le probl\u00e8me en [d\u00e9barassant](mission) ma cour du chevalier.", 
+    "message": "Mon fils {{folks.1.first_name}} et le {{facheux}} sont \u00e0 couteaux tir\u00e9s. Je pourrais regler le probl\u00e8me en [d\u00e9barassant](mission) ma cour du chevalier.", 
     "event": 155, 
     "condition": "if param.get_value(\"come_from\") != 5:\n  stop(\"ce choix n'apparait pas\")\n", 
     "on_fire": "param.set_value(\"come_from\", 3)\nparam.next_event(\"tuto_facheux_7\").start()\n"
@@ -4817,7 +4817,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Je ne peux pas me permettre de me mettre ma cour \u00e0 dos. Laissons la situation se r\u00e9soudre par elle m\u00eame.", 
-    "message": "Mon fils {{folk.1.first_name}} et le {{facheux}} sont \u00e0 couteaux tir\u00e9s.", 
+    "message": "Mon fils {{folks.1.first_name}} et le {{facheux}} sont \u00e0 couteaux tir\u00e9s.", 
     "event": 155, 
     "condition": "if param.get_value(\"come_from\") == 5:\n  stop(\"ce choix n'apparait pas\")\n", 
     "on_fire": "param.set_value(\"come_from\", 3)\nparam.next_event(\"tuto_facheux_5\").start()"
@@ -4893,7 +4893,7 @@
   "pk": 228, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Je me tourne vers {{folk.2.first_name}}, et lui indique qu'il peut prendre la parole.", 
+    "text": "Je me tourne vers {{folks.2.first_name}}, et lui indique qu'il peut prendre la parole.", 
     "message": "", 
     "event": 161, 
     "condition": "\n", 
@@ -5227,7 +5227,7 @@
     "message": "", 
     "event": 192, 
     "condition": "\n", 
-    "on_fire": "#param.next_event(\"tuto_facheux_3\").start()\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_3\")\npe.start()"
+    "on_fire": "param.next_event(\"tuto_facheux_3\").start()"
   }
 },
 {
@@ -5237,19 +5237,19 @@
     "text": "Prendre le temps d'en discuter davantage, en essayant de les r\u00e9concilier.", 
     "message": "", 
     "event": 192, 
-    "condition": "if kingdom.get_folk_in_title(\"chatelain\").diplomacy<12:\n  stop(\"Ce message n'apparaitra pas\")", 
-    "on_fire": "param.next_event(\"tuto_facheux_settle_3\").start()"
+    "condition": "\n", 
+    "on_fire": "if kingdom.get_folk_in_title(\"chatelain\").diplomacy<12:\n  param.next_event(\"tuto_facheux_settle_3\").start()\nelse :\n  param.next_event(\"tuto_facheux_settle_4\").start()\n"
   }
 },
 {
   "pk": 266, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Une fois encore, mess talents de diplomate m'ont permis d'\u00e9viter le pire.", 
-    "message": "Le chevalier {{facheux}} et mon fils {{folk.1.first_name}} se sont r\u00e9concili\u00e9s.\r\n\r\n    {{facheux}} perd le Trait Col\u00e9rique.\r\n    +5 de Loyaut\u00e9 chacun.\r\n", 
+    "text": "Une fois encore, mes talents de diplomate m'ont permis d'\u00e9viter le pire.", 
+    "message": "Le chevalier {{facheux}} et mon fils {{folks.1.first_name}} se sont r\u00e9concili\u00e9s.\r\n\r\n    {{facheux}} perd le Trait Col\u00e9rique.\r\n    +5 de Loyaut\u00e9 chacun.\r\n", 
     "event": 193, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")\n"
   }
 },
 {
@@ -5259,8 +5259,8 @@
     "text": "Je dois trouver une meilleur solution.", 
     "message": "", 
     "event": 194, 
-    "condition": null, 
-    "on_fire": "passage = [3]\nparam.set_value(\"passage\", passage)\nparam.next_event(\"tuto_facheux_3\").start()"
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_facheux_3\").start()"
   }
 },
 {
@@ -5905,10 +5905,10 @@
   "pk": 338, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Comme moi, le seigneur {{ennemi_last_name}} est veuf. Comme moi il a des enfants \u00e0 marier... Il est peut-\u00eatre possible de mettre fin \u00e0 ce conflit en unissant nos familles.", 
+    "text": "Comme moi, le seigneur {{kingdom.values.tuto_dynasty_PNJ}} est veuf. Comme moi il a des enfants \u00e0 marier... Il est peut-\u00eatre possible de mettre fin \u00e0 ce conflit en unissant nos familles.", 
     "message": "Il est peut-\u00eatre possible de mettre fin au conflit contre le seigneur {{ennemi}} en lui proposant un [mariage diplomatique](mission).", 
     "event": 264, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "\n"
   }
 },
@@ -5930,8 +5930,8 @@
     "text": "Gardons cette option de c\u00f4t\u00e9 pour l'instant. L'heure est au combat.", 
     "message": "Il est peut-\u00eatre possible de mettre fin au conflit contre le seigneur {{ennemi}} en lui proposant un [mariage diplomatique](mission).", 
     "event": 264, 
-    "condition": null, 
-    "on_fire": null
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 },
 {
