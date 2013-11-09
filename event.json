@@ -1385,7 +1385,7 @@
     "weight": 1, 
     "text": "\"Ma s\u0153ur? Ici? mais...\" Le garde m'observe depuis le pied de mon tr\u00f4ne, alors que j'essaie de dissimuler mon trouble. Je n'ai pas vu ma s\u0153ur depuis plus de quinze ans. Notre derni\u00e8re rencontre, {% if random <= 33 %}\u00e0 l'enterrement de notre p\u00e8re, {% elif random <= 66 %}juste avant mon d\u00e9part pour la cour du Roi, {% else %} alors qu'elle partait pour la cour du Duc de Bretagne, {% endif %}ne s'est pas termin\u00e9e dans les meilleurs termes... Que fait-elle chez moi, et pourquoi n'a-t-elle pas annonc\u00e9e sa visite ? Le garde attend toujours mes instructions \"Fais-l\u00e0 entrer, et veille \u00e0 ce que l'on ne nous d\u00e9range pas\". Je me redresse sur mon si\u00e8ge, intrigu\u00e9 et nerveux.", 
     "image": "events/361_1.jpg", 
-    "on_fire": "random = random_value(1, 100)\nparam.set_value(\"random\", random)\n\nsoeur = call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = 32, kingdom = None, trait = \"fier\", sex = Folk.FEMALE, last_name = kingdom.user.username, father = kingdom.get_folk_in_title(\"chatelain\").father, mother = kingdom.get_folk_in_title(\"chatelain\").mother, birth = datetime.now()-timedelta(days=35))\nparam.set_value(\"soeur\", soeur)\n\nmari = call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = 32, kingdom = None, sex = Folk.MALE)\n\nrandomgender = random_value(1, 2)\nif randomgender == 1:                     \n  mioche = call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = 20, kingdom = None, sex = Folk.MALE, last_name = kingdom.user.username, father = mari, mother = soeur, birth = datetime.now()-timedelta(days=10))\n  param.set_value(\"mioche\", mioche)\n  \n  chiard = call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = 4, kingdom = None, sex = Folk.FEMALE, last_name = kingdom.user.username, father = mari, mother = soeur, birth = datetime.now()-timedelta(days=1))\n  param.set_value(\"chiard\", chiard)                     \n\nelse:\n                     \n  mioche = call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = 20, kingdom = None, sex = Folk.FEMALE, last_name = kingdom.user.username, father = mari, mother = soeur, birth = datetime.now()-timedelta(days=10))\n  param.set_value(\"mioche\", mioche)\n  \n  chiard = call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = 4, kingdom = None, sex = Folk.MALE, last_name = kingdom.user.username, father = mari, mother = soeur, birth = datetime.now()-timedelta(days=1))\n  param.set_value(\"chiard\", chiard)  ", 
+    "on_fire": "random = random_value(1, 100)\nparam.set_value(\"random\", random)\n\nsoeur = call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = 32, kingdom = None, trait = \"fier\", sex = Folk.FEMALE, last_name = kingdom.user.username, father = kingdom.get_folk_in_title(\"chatelain\").father, mother = kingdom.get_folk_in_title(\"chatelain\").mother, birth = datetime.now()-timedelta(days=35))\nparam.set_value(\"soeur\", soeur)\n\nmari = call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = 32, kingdom = None, sex = Folk.MALE)\n\nrandomgender = random_value(1, 2)\nif randomgender == 1:                     \n  mioche = call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = 20, kingdom = None, sex = Folk.MALE, last_name = kingdom.user.username, father = mari, mother = soeur, birth = datetime.now()-timedelta(days=10))\n  param.set_value(\"mioche\", mioche)\n   \n  bebe=call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = random_int(13,18), kingdom = None, sex = Folk.FEMALE, last_name = kingdom.user.username, father = mari, mother = soeur, birth = datetime.now()-timedelta(days=1))               \n  param.set_value(\"chiard\", bebe)\n      \n\nelse:\n                     \n  mioche = call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = 20, kingdom = None, sex = Folk.FEMALE, last_name = kingdom.user.username, father = mari, mother = soeur, birth = datetime.now()-timedelta(days=10))\n  param.set_value(\"mioche\", mioche)\n  bebe=call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = random_int(13,18), kingdom = None, sex = Folk.MALE, last_name = kingdom.user.username, father = mari, mother = soeur, birth = datetime.now()-timedelta(days=1))              \n  param.set_value(\"chiard\", bebe)", 
     "slug": "tuto_soeurette", 
     "condition": "\n"
   }
@@ -1469,7 +1469,7 @@
     "weight": 1, 
     "text": "Elle sourit, sans se d\u00e9partir de son air hautain. \"Merci, mon seigneur. Je suis certaine que vous en trouverez votre maison renforc\u00e9e\". Sur un regard de sa part, {{mioche.first_name}} ajoute \"Merci mon oncle\".\r\n\r\n    {{soeur}}, {{mioche}} et {{chiard}} vous ont rejoint.", 
     "image": "events/361_7.jpg", 
-    "on_fire": "soeur = param.get_value(\"soeur\")\nmioche = param.get_value(\"mioche\")\nchiard = param.get_value(\"chiard\")\n\nsoeur.kingdom = kingdom\nmioche.kingdom = kingdom\nchiard.kingdom = kingdom\n\nsoeur.save()\nmioche.save()\nchiard.save()", 
+    "on_fire": "soeur = param.get_value(\"soeur\")\nmioche = param.get_value(\"mioche\")\nchiard = param.get_value(\"chiard\")\n\nsoeur.kingdom = kingdom\nmioche.kingdom = kingdom\nchiard.kingdom = kingdom\n\nsoeur.save()\nmioche.save()\nchiard.save()\nkingdom.set_value(\"tuto_soeurette\", soeur)\n", 
     "slug": "tuto_soeurette_accept", 
     "condition": "\n"
   }
@@ -1483,7 +1483,7 @@
     "weight": 1, 
     "text": "Elle renifle, et opine \u00e0 contre c\u0153ur. \"Je... Nous acceptons\". Elle semble bris\u00e9e, lutant contre la ranc\u0153ur et la d\u00e9ception.\r\n\r\n\r\n\r\n    {{soeur}}, {{mioche}} et {{chiard}} vous ont ont rejoint. {{chiard.first_name}} n'a que 1 ans, et n\u2019appara\u00eetra dans votre cour qu'\u00e0 l'age de 6 ans.\r\n", 
     "image": "events/361_8.jpg", 
-    "on_fire": "soeur = param.get_value(\"soeur\")\nmioche = param.get_value(\"mioche\")\nchiard = param.get_value(\"chiard\")\n\nsoeur.kingdom = kingdom\nmioche.kingdom = kingdom\nchiard.kingdom = kingdom\n\nmioche.last_name = mioche.father.last_name\nchiard.last_name = mioche.father.last_name\n\nsoeur.save()\nmioche.save()\nchiard.save()", 
+    "on_fire": "soeur = param.get_value(\"soeur\")\nmioche = param.get_value(\"mioche\")\nchiard = param.get_value(\"chiard\")\n\nsoeur.kingdom = kingdom\nmioche.kingdom = kingdom\nchiard.kingdom = kingdom\n\nmioche.last_name = mioche.father.last_name\nchiard.last_name = mioche.father.last_name\n\nsoeur.save()\nmioche.save()\nchiard.save()\nkingdom.set_value(\"tuto_soeurette\", soeur)", 
     "slug": "tuto_soeurette_compromize", 
     "condition": "\n"
   }
@@ -1497,7 +1497,7 @@
     "weight": 1, 
     "text": "Elle l\u00e8ve vers moi un regard plein de soulagement. \"Je... Merci, {{title.chatelain.first_name}}. Merci mille fois. Sur mon honneur, vous n'aurez pas \u00e0 le regretter\". D'un revers de la main, elle s\u00e8che ses larmes et serre {{mioche.first_name}} contre elle.\r\n\r\n\r\n    {{soeur}}, {{mioche}} et {{chiard}} vous ont ont rejoint. {{chiard.first_name}} n'a que 1 ans, et n\u2019appara\u00eetra dans votre cour qu'\u00e0 l'age de 6 ans.\r\n", 
     "image": "events/361_9.jpg", 
-    "on_fire": "soeur = param.get_value(\"soeur\")\nmioche = param.get_value(\"mioche\")\nchiard = param.get_value(\"chiard\")\n\nsoeur.kingdom = kingdom\nmioche.kingdom = kingdom\nchiard.kingdom = kingdom\n\nsoeur.save()\nmioche.save()\nchiard.save()", 
+    "on_fire": "soeur = param.get_value(\"soeur\")\nmioche = param.get_value(\"mioche\")\nchiard = param.get_value(\"chiard\")\n\nsoeur.kingdom = kingdom\nmioche.kingdom = kingdom\nchiard.kingdom = kingdom\n\nsoeur.save()\nmioche.save()\nchiard.save()\nkingdom.set_value(\"tuto_soeurette\", soeur)", 
     "slug": "tuto_soeurette_surrend", 
     "condition": "\n"
   }
@@ -2197,7 +2197,7 @@
     "weight": 1, 
     "text": "L'enfant {{bebe}} vient d'avoir six ans. \r\nIl se pr\u00e9sente \u00e0 votre cour.", 
     "image": "", 
-    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\nbebe = call_function('creer_enfant', pere=papa, mere=maman, kingdom=kingdom)\nparam.set_value(\"bebe\", bebe)\n", 
+    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\nbebe=param.get_value(\"bebe\",call_function('creer_enfant', pere=papa, mere=maman, kingdom=kingdom))\nparam.set_value(\"bebe\", bebe)\n", 
     "slug": "coming_of_age", 
     "condition": "\n"
   }
@@ -2909,8 +2909,8 @@
     "category": null, 
     "name": "Backstab_compromission", 
     "weight": 1, 
-    "text": "Je me suis fait rod\u00e9 !\r\n\r\n\r\n    {{perte}} de loyaut\u00e9 !", 
-    "image": "", 
+    "text": "Mes agents ont lamentablement \u00e9chou\u00e9. Non seulement la r\u00e9putation de {{target}} n'a pas \u00e9t\u00e9 \r\ncompromise, mais {{target|feminize:\"le mis\u00e9rable,la garce}} a d\u00e9couvert nos intentions. La rumeur de ma duplicit\u00e9 s'est r\u00e9pandue parmi mes courtisans.\r\n\r\n    -{{perte}} de Loyaut\u00e9 pour toute la cour, \u00e0 l\u2019exception de vos complices.", 
+    "image": "events/755_3.jpg", 
     "on_fire": "\n", 
     "slug": "compromettre_big_failure", 
     "condition": "\n"
@@ -2977,12 +2977,26 @@
   "model": "event.event", 
   "fields": {
     "category": null, 
-    "name": "Une personne quitte votre cour", 
+    "name": "Une personne (ou plusieurs) quitte votre cour", 
     "weight": 1, 
     "text": "{{folksQuiPartent|folks_list}} ont quitt\u00e9 votre cour.", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "max_folks_atteint", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 267, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Mort naturelle", 
+    "weight": 1, 
+    "text": "{% if victime.sex == Folk.MALE %}\r\n{{victime}} est mort de mort naturelle \u00e0 l'\u00e2ge de {{victime.age}}.\r\n{% else %}\r\n{{victime}} est morte de mort naturelle \u00e0 l'\u00e2ge de {{victime.age}}.", 
+    "image": "", 
+    "on_fire": "victime = param.get_value('victime')\nvictime.die()\n", 
+    "slug": "mort_naturelle", 
     "condition": "\n"
   }
 },
@@ -5861,8 +5875,8 @@
   "pk": 333, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Oups !", 
-    "message": "", 
+    "text": "Enfer et damnation!", 
+    "message": "Ma tentative de comptomettre {{target}} s'est retourn\u00e9e contre moi. -{{perte}} de Loyaut\u00e9 pour toute ma cour, \u00e0 l\u2019exception de mes complices.", 
     "event": 260, 
     "condition": "\n", 
     "on_fire": "\n"
@@ -5974,6 +5988,17 @@
     "text": "OK", 
     "message": "", 
     "event": 197, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 345, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "OK", 
+    "message": "", 
+    "event": 267, 
     "condition": "\n", 
     "on_fire": "\n"
   }
