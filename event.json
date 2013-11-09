@@ -2881,8 +2881,8 @@
     "category": null, 
     "name": "Compromission r\u00e9ussie", 
     "weight": 1, 
-    "text": "{{compromis}} est bien compromis !", 
-    "image": "", 
+    "text": "{% if random <= 33 %}\r\nLa substance d\u00e9bilitante gliss\u00e9e dans le plat de {{target}} a fait effet au beau milieu du repas. {{target|feminize:\"Il,Elle\"}} s'est mi{{target|feminize:\"t,se\"}} \u00e0 bafouiller stupidement devant l'ensemble des convives, pouss\u00e9s jusqu'\u00e0 l'hilarit\u00e9 par mes complices. {{target|feminize:\"Il,Elle\"}} est sortit en boitant, sous une pluie de quolibets.\r\n{% elif random <= 66 %}Mes complices ont {% else %}une bourse d'\u00e9cus bien remplie, qui a \u00e9t\u00e9 partag\u00e9e entre les misereux.{% endif %}", 
+    "image": "events/463_3.jpg", 
     "on_fire": "\n", 
     "slug": "compromettre_success", 
     "condition": "\n"
@@ -3610,7 +3610,7 @@
     "message": "", 
     "event": 50, 
     "condition": " ", 
-    "on_fire": "param.pending_event.next_event(slug=\"tuto_scandale_fille_warning_3\").start()\n"
+    "on_fire": "param.pending_event.next_event(\"tuto_scandale_fille_warning_3\").start()\n"
   }
 },
 {
@@ -3654,7 +3654,7 @@
     "message": "J'ai fait savoir \u00e0 mon ami {{folk.3}} que ma fille n'\u00e9tait pas pour lui.", 
     "event": 68, 
     "condition": " ", 
-    "on_fire": " "
+    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_scandale_fantome\")"
   }
 },
 {

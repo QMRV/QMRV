@@ -106,10 +106,10 @@
     "incompatible_qualities": [
       2, 
       3, 
-      10, 
       15, 
       19, 
-      20
+      20, 
+      10
     ], 
     "slug": "timide", 
     "name": "Timide"
@@ -176,18 +176,18 @@
   "model": "kingdom.quality", 
   "fields": {
     "category": 2, 
-    "description": "Pour un rien, elle hausse le ton et frappe du poing sur la table.\r\n\r\n+1 en combat, -1 en diplomatie.", 
+    "description": "Pour un rien, il hausse le ton et frappe du poing sur la table.\r\n\r\n+1 en combat, -1 en diplomatie.", 
     "on_defect": "folk.fight-=1\nfolk.diplomacy+=1\nfolk.save()\n", 
     "female_description": "Elle s'emporte souvent et pour un rien.\r\n\r\n+1 en combat, -1 en diplomatie.", 
     "on_affect": "folk.fight+=1\nfolk.diplomacy-=1\nfolk.save()\n", 
-    "female_name": "Colerique", 
+    "female_name": "Col\u00e9rique", 
     "incompatible_qualities": [
       6, 
       13, 
       23
     ], 
     "slug": "colerique", 
-    "name": "Colerique"
+    "name": "Col\u00e9rique"
   }
 },
 {
@@ -235,8 +235,8 @@
     "on_affect": "folk.diplomacy+=2\nfolk.save()\n", 
     "female_name": "Courtoise", 
     "incompatible_qualities": [
-      10, 
       19, 
+      10, 
       32
     ], 
     "slug": "courtois", 
@@ -418,8 +418,8 @@
     "female_name": "Couarde", 
     "incompatible_qualities": [
       2, 
-      10, 
-      12
+      12, 
+      10
     ], 
     "slug": "couard", 
     "name": "Couard"
