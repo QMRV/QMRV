@@ -123,7 +123,7 @@
     "category": null, 
     "name": "Soif de gloire !", 
     "weight": 1, 
-    "text": "Pench\u00e9 sur ma table de travail, j\u2019\u00e9tudie cartes de la r\u00e9gion, missives diplomatiques rapports de mes espions. Il en semblerait qu\u2019un seigneur voisin de petite stature, {{kingdom.values.adversaire_tuto}}, ait ses greniers bien remplis. Si je pouvais trouver un pr\u00e9texte honorable pour l\u2019affronter, je pourrais \u00e0 la fois m\u2019imposer en tant que puissance militaire et remplir mes coffres.\r\n\r\n    Il est impossible d\u2019attaquer un autre seigneur sans un motif diplomatique (casus belli).\r\n    {% if not title.ambassadeur %}Un Ambassadeur pourra s'occuper des d\u00e9tails, ainsi qu'inviter davantage de nobles dans ma cour.{% endif %}", 
+    "text": "Pench\u00e9 sur ma table de travail, j\u2019\u00e9tudie cartes de la r\u00e9gion, missives diplomatiques rapports de mes espions. Il en semblerait qu\u2019un seigneur voisin de petite stature, {{kingdom.values.tuto_adversaire}}, ait ses greniers bien remplis. Si je pouvais trouver un pr\u00e9texte honorable pour l\u2019affronter, je pourrais \u00e0 la fois m\u2019imposer en tant que puissance militaire et remplir mes coffres.\r\n\r\n    Il est impossible d\u2019attaquer un autre seigneur sans un motif diplomatique (casus belli).\r\n    {% if not title.ambassadeur %}Un Ambassadeur pourra s'occuper des d\u00e9tails, ainsi qu'inviter davantage de nobles dans ma cour.{% endif %}", 
     "image": "events/900.jpg", 
     "on_fire": "kingdom.unlock_title(\"ambassadeur\")\n", 
     "slug": "tuto_ambition_3", 
@@ -333,9 +333,9 @@
     "category": null, 
     "name": "R\u00e9parer l'\u00e9glise", 
     "weight": 1, 
-    "text": "La messe termin\u00e9e, le p\u00e8re {{title.cure.first_name}} s'approche, un sourire bienveillant aux l\u00e8vres. Il me remercie \u00e0 nouveau pour mon patronage et m'affirme que les paysans seront reconnaissants de servir un seigneur qui a ainsi d\u00e9montr\u00e9 sa pi\u00e9t\u00e9. Il m'invite \u00e0 visiter son \u00e9glise aussi souvent que je le souhaite et me promet de venir officier au ch\u00e2teau si j'en ressens le besoin.\r\n\r\n    Vous \u00eates d\u00e9sormais le seigneur de 145 paysans et 5 soldats.", 
+    "text": "La messe termin\u00e9e, le p\u00e8re {{title.cure.first_name}} s'approche, un sourire bienveillant aux l\u00e8vres. Il me remercie \u00e0 nouveau pour mon patronage et m'affirme que les paysans seront reconnaissants de servir un seigneur qui a ainsi d\u00e9montr\u00e9 sa pi\u00e9t\u00e9. Il m'invite \u00e0 visiter son \u00e9glise aussi souvent que je le souhaite et me promet de venir officier au ch\u00e2teau si j'en ressens le besoin.\r\n\r\n    Vous \u00eates d\u00e9sormais le seigneur de 145 paysans.", 
     "image": "events/89_1.jpg", 
-    "on_fire": "kingdom.population=145\nkingdom.soldiers=5\nkingdom.set_value('total_soldats',5)\nkingdom.save()", 
+    "on_fire": "kingdom.population=145\nkingdom.save()", 
     "slug": "tuto_eglise_2", 
     "condition": " "
   }
@@ -445,7 +445,7 @@
     "category": null, 
     "name": "Escarmouche", 
     "weight": 1, 
-    "text": "La bataille \u00e9tait termin\u00e9e. Les corbeaux apparaissaient un \u00e0 un dans le ciel, poussant leurs cris affam\u00e9s sans parvenir \u00e0 couvrir le r\u00e2le des bless\u00e9s et des mourants. {{dynasty}} avait vaincu. Sur mes {{gagnant.troupes}} hommes d'arme, {{delta.gagnant.pertes_troupe}} \u00e9taient tomb\u00e9s l'arme \u00e0 la main, emportant avec eux {{delta.perdant.pertes_troupe}} ennemis vocif\u00e9rants et faisant fuir le reste.\r\n{% if delta.gagnant.morts|length >= 1 %}\r\nNous avions remport\u00e9 une victoire, mais \u00e0 quel prix? {{ delta.gagnant.morts|folks_list}} \r\n{% if delta.gagnant.morts|length == 1 %}\r\ngisait aux milieu des cadavres, serrant encore son \u00e9p\u00e9e.\r\n{% else %}\r\n\u00e9taient tomb\u00e9s sans que les n\u00f4tres ne puissent leur porter secours.\r\n{% endif %}\r\n{% endif %}\r\n{% if delta.gagnant.blesses|length >= 1 %}\r\n{{delta.gagnant.blesses|folks_list}} avai{{delta.gagnant.blesses|pluralize:\"t,ent\" }} \u00e9t\u00e9 bless\u00e9{{delta.gagnant.blesses|pluralize}} dans la bataille, et devrai{{delta.gagnant.blesses|pluralize:\"t,ent\" }} \u00eatre ramen\u00e9{{delta.gagnant.blesses|pluralize}} au ch\u00e2teau sur {{delta.gagnant.blesses|pluralize:\"une,des\"}} liti\u00e8re{{delta.gagnant.blesses|pluralize}}.\r\n{% endif %}\r\n{% if delta.perdant.morts|length >= 1 %}\r\nChez l'adversaire, {{ delta.perdant.morts|folks_list}} avai{{delta.perdant.morts|pluralize:\"t,ent\" }} \u00e9t\u00e9 terrass\u00e9.\r\n{% endif %} \r\n{% if delta.perdant.blesses|length >= 1 %}\r\n{% if delta.gagnant.morts|length >= 1 %}\r\nDe plus, {% else %} Chez l'adversaire, {% endif %} {{ delta.perdant.blesses|folks_list}} avai{{delta.perdant.blesses|pluralize:\"t,ent\" }} \u00e9t\u00e9 bless\u00e9{{delta.perdant.blesses|pluralize:\",s\" }} et garderai{{delta.perdant.blesses|pluralize:\"t,ent\" }} des cicatrice de cette bataille.\r\n{% endif %}\r\n\r\n{% if commandement.gagnant.chatelain %}\r\nChassant la fatigue qui me tenaillait, je rassemblai mes hommes valides pour{% elif commandement.gagnant.connetable %}\r\nSire {{commandement.gagnant.general}} essuya son \u00e9p\u00e9e, et cria aux hommes de se regrouper pour\r\n{% else %}\r\n{{commandement.gagnant.general}} entreprit de rallier les n\u00f4tres  pour \r\n{% endif %}\r\nproc\u00e9der au pillage de {{target_dynasty}}\r\n\r\n    +{{delta.gagnant.prestige}} de prestige pour {{dynasty}}, {{delta.perdant.prestige}} de prestige pour {{moi.dynastie_adverse}}\r\n    ", 
+    "text": "La bataille \u00e9tait termin\u00e9e. Les corbeaux apparaissaient un \u00e0 un dans le ciel, poussant leurs cris affam\u00e9s sans parvenir \u00e0 couvrir le r\u00e2le des bless\u00e9s et des mourants. {{dynasty}} avait vaincu. Sur mes {{gagnant.troupes}} hommes d'arme, {{delta.gagnant.pertes_troupe}} \u00e9taient tomb\u00e9s l'arme \u00e0 la main, emportant avec eux {{delta.perdant.pertes_troupe}} ennemis vocif\u00e9rants et faisant fuir le reste.\r\n{% if delta.gagnant.morts|length >= 1 %}\r\nNous avions remport\u00e9 une victoire, mais \u00e0 quel prix? {{ delta.gagnant.morts|folks_list}} \r\n{% if delta.gagnant.morts|length == 1 %}\r\ngisait aux milieu des cadavres, serrant encore son \u00e9p\u00e9e.\r\n{% else %}\r\n\u00e9taient tomb\u00e9s sans que les n\u00f4tres ne puissent leur porter secours.\r\n{% endif %}\r\n{% endif %}\r\n{% if delta.gagnant.blesses|length >= 1 %}\r\n{{delta.gagnant.blesses|folks_list}} avai{{delta.gagnant.blesses|pluralize:\"t,ent\" }} \u00e9t\u00e9 bless\u00e9{{delta.gagnant.blesses|pluralize}} dans la bataille, et devrai{{delta.gagnant.blesses|pluralize:\"t,ent\" }} \u00eatre ramen\u00e9{{delta.gagnant.blesses|pluralize}} au ch\u00e2teau sur {{delta.gagnant.blesses|pluralize:\"une,des\"}} liti\u00e8re{{delta.gagnant.blesses|pluralize}}.\r\n{% endif %}\r\n{% if delta.perdant.morts|length >= 1 %}\r\nChez l'adversaire, {{ delta.perdant.morts|folks_list}} avai{{delta.perdant.morts|pluralize:\"t,ent\" }} \u00e9t\u00e9 terrass\u00e9.\r\n{% endif %} \r\n{% if delta.perdant.blesses|length >= 1 %}\r\n{% if delta.gagnant.morts|length >= 1 %}\r\nDe plus, {% else %} Chez l'adversaire, {% endif %} {{ delta.perdant.blesses|folks_list}} avai{{delta.perdant.blesses|pluralize:\"t,ent\" }} \u00e9t\u00e9 bless\u00e9{{delta.perdant.blesses|pluralize:\",s\" }} et garderai{{delta.perdant.blesses|pluralize:\"t,ent\" }} des cicatrice de cette bataille.\r\n{% endif %}\r\n\r\n{% if commandement.gagnant.chatelain %}\r\nChassant la fatigue qui me tenaillait, je rassemblai mes hommes valides pour{% elif commandement.gagnant.connetable %}\r\nSire {{commandement.gagnant.general}} essuya son \u00e9p\u00e9e, et cria aux hommes de se regrouper pour\r\n{% else %}\r\n{{commandement.gagnant.general}} entreprit de rallier les n\u00f4tres  pour \r\n{% endif %}\r\nproc\u00e9der au pillage de {{target_dynasty}}\r\n\r\n    +{{delta.gagnant.prestige}} de prestige pour {{dynasty}}, {{delta.perdant.prestige}} de prestige pour {{dynasty}}\r\n    ", 
     "image": "events/10_1.jpg", 
     "on_fire": "\n", 
     "slug": "escarmouche_victoire_2", 
@@ -1859,9 +1859,9 @@
     "category": null, 
     "name": "Tuto bandits", 
     "weight": 1, 
-    "text": "La petite troupe a \u00e9t\u00e9 assembl\u00e9e \u00e0 la h\u00e2te, et \u00e9quip\u00e9e du peu d'\u00e9quipement disponible. Des paysans t\u00eatus, qui se sont port\u00e9s volontaire pour apprendre une le\u00e7on \u00e0 ces damn\u00e9s bandits. Ils manquent de discipline, mais je peux voir dans leurs yeux qu'ils ont la rage au ventre. Je me tien devant eux, v\u00eatu de mon armure, {{chevaliers|folks_list:\"short\"}} debout \u00e0 mes c\u00f4t\u00e9s. Je vais nommer l'un d'entre eux mon conn\u00e9table pour s'occuper des derniers pr\u00e9paratifs, puis je prendrai la t\u00eate de mes hommes pour aller \u00e9craser les hors la loi qui croient pouvoir sacquer nos terres.\r\n\r\n    Nouveau titre : Conn\u00e9table.\r\n    Nouvelle mission.", 
+    "text": "La petite troupe a \u00e9t\u00e9 assembl\u00e9e \u00e0 la h\u00e2te, et \u00e9quip\u00e9e du peu d'\u00e9quipement disponible. Des paysans t\u00eatus, qui se sont port\u00e9s volontaire pour apprendre une le\u00e7on \u00e0 ces damn\u00e9s bandits. Ils manquent de discipline, mais je peux voir dans leurs yeux qu'ils ont la rage au ventre. Je me tien devant eux, v\u00eatu de mon armure, {{chevaliers|folks_list:\"short\"}} debout \u00e0 mes c\u00f4t\u00e9s. Je vais nommer l'un d'entre eux mon conn\u00e9table pour s'occuper des derniers pr\u00e9paratifs, puis je prendrai la t\u00eate de mes hommes pour aller \u00e9craser les hors la loi qui croient pouvoir sacquer nos terres.\r\n\r\n    10 de vos paysans ont \u00e9t\u00e9 recrut\u00e9 en tant qu'hommes d'arme.\r\n    Nouveau titre : Conn\u00e9table.\r\n    Nouvelle mission.", 
     "image": "events/716_4.jpg", 
-    "on_fire": "chevaliers = folks.exclude(quality_set__name=\"pretre\", birth__gte= datetime.now() - timedelta(days=C.MAJORITE), sex=Folk.FEMALE)\nparam.set_value(\"chevaliers\", chevaliers)\n", 
+    "on_fire": "chevaliers = folks.exclude(quality_set__name=\"pretre\", birth__gte= datetime.now() - timedelta(days=C.MAJORITE), sex=Folk.FEMALE)\nparam.set_value(\"chevaliers\", chevaliers)\nkingdom.soldiers=10\nkingdom.set_value('total_soldats',10)\nkingdom.save()\n", 
     "slug": "tuto_bandits_preparatifs", 
     "condition": "\n"
   }
@@ -2279,7 +2279,7 @@
     "category": null, 
     "name": "Casus ", 
     "weight": 1, 
-    "text": "{{title.ambassadeur.first_name}}, mon ambassadeur, s'avance tout sourire. \"Bonne nouvelle, mon seigneur. Nos tractations diplomatiques ont port\u00e9 leurs fruits!! Nous pourrons bient\u00f4t justifier une attaque sur les terres du seigneur {{kingdom.values.tuto_PNJ}} aux yeux du reste du royaume \". J'opine, satisfait. \"Bon travail\".\r\n\r\n    Votre casus belli envers le seigneur {{kingdom.values.adversaire_tuto}} sera bient\u00f4t effectif. Pr\u00e9parez vos troupes.", 
+    "text": "{{title.ambassadeur.first_name}}, mon ambassadeur, s'avance tout sourire. \"Bonne nouvelle, mon seigneur. Nos tractations diplomatiques ont port\u00e9 leurs fruits!! Nous pourrons bient\u00f4t justifier une attaque sur les terres du seigneur {{kingdom.values.tuto_PNJ}} aux yeux du reste du royaume \". J'opine, satisfait. \"Bon travail\".\r\n\r\n    Votre casus belli envers le seigneur {{kingdom.values.tuto_adversaire}} sera bient\u00f4t effectif. Pr\u00e9parez vos troupes.", 
     "image": "events/464_5.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_casusbelli_success", 
@@ -2335,7 +2335,7 @@
     "category": null, 
     "name": "facheux", 
     "weight": 1, 
-    "text": "L'assembl\u00e9e retient son souffle alors que {{duelist_lessfight.first_name}} s'\u00e9lance brusquement sur son adversaire. L'attaque est par\u00e9e{% if ecart_fight <= 5 %} de justesse{% else %} sans difficult\u00e9{% endif %}. {{duelist_maxfight.first_name}} feinte, contre-attaque, et fait reculer {% if duelist_maxfight == folk.1 %}le chevalier{% else %}mon fils{% endif %} de quelques pas. Sans lui laisser un instant de r\u00e9pit, il avance, frappant de gauche et de droite. Le soleil du matin fait luire sa lame alors qu'elle trace un parfait arc de cercle et cueille {{duelist_lessfight.first_name}} \u00e0 l'\u00e9paule droite. Cris de douleur. A la vue du sang, ma fille {{folks.2.first_name}}{% if duelist_maxfight == folk.2 %} laisse \u00e9chapper sa joie.{% else %} cache son visage dans ses mains.{% endif %}", 
+    "text": "L'assembl\u00e9e retient son souffle alors que {{duelist_lessfight.first_name}} s'\u00e9lance brusquement sur son adversaire. L'attaque est par\u00e9e{% if ecart_fight <= 5 %} de justesse{% else %} sans difficult\u00e9{% endif %}. {{duelist_maxfight.first_name}} feinte, contre-attaque, et fait reculer {% if duelist_maxfight == folks.1 %}le chevalier{% else %}mon fils{% endif %} de quelques pas. Sans lui laisser un instant de r\u00e9pit, il avance, frappant de gauche et de droite. Le soleil du matin fait luire sa lame alors qu'elle trace un parfait arc de cercle et cueille {{duelist_lessfight.first_name}} \u00e0 l'\u00e9paule droite. Cris de douleur. A la vue du sang, ma fille {{folks.2.first_name}}{% if duelist_maxfight == folks.1 %} laisse \u00e9chapper sa joie.{% else %} cache son visage dans ses mains.{% endif %}", 
     "image": "events/716_8.jpg", 
     "on_fire": "fils = folks[1]\nfacheux = param.get_value(\"facheux\")\necart_fight = abs(fils.fight - facheux.fight)\nif fils.fight  > facheux.fight :\n  param.set_value(\"duelist_maxfight\", fils)\n  param.set_value(\"duelist_lessfight\", facheux)\nelse :\n  param.set_value(\"duelist_maxfight\", facheux)\n  param.set_value(\"duelist_lessfight\", fils)\n\n", 
     "slug": "tuto_facheux_duel_2", 
@@ -2377,7 +2377,7 @@
     "category": null, 
     "name": "facheux", 
     "weight": 1, 
-    "text": "{% if detourne %}\r\nGrognement. Sifflement d'un coup ascendant et  bruit humide  d'une lame qui  tranche  chairs et os. Silence de mort. Lorsque je regarde \u00e0 nouveau, je peux voir le chevalier  {{facheux.last_name}} surplombant mon fils qui g\u00eet sur le sol de la cour.\r\n{% else %}\r\nImpitoyable, le chevalier porte un puissant coup ascendant qui frappe mon fils en pleine poitrine, tranchant chair et os. Sans un cris, il s'effondre sur le sol de la cour. {{facheux}} se redresse de toute sa hauteur, le front en sueur.*\r\n{% endif %}\r\nSon \u00e9p\u00e9e d\u00e9gouline de sang, et les yeux qu'il tourne vers moi sont ivres de victoire. Il  me sourit, arrogant, et m'offre une parodie de r\u00e9v\u00e9rence. \u00c9chappant \u00e0 {{folks.3}}, ma fille se pr\u00e9cipite sur son fr\u00e8re, prenant son visage dans ses mains, les \u00e9paules secou\u00e9es de sanglots. Sire {{facheux.first_name}} l'ignore superbement. \"Sire, mon honneur et satisfait. Avec permission, je vais reprendre ma route. Il n'y a plus rien pour moi ici.", 
+    "text": "{% if detourne %}\r\nGrognement. Sifflement d'un coup ascendant et  bruit humide  d'une lame qui  tranche  chairs et os. Silence de mort. Lorsque je regarde \u00e0 nouveau, je peux voir le chevalier  {{facheux.last_name}} surplombant mon fils qui g\u00eet sur le sol de la cour.\r\n{% else %}\r\nImpitoyable, le chevalier porte un puissant coup ascendant qui frappe mon fils en pleine poitrine, tranchant chair et os. Sans un cris, il s'effondre sur le sol de la cour. {{facheux}} se redresse de toute sa hauteur, le front en sueur.*\r\n{% endif %}\r\nSon \u00e9p\u00e9e d\u00e9gouline de sang, et les yeux qu'il tourne vers moi sont ivres de victoire. Il  me sourit, arrogant, et m'offre une parodie de r\u00e9v\u00e9rence. \u00c9chappant \u00e0 {{folks.3}}, ma fille se pr\u00e9cipite sur son fr\u00e8re, prenant son visage dans ses mains, les \u00e9paules secou\u00e9es de sanglots. Sire {{facheux.first_name}} l'ignore superbement. \"Sire, mon honneur est satisfait. Avec permission, je vais reprendre ma route. Il n'y a plus rien pour moi ici.", 
     "image": "events/716_11.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_facheux_duel_sonloose_2", 
@@ -2405,9 +2405,9 @@
     "category": null, 
     "name": "facheux", 
     "weight": 1, 
-    "text": "Le coup du chevalier reste suspendu dans les airs, et je peux sentir tous les regards point\u00e9s sur moi. \"Baissez votre arme, je vous l'ordonne!\" Une moue d\u00e9daigneuse sur le visage, je chevalier s\u2019ex\u00e9cute. Il se tourne lentement vers moi, et crache par  terre. Sans un mot de plus, il s'\u00e9loigne d'un pas furieux. {{folk.2.first_name}} se pr\u00e9cipite aux cot\u00e9s de son fr\u00e8re, et le  serre fort dans ses bras. Je croise le regard d\u00e9pit\u00e9 de mon fils avant qu'il ne baisse  les  yeux, le  visage tordu par la honte. J'apprendrai plus tard, sans surprise, que {{facheux}} a quitt\u00e9 ma cour pour ne jamais revenir.\r\n\r\n   {% if duelist_lessfight == folk1 %}-15{% else %}-5{% endif %} de Loyaut\u00e9 pour {{courtisans|list}}. {{folk.1}} re\u00e7oit le Trait Amer.", 
+    "text": "Le coup du chevalier reste suspendu dans les airs, et je peux sentir tous les regards point\u00e9s sur moi. \"Baissez votre arme, je vous l'ordonne!\" Une moue d\u00e9daigneuse sur le visage, je chevalier s\u2019ex\u00e9cute. Il se tourne lentement vers moi, et crache par  terre. Sans un mot de plus, il s'\u00e9loigne d'un pas furieux. {{folks.2.first_name}} se pr\u00e9cipite aux cot\u00e9s de son fr\u00e8re, et le  serre fort dans ses bras. Je croise le regard d\u00e9pit\u00e9 de mon fils avant qu'il ne baisse  les  yeux, le  visage tordu par la honte. J'apprendrai plus tard, sans surprise, que {{facheux}} a quitt\u00e9 ma cour pour ne jamais revenir.\r\n\r\n   {% if duelist_lessfight == folks.1 %}-15{% else %}-5{% endif %} de Loyaut\u00e9 tous vos courtisans except\u00e9 vos enfants. {{folks.1}} re\u00e7oit le Trait Amer.", 
     "image": "events/716_12.jpg", 
-    "on_fire": "courtisants = folks\ncourtisants.remove(folks[0])\ncourtisants.remove(folks[1])\ncourtisants.remove(folks[2])\n", 
+    "on_fire": "if param.get_value(\"duelist_lessfight\") == folks[1]:\n  f(\"perte_loyaute_general\", kingdom=kingdom, perte_min=15, perte_max=15)\nelse :\n  f(\"perte_loyaute_general\", kingdom=kingdom, perte_min=5, perte_max=5)\nfolks[1].add_quality(\"amer\")\n", 
     "slug": "tuto_facheux_duel_interrupt", 
     "condition": "\n"
   }
@@ -2433,7 +2433,7 @@
     "category": null, 
     "name": "Premi\u00e8re escarmouche", 
     "weight": 1, 
-    "text": "Le petit bataillon a atteint les terres du seigneur {%if tuto%}  {{tuto_adversaire}} {%else%} {% if attaque and  is_victory %}{{commandement.perdant.general}} {% else %} {{commandement.gagnant.general}} {% endif %} {% endif %}\u00e0 la tomb\u00e9e de la nuit, profitant  de l'obscurit\u00e9 pour traverser la rivi\u00e8re glac\u00e9e sans attirer l'attention des sentinelles. Rassembl\u00e9s autour de leurs maigres feux de camp, les hommes ont dormi quelques heures avant d'\u00eatre r\u00e9veill\u00e9s par leurs officiers. Il se sont mis rapidement en formation, leurs mains crisp\u00e9es sur leurs armes. \r\n{% if chatelain_in_mission_attaquant %}Levant bien haut mon \u00e9p\u00e9e, j'ai\r\n{% elif connetable_in_mission_attaquant %}Le soleil du matin brillant sur son heaume sire{\r\n{title.Conn\u00e9table}} a\r\n{% else %}dD'une d\u00e9marche martiale sire {% if attaque and  is_victory %}{{commandement.gagnant.general}} {% else %} {{commandement.perdant.general}} {% endif %} a{% endif %}\r\n march\u00e9 devant eux et d\u00e9clar\u00e9 d'une voix forte que l'ennemi avait \u00e9t\u00e9 rep\u00e9r\u00e9 \u00e0 quelques lieues d'ici et que le combat \u00e9tait imminent. Apr\u00e8s un discours bref mais plein de morgue les soldats ont cri\u00e9 mon nom \u00e0 pleins poumons et se sont mis en mouvement.", 
+    "text": "Le petit bataillon a atteint les terres du seigneur {%if tuto%}  {{kingdom.values.tuto_adversaire}} {%else%} {% if attaque and  is_victory %}{{commandement.perdant.general}} {% else %} {{commandement.gagnant.general}} {% endif %} {% endif %}\u00e0 la tomb\u00e9e de la nuit, profitant  de l'obscurit\u00e9 pour traverser la rivi\u00e8re glac\u00e9e sans attirer l'attention des sentinelles. Rassembl\u00e9s autour de leurs maigres feux de camp, les hommes ont dormi quelques heures avant d'\u00eatre r\u00e9veill\u00e9s par leurs officiers. Il se sont mis rapidement en formation, leurs mains crisp\u00e9es sur leurs armes. \r\n{% if chatelain_in_mission_attaquant %}Levant bien haut mon \u00e9p\u00e9e, j'ai\r\n{% elif connetable_in_mission_attaquant %}Le soleil du matin brillant sur son heaume sire{\r\n{title.Conn\u00e9table}} a\r\n{% else %}D'une d\u00e9marche martiale sire {% if attaque and  is_victory %}{{commandement.gagnant.general}} {% else %} {{commandement.perdant.general}} {% endif %} a{% endif %}\r\n march\u00e9 devant eux et d\u00e9clar\u00e9 d'une voix forte que l'ennemi avait \u00e9t\u00e9 rep\u00e9r\u00e9 \u00e0 quelques lieues d'ici et que le combat \u00e9tait imminent. Apr\u00e8s un discours bref mais plein de morgue les soldats ont cri\u00e9 mon nom \u00e0 pleins poumons et se sont mis en mouvement.", 
     "image": "events/117_3.jpg", 
     "on_fire": "kingdom.set_value(\"tuto_firstbattle_attack\",True)", 
     "slug": "tuto_firstbattle_attack", 
@@ -3174,7 +3174,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Je vais mettre mes meilleurs diplomates sur le coup.", 
-    "message": "Les r\u00e9parations de {{dynasty}} sont termin\u00e9es et il est temps de r\u00e9fl\u00e9chir \u00e0 s'agrandir. Je vais charger mes diplomates de [justifier diplomatiquement](#mission) une attaque sur notre voisin, le seigneur {{kingdom.values.adversaire_tuto}}.\r\n\r\n{% if not title.ambassadeur %}Je peux maintenant nommer un ambassadeur pour s'occuper des d\u00e9tails et faire venir des suivants \u00e0 {{dynasty}}{% endif %}", 
+    "message": "Les r\u00e9parations de {{dynasty}} sont termin\u00e9es et il est temps de r\u00e9fl\u00e9chir \u00e0 s'agrandir. Je vais charger mes diplomates de [justifier diplomatiquement](#mission) une attaque sur notre voisin, le seigneur {{kingdom.values.tuto_adversaire}}.\r\n\r\n{% if not title.ambassadeur %}Je peux maintenant nommer un ambassadeur pour s'occuper des d\u00e9tails et faire venir des suivants \u00e0 {{dynasty}}{% endif %}", 
     "event": 11, 
     "condition": "\n", 
     "on_fire": "kingdom.create_pending_mission(\"tuto_claim\")\n"
@@ -5066,7 +5066,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Ordonner le retour au ch\u00e2teau.", 
-    "message": "J'ai vaincu les bandits. {{pertes}} de mes hommes d'armes sont tomb\u00e9s {% if intrepide %}mais {{combattant}} s'est illustr\u00e9 dans la bataille.    Gagne le Trait Intrepide.{% else %}et {{combattant}} a \u00e9t\u00e9 bless\u00e9 dans la bataille.{% endif %}", 
+    "message": "J'ai vaincu les bandits. {{pertes}} de mes hommes d'armes sont tomb\u00e9s {% if intrepide %}mais {{combattant}} s'est illustr\u00e9 dans la bataille.  Il gagne le Trait Intrepide.{% else %}et {{combattant}} a \u00e9t\u00e9 bless\u00e9 dans la bataille.{% endif %}", 
     "event": 171, 
     "condition": "\n", 
     "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_bandits_fantome\")"
@@ -5475,7 +5475,7 @@
     "text": "\"ASSEZ\" Faisant fi des r\u00e8gles du duel, j'avance d'un pas et pointe un doigt furieux sur sire {{facheux.first_name}}. \"Chevalier {{facheux.last_name}}, vous avez vers\u00e9 le premier sang. Cela devra vous suffire!\"", 
     "message": "", 
     "event": 212, 
-    "condition": "if param.get_value(\"duelist_lessfight\") == folks[1]:\n  stop(\"error\")\n", 
+    "condition": "if param.get_value(\"duelist_lessfight\") == param.get_value(\"facheux\"):\n  stop(\"error\")\n", 
     "on_fire": "param.set_value(\"detourne\", True)\nparam.next_event(\"tuto_facheux_duel_interrupt\").start()"
   }
 },
@@ -5516,8 +5516,8 @@
   "pk": 286, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Si seulement {{folk.1.first_name}} avait \u00e9t\u00e9 raisonnable...", 
-    "message": "Mon fils a perdu son duel contre {{facheux}}. Le chevalier a quitt\u00e9 ma court.\r\n ```{% if duelist_lessfight == folk1 %}-15{% else %}-5{% endif %} de Loyaut\u00e9 pour {{courtisans|list}}. {{folk.1}} re\u00e7oit le Trait Amer.```", 
+    "text": "Si seulement {{folks.1.first_name}} avait \u00e9t\u00e9 raisonnable...", 
+    "message": "Mon fils a perdu son duel contre {{facheux}}. Le chevalier a quitt\u00e9 ma court.\r\n ```{% if duelist_lessfight == folk1 %}-15{% else %}-5{% endif %} de Loyaut\u00e9 tous vos courtisans except\u00e9 vos enfants. {{folks.1}} re\u00e7oit le Trait Amer.```", 
     "event": 215, 
     "condition": "\n", 
     "on_fire": "\n"
@@ -5527,8 +5527,8 @@
   "pk": 287, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Si seulement {{folk.1.first_name}} s'\u00e9tait battu comme un homme....", 
-    "message": "", 
+    "text": "Si seulement {{folks.1.first_name}} s'\u00e9tait battu comme un homme....", 
+    "message": "Mon fils a perdu son duel contre {{facheux}}. Le chevalier a quitt\u00e9 ma court.\r\n ```{% if duelist_lessfight == folk1 %}-15{% else %}-5{% endif %} de Loyaut\u00e9 pour {{courtisans|list}}. {{folks.1}} re\u00e7oit le Trait Amer.```", 
     "event": 215, 
     "condition": "\n", 
     "on_fire": "\n"
@@ -5541,7 +5541,7 @@
     "text": "\"ASSEZ!\" Faisant fi des r\u00e8gles du duel, j'avance d'un pas et pointe un doigt furieux sur sire {{facheux.first_name}}. \"Chevalier {{facheux.last_name}}, mon fils a vers\u00e9 le premier sang. Je le d\u00e9clare vainqueur de ce duel !\"", 
     "message": "", 
     "event": 212, 
-    "condition": "if param.get_value(\"duelist_lessfight\") == param.get_value(\"facheux\"):\n  stop(\"error\")\n", 
+    "condition": "if param.get_value(\"duelist_lessfight\") == folks[1]:\n  stop(\"error\")\n", 
     "on_fire": "\n"
   }
 },

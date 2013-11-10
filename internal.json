@@ -7,7 +7,7 @@
     "description": "Initialise les comptes", 
     "prestige_threshold": 0, 
     "fired": [
-      124, 
+      131, 
       128, 
       130, 
       127, 
@@ -1395,7 +1395,7 @@
   "model": "internal.constant", 
   "fields": {
     "name": "MIN_FOLK", 
-    "value": 1, 
+    "value": 10, 
     "description": "Nombre minimum de folk qu'un joueur peu avoir quelque soit son prestige"
   }
 },
@@ -1629,14 +1629,6 @@
   "model": "internal.firstname", 
   "fields": {
     "name": "Arthaud", 
-    "sex": "m"
-  }
-},
-{
-  "pk": 16, 
-  "model": "internal.firstname", 
-  "fields": {
-    "name": "Arthur\u00a0", 
     "sex": "m"
   }
 },
