@@ -837,7 +837,7 @@
     "category": null, 
     "name": "Getaffront diplomatie", 
     "weight": 1, 
-    "text": "{{title.ambassadeur}} m\u2019annonce qu\u2019il est parvenu a justifier diplomatiquement une agression de notre part contre {{target_chatelain}}. Un affront \u00e0 moiti\u00e9 invent\u00e9 et au trois-quarts exag\u00e9r\u00e9, mais qui emp\u00eachera quiconque de nous reprocher d\u2019essayer de \u201claver\u201d notre nom.\r\n```\r\n{{dynasty}} revendique un *affront* de la part de {{target}}.\r\n```", 
+    "text": "{{title.ambassadeur}} m\u2019annonce qu\u2019il est parvenu a justifier diplomatiquement une agression de notre part contre {{target_chatelain}}. Un affront \u00e0 moiti\u00e9 invent\u00e9 et au trois-quarts exag\u00e9r\u00e9, mais qui emp\u00eachera quiconque de nous reprocher d\u2019essayer de \u201claver\u201d notre nom.\r\n\r\n    {{dynasty}} revendique un *Cassus belli* de la part de {{target}}.\r\n", 
     "image": "events/76.jpg", 
     "on_fire": "param.set_value(\"target_chatelain\", target.get_folk_in_title(\"chatelain\"))\nparam.set_value(\"target\", target.user.username)\n", 
     "slug": "getaffront_diplomatie_kingdomsuccess", 
@@ -1341,7 +1341,7 @@
     "category": null, 
     "name": "getaffront target", 
     "weight": 1, 
-    "text": " ", 
+    "text": "Les Fouines ! {{attaquant.user.username}} m'en veux. Il pr\u00e9tend que je lui fait ombrage sous un pr\u00e9texte fallacieux. Je vais devoir agir rapidement.", 
     "image": "", 
     "on_fire": " ", 
     "slug": "getaffront_diplomatie_targetsuccess", 
@@ -1917,7 +1917,7 @@
     "weight": 1, 
     "text": " ", 
     "image": "", 
-    "on_fire": "facheux = folks.filter(sex=Folk.MALE, birth__lte=datetime.now()-timedelta(days=C.MAJORITE))\nfacheux = facheux.exclude(id__in=[folks[0].id, folks[1].id, folks[3].id])\nfacheux = facheux.exclude(quality_set__slug=\"pretre\")\nfacheux = facheux.order_by('?')\nif not facheux:\n  \n  kingdom.start_pending_event(\"tuto_facheux_chevalier\")\n  \n  \nelse:\n  param.set_value(\"facheux\", facheux[0])\n  param.next_event(\"tuto_facheux\").start()\n\nstop(S.GHOST_EVENT)\n", 
+    "on_fire": "facheux = folks.filter(sex=Folk.MALE, birth__lte=datetime.now()-timedelta(days=C.MAJORITE))\nfacheux = facheux.exclude(id__in=[folks[0].id, folks[1].id, folks[3].id])\nfacheux = facheux.exclude(quality_set__slug=\"pretre\")\nfacheux = facheux.exclude(disabled=True)\nfacheux = facheux.order_by('?')\nif not facheux:\n  \n  kingdom.start_pending_event(\"tuto_facheux_chevalier\")\n  \n  \nelse:\n  param.set_value(\"facheux\", facheux[0])\n  param.next_event(\"tuto_facheux\").start()\n\nstop(S.GHOST_EVENT)\n", 
     "slug": "tuto_facheux_fantome", 
     "condition": "\n"
   }
@@ -2993,8 +2993,8 @@
     "category": null, 
     "name": "Mariage diplomatique", 
     "weight": 1, 
-    "text": "Je les ai convoqu\u00e9 dans mes appartements ; mon fils {{folks.1.first_name}}, ma fille {{folks.2.first_name}}{% if soeurette %}, ma s\u0153ur {{kingdom.values.soeurette.first_name}}{% endif %} et mon fid\u00e8le {{folks.3.first_name}}. Nous entrons imm\u00e9diatement dans le vif du sujet.\r\n\r\n\"En affrontant le seigneur {{kingdom.values.tuto_dynasty_PNJ}}, nous avons prouv\u00e9 que {{dynasty}} n\u2019\u00e9tait pas une proie facile. Le conflit, cependant, nous coute cher. Je pense qu\u2019il est temps d\u2019y mettre fin, de n\u00e9gocier une paix pendant que nous avons l\u2019avantage.\"\r\n\r\nIl peuvent sentir que je p\u00e8se chacun de mes mots.\r\n\r\n\"La seule mani\u00e8re d\u2019obtenir une alliance durable est d\u2019unir nos familles par le sang. {{kingdom.values.tuto_adversaire}} comme sa prog\u00e9niture sont dans le c\u00e9libat. Il saura que nous sommes s\u00e9rieux si nous lui proposons non pas un mais deux mariages... Je dois accueillir un de ses enfants dans ma cour, et il doit faire de m\u00eame.\"\r\n\r\nMon fils se racle la gorge.\r\n\r\n\"Un \u00e9change d\u2019otage, en somme.\"\r\n\r\nJ\u2019opine.\r\n\r\n\"J\u2019ai longuement r\u00e9fl\u00e9chis \u00e0 la question\u2026\"\r\n\r\n     Marier votre fille \u00e0 une famille r\u00e9gnante vous coute une dot de 15 \u00e9cus mais vous rapporte 15 points de prestige.\r\n     \u00c9pouser une fille du seigneur {{kingdom.values.tuto_adversaire}} vous rapporte une dot de 15 \u00e9cus.'", 
-    "image": "events/361_11_1.jpg", 
+    "text": "Je les ai convoqu\u00e9 dans mes appartements ; mon fils {{folks.1.first_name}}, ma fille {{folks.2.first_name}}{% if soeurette %}, ma s\u0153ur {{kingdom.values.soeurette.first_name}}{% endif %} et mon fid\u00e8le {{folks.3.first_name}}. Nous entrons imm\u00e9diatement dans le vif du sujet.\r\n\r\n\"En affrontant le seigneur {{kingdom.values.tuto_dynasty_PNJ}}, nous avons prouv\u00e9 que {{dynasty}} n\u2019\u00e9tait pas une proie facile. Le conflit, cependant, nous coute cher. Je pense qu\u2019il est temps d\u2019y mettre fin, de n\u00e9gocier une paix pendant que nous avons l\u2019avantage.\"\r\n\r\nIl peuvent sentir que je p\u00e8se chacun de mes mots.\r\n\r\n\"La seule mani\u00e8re d\u2019obtenir une alliance durable est d\u2019unir nos familles par le sang. {{kingdom.values.tuto_adversaire}} et sa prog\u00e9niture sont dans le c\u00e9libat. Il saura que nous sommes s\u00e9rieux si nous lui proposons non pas un mais deux mariages... Chacun de nous doit accueillir un membre de la famille de l'autre dans sa cour.\"\r\n\r\nMon fils se racle la gorge.\r\n\r\n\"Un \u00e9change d\u2019otage, en somme.\"\r\n\r\nJ\u2019opine.\r\n\r\n\"J\u2019ai longuement r\u00e9fl\u00e9chis \u00e0 la question\u2026\"\r\n\r\n     Marier votre fille \u00e0 une famille r\u00e9gnante vous coute une dot de 15 \u00e9cus mais vous rapporte 15 points de prestige.\r\n     \u00c9pouser une fille du seigneur {{kingdom.values.tuto_adversaire}} vous rapporterait une dot de 15 \u00e9cus.'", 
+    "image": "events/451_4_1.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_ending", 
     "condition": "\n"
@@ -3008,7 +3008,7 @@
     "name": "ergersgzd", 
     "weight": 1, 
     "text": "\"Je\u2026 renoncer \u00e0 {{dynasty}}, p\u00e8re?\"\r\n\r\nMon fils accuse le coup. Le regard qu\u2019il me lance est bless\u00e9, {% if loyal %}d\u00e9sempar\u00e9{% else %}rageur{% endif %}, mais je le coupe avant qu\u2019il n'ai l'audace de protester.\r\n\r\n\"Tu accompliras ton devoir, mon fils. Pour l\u2019avenir de notre famille.\"\r\n\r\nJe me d\u00e9tourne, dissimulant au mieux mes propres \u00e9motions.\r\n\r\n\"En ce qui concerne le second mariage\u2026\"", 
-    "image": "events/361_11_2.jpg", 
+    "image": "events/451_4_11.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_ending_fils", 
     "condition": "\n"
@@ -3022,7 +3022,7 @@
     "name": "sdeyhkr", 
     "weight": 1, 
     "text": "Sans un mot, elle d\u00e9tourne le regard. Dissimulant au mieux mes propres sentiments, je poursuis.\r\n\r\n\"Quant au second mariage\u2026\"", 
-    "image": "events/361_11_3.jpg", 
+    "image": "events/451_4_4.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_ending_femme", 
     "condition": "\n"
@@ -3036,7 +3036,7 @@
     "name": "uietyiyt", 
     "weight": 1, 
     "text": "Un silence prolong\u00e9, que mon fid\u00e8le {{folks.3}} rompt d\u2019un ton mesur\u00e9.\r\n\r\n\"A laquelle des deux filles allez-vous vous unir, mon seigneur ?\"", 
-    "image": "events/361_11_4.jpg", 
+    "image": "events/451_4_3.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_ending_chatelain", 
     "condition": "\n"
@@ -3050,7 +3050,7 @@
     "name": "tuto_diplomacy_ending_2", 
     "weight": 1, 
     "text": "\"{{title.ambassadeur}} sera mon ambassadeur dans cette affaire. Il rencontrera d\u00e8s demain l\u2019\u00e9missaire de {{kingdom.values.tuto_PNJ}} et lui soumettra notre offre. Ce conflit leur pr\u00e9l\u00e8ve un lourd tribut, et ils ont autant que nous \u00e0 gagner dans une union de nos lign\u00e9es. Ils accepteront.\"\r\n\r\nNotre entretien \u00e9tant termin\u00e9, ils se l\u00e8vent et se dirigent vers la porte, chacun pesant \u00e0 sa mani\u00e8re la port\u00e9e de ma d\u00e9cision. {{spouse1}}, {{spouse1|feminize:\"le dernier,la derni\u00e8re\"}} debout, s'approche de moi.\r\n\r\n{% if spouse1 == soeurette %}\"Nous devons parler.\"{% else %}\"P\u00e8re, pouvons nous parler en priv\u00e9?\"{% endif %}", 
-    "image": "events/361_11_5.jpg", 
+    "image": "events/451_4_2.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_ending_2", 
     "condition": "\n"
@@ -3064,7 +3064,7 @@
     "name": "tuto_diplomacy_lastchat_soeurette", 
     "weight": 1, 
     "text": "Elle se tient tr\u00e8s droite, les l\u00e8vres pinc\u00e9es et le regard dans le vide.\r\n\r\n\"Ma place n'est pas de contester votre d\u00e9cision, mon fr\u00e8re. Je ferai mon devoir, pour {{dynasty}}. Cependant...\"\r\n\r\nElle tourne vers moi un visage sombre.\r\n\r\n\"Quels sont vos projets concernant mes enfants?\"", 
-    "image": "events/361_11_6.jpg", 
+    "image": "events/451_4_7.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_lastchat_soeurette", 
     "condition": "\n"
@@ -3092,7 +3092,7 @@
     "name": "tuto_diplomacy_lastchat_soeurette_2", 
     "weight": 1, 
     "text": "{{soeurette.first_name}} reste de marbre, mais sa voix est glaciale.\r\n\r\n\"Je vois. Le futur {{title.chatelain.last_name}} n'est pas pour eux, n'est-ce pas?\"\r\n\r\nJe me contente de soutenir son regard, le menton pos\u00e9 sur mon poing. Elle se l\u00e8ve avec brusquesse, et sort en claquant la porte. \r\n\r\nEnfin seul, je soupire et me sert un verre de vin.", 
-    "image": "", 
+    "image": "events/451_4_8.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_lastchat_soeurette_2", 
     "condition": "\n"
@@ -3106,7 +3106,7 @@
     "name": "tuto_diplomacy_lastchat_soeurette_3", 
     "weight": 1, 
     "text": "{{soeurette.first_name}} d\u00e9glutit avec difficult\u00e9.\r\n\r\n\"Je...\"\r\n\r\nElle se l\u00e8ve lentement, les yeux ferm\u00e9.\r\n\r\n\"Je ferai mieux d'aller leur parler.\"\r\n\r\nUne fois ma s\u0153ur sortie, je soupire et me sers un verre de vin.", 
-    "image": "events/361_11_7.jpg", 
+    "image": "events/451_4_9.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_lastchat_soeurette_3", 
     "condition": "\n"
@@ -3133,8 +3133,8 @@
     "category": null, 
     "name": "tuto_diplomacy_lastchat_soeurette_4", 
     "weight": 1, 
-    "text": "Je crois lire une pointe de gratitude dans sa mine affect\u00e9e.\r\n\r\n{% if mioche.sex == 'm' %}\r\n\"{{chiard}} est trop jeune pour quitter sa m\u00e8re, mais {{mioche}} devrait rester \u00e0 {{dynasty}}. Je sens qu'il peut faire beaucoup pour notre famille.\"\r\n{% else %}\r\n\"{{chiard}} est trop jeune pour un tel voyage, mais {{mioche}} devrait me suivre \u00e0 {{tuto_PNJ}}.\"\r\n\r\nNerveuse, elle attend ma r\u00e9ponse.", 
-    "image": "", 
+    "text": "Je crois lire une pointe de gratitude dans sa mine affect\u00e9e.\r\n\r\n{% if mioche.sex == 'm' %}\r\n\"{{chiard}} est trop jeune pour quitter sa m\u00e8re, mais {{mioche}} devrait rester \u00e0 {{dynasty}}. Je sens qu'il peut faire beaucoup pour notre famille.\"\r\n{% else %}\r\n\"{{chiard}} est trop jeune pour un tel voyage, mais {{mioche}} devrait me suivre \u00e0 {{kingdom.values.tuto_PNJ}}.\"{% endif %}\r\n\r\nNerveuse, elle attend ma r\u00e9ponse.", 
+    "image": "events/451_4_12.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_lastchat_soeurette_4", 
     "condition": "\n"
@@ -3148,7 +3148,7 @@
     "name": "tuto_diplomacy_lastchat_soeurette_5", 
     "weight": 1, 
     "text": "{% if soeurette.loyalty <= 80 %}{{soeurette.first_name}} me sourit, et m'offre un bref hochement de t\u00eate.\r\n\r\n\"Merci, mon fr\u00e8re.\"\r\n{% else %}\r\n{{soeurette.first_name}}me sourit. En marchant vers la porte, elle s'arr\u00eate et pose une main affectueuse sur mon \u00e9paule.\r\n\r\n\"Merci. Vous me manquerez, mon fr\u00e8re.\"{% endif %}\r\n\r\nJ'attends qu'elle ait quitt\u00e9 la chambre pour me servir un verre de vin.", 
-    "image": "", 
+    "image": "events/451_4_10.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_lastchat_soeurette_5", 
     "condition": "\n"
@@ -3161,10 +3161,24 @@
     "category": null, 
     "name": "tuto_diplomacy_lastchat_fils", 
     "weight": 1, 
-    "text": "{% if folks.1.loyalty <= 80 %}\r\nIl est furieux, crisp\u00e9 sur sa chaise. Le jeune effront\u00e9 me d\u00e9fie du regard, alors que j'attends patiemment qu'il se d\u00e9cide \u00e0 prendre la parole.\r\n\r\n\"D\u00eetes moi la v\u00e9rit\u00e9, p\u00e8re. M'avez-vous jamais consid\u00e9r\u00e9 comme votre h\u00e9ritier?\"\r\n\r\nSa voix est charg\u00e9e d'amertume.\r\n{% else %}\r\n{{folks.1.first_name}} est assis sur sa chaise, tendu. Je peux lire la peine et la d\u00e9ception sur son visage.\r\n\r\n\"P\u00e8re... je... pourquoi? Ne suis-je pas votre h\u00e9ritier?\"{% endif %}", 
-    "image": "", 
+    "text": "{% if folks.1.loyalty <= 80 %}\r\nIl est furieux, crisp\u00e9 sur sa chaise. Le jeune effront\u00e9 me d\u00e9fie du regard, alors que j'attends patiemment qu'il se d\u00e9cide \u00e0 prendre la parole.\r\n\r\n\"D\u00eetes moi la v\u00e9rit\u00e9, p\u00e8re. M'avez-vous jamais consid\u00e9r\u00e9 comme votre h\u00e9ritier?\"\r\n\r\nSa voix est charg\u00e9e d'amertume.\r\n{% else %}\r\n{{folks.1.first_name}} est assis sur sa chaise, tendu. Je peux lire le d\u00e9sarrois sur son visage.\r\n\r\n\"P\u00e8re... je... pourquoi? Ne suis-je pas votre h\u00e9ritier?\"{% endif %}'", 
+    "image": "events/451_4_5.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_lastchat_fils", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 283, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "tuto_diplomacy_lastchat_fils_2", 
+    "weight": 1, 
+    "text": "{% if folks.1.loyalty <= 80 %}\r\nIl serre les dents et les poings et je crois pendant un instant  qu'il va lancer une remarque acerbe. A la place, il se l\u00e8ve brusquement, renversant sa chaise, et quitte ma chambre d'un pas furieux. Porte qui claque.\r\n{% else %}Il secoue doucement la t\u00eate, d\u00e9\u00e7u et d\u00e9sempar\u00e9. Sans un mot, il se l\u00e8ve de sa chaise et marche vers la porte. {% endif %}\r\n\r\nLorsque l'\u00e9cho de ses pas meurt dans les couloirs, je soupire et me serre un verre de vin.", 
+    "image": "events/451_4_6.jpg", 
+    "on_fire": "\n", 
+    "slug": "tuto_diplomacy_lastchat_fils_2", 
     "condition": "\n"
   }
 },
@@ -4936,7 +4950,7 @@
     "message": "", 
     "event": 154, 
     "condition": "\n", 
-    "on_fire": "param.set_value(\"come_from\", 2)\n#param.next_event(\"tuto_facheux_3\").start()\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_3\")\npe.start()"
+    "on_fire": "param.set_value(\"come_from\", 2)\nparam.next_event(\"tuto_facheux_3\").start()"
   }
 },
 {
@@ -5024,7 +5038,7 @@
     "message": "Mon fils {{folks.1.first_name}} et le {{facheux}} sont \u00e0 couteaux tir\u00e9s. Je pourrais regler le probl\u00e8me en [d\u00e9barassant](mission) ma cour du chevalier.", 
     "event": 157, 
     "condition": "\n", 
-    "on_fire": "come_from = param.get_value(\"come_from\")\nif come_from == 5:\n  #param.next_event(\"tuto_facheux_5\").start()\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_facheux_5\")\n  pe.start()\nelse:\n  param.pending_event.next_event(\"tuto_facheux_7\").start()\n\nif kingdom.get_folk_in_title(\"maitre_espion\") is None:\n  kingdom.unlock_title(\"maitre_espion\")\n"
+    "on_fire": "come_from = param.get_value(\"come_from\")\nif come_from != 5:\n  #param.next_event(\"tuto_facheux_5\").start()\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_facheux_5\")\n  pe.start()\nelse:\n  #param.pending_event.next_event(\"tuto_facheux_7\").start()\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_facheux_7\")\n  pe.start()\n\nif kingdom.get_folk_in_title(\"maitre_espion\") is None:\n  kingdom.unlock_title(\"maitre_espion\")\nkingdom.unlock_mission(\"compromettre\")\n"
   }
 },
 {
@@ -5035,7 +5049,7 @@
     "message": "Mon fils {{folks.1.first_name}} et le {{facheux}} sont \u00e0 couteaux tir\u00e9s. Je pourrais r\u00e9gler le probl\u00e8me en [d\u00e9barrassant](mission) ma cour du chevalier.", 
     "event": 157, 
     "condition": "\n", 
-    "on_fire": "if kingdom.get_folk_in_title(\"maitre_espion\") is None:\n  kingdom.unlock_title(\"maitre_espion\")\n  \nkingdom.unlock_mission(\"compromettre\")\n\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")\n"
+    "on_fire": "come_from = param.get_value(\"come_from\")\nif come_from != 5:\n  #param.next_event(\"tuto_facheux_5\").start()\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_facheux_5\")\n  pe.start()\nelse:\n  #param.pending_event.next_event(\"tuto_facheux_7\").start()\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_facheux_7\")\n  pe.start()\n\nif kingdom.get_folk_in_title(\"maitre_espion\") is None:\n  kingdom.unlock_title(\"maitre_espion\")\n\nkingdom.unlock_mission(\"compromettre\")\n"
   }
 },
 {
@@ -5662,7 +5676,7 @@
     "message": "", 
     "event": 158, 
     "condition": "if param.get_value(\"come_from\") == 2:\n  stop(\"ce boutton n'apparait pas\")\n", 
-    "on_fire": "param.set_value(\"come_from\", 5)\nparam.next_event(\"tuto_facheux_7\").start()\n"
+    "on_fire": "param.set_value(\"come_from\", 5)\n#param.next_event(\"tuto_facheux_7\").start()\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_facheux_7\")\npe.start()\n"
   }
 },
 {
@@ -6175,7 +6189,7 @@
   "pk": 347, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\"\u2026{{folks.2.first_name}}, ma fille, je vais offrir ta main \u00e0 {{kingdom.values.'tuto_adversaire}}.\"", 
+    "text": "\"\u2026{{folks.2.first_name}}, ma fille, je vais offrir ta main \u00e0 {{kingdom.values.tuto_adversaire}}.\"", 
     "message": "", 
     "event": 268, 
     "condition": "\n", 
@@ -6186,7 +6200,7 @@
   "pk": 348, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\"\u2026{{kingdom.values.soeurette.first_name}}, ma s\u0153ur, tu dois partir pour {{kingdom.values.tuto_PNJ}} et \u00e9pouserle seigneur des lieux.\"", 
+    "text": "\"\u2026{{soeurette.first_name}}, ma s\u0153ur, tu dois partir pour {{kingdom.values.tuto_PNJ}} et \u00e9pouserle seigneur des lieux.\"", 
     "message": "", 
     "event": 268, 
     "condition": "\n", 
@@ -6432,7 +6446,7 @@
     "message": "", 
     "event": 280, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_5\").start()"
+    "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_soeurette_5\").start()"
   }
 },
 {
@@ -6443,7 +6457,7 @@
     "message": "", 
     "event": 280, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_2\").start()"
+    "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_soeurette_2\").start()"
   }
 },
 {
@@ -6454,7 +6468,7 @@
     "message": "", 
     "event": 280, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_3\").start()"
+    "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_soeurette_3\").start()"
   }
 },
 {
@@ -6510,6 +6524,39 @@
     "event": 282, 
     "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_fils_4\").start()"
+  }
+},
+{
+  "pk": 381, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Il me pardonnera.", 
+    "message": "", 
+    "event": 283, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_diplomacy_mariage\").start()"
+  }
+},
+{
+  "pk": 382, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Qu'il aille au diable.", 
+    "message": "", 
+    "event": 283, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_diplomacy_mariage\").start()"
+  }
+},
+{
+  "pk": 383, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Salet\u00e9s de pr\u00e9tentieux aux dents longues", 
+    "message": "", 
+    "event": 126, 
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 }
 ]
