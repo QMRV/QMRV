@@ -2909,7 +2909,7 @@
     "category": null, 
     "name": "Backstab_compromission", 
     "weight": 1, 
-    "text": "Mes agents ont lamentablement \u00e9chou\u00e9. Non seulement la r\u00e9putation de {{target}} n'a pas \u00e9t\u00e9 \r\ncompromise, mais {{target|feminize:\"le mis\u00e9rable,la garce}} a d\u00e9couvert nos intentions. La rumeur de ma duplicit\u00e9 s'est r\u00e9pandue parmi mes courtisans.\r\n\r\n    -{{perte}} de Loyaut\u00e9 pour toute la cour, \u00e0 l\u2019exception de vos complices.", 
+    "text": "Mes agents ont lamentablement \u00e9chou\u00e9. Non seulement la r\u00e9putation de {{target}} n'a pas \u00e9t\u00e9 \r\ncompromise, mais {{target|feminize:\"le mis\u00e9rable,la garce\"}} a d\u00e9couvert nos intentions. La rumeur de ma duplicit\u00e9 s'est r\u00e9pandue parmi mes courtisans.\r\n\r\n    -{{perte}} de Loyaut\u00e9 pour toute la cour, \u00e0 l\u2019exception de vos complices.", 
     "image": "events/755_3.jpg", 
     "on_fire": "\n", 
     "slug": "compromettre_big_failure", 
