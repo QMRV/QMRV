@@ -623,9 +623,9 @@
   "fields": {
     "category": 4, 
     "description": "Doit \u00eatre soign\u00e9 au plus t\u00f4t.", 
-    "on_defect": " ", 
+    "on_defect": "folk.disabled=False\nfolk.save()\n", 
     "female_description": "Doit \u00eatre soign\u00e9e au plus t\u00f4t.", 
-    "on_affect": " ", 
+    "on_affect": "folk.disabled=True\nfolk.save()\n", 
     "female_name": "Bless\u00e9e", 
     "incompatible_qualities": [], 
     "slug": "blesse", 

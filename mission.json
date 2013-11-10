@@ -375,7 +375,7 @@
     "target_list": "\n", 
     "text": "Organisons un joyeux \u00e9v\u00e9nement !", 
     "has_value": false, 
-    "on_resolution": "kingdom.create_pending_event(\"banquet\")\npe.set_value(\"raison\", \"initiative\")\npe.start()\n", 
+    "on_resolution": "pe = kingdom.create_pending_event(\"banquet\")\npe.set_value(\"raison\", \"initiative\")\npe.start()\n", 
     "value_description": "Valeur :", 
     "on_start": "nb_convives = folks.filter(mission=None).count()\nif kingdom.money < nb_convives * 2:\n  stop(\"Vous n'avez pas les moyens d'organiser un banquet de cette envergure\")\n  \nkingdom.money -= nb_convives * 2\nkingdom.save()\n", 
     "has_target": false, 
