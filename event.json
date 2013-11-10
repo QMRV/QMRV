@@ -389,7 +389,7 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "Les gueux ripaillent, rient et dansent au son de la musique. Ils ont \u00e9t\u00e9 plusieurs \u00e0 lever haut leurs coupes \u00e0 ma sant\u00e9 et \u00e0 celle de la maison {{dynastie}}. Ils ont l\u2019air profond\u00e9ment soulag\u00e9s de d\u00e9couvrir leur nouveau seigneur si affable et g\u00e9n\u00e9reux et le vin commence \u00e0 leurs monter \u00e0 la t\u00eate. L'atmosph\u00e8re est \u00e0 l\u2019optimisme et l'all\u00e9gresse, les langues se d\u00e9lient et les m\u0153urs se rel\u00e2chent. \r\n\r\n{{folks.2.first_name}} danse sagement avec {{folks.3.first_name}}, mais {{folks.1.first_name}} rie aux \u00e9clats avec une femme qui pique mon int\u00e9r\u00eat. Sa robe est cousue de fils de soie, et ses mani\u00e8res la d\u00e9marque nettement des paysannes mal d\u00e9grossies qui se sont jet\u00e9es sur le buffet.\r\n", 
+    "text": "Les gueux ripaillent, rient et dansent au son de la musique. Ils ont \u00e9t\u00e9 plusieurs \u00e0 lever haut leurs coupes \u00e0 ma sant\u00e9 et \u00e0 celle de la maison {{dynasty}}. Ils ont l\u2019air profond\u00e9ment soulag\u00e9s de d\u00e9couvrir leur nouveau seigneur si affable et g\u00e9n\u00e9reux et le vin commence \u00e0 leurs monter \u00e0 la t\u00eate. L'atmosph\u00e8re est \u00e0 l\u2019optimisme et l'all\u00e9gresse, les langues se d\u00e9lient et les m\u0153urs se rel\u00e2chent. \r\n\r\n{{folks.2.first_name}} danse sagement avec {{folks.3.first_name}}, mais {{folks.1.first_name}} rie aux \u00e9clats avec une femme qui pique mon int\u00e9r\u00eat. Sa robe est cousue de fils de soie, et ses mani\u00e8res la d\u00e9marque nettement des paysannes mal d\u00e9grossies qui se sont jet\u00e9es sur le buffet.\r\n", 
     "image": "events/000.jpg", 
     "on_fire": " \n", 
     "slug": "tuto_banquet_2", 
@@ -431,9 +431,9 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "La f\u00eate s\u2019est termin\u00e9e dans la gaiet\u00e9, et les paysans ont \u00e9t\u00e9 h\u00e9berg\u00e9s dans les pi\u00e8ces vides du ch\u00e2teau. Il sont repartis au matin, titubant mais ravis et ont rependu sur mes terres le r\u00e9cit de ma bienveillance. Ces braves gueux m\u2019ont accept\u00e9 sans r\u00e9serve comme leur suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eatre d\u00e9sormais le seigneur de 143 paysans et 7 soldats.", 
+    "text": "La f\u00eate s\u2019est termin\u00e9e dans la gaiet\u00e9, et les paysans ont \u00e9t\u00e9 h\u00e9berg\u00e9s dans les pi\u00e8ces vides du ch\u00e2teau. Il sont repartis au matin, titubant mais ravis et ont rependu sur mes terres le r\u00e9cit de ma bienveillance. Ces braves gueux m\u2019ont accept\u00e9 sans r\u00e9serve comme leur suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eatre d\u00e9sormais le seigneur de 143 paysans.", 
     "image": "events/127.jpg", 
-    "on_fire": "kingdom.population=143\nkingdom.soldiers=7\nkingdom.set_value('total_soldats',7)\nkingdom.save()\n", 
+    "on_fire": "kingdom.population=143\nkingdom.save()\n", 
     "slug": "tuto_banquet_4", 
     "condition": " "
   }
@@ -599,9 +599,9 @@
     "category": 2, 
     "name": "Un chevalier se pr\u00e9sente devant vous", 
     "weight": 1, 
-    "text": "Le chevalier est arriv\u00e9 aux premi\u00e8res lueurs du jour, envelopp\u00e9 dans sa cape trou\u00e9e pour se prot\u00e9ger du froid. Refusant une miche de pain et un verre de lait que {{folks.3.first_name}} lui a offert, il a demand\u00e9 \u00e0 \u00eatre re\u00e7ut sur le champ par le seigneur {{title.chatelain.last_name}}. A pr\u00e9sent, il est agenouill\u00e9 devant mon tr\u00f4ne, la main droite sur le pommeau de son \u00e9p\u00e9e. \"Messire. Je me nomme {{chevalier}}, chevalier \u00e0 la recherche d'une cause et d'un toit. J'ai entendu la nouvelle du retour de votre famille...\" Il rel\u00e8ve la t\u00eate, et me jette un regard d\u00e9termin\u00e9. \"Mon \u00e9p\u00e9e est votre si vous la voulez.\"\r\n\r\n", 
+    "text": "Le chevalier est arriv\u00e9 aux premi\u00e8res lueurs du jour, envelopp\u00e9 dans sa cape trou\u00e9e pour se prot\u00e9ger du froid. Refusant une miche de pain et un verre de lait que {{folks.3.first_name}} lui a offert, il a demand\u00e9 \u00e0 \u00eatre re\u00e7ut sur le champ par le seigneur {{title.chatelain.last_name}}. A pr\u00e9sent, il est agenouill\u00e9 devant mon tr\u00f4ne, la main droite sur le pommeau de son \u00e9p\u00e9e. \"Messire. Je me nomme {{chevalier}}, chevalier \u00e0 la recherche d'une cause et d'un toit. J'ai entendu la nouvelle du retour de votre famille...\" Il rel\u00e8ve la t\u00eate, et me jette un regard d\u00e9termin\u00e9. \"Mon \u00e9p\u00e9e est votre si vous la voulez.\"\r\n\r\n    {{chevalier|folk_details}}\r\n\r\n", 
     "image": "events/361.jpg", 
-    "on_fire": "folk = call_function(\"creer_folk\", fight_min=9, plot_min=1, diplomacy_min=1, scholarship_min=1, max_carac=32, loyalty=50, kingdom=kingdom, sex=Folk.MALE,\nbirth=datetime.now() -  timedelta(days=25))\nfolk.save()\nparam.set_value(\"chevalier\", folk)", 
+    "on_fire": "folk = call_function(\"creer_folk\", fight_min=9, plot_min=1, diplomacy_min=1, scholarship_min=1, max_carac=32, loyalty=50, kingdom=None, sex=Folk.MALE,\nbirth=datetime.now() -  timedelta(days=25))\nparam.set_value(\"chevalier\", folk)", 
     "slug": "tuto_allegeance_chevalier", 
     "condition": " "
   }
@@ -2055,11 +2055,11 @@
     "category": null, 
     "name": "Education", 
     "weight": 1, 
-    "text": "J'ai plac\u00e9 {{pupil}} sous la tutelle de {{mentor}}. {{pupil|feminize:\"Le gar\u00e7on,La fillette\"}} devra {{mentor|feminize:\"le,la\"}} servir en toute chose jusqu'\u00e0 l'age de ses 16 ans, et t\u00e2cher d'apprendre le plus possible de son exemple.", 
+    "text": "J'ai plac\u00e9 {{pupil}} sous {% if mentor == title.chatelain %}ma tutelle.{% else %}la tutelle de {{mentor}}.{% endif %} {{pupil|feminize:\"Le gar\u00e7on,La fillette\"}} devra {{mentor|feminize:\"le,la\"}} servir en toute chose jusqu'\u00e0 l'age de ses 16 ans, et t\u00e2cher d'apprendre le plus possible de {% if mentor == title.chatelain %}mon{% else %}son{% endif %} exemple.", 
     "image": "events/410.jpg", 
-    "on_fire": null, 
+    "on_fire": "\n", 
     "slug": "education", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -2127,7 +2127,7 @@
     "weight": 1, 
     "text": "bla", 
     "image": "", 
-    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\n# Qu'arrive-t-il au nourrisson ? \nr = random_value(1,100)\n\n#For test purposes only\nr = 68\n\nif r < 78:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  naissance = param.next_event(\"naissance_unique\")\n  naissance.start() \n  \nelif r < 88:\n  # l'enfant est mort n\u00e9 (un soulagement pour certains, une grande peine pour d'autres, c'est toujours mieux que ce qui vient apr\u00e8s)\n  mort_ne = param.next_event(\"mort_ne\")\n  mort_ne.start()\n\nelif r < 91:\n  # les deux meurent (putain, \u00e7a c'est vraiment pas de bol!)\n  bloodbath = param.next_event(\"mort_couches_double\")\n  bloodbath.start()\n  \nelif r < 100:\n  # Ce sont des jumeaux qui naissent (oups, deux bouches au lieu d'une)\n  naissance = param.next_event(\"naissance_jumeaux\")\n  naissance.start()\n  \nelif r == 100:\n  # Et bim, des tripl\u00e9s, tu vas voir la gueule de ton budget couches !!!\n  naissance = param.next_event(\"naissance_triples\")\n  naissance.start()\n  \nstop(S.GHOST_EVENT)\n", 
+    "on_fire": "# Qu'arrive-t-il au nourrisson ? \nr = random_value(1,100)\n\n#For test purposes only\nr = 68\n\nif r < 78:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  naissance = param.next_event(\"naissance_unique\")\n  naissance.start() \n  \nelif r < 88:\n  # l'enfant est mort n\u00e9 (un soulagement pour certains, une grande peine pour d'autres, c'est toujours mieux que ce qui vient apr\u00e8s)\n  mort_ne = param.next_event(\"mort_ne\")\n  mort_ne.start()\n\nelif r < 91:\n  # les deux meurent (putain, \u00e7a c'est vraiment pas de bol!)\n  bloodbath = param.next_event(\"mort_couches_double\")\n  bloodbath.start()\n  \nelif r < 100:\n  # Ce sont des jumeaux qui naissent (oups, deux bouches au lieu d'une)\n  naissance = param.next_event(\"naissance_jumeaux\")\n  naissance.start()\n  \nelif r == 100:\n  # Et bim, des tripl\u00e9s, tu vas voir la gueule de ton budget couches !!!\n  naissance = param.next_event(\"naissance_triples\")\n  naissance.start()\n  \nstop(S.GHOST_EVENT)\n", 
     "slug": "accouchement_fantome", 
     "condition": "\n"
   }
@@ -2197,7 +2197,7 @@
     "weight": 1, 
     "text": "L'enfant {{bebe}} vient d'avoir six ans. \r\nIl se pr\u00e9sente \u00e0 votre cour.", 
     "image": "", 
-    "on_fire": "papa = param.get_value('pere')\nmaman = param.get_value('mere')\n\nbebe=param.get_value(\"bebe\",call_function('creer_enfant', pere=papa, mere=maman, kingdom=kingdom))\nbebe.kingdom = kingdom\nparam.set_value(\"bebe\", bebe)\n", 
+    "on_fire": "#Le pere et la mere peuvent \u00eatre morts ou avoir chang\u00e9 de royaume entre la naissance et les 6 ans\npapa = param.get_value(\"pere\")\nmaman = param.get_value(\"mere\")\n\nbebe=param.get_value(\"bebe\")\n#Pas aussi simple: g\u00e9rer les migrations de royaumes\nbebe.kingdom = kingdom\nparam.set_value(\"bebe\", bebe)\n", 
     "slug": "coming_of_age", 
     "condition": "\n"
   }
@@ -2239,7 +2239,7 @@
     "weight": 1, 
     "text": "{{mere}} a mis au monde des jumeaux", 
     "image": "", 
-    "on_fire": "# Les jumeaux et triples naissent sans mourir \u00e0 la naissance\n\nmaturite = param.next_event('coming_of_age')\nmaturite.started = datetime.now() + timedelta(days=6)  \nmaturite.save()\n\nmaturite = param.next_event('coming_of_age')\nmaturite.started = datetime.now() + timedelta(days=6)  \nmaturite.save()\n", 
+    "on_fire": "# Les jumeaux et triples naissent sans mourir \u00e0 la naissance\n\nmaturite = param.next_event(\"coming_of_age\")\nmaturite.started = datetime.now() + timedelta(days=6)  \nmaturite.save()\n\nmaturite = param.next_event(\"coming_of_age\")\nmaturite.started = datetime.now() + timedelta(days=6)  \nmaturite.save()\n", 
     "slug": "naissance_jumeaux", 
     "condition": "\n"
   }
@@ -2253,7 +2253,7 @@
     "weight": 1, 
     "text": "{{mere}} a mis au monde des tripl\u00e9s.", 
     "image": "", 
-    "on_fire": "maturite1 = param.next_event('coming_of_age')\nmaturite1.started = datetime.now() + timedelta(days=6)  \nmaturite1.save()\n\nmaturite2 = param.next_event('coming_of_age')\nmaturite2.started = datetime.now() + timedelta(days=6)  \nmaturite2.save()\n\nmaturite3 = param.next_event('coming_of_age')\nmaturite3.started = datetime.now() + timedelta(days=6)  \nmaturite3.save()\n", 
+    "on_fire": "maturite1 = param.next_event(\"coming_of_age\")\nmaturite1.started = datetime.now() + timedelta(days=6)  \nmaturite1.save()\n\nmaturite2 = param.next_event(\"coming_of_age\")\nmaturite2.started = datetime.now() + timedelta(days=6)  \nmaturite2.save()\n\nmaturite3 = param.next_event(\"coming_of_age\")\nmaturite3.started = datetime.now() + timedelta(days=6)  \nmaturite3.save()\n", 
     "slug": "naissance_triples", 
     "condition": "\n"
   }
@@ -2269,7 +2269,7 @@
     "image": "", 
     "on_fire": "\n", 
     "slug": "naissance_unique", 
-    "condition": "r = random_value(1,77)\nparam.set_value('mother_is_dead', False)\n\nr = 1 # for testing purposes\n\nif r<61:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  maturite = param.next_event('coming_of_age')\n  maturite.started = datetime.now() + timedelta(days=6)  \n  maturite.save()\n  \nelif r<71:\n  #L'enfant meurt en bas \u00e2ge\n  d = random_value(0, 5)\n  h = random_value(0, 23)\n  m = random_value(0, 60)\n  mort = param.next_event('mort_precoce')\n  mort.started = datetime.now() + timedelta(days=d, hours=h, minutes=m)\n  mort.save()\n\nelse:\n  #La m\u00e8re meurt en donnant naissance\n  param.set_value('mother_is_dead', True)\n  mere.die()\n  maturite = param.next_event('coming_of_age')\n  maturite.started = datetime.now() + timedelta(days=6)  \n  maturite.save()\n  \n"
+    "condition": "r = random_value(1,77)\nparam.set_value(\"mother_is_dead\", False)\n\nr = 1 # for testing purposes\n\nif r<61:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  enfant=call_function(\"creer_enfant\", pere=pere, mere=mere, kingdom=None)\n  maturite = param.next_event(\"coming_of_age\")\n  maturite.set_value(\"enfant\", enfant)\n  maturite.set_value(\"nom_pere\", pere.first_name + pere.last_name)\n  maturite.set_value(\"nom_mere\", mere.first_name + mere.last_name)\n  maturite.started = datetime.now() + timedelta(days=6)  \n  maturite.save()\n  \nelif r<71:\n  #L'enfant meurt en bas \u00e2ge\n  d = random_value(0, 5)\n  h = random_value(0, 23)\n  m = random_value(0, 60)\n  mort = param.next_event(\"mort_precoce\")\n  mort.set_value(\"nom_pere\", pere.first_name + pere.last_name)\n  mort.set_value(\"nom_mere\", mere.first_name + mere.last_name)\n  mort.set_value(\"age\", d)\n  mort.started = datetime.now() + timedelta(days=d, hours=h, minutes=m)\n  mort.save()\n\nelse:\n  #La m\u00e8re meurt en donnant naissance\n  param.set_value(\"mother_is_dead\", True)\n  enfant=call_function(\"creer_enfant\", pere=pere, mere=mere, kingdom=kingdom)\n  maturite = param.next_event(\"coming_of_age\")\n  maturite.set_value(\"enfant\", enfant)\n  maturite.set_value(\"nom_pere\", pere.first_name + pere.last_name)\n  maturite.set_value(\"nom_mere\", mere.first_name + mere.last_name)\n  maturite.started = datetime.now() + timedelta(days=6)  \n  maturite.save()\n  mere.die()\n"
   }
 },
 {
@@ -2799,7 +2799,7 @@
     "weight": 1, 
     "text": "{{condamne}} a \u00e9t\u00e9 ex\u00e9cut\u00e9.\r\n{% if perte < 0 %}\r\nLa cour est sous le choc, et ils sont nombreux \u00e0 m\u2019appeler \"tyran\" dans mon dos, en se demandant lequel d'entre eux sera le prochain.\r\n{% else %}\r\nC'EST BIEN FAIT POUR TA GUEULE TRAITRE (a modifier)\r\n{% endif%}\r\n\r\n     Vous avez gagn\u00e9 {{biens}} \u00e9cus suite \u00e0 la r\u00e9quisition de ses biens.\r\n{% if perte < 0 %}    {{perte}} de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n{% else %}    + {{perte}} de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n{% endif %}", 
     "image": "", 
-    "on_fire": "\n", 
+    "on_fire": "param.get_value(\"condamne\").die()\n", 
     "slug": "execution", 
     "condition": "\n"
   }
@@ -2883,7 +2883,7 @@
     "weight": 1, 
     "text": "{% if colerique %}\r\nMes complices sont parvenu \u00e0 pousser {{target}} \u00e0 bout, jouant de son caract\u00e8re col\u00e9rique pour provoquer une s\u00e9rie de dispute entre {{target|feminize:\"lui,elle\"}} et d'autre membres de ma cour. Ils sont de moins en moins nombreux \u00e0 pouvoir le supporter.\r\n{% elif random == 1 %}\r\nLa substance d\u00e9bilitante gliss\u00e9e dans le plat de {{target}} a fait effet au beau milieu du repas. {{target|feminize:\"Il,Elle\"}} s'est mi{{target|feminize:\"s,se\"}} \u00e0 bafouiller stupidement devant l'ensemble des convives, pouss\u00e9s jusqu'\u00e0 l'hilarit\u00e9 par mes complices. {{target|feminize:\"Il,Elle\"}} est sortit en boitant, sous une pluie de quolibets.\r\n{% elif random == 2 %}Mes complices ont r\u00e9pandu une rumeur perfide sur le pass\u00e9 de {{target}}. Il y a quelques \u00e9t\u00e9s, {{target|feminize:\"il,elle\"}} aurait travaill\u00e9 contre les int\u00e9r\u00eats du royaume de France pour le compte d'une puissance \u00e9trang\u00e8re. Quel scandale! \r\n{% else %}Par de subtiles mensonges et demi v\u00e9rit\u00e9s, mes complice ont convaincu ma cour que les derniers d\u00e9boires de {{dynasty}} sont enti\u00e8rement du \u00e0 l'incomp\u00e9tence de {{target}}. Incomp\u00e9tence ou malveillance dissimul\u00e9e?...{% endif %}\r\n\r\n    {% if respecte %}{{target}} perd le Trait Respect\u00e9{{target|feminize}}.{% else %}{{target}} {% if lost %}perd le Trait {{lost}}{{target|feminize}} et {% endif %}re\u00e7oit le Trait {{got}}{{target|feminize}}.{% endif %}", 
     "image": "events/755_1.jpg", 
-    "on_fire": "target = param.get_value(\"target\")\nif target.has_quality(\"colerique\"):\n  colerique = True\nelse:\n  colerique = False\nparal.set_value(\"random\", random_value(1,3))\n\nif target.has_quality(\"respecte\"):\n  respecte = True\nelse :\n  respecte = False\n", 
+    "on_fire": "target = param.get_value(\"target\")\nif target.has_quality(\"colerique\"):\n  colerique = True\nelse:\n  colerique = False\nparam.set_value(\"random\", random_value(1,3))\n\nif target.has_quality(\"respecte\"):\n  respecte = True\nelse :\n  respecte = False\n", 
     "slug": "compromettre_success", 
     "condition": "\n"
   }
@@ -2909,7 +2909,7 @@
     "category": null, 
     "name": "Backstab_compromission", 
     "weight": 1, 
-    "text": "Mes agents ont lamentablement \u00e9chou\u00e9. Non seulement la r\u00e9putation de {{target}} n'a pas \u00e9t\u00e9 \r\ncompromise, mais {{target|feminize:\"le mis\u00e9rable,la garce\"}} a d\u00e9couvert nos intentions. La rumeur de ma duplicit\u00e9 s'est r\u00e9pandue parmi mes courtisans.\r\n\r\n    -{{perte}} de Loyaut\u00e9 pour toute la cour, \u00e0 l\u2019exception de vos complices.\r\n    -20 de Loyaut\u00e9 suppl\u00e9mentaires pour {{target}}.", 
+    "text": "Mes agents ont lamentablement \u00e9chou\u00e9. Non seulement la r\u00e9putation de {{target}} n'a pas \u00e9t\u00e9 \r\ncompromise, mais {{target|feminize:\"le mis\u00e9rable,la garce\"}} a d\u00e9couvert nos intentions. La rumeur de ma duplicit\u00e9 s'est r\u00e9pandue parmi mes courtisans.\r\n\r\n    {{perte}} de Loyaut\u00e9 pour toute la cour, \u00e0 l\u2019exception de vos complices.\r\n    -20 de Loyaut\u00e9 suppl\u00e9mentaires pour {{target}}.", 
     "image": "events/755_3.jpg", 
     "on_fire": "target = param.get_value(\"target\")\ntarget.loyalty -= 20\ntarget.save()\n", 
     "slug": "compromettre_big_failure", 
@@ -3061,10 +3061,10 @@
   "model": "event.event", 
   "fields": {
     "category": null, 
-    "name": "kkul", 
+    "name": "tuto_diplomacy_ending_2", 
     "weight": 1, 
-    "text": "\"{{title.ambassadeur}} sera mon ambassadeur dans cette affaire. Il rencontrera d\u00e8s demain l\u2019\u00e9missaire de {{kingdom.values.tuto_PNJ}} et lui soumettra notre offre. Ce conflit leur pr\u00e9l\u00e8ve un lourd tribut, et ils ont autant que nous \u00e0 gagner dans une union de nos lign\u00e9es. Ils accepteront.\"\r\n\r\nNotre entretien \u00e9tant termin\u00e9, ils se l\u00e8vent et se dirigent vers la porte, chacun pesant \u00e0 sa mani\u00e8re la port\u00e9e de ma d\u00e9cision. {% if soeurette %}{{}}", 
-    "image": "", 
+    "text": "\"{{title.ambassadeur}} sera mon ambassadeur dans cette affaire. Il rencontrera d\u00e8s demain l\u2019\u00e9missaire de {{kingdom.values.tuto_PNJ}} et lui soumettra notre offre. Ce conflit leur pr\u00e9l\u00e8ve un lourd tribut, et ils ont autant que nous \u00e0 gagner dans une union de nos lign\u00e9es. Ils accepteront.\"\r\n\r\nNotre entretien \u00e9tant termin\u00e9, ils se l\u00e8vent et se dirigent vers la porte, chacun pesant \u00e0 sa mani\u00e8re la port\u00e9e de ma d\u00e9cision. {{spouse1}}, {{spouse1|feminize:\"le dernier,la derni\u00e8re\"}} debout, s'approche de moi.\r\n\r\n{% if spouse1 == soeurette %}\"Nous devons parler.\"{% else %}\"P\u00e8re, pouvons nous parler en priv\u00e9?\"{% endif %}", 
+    "image": "events/361_11_5.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_ending_2", 
     "condition": "\n"
@@ -4607,7 +4607,7 @@
     "message": "{{soeur}}, {{mioche}} et {{chiard}} ont rejoint ma cour.", 
     "event": 138, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_education\").start()"
+    "on_fire": "#param.next_event(\"tuto_education\").start()\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_education\")\npe.start()"
   }
 },
 {
@@ -4618,7 +4618,7 @@
     "message": "{{soeur}}, {{mioche}} et {{chiard}} ont rejoint ma cour.", 
     "event": 139, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_education\").start()"
+    "on_fire": "#param.next_event(\"tuto_education\").start()\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_education\")\npe.start()"
   }
 },
 {
@@ -4629,7 +4629,7 @@
     "message": "{{soeur}}, {{mioche}} et {{chiard}} ont rejoint ma cour.", 
     "event": 140, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_education\").start()"
+    "on_fire": "#param.next_event(\"tuto_education\").start()\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_education\")\npe.start()"
   }
 },
 {
@@ -4948,7 +4948,7 @@
     "message": "", 
     "event": 159, 
     "condition": "\n", 
-    "on_fire": "dueliste_1 = param.get_value(\"fils\")\ndueliste_2 = param.get_value(\"facheux\")\nparam.set_value(\"tuto\", True) \nparam.set_value(\"dueliste_1\", dueliste_1)\nparam.set_value(\"dueliste_2\", dueliste_2)\nparam.next_event(\"duel_domestique\").start()"
+    "on_fire": "dueliste_1 = param.get_value(\"fils\")\ndueliste_2 = param.get_value(\"facheux\")\nparam.set_value(\"tuto\", True) \nparam.set_value(\"dueliste_1\", dueliste_1)\nparam.set_value(\"dueliste_2\", dueliste_2)\nparam.next_event(\"tuto_facheux_duel\").start()"
   }
 },
 {
@@ -5241,11 +5241,11 @@
   "pk": 256, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "J'esp\u00e8re que {{mentor.first_name}} sera bon professeur.", 
-    "message": "{{mentor}} est maintenant le mentor de {{pupil}}.", 
+    "text": "J'esp\u00e8re {% if mentor == title.chatelain %}\u00eatre bon professeur{% else %}que {{mentor.first_name}} sera bon professeur.{% endif %}", 
+    "message": "{% if mentor == title.chatelain %}Je suis{% else %}{{mentor}} est{% endif  %} maintenant le mentor de {{pupil}}.", 
     "event": 184, 
-    "condition": null, 
-    "on_fire": null
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 },
 {
@@ -5575,7 +5575,7 @@
     "message": "", 
     "event": 225, 
     "condition": "\n", 
-    "on_fire": "#multiplicateur de gain tuto\nmultiplicateur_tuto=3\n\n# Terminer les missions en cours\npending_missions = kingdom.pendingmission_set.filter(started__isnull=False)\nfor pending_mission in pending_missions:\n  pending_mission.resolve()\n\n# Simuler un mois de temps sur le Kingdom sur les persos\nfor folk in folks:\n  folk.birth -= timedelta(hours=2)\n  folk.save()\n\n#Appeller la fonction qui fait grandir les m\u00f4mes\nnb_passage_timewarp=kingdom.get_value('tuto_nb_passage_timewarp',random_value(0,7))\nkingdom.set_value('tuto_nb_passage_timewarp',nb_passage_timewarp+1)\nif nb_passage_timewarp%8==0:\n  f('education',kingdom=kingdom)\n\n#gain de population\nchatelain=kingdom.get_folk_in_title(\"chatelain\")\nif chatelain is None:\n  erudition_chatelain=0\nelse:\n  erudition_chatelain=chatelain.scholarship\ncure=kingdom.get_folk_in_title(\"cure\")\nif cure is None:\n  erudition_cure=5\nelse:\n  erudition_cure=cure.scholarship\np_max = call_function(\"get_max_population\", kingdom=kingdom)\nvirgule=kingdom.get_value('virgule_population',0)\ngain_pop = min(multiplicateur_tuto*10/100*p_max/12*((erudition_chatelain + 4*erudition_cure)/100)**0.5+virgule,p_max-kingdom.population-kingdom.get_value('total_soldats'))\ngain=int(gain_pop)\nkingdom.set_value('virgule_population',gain_pop-int(gain_pop))\ngain_pop=int(gain)\nkingdom.population += gain\n\n\nprint \"pop_max = \"\nprint p_max\nprint \"erudition_chatelain = \"\nprint erudition_chatelain\nprint \"\u00e9rudition cur\u00e9 = \"\nprint erudition_cure\nprint \"gain pop = \"\nprint gain_pop\n\nnouveaux_soldats=0\n#transformation pop_en_soldats\npourcentage_actuel = call_function('get_pourcentage_soldats_population', kingdom=kingdom)\nprint \"POURCENTAGE_MAX_SOLDATS_PASSIF = \"\nprint C.POURCENTAGE_MAX_SOLDATS_PASSIF\nprint \"C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO= \"\nprint C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO\nprint \"pourcentage_actuel = \"\nprint pourcentage_actuel\nif pourcentage_actuel < C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  virgule=kingdom.get_value('virgule_soldiers',0)\n  print \"ancienne virgule=\"\n  print virgule\n  nouveaux_soldats=min(multiplicateur_tuto*C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO/100/12 * p_max+virgule,int(C.POURCENTAGE_MAX_SOLDATS_PASSIF/100*p_max - pourcentage_actuel/100*p_max), kingdom.population)\n  kingdom.soldiers += int(nouveaux_soldats)\n  kingdom.population -=int(nouveaux_soldats)\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')+int(nouveaux_soldats))\n  kingdom.set_value('virgule_soldiers',nouveaux_soldats-int(nouveaux_soldats))\n  print \"nouvelle virgule=\"\n  print str(nouveaux_soldats-int(nouveaux_soldats))\n  print \"nouveaux_soldats = \"\n  print nouveaux_soldats\ngain_soldats=int(nouveaux_soldats)\n\n  \n#gain de thunes1\ntresorier=kingdom.get_folk_in_title(\"tresorier\")\nif tresorier is None:\n  erudition_tresorier=5\nelse:\n  erudition_tresorier=tresorier.scholarship\nprint \"erudition tresorier = \"\nprint erudition_tresorier\nvirgule=kingdom.get_value('virgule_thune',0)\nif pourcentage_actuel <= C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  gain=multiplicateur_tuto*(kingdom.population * (((erudition_chatelain + 4*erudition_tresorier)/100)**0.5*2/3) -kingdom.get_value('total_soldats'))/12+virgule\nelse:\n  gain=multiplicateur_tuto*(kingdom.population * (((erudition_chatelain + 4*erudition_tresorier)/100)**0.5*2/3) -kingdom.get_value('total_soldats')*2 )/12+virgule\nkingdom.set_value('virgule_thune',gain-int(gain))\nkingdom.money += int(gain)\ngain_thunes=int(gain)\nprint \"gain thune\"\nprint gain\n\nkingdom.save()\n\n#Gestion des bl\u00e9ss\u00e9s\nfor i in range(0,4):\n  Recurring.objects.get(slug=\"gestion_blesses\").fire(kingdom)\n\n#Cour maximum\nRecurring.objects.get(slug=\"cour_max\").fire(kingdom)\n\n#creer un message\nkingdom.message(u\"Un mois s'est \u00e9coul\u00e9. Votre domaine compte \"+str(int(gain_pop))+u\" paysans de plus.Vous recevez \"+str(int(gain_thunes))+u\" \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.\"+str(int(gain_soldats))+u\" paysans sont maintenant des soldats.\")\n\n# Lancer l'\u00e9v\u00e8nement en next_event\n# Les variables seront automatiquement transmises aussi.\nparam.next_event(param.get_value('slug')).start()\n\n"
+    "on_fire": "#multiplicateur de gain tuto\nmultiplicateur_tuto=3 #sauf sur gain thune\n\n# Terminer les missions en cours\npending_missions = kingdom.pendingmission_set.filter(started__isnull=False)\nfor pending_mission in pending_missions:\n  pending_mission.resolve()\n\n# Simuler un mois de temps sur le Kingdom sur les persos\nfor folk in folks:\n  folk.birth -= timedelta(hours=2)\n  folk.save()\n\n#Appeller la fonction qui fait grandir les m\u00f4mes\nnb_passage_timewarp=kingdom.get_value('tuto_nb_passage_timewarp',random_value(0,7))\nkingdom.set_value('tuto_nb_passage_timewarp',nb_passage_timewarp+1)\nif nb_passage_timewarp%8==0:\n  f('education',kingdom=kingdom)\n\n#gain de population\nchatelain=kingdom.get_folk_in_title(\"chatelain\")\nif chatelain is None:\n  erudition_chatelain=0\nelse:\n  erudition_chatelain=chatelain.scholarship\ncure=kingdom.get_folk_in_title(\"cure\")\nif cure is None:\n  erudition_cure=5\nelse:\n  erudition_cure=cure.scholarship\np_max = call_function(\"get_max_population\", kingdom=kingdom)\nvirgule=kingdom.get_value('virgule_population',0)\ngain_pop = min(multiplicateur_tuto*10/100*p_max/12*((erudition_chatelain + 4*erudition_cure)/100)**0.5+virgule,p_max-kingdom.population-kingdom.get_value('total_soldats'))\ngain=int(gain_pop)\nkingdom.set_value('virgule_population',gain_pop-int(gain_pop))\ngain_pop=int(gain)\nkingdom.population += gain\n\n\nprint \"pop_max = \"\nprint p_max\nprint \"erudition_chatelain = \"\nprint erudition_chatelain\nprint \"\u00e9rudition cur\u00e9 = \"\nprint erudition_cure\nprint \"gain pop = \"\nprint gain_pop\n\nnouveaux_soldats=0\n#transformation pop_en_soldats\npourcentage_actuel = call_function('get_pourcentage_soldats_population', kingdom=kingdom)\nprint \"POURCENTAGE_MAX_SOLDATS_PASSIF = \"\nprint C.POURCENTAGE_MAX_SOLDATS_PASSIF\nprint \"C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO= \"\nprint C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO\nprint \"pourcentage_actuel = \"\nprint pourcentage_actuel\nif pourcentage_actuel < C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  virgule=kingdom.get_value('virgule_soldiers',0)\n  print \"ancienne virgule=\"\n  print virgule\n  nouveaux_soldats=min(multiplicateur_tuto*C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO/100/12 * p_max+virgule,int(C.POURCENTAGE_MAX_SOLDATS_PASSIF/100*p_max - pourcentage_actuel/100*p_max), kingdom.population)\n  kingdom.soldiers += int(nouveaux_soldats)\n  kingdom.population -=int(nouveaux_soldats)\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')+int(nouveaux_soldats))\n  kingdom.set_value('virgule_soldiers',nouveaux_soldats-int(nouveaux_soldats))\n  print \"nouvelle virgule=\"\n  print str(nouveaux_soldats-int(nouveaux_soldats))\n  print \"nouveaux_soldats = \"\n  print nouveaux_soldats\ngain_soldats=int(nouveaux_soldats)\n\n  \n#gain de thunes1\ntresorier=kingdom.get_folk_in_title(\"tresorier\")\nif tresorier is None:\n  erudition_tresorier=5\nelse:\n  erudition_tresorier=tresorier.scholarship\nprint \"erudition tresorier = \"\nprint erudition_tresorier\nvirgule=kingdom.get_value('virgule_thune',0)\nif pourcentage_actuel <= C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  gain=(kingdom.population * (((erudition_chatelain + 4*erudition_tresorier)/100)**0.5*2/3) -kingdom.get_value('total_soldats'))/12+virgule\nelse:\n  gain=(kingdom.population * (((erudition_chatelain + 4*erudition_tresorier)/100)**0.5*2/3) -kingdom.get_value('total_soldats')*2 )/12+virgule\nkingdom.set_value('virgule_thune',gain-int(gain))\nkingdom.money += int(gain)\ngain_thunes=int(gain)\nprint \"gain thune\"\nprint gain\n\nkingdom.save()\n\n#Gestion des bl\u00e9ss\u00e9s\nfor i in range(0,4):\n  Recurring.objects.get(slug=\"gestion_blesses\").fire(kingdom)\n\n#Cour maximum\nRecurring.objects.get(slug=\"cour_max\").fire(kingdom)\n\n#creer un message\nkingdom.message(u\"Un mois s'est \u00e9coul\u00e9. Votre domaine compte \"+str(int(gain_pop))+u\" paysans de plus.Vous recevez \"+str(int(gain_thunes))+u\" \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.\"+str(int(gain_soldats))+u\" paysans sont maintenant des soldats.\")\n\n# Lancer l'\u00e9v\u00e8nement en next_event\n# Les variables seront automatiquement transmises aussi.\nparam.next_event(param.get_value('slug')).start()\n\n"
   }
 },
 {
@@ -6247,6 +6247,28 @@
     "event": 41, 
     "condition": "if param.get_value(\"tuto\"):\n  stop(\"in_tuto\")\n", 
     "on_fire": "if param.get_value(\"attaquant\"):\n  pe=param.next_event(\"tuto_escarmouche_pillage\").start()  \n"
+  }
+},
+{
+  "pk": 364, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "{% if spouse1 == soeurette %}Je soupire. \"Bien. Mais fa\u00eetes vite, j'ai un domaine \u00e0 diriger.\"{% else %}Froid. \"Il n'y a rien \u00e0 discuter.\"{% endif %}", 
+    "message": "", 
+    "event": 272, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_soeurette\").start()\n"
+  }
+},
+{
+  "pk": 365, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Je ferme la porte et lui fait signe de s'asseoir.", 
+    "message": "", 
+    "event": 272, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_soeurette\").start()"
   }
 }
 ]
