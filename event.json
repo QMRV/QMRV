@@ -179,9 +179,9 @@
     "category": null, 
     "name": "Rassembler l'arm\u00e9e", 
     "weight": 1, 
-    "text": "J\u2019ai envoy\u00e9 {{title.connetable.first_name}} et ses hommes, arm\u00e9s de pied en cap, parcourir la campagne et porter la nouvelle du renouveau de {{dynasty}}. Il a fait savoir aux paysans qu\u2019ils sont sous ma protection tant qu\u2019ils m\u2019offriront l\u2019ob\u00e9issance due \u00e0 leur suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eates d\u00e9sormais le seigneur de 140 paysans et 10 soldats.", 
+    "text": "J\u2019ai envoy\u00e9 {{title.connetable.first_name}} et ses hommes, arm\u00e9s de pied en cap, parcourir la campagne et porter la nouvelle du renouveau de {{dynasty}}. Il a fait savoir aux paysans qu\u2019ils sont sous ma protection tant qu\u2019ils m\u2019offriront l\u2019ob\u00e9issance due \u00e0 leur suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eates d\u00e9sormais le seigneur de {{ kingdom.population }} paysans et  {{ kingdom.soldiers }} soldats.", 
     "image": "events/17.jpg", 
-    "on_fire": "kingdom.population=140\nkingdom.soldiers=10\nkingdom.set_value('total_soldats',10)\nkingdom.save()\n", 
+    "on_fire": "kingdom.population=C.NB_PAYSAN_INIT\nkingdom.soldiers=C.NB_SOLDATS_INIT\nkingdom.set_value('total_soldats',C.NB_SOLDATS_INIT)\nkingdom.save()\n", 
     "slug": "tuto_recrutement_4", 
     "condition": " "
   }
@@ -333,9 +333,9 @@
     "category": null, 
     "name": "R\u00e9parer l'\u00e9glise", 
     "weight": 1, 
-    "text": "La messe termin\u00e9e, le p\u00e8re {{title.cure.first_name}} s'approche, un sourire bienveillant aux l\u00e8vres. Il me remercie \u00e0 nouveau pour mon patronage et m'affirme que les paysans seront reconnaissants de servir un seigneur qui a ainsi d\u00e9montr\u00e9 sa pi\u00e9t\u00e9. Il m'invite \u00e0 visiter son \u00e9glise aussi souvent que je le souhaite et me promet de venir officier au ch\u00e2teau si j'en ressens le besoin.\r\n\r\n    Vous \u00eates d\u00e9sormais le seigneur de 145 paysans.", 
+    "text": "La messe termin\u00e9e, le p\u00e8re {{title.cure.first_name}} s'approche, un sourire bienveillant aux l\u00e8vres. Il me remercie \u00e0 nouveau pour mon patronage et m'affirme que les paysans seront reconnaissants de servir un seigneur qui a ainsi d\u00e9montr\u00e9 sa pi\u00e9t\u00e9. Il m'invite \u00e0 visiter son \u00e9glise aussi souvent que je le souhaite et me promet de venir officier au ch\u00e2teau si j'en ressens le besoin.\r\n\r\n    Vous \u00eates d\u00e9sormais le seigneur de {{ kingdom.population }} paysans.", 
     "image": "events/89_1.jpg", 
-    "on_fire": "kingdom.population=145\nkingdom.save()", 
+    "on_fire": "kingdom.population=C.NB_PAYSAN_INIT\nkingdom.save()", 
     "slug": "tuto_eglise_2", 
     "condition": " "
   }
@@ -417,9 +417,9 @@
     "category": null, 
     "name": "Pot de vin", 
     "weight": 1, 
-    "text": "    -12 ecus\r\n\r\nLes jours suivants, {{title.maitre_espion.first_name}} a rencontr\u00e9 en secret les gueux les plus influents et leur a vers\u00e9 de g\u00e9n\u00e9reux pots de vin en \u00e9change de leur soutien. Sous leur influence, la population m\u2019a accept\u00e9 comme suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eates d\u00e9sormais le seigneur de 143 paysans.", 
+    "text": "    -12 ecus\r\n\r\nLes jours suivants, {{title.maitre_espion.first_name}} a rencontr\u00e9 en secret les gueux les plus influents et leur a vers\u00e9 de g\u00e9n\u00e9reux pots de vin en \u00e9change de leur soutien. Sous leur influence, la population m\u2019a accept\u00e9 comme suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eates d\u00e9sormais le seigneur de {{ kingdom.population }} paysans.", 
     "image": "", 
-    "on_fire": "kingdom.money-=12\nkingdom.population=143\nkingdom.save()", 
+    "on_fire": "kingdom.money-=12\nkingdom.population=C.NB_PAYSAN_INIT\nkingdom.save()", 
     "slug": "tuto_potsdevin_5", 
     "condition": " "
   }
@@ -431,9 +431,9 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "La f\u00eate s\u2019est termin\u00e9e dans la gaiet\u00e9, et les paysans ont \u00e9t\u00e9 h\u00e9berg\u00e9s dans les pi\u00e8ces vides du ch\u00e2teau. Il sont repartis au matin, titubant mais ravis et ont rependu sur mes terres le r\u00e9cit de ma bienveillance. Ces braves gueux m\u2019ont accept\u00e9 sans r\u00e9serve comme leur suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eatre d\u00e9sormais le seigneur de 143 paysans.", 
+    "text": "La f\u00eate s\u2019est termin\u00e9e dans la gaiet\u00e9, et les paysans ont \u00e9t\u00e9 h\u00e9berg\u00e9s dans les pi\u00e8ces vides du ch\u00e2teau. Il sont repartis au matin, titubant mais ravis et ont rependu sur mes terres le r\u00e9cit de ma bienveillance. Ces braves gueux m\u2019ont accept\u00e9 sans r\u00e9serve comme leur suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eatre d\u00e9sormais le seigneur de {{ kingdom.population }} paysans.", 
     "image": "events/127.jpg", 
-    "on_fire": "kingdom.population=143\nkingdom.save()\n", 
+    "on_fire": "kingdom.population=C.NB_PAYSAN_INIT\nkingdom.save()\n", 
     "slug": "tuto_banquet_4", 
     "condition": " "
   }
@@ -445,7 +445,7 @@
     "category": null, 
     "name": "Escarmouche", 
     "weight": 1, 
-    "text": "La bataille \u00e9tait termin\u00e9e. Les corbeaux apparaissaient un \u00e0 un dans le ciel, poussant leurs cris affam\u00e9s sans parvenir \u00e0 couvrir le r\u00e2le des bless\u00e9s et des mourants. {{dynasty}} avait vaincu. Sur mes {{gagnant.troupes}} hommes d'arme, {{delta.gagnant.pertes_troupe}} \u00e9taient tomb\u00e9s l'arme \u00e0 la main, emportant avec eux {{delta.perdant.pertes_troupe}} ennemis vocif\u00e9rants et faisant fuir le reste.\r\n{% if delta.gagnant.morts|length >= 1 %}\r\nNous avions remport\u00e9 une victoire, mais \u00e0 quel prix? {{ delta.gagnant.morts|folks_list}} \r\n{% if delta.gagnant.morts|length == 1 %}\r\ngisait aux milieu des cadavres, serrant encore son \u00e9p\u00e9e.\r\n{% else %}\r\n\u00e9taient tomb\u00e9s sans que les n\u00f4tres ne puissent leur porter secours.\r\n{% endif %}\r\n{% endif %}\r\n{% if delta.gagnant.blesses|length >= 1 %}\r\n{{delta.gagnant.blesses|folks_list}} avai{{delta.gagnant.blesses|pluralize:\"t,ent\" }} \u00e9t\u00e9 bless\u00e9{{delta.gagnant.blesses|pluralize}} dans la bataille, et devrai{{delta.gagnant.blesses|pluralize:\"t,ent\" }} \u00eatre ramen\u00e9{{delta.gagnant.blesses|pluralize}} au ch\u00e2teau sur {{delta.gagnant.blesses|pluralize:\"une,des\"}} liti\u00e8re{{delta.gagnant.blesses|pluralize}}.\r\n{% endif %}\r\n{% if delta.perdant.morts|length >= 1 %}\r\nChez l'adversaire, {{ delta.perdant.morts|folks_list}} avai{{delta.perdant.morts|pluralize:\"t,ent\" }} \u00e9t\u00e9 terrass\u00e9.\r\n{% endif %} \r\n{% if delta.perdant.blesses|length >= 1 %}\r\n{% if delta.gagnant.morts|length >= 1 %}\r\nDe plus, {% else %} Chez l'adversaire, {% endif %} {{ delta.perdant.blesses|folks_list}} avai{{delta.perdant.blesses|pluralize:\"t,ent\" }} \u00e9t\u00e9 bless\u00e9{{delta.perdant.blesses|pluralize:\",s\" }} et garderai{{delta.perdant.blesses|pluralize:\"t,ent\" }} des cicatrice de cette bataille.\r\n{% endif %}\r\n\r\n{% if commandement.gagnant.chatelain %}\r\nChassant la fatigue qui me tenaillait, je rassemblai mes hommes valides pour{% elif commandement.gagnant.connetable %}\r\nSire {{commandement.gagnant.general}} essuya son \u00e9p\u00e9e, et cria aux hommes de se regrouper pour\r\n{% else %}\r\n{{commandement.gagnant.general}} entreprit de rallier les n\u00f4tres  pour \r\n{% endif %}\r\nproc\u00e9der au pillage de {{target_dynasty}}\r\n\r\n    +{{delta.gagnant.prestige}} de prestige pour {{dynasty}}, {{delta.perdant.prestige}} de prestige pour {{dynasty}}\r\n    ", 
+    "text": "La bataille \u00e9tait termin\u00e9e. Les corbeaux apparaissaient un \u00e0 un dans le ciel, poussant leurs cris affam\u00e9s sans parvenir \u00e0 couvrir le r\u00e2le des bless\u00e9s et des mourants. {{dynasty}} avait vaincu. Sur mes {{gagnant.troupes}} hommes d'arme, {{delta.gagnant.pertes_troupe}} \u00e9taient tomb\u00e9s l'arme \u00e0 la main, emportant avec eux {{delta.perdant.pertes_troupe}} ennemis vocif\u00e9rants et faisant fuir le reste.\r\n{% if delta.gagnant.morts|length >= 1 %}\r\nNous avions remport\u00e9 une victoire, mais \u00e0 quel prix? {{ delta.gagnant.morts|folks_list}} \r\n{% if delta.gagnant.morts|length == 1 %}\r\ngisait aux milieu des cadavres, serrant encore son \u00e9p\u00e9e.\r\n{% else %}\r\n\u00e9taient tomb\u00e9s sans que les n\u00f4tres ne puissent leur porter secours.\r\n{% endif %}\r\n{% endif %}\r\n{% if delta.gagnant.blesses|length >= 1 %}\r\n{{delta.gagnant.blesses|folks_list}} avai{{delta.gagnant.blesses|pluralize:\"t,ent\" }} \u00e9t\u00e9 bless\u00e9{{delta.gagnant.blesses|pluralize}} dans la bataille, et devrai{{delta.gagnant.blesses|pluralize:\"t,ent\" }} \u00eatre ramen\u00e9{{delta.gagnant.blesses|pluralize}} au ch\u00e2teau sur {{delta.gagnant.blesses|pluralize:\"une,des\"}} liti\u00e8re{{delta.gagnant.blesses|pluralize}}.\r\n{% endif %}\r\n{% if delta.perdant.morts|length >= 1 %}\r\nChez l'adversaire, {{ delta.perdant.morts|folks_list}} avai{{delta.perdant.morts|pluralize:\"t,ent\" }} \u00e9t\u00e9 terrass\u00e9.\r\n{% endif %} \r\n{% if delta.perdant.blesses|length >= 1 %}\r\n{% if delta.gagnant.morts|length >= 1 %}\r\nDe plus, {% else %} Chez l'adversaire, {% endif %} {{ delta.perdant.blesses|folks_list}} avai{{delta.perdant.blesses|pluralize:\"t,ent\" }} \u00e9t\u00e9 bless\u00e9{{delta.perdant.blesses|pluralize:\",s\" }} et garderai{{delta.perdant.blesses|pluralize:\"t,ent\" }} des cicatrice de cette bataille.\r\n{% endif %}\r\n\r\n{% if commandement.gagnant.chatelain %}\r\nChassant la fatigue qui me tenaillait, je rassemblai mes hommes valides pour{% elif commandement.gagnant.connetable %}\r\nSire {{commandement.gagnant.general}} essuya son \u00e9p\u00e9e, et cria aux hommes de se regrouper pour\r\n{% else %}\r\n{{commandement.gagnant.general}} entreprit de rallier les n\u00f4tres  pour \r\n{% endif %}\r\nproc\u00e9der au pillage de {{target_dynasty}}\r\n\r\n    +{{delta.gagnant.prestige}} de prestige pour {{dynasty}}, {{delta.perdant.prestige}} de prestige pour {{target_dynasty}}\r\n    ", 
     "image": "events/10_1.jpg", 
     "on_fire": "\n", 
     "slug": "escarmouche_victoire_2", 
@@ -2181,9 +2181,9 @@
     "category": null, 
     "name": "Mort en bas \u00e2ge", 
     "weight": 1, 
-    "text": "L'enfant Prenom Nom est mort au jeune \u00e2ge de (\u00e2ge) ans.\r\nIl n'aura jamais eu l'honneur de conna\u00eetre ma cour.", 
+    "text": "L'enfant de {{nom_pere}} et {{nom_mere}} est mort au jeune \u00e2ge de {{age}} ans.\r\nIl n'aura jamais eu l'honneur de conna\u00eetre ma cour.", 
     "image": "", 
-    "on_fire": "\n", 
+    "on_fire": "pere = param.get_value(\"pere\")\nmere = param.get_value(\"mere\")\n\nif mere is not None:\n  if mere.kingdom != kingdom :\n    true_death = param.next_event()\n    true_death.set_value(\"kingdom\", mere.kingdom)\n    \nelif pere is not None:\n  if mere.kingdom != kingdom :\n    true_death = param.next_event()\n    true_death.set_value(\"kingdom\", mere.kingdom)\n", 
     "slug": "mort_precoce", 
     "condition": "\n"
   }
@@ -2349,7 +2349,7 @@
     "category": null, 
     "name": "facheux", 
     "weight": 1, 
-    "text": "{% if duelist_lessfight == folk.1 %}Agrippant son \u00e9paule bless\u00e9e, {{facheux}} pare faiblement sa premi\u00e8re attaque. Le second coup lui fait l\u00e2cher son \u00e9p\u00e9e.\r\n{% else %}\r\nTrop confiant dans son avantage, {{facheux}} porte un puissant coup de taille. Avec l\u2019\u00e9nergie du d\u00e9sespoir, mon fils se tend et esquive au dernier moment. Profitant du d\u00e9s\u00e9quilibre de son adversaire, il pousse un cris de rage, et lui tranche le bras revers bien plac\u00e9 !\r\n{% endif %}\r\nApr\u00e8s un infime instant d'h\u00e9sitation, {{folks.1.first_name}} se fend, sa lame per\u00e7ant le chevalier de part en part. Une ovation monte imm\u00e9diatement du public, alors que le corps sans vie s'\u00e9croule sur le sol. Laissant son \u00e9p\u00e9e plant\u00e9e en travers du cadavre, il marche sur moi d'un pas d\u00e9cid\u00e9. Il me lance un regard farouche et d\u00e9clare d'une voix forte : \"P\u00e8re, je vous d\u00e9die cette victoire!\" Ma fille se jette dans ses bras, pleurant de soulagement.\r\n\r\n    {{facheux}} a \u00e9t\u00e9 tu\u00e9.\r\n    {{folks.1}} gagne +1 en Combat.", 
+    "text": "{% if duelist_lessfight == folks.1 %}Agrippant son \u00e9paule bless\u00e9e, {{facheux}} pare faiblement sa premi\u00e8re attaque. Le second coup lui fait l\u00e2cher son \u00e9p\u00e9e.\r\n{% else %}\r\nTrop confiant dans son avantage, {{facheux}} porte un puissant coup de taille. Avec l\u2019\u00e9nergie du d\u00e9sespoir, mon fils se tend et esquive au dernier moment. Profitant du d\u00e9s\u00e9quilibre de son adversaire, il pousse un cris de rage, et lui tranche le bras revers bien plac\u00e9 !\r\n{% endif %}\r\nApr\u00e8s un infime instant d'h\u00e9sitation, {{folks.1.first_name}} se fend, sa lame per\u00e7ant le chevalier de part en part. Une ovation monte imm\u00e9diatement du public, alors que le corps sans vie s'\u00e9croule sur le sol. Laissant son \u00e9p\u00e9e plant\u00e9e en travers du cadavre, il marche sur moi d'un pas d\u00e9cid\u00e9. Il me lance un regard farouche et d\u00e9clare d'une voix forte : \"P\u00e8re, je vous d\u00e9die cette victoire!\" Ma fille se jette dans ses bras, pleurant de soulagement.\r\n\r\n    {{facheux}} a \u00e9t\u00e9 tu\u00e9.\r\n    {{folks.1}} gagne +1 en Combat.", 
     "image": "events/716_9.jpg", 
     "on_fire": "fils = folks[1]\nfils.fight += 1\nfils.save()\nfacheux = param.get_value(\"facheux\")\nfacheux.die()\nparam.set_value(\"facheux\", str(facheux))\n", 
     "slug": "tuto_facheux_duel_sonwin", 
@@ -2727,7 +2727,7 @@
     "category": null, 
     "name": "R\u00e9sultat de l'espionnage", 
     "weight": 1, 
-    "text": "L'adversaire a : {{gold}} \u00e9cus et {{population}} habitants\r\n\r\n{% for folk in folks_titled %}\r\n* {{folk.0}}, le {{folk.1}}, a {{folk.2}} dans sa statistique principale\r\n{% endfor %}", 
+    "text": "L'adversaire a : {{gold}} \u00e9cus et {{population}} habitants\r\n\r\n{% for folk in folks_titled %}\r\n* {{folks.0}}, le {{folks.1}}, a {{folks.2}} dans sa statistique principale\r\n{% endfor %}", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "resultat_espionnage_chateau", 
@@ -2797,9 +2797,9 @@
     "category": null, 
     "name": "Execution", 
     "weight": 1, 
-    "text": "{{condamne}} a \u00e9t\u00e9 ex\u00e9cut\u00e9.\r\n{% if perte < 0 %}\r\nLa cour est sous le choc, et ils sont nombreux \u00e0 m\u2019appeler \"tyran\" dans mon dos, en se demandant lequel d'entre eux sera le prochain.\r\n{% else %}\r\nC'EST BIEN FAIT POUR TA GUEULE TRAITRE (a modifier)\r\n{% endif%}\r\n\r\n     Vous avez gagn\u00e9 {{biens}} \u00e9cus suite \u00e0 la r\u00e9quisition de ses biens.\r\n{% if perte < 0 %}    {{perte}} de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n{% else %}    + {{perte}} de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n{% endif %}", 
+    "text": "{{condamne}} a \u00e9t\u00e9 ex\u00e9cut\u00e9.\r\n{% if perte < 0 %}\r\nLa cour est sous le choc, et ils sont nombreux \u00e0 m\u2019appeler \"tyran\" dans mon dos, en se demandant lequel d'entre eux sera le prochain.\r\n{% else %}\r\nC'EST BIEN FAIT POUR TA GUEULE TRAITRE (a modifier)\r\n{% endif%}\r\n\r\n     Vous avez gagn\u00e9 {{biens}} \u00e9cus suite \u00e0 la r\u00e9quisition de ses biens.\r\n{% if perte < 0 %}    {{perte}} de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n{% endif %}", 
     "image": "", 
-    "on_fire": "param.get_value(\"condamne\").die()\n", 
+    "on_fire": "condamne = param.get_value(\"condamne\")\ncondamne.kingdom=None\ncondamne.save()\n", 
     "slug": "execution", 
     "condition": "\n"
   }
@@ -2987,20 +2987,6 @@
   }
 },
 {
-  "pk": 267, 
-  "model": "event.event", 
-  "fields": {
-    "category": null, 
-    "name": "Mort naturelle", 
-    "weight": 1, 
-    "text": "{{name}} est mort de mort naturelle \u00e0 l'\u00e2ge de {{age}} ans.\r\n", 
-    "image": "", 
-    "on_fire": "victime = param.get_value('victime')\nvictime.die()\n", 
-    "slug": "mort_naturelle", 
-    "condition": "\n"
-  }
-},
-{
   "pk": 268, 
   "model": "event.event", 
   "fields": {
@@ -3067,6 +3053,62 @@
     "image": "events/361_11_5.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_ending_2", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 275, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "tuto_diplomacy_lastchat_soeurette", 
+    "weight": 1, 
+    "text": "Elle se tient tr\u00e8s droite, les l\u00e8vres pinc\u00e9es et le regard dans le vide.\r\n\r\n\"Ma place n'est pas de contester votre d\u00e9cision, mon fr\u00e8re. Je ferai mon devoir, pour {{dynasty}}. Cependant...\"\r\n\r\nElle tourne vers moi un visage sombre.\r\n\r\n\"Quels sont vos projets concernant mes enfants?\"", 
+    "image": "events/361_11_6.jpg", 
+    "on_fire": "\n", 
+    "slug": "tuto_diplomacy_lastchat_soeurette", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 276, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Mort naturelle", 
+    "weight": 1, 
+    "text": "{{name}} est mort de mort naturelle \u00e0 l'\u00e2ge de {{age}} ans.\r\n", 
+    "image": "", 
+    "on_fire": "victime = param.get_value('victime')\n\ntry:\n  victime.die()\nexcept:\n  # La victime est en mission, elle ne pourra \u00eatre tu\u00e9e qu'une fois la mission termin\u00e9e\n  # On reprogramme l'event courant pour se relancer \u00e0 la fin de la mission\n  param.is_started = False\n  param.start = victime.mission.pending_mission.started + timedelta(minutes=victime.mission.pending_mission.mission.duration + 1)\n  param.save()\n", 
+    "slug": "shinigami", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 277, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "tuto_diplomacy_lastchat_soeurette_2", 
+    "weight": 1, 
+    "text": "{{soeurette.first_name}} reste de marbre, mais sa voix est glaciale.\r\n\r\n\"Je vois. Le futur {{title.chatelain.last_name}} n'est pas pour eux, n'est-ce pas?\"\r\n\r\nJe me contente de soutenir son regard, le menton pos\u00e9 sur mon poing. Elle se l\u00e8ve avec brusquesse, et sort en claquant la porte. \r\n\r\nEnfin seul, je soupire et me sert un verre de vin.", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "tuto_diplomacy_lastchat_soeurette_2", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 278, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "tuto_diplomacy_lastchat_soeurette_3", 
+    "weight": 1, 
+    "text": "{{soeurette.first_name}} d\u00e9glutit avec difficult\u00e9.\r\n\r\n\"Je...\"\r\n\r\nElle se l\u00e8ve lentement, les yeux ferm\u00e9.\r\n\r\n\"Je ferai mieux d'aller leur parler.\"\r\n\r\nUne fois ma s\u0153ur sortie, je soupire et me sers un verre de vin.", 
+    "image": "events/361_11_7.jpg", 
+    "on_fire": "\n", 
+    "slug": "tuto_diplomacy_lastchat_soeurette_3", 
     "condition": "\n"
   }
 },
@@ -5374,7 +5416,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Je vais devoir convoquer mon conn\u00e9table...", 
-    "message": "Un casus belli envers le seigneur {{kingdom.values.adversaire_tuto}} sera bient\u00f4t officiel. Je devrais pr\u00e9parer mes troupes pour une attaque contre ses terres.", 
+    "message": "Un casus belli envers le seigneur {{kingdom.values.tuto_adversaire}} sera bient\u00f4t officiel. Je devrais pr\u00e9parer mes troupes pour une attaque contre ses terres.", 
     "event": 204, 
     "condition": "\n", 
     "on_fire": "#param.next_event(\"tuto_casusbelli_effective\").start()\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_casusbelli_effective\")\npe.start()\n"
@@ -5575,7 +5617,7 @@
     "message": "", 
     "event": 225, 
     "condition": "\n", 
-    "on_fire": "#multiplicateur de gain tuto\nmultiplicateur_tuto=3 #sauf sur gain thune\n\n# Terminer les missions en cours\npending_missions = kingdom.pendingmission_set.filter(started__isnull=False)\nfor pending_mission in pending_missions:\n  pending_mission.resolve()\n\n# Simuler un mois de temps sur le Kingdom sur les persos\nfor folk in folks:\n  folk.birth -= timedelta(hours=2)\n  folk.save()\n\n#Appeller la fonction qui fait grandir les m\u00f4mes\nnb_passage_timewarp=kingdom.get_value('tuto_nb_passage_timewarp',random_value(0,7))\nkingdom.set_value('tuto_nb_passage_timewarp',nb_passage_timewarp+1)\nif nb_passage_timewarp%8==0:\n  f('education',kingdom=kingdom)\n\n#gain de population\nchatelain=kingdom.get_folk_in_title(\"chatelain\")\nif chatelain is None:\n  erudition_chatelain=0\nelse:\n  erudition_chatelain=chatelain.scholarship\ncure=kingdom.get_folk_in_title(\"cure\")\nif cure is None:\n  erudition_cure=5\nelse:\n  erudition_cure=cure.scholarship\np_max = call_function(\"get_max_population\", kingdom=kingdom)\nvirgule=kingdom.get_value('virgule_population',0)\ngain_pop = min(multiplicateur_tuto*10/100*p_max/12*((erudition_chatelain + 4*erudition_cure)/100)**0.5+virgule,p_max-kingdom.population-kingdom.get_value('total_soldats'))\ngain=int(gain_pop)\nkingdom.set_value('virgule_population',gain_pop-int(gain_pop))\ngain_pop=int(gain)\nkingdom.population += gain\n\n\nprint \"pop_max = \"\nprint p_max\nprint \"erudition_chatelain = \"\nprint erudition_chatelain\nprint \"\u00e9rudition cur\u00e9 = \"\nprint erudition_cure\nprint \"gain pop = \"\nprint gain_pop\n\nnouveaux_soldats=0\n#transformation pop_en_soldats\npourcentage_actuel = call_function('get_pourcentage_soldats_population', kingdom=kingdom)\nprint \"POURCENTAGE_MAX_SOLDATS_PASSIF = \"\nprint C.POURCENTAGE_MAX_SOLDATS_PASSIF\nprint \"C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO= \"\nprint C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO\nprint \"pourcentage_actuel = \"\nprint pourcentage_actuel\nif pourcentage_actuel < C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  virgule=kingdom.get_value('virgule_soldiers',0)\n  print \"ancienne virgule=\"\n  print virgule\n  nouveaux_soldats=min(multiplicateur_tuto*C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO/100/12 * p_max+virgule,int(C.POURCENTAGE_MAX_SOLDATS_PASSIF/100*p_max - pourcentage_actuel/100*p_max), kingdom.population)\n  kingdom.soldiers += int(nouveaux_soldats)\n  kingdom.population -=int(nouveaux_soldats)\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')+int(nouveaux_soldats))\n  kingdom.set_value('virgule_soldiers',nouveaux_soldats-int(nouveaux_soldats))\n  print \"nouvelle virgule=\"\n  print str(nouveaux_soldats-int(nouveaux_soldats))\n  print \"nouveaux_soldats = \"\n  print nouveaux_soldats\ngain_soldats=int(nouveaux_soldats)\n\n  \n#gain de thunes1\ntresorier=kingdom.get_folk_in_title(\"tresorier\")\nif tresorier is None:\n  erudition_tresorier=5\nelse:\n  erudition_tresorier=tresorier.scholarship\nprint \"erudition tresorier = \"\nprint erudition_tresorier\nvirgule=kingdom.get_value('virgule_thune',0)\nif pourcentage_actuel <= C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  gain=(kingdom.population * (((erudition_chatelain + 4*erudition_tresorier)/100)**0.5*2/3) -kingdom.get_value('total_soldats'))/12+virgule\nelse:\n  gain=(kingdom.population * (((erudition_chatelain + 4*erudition_tresorier)/100)**0.5*2/3) -kingdom.get_value('total_soldats')*2 )/12+virgule\nkingdom.set_value('virgule_thune',gain-int(gain))\nkingdom.money += int(gain)\ngain_thunes=int(gain)\nprint \"gain thune\"\nprint gain\n\nkingdom.save()\n\n#Gestion des bl\u00e9ss\u00e9s\nfor i in range(0,4):\n  Recurring.objects.get(slug=\"gestion_blesses\").fire(kingdom)\n\n#Cour maximum\nRecurring.objects.get(slug=\"cour_max\").fire(kingdom)\n\n#creer un message\nkingdom.message(u\"Un mois s'est \u00e9coul\u00e9. Votre domaine compte \"+str(int(gain_pop))+u\" paysans de plus.Vous recevez \"+str(int(gain_thunes))+u\" \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.\"+str(int(gain_soldats))+u\" paysans sont maintenant des soldats.\")\n\n# Lancer l'\u00e9v\u00e8nement en next_event\n# Les variables seront automatiquement transmises aussi.\nparam.next_event(param.get_value('slug')).start()\n\n"
+    "on_fire": "#multiplicateur de gain tuto\nmultiplicateur_tuto=3 #sauf sur gain thune\n\n# Terminer les missions en cours\npending_missions = kingdom.pendingmission_set.filter(started__isnull=False)\nfor pending_mission in pending_missions:\n  pending_mission.resolve()\n\n# Simuler un mois de temps sur le Kingdom sur les persos\nfor folk in folks:\n  folk.birth -= timedelta(hours=2)\n  folk.save()\n\n#Appeller la fonction qui fait grandir les m\u00f4mes\nnb_passage_timewarp=kingdom.get_value('tuto_nb_passage_timewarp',random_value(0,7))\nkingdom.set_value('tuto_nb_passage_timewarp',nb_passage_timewarp+1)\nif nb_passage_timewarp%8==0:\n  f('education',kingdom=kingdom)\n\n#gain de population\nchatelain=kingdom.get_folk_in_title(\"chatelain\")\nif chatelain is None:\n  erudition_chatelain=0\nelse:\n  erudition_chatelain=chatelain.scholarship\ncure=kingdom.get_folk_in_title(\"cure\")\nif cure is None:\n  erudition_cure=5\nelse:\n  erudition_cure=cure.scholarship\np_max = call_function(\"get_max_population\", kingdom=kingdom)\nvirgule=kingdom.get_value('virgule_population',0)\ngain_pop = min(multiplicateur_tuto*10/100*p_max/12*((erudition_chatelain + 4*erudition_cure)/100)**0.5+virgule,p_max-kingdom.population-kingdom.get_value('total_soldats'))\ngain=int(gain_pop)\nkingdom.set_value('virgule_population',gain_pop-int(gain_pop))\ngain_pop=int(gain)\nkingdom.population += gain\n\n\nprint \"pop_max = \"\nprint p_max\nprint \"erudition_chatelain = \"\nprint erudition_chatelain\nprint \"\u00e9rudition cur\u00e9 = \"\nprint erudition_cure\nprint \"gain pop = \"\nprint gain_pop\n\nnouveaux_soldats=0\n#transformation pop_en_soldats\npourcentage_actuel = call_function('get_pourcentage_soldats_population', kingdom=kingdom)\nprint \"POURCENTAGE_MAX_SOLDATS_PASSIF = \"\nprint C.POURCENTAGE_MAX_SOLDATS_PASSIF\nprint \"C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO= \"\nprint C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO\nprint \"pourcentage_actuel = \"\nprint pourcentage_actuel\nif pourcentage_actuel < C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  virgule=kingdom.get_value('virgule_soldiers',0)\n  print \"ancienne virgule=\"\n  print virgule\n  nouveaux_soldats=min(multiplicateur_tuto*C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO/100/12 * p_max+virgule,int(C.POURCENTAGE_MAX_SOLDATS_PASSIF/100*p_max - pourcentage_actuel/100*p_max), kingdom.population)\n  kingdom.soldiers += int(nouveaux_soldats)\n  kingdom.population -=int(nouveaux_soldats)\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')+int(nouveaux_soldats))\n  kingdom.set_value('virgule_soldiers',nouveaux_soldats-int(nouveaux_soldats))\n  print \"nouvelle virgule=\"\n  print str(nouveaux_soldats-int(nouveaux_soldats))\n  print \"nouveaux_soldats = \"\n  print nouveaux_soldats\ngain_soldats=int(nouveaux_soldats)\n\n  \n#gain de thunes1\ntresorier=kingdom.get_folk_in_title(\"tresorier\")\nif tresorier is None:\n  erudition_tresorier=5\nelse:\n  erudition_tresorier=tresorier.scholarship\nprint \"erudition tresorier = \"\nprint erudition_tresorier\nvirgule=kingdom.get_value('virgule_thune',0)\nif pourcentage_actuel <= C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  gain=2/3*(kingdom.population * (((erudition_chatelain + 4*erudition_tresorier)/100)**0.5*2/3) -kingdom.get_value('total_soldats'))/12+virgule\nelse:\n  gain=1/3*(kingdom.population * (((erudition_chatelain + 4*erudition_tresorier)/100)**0.5*2/3) -kingdom.get_value('total_soldats')*2 )/12+virgule\nkingdom.set_value('virgule_thune',gain-int(gain))\nkingdom.money += int(gain)\ngain_thunes=int(gain)\nprint \"gain thune\"\nprint gain\n\nkingdom.save()\n\n#Gestion des bl\u00e9ss\u00e9s\nfor i in range(0,4):\n  Recurring.objects.get(slug=\"gestion_blesses\").fire(kingdom)\n\n#Cour maximum\nRecurring.objects.get(slug=\"cour_max\").fire(kingdom)\n\n#creer un message\nkingdom.message(u\"Un mois s'est \u00e9coul\u00e9. Votre domaine compte \"+str(int(gain_pop))+u\" paysans de plus.Vous recevez \"+str(int(gain_thunes))+u\" \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.\"+str(int(gain_soldats))+u\" paysans sont maintenant des soldats.\")\n\n# Lancer l'\u00e9v\u00e8nement en next_event\n# Les variables seront automatiquement transmises aussi.\nparam.next_event(param.get_value('slug')).start()\n\n"
   }
 },
 {
@@ -6063,17 +6105,6 @@
   }
 },
 {
-  "pk": 345, 
-  "model": "event.eventaction", 
-  "fields": {
-    "text": "OK", 
-    "message": "", 
-    "event": 267, 
-    "condition": "\n", 
-    "on_fire": "\n"
-  }
-},
-{
   "pk": 346, 
   "model": "event.eventaction", 
   "fields": {
@@ -6269,6 +6300,61 @@
     "event": 272, 
     "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_soeurette\").start()"
+  }
+},
+{
+  "pk": 367, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "\"Leur place est \u00e0 vos c\u00f4t\u00e9s. Ils vous suivront \u00e0 {{tuto_PNJ}}.\"", 
+    "message": "", 
+    "event": 275, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_soeurette_2\").start()\n"
+  }
+},
+{
+  "pk": 368, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "\"{{dynasty}} aura besoin d'eux \u00e0 l'avenir. Ils ne quiteront pas le chateau.\"", 
+    "message": "", 
+    "event": 275, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_soeurette_3\").start()"
+  }
+},
+{
+  "pk": 369, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "\"Quelle est selon vous la meilleur solution ?\"", 
+    "message": "", 
+    "event": 275, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_soeurette_4\").start()"
+  }
+},
+{
+  "pk": 370, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Gouverner n'est pas de tout repos.", 
+    "message": "", 
+    "event": 277, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_diplomacy_mariage\").start()"
+  }
+},
+{
+  "pk": 371, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "J'ai prit une d\u00e9cision difficile.", 
+    "message": "", 
+    "event": 278, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_diplomacy_mariage\").start()"
   }
 }
 ]
