@@ -544,7 +544,7 @@
     "title": 2, 
     "target_description": "", 
     "timeout": null, 
-    "is_cancellable": false, 
+    "is_cancellable": true, 
     "duration": 5, 
     "on_cancel": "\n", 
     "slug": "tuto_escarmouche", 
@@ -837,7 +837,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "def remove_future_claim(kingdom, target):\n  pes = kingdom.pendingevent_set.filter(event__slug=\"nouveau_claim\")\n  for pe in pes:\n    if pe.get_value(\"target\") == target:\n      pe.delete()\n      return\n  stop(\"Vous n'allez pas \u00eatre en guerre avec cette personne\")\n\n# R\u00e9cup\u00e9rer le pending_event associ\u00e9 qui aurait pu d\u00e9clencher un claim\nremove_future_claim(grid[\"moi\"].affected[0].kingdom, grid[\"pas_moi\"].affected[0].kingdom)\nremove_future_claim(grid[\"pas_moi\"].affected[0].kingdom, grid[\"moi\"].affected[0].kingdom)\n\n", 
+    "on_start": "def remove_future_claim(kingdom, target):\n  pes = kingdom.pendingevent_set.filter(event__slug=\"nouveau_claim\")\n  for pe in pes:\n    if pe.get_value(\"target\") == target:\n      pe.delete()\n      return True\n  return False\n\nkingdom=grid[\"moi\"].affected[0].kingdom\ntarget=grid[\"pas_moi\"].affected[0].kingdom\n#R\u00e9cup\u00e9rer les claims en cours entre les deux joueurs et les supprimer\nClaims_en_cours=Claim.objects.filter(offender__in=(kingdom,target), offended__in=(kingdom,target))\nif Claims_en_cours.count()>0:\n  Claims_en_cours.delete()\nelse:  \n# R\u00e9cup\u00e9rer le pending_event associ\u00e9 qui aurait pu d\u00e9clencher un claim\n  C1=remove_future_claim(kingdom,target)\n  C2=remove_future_claim(target,kingdom)\n  if not C1 or C2:\n    stop(\"Vous n'avez aucune raison de vouloir faire la paix\")\n  \n#notification au joueur qu'ils ont fait la paix\npe=kingdom.create_pending_event(\"notif_paix\")\npe.set_value(\"nouveau_meilleur_copain\",target)\npe.start()\npe=target.create_pending_event(\"notif_paix\")\npe.set_value(\"nouveau_meilleur_copain\",kingdom)\npe.start()\n\n", 
     "has_target": false, 
     "is_team": false, 
     "title": null, 
@@ -1393,7 +1393,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "pas_moi", 
-    "condition": "if folk.kingdom == kingdom:\n  stop(\"Ne doit pas faire partie de mon royaume\")"
+    "condition": "if folk.kingdom == kingdom:\n  stop(\"Ne doit pas faire partie de mon royaume, je suis d\u00e9j\u00e0 en paix avec moi m\u00eame. Enfin, je crois...\")"
   }
 }
 ]
