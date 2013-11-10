@@ -445,7 +445,7 @@
     "category": null, 
     "name": "Escarmouche", 
     "weight": 1, 
-    "text": "La bataille \u00e9tait termin\u00e9e. Les corbeaux apparaissaient un \u00e0 un dans le ciel, poussant leurs cris affam\u00e9s sans parvenir \u00e0 couvrir le r\u00e2le des bless\u00e9s et des mourants. {{dynasty}} avait vaincu. Sur mes {{gagnant.troupes}} hommes d'arme, {{delta.gagnant.pertes_troupe}} \u00e9taient tomb\u00e9s l'arme \u00e0 la main, emportant avec eux {{delta.perdant.pertes_troupe}} ennemis vocif\u00e9rants et faisant fuir le reste.\r\n{% if delta.gagnant.morts|length >= 1 %}\r\nNous avions remport\u00e9 une victoire, mais \u00e0 quel prix? {{ delta.gagnant.morts|folks_list}} \r\n{% if delta.gagnant.morts|length == 1 %}\r\ngisait aux milieu des cadavres, serrant encore son \u00e9p\u00e9e.\r\n{% else %}\r\n\u00e9taient tomb\u00e9s sans que les n\u00f4tres ne puissent leur porter secours.\r\n{% endif %}\r\n{% endif %}\r\n{% if delta.gagnant.blesses|length >= 1 %}\r\n{{delta.gagnant.blesses|folks_list}} avai{{delta.gagnant.blesses|pluralize:\"t,ent\" }} \u00e9t\u00e9 bless\u00e9{{delta.gagnant.blesses|pluralize}} dans la bataille, et devrai{{delta.gagnant.blesses|pluralize:\"t,ent\" }} \u00eatre ramen\u00e9{{delta.gagnant.blesses|pluralize}} au ch\u00e2teau sur {{delta.gagnant.blesses|pluralize:\"une,des\"}} liti\u00e8re{{delta.gagnant.blesses|pluralize}}.\r\n{% endif %}\r\n{% if delta.perdant.morts|length >= 1 %}\r\nChez l'adversaire, {{ delta.perdant.morts|folks_list}} avai{{delta.perdant.morts|pluralize:\"t,ent\" }} \u00e9t\u00e9 terrass\u00e9.\r\n{% endif %} \r\n{% if delta.perdant.blesses|length >= 1 %}\r\n{% if delta.gagnant.morts|length >= 1 %}\r\nDe plus, {% else %} Chez l'adversaire, {% endif %} {{ delta.perdant.blesses|folks_list}} avai{{delta.perdant.blesses|pluralize:\"t,ent\" }} \u00e9t\u00e9 bless\u00e9{{delta.perdant.blesses|pluralize:\",s\" }} et garderai{{delta.perdant.blesses|pluralize:\"t,ent\" }} des cicatrice de cette bataille.\r\n{% endif %}\r\n\r\n{% if commandement.gagnant.chatelain %}\r\nChassant la fatigue qui me tenaillait, je rassemblai mes hommes valides pour{% elif commandement.gagnant.connetable %}\r\nSire {{commandement.gagnant.general}} essuya son \u00e9p\u00e9e, et cria aux hommes de se regrouper pour\r\n{% else %}\r\n{{commandement.gagnant.general}} entreprit de rallier les n\u00f4tres  pour \r\n{% endif %}\r\nproc\u00e9der au pillage de {{target_dynasty}}\r\n\r\n    +{{delta.gagnant.prestige}} de prestige pour {{dynasty}}, {{delta.perdant.prestige}} de prestige pour {{target_dynasty}}\r\n    ", 
+    "text": "La bataille \u00e9tait termin\u00e9e. Les corbeaux apparaissaient un \u00e0 un dans le ciel, poussant leurs cris affam\u00e9s sans parvenir \u00e0 couvrir le r\u00e2le des bless\u00e9s et des mourants. {{dynasty}} avait vaincu. Sur mes {{gagnant.troupes}} hommes d'arme, {{delta.gagnant.pertes_troupe}} \u00e9taient tomb\u00e9s l'arme \u00e0 la main, emportant avec eux {{delta.perdant.pertes_troupe}} ennemis vocif\u00e9rants et faisant fuir le reste.\r\n{% if delta.gagnant.morts|length >= 1 %}\r\nNous avions remport\u00e9 une victoire, mais \u00e0 quel prix? {{ delta.gagnant.morts|folks_list}} \r\n{% if delta.gagnant.morts|length == 1 %}\r\ngisait aux milieu des cadavres, serrant encore son \u00e9p\u00e9e.\r\n{% else %}\r\n\u00e9taient tomb\u00e9s sans que les n\u00f4tres ne puissent leur porter secours.\r\n{% endif %}\r\n{% endif %}\r\n{% if delta.gagnant.blesses|length >= 1 %}\r\n{{delta.gagnant.blesses|folks_list}} avai{{delta.gagnant.blesses|pluralize:\"t,ent\" }} \u00e9t\u00e9 bless\u00e9{{delta.gagnant.blesses|pluralize}} dans la bataille, et allai{{delta.gagnant.blesses|pluralize:\"t,ent\" }} devoir \u00eatre ramen\u00e9{{delta.gagnant.blesses|pluralize}} au ch\u00e2teau sur {{delta.gagnant.blesses|pluralize:\"une,des\"}} liti\u00e8re{{delta.gagnant.blesses|pluralize}}.\r\n{% endif %}\r\n{% if delta.perdant.morts|length >= 1 %}\r\nChez l'adversaire, {{ delta.perdant.morts|folks_list}} avai{{delta.perdant.morts|pluralize:\"t,ent\" }} \u00e9t\u00e9 terrass\u00e9.\r\n{% endif %} \r\n{% if delta.perdant.blesses|length >= 1 %}\r\n{% if delta.gagnant.morts|length >= 1 %}\r\nDe plus, {% else %} Chez l'adversaire, {% endif %} {{ delta.perdant.blesses|folks_list}} avai{{delta.perdant.blesses|pluralize:\"t,ent\" }} \u00e9t\u00e9 bless\u00e9{{delta.perdant.blesses|pluralize:\",s\" }} et garderai{{delta.perdant.blesses|pluralize:\"t,ent\" }} des cicatrice de cette bataille.\r\n{% endif %}\r\n\r\n{% if commandement.gagnant.chatelain %}\r\nChassant la fatigue qui me tenaillait, je rassemblai mes hommes valides pour{% elif commandement.gagnant.connetable %}\r\nSire {{commandement.gagnant.general}} essuya son \u00e9p\u00e9e, et cria aux hommes de se regrouper pour\r\n{% else %}\r\n{{commandement.gagnant.general}} entreprit de rallier les n\u00f4tres  pour \r\n{% endif %}\r\nproc\u00e9der au pillage de {{target_dynasty}}\r\n\r\n    +{{delta.gagnant.prestige}} de prestige pour {{dynasty}}, {{delta.perdant.prestige}} de prestige pour {{target_dynasty}}\r\n    ", 
     "image": "events/10_1.jpg", 
     "on_fire": "\n", 
     "slug": "escarmouche_victoire_2", 
@@ -601,7 +601,7 @@
     "weight": 1, 
     "text": "Le chevalier est arriv\u00e9 aux premi\u00e8res lueurs du jour, envelopp\u00e9 dans sa cape trou\u00e9e pour se prot\u00e9ger du froid. Refusant une miche de pain et un verre de lait que {{folks.3.first_name}} lui a offert, il a demand\u00e9 \u00e0 \u00eatre re\u00e7ut sur le champ par le seigneur {{title.chatelain.last_name}}. A pr\u00e9sent, il est agenouill\u00e9 devant mon tr\u00f4ne, la main droite sur le pommeau de son \u00e9p\u00e9e. \"Messire. Je me nomme {{chevalier}}, chevalier \u00e0 la recherche d'une cause et d'un toit. J'ai entendu la nouvelle du retour de votre famille...\" Il rel\u00e8ve la t\u00eate, et me jette un regard d\u00e9termin\u00e9. \"Mon \u00e9p\u00e9e est votre si vous la voulez.\"\r\n\r\n    {{chevalier|folk_details}}\r\n\r\n", 
     "image": "events/361.jpg", 
-    "on_fire": "folk = call_function(\"creer_folk\", fight_min=9, plot_min=1, diplomacy_min=1, scholarship_min=1, max_carac=32, loyalty=50, kingdom=None, sex=Folk.MALE,\nbirth=datetime.now() -  timedelta(days=25))\nparam.set_value(\"chevalier\", folk)", 
+    "on_fire": "folk = call_function(\"creer_folk\", fight_min=9, plot_min=1, diplomacy_min=1, scholarship_min=1, max_carac=32, loyalty=50, kingdom=None, sex=Folk.MALE, birth=datetime.now() -  timedelta(days=25))\nparam.set_value(\"chevalier\", folk)", 
     "slug": "tuto_allegeance_chevalier", 
     "condition": " "
   }
@@ -627,7 +627,7 @@
     "category": null, 
     "name": "Un pr\u00eatre se pr\u00e9sente devant vous", 
     "weight": 1, 
-    "text": "En revenant d'une promenade \u00e0 travers mes terres, en compagnie de mes enfants, je croise un voyageur en sandales et capuchon qui se repose sur le bord de la route. Ayant partag\u00e9 une gourde et \u00e9chang\u00e9 quelques mots, j'apprends sans surprise qu'il est un pr\u00eatre itin\u00e9rant. Alors qu'il discute tranquillement avec {{folks.3.first_name}}, mon fils {{folks.1.first_name}} me murmure que nous devrions peut-\u00eatre lui proposer de demeurer au ch\u00e2teau pour un temps.", 
+    "text": "En revenant d'une promenade \u00e0 travers mes terres, en compagnie de mes enfants, je croise un voyageur en sandales et capuchon qui se repose sur le bord de la route. Ayant partag\u00e9 une gourde et \u00e9chang\u00e9 quelques mots, j'apprends sans surprise qu'il est un pr\u00eatre itin\u00e9rant. Alors qu'il discute tranquillement avec {{folks.3.first_name}}, mon fils {{folks.1.first_name}} me murmure que nous devrions peut-\u00eatre lui proposer de demeurer au ch\u00e2teau pour un temps.\r\n\r\n    {{pretre|folk_details}}", 
     "image": "events/29.jpg", 
     "on_fire": "pretre = call_function(\"creer_folk\", kingdom=None, fight_min=1, plot_min=1, diplomacy_min=1, scholarship_min=1, max_carac=32, loyalty=50, sex=Folk.MALE, birth=datetime.now() - timedelta(days=35), trait=\"pretre\")\nparam.set_value(\"pretre\", pretre)\n", 
     "slug": "tuto_allegeance_pretre", 
@@ -3155,6 +3155,20 @@
   }
 },
 {
+  "pk": 282, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "tuto_diplomacy_lastchat_fils", 
+    "weight": 1, 
+    "text": "{% if folks.1.loyalty <= 80 %}\r\nIl est furieux, crisp\u00e9 sur sa chaise. Le jeune effront\u00e9 me d\u00e9fie du regard, alors que j'attends patiemment qu'il se d\u00e9cide \u00e0 prendre la parole.\r\n\r\n\"D\u00eetes moi la v\u00e9rit\u00e9, p\u00e8re. M'avez-vous jamais consid\u00e9r\u00e9 comme votre h\u00e9ritier?\"\r\n\r\nSa voix est charg\u00e9e d'amertume.\r\n{% else %}\r\n{{folks.1.first_name}} est assis sur sa chaise, tendu. Je peux lire la peine et la d\u00e9ception sur son visage.\r\n\r\n\"P\u00e8re... je... pourquoi? Ne suis-je pas votre h\u00e9ritier?\"{% endif %}", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "tuto_diplomacy_lastchat_fils", 
+    "condition": "\n"
+  }
+},
+{
   "pk": 5, 
   "model": "event.eventaction", 
   "fields": {
@@ -3514,7 +3528,7 @@
     "message": "", 
     "event": 41, 
     "condition": "if not param.get_value(\"tuto\"):\n  stop(\"not_in_tuto\")\n\n", 
-    "on_fire": "if param.get_value(\"attaquant\"):\n  pe=param.next_event(\"tuto_escarmouche_pillage\").start()  \nelif param.get_value(\"attaquant\")==False and not kingdom.get_value(\"tuto_rapport_espion\", False) and kingdom.prestige>150:\n  pe=param.next_event(\"tuto_espionnage\").start()\n  kingdom.set_value(\"tuto_rapport_espion\",True)\nelif param.get_value(\"attaquant\") and not kingdom.get_value(\"tuto_conflit\", False):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 200\nelif kingdom.prestige>200:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  if not PendingEvent.objects.filter(event__slug=\"_tuto_timewarp\", kingdom=kingdom).exists(): \n    pe=param.next_event(\"_tuto_timewarp\")\n    pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n    pe.start()\n"
+    "on_fire": "if param.get_value(\"attaquant\"):\n  pe=param.next_event(\"tuto_escarmouche_pillage\").start()  \nelif param.get_value(\"attaquant\")==False and not kingdom.get_value(\"tuto_rapport_espion\", False) and kingdom.prestige>150:\n  pe=param.next_event(\"tuto_espionnage\").start()\n  kingdom.set_value(\"tuto_rapport_espion\",True)\n  if not PendingEvent.objects.filter(event__slug=\"_tuto_timewarp\", kingdom=kingdom).exists():\n    pe=param.next_event(\"_tuto_timewarp\")\n    pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n    pe.start()\n  if not PendingEvent.objects.filter(event__slug=\"_tuto_timewarp\", kingdom=kingdom).exists():\n    pe=param.next_event(\"_tuto_timewarp\")\n    pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n    pe.start()\nelif param.get_value(\"attaquant\") and not kingdom.get_value(\"tuto_conflit\", False):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 200\nelif kingdom.prestige>200:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  if not PendingEvent.objects.filter(event__slug=\"_tuto_timewarp\", kingdom=kingdom).exists(): \n    pe=param.next_event(\"_tuto_timewarp\")\n    pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n    pe.start()\n"
   }
 },
 {
@@ -5164,7 +5178,7 @@
     "message": "Je dois [d\u00e9signer un mentor](mission) pour s'occuper de l'\u00e9ducation de {{mioche}}.", 
     "event": 174, 
     "condition": "\n", 
-    "on_fire": "kingdom.unlock_title(\"chambellan\")\npm = kingdom.create_pending_mission(\"tuto_nommer_mentor\")\n\n# Pr\u00e9 remplir la mission avec le mioche\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mioche\"), mission_grid=MissionGrid.objects.get(slug=\"enfant\", mission=pm.mission)).save()\n"
+    "on_fire": "kingdom.unlock_title(\"chambellan\")\npm = kingdom.create_pending_mission(\"tuto_nommer_mentor\")\n\n# Pr\u00e9 remplir la mission avec le mioche\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mioche\"), mission_grid=MissionGrid.objects.get(slug=\"enfant\", mission=pm.mission)).save()\n\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_soeurette\")\n"
   }
 },
 {
@@ -5678,7 +5692,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Alea jacta est.", 
-    "message": "Je peux maintenant [attaquer](#mission) le seigneur {{ennemi}}.", 
+    "message": "Je peux maintenant [attaquer](#mission) le seigneur {{kingdom.values.tuto_adversaire}}.", 
     "event": 229, 
     "condition": "\n", 
     "on_fire": "kingdom.unlock_mission(\"tuto_escarmouche\")\nkingdom.create_pending_mission(\"tuto_escarmouche\")\n"
@@ -5758,7 +5772,7 @@
     "message": "", 
     "event": 236, 
     "condition": "\n", 
-    "on_fire": "if (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None and kingdom.prestige>150):\n  pe=param.next_event(\"tuto_espionnage\").start()\n  kingdom.set_value(\"tuto_rapport_espion\",True)\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 200\nelif kingdom.prestige>200:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  if not PendingEvent.objects.filter(event__slug=\"_tuto_timewarp\", kingdom=kingdom).exists(): \n    pe=param.next_event(\"_tuto_timewarp\")\n    pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n    pe.start()"
+    "on_fire": "if (param.get_value(\"attaquant\")==False and kingdom.get_value(\"tuto_rapport_espion\",None)==None and kingdom.prestige>150):\n  pe=param.next_event(\"tuto_espionnage\").start()\n  kingdom.set_value(\"tuto_rapport_espion\",True)\n  if not PendingEvent.objects.filter(event__slug=\"_tuto_timewarp\", kingdom=kingdom).exists():\n    pe=param.next_event(\"_tuto_timewarp\")\n    pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n    pe.start()\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_conflit\",None)==None):\n  pe=param.next_event(\"tuto_pnjescaladeconflit\").start()\n#si prestige > 200\nelif kingdom.prestige>200:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  if not PendingEvent.objects.filter(event__slug=\"_tuto_timewarp\", kingdom=kingdom).exists(): \n    pe=param.next_event(\"_tuto_timewarp\")\n    pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n    pe.start()"
   }
 },
 {
@@ -5989,7 +6003,7 @@
     "message": "", 
     "event": 257, 
     "condition": "if not param.get_value(\"tuto\"):\n  stop(\"not_in_tuto\")\n", 
-    "on_fire": "if not param.get_value(\"attaquant\"):\n  pe = param.next_event(\"tuto_escarmouche_misasac\").start()\nelif param.get_value(\"attaquant\")==False and not kingdom.get_value(\"tuto_rapport_espion\", False) and kingdom.prestige>150:\n  kingdom.set_value(\"tuto_rapport_espion\",True)\n  pe = param.next_event(\"tuto_espionnage\").start()\nelif param.get_value(\"attaquant\") and not kingdom.get_value(\"tuto_conflit\",False):\n  pe = param.next_event(\"tuto_pnjescaladeconflit\").start()\n\n#si prestige > 200\nelif kingdom.prestige > 200:\n  kingdom.create_pending_event(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  if not PendingEvent.objects.filter(event__slug=\"_tuto_timewarp\", kingdom=kingdom).exists(): \n    pe=param.next_event(\"_tuto_timewarp\")\n    pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n    pe.start()\n\n"
+    "on_fire": "if not param.get_value(\"attaquant\"):\n  pe = param.next_event(\"tuto_escarmouche_misasac\").start()\nelif param.get_value(\"attaquant\")==False and not kingdom.get_value(\"tuto_rapport_espion\", False) and kingdom.prestige>150:\n  kingdom.set_value(\"tuto_rapport_espion\",True)\n  pe = param.next_event(\"tuto_espionnage\").start()\n  if not PendingEvent.objects.filter(event__slug=\"_tuto_timewarp\", kingdom=kingdom).exists():\n    pe=param.next_event(\"_tuto_timewarp\")\n    pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n    pe.start()\nelif param.get_value(\"attaquant\") and not kingdom.get_value(\"tuto_conflit\",False):\n  pe = param.next_event(\"tuto_pnjescaladeconflit\").start()\n\n#si prestige > 200\nelif kingdom.prestige > 200:\n  kingdom.create_pending_event(\"tuto_achever_voisin\")\n#si conflit\nelse:\n  #kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  if not PendingEvent.objects.filter(event__slug=\"_tuto_timewarp\", kingdom=kingdom).exists(): \n    pe=param.next_event(\"_tuto_timewarp\")\n    pe.set_value('slug',\"tuto_scanjoueur_fantome\")\n    pe.start()\n\n"
   }
 },
 {
@@ -6452,6 +6466,50 @@
     "event": 281, 
     "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_diplomacy_mariage\").start()"
+  }
+},
+{
+  "pk": 377, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "\"Tu l'es,' fils.\" Sourire triste. \"...Mais les circonstance ont chang\u00e9es. Pardonne moi, mais le futur {{dynasty}} demande que tu parte.\"", 
+    "message": "", 
+    "event": 282, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_fils_2\").start()\n"
+  }
+},
+{
+  "pk": 378, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Je soupire, aterr\u00e9, et d\u00e9tourne le regard. \"Tu te comporte comme un enfant, {{folks.1}}. Va. Tu r\u00e9alisera un jour que j'ai agit au mieux.\"", 
+    "message": "", 
+    "event": 282, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_fils_2\").start()"
+  }
+},
+{
+  "pk": 379, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Le plat de ma main sur la table le fait sursauter. \"Assez. Je n'ai pas de compte \u00e0 rendre \u00e0 un pourceau insolent. Tu m\u00e9ritera ton nom quand tu saura utiliser ta cervelle et tenir ta langue.\"", 
+    "message": "", 
+    "event": 282, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_fils_3\").start()\n"
+  }
+},
+{
+  "pk": 380, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Sourire moqueur.", 
+    "message": "", 
+    "event": 282, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_fils_4\").start()"
   }
 }
 ]
