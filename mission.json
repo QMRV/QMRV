@@ -743,16 +743,16 @@
     "target_list": "\n", 
     "text": "Compromettre un membre de ma cour.", 
     "has_value": false, 
-    "on_resolution": "comprometeurs = grids['comprometeurs']\ncout_mission = 5 + 5 * len(comprometeurs)\nkingdom.money -= cout_mission\nkingdom.save()\ncompromis = grids['compromis'][0]\n\ndefense = (compromis.plot + compromis.diplomacy) * 1.5\nattaque = sum_stats(folks, 'plot')\nreussite = max(attaque/defense, 1) * 100 - 10\nif  reussite < random_value(1,100):\n  #R\u00e9ussite\n  pe = kingdom.create_pending_event(\"compromettre_success\")\n  \n  if compromis.has_quality(\"admire\"):\n    compromis.remove_quality(\"admire\")\n    compromis.add_quality(\"respecte\")\n    pe.set_value(\"lost\", \"admir\u00e9\")\n    pe.set_value(\"got\", \"respect\u00e9\")\n  elif compromis.has_quality(\"respecte\"):\n    compromis.remove_quality(\"respecte\")\n    pe.set_value(\"lost\", \"respect\u00e9\")\n    pe.set_value(\"got\", None)\n  elif compromis.has_quality(\"meprise\"):\n    compromis.remove_quality(\"meprise\")\n    compromis.add_quality(\"deteste\")\n    pe.set_value(\"lost\", \"m\u00e9pris\u00e9\")\n    pe.set_value(\"got\", \"d\u00e9test\u00e9\")\n  else:\n    compromis.add_quality(\"meprise\")\n    pe.set_value(\"lost\", None)\n    pe.set_value(\"got\", \"m\u00e9pris\u00e9\")\n  \n  pe.set_value(\"compromis\", compromis)\n  pe.set_value(\"comprometeurs\", comprometeurs)\n  \n  pe.start()\nelse:\n  if 100 - reussite < random_value (1,100):\n    #gros echec\n    def perte(facteur, kingdom=kingdom, compromis=compromis):\n      call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=C.PERTE_LOYAUTE_BANNISSEMENT*facteur, perte_max=C.PERTE_LOYAUTE_BANNISSEMENT*facteur)\n      for c in compromis:\n        c.loyalty += C.PERTE_LOYAUTE_BANNISSEMENT*facteur\n        c.save()\n      return C.PERTE_LOYAUTE_BANNISSEMENT*facteur\n      \n    perte_loyaute = 0 \n    \n    if compromis.has_quality(\"admire\"):\n      perte_loyaute -= perte(2)\n    elif compromis.has_quality(\"respecte\"):\n      perte_loyaute -= perte(1.5)   \n    else :\n      perte_loyaute -= perte(1)\n      \n    pe = kingdom.create_pending_event(\"compromettre_big_failure\")\n    pe.set_value(\"compromis\", compromis)\n    pe.set_value(\"comprometeurs\", comprometeurs)\n    pe.set_value(\"perte\", perte_loyaute)\n    pe.start()\n\n  else:\n    #echec simple\n    pe = kingdom.create_pending_event(\"compromettre_failure\")\n    pe.set_value(\"compromis\", compromis)\n    pe.set_value(\"comprometeurs\", comprometeurs)\n    pe.start()\n\n  \n", 
+    "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "cout_mission = 5 + 5 * len(grids['comprometeurs'])\nif grids['compromis'][0].has_quality(\"deteste\"):\n  stop(\"Cette personne est d\u00e9j\u00e0 d\u00e9test\u00e9e, il n'est pas utile de la salir encore plus\")\nif kingdom.money < cout_mission:\n  stop(\"Nous n'avez pas assez d'argent pour lancer cette mission (\" + cout_mission + \" \u00e9cus).\")\n", 
+    "on_start": "cout_mission = 5 + 5 * len(grids['comprometeurs'])\nif kingdom.money < cout_mission:\n  stop(\"Nous n'avez pas assez d'argent pour lancer cette mission (\" + cout_mission + \" \u00e9cus).\")\n\ncomprometeurs = grids['comprometeurs']\ncout_mission = 5 + 5 * len(comprometeurs)\nkingdom.money -= cout_mission\nkingdom.save()\ncompromis = grids['compromis'][0]\n\ndefense = (compromis.plot + compromis.diplomacy) * 1.5\nattaque = sum_stats(folks, 'plot')\nif kingdom.get_folk_in_title(\"maitre_espion\") in comprometeurs:\n  attaque += 5\nreussite = min(attaque/defense, 1) * 100 - 10\nif  reussite < random_value(1,100):\n  #R\u00e9ussite\n  pe = kingdom.create_pending_event(\"compromettre_success\")\n  \n  if compromis.has_quality(\"admire\"):\n    compromis.remove_quality(\"admire\")\n    compromis.add_quality(\"respecte\")\n    pe.set_value(\"lost\", \"admir\u00e9\")\n    pe.set_value(\"got\", \"respect\u00e9\")\n  elif compromis.has_quality(\"respecte\"):\n    compromis.remove_quality(\"respecte\")\n    pe.set_value(\"lost\", \"respect\u00e9\")\n    pe.set_value(\"got\", None)\n  elif compromis.has_quality(\"meprise\"):\n    compromis.remove_quality(\"meprise\")\n    compromis.add_quality(\"deteste\")\n    pe.set_value(\"lost\", \"m\u00e9pris\u00e9\")\n    pe.set_value(\"got\", \"d\u00e9test\u00e9\")\n  else:\n    compromis.add_quality(\"meprise\")\n    pe.set_value(\"lost\", None)\n    pe.set_value(\"got\", \"m\u00e9pris\u00e9\")\n  \n  pe.set_value(\"target\", compromis)\n  pe.set_value(\"comprometeurs\", comprometeurs)\n  \n  pe.start()\nelse:\n  if 100 - reussite < random_value (1,100):\n    #gros echec\n    def perte(facteur, kingdom=kingdom, comprometeurs=comprometeurs):\n      call_function(\"perte_loyaute_general\", kingdom=kingdom, perte_min=C.PERTE_LOYAUTE_BANNISSEMENT*facteur, perte_max=C.PERTE_LOYAUTE_BANNISSEMENT*facteur)\n      for c in comprometeurs:\n        c.loyalty += C.PERTE_LOYAUTE_BANNISSEMENT*facteur\n        c.save()\n      return C.PERTE_LOYAUTE_BANNISSEMENT*facteur\n      \n    perte_loyaute = 0\n    \n    if compromis.has_quality(\"admire\"):\n      perte_loyaute -= perte(2)\n    elif compromis.has_quality(\"respecte\"):\n      perte_loyaute -= perte(1.5)   \n    else :\n      perte_loyaute -= perte(1)\n      \n    pe = kingdom.create_pending_event(\"compromettre_big_failure\")\n    pe.set_value(\"target\", compromis)\n    pe.set_value(\"comprometeurs\", comprometeurs)\n    pe.set_value(\"perte\", perte_loyaute)\n    pe.start()\n\n  else:\n    #echec simple\n    pe = kingdom.create_pending_event(\"compromettre_failure\")\n    pe.set_value(\"target\", compromis)\n    pe.set_value(\"comprometeurs\", comprometeurs)\n    pe.start()\n#le compromis peut faire quelque chose d'autre\ncompromis.mission.delete()\n  \n", 
     "has_target": false, 
     "is_team": false, 
     "title": 5, 
     "target_description": "", 
     "timeout": null, 
     "is_cancellable": true, 
-    "duration": 360, 
+    "duration": 60, 
     "on_cancel": "\n", 
     "slug": "compromettre", 
     "on_init": "\n"
@@ -763,10 +763,10 @@
   "model": "mission.mission", 
   "fields": {
     "name": "Espionner l'adversaire", 
-    "target_list": null, 
+    "target_list": "\n", 
     "text": "mission pour espionner le PNJ", 
     "has_value": false, 
-    "on_resolution": null, 
+    "on_resolution": "\n", 
     "value_description": "", 
     "on_start": "kingdom.start_pending_event(\"tuto_rapport_espion\")", 
     "has_target": false, 
@@ -774,11 +774,11 @@
     "title": 5, 
     "target_description": "", 
     "timeout": null, 
-    "is_cancellable": false, 
+    "is_cancellable": true, 
     "duration": 5, 
-    "on_cancel": null, 
+    "on_cancel": "\n", 
     "slug": "tuto_espionnage", 
-    "on_init": null
+    "on_init": "\n"
   }
 },
 {
@@ -809,7 +809,7 @@
   "model": "mission.mission", 
   "fields": {
     "name": "Escarmouche", 
-    "target_list": "\n", 
+    "target_list": "param = Kingdom.objects.exclude(pk=kingdom.pk).filter(offender_set__offended=kingdom)\n", 
     "text": "Fi donc, sieur! Ce sera au premier sang. Vous \u00eates l'offens\u00e9, je vous laisse le choix des armes.", 
     "has_value": false, 
     "on_resolution": "kingdom.soldiers+=param.get_value('retour_troupes')", 
@@ -818,7 +818,7 @@
     "has_target": true, 
     "is_team": false, 
     "title": null, 
-    "target_description": "", 
+    "target_description": "Cible", 
     "timeout": null, 
     "is_cancellable": true, 
     "duration": 5, 
@@ -1273,11 +1273,11 @@
   "pk": 53, 
   "model": "mission.missiongrid", 
   "fields": {
-    "allow_disabled": false, 
+    "allow_disabled": true, 
     "name": "Cible", 
     "mission": 51, 
     "length": 1, 
-    "allow_empty": false, 
+    "allow_empty": true, 
     "slug": "compromis", 
     "condition": "if folk.has_quality(\"deteste\"):\n  status = \"Cette personne est d\u00e9j\u00e0 d\u00e9test\u00e9e\"\n"
   }
@@ -1305,7 +1305,7 @@
     "length": 3, 
     "allow_empty": false, 
     "slug": "espions", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
