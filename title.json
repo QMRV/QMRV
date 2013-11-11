@@ -86,7 +86,7 @@
     "on_affect": "folk.loyalty += 5\nfolk.save()\n", 
     "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un tr\u00e9sorier.\")\nkingdom.unlock_mission(\"taxepaysanne\")\nkingdom.unlock_mission(\"taxecour\")", 
     "slug": "tresorier", 
-    "condition": "if folk.sex==Folk.FEMALE:\n  stop(\"Un homme est attendu \u00e0 ce poste\")\n  \nif folk.age() < C.MAJORITE:\n  stop(S.TOO_YOUNG)\n", 
+    "condition": "if folk.age() < C.MAJORITE:\n  stop(S.TOO_YOUNG)\n", 
     "description": "Le tr\u00e9sorier est responsable de la gestion quotidienne de vos finances et de la collecte des taxes.\r\n\r\nUn tr\u00e9sorier a besoin d'une haute \u00c9rudition pour \u00eatre efficace."
   }
 }

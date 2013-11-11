@@ -125,9 +125,9 @@
     "weight": 1, 
     "text": "Pench\u00e9 sur ma table de travail, j\u2019\u00e9tudie cartes de la r\u00e9gion, missives diplomatiques rapports de mes espions. Il en semblerait qu\u2019un seigneur voisin de petite stature, {{kingdom.values.tuto_adversaire}}, ait ses greniers bien remplis. Si je pouvais trouver un pr\u00e9texte honorable pour l\u2019affronter, je pourrais \u00e0 la fois m\u2019imposer en tant que puissance militaire et remplir mes coffres.\r\n\r\n    Il est impossible d\u2019attaquer un autre seigneur sans un motif diplomatique (casus belli).\r\n    {% if not title.ambassadeur %}Un Ambassadeur pourra s'occuper des d\u00e9tails, ainsi qu'inviter davantage de nobles dans ma cour.{% endif %}", 
     "image": "events/900.jpg", 
-    "on_fire": "kingdom.unlock_title(\"ambassadeur\")\n", 
+    "on_fire": "\n", 
     "slug": "tuto_ambition_3", 
-    "condition": " "
+    "condition": "\n"
   }
 },
 {
@@ -881,9 +881,9 @@
     "weight": 1, 
     "text": "Les r\u00e9parations du ch\u00e2teau avancent \u00e0 grands pas, mais la taille de ma cour est encore trop modeste. J'ai besoin de chevaliers et nobles dames  pour m'assister dans ma gouvernance. La meilleur solution serait probablement nommer un ambassadeur pour les inviter \u00e0 mon service.\r\n\r\n   Nouveau titre : ambassadeur.\r\n", 
     "image": "events/703.jpg", 
-    "on_fire": " ", 
+    "on_fire": "kingdom.unlock_title(\"ambassadeur\")", 
     "slug": "tuto_toofewcourtisans", 
-    "condition": " "
+    "condition": "\n"
   }
 },
 {
@@ -1357,7 +1357,7 @@
     "weight": 1, 
     "text": " ", 
     "image": "", 
-    "on_fire": "titres = [vs.title.slug for vs in AvailableTitle.objects.filter(kingdom=kingdom)]\n\nif \"cure\" not in titres:\n  kingdom.start_pending_event(\"tuto_pretre_eveche\")\nelif \"ambassadeur\" not in titres:\n  kingdom.start_pending_event(\"tuto_toofewcourtisans\")\nelif \"tresorier\" not in titres:\n  kingdom.start_pending_event(\"tuto_toomuchecus\")\nelse:\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_forcertitre_random_fantome\")\n  \nstop(S.GHOST_EVENT)\n", 
+    "on_fire": "titres = [vs.title.slug for vs in AvailableTitle.objects.filter(kingdom=kingdom)]\n\nif \"cure\" not in titres:\n  kingdom.start_pending_event(\"tuto_pretre_eveche\")\nelif \"tresorier\" not in titres:\n  kingdom.start_pending_event(\"tuto_toomuchecus\")\nelse:\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_forcertitre_random_fantome\")\n  \nstop(S.GHOST_EVENT)\n", 
     "slug": "tuto_forcertitre_random_fantome", 
     "condition": "\n"
   }
@@ -1931,7 +1931,7 @@
     "weight": 1, 
     "text": "Depuis ma table de travail, je peux entendre {{mioche.first_name}} et {{chiard}} jouer dans la cour en contrebas. Je me l\u00e8ve, et vais m'accouder \u00e0 la fen\u00eatre. L'ain\u00e9{{mioche|feminize:\" tient sa petite s\u0153ur par les mains,e tient son petit fr\u00e8re par les mains\"}}, et l'aide \u00e0 marcher le long des \u00e9curies. Quelques enfants des domestiques les encouragent et rient avec eux. La sc\u00e8ne est touchante, mais je songe que {{mioche}} a d\u00e9j\u00e0 dix ans, et qu'il est grand temps qu'{{mioche|feminize:\"il,elle\"}} apprenne son r\u00f4le futur dans le monde. \r\n\r\n    Nouvelle mission.\r\n", 
     "image": "events/709_1.jpg", 
-    "on_fire": "kingdom.unlock_title(\"chambellan\")\nkingdom.unlock_mission(\"tuto_nommer_mentor\")\n", 
+    "on_fire": "kingdom.unlock_title(\"chambellan\")\nkingdom.unlock_mission(\"tuto_nommer_mentor\")\n# Pr\u00e9remplir la mission avec le mioche\npm = kingdom.create_pending_mission(\"tuto_nommer_mentor\")\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mioche\"), mission_grid=MissionGrid.objects.get(slug=\"enfant\", mission=pm.mission)).save()\n", 
     "slug": "tuto_education", 
     "condition": "\n"
   }
@@ -2269,7 +2269,7 @@
     "image": "", 
     "on_fire": "\n", 
     "slug": "naissance_unique", 
-    "condition": "r = random_value(1,77)\nparam.set_value(\"mother_is_dead\", False)\n\nr = 1 # for testing purposes\n\nif r<61:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  enfant=call_function(\"creer_enfant\", pere=pere, mere=mere, kingdom=None)\n  maturite = param.next_event(\"coming_of_age\")\n  maturite.set_value(\"enfant\", enfant)\n  maturite.set_value(\"nom_pere\", pere.first_name + \" \" + pere.last_name)\n  maturite.set_value(\"nom_mere\", mere.first_name + \" \" + mere.last_name)\n  maturite.started = datetime.now() + timedelta(days=6)  \n  maturite.save()\n  \nelif r<71:\n  #L'enfant meurt en bas \u00e2ge\n  d = random_value(0, 5)\n  h = random_value(0, 23)\n  m = random_value(0, 60)\n  mort = param.next_event(\"mort_precoce\")\n  mort.set_value(\"nom_pere\", pere.first_name + pere.last_name)\n  mort.set_value(\"nom_mere\", mere.first_name + mere.last_name)\n  mort.set_value(\"age\", d)\n  mort.started = datetime.now() + timedelta(days=d, hours=h, minutes=m)\n  mort.save()\n\nelse:\n  #La m\u00e8re meurt en donnant naissance\n  param.set_value(\"mother_is_dead\", True)\n  enfant=call_function(\"creer_enfant\", pere=pere, mere=mere, kingdom=kingdom)\n  maturite = param.next_event(\"coming_of_age\")\n  maturite.set_value(\"enfant\", enfant)\n  maturite.set_value(\"nom_pere\", pere.first_name + \" \" + pere.last_name)\n  maturite.set_value(\"nom_mere\", mere.first_name + \" \" + mere.last_name)\n  maturite.started = datetime.now() + timedelta(days=6)  \n  maturite.save()\n  f(\"tuer_folk\", condamne=mere)\n"
+    "condition": "r = random_value(1,77)\nparam.set_value(\"mother_is_dead\", False)\n\nr = 1 # for testing purposes\n\nif r<61:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  enfant=call_function(\"creer_enfant\", pere=pere, mere=mere, kingdom=None)\n  maturite = param.next_event(\"coming_of_age\")\n  maturite.set_value(\"enfant\", enfant)\n  maturite.set_value(\"nom_pere\", pere.first_name + \" \" + pere.last_name)\n  maturite.set_value(\"nom_mere\", mere.first_name + \" \" + mere.last_name)\n  maturite.started = datetime.now() + timedelta(days=6)  \n  maturite.save()\n  \nelif r<71:\n  #L'enfant meurt en bas \u00e2ge\n  d = random_value(0, 5)\n  h = random_value(0, 23)\n  m = random_value(0, 60)\n  mort = param.next_event(\"mort_precoce\")\n  mort.set_value(\"nom_pere\", pere.first_name + pere.last_name)\n  mort.set_value(\"nom_mere\", mere.first_name + mere.last_name)\n  mort.set_value(\"age\", d)\n  mort.started = datetime.now() + timedelta(days=d, hours=h, minutes=m)\n  mort.save()\n\nelse:\n  #La m\u00e8re meurt en donnant naissance\n  param.set_value(\"mother_is_dead\", True)\n  enfant=call_function(\"creer_enfant\", pere=pere, mere=mere, kingdom=kingdom)\n  maturite = param.next_event(\"coming_of_age\")\n  maturite.set_value(\"enfant\", enfant)\n  maturite.set_value(\"nom_pere\", pere.first_name + \" \" + pere.last_name)\n  maturite.set_value(\"nom_mere\", mere.first_name + \" \" + mere.last_name)\n  maturite.started = datetime.now() + timedelta(days=6)  \n  maturite.save()\n  mere.die()\n"
   }
 },
 {
@@ -2309,7 +2309,7 @@
     "weight": 1, 
     "text": " (explication sur la d\u00e9fense)\r\n\r\npeut venir de tuto_pnjescaladeconflit ou tuto_ennemi_casusbelli", 
     "image": "", 
-    "on_fire": "kingdom.create_pending_mission(\"ligne_defense\")\n", 
+    "on_fire": "kingdom.create_pending_mission(\"ligne_defense\")\n\n", 
     "slug": "tuto_ennemi_casusbelli_2", 
     "condition": "\n"
   }
@@ -2771,7 +2771,7 @@
     "weight": 1, 
     "text": "Le d\u00e9tachement rassembl\u00e9 \u00e0 la h\u00e2te a pass\u00e9 une courte nuit dans la clairi\u00e8re, apr\u00e8s une ext\u00e9nuante marche forc\u00e9e. La fatigue n'a balay\u00e9e ni la discipline ni la hargne de mes hommes, cependant.  {% if chatelain_in_mission_defenseur %}Je les harangue une derni\u00e8re fois, alors que l'ennemi approche, et je peux lire dans leurs yeux qu'ils sont pr\u00eat \u00e0 se battre pour{% elif connetable_in_mission_defenseur %}Lorsque sire {{title.connetable}} leur lance d'une voix f\u00e9roce que l'ennemi approche et qu'il faudra de le recevoir comme convient, leur cris ne laisse pas douter qu'ils sont pr\u00eats \u00e0{% else %}Alors que sire {% if is_victory %} {{commandement.gagnant.general}}  {% else %}  {{commandement.perdant}}  {% endif %}les met en formation face \u00e0 l'ennemi qui se lance \u00e0 l'assaut, ils serrent leurs armes et se pr\u00e9parent \u00e0{% endif %} d\u00e9fendre leurs familles et l'honneur de {{dynasty}}.", 
     "image": "events/117_2.jpg", 
-    "on_fire": "kingdom.set_value(\"tuto_firstbattle_defense\",True)", 
+    "on_fire": "kingdom.set_value(\"tuto_firstbattle_defense\",True)\nkingdom.create_pending_mission(\"tuto_escarmouche\")", 
     "slug": "tuto_firstbattle_defense_2", 
     "condition": "\n"
   }
@@ -3079,7 +3079,7 @@
     "weight": 1, 
     "text": "{{name}} est mort de mort naturelle \u00e0 l'\u00e2ge de {{age}} ans.\r\n", 
     "image": "", 
-    "on_fire": "victime = param.get_value(\"victime\")\n\ntry:\n  f(\"tuer_folk\", condamne=victime)\nexcept:\n  print \"except\"\n  # La victime est en mission, elle ne pourra \u00eatre tu\u00e9e qu'une fois la mission termin\u00e9e\n  # On reprogramme l'event courant pour se relancer \u00e0 la fin de la mission\n  param.is_started = False\n  param.started = victime.mission.pending_mission.started + timedelta(minutes=victime.mission.pending_mission.mission.duration + 1)\n  param.save()\n  \nprint \"lol\"\n", 
+    "on_fire": "victime = param.get_value(\"victime\")\n\ntry:\n  victime.die()\n  victime.kingdom=None\n  victime.save()\nexcept ValidationError:\n  # La victime est en mission, elle ne pourra \u00eatre tu\u00e9e qu'une fois la mission termin\u00e9e\n  # On reprogramme l'event courant pour se relancer \u00e0 la fin de la mission\n  param.is_started = False\n  param.started = victime.mission.pending_mission.started + timedelta(minutes=victime.mission.pending_mission.mission.duration + 1)\n  param.save()\n  \n", 
     "slug": "shinigami", 
     "condition": "\n"
   }
@@ -4098,8 +4098,8 @@
     "text": "Un fin diplomate serait le meilleur choix.", 
     "message": "Je peux \u00e0 pr\u00e9sent nommer un [ambassadeur](title), qui pourra [convaincre](mission) de nouveaux courtisans de rejoindre ma cour.", 
     "event": 93, 
-    "condition": " ", 
-    "on_fire": "kingdom.unlock_title(\"ambassadeur\")\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_forcertitre_random\")"
+    "condition": "\n", 
+    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_toofewcourtisans\")"
   }
 },
 {
@@ -5581,7 +5581,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Nous devons nous pr\u00e9parer \u00e0 le recevoir...", 
-    "message": "Le seigneur {{kingdom.values.tuto_adversaire}}  a obtenu un cassus belli envers {{dynasty}}.", 
+    "message": "Le seigneur {{kingdom.values.tuto_adversaire}} a obtenu un cassus belli envers {{dynasty}}.", 
     "event": 206, 
     "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_ennemi_casusbelli_2\").start()"
