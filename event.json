@@ -6484,7 +6484,7 @@
     "message": "", 
     "event": 272, 
     "condition": "\n", 
-    "on_fire": "if param.get_value(\"spouse1\", param.get_value(\"soeurette\")):\n  param.next_event(\"tuto_diplomacy_lastchat_soeurette\").start()\nelse:\n  param.next_event(\"tuto_diplomacy_mariage\").start()\n"
+    "on_fire": "if param.get_value(\"spouse1\", kingdom.get_value(\"soeurette\")):\n  param.next_event(\"tuto_diplomacy_lastchat_soeurette\").start()\nelse:\n  param.next_event(\"tuto_diplomacy_mariage\").start()\n"
   }
 },
 {
@@ -6495,7 +6495,7 @@
     "message": "", 
     "event": 272, 
     "condition": "\n", 
-    "on_fire": "if param.get_value(\"spouse1\") == param.get_value(\"soeurette\"):\n  param.next_event(\"tuto_diplomacy_lastchat_soeurette\").start()\nelif param.get_value(\"spouse1\")== folks[1]:\n  param.next_event(\"tuto_diplomacy_lastchat_fils\").start()\nelse:\n  param.next_event(\"tuto_diplomacy_lastchat_fille\").start()\n"
+    "on_fire": "if param.get_value(\"spouse1\") == kingdom.get_value(\"soeurette\"):\n  param.next_event(\"tuto_diplomacy_lastchat_soeurette\").start()\nelif param.get_value(\"spouse1\")== folks[1]:\n  param.next_event(\"tuto_diplomacy_lastchat_fils\").start()\nelse:\n  param.next_event(\"tuto_diplomacy_lastchat_fille\").start()\n"
   }
 },
 {
