@@ -418,7 +418,7 @@
   "model": "mission.mission", 
   "fields": {
     "name": "Marcher sur les bandits", 
-    "target_list": "\n", 
+    "target_list": null, 
     "text": "Envoyez tous vos hommes valides pour optimiser vos chances. Vos gens ne bougeront m\u00eame pas le petit doigt si vous et votre conn\u00e9table ne partez pas en combat.", 
     "has_value": false, 
     "on_resolution": "\n", 
@@ -1130,7 +1130,7 @@
     "length": 4, 
     "allow_empty": false, 
     "slug": "defenseurs", 
-    "condition": "if folk.sex==Folk.FEMALE:\n  stop(\"Depuis des temps imm\u00e9moriaux les femmes ont persuad\u00e9 les hommes que c'\u00e9taient \u00e0 eux de mourrir. On ne revient pas sur des privil\u00e8ges durement gagn\u00e9s.\")"
+    "condition": "if folk.sex==Folk.FEMALE:\n  stop(\"Depuis des temps immemoriaux les femmes ont persuad\u00e9 les hommes que c'etaient \u00e0 eux de mourrir. On ne revient pas sur des privileges durement gagnes.\")"
   }
 },
 {
