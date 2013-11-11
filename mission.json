@@ -722,7 +722,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "age = random_gauss(16,40)\nmax_carac = 32+int((age-16)/5)\nloyalty = 50 + 30 * int((sum_stats(affected, \"diplomacy\")-15)/25) + random_value(-10, 10)\nqualities = []\n\nchoice_folk = random_value(0,99)\nif choice_folk < 5:\n  #pretre\n  \n  qualities.append(\"pretre\")\n  #liste des traits qu'il ne peut pas avoir\n  no_qualities = []  \n  folk = f(\"creer_folk\", kingdom=kingdom, fight_min=2, plot_min=4, diplomacy_min=4, scholarship_min=7, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities)\nelif choice_folk < 15:\n  #noble dame\n  choix_baisee = (40-age)/24*100\n  if choix_baisee <= random_value(1,100):\n    qualities.append(\"jouvancelle\")\n  #liste des traits qu'il ne peut pas avoir\n  no_qualities = []\n  folk = f(\"creer_folk\", kingdom=kingdom, fight_min=2, plot_min=2, diplomacy_min=2, scholarship_min=2, loyalty=loyalty, max_carac=max_carac, sex=Folk.FEMALE, birth=datetime.now() - timedelta(days=age), traits=qualities)\nelif choice_folk < 25:\n  #chevalier\n  if random_value(1,100) < (40-age)/24*100 : #il a alors un trait martial\n    qualities.append(random_in([\"archer\", \"cavalier\", \"piquier\"]))\n  folk = f(\"creer_folk\", kingdom=kingdom, fight_min=7, plot_min=1, diplomacy_min=1, scholarship_min=1, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities)\nelse: #random folk\n  folk = f(\"creer_folk\", kingdom=kingdom, fight_min=7, plot_min=1, diplomacy_min=1, scholarship_min=1, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities)    \n  \npe = kingdom.create_pending_event(\"nouveau_courtisan\")\npe.set_value(\"folk\", folk)\npe.start()\n", 
+    "on_start": "age = random_gauss(16,40)\nmax_carac = 32+int((age-16)/5)\nloyalty = 50 + 30 * int((sum_stats(affected, \"diplomacy\")-15)/25) + random_value(-10, 10)\nqualities = []\n\nchoice_folk = random_value(0,99)\nif choice_folk < 5:\n  #pretre\n  \n  qualities.append(\"pretre\")\n  #liste des traits qu'il ne peut pas avoir\n  no_qualities = []  \n  folk = f(\"creer_folk\", kingdom=None, fight_min=2, plot_min=4, diplomacy_min=4, scholarship_min=7, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities)\nelif choice_folk < 15:\n  #noble dame\n  choix_baisee = (40-age)/24*100\n  if choix_baisee <= random_value(1,100):\n    qualities.append(\"jouvancelle\")\n  #liste des traits qu'il ne peut pas avoir\n  no_qualities = []\n  folk = f(\"creer_folk\", kingdom=None, fight_min=2, plot_min=2, diplomacy_min=2, scholarship_min=2, loyalty=loyalty, max_carac=max_carac, sex=Folk.FEMALE, birth=datetime.now() - timedelta(days=age), traits=qualities)\nelif choice_folk < 25:\n  #chevalier\n  if random_value(1,100) < (40-age)/24*100 : #il a alors un trait martial\n    qualities.append(random_in([\"archer\", \"cavalier\", \"piquier\"]))\n  folk = f(\"creer_folk\", kingdom=None, fight_min=7, plot_min=1, diplomacy_min=1, scholarship_min=1, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities)\nelse: #random folk\n  folk = f(\"creer_folk\", kingdom=None, fight_min=7, plot_min=1, diplomacy_min=1, scholarship_min=1, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities)    \n  \npe = kingdom.create_pending_event(\"nouveau_courtisan\")\npe.set_value(\"folk\", folk)\npe.start()\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 4, 
@@ -832,12 +832,12 @@
   "model": "mission.mission", 
   "fields": {
     "name": "Faire la paix", 
-    "target_list": "\n", 
+    "target_list": null, 
     "text": "Faire la paix avec un autre joueur.\r\nEnl\u00e8ve les cassus belli et les vendetta que les deux joueurs ont l'un envers l'autre, y compris ceux qui sont lanc\u00e9s mais pas encore effectifs.", 
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "def remove_future_claim(kingdom, target):\n  pes = kingdom.pendingevent_set.filter(event__slug=\"nouveau_claim\")\n  for pe in pes:\n    if pe.get_value(\"target\") == target:\n      pe.delete()\n      return True\n  return False\n\nkingdom=grid[\"moi\"].affected[0].kingdom\ntarget=grid[\"pas_moi\"].affected[0].kingdom\n#R\u00e9cup\u00e9rer les claims en cours entre les deux joueurs et les supprimer\nClaims_en_cours=Claim.objects.filter(offender__in=(kingdom,target), offended__in=(kingdom,target))\nif Claims_en_cours.count()>0:\n  Claims_en_cours.delete()\nelse:  \n# R\u00e9cup\u00e9rer le pending_event associ\u00e9 qui aurait pu d\u00e9clencher un claim\n  C1=remove_future_claim(kingdom,target)\n  C2=remove_future_claim(target,kingdom)\n  if not C1 or C2:\n    stop(\"Vous n'avez aucune raison de vouloir faire la paix\")\n  \n#notification au joueur qu'ils ont fait la paix\npe=kingdom.create_pending_event(\"notif_paix\")\npe.set_value(\"nouveau_meilleur_copain\",target)\npe.start()\npe=target.create_pending_event(\"notif_paix\")\npe.set_value(\"nouveau_meilleur_copain\",kingdom)\npe.start()\n\n", 
+    "on_start": "def remove_future_claim(kingdom, target):\n  pes = kingdom.pendingevent_set.filter(event__slug=\"nouveau_claim\")\n  for pe in pes:\n    if pe.get_value(\"target\") == target:\n      pe.delete()\n      return True\n  return False\n\nkingdom=grids[\"moi\"][0].kingdom\ntarget=grids[\"pas_moi\"][0].kingdom\n#R\u00e9cup\u00e9rer les claims en cours entre les deux joueurs et les supprimer\nClaims_en_cours=Claim.objects.filter(offender__in=(kingdom,target), offended__in=(kingdom,target))\nif Claims_en_cours.count()>0:\n  Claims_en_cours.delete()\nelse:  \n# R\u00e9cup\u00e9rer le pending_event associ\u00e9 qui aurait pu d\u00e9clencher un claim\n  C1=remove_future_claim(kingdom,target)\n  C2=remove_future_claim(target,kingdom)\n  if not C1 or C2:\n    stop(\"Vous n'avez aucune raison de vouloir faire la paix\")\n  \n#notification au joueur qu'ils ont fait la paix\npe=kingdom.create_pending_event(\"notif_paix\")\npe.set_value(\"nouveau_meilleur_copain\",target)\npe.start()\npe=target.create_pending_event(\"notif_paix\")\npe.set_value(\"nouveau_meilleur_copain\",kingdom)\npe.start()\n\n", 
     "has_target": false, 
     "is_team": false, 
     "title": null, 
@@ -847,6 +847,29 @@
     "duration": 5, 
     "on_cancel": "\n", 
     "slug": "paix", 
+    "on_init": "\n"
+  }
+},
+{
+  "pk": 56, 
+  "model": "mission.mission", 
+  "fields": {
+    "name": "Envoyer nos diplomates n\u00e9gocier la paix", 
+    "target_list": null, 
+    "text": "Envoyer nos diplomates faire la paix.", 
+    "has_value": false, 
+    "on_resolution": "\n", 
+    "value_description": "", 
+    "on_start": "if kingdom.get_folk_in_title(\"ambassadeur\") in affected:\n  bonus += 5\nif sum_stats(affected, \"diplomacy\") + bonus < 24:\n  stop(\"Un plus grand score de diplomacie est necessaire pour convaincre ce seigneur.\")\n\n#kingdom.start_pending_event(\"tuto_diplomacy_ending\")\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_diplomacy_ending\")\npe.start()\n", 
+    "has_target": false, 
+    "is_team": false, 
+    "title": null, 
+    "target_description": "", 
+    "timeout": null, 
+    "is_cancellable": true, 
+    "duration": 5, 
+    "on_cancel": "\n", 
+    "slug": "tuto_diplomacy_ending", 
     "on_init": "\n"
   }
 },
@@ -1394,6 +1417,19 @@
     "allow_empty": false, 
     "slug": "pas_moi", 
     "condition": "if folk.kingdom == kingdom:\n  stop(\"Ne doit pas faire partie de mon royaume, je suis d\u00e9j\u00e0 en paix avec moi m\u00eame. Enfin, je crois...\")"
+  }
+},
+{
+  "pk": 61, 
+  "model": "mission.missiongrid", 
+  "fields": {
+    "allow_disabled": false, 
+    "name": "Diplomates", 
+    "mission": 56, 
+    "length": 3, 
+    "allow_empty": false, 
+    "slug": "diplomates", 
+    "condition": "if folk.age() < C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
   }
 }
 ]

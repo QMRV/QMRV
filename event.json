@@ -111,9 +111,9 @@
     "weight": 1, 
     "text": "Et pourtant, je sais que mon p\u00e9riple ne fait que commencer. Mon h\u00e9ritage ne sera pas \u00e0 l'abri des convoitises tant que je n\u2019aurai pas prouv\u00e9 ma valeur aux yeux du royaume. Mes sujets sont encore si peu nombreux... Nobles ou paysans, le prestige de mon nom les a ralli\u00e9 sous ma banni\u00e8re, et ils attendent encore de moi que je porte ce nom vers la gloire. Mon regard se pose \u00e0 nouveau sur les hommes d\u2019arme qui suent sous ma fen\u00eatre. {% if title.connetable %}L'entra\u00eenement de sire {{title.connetable.first_name}} leur a \u00e9t\u00e9 profitable, mais d{% else %}D{% endif %}epuis le passage des brigands, il n\u2019ont pas eu d\u2019occasion de se battre. Il est peut \u00eatre temps qu\u2019ils affrontent un vrai ennemi, sur un vrai champ de bataille.\r\n\r\n    Votre valeur de Prestige limite le nombre de suivants dans votre cour et la population de votre ville. Une mani\u00e8re s\u00fbre de gagner du Prestige est de gagner des batailles.", 
     "image": "events/711_1.jpg", 
-    "on_fire": "  \n ", 
+    "on_fire": "\n", 
     "slug": "tuto_ambition_2", 
-    "condition": " "
+    "condition": "\n"
   }
 },
 {
@@ -1469,7 +1469,7 @@
     "weight": 1, 
     "text": "Elle sourit, sans se d\u00e9partir de son air hautain. \"Merci, mon seigneur. Je suis certaine que vous en trouverez votre maison renforc\u00e9e\". Sur un regard de sa part, {{mioche.first_name}} ajoute \"Merci mon oncle\".\r\n\r\n    {{soeur}}, {{mioche}} et {{chiard}} vous ont rejoint.", 
     "image": "events/361_7.jpg", 
-    "on_fire": "soeur = param.get_value(\"soeur\")\nmioche = param.get_value(\"mioche\")\nchiard = param.get_value(\"chiard\")\n\nsoeur.kingdom = kingdom\nmioche.kingdom = kingdom\nchiard.kingdom = kingdom\n\nsoeur.save()\nmioche.save()\nchiard.save()\nkingdom.set_value(\"tuto_soeurette\", soeur)\n", 
+    "on_fire": "soeur = param.get_value(\"soeur\")\nmioche = param.get_value(\"mioche\")\nchiard = param.get_value(\"chiard\")\n\nsoeur.kingdom = kingdom\nmioche.kingdom = kingdom\n\nkingdom.set_value(\"tuto_chiard\", chiard)\nkingdom.set_value(\"tuto_soeurette\", soeur)\nkingdom.set_value(\"tuto_mioche\", mioche)\n\nsoeur.save()\nmioche.save()\nchiard.save()\n\n", 
     "slug": "tuto_soeurette_accept", 
     "condition": "\n"
   }
@@ -1483,7 +1483,7 @@
     "weight": 1, 
     "text": "Elle renifle, et opine \u00e0 contre c\u0153ur. \"Je... Nous acceptons\". Elle semble bris\u00e9e, lutant contre la ranc\u0153ur et la d\u00e9ception.\r\n\r\n\r\n\r\n    {{soeur}}, {{mioche}} et {{chiard}} vous ont ont rejoint. {{chiard.first_name}} n'a que 1 ans, et n\u2019appara\u00eetra dans votre cour qu'\u00e0 l'age de 6 ans.\r\n", 
     "image": "events/361_8.jpg", 
-    "on_fire": "soeur = param.get_value(\"soeur\")\nmioche = param.get_value(\"mioche\")\nchiard = param.get_value(\"chiard\")\n\nsoeur.kingdom = kingdom\nmioche.kingdom = kingdom\n\nmioche.last_name = mioche.father.last_name\nchiard.last_name = mioche.father.last_name\n\nkingdom.set_value(\"tuto_chiard\", chiard)\n\nsoeur.save()\nmioche.save()\n\n\nkingdom.set_value(\"tuto_soeurette\", soeur)", 
+    "on_fire": "soeur = param.get_value(\"soeur\")\nmioche = param.get_value(\"mioche\")\nchiard = param.get_value(\"chiard\")\n\nsoeur.kingdom = kingdom\nmioche.kingdom = kingdom\n\nmioche.last_name = mioche.father.last_name\nchiard.last_name = mioche.father.last_name\n\nkingdom.set_value(\"tuto_chiard\", chiard)\nkingdom.set_value(\"tuto_soeurette\", soeur)\nkingdom.set_value(\"tuto_mioche\", mioche)\n\nsoeur.save()\nmioche.save()\n", 
     "slug": "tuto_soeurette_compromize", 
     "condition": "\n"
   }
@@ -1497,7 +1497,7 @@
     "weight": 1, 
     "text": "Elle l\u00e8ve vers moi un regard plein de soulagement. \"Je... Merci, {{title.chatelain.first_name}}. Merci mille fois. Sur mon honneur, vous n'aurez pas \u00e0 le regretter\". D'un revers de la main, elle s\u00e8che ses larmes et serre {{mioche.first_name}} contre elle.\r\n\r\n\r\n    {{soeur}}, {{mioche}} et {{chiard}} vous ont ont rejoint. {{chiard.first_name}} n'a que 1 ans, et n\u2019appara\u00eetra dans votre cour qu'\u00e0 l'age de 6 ans.\r\n", 
     "image": "events/361_9.jpg", 
-    "on_fire": "soeur = param.get_value(\"soeur\")\nmioche = param.get_value(\"mioche\")\nchiard = param.get_value(\"chiard\")\n\nsoeur.kingdom = kingdom\nmioche.kingdom = kingdom\n\n\n\nkingdom.set_value(\"tuto_chiard\", chiard)\n\nsoeur.save()\nmioche.save()\n\nkingdom.set_value(\"tuto_soeurette\", soeur)", 
+    "on_fire": "soeur = param.get_value(\"soeur\")\nmioche = param.get_value(\"mioche\")\nchiard = param.get_value(\"chiard\")\n\nsoeur.kingdom = kingdom\nmioche.kingdom = kingdom\n\nkingdom.set_value(\"tuto_chiard\", chiard)\nkingdom.set_value(\"tuto_soeurette\", soeur)\nkingdom.set_value(\"tuto_mioche\", mioche)\n\nsoeur.save()\nmioche.save()\n\n\n", 
     "slug": "tuto_soeurette_surrend", 
     "condition": "\n"
   }
@@ -2293,7 +2293,7 @@
     "category": null, 
     "name": "Cassus belli", 
     "weight": 1, 
-    "text": "Mon fils {{folks.1.first_name}} s'avance d'un pas rapide. Il semble agit\u00e9, et tient une missive dans sa main. \"Sire, je... Notre voisin le seigneur {{ennemi.last_name}} clame que nous l'avons offens\u00e9, et qu'il entend laver  l'affront dans le sang\". Je me redresse, stup\u00e9fait. \"Il ose!?\" J'arrache le courier de ses mains, et sens ma col\u00e8re monter au fil de ma lecture. \"Le mis\u00e9rable! Ces mensonges n'ont qu'un seul but. Il esp\u00e8re piller nos terres en toute impunit\u00e9\". Je froisse la missive. \"S'il nous prend pour une cible facile, il va vite d\u00e9chanter!\"\r\n\r\n     Le seigneur {{ennemi}} a obtenu un casus belli envers {{dynasty}}.", 
+    "text": "Mon fils {{folks.1.first_name}} s'avance d'un pas rapide. Il semble agit\u00e9, et tient une missive dans sa main. \"Sire, je... Notre voisin le seigneur {{kingdom.values.tuto_adversaire}} clame que nous l'avons offens\u00e9, et qu'il entend laver  l'affront dans le sang\". Je me redresse, stup\u00e9fait. \"Il ose!?\" J'arrache le courier de ses mains, et sens ma col\u00e8re monter au fil de ma lecture. \"Le mis\u00e9rable! Ces mensonges n'ont qu'un seul but. Il esp\u00e8re piller nos terres en toute impunit\u00e9\". Je froisse la missive. \"S'il nous prend pour une cible facile, il va vite d\u00e9chanter!\"\r\n\r\n     Le seigneur {{kingdom.values.tuto_adversaire}}  a obtenu un casus belli envers {{dynasty}}", 
     "image": "events/407_11.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_ennemi_casusbelli", 
@@ -2769,7 +2769,7 @@
     "category": null, 
     "name": "Premi\u00e8re escarmouche defense", 
     "weight": 1, 
-    "text": "Le d\u00e9tachement rassembl\u00e9 \u00e0 la h\u00e2te a pass\u00e9 une courte nuit dans la clairi\u00e8re, apr\u00e8s une ext\u00e9nuante marche forc\u00e9e. La fatigue n'a balay\u00e9e ni la discipline ni la hargne de mes hommes, cependant.  {% if chatelain_in_mission_defenseur %}Je les harangue une derni\u00e8re fois, alors que l'ennemi approche, et je peux lire dans leurs yeux qu'ils sont pr\u00eat \u00e0 se battre pour{% elif connetable_in_mission_defenseur %}Lorsque sire {{title.connetable}} leur lance d'une voix f\u00e9roce que l'ennemi approche et qu'il faudra de le recevoir comme convient, leur cris ne laisse pas douter qu'ils sont pr\u00eats \u00e0{% else %}Alors que sire {{general_defenseur}} les met en formation face \u00e0 l'ennemi qui se lance \u00e0 l'assaut, ils serrent leurs armes et se pr\u00e9parent \u00e0{% endif %} d\u00e9fendre leurs familles et l'honneur de {{dynasty}}.", 
+    "text": "Le d\u00e9tachement rassembl\u00e9 \u00e0 la h\u00e2te a pass\u00e9 une courte nuit dans la clairi\u00e8re, apr\u00e8s une ext\u00e9nuante marche forc\u00e9e. La fatigue n'a balay\u00e9e ni la discipline ni la hargne de mes hommes, cependant.  {% if chatelain_in_mission_defenseur %}Je les harangue une derni\u00e8re fois, alors que l'ennemi approche, et je peux lire dans leurs yeux qu'ils sont pr\u00eat \u00e0 se battre pour{% elif connetable_in_mission_defenseur %}Lorsque sire {{title.connetable}} leur lance d'une voix f\u00e9roce que l'ennemi approche et qu'il faudra de le recevoir comme convient, leur cris ne laisse pas douter qu'ils sont pr\u00eats \u00e0{% else %}Alors que sire {% if is_victory %} {{commandement.gagnant}}  {% else %}  {{commandement.perdant}}  {% endif %}les met en formation face \u00e0 l'ennemi qui se lance \u00e0 l'assaut, ils serrent leurs armes et se pr\u00e9parent \u00e0{% endif %} d\u00e9fendre leurs familles et l'honneur de {{dynasty}}.", 
     "image": "events/117_2.jpg", 
     "on_fire": "kingdom.set_value(\"tuto_firstbattle_defense\",True)", 
     "slug": "tuto_firstbattle_defense_2", 
@@ -2951,7 +2951,7 @@
     "category": null, 
     "name": "rapport", 
     "weight": 1, 
-    "text": "\"...Avant son tr\u00e9pas, feu la femme du seigneur {{kingdom.values.tuto_dynasty_PNJ}} lui a donn\u00e9 trois enfants. L'a\u00een\u00e9e, 18 ans, est connue pour sa pi\u00e9t\u00e9. Elle supplie son p\u00e8re de la laisser rejoindre un couvent depuis plusieurs ann\u00e9es. Le second est un gaillard de 17 ans au temp\u00e9rament tr\u00e8s vif, et la cadette est  une beaut\u00e9 de 16 ans qu'on dit \u00eatre la moins sage du trio.\"\r\n\r\n\"Aucun d'eux n'est mari\u00e9?\" {{title.maitre_espion|feminize:\"il,elle\"}}secoue la t\u00eate. \"Non, seigneur. Les fian\u00e7ailles du fils ont \u00e9t\u00e9 annul\u00e9es l'ann\u00e9e derni\u00e8re.\" Je croise les bras, pensif. Cette information ouvre de nouvelles perspectives auxquelles je dois r\u00e9fl\u00e9chir. \"Ce sera tout, {{title.maitre_espion.first_name}}. Bon travail.\"\r\n\r\n    Nouvelle mission.", 
+    "text": "\"...Avant son tr\u00e9pas, feu la femme du seigneur {{kingdom.values.tuto_dynasty_PNJ}} lui a donn\u00e9 trois enfants. L'a\u00een\u00e9e, 18 ans, est connue pour sa pi\u00e9t\u00e9. Elle supplie son p\u00e8re de la laisser rejoindre un couvent depuis plusieurs ann\u00e9es. Le second est un gaillard de 17 ans au temp\u00e9rament tr\u00e8s vif, et la cadette est  une beaut\u00e9 de 16 ans qu'on dit \u00eatre la moins sage du trio.\"\r\n\r\n\"Aucun d'eux n'est mari\u00e9?\" {{title.maitre_espion|feminize:\"il,elle\"}} secoue la t\u00eate. \"Non, seigneur. Les fian\u00e7ailles du fils ont \u00e9t\u00e9 annul\u00e9es l'ann\u00e9e derni\u00e8re.\" Je croise les bras, pensif. Cette information ouvre de nouvelles perspectives auxquelles je dois r\u00e9fl\u00e9chir. \"Ce sera tout, {{title.maitre_espion.first_name}}. Bon travail.\"\r\n\r\n    Nouvelle mission.", 
     "image": "events/475_1.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_rapport_espion_2", 
@@ -3079,7 +3079,7 @@
     "weight": 1, 
     "text": "{{name}} est mort de mort naturelle \u00e0 l'\u00e2ge de {{age}} ans.\r\n", 
     "image": "", 
-    "on_fire": "victime = param.get_value('victime')\n\ntry:\n  victime.die()\nexcept:\n  # La victime est en mission, elle ne pourra \u00eatre tu\u00e9e qu'une fois la mission termin\u00e9e\n  # On reprogramme l'event courant pour se relancer \u00e0 la fin de la mission\n  param.is_started = False\n  param.start = victime.mission.pending_mission.started + timedelta(minutes=victime.mission.pending_mission.mission.duration + 1)\n  param.save()\n", 
+    "on_fire": "victime = param.get_value(\"victime\")\nprint  victime\n\ntry:\n  victime.die()\nexcept:\n  print \"except\"\n  # La victime est en mission, elle ne pourra \u00eatre tu\u00e9e qu'une fois la mission termin\u00e9e\n  # On reprogramme l'event courant pour se relancer \u00e0 la fin de la mission\n  param.is_started = False\n  param.started = victime.mission.pending_mission.started + timedelta(minutes=victime.mission.pending_mission.mission.duration + 1)\n  param.save()\n  \nprint \"lol\"\n", 
     "slug": "shinigami", 
     "condition": "\n"
   }
@@ -3197,6 +3197,20 @@
   }
 },
 {
+  "pk": 285, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Nitification de paix", 
+    "weight": 1, 
+    "text": "Votre passion pour le triage d\u2019artichaut du plus r\u00e2peux au moins r\u00e2peux vous a beaucoup rapproch\u00e9. Vous avez fait la paix avec {{nouveau_meilleur_copain.user.username}}", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "notif_paix", 
+    "condition": "\n"
+  }
+},
+{
   "pk": 5, 
   "model": "event.eventaction", 
   "fields": {
@@ -3291,7 +3305,7 @@
     "text": "Reste \u00e0 trouver un adversaire \u00e0 ma mesure.", 
     "message": "", 
     "event": 10, 
-    "condition": " ", 
+    "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_ambition_3\").start()\n"
   }
 },
@@ -5481,7 +5495,7 @@
     "message": "Les r\u00e9parations de {{dynasty}} sont termin\u00e9e. Un grand jour pour notre famille.", 
     "event": 10, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "#param.next_event(\"tuto_ennemi_casusbelli\").start()\npe=param.next_event(\"_tuto_timewarp\")\npe.set_value('slug',\"tuto_ennemi_casusbelli\")\npe.start()"
   }
 },
 {
@@ -5511,7 +5525,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Nous devons nous pr\u00e9parer \u00e0 le recevoir...", 
-    "message": "Le seigneur {{ennemi}} a obtenu un cassus belli envers {{dynasty}}.", 
+    "message": "Le seigneur {{kingdom.values.tuto_adversaire}}  a obtenu un cassus belli envers {{dynasty}}.", 
     "event": 206, 
     "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_ennemi_casusbelli_2\").start()"
@@ -5819,7 +5833,7 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "\"En effet, mon seigneur...\"", 
-    "message": "Mon ma\u00eetre espion est formel, l'arm\u00e9e de {ennemi}} contient de nombreux {{kingdom.values.tuto_type_PNJ}}. Ils peuvent \u00eatre contr\u00e9 par des {% if kingdom.values.tuto_type_PNJ == archer %}cavaliers{% elif kingdom.values.tuto_type_PNJ == cavalier %}piquiers{% else %}archers{% endif %}.", 
+    "message": "Mon ma\u00eetre espion est formel, l'arm\u00e9e de {{kingdom.values.tuto_adversaire}} contient de nombreux {{kingdom.values.tuto_type_PNJ}}. Ils peuvent \u00eatre contr\u00e9 par des {% if kingdom.values.tuto_type_PNJ == archer %}cavaliers{% elif kingdom.values.tuto_type_PNJ == cavalier %}piquiers{% else %}archers{% endif %}.", 
     "event": 238, 
     "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_rapport_espion_2\").start()\n"
@@ -5976,7 +5990,7 @@
     "message": "{{folk}} \u00e0 rejoint votre cour", 
     "event": 251, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "folk = param.get_value(\"folk\")\nfolk.kingdom=kingdom\nfolk.save()\n"
   }
 },
 {
@@ -6580,6 +6594,17 @@
     "text": "OK", 
     "message": "", 
     "event": 276, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 385, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Il me faut plus d'artichauts", 
+    "message": "", 
+    "event": 285, 
     "condition": "\n", 
     "on_fire": "\n"
   }
