@@ -556,7 +556,8 @@
     "on_affect": "folk.plot+=1\nfolk.scholarship+=2\nfolk.save()", 
     "female_name": "Esprit vif", 
     "incompatible_qualities": [
-      32
+      32, 
+      45
     ], 
     "slug": "esprit_vif", 
     "name": "Esprit vif"
@@ -747,7 +748,9 @@
     "female_description": "Cette fille est loin de pouvoir \u00eatre qualifi\u00e9e de brillante. C'est \u00e0 se demander d'o\u00f9 elle tient cela.", 
     "on_affect": "\n", 
     "female_name": "Idiote", 
-    "incompatible_qualities": [], 
+    "incompatible_qualities": [
+      31
+    ], 
     "slug": "idiot", 
     "name": "Idiot"
   }

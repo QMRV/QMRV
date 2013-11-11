@@ -1623,7 +1623,7 @@
     "weight": 1, 
     "text": "Tous les yeux de la salle suivent la trajectoire de la lame, qui fend l\u2019air et tranche net le cou de sire {{loser.first_name}}, d\u00e9clenchant un tonnerre de cris et de jurons. Une noble dame d\u00e9faille dans les bras de son \u00e9poux. L\u2019instant suivant, sire {{winner.first_name}} se tient debout au dessus du corps sans vie, l\u2019\u00e9p\u00e9e lev\u00e9e, ivre de sa victoire. P\u00e8re {{title.cure}} se signe et s\u2019avance pour prononcer les paroles d\u2019usage.\r\n```\r\n{{winner}} gagne 1 en Combat.\r\n```", 
     "image": "events/407_8.jpg", 
-    "on_fire": "winner = param.get_value(\"winner\")\nloser = param.get_value(\"loser\")\nwinner.fight+=1\nwinner.save()\nloser.die()", 
+    "on_fire": "winner = param.get_value(\"winner\")\nloser = param.get_value(\"loser\")\nwinner.fight+=1\nwinner.save()\nf(\"tuer_folk\", condamne=loser)", 
     "slug": "duel_domestique_kill", 
     "condition": "\n"
   }
@@ -2225,7 +2225,7 @@
     "weight": 1, 
     "text": "L'accouchement de {{mere}} fut un v\u00e9ritable de troiomphe de la mort sur la vie.\r\nNi la m\u00e8re ni l'enfant n'a surv\u00e9cu.", 
     "image": "", 
-    "on_fire": "maman = param.get_value(\"mere\")\nparam.set_value(\"mere\", str(maman))\nmaman.die()\n", 
+    "on_fire": "maman = param.get_value(\"mere\")\nparam.set_value(\"mere\", str(maman))\nf(\"tuer_folk\", condamne=maman)\n", 
     "slug": "mort_couches_double", 
     "condition": "\n"
   }
@@ -2269,7 +2269,7 @@
     "image": "", 
     "on_fire": "\n", 
     "slug": "naissance_unique", 
-    "condition": "r = random_value(1,77)\nparam.set_value(\"mother_is_dead\", False)\n\nr = 1 # for testing purposes\n\nif r<61:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  enfant=call_function(\"creer_enfant\", pere=pere, mere=mere, kingdom=None)\n  maturite = param.next_event(\"coming_of_age\")\n  maturite.set_value(\"enfant\", enfant)\n  maturite.set_value(\"nom_pere\", pere.first_name + \" \" + pere.last_name)\n  maturite.set_value(\"nom_mere\", mere.first_name + \" \" + mere.last_name)\n  maturite.started = datetime.now() + timedelta(days=6)  \n  maturite.save()\n  \nelif r<71:\n  #L'enfant meurt en bas \u00e2ge\n  d = random_value(0, 5)\n  h = random_value(0, 23)\n  m = random_value(0, 60)\n  mort = param.next_event(\"mort_precoce\")\n  mort.set_value(\"nom_pere\", pere.first_name + pere.last_name)\n  mort.set_value(\"nom_mere\", mere.first_name + mere.last_name)\n  mort.set_value(\"age\", d)\n  mort.started = datetime.now() + timedelta(days=d, hours=h, minutes=m)\n  mort.save()\n\nelse:\n  #La m\u00e8re meurt en donnant naissance\n  param.set_value(\"mother_is_dead\", True)\n  enfant=call_function(\"creer_enfant\", pere=pere, mere=mere, kingdom=kingdom)\n  maturite = param.next_event(\"coming_of_age\")\n  maturite.set_value(\"enfant\", enfant)\n  maturite.set_value(\"nom_pere\", pere.first_name + \" \" + pere.last_name)\n  maturite.set_value(\"nom_mere\", mere.first_name + \" \" + mere.last_name)\n  maturite.started = datetime.now() + timedelta(days=6)  \n  maturite.save()\n  mere.die()\n"
+    "condition": "r = random_value(1,77)\nparam.set_value(\"mother_is_dead\", False)\n\nr = 1 # for testing purposes\n\nif r<61:\n  # un enfant nait, halleluia, c'est cool (sauf si c'est un oubli de pilule, oups)\n  enfant=call_function(\"creer_enfant\", pere=pere, mere=mere, kingdom=None)\n  maturite = param.next_event(\"coming_of_age\")\n  maturite.set_value(\"enfant\", enfant)\n  maturite.set_value(\"nom_pere\", pere.first_name + \" \" + pere.last_name)\n  maturite.set_value(\"nom_mere\", mere.first_name + \" \" + mere.last_name)\n  maturite.started = datetime.now() + timedelta(days=6)  \n  maturite.save()\n  \nelif r<71:\n  #L'enfant meurt en bas \u00e2ge\n  d = random_value(0, 5)\n  h = random_value(0, 23)\n  m = random_value(0, 60)\n  mort = param.next_event(\"mort_precoce\")\n  mort.set_value(\"nom_pere\", pere.first_name + pere.last_name)\n  mort.set_value(\"nom_mere\", mere.first_name + mere.last_name)\n  mort.set_value(\"age\", d)\n  mort.started = datetime.now() + timedelta(days=d, hours=h, minutes=m)\n  mort.save()\n\nelse:\n  #La m\u00e8re meurt en donnant naissance\n  param.set_value(\"mother_is_dead\", True)\n  enfant=call_function(\"creer_enfant\", pere=pere, mere=mere, kingdom=kingdom)\n  maturite = param.next_event(\"coming_of_age\")\n  maturite.set_value(\"enfant\", enfant)\n  maturite.set_value(\"nom_pere\", pere.first_name + \" \" + pere.last_name)\n  maturite.set_value(\"nom_mere\", mere.first_name + \" \" + mere.last_name)\n  maturite.started = datetime.now() + timedelta(days=6)  \n  maturite.save()\n  f(\"tuer_folk\", condamne=mere)\n"
   }
 },
 {
@@ -2351,7 +2351,7 @@
     "weight": 1, 
     "text": "{% if duelist_lessfight == folks.1 %}Agrippant son \u00e9paule bless\u00e9e, {{facheux}} pare faiblement sa premi\u00e8re attaque. Le second coup lui fait l\u00e2cher son \u00e9p\u00e9e.\r\n{% else %}\r\nTrop confiant dans son avantage, {{facheux}} porte un puissant coup de taille. Avec l\u2019\u00e9nergie du d\u00e9sespoir, mon fils se tend et esquive au dernier moment. Profitant du d\u00e9s\u00e9quilibre de son adversaire, il pousse un cris de rage, et lui tranche le bras revers bien plac\u00e9 !\r\n{% endif %}\r\nApr\u00e8s un infime instant d'h\u00e9sitation, {{folks.1.first_name}} se fend, sa lame per\u00e7ant le chevalier de part en part. Une ovation monte imm\u00e9diatement du public, alors que le corps sans vie s'\u00e9croule sur le sol. Laissant son \u00e9p\u00e9e plant\u00e9e en travers du cadavre, il marche sur moi d'un pas d\u00e9cid\u00e9. Il me lance un regard farouche et d\u00e9clare d'une voix forte : \"P\u00e8re, je vous d\u00e9die cette victoire!\" Ma fille se jette dans ses bras, pleurant de soulagement.\r\n\r\n    {{facheux}} a \u00e9t\u00e9 tu\u00e9.\r\n    {{folks.1}} gagne +1 en Combat.", 
     "image": "events/716_9.jpg", 
-    "on_fire": "fils = folks[1]\nfils.fight += 1\nfils.save()\nfacheux = param.get_value(\"facheux\")\nfacheux.die()\nparam.set_value(\"facheux\", str(facheux))\n", 
+    "on_fire": "fils = folks[1]\nfils.fight += 1\nfils.save()\nfacheux = param.get_value(\"facheux\")\nf(\"tuer_folk\", condamne=facheux)\n", 
     "slug": "tuto_facheux_duel_sonwin", 
     "condition": "\n"
   }
@@ -2603,7 +2603,7 @@
     "weight": 1, 
     "text": "check si le joueur peut subir une attaque si oui il se fait attaquer sinon on lui donne des ressources", 
     "image": "", 
-    "on_fire": "#gar\u00e7ons qui ont au moins 8 en combat, sont adultes et pas disable\nnb_chevaliers_dispo=nb_chevaliers_dispo = folks.filter(sex=Folk.MALE, birth__lte=f(\"majeur\")).exclude(disabled=False).count()\nseuil_troupes_min=0.8*0.07*float(kingdom.prestige*2)\nthune_mini=10 #de quoi recruter 2 chevaliers\n\nif ((kingdom.soldiers>seuil_troupes_min and nb_chevaliers_dispo>=3) or kingdom.get_value(\"tuto_warning_incapable_subir_attaque\",False)):\n  i=random_value(1,2)\n  if i==1:\n    param.next_event(\"tuto_attaque_par_pnj\").start()\n  else:\n    param.next_event(\"tuto_nothin_happen\").start()\n  kingdom.set_value(\"tuto_warning_incapable_subir_attaque\",False)\nelse:\n  kingdom.set_value(\"tuto_warning_incapable_subir_attaque\",True)\n  param.next_event(\"tuto_regeneration_armee\").start()\n\nstop(S.GHOST_EVENT)\n", 
+    "on_fire": "#gar\u00e7ons qui ont au moins 8 en combat, sont adultes et pas disable\nnb_chevaliers_dispo = folks.filter(sex=Folk.MALE, birth__lte=datetime.now() - timedelta(days=C.MAJORITE)).exclude(disabled=True).count()\nseuil_troupes_min=0.8*0.07*float(kingdom.prestige*2)\nthune_mini=10 #de quoi recruter 2 chevaliers\n\nif ((kingdom.soldiers>seuil_troupes_min and nb_chevaliers_dispo>=3) or kingdom.get_value(\"tuto_warning_incapable_subir_attaque\",False)):\n  i=random_value(1,2)\n  if i==1:\n    param.next_event(\"tuto_attaque_par_pnj\").start()\n  else:\n    param.next_event(\"tuto_nothin_happen\").start()\n  kingdom.set_value(\"tuto_warning_incapable_subir_attaque\",False)\nelse:\n  kingdom.set_value(\"tuto_warning_incapable_subir_attaque\",True)\n  param.next_event(\"tuto_regeneration_armee\").start()\n\nstop(S.GHOST_EVENT)\n", 
     "slug": "tuto_scanjoueur_fantome", 
     "condition": "\n"
   }
@@ -2769,7 +2769,7 @@
     "category": null, 
     "name": "Premi\u00e8re escarmouche defense", 
     "weight": 1, 
-    "text": "Le d\u00e9tachement rassembl\u00e9 \u00e0 la h\u00e2te a pass\u00e9 une courte nuit dans la clairi\u00e8re, apr\u00e8s une ext\u00e9nuante marche forc\u00e9e. La fatigue n'a balay\u00e9e ni la discipline ni la hargne de mes hommes, cependant.  {% if chatelain_in_mission_defenseur %}Je les harangue une derni\u00e8re fois, alors que l'ennemi approche, et je peux lire dans leurs yeux qu'ils sont pr\u00eat \u00e0 se battre pour{% elif connetable_in_mission_defenseur %}Lorsque sire {{title.connetable}} leur lance d'une voix f\u00e9roce que l'ennemi approche et qu'il faudra de le recevoir comme convient, leur cris ne laisse pas douter qu'ils sont pr\u00eats \u00e0{% else %}Alors que sire {% if is_victory %} {{commandement.gagnant}}  {% else %}  {{commandement.perdant}}  {% endif %}les met en formation face \u00e0 l'ennemi qui se lance \u00e0 l'assaut, ils serrent leurs armes et se pr\u00e9parent \u00e0{% endif %} d\u00e9fendre leurs familles et l'honneur de {{dynasty}}.", 
+    "text": "Le d\u00e9tachement rassembl\u00e9 \u00e0 la h\u00e2te a pass\u00e9 une courte nuit dans la clairi\u00e8re, apr\u00e8s une ext\u00e9nuante marche forc\u00e9e. La fatigue n'a balay\u00e9e ni la discipline ni la hargne de mes hommes, cependant.  {% if chatelain_in_mission_defenseur %}Je les harangue une derni\u00e8re fois, alors que l'ennemi approche, et je peux lire dans leurs yeux qu'ils sont pr\u00eat \u00e0 se battre pour{% elif connetable_in_mission_defenseur %}Lorsque sire {{title.connetable}} leur lance d'une voix f\u00e9roce que l'ennemi approche et qu'il faudra de le recevoir comme convient, leur cris ne laisse pas douter qu'ils sont pr\u00eats \u00e0{% else %}Alors que sire {% if is_victory %} {{commandement.gagnant.general}}  {% else %}  {{commandement.perdant}}  {% endif %}les met en formation face \u00e0 l'ennemi qui se lance \u00e0 l'assaut, ils serrent leurs armes et se pr\u00e9parent \u00e0{% endif %} d\u00e9fendre leurs familles et l'honneur de {{dynasty}}.", 
     "image": "events/117_2.jpg", 
     "on_fire": "kingdom.set_value(\"tuto_firstbattle_defense\",True)", 
     "slug": "tuto_firstbattle_defense_2", 
@@ -3079,7 +3079,7 @@
     "weight": 1, 
     "text": "{{name}} est mort de mort naturelle \u00e0 l'\u00e2ge de {{age}} ans.\r\n", 
     "image": "", 
-    "on_fire": "victime = param.get_value(\"victime\")\nprint  victime\n\ntry:\n  victime.die()\nexcept:\n  print \"except\"\n  # La victime est en mission, elle ne pourra \u00eatre tu\u00e9e qu'une fois la mission termin\u00e9e\n  # On reprogramme l'event courant pour se relancer \u00e0 la fin de la mission\n  param.is_started = False\n  param.started = victime.mission.pending_mission.started + timedelta(minutes=victime.mission.pending_mission.mission.duration + 1)\n  param.save()\n  \nprint \"lol\"\n", 
+    "on_fire": "victime = param.get_value(\"victime\")\n\ntry:\n  f(\"tuer_folk\", condamne=victime)\nexcept:\n  print \"except\"\n  # La victime est en mission, elle ne pourra \u00eatre tu\u00e9e qu'une fois la mission termin\u00e9e\n  # On reprogramme l'event courant pour se relancer \u00e0 la fin de la mission\n  param.is_started = False\n  param.started = victime.mission.pending_mission.started + timedelta(minutes=victime.mission.pending_mission.mission.duration + 1)\n  param.save()\n  \nprint \"lol\"\n", 
     "slug": "shinigami", 
     "condition": "\n"
   }
@@ -3189,7 +3189,7 @@
     "category": null, 
     "name": "tuto_diplomacy_mariage", 
     "weight": 1, 
-    "text": "toast!", 
+    "text": "\"A LA SANT\u00c9 DE {{dynasty|upper}} !\"\r\n\r\nLa voix de t\u00e9nor de {{kingdom.values.tuto_adversaire}} couvre sans peine la musique. Il l\u00e8ve bien haut sa coupe, imit\u00e9 par mes suivants comme ceux de {{kingdom.values.tuto_PNJ}}, et avale une lamp\u00e9e de vin. A son sourire, je devine qu'il est aussi heureux que moi que nos n\u00e9gociations soient parvenu \u00e0 leur terme, mettant enfin fin aux combats. L'accord a \u00e9t\u00e9 sign\u00e9 ce matin m\u00eame, et la f\u00eate a commenc\u00e9 d\u00e8s la tomb\u00e9 de la nuit. Nos deux maisons ont mit en commun leurs victuailles, et fraternisent gaiement comme si elles ne s'\u00e9taient jamais \u00e9trip\u00e9 sur le champs de bataille.\r\n\r\nV\u00eatu de mes plus beaux v\u00eatement, je me redresse et l\u00e8ve mon verre \u00e0 mon tour.", 
     "image": "events/6541.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_mariage", 
@@ -3235,6 +3235,34 @@
     "image": "", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_lastchat_fille_2", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 288, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "L'affront est effectif", 
+    "weight": 1, 
+    "text": "Mon affront contre {{defenseur.user.username}} est maintenant effectif. Je vais pouvoir lancer une escarmouche.", 
+    "image": "", 
+    "on_fire": "kingdom.message(\"Votre affront contre \"+param.get_value(\"defenseur\").user.username+\" est maintenant effectif, je peux d\u00e8s maintenant lancer une escarmouche \u00e0 son encontre. Ca va saigner.\")\n#creer une claim\nretour_fonction = f(\"creer_claim\", offender = param.get_value(\"defenseur\"),offended = kingdom,level=1)\n\n", 
+    "slug": "getaffrgetaffront_diplomatie_kingdom_claim_effective", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 289, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "L'affront est effectif", 
+    "weight": 1, 
+    "text": "L'affront que {{attaquant.user.username}} a contre moi est maintenant effectif. Il faut que je me pr\u00e9pare \u00e0 une attaque.", 
+    "image": "", 
+    "on_fire": "kingdom.message(\"l'affront que \"+param.get_value(\"attaquant\").user.username+\" a contre vous est maintenant effectif. Il faut que je me pr\u00e9pare \u00e0 une attaque.\")", 
+    "slug": "getaffrgetaffront_diplomatie_target_claim_effective", 
     "condition": "\n"
   }
 },
@@ -5831,7 +5859,7 @@
     "message": "", 
     "event": 234, 
     "condition": "\n", 
-    "on_fire": "#mise en forme des param\u00e8tres \u00e0 passer aux fonctions de calcul\naffected=kingdom.get_team(\"ligne_defense\")[\"affected\"][0:3]\ndefenseur = {\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * kingdom.soldiers / 100),\n  'combattants': kingdom.get_team(\"ligne_defense\")[\"affected\"],\n  'population': kingdom.population,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':kingdom.get_value('tuto_dynasty_PNJ')\n}\n\n# R\u00e9cuperer les cinq meilleurs combattants de l'attaquant\ndate_majorite = datetime.now() - timedelta(days=C.MAJORITE)\ncinq_meilleurs = kingdom.folk_set.filter(sex=Folk.MALE, disabled=False, birth__lte=date_majorite).order_by('-fight')[0:5]\nmoyenne_meilleurs_fight = avg_stats(cinq_meilleurs, 'fight')\n\ncombattants = [Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight)]\nmap(lambda f: f.save(), combattants)\ntype_adversaire=kingdom.get_value(\"tuto_type_PNJ\",'piquier')\ncombattants[0].add_quality(type_adversaire)\ncombattants[1].add_quality(type_adversaire)\ncombattants[2].add_quality(random_in(['piquier','cavalier','archer']))\n\nattaquant = {\n  # Dans le cadre du tuto,\n  # Les troupes du d\u00e9fenseur correspondent \u00e0 80% des troupes maximales disponibles pour ce Kingdom\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * 0.8 * C.POURCENTAGE_MAX_SOLDATS_PASSIF * call_function(\"get_max_population\", kingdom=kingdom) / (100 * 100)),\n  'combattants': combattants,\n  'population': kingdom.prestige*2,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':\"dynastie advserse\",\n}\n\n#fonctions pour calculer ce qu'il se passe sans appliquer\ngagnant, perdant, bataille = f(\"determiner_vainqueur_combat\", attaquant=attaquant, defenseur=defenseur)\nis_victory = gagnant == attaquant\ndelta = f(\"determiner_modifications_combat\", gagnant=gagnant, perdant=perdant, marge=bataille['marge'], attaquant_est_gagnant=is_victory)\nif is_victory==False:\n  commandement={\n                'gagnant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                'perdant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                }\nelse:\n  commandement={\n                'gagnant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                'perdant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                }  \n#application gain_prestige\nif is_victory==False:\n  kingdom.prestige += delta['gagnant']['prestige']\nelse:\n  kingdom.prestige += delta['perdant']['prestige']\nkingdom.save()\n\n#d\u00e9terminantion prochain event\nif kingdom.get_value(\"tuto_firstbattle_defense\", False) == False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_defense\")\nelif is_victory==False:\n  pe = kingdom.create_pending_event(\"escarmouche_victoire\")\nelse:\n  pe = kingdom.create_pending_event(\"escarmouche_defaite\")\n  \n#tuer les gens qui ne sont pas de la famille r\u00e9gnante, blesser tous les bless\u00e9s\n  \nchatelain = kingdom.get_folk_in_title('chatelain')\nfamille = chatelain.last_name\nfor mort in delta['A_tuer']:\n  if mort.last_name != famille:\n    mort.die()\n  else:\n    gagnant['morts'].exclude(mort)\n    perdant['morts'].exclude(mort)\n\nfor blesse in delta['A_blesser']:\n  if blesse != chatelain:\n    blesse.add_quality(\"blesse\")\n  else:\n    gagnant['blesses'].exclude(mort)\n    perdant['blesses'].exclude(mort)\n  \n  \n#passage d'arguments\npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\", False)\npe.set_value(\"gagnant\",gagnant)\npe.set_value(\"perdant\",perdant)\npe.set_value(\"liste_perdant\",f(\"liste_nom_avec_specialite\", commandants=perdant['combattants']))\npe.set_value(\"liste_gagnant\",f(\"liste_nom_avec_specialite\", commandants=gagnant['combattants']))\npe.set_value(\"delta\",delta)\npe.set_value(\"bataille\",bataille)\npe.set_value(\"target_dynasty\", kingdom.get_value(\"tuto_adversaire\"))\npe.set_value(\"commandement\",commandement)\npe.set_value(\"tuto\", True)\npe.start()\n  \n\n\n#gain thune en cas de pillage\nif is_victory:\n  kingdom.money+=delta['perdant']['population']\n  \n#pertes de soldats\nif is_victory==False:\n  kingdom.soldiers-=delta['gagnant']['pertes_troupe']\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')-delta['gagnant']['pertes_troupe'])\nelse:\n  kingdom.soldiers-=delta['perdant']['pertes_troupe']\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')-delta['perdant']['pertes_troupe'])\n\nkingdom.save()\n\nmap(lambda f: f.delete(), combattants)\n"
+    "on_fire": "#mise en forme des param\u00e8tres \u00e0 passer aux fonctions de calcul\naffected=kingdom.get_team(\"ligne_defense\")[\"affected\"][0:3]\ndefenseur = {\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * kingdom.soldiers / 100),\n  'combattants': kingdom.get_team(\"ligne_defense\")[\"affected\"],\n  'population': kingdom.population,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':kingdom.get_value('tuto_dynasty_PNJ')\n}\n\n# R\u00e9cuperer les cinq meilleurs combattants de l'attaquant\ndate_majorite = datetime.now() - timedelta(days=C.MAJORITE)\ncinq_meilleurs = kingdom.folk_set.filter(sex=Folk.MALE, disabled=False, birth__lte=date_majorite).order_by('-fight')[0:5]\nmoyenne_meilleurs_fight = avg_stats(cinq_meilleurs, 'fight')\n\ncombattants = [Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight), Folk(fight=moyenne_meilleurs_fight)]\nmap(lambda f: f.save(), combattants)\ntype_adversaire=kingdom.get_value(\"tuto_type_PNJ\",'piquier')\ncombattants[0].add_quality(type_adversaire)\ncombattants[1].add_quality(type_adversaire)\ncombattants[2].add_quality(random_in(['piquier','cavalier','archer']))\n\nattaquant = {\n  # Dans le cadre du tuto,\n  # Les troupes du d\u00e9fenseur correspondent \u00e0 80% des troupes maximales disponibles pour ce Kingdom\n  'troupes': int(C.POURCENTAGE_SOLDATS_ESCARMOUCHE * 0.8 * C.POURCENTAGE_MAX_SOLDATS_PASSIF * call_function(\"get_max_population\", kingdom=kingdom) / (100 * 100)),\n  'combattants': combattants,\n  'population': kingdom.prestige*2,\n  'prestige': kingdom.prestige,\n  'dynastie_adverse':\"dynastie advserse\",\n}\n\n#fonctions pour calculer ce qu'il se passe sans appliquer\ngagnant, perdant, bataille = f(\"determiner_vainqueur_combat\", attaquant=attaquant, defenseur=defenseur)\nis_victory = gagnant == attaquant\ndelta = f(\"determiner_modifications_combat\", gagnant=gagnant, perdant=perdant, marge=bataille['marge'], attaquant_est_gagnant=is_victory)\nif is_victory==False:\n  commandement={\n                'gagnant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                'perdant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                }\nelse:\n  commandement={\n                'gagnant':\n                         {\n                         'chatelain':False,\n                         'connetable':False,\n                         'general':random_in(combattants),\n                         },\n                'perdant':f(\"leader_de_mission\",royaume=kingdom,list_folk=affected),\n                }  \n#application gain_prestige\nif is_victory==False:\n  kingdom.prestige += delta['gagnant']['prestige']\nelse:\n  kingdom.prestige += delta['perdant']['prestige']\nkingdom.save()\n\n#d\u00e9terminantion prochain event\nif kingdom.get_value(\"tuto_firstbattle_defense\", False) == False:\n  pe = kingdom.create_pending_event(\"tuto_firstbattle_defense\")\nelif is_victory==False:\n  pe = kingdom.create_pending_event(\"escarmouche_victoire\")\nelse:\n  pe = kingdom.create_pending_event(\"escarmouche_defaite\")\n  \n#tuer les gens qui ne sont pas de la famille r\u00e9gnante, blesser tous les bless\u00e9s\n  \nchatelain = kingdom.get_folk_in_title('chatelain')\nfamille = chatelain.last_name\nfor mort in delta['A_tuer']:\n  if mort.last_name != famille:\n    f(\"tuer_folk\", condamne=mort)\n  else:\n    gagnant['morts'].exclude(mort)\n    perdant['morts'].exclude(mort)\n\nfor blesse in delta['A_blesser']:\n  if blesse != chatelain:\n    blesse.add_quality(\"blesse\")\n  else:\n    gagnant['blesses'].exclude(mort)\n    perdant['blesses'].exclude(mort)\n  \n  \n#passage d'arguments\npe.set_value(\"is_victory\", is_victory)\npe.set_value(\"attaquant\", False)\npe.set_value(\"gagnant\",gagnant)\npe.set_value(\"perdant\",perdant)\npe.set_value(\"liste_perdant\",f(\"liste_nom_avec_specialite\", commandants=perdant['combattants']))\npe.set_value(\"liste_gagnant\",f(\"liste_nom_avec_specialite\", commandants=gagnant['combattants']))\npe.set_value(\"delta\",delta)\npe.set_value(\"bataille\",bataille)\npe.set_value(\"target_dynasty\", kingdom.get_value(\"tuto_adversaire\"))\npe.set_value(\"commandement\",commandement)\npe.set_value(\"tuto\", True)\npe.start()\n  \n\n\n#gain thune en cas de pillage\nif is_victory:\n  kingdom.money+=delta['perdant']['population']\n  \n#pertes de soldats\nif is_victory==False:\n  kingdom.soldiers-=delta['gagnant']['pertes_troupe']\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')-delta['gagnant']['pertes_troupe'])\nelse:\n  kingdom.soldiers-=delta['perdant']['pertes_troupe']\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')-delta['perdant']['pertes_troupe'])\n\nkingdom.save()\n\nmap(lambda f: f.delete(), combattants)\n"
   }
 },
 {
@@ -6679,6 +6707,39 @@
     "event": 287, 
     "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_diplomacy_mariage\").start()"
+  }
+},
+{
+  "pk": 390, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Avec joie", 
+    "message": "", 
+    "event": 288, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 391, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Une petite revue des troupes en d\u00e9fense ne ferait pas de mal.", 
+    "message": "", 
+    "event": 289, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 392, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "\"A la sant\u00e9 de {{kingdom.values.tuto_PNJ}} !\"", 
+    "message": "", 
+    "event": 284, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_diplomacy_mariage_2\").start()"
   }
 }
 ]
