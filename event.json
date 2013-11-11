@@ -2993,9 +2993,9 @@
     "category": null, 
     "name": "Mariage diplomatique", 
     "weight": 1, 
-    "text": "Je les ai convoqu\u00e9s dans mes appartements ; mon fils {{folks.1.first_name}}, ma fille {{folks.2.first_name}}{% if kingdom.values.soeurette %}, ma s\u0153ur {{kingdom.values.soeurette.first_name}}{% endif %} et mon fid\u00e8le {{folks.3.first_name}}. Nous entrons imm\u00e9diatement dans le vif du sujet.\r\n\r\n\"En affrontant le seigneur {{kingdom.values.tuto_dynasty_PNJ}}, nous avons prouv\u00e9 que {{dynasty}} n\u2019\u00e9tait pas une proie facile. Le conflit, cependant, nous coute cher. Je pense qu\u2019il est temps d\u2019y mettre fin, de n\u00e9gocier une paix pendant que nous avons l\u2019avantage.\"\r\n\r\nIl peuvent sentir que je p\u00e8se chacun de mes mots.\r\n\r\n\"La seule mani\u00e8re d\u2019obtenir une alliance durable est d\u2019unir nos familles par le sang. {{kingdom.values.tuto_adversaire}} et sa prog\u00e9niture sont dans le c\u00e9libat. Il saura que nous sommes s\u00e9rieux si nous lui proposons non pas un mais deux mariages... Chacun de nous doit accueillir un membre de la famille de l'autre dans sa cour.\"\r\n\r\nMon fils se racle la gorge.\r\n\r\n\"Un \u00e9change d\u2019otage, en somme.\"\r\n\r\nJ\u2019opine.\r\n\r\n\"J\u2019ai longuement r\u00e9fl\u00e9chis \u00e0 la question\u2026\"\r\n\r\n     Marier votre fille \u00e0 une famille r\u00e9gnante vous coute une dot de 15 \u00e9cus mais vous rapporte 15 points de prestige.\r\n     \u00c9pouser une fille du seigneur {{kingdom.values.tuto_adversaire}} vous rapporterait une dot de 15 \u00e9cus.'", 
+    "text": "Je les ai convoqu\u00e9s dans mes appartements ; mon fils {{folks.1.first_name}}, ma fille {{folks.2.first_name}}{% if soeurette %}, ma s\u0153ur {{soeurette.first_name}}{% endif %} et mon fid\u00e8le {{folks.3.first_name}}. Nous entrons imm\u00e9diatement dans le vif du sujet.\r\n\r\n\"En affrontant le seigneur {{kingdom.values.tuto_dynasty_PNJ}}, nous avons prouv\u00e9 que {{dynasty}} n\u2019\u00e9tait pas une proie facile. Le conflit, cependant, nous coute cher. Je pense qu\u2019il est temps d\u2019y mettre fin, de n\u00e9gocier une paix pendant que nous avons l\u2019avantage.\"\r\n\r\nIl peuvent sentir que je p\u00e8se chacun de mes mots.\r\n\r\n\"La seule mani\u00e8re d\u2019obtenir une alliance durable est d\u2019unir nos familles par le sang. {{kingdom.values.tuto_adversaire}} et sa prog\u00e9niture sont dans le c\u00e9libat. Il saura que nous sommes s\u00e9rieux si nous lui proposons non pas un mais deux mariages... Chacun de nous doit accueillir un membre de la famille de l'autre dans sa cour.\"\r\n\r\nMon fils se racle la gorge.\r\n\r\n\"Un \u00e9change d\u2019otage, en somme.\"\r\n\r\nJ\u2019opine.\r\n\r\n\"J\u2019ai longuement r\u00e9fl\u00e9chis \u00e0 la question\u2026\"\r\n\r\n     Marier votre fille \u00e0 une famille r\u00e9gnante vous coute une dot de 15 \u00e9cus mais vous rapporte 15 points de prestige.\r\n     \u00c9pouser une fille du seigneur {{kingdom.values.tuto_adversaire}} vous rapporterait une dot de 15 \u00e9cus.'", 
     "image": "events/451_4_1.jpg", 
-    "on_fire": "param.set_value(\"pieuse\", f(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=28, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.get_value(\"tuto_dynasty_PNJ\"),  birth=datetime.now() - timedelta(days=18), trait=[\"pieux\"], ))\nparam.set_value(\"fiston\", f(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE, last_name=kingdom.get_value(\"tuto_dynasty_PNJ\"),  birth=datetime.now() - timedelta(days=17), trait=[\"intrepide\"], ))\n\n\n", 
+    "on_fire": "param.set_value(\"ainee\", f(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=28, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.get_value(\"tuto_dynasty_PNJ\"),  birth=datetime.now() - timedelta(days=18), trait=\"pieux\", ))\nparam.set_value(\"fiston\", f(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE, last_name=kingdom.get_value(\"tuto_dynasty_PNJ\"),  birth=datetime.now() - timedelta(days=17), trait=\"intrepide\", ))\n\nparam.set_value(\"soeurette\", kingdom.get_value(\"tuto_soeurette\"))\n", 
     "slug": "tuto_diplomacy_ending", 
     "condition": "\n"
   }
@@ -3037,7 +3037,7 @@
     "weight": 1, 
     "text": "Un silence prolong\u00e9, que mon fid\u00e8le {{folks.3}} rompt d\u2019un ton mesur\u00e9.\r\n\r\n\"A laquelle des deux filles allez-vous vous unir, mon seigneur ?\"", 
     "image": "events/451_4_3.jpg", 
-    "on_fire": "param.set_value(\"cadette\", f(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=28, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.get_value(\"tuto_dynasty_PNJ\"),  birth=datetime.now() - timedelta(days=16), trait=[\"galant\"], ))\n\n", 
+    "on_fire": "param.set_value(\"cadette\", f(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=28, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.get_value(\"tuto_dynasty_PNJ\"),  birth=datetime.now() - timedelta(days=16), trait=\"galant\", ))\n\n", 
     "slug": "tuto_diplomacy_ending_chatelain", 
     "condition": "\n"
   }
@@ -3077,9 +3077,9 @@
     "category": null, 
     "name": "Mort naturelle", 
     "weight": 1, 
-    "text": "{{name}} est mort de mort naturelle \u00e0 l'\u00e2ge de {{age}} ans.\r\n", 
+    "text": "{% if epitaphe %}\r\n{{epitaphe}}\r\n{% endif %}", 
     "image": "", 
-    "on_fire": "victime = param.get_value(\"victime\")\n\ntry:\n  victime.die()\n  victime.kingdom=None\n  victime.save()\nexcept ValidationError:\n  # La victime est en mission, elle ne pourra \u00eatre tu\u00e9e qu'une fois la mission termin\u00e9e\n  # On reprogramme l'event courant pour se relancer \u00e0 la fin de la mission\n  param.is_started = False\n  param.started = victime.mission.pending_mission.started + timedelta(minutes=victime.mission.pending_mission.mission.duration + 1)\n  param.save()\n  \n", 
+    "on_fire": "folk = param.get_value(\"folk\")\nage = folk.age()\n\ntry:\n  folk.die()\n  folk.kingdom=None\n  folk.save()\nexcept ValidationError:\n  # La victime est en mission, elle ne pourra \u00eatre tu\u00e9e qu'une fois la mission termin\u00e9e\n  # On reprogramme l'event courant pour se relancer \u00e0 la fin de la mission\n  param.is_started = False\n  param.started = folk.mission.pending_mission.started + timedelta(minutes=folk.mission.pending_mission.mission.duration + 1)\n  param.save()\n  \n", 
     "slug": "shinigami", 
     "condition": "\n"
   }
@@ -3291,6 +3291,20 @@
     "image": "", 
     "on_fire": "if folks[0].diplomacy >= 12 : \n  param.get_value(\"spouse4\").loyalty +=6\nelif folks[0].diplomacy >= 10 :\n  param.get_value(\"spouse4\").loyalty +=4\nelse :\n  param.get_value(\"spouse4\").loyalty +=2\nparam.get_value(\"spouse4\").save()\n", 
     "slug": "tuto_diplomacy_mariage_danse", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 292, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "jhbk", 
+    "weight": 1, 
+    "text": "jhg", 
+    "image": "", 
+    "on_fire": "convives = Folk.objects.filter(kingdom=kingdom, birth__lte=datetime.now()-timedelta(days=C.MAJORITE))\nconvives = convives.exclude(id=folks[0].id)\nconvives = convives.exclude(id=folks[1].id)\nconvives = convives.exclude(id=folks[2].id)\nconvives = convives.exclude(id=folks[3].id)\nconvives = convives.order_by('?')[0:2]\n\n", 
+    "slug": "tuto_diplomacy_mariage_conversation", 
     "condition": "\n"
   }
 },
@@ -6315,8 +6329,8 @@
     "text": "\"\u2026{{soeurette.first_name}}, ma s\u0153ur, tu dois partir pour {{kingdom.values.tuto_PNJ}} et \u00e9pouserle seigneur des lieux.\"", 
     "message": "", 
     "event": 268, 
-    "condition": "if kingdom.get_value(\"soeurette\") is None:\n  stop(\"n'existe pas\")\nelif kingdom.get_value(\"soeurette\").spouse is None:\n  stop(\"est mari\u00e9e\")\n", 
-    "on_fire": "param.set_value(\"spouse1\", kingdom.get_value(\"soeurette\"))\nparam.set_value(\"spouse2\", kingdom.get_value(\"tuto_adversaire\"))\nparam.next_event(\"tuto_diplomacy_ending_femme\").start()\n"
+    "condition": "if param.get_value(\"soeurette\") is None:\n  stop(\"n'existe pas\")\nelif param.get_value(\"soeurette\").spouse is None:\n  stop(\"est mari\u00e9e\")\n", 
+    "on_fire": "param.set_value(\"spouse1\", param.get_value(\"soeurette\"))\nparam.set_value(\"spouse2\", kingdom.get_value(\"tuto_adversaire\"))\nparam.next_event(\"tuto_diplomacy_ending_femme\").start()\n"
   }
 },
 {
@@ -6411,10 +6425,10 @@
   "pk": 357, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\"\u2026{{kingdom.values.soeurette.first_name}} fera entrer le fils {{kingdom.values.tuto_PNJ}} dans la famille.\"", 
+    "text": "\"\u2026{{soeurette.first_name}} fera entrer le fils {{kingdom.values.tuto_PNJ}} dans la famille.\"", 
     "message": "", 
     "event": 270, 
-    "condition": "if param.get_value(\"spouse1\") == kingdom.get_value(\"soeurette\"):\n  stop()\nif kingdom.get_value(\"soeurette\") is None:\n  stop(\"n'existe pas\")\nelif kingdom.get_value(\"soeurette\").spouse is not None:\n  stop(\"est mari\u00e9e\")\n", 
+    "condition": "if param.get_value(\"spouse1\") == kingdom.get_value(\"soeurette\"):\n  stop()\nif param.get_value(\"soeurette\") is None:\n  stop(\"n'existe pas\")\nelif param.get_value(\"soeurette\").spouse is not None:\n  stop(\"est mari\u00e9e\")\n", 
     "on_fire": "param.set_value(\"spouse3\", soeurette)\nparam.set_value(\"spouse4\", param.get_value(\"fiston\"))\nparam.next_event(\"tuto_diplomacy_ending_2\").start()\n"
   }
 },
@@ -6470,7 +6484,7 @@
     "message": "", 
     "event": 272, 
     "condition": "\n", 
-    "on_fire": "if param.get_value(\"spouse1\", kingdom.get_value(\"soeurette\")):\n  param.next_event(\"tuto_diplomacy_lastchat_soeurette\").start()\nelse:\n  param.next_event(\"tuto_diplomacy_marriage\").start()\n"
+    "on_fire": "if param.get_value(\"spouse1\", param.get_value(\"soeurette\")):\n  param.next_event(\"tuto_diplomacy_lastchat_soeurette\").start()\nelse:\n  param.next_event(\"tuto_diplomacy_mariage\").start()\n"
   }
 },
 {
@@ -6481,7 +6495,7 @@
     "message": "", 
     "event": 272, 
     "condition": "\n", 
-    "on_fire": "if param.get_value(\"spouse1\") == kingdom.get_value(\"soeurette\"):\n  param.next_event(\"tuto_diplomacy_lastchat_soeurette\").start()\nelif param.get_value(\"spouse1\")== folks[1]:\n  param.next_event(\"tuto_diplomacy_lastchat_fils\").start()\nelse:\n  param.next_event(\"tuto_diplomacy_lastchat_fille\").start()\n"
+    "on_fire": "if param.get_value(\"spouse1\") == param.get_value(\"soeurette\"):\n  param.next_event(\"tuto_diplomacy_lastchat_soeurette\").start()\nelif param.get_value(\"spouse1\")== folks[1]:\n  param.next_event(\"tuto_diplomacy_lastchat_fils\").start()\nelse:\n  param.next_event(\"tuto_diplomacy_lastchat_fille\").start()\n"
   }
 },
 {
