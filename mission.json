@@ -9,7 +9,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": "affected=grids['chercheurs_noises']\n\nprix=kingdom.prestige/10 +5*len(affected)\nif kingdom.money<prix:\n  kingdom.money-=prix\n  kingdom.save()\nelse:\n  stop(u\"Vous n'avez pas assez d'\u00e9cus pour lancer cette mission, \"+unicode(prix)+u\" \u00e9cus demand\u00e9s.\")\n\n\na = 0\nambassadeur=kingdom.get_folk_in_title(\"ambassadeur\")\nfor folk in affected:\n  a += folk.diplomacy\n  if folk==ambassadeur:\n    a+=4 #bonus ambassadeur dans la mission\n\nd = 0\ntry :\n  d += target.get_folk_in_title(\"ambassadeur\").diplomacy * 4\nexcept:\n  pass\ntry :\n  d += target.get_folk_in_title(\"chatelain\").diplomacy\nexcept:\n  pass\nd *= 0.05*0.3\nd += sum_stats(folks.filter(mission=None, birth__gte=datetime.now() - timedelta(days=C.MAJORITE)), \"diplomacy\")*0.7\nd *= 0.4\n\n\nif a>d:\n  \n  #event \u00e0 moi pour annoncer que la claim est obtenue\n  pe = kingdom.create_pending_event(\"getaffront_diplomatie_kingdomsuccess\")\n  pe.set_value(\"defenseur\", target)\n  pe.start()  \n  #event \u00e0 la cible pour annoncer que la claim est obtenue\n  pe = target.create_pending_event(\"getaffront_diplomatie_targetsuccess\")\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()  \n  #event \u00e0 moi dans 24 heures pour annoncer que la claim est devenue valide+existence de la claim\n  pe = kingdom.create_pending_event(\"getaffront_diplomatie_kingdom_claim_effective\")\n  pe.set_value(\"defenseur\", target)\n  pe.started=datetime.now()+timedelta(days=1)\n  pe.start()    \n  #event \u00e0 la cible dans 24 heures pour annoncer que la claim est devenue valide\n  pe = target.create_pending_event(\"getaffront_diplomatie_target_claim_effective\")\n  pe.set_value(\"attaquant\", kingdom)\n  pe.started=datetime.now()+timedelta(days=1)\n  pe.start()  \n  \n  \n  #evenement attaquer\n  kingdom.create_pending_mission(\"escarmouche\")\nelse:\n  pe = kingdom.create_pending_event(\"getaffront_diplomatie_kingdomfailure\")\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\n  \n  pe = target.create_pending_event(\"getaffront_diplomatie_targetfailure\")\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\n\n\n", 
+    "on_start": "affected=grids['chercheurs_noises']\n\nprix=kingdom.prestige/10 +5*len(affected)\nif kingdom.money>prix:\n  kingdom.money-=prix\n  kingdom.save()\nelse:\n  stop(u\"Vous n'avez pas assez d'\u00e9cus pour lancer cette mission, %s \u00e9cus demand\u00e9s.\"  % prix)\n\n\na = 0\nambassadeur=kingdom.get_folk_in_title(\"ambassadeur\")\nfor folk in affected:\n  a += folk.diplomacy\n  if folk==ambassadeur:\n    a+=4 #bonus ambassadeur dans la mission\n\nd = 0\ntry :\n  d += target.get_folk_in_title(\"ambassadeur\").diplomacy * 4\nexcept:\n  pass\ntry :\n  d += target.get_folk_in_title(\"chatelain\").diplomacy\nexcept:\n  pass\nd *= 0.05*0.3\nd += sum_stats(folks.filter(mission=None, birth__gte=datetime.now() - timedelta(days=C.MAJORITE)), \"diplomacy\")*0.7\nd *= 0.4\n\n\nif a>d:\n  \n  #event \u00e0 moi pour annoncer que la claim est obtenue\n  pe = kingdom.create_pending_event(\"getaffront_diplomatie_kingdomsuccess\")\n  pe.set_value(\"target\", target)\n  pe.start()  \n  #event \u00e0 la cible pour annoncer que la claim est obtenue\n  pe = target.create_pending_event(\"getaffront_diplomatie_targetsuccess\")\n  pe.set_value(\"target\", kingdom)\n  pe.start()  \n  #event \u00e0 moi dans 24 heures pour annoncer que la claim est devenue valide+existence de la claim\n  pe = kingdom.create_pending_event(\"getaffront_diplomatie_kingdom_claim_effective\")\n  pe.set_value(\"target\", target)\n  pe.started=datetime.now()+timedelta(days=1)\n  pe.save()    \n  #event \u00e0 la cible dans 24 heures pour annoncer que la claim est devenue valide\n  pe = target.create_pending_event(\"getaffront_diplomatie_target_claim_effective\")\n  pe.set_value(\"target\", kingdom)\n  pe.started=datetime.now()+timedelta(days=1)\n  pe.save()  \n\nelse:\n  pe = kingdom.create_pending_event(\"getaffront_diplomatie_kingdomfailure\")\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\n  \n  pe = target.create_pending_event(\"getaffront_diplomatie_targetfailure\")\n  pe.set_value(\"attaquant\", kingdom)\n  pe.start()\n\n\n", 
     "has_target": true, 
     "is_team": false, 
     "title": 6, 
@@ -579,7 +579,7 @@
   "model": "mission.mission", 
   "fields": {
     "name": "D\u00e9finir sa d\u00e9fense", 
-    "target_list": "\n", 
+    "target_list": null, 
     "text": "D\u00e9finir les personnes qui prendront la d\u00e9fense de mon ch\u00e2teau en cas de besoin", 
     "has_value": false, 
     "on_resolution": "\n", 
@@ -837,7 +837,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
-    "on_start": "def remove_future_claim(kingdom, target):\n  pes = kingdom.pendingevent_set.filter(event__slug__in=[\"getaffrgetaffront_diplomatie_target_claim_effective\",\"getaffrgetaffront_diplomatie_kingdom_claim_effective\"])\n  for pe in pes:\n    if pe.get_value(\"target\") == target:\n      pe.delete()\n      return True\n  return False\n\nkingdom=grids[\"moi\"][0].kingdom\ntarget=grids[\"pas_moi\"][0].kingdom\n#R\u00e9cup\u00e9rer les claims en cours entre les deux joueurs et les supprimer\nClaims_en_cours=Claim.objects.filter(offender__in=(kingdom,target), offended__in=(kingdom,target))\nif Claims_en_cours.count()>0:\n  Claims_en_cours.delete()\nelse:  \n# R\u00e9cup\u00e9rer le pending_event associ\u00e9 qui aurait pu d\u00e9clencher un claim\n  C1=remove_future_claim(kingdom,target)\n  C2=remove_future_claim(target,kingdom)\n  if not C1 or C2:\n    stop(\"Vous n'avez aucune raison de vouloir faire la paix\")\n  \n#notification au joueur qu'ils ont fait la paix\npe=kingdom.create_pending_event(\"notif_paix\")\npe.set_value(\"nouveau_meilleur_copain\",target)\npe.start()\npe=target.create_pending_event(\"notif_paix\")\npe.set_value(\"nouveau_meilleur_copain\",kingdom)\npe.start()\n\n", 
+    "on_start": "def remove_future_claim(kingdom, target):\n  pes = kingdom.pendingevent_set.filter(event__slug__in=[\"getaffront_diplomatie_target_claim_effective\",\"getaffront_diplomatie_kingdom_claim_effective\"])\n  print \"lol\", pes\n  for pe in pes:\n    print \"target\", pe.get_value(\"target\"), target\n    if pe.get_value(\"target\") == target:\n      print \"EQUALS\"\n      pe.delete()\n      return True\n  return False\n\nkingdom=grids[\"moi\"][0].kingdom\ntarget=grids[\"pas_moi\"][0].kingdom\n#R\u00e9cup\u00e9rer les claims en cours entre les deux joueurs et les supprimer\nClaims_en_cours=Claim.objects.filter(offender__in=(kingdom,target), offended__in=(kingdom,target))\nif Claims_en_cours.count()>0:\n  Claims_en_cours.delete()\nelse:  \n# R\u00e9cup\u00e9rer le pending_event associ\u00e9 qui aurait pu d\u00e9clencher un claim\n  C1=remove_future_claim(kingdom,target)\n  C2=remove_future_claim(target,kingdom)\n  if not C1 and not C2:\n    stop(\"Vous n'avez aucune raison de vouloir faire la paix\")\n  \n#notification au joueur qu'ils ont fait la paix\npe=kingdom.create_pending_event(\"notif_paix\")\npe.set_value(\"nouveau_meilleur_copain\",target)\npe.start()\npe=target.create_pending_event(\"notif_paix\")\npe.set_value(\"nouveau_meilleur_copain\",kingdom)\npe.start()\n\n", 
     "has_target": false, 
     "is_team": false, 
     "title": null, 
@@ -883,7 +883,7 @@
     "length": 1000, 
     "allow_empty": false, 
     "slug": "chercheurs_noises", 
-    "condition": "if folk.age() >= C.MAJORITE:\n  stop(\"Laisse les grands jouer \u00e0 ce jeu\")\n\nIeme_folk=param.pending_mission.folk_set(mission_grid=param.mission_grid).count()+1\nif Ieme_folk > kingdom.prestige*0.03:\n  stop(\"Vous ne pouvez pas envoyer plus de \"+str(Ieme_folk-1)+\" courtisans dans cette mission.\")\n\n"
+    "condition": "if folk.age() < C.MAJORITE:\n  stop(u\"Laisse les grands jouer \u00e0 ce jeu\")\n\nIeme_folk=param.pending_mission.folk_set.filter(mission_grid=param.mission_grid).count()+1\nif Ieme_folk > kingdom.prestige*0.03:\n  stop(u\"Vous ne pouvez pas envoyer plus de \"+unicode(Ieme_folk-1)+u\" courtisans dans cette mission.\")\n\n"
   }
 },
 {
@@ -1221,7 +1221,7 @@
     "length": 1000, 
     "allow_empty": false, 
     "slug": "defenseurs", 
-    "condition": "if folk.age()< C.MAJORITE:\n  stop(S.TOO_YOUNG)\nif folk.sex == Folk.FEMALE:\n  stop(\"Seul un homme peut \u00eatre choisi pour d\u00e9fendre la cit\u00e9.\")\n"
+    "condition": "if folk.age()< C.MAJORITE:\n  stop(S.TOO_YOUNG)\nif folk.sex == Folk.FEMALE:\n  stop(u\"Seul un homme peut \u00eatre choisi pour d\u00e9fendre la cit\u00e9.\")\n"
   }
 },
 {

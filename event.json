@@ -795,11 +795,11 @@
     "category": null, 
     "name": "On vous en veut", 
     "weight": 1, 
-    "text": "{{attaquant.user.username}} vous en veut, il a essay\u00e9 de persuader le royaume qu'il \u00e9tait dans son bon droit s'il vous attaquait. Heureusement, vos diplomates on flair\u00e9 le pi\u00e8ge et ont r\u00e9ussi \u00e0 le d\u00e9cr\u00e9dibiliser aupr\u00e8s du royaume.", 
+    "text": "{{target.user.username}} vous en veut, il a essay\u00e9 de persuader le royaume qu'il \u00e9tait dans son bon droit s'il vous attaquait. Heureusement, vos diplomates on flair\u00e9 le pi\u00e8ge et ont r\u00e9ussi \u00e0 le d\u00e9cr\u00e9dibiliser aupr\u00e8s du royaume.", 
     "image": "", 
-    "on_fire": " ", 
+    "on_fire": "\n", 
     "slug": "getaffront_diplomatie_targetfailure", 
-    "condition": " "
+    "condition": "\n"
   }
 },
 {
@@ -839,9 +839,9 @@
     "weight": 1, 
     "text": "{{title.ambassadeur}} m\u2019annonce qu\u2019il est parvenu a justifier diplomatiquement une agression de notre part contre {{target_chatelain}}. Un affront \u00e0 moiti\u00e9 invent\u00e9 et au trois-quarts exag\u00e9r\u00e9, mais qui emp\u00eachera quiconque de nous reprocher d\u2019essayer de \u201claver\u201d notre nom.\r\n\r\n    {{dynasty}} revendique un *Cassus belli* de la part de {{target}}.\r\n", 
     "image": "events/76.jpg", 
-    "on_fire": "param.set_value(\"target_chatelain\", target.get_folk_in_title(\"chatelain\"))\nparam.set_value(\"target\", target.user.username)\n", 
+    "on_fire": "target=param.get_value(\"target\")\nparam.set_value(\"target_chatelain\", target.get_folk_in_title(\"chatelain\"))\nparam.set_value(\"target\", target.user.username)\n", 
     "slug": "getaffront_diplomatie_kingdomsuccess", 
-    "condition": " "
+    "condition": "\n"
   }
 },
 {
@@ -1341,11 +1341,11 @@
     "category": null, 
     "name": "getaffront target", 
     "weight": 1, 
-    "text": "Les Fouines ! {{attaquant.user.username}} m'en veux. Il pr\u00e9tend que je lui fait ombrage sous un pr\u00e9texte fallacieux. Je vais devoir agir rapidement.\r\n\r\n    Le cassus belli sera effectif dans un an (24 h de jeu) si vous ne n\u00e9gociez pas de #(Mission) Faire la paix avec votre adversaire.", 
+    "text": "Les Fouines ! {{target.user.username}} m'en veux. Il pr\u00e9tend que je lui fait ombrage sous un pr\u00e9texte fallacieux. Je vais devoir agir rapidement.\r\n\r\n    Le cassus belli sera effectif dans un an (24 h de jeu) si vous ne n\u00e9gociez pas de #(Mission) Faire la paix avec votre adversaire.", 
     "image": "", 
-    "on_fire": " ", 
+    "on_fire": "\n", 
     "slug": "getaffront_diplomatie_targetsuccess", 
-    "condition": " "
+    "condition": "\n"
   }
 },
 {
@@ -2993,9 +2993,9 @@
     "category": null, 
     "name": "Mariage diplomatique", 
     "weight": 1, 
-    "text": "Je les ai convoqu\u00e9s dans mes appartements ; mon fils {{folks.1.first_name}}, ma fille {{folks.2.first_name}}{% if soeurette %}, ma s\u0153ur {{kingdom.values.soeurette.first_name}}{% endif %} et mon fid\u00e8le {{folks.3.first_name}}. Nous entrons imm\u00e9diatement dans le vif du sujet.\r\n\r\n\"En affrontant le seigneur {{kingdom.values.tuto_dynasty_PNJ}}, nous avons prouv\u00e9 que {{dynasty}} n\u2019\u00e9tait pas une proie facile. Le conflit, cependant, nous coute cher. Je pense qu\u2019il est temps d\u2019y mettre fin, de n\u00e9gocier une paix pendant que nous avons l\u2019avantage.\"\r\n\r\nIl peuvent sentir que je p\u00e8se chacun de mes mots.\r\n\r\n\"La seule mani\u00e8re d\u2019obtenir une alliance durable est d\u2019unir nos familles par le sang. {{kingdom.values.tuto_adversaire}} et sa prog\u00e9niture sont dans le c\u00e9libat. Il saura que nous sommes s\u00e9rieux si nous lui proposons non pas un mais deux mariages... Chacun de nous doit accueillir un membre de la famille de l'autre dans sa cour.\"\r\n\r\nMon fils se racle la gorge.\r\n\r\n\"Un \u00e9change d\u2019otage, en somme.\"\r\n\r\nJ\u2019opine.\r\n\r\n\"J\u2019ai longuement r\u00e9fl\u00e9chis \u00e0 la question\u2026\"\r\n\r\n     Marier votre fille \u00e0 une famille r\u00e9gnante vous coute une dot de 15 \u00e9cus mais vous rapporte 15 points de prestige.\r\n     \u00c9pouser une fille du seigneur {{kingdom.values.tuto_adversaire}} vous rapporterait une dot de 15 \u00e9cus.'", 
+    "text": "Je les ai convoqu\u00e9s dans mes appartements ; mon fils {{folks.1.first_name}}, ma fille {{folks.2.first_name}}{% if kingdom.values.soeurette %}, ma s\u0153ur {{kingdom.values.soeurette.first_name}}{% endif %} et mon fid\u00e8le {{folks.3.first_name}}. Nous entrons imm\u00e9diatement dans le vif du sujet.\r\n\r\n\"En affrontant le seigneur {{kingdom.values.tuto_dynasty_PNJ}}, nous avons prouv\u00e9 que {{dynasty}} n\u2019\u00e9tait pas une proie facile. Le conflit, cependant, nous coute cher. Je pense qu\u2019il est temps d\u2019y mettre fin, de n\u00e9gocier une paix pendant que nous avons l\u2019avantage.\"\r\n\r\nIl peuvent sentir que je p\u00e8se chacun de mes mots.\r\n\r\n\"La seule mani\u00e8re d\u2019obtenir une alliance durable est d\u2019unir nos familles par le sang. {{kingdom.values.tuto_adversaire}} et sa prog\u00e9niture sont dans le c\u00e9libat. Il saura que nous sommes s\u00e9rieux si nous lui proposons non pas un mais deux mariages... Chacun de nous doit accueillir un membre de la famille de l'autre dans sa cour.\"\r\n\r\nMon fils se racle la gorge.\r\n\r\n\"Un \u00e9change d\u2019otage, en somme.\"\r\n\r\nJ\u2019opine.\r\n\r\n\"J\u2019ai longuement r\u00e9fl\u00e9chis \u00e0 la question\u2026\"\r\n\r\n     Marier votre fille \u00e0 une famille r\u00e9gnante vous coute une dot de 15 \u00e9cus mais vous rapporte 15 points de prestige.\r\n     \u00c9pouser une fille du seigneur {{kingdom.values.tuto_adversaire}} vous rapporterait une dot de 15 \u00e9cus.'", 
     "image": "events/451_4_1.jpg", 
-    "on_fire": "\n", 
+    "on_fire": "param.set_value(\"pieuse\", f(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=28, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.get_value(\"tuto_dynasty_PNJ\"),  birth=datetime.now() - timedelta(days=18), trait=[\"pieux\"], ))\nparam.set_value(\"fiston\", f(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE, last_name=kingdom.get_value(\"tuto_dynasty_PNJ\"),  birth=datetime.now() - timedelta(days=17), trait=[\"intrepide\"], ))\n\n\n", 
     "slug": "tuto_diplomacy_ending", 
     "condition": "\n"
   }
@@ -3007,7 +3007,7 @@
     "category": null, 
     "name": "ergersgzd", 
     "weight": 1, 
-    "text": "\"Je\u2026 renoncer \u00e0 {{dynasty}}, p\u00e8re?\"\r\n\r\nMon fils accuse le coup. Le regard qu\u2019il me lance est bless\u00e9, {% if loyal %}d\u00e9sempar\u00e9{% else %}rageur{% endif %}, mais je le coupe avant qu\u2019il n'ai l'audace de protester.\r\n\r\n\"Tu accompliras ton devoir, mon fils. Pour l\u2019avenir de notre famille.\"\r\n\r\nJe me d\u00e9tourne, dissimulant au mieux mes propres \u00e9motions.\r\n\r\n\"En ce qui concerne le second mariage\u2026\"", 
+    "text": "\"Je\u2026 renoncer \u00e0 {{dynasty}}, p\u00e8re?\"\r\n\r\nMon fils accuse le coup. Le regard qu\u2019il me lance est bless\u00e9, {% if  folks.1.loyalty >= 80 %}d\u00e9sempar\u00e9{% else %}rageur{% endif %}, mais je le coupe avant qu\u2019il n'ai l'audace de protester.\r\n\r\n\"Tu accompliras ton devoir, mon fils. Pour l\u2019avenir de notre famille.\"\r\n\r\nJe me d\u00e9tourne, dissimulant au mieux mes propres \u00e9motions.\r\n\r\n\"En ce qui concerne le second mariage\u2026\"", 
     "image": "events/451_4_11.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_ending_fils", 
@@ -3023,7 +3023,7 @@
     "weight": 1, 
     "text": "Sans un mot, elle d\u00e9tourne le regard. Dissimulant au mieux mes propres sentiments, je poursuis.\r\n\r\n\"Quant au second mariage\u2026\"", 
     "image": "events/451_4_4.jpg", 
-    "on_fire": "\n", 
+    "on_fire": "param.set_value(\"ainee\", f(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=28, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.get_value(\"tuto_dynasty_PNJ\"),  birth=datetime.now() - timedelta(days=18), trait=[\"pieuse\"], ))\nparam.set_value(\"fiston\", f(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE, last_name=kingdom.get_value(\"tuto_dynasty_PNJ\"),  birth=datetime.now() - timedelta(days=17), trait=[\"intrepide\"], ))", 
     "slug": "tuto_diplomacy_ending_femme", 
     "condition": "\n"
   }
@@ -3033,11 +3033,11 @@
   "model": "event.event", 
   "fields": {
     "category": null, 
-    "name": "uietyiyt", 
+    "name": "tuto_diplomacy_ending_chatelain", 
     "weight": 1, 
     "text": "Un silence prolong\u00e9, que mon fid\u00e8le {{folks.3}} rompt d\u2019un ton mesur\u00e9.\r\n\r\n\"A laquelle des deux filles allez-vous vous unir, mon seigneur ?\"", 
     "image": "events/451_4_3.jpg", 
-    "on_fire": "\n", 
+    "on_fire": "param.set_value(\"cadette\", f(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=28, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.get_value(\"tuto_dynasty_PNJ\"),  birth=datetime.now() - timedelta(days=16), trait=[\"galant\"], ))\n\n", 
     "slug": "tuto_diplomacy_ending_chatelain", 
     "condition": "\n"
   }
@@ -3049,7 +3049,7 @@
     "category": null, 
     "name": "tuto_diplomacy_ending_2", 
     "weight": 1, 
-    "text": "\"{{title.ambassadeur}} sera mon ambassadeur dans cette affaire. Il rencontrera d\u00e8s demain l\u2019\u00e9missaire de {{kingdom.values.tuto_PNJ}} et lui soumettra notre offre. Ce conflit leur pr\u00e9l\u00e8ve un lourd tribut, et ils ont autant que nous \u00e0 gagner dans une union de nos lign\u00e9es. Ils accepteront.\"\r\n\r\nNotre entretien \u00e9tant termin\u00e9, ils se l\u00e8vent et se dirigent vers la porte, chacun pesant \u00e0 sa mani\u00e8re la port\u00e9e de ma d\u00e9cision. {% if spouse1 == soeurette %}{{spouse1.first_name}}, la derni\u00e8re debout, s'approche de moi.\r\n\r\n\"Nous devons parler.\"{% elif spouse1 == folks.1 %}{{spouse1.first_name}}, le dernier debout, s'approche de moi.\r\n\r\n\"P\u00e8re, pouvons nous parler en priv\u00e9?\"{% else %}{{folks.2.first_name}}, la derni\u00e8re debout, me lance un long regard.{% endif %}", 
+    "text": "\"{{title.ambassadeur}} sera mon ambassadeur dans cette affaire. Il rencontrera d\u00e8s demain l\u2019\u00e9missaire de {{kingdom.values.tuto_PNJ}} et lui soumettra notre offre. Ce conflit leur pr\u00e9l\u00e8ve un lourd tribut, et ils ont autant que nous \u00e0 gagner dans une union de nos lign\u00e9es. Ils accepteront.\"\r\n\r\nNotre entretien \u00e9tant termin\u00e9, ils se l\u00e8vent et se dirigent vers la porte, chacun pesant \u00e0 sa mani\u00e8re la port\u00e9e de ma d\u00e9cision. {% if spouse1 == kingdom.values.soeurette %}{{spouse1.first_name}}, la derni\u00e8re debout, s'approche de moi.\r\n\r\n\"Nous devons parler.\"{% elif spouse1 == folks.1 %}{{spouse1.first_name}}, le dernier debout, s'approche de moi.\r\n\r\n\"P\u00e8re, pouvons nous parler en priv\u00e9?\"{% else %}{{folks.2.first_name}}, la derni\u00e8re debout, me lance un long regard.{% endif %}", 
     "image": "events/451_4_2.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_ending_2", 
@@ -3065,7 +3065,7 @@
     "weight": 1, 
     "text": "Elle se tient tr\u00e8s droite, les l\u00e8vres pinc\u00e9es et le regard dans le vide.\r\n\r\n\"Ma place n'est pas de contester votre d\u00e9cision, mon fr\u00e8re. Je ferai mon devoir, pour {{dynasty}}. Cependant...\"\r\n\r\nElle tourne vers moi un visage sombre.\r\n\r\n\"Quels sont vos projets concernant mes enfants?\"", 
     "image": "events/451_4_7.jpg", 
-    "on_fire": "\n", 
+    "on_fire": "param.set_value(\"chiard\", kingdom.get_value(\"chiard\"))\nparam.set_value(\"mioche\", kingdom.get_value(\"mioche\"))\n", 
     "slug": "tuto_diplomacy_lastchat_soeurette", 
     "condition": "\n"
   }
@@ -3245,9 +3245,9 @@
     "category": null, 
     "name": "L'affront est effectif", 
     "weight": 1, 
-    "text": "Mon affront contre {{defenseur.user.username}} est maintenant effectif. Je vais pouvoir lancer une escarmouche.", 
+    "text": "Mon affront contre {{target.user.username}} est maintenant effectif. Je vais pouvoir lancer une escarmouche.", 
     "image": "", 
-    "on_fire": "kingdom.message(\"Votre affront contre \"+param.get_value(\"defenseur\").user.username+\" est maintenant effectif, je peux d\u00e8s maintenant lancer une escarmouche \u00e0 son encontre. Ca va saigner.\")\n#creer une claim\nretour_fonction = f(\"creer_claim\", offender = param.get_value(\"defenseur\"),offended = kingdom,level=1)\n\n", 
+    "on_fire": "kingdom.message(u\"Votre affront contre \"+unicode(param.get_value(\"target\").user.username)+u\" est maintenant effectif, je peux d\u00e8s maintenant lancer une escarmouche \u00e0 son encontre. Ca va saigner.\")\n#creer une claim\nretour_fonction = f(\"creer_claim\", offender = param.get_value(\"target\"),offended = kingdom,level=1)\n\n", 
     "slug": "getaffront_diplomatie_kingdom_claim_effective", 
     "condition": "\n"
   }
@@ -3259,9 +3259,9 @@
     "category": null, 
     "name": "L'affront est effectif", 
     "weight": 1, 
-    "text": "L'affront que {{attaquant.user.username}} a contre moi est maintenant effectif. Il faut que je me pr\u00e9pare \u00e0 une attaque.", 
+    "text": "L'affront que {{target.user.username}} a contre moi est maintenant effectif. Il faut que je me pr\u00e9pare \u00e0 une attaque.", 
     "image": "", 
-    "on_fire": "kingdom.message(\"l'affront que \"+param.get_value(\"attaquant\").user.username+\" a contre vous est maintenant effectif. Il faut que je me pr\u00e9pare \u00e0 une attaque.\")", 
+    "on_fire": "kingdom.message(u\"l'affront que \"+unicode(param.get_value(\"target\").user.username)+u\" a contre vous est maintenant effectif. Il faut que je me pr\u00e9pare \u00e0 une attaque.\")", 
     "slug": "getaffront_diplomatie_target_claim_effective", 
     "condition": "\n"
   }
@@ -3287,9 +3287,9 @@
     "category": null, 
     "name": "tuto_diplomacy_mariage_danse", 
     "weight": 1, 
-    "text": "{% if spouse4 == ainee %}Apr\u00e8s un bref moment d'h\u00e9sitation,{% else %}Sans h\u00e9siter,{% endif %} elle place sa main dans la mienne et me suit au milieu des danseurs. Elle me laisse mener, {% title.chatelain.diplomacy >= 12 %}et nous tournoyons bient\u00f4t sur un air endiabl\u00e9e. Son souffle se fait court et ses joues rosissent joliment. A la mani\u00e8re dont elle me regarde, je sais que mon charme ne la laisse pas indiff\u00e9rente.{% elif title.chatelain.diplomacy >= 10 %}", 
+    "text": "{% if spouse4 == ainee %}Apr\u00e8s un bref moment d'h\u00e9sitation,{% else %}Sans h\u00e9siter,{% endif %} elle place sa main dans la mienne et me suit au milieu des danseurs. Elle me laisse mener, {% if title.chatelain.diplomacy >= 12 %}et nous tournoyons bient\u00f4t sur un air endiabl\u00e9e que je dompte avec l'aisance du connaisseur. Son souffle se fait court et ses joues rosissent joliment. A la mani\u00e8re dont elle me regarde, je sais que mon charme ne la laisse pas indiff\u00e9rente.{% elif title.chatelain.diplomacy >= 10 %}et nous tournoyons bient\u00f4t sur un air enjou\u00e9, nous reposant chacun sur le sens du rythme de notre partenaire. Lorsque la musique s'arr\u00eate, elle effectue une r\u00e9v\u00e9rence de circonstance.\r\n\r\n    {% if title.chatelain.diplomacy >= 12 %}+6{% elif title.chatelain.diplomacy >= 10 %}+4{% else %}+2{% endif %} de Loyaut\u00e9 pour {{spouse4}}", 
     "image": "", 
-    "on_fire": "\n", 
+    "on_fire": "if folks[0].diplomacy >= 12 : \n  param.get_value(\"spouse4\").loyalty +=6\nelif folks[0].diplomacy >= 10 :\n  param.get_value(\"spouse4\").loyalty +=4\nelse :\n  param.get_value(\"spouse4\").loyalty +=2\nparam.get_value(\"spouse4\").save()\n", 
     "slug": "tuto_diplomacy_mariage_danse", 
     "condition": "\n"
   }
@@ -4036,10 +4036,10 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Mmmmm... int\u00e9ressant.", 
-    "message": null, 
+    "message": "", 
     "event": 84, 
-    "condition": " ", 
-    "on_fire": " "
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 },
 {
@@ -4093,8 +4093,8 @@
     "text": "Nous allons pouvoir agir.", 
     "message": "Mon ambassadeur a bien travaill\u00e9. Je dispose maintenant d'un casus belli contre {{target}}.", 
     "event": 90, 
-    "condition": " ", 
-    "on_fire": " "
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 },
 {
@@ -5799,7 +5799,7 @@
     "message": "", 
     "event": 225, 
     "condition": "\n", 
-    "on_fire": "#multiplicateur de gain tuto\nmultiplicateur_tuto=3 #sauf sur gain thune\n\n# Terminer les missions en cours\npending_missions = kingdom.pendingmission_set.filter(started__isnull=False)\nfor pending_mission in pending_missions:\n  pending_mission.resolve()\n\n# Simuler un mois de temps sur le Kingdom sur les persos\nfor folk in folks:\n  folk.birth -= timedelta(hours=2)\n  folk.save()\n\n#Appeller la fonction qui fait grandir les m\u00f4mes\nnb_passage_timewarp=kingdom.get_value('tuto_nb_passage_timewarp',random_value(0,7))\nkingdom.set_value('tuto_nb_passage_timewarp',nb_passage_timewarp+1)\nif nb_passage_timewarp%8==0:\n  f('education',kingdom=kingdom)\n\n#gain de population\nchatelain=kingdom.get_folk_in_title(\"chatelain\")\nif chatelain is None:\n  erudition_chatelain=0\nelse:\n  erudition_chatelain=chatelain.scholarship\ncure=kingdom.get_folk_in_title(\"cure\")\nif cure is None:\n  erudition_cure=5\nelse:\n  erudition_cure=cure.scholarship\np_max = call_function(\"get_max_population\", kingdom=kingdom)\nvirgule=kingdom.get_value('virgule_population',0)\ngain_pop = min(multiplicateur_tuto*10/100*p_max/12*((erudition_chatelain + 4*erudition_cure)/100)**0.5+virgule,p_max-kingdom.population-kingdom.get_value('total_soldats'))\ngain=int(gain_pop)\nkingdom.set_value('virgule_population',gain_pop-int(gain_pop))\ngain_pop=int(gain)\nkingdom.population += gain\n\n\n#print \"pop_max = \"\n#print p_max\n#print \"erudition_chatelain = \"\n#print erudition_chatelain\n#print \"\u00e9rudition cur\u00e9 = \"\n#print erudition_cure\n#print \"gain pop = \"\n#print gain_pop\n\nnouveaux_soldats=0\n#transformation pop_en_soldats\npourcentage_actuel = call_function('get_pourcentage_soldats_population', kingdom=kingdom)\n#print \"POURCENTAGE_MAX_SOLDATS_PASSIF = \"\n#print C.POURCENTAGE_MAX_SOLDATS_PASSIF\n#print \"C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO= \"\n#print C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO\n#print \"pourcentage_actuel = \"\n#print pourcentage_actuel\nif pourcentage_actuel < C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  virgule=kingdom.get_value('virgule_soldiers',0)\n  #print \"ancienne virgule=\"\n  #print virgule\n  nouveaux_soldats=min(multiplicateur_tuto*C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO/100/12 * p_max+virgule,int(C.POURCENTAGE_MAX_SOLDATS_PASSIF/100*p_max - pourcentage_actuel/100*p_max), kingdom.population)\n  kingdom.soldiers += int(nouveaux_soldats)\n  kingdom.population -=int(nouveaux_soldats)\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')+int(nouveaux_soldats))\n  kingdom.set_value('virgule_soldiers',nouveaux_soldats-int(nouveaux_soldats))\n  #print \"nouvelle virgule=\"\n  #print str(nouveaux_soldats-int(nouveaux_soldats))\n  #print \"nouveaux_soldats = \"\n  #print nouveaux_soldats\ngain_soldats=int(nouveaux_soldats)\n\n  \n#gain de thunes1\ntresorier=kingdom.get_folk_in_title(\"tresorier\")\nif tresorier is None:\n  erudition_tresorier=5\nelse:\n  erudition_tresorier=tresorier.scholarship\n#print \"erudition tresorier = \"\n#print erudition_tresorier\nvirgule=kingdom.get_value('virgule_thune',0)\nif pourcentage_actuel <= C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  gain=2/3*(kingdom.population * (((erudition_chatelain + 4*erudition_tresorier)/100)**0.5*2/3) -kingdom.get_value('total_soldats'))/12+virgule\nelse:\n  gain=1/3*(kingdom.population * (((erudition_chatelain + 4*erudition_tresorier)/100)**0.5*2/3) -kingdom.get_value('total_soldats')*2 )/12+virgule\nkingdom.set_value('virgule_thune',gain-int(gain))\nkingdom.money += int(gain)\ngain_thunes=int(gain)\n#print \"gain thune\"\n#print gain\n\nkingdom.save()\n\n#Gestion des bl\u00e9ss\u00e9s\nfor i in range(0,4):\n  Recurring.objects.get(slug=\"gestion_blesses\").fire(kingdom)\n\n#Cour maximum\nRecurring.objects.get(slug=\"cour_max\").fire(kingdom)\n\n#creer un message\nkingdom.message(u\"Un mois s'est \u00e9coul\u00e9. Votre domaine compte \"+str(int(gain_pop))+u\" paysans de plus.Vous recevez \"+str(int(gain_thunes))+u\" \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes.\"+str(int(gain_soldats))+u\" paysans sont maintenant des soldats.\")\n\n# Lancer l'\u00e9v\u00e8nement en next_event\n# Les variables seront automatiquement transmises aussi.\nparam.next_event(param.get_value('slug')).start()\n\n"
+    "on_fire": "#multiplicateur de gain tuto\nmultiplicateur_tuto=3 #sauf sur gain thune\n\n# Terminer les missions en cours\npending_missions = kingdom.pendingmission_set.filter(started__isnull=False)\nfor pending_mission in pending_missions:\n  pending_mission.resolve()\n\n# Simuler un mois de temps sur le Kingdom sur les persos\nfor folk in folks:\n  folk.birth -= timedelta(hours=2)\n  folk.save()\n\n#Appeller la fonction qui fait grandir les m\u00f4mes\nnb_passage_timewarp=kingdom.get_value('tuto_nb_passage_timewarp',random_value(0,7))\nkingdom.set_value('tuto_nb_passage_timewarp',nb_passage_timewarp+1)\nif nb_passage_timewarp%8==0:\n  f('education',kingdom=kingdom)\n\n#gain de population\nchatelain=kingdom.get_folk_in_title(\"chatelain\")\nif chatelain is None:\n  erudition_chatelain=0\nelse:\n  erudition_chatelain=chatelain.scholarship\ncure=kingdom.get_folk_in_title(\"cure\")\nif cure is None:\n  erudition_cure=5\nelse:\n  erudition_cure=cure.scholarship\np_max = call_function(\"get_max_population\", kingdom=kingdom)\nvirgule=kingdom.get_value('virgule_population',0)\ngain_pop = min(multiplicateur_tuto*10/100*p_max/12*((erudition_chatelain + 4*erudition_cure)/100)**0.5+virgule,p_max-kingdom.population-kingdom.get_value('total_soldats'))\ngain=int(gain_pop)\nkingdom.set_value('virgule_population',gain_pop-int(gain_pop))\ngain_pop=int(gain)\nkingdom.population += gain\n\n\n#print \"pop_max = \"\n#print p_max\n#print \"erudition_chatelain = \"\n#print erudition_chatelain\n#print \"\u00e9rudition cur\u00e9 = \"\n#print erudition_cure\n#print \"gain pop = \"\n#print gain_pop\n\nnouveaux_soldats=0\n#transformation pop_en_soldats\npourcentage_actuel = call_function('get_pourcentage_soldats_population', kingdom=kingdom)\n#print \"POURCENTAGE_MAX_SOLDATS_PASSIF = \"\n#print C.POURCENTAGE_MAX_SOLDATS_PASSIF\n#print \"C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO= \"\n#print C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO\n#print \"pourcentage_actuel = \"\n#print pourcentage_actuel\nif pourcentage_actuel < C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  virgule=kingdom.get_value('virgule_soldiers',0)\n  #print \"ancienne virgule=\"\n  #print virgule\n  nouveaux_soldats=min(multiplicateur_tuto*C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO/100/12 * p_max+virgule,int(C.POURCENTAGE_MAX_SOLDATS_PASSIF/100*p_max - pourcentage_actuel/100*p_max), kingdom.population)\n  kingdom.soldiers += int(nouveaux_soldats)\n  kingdom.population -=int(nouveaux_soldats)\n  kingdom.set_value('total_soldats',kingdom.get_value('total_soldats')+int(nouveaux_soldats))\n  kingdom.set_value('virgule_soldiers',nouveaux_soldats-int(nouveaux_soldats))\n  #print \"nouvelle virgule=\"\n  #print str(nouveaux_soldats-int(nouveaux_soldats))\n  #print \"nouveaux_soldats = \"\n  #print nouveaux_soldats\ngain_soldats=int(nouveaux_soldats)\n\n  \n#gain de thunes1\ntresorier=kingdom.get_folk_in_title(\"tresorier\")\nif tresorier is None:\n  erudition_tresorier=5\nelse:\n  erudition_tresorier=tresorier.scholarship\n#print \"erudition tresorier = \"\n#print erudition_tresorier\nvirgule=kingdom.get_value('virgule_thune',0)\nif pourcentage_actuel <= C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  gain=2/3*(kingdom.population * (((erudition_chatelain + 4*erudition_tresorier)/100)**0.5*2/3) -kingdom.get_value('total_soldats'))/12+virgule\nelse:\n  gain=1/3*(kingdom.population * (((erudition_chatelain + 4*erudition_tresorier)/100)**0.5*2/3) -kingdom.get_value('total_soldats')*2 )/12+virgule\nkingdom.set_value('virgule_thune',gain-int(gain))\nkingdom.money += int(gain)\ngain_thunes=int(gain)\n#print \"gain thune\"\n#print gain\n\nkingdom.save()\n\n#Gestion des bl\u00e9ss\u00e9s\nfor i in range(0,4):\n  Recurring.objects.get(slug=\"gestion_blesses\").fire(kingdom)\n\n#Cour maximum\nRecurring.objects.get(slug=\"cour_max\").fire(kingdom)\n\n#creer un message\nkingdom.message(\"Un mois s'est \u00e9coul\u00e9. Votre domaine compte %s paysans de plus. Vous recevez %s \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes. %s paysans sont maintenant des soldats.\" % (int(gain_pop), int(gain_thunes), int(gain_soldats)))\n\n# Lancer l'\u00e9v\u00e8nement en next_event\n# Les variables seront automatiquement transmises aussi.\nparam.next_event(param.get_value('slug')).start()\n\n"
   }
 },
 {
@@ -6294,7 +6294,7 @@
     "message": "", 
     "event": 268, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_ending_fils\").start()\n"
+    "on_fire": "param.set_value(\"spouse1\", folks[1])\nparam.next_event(\"tuto_diplomacy_ending_fils\").start()\n"
   }
 },
 {
@@ -6304,8 +6304,8 @@
     "text": "\"\u2026{{folks.2.first_name}}, ma fille, je vais offrir ta main \u00e0 {{kingdom.values.tuto_adversaire}}.\"", 
     "message": "", 
     "event": 268, 
-    "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_ending_femme\").start()\n"
+    "condition": "if folks[2].spouse is not None:\n  stop(\"Votre fille est d\u00e9j\u00e0 mari\u00e9e\")\n", 
+    "on_fire": "param.set_value(\"spouse1\", folks[2])\nparam.set_value(\"spouse2\", kingdom.get_value(\"tuto_adversaire\"))\nparam.next_event(\"tuto_diplomacy_ending_femme\").start()\n"
   }
 },
 {
@@ -6315,8 +6315,8 @@
     "text": "\"\u2026{{soeurette.first_name}}, ma s\u0153ur, tu dois partir pour {{kingdom.values.tuto_PNJ}} et \u00e9pouserle seigneur des lieux.\"", 
     "message": "", 
     "event": 268, 
-    "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_ending_femme\").start()\n"
+    "condition": "if kingdom.get_value(\"soeurette\") is None:\n  stop(\"n'existe pas\")\nelif kingdom.get_value(\"soeurette\").spouse is None:\n  stop(\"est mari\u00e9e\")\n", 
+    "on_fire": "param.set_value(\"spouse1\", kingdom.get_value(\"soeurette\"))\nparam.set_value(\"spouse2\", kingdom.get_value(\"tuto_adversaire\"))\nparam.next_event(\"tuto_diplomacy_ending_femme\").start()\n"
   }
 },
 {
@@ -6349,7 +6349,7 @@
     "message": "", 
     "event": 269, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_ending_chatelain\").start()\n"
+    "on_fire": "param.set_value(\"spouse3\", folks[0])\nparam.next_event(\"tuto_diplomacy_ending_chatelain\").start()\n"
   }
 },
 {
@@ -6359,8 +6359,8 @@
     "text": "\"\u2026 je vais inviter le fils de {{kingdom.values.tuto_adversaire}} \u00e0 ma cour, et {{folks.2.first_name}} en fera mon gendre.\"", 
     "message": "", 
     "event": 269, 
-    "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_ending_2\").start()\n"
+    "condition": "if folks[2].spouse is not None:\n  stop(\"est mari\u00e9e\")\n", 
+    "on_fire": "param.set_value(\"spouse3\", folks[2])\nparam.set_value(\"spouse4\", param.get_value(\"fiston\"))\nparam.next_event(\"tuto_diplomacy_ending_2\").start()\n"
   }
 },
 {
@@ -6370,8 +6370,8 @@
     "text": "\"\u2026{{kingdom.values.soeurette.first_name}} fera entrer le fils {{kingdom.values.tuto_PNJ}} dans la famille.\"", 
     "message": "", 
     "event": 269, 
-    "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_ending_2\").start()\n"
+    "condition": "if kingdom.get_value(\"soeurette\") is None:\n  stop(\"n'existe pas\")\nelif kingdom.get_value(\"soeurette\").spouse is not None:\n  stop(\"est mari\u00e9e\")\n", 
+    "on_fire": "param.set_value(\"spouse3\", soeurette)\nparam.set_value(\"spouse4\", param.get_value(\"fiston\"))\nparam.next_event(\"tuto_diplomacy_ending_2\").start()\n"
   }
 },
 {
@@ -6382,18 +6382,18 @@
     "message": "", 
     "event": 270, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_ending_chatelain\").start()\n"
+    "on_fire": "param.set_value(\"spouse3\", folks[0])\nparam.next_event(\"tuto_diplomacy_ending_chatelain\").start()\n"
   }
 },
 {
   "pk": 355, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\"\u2026{{folks.1.first_name}} prendra {{pieuse.first_name}} l'ain\u00e9e des filles {{kingdom.values.tuto_PNJ}} pour \u00e9pouse.\"", 
+    "text": "\"\u2026{{folks.1.first_name}} prendra {{ainee.first_name}} l'ain\u00e9e des filles {{kingdom.values.tuto_PNJ}} pour \u00e9pouse.\"", 
     "message": "", 
     "event": 270, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_ending_2\").start()\n"
+    "on_fire": "param.set_value(\"spouse3\", folks[1])\nparam.set_value(\"spouse4\", param.get_value(\"ainee\"))\nparam.next_event(\"tuto_diplomacy_ending_2\").start()\n"
   }
 },
 {
@@ -6403,8 +6403,8 @@
     "text": "\"\u2026 je vais inviter le fils de {{kingdom.values.tuto_adversaire}} \u00e0 ma cour, et {{folks.2.first_name}} en fera mon gendre.\"", 
     "message": "", 
     "event": 270, 
-    "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_ending_2\").start()\n"
+    "condition": "if param.get_value(\"spouse1\") == folks[2]:\n  stop()\nelif folks[2].spouse is not None:\n  stop(\"est mari\u00e9e\")\n", 
+    "on_fire": "param.set_value(\"spouse3\", folks[2])\nparam.set_value(\"spouse4\", param.get_value(\"fiston\"))\nparam.next_event(\"tuto_diplomacy_ending_2\").start()\n"
   }
 },
 {
@@ -6414,8 +6414,8 @@
     "text": "\"\u2026{{kingdom.values.soeurette.first_name}} fera entrer le fils {{kingdom.values.tuto_PNJ}} dans la famille.\"", 
     "message": "", 
     "event": 270, 
-    "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_ending_2\").start()\n"
+    "condition": "if param.get_value(\"spouse1\") == kingdom.get_value(\"soeurette\"):\n  stop()\nif kingdom.get_value(\"soeurette\") is None:\n  stop(\"n'existe pas\")\nelif kingdom.get_value(\"soeurette\").spouse is not None:\n  stop(\"est mari\u00e9e\")\n", 
+    "on_fire": "param.set_value(\"spouse3\", soeurette)\nparam.set_value(\"spouse4\", param.get_value(\"fiston\"))\nparam.next_event(\"tuto_diplomacy_ending_2\").start()\n"
   }
 },
 {
@@ -6426,7 +6426,7 @@
     "message": "", 
     "event": 271, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_ending_2\").start()\n"
+    "on_fire": "param.set_value(\"spouse4\", param.get_value(\"ainee\"))\nif param.get_value(\"spouse1\")==folks[1]:\n  param.set_value(\"spouse2\", param.get_value(\"cadette\"))\nparam.next_event(\"tuto_diplomacy_ending_2\").start()\n"
   }
 },
 {
@@ -6437,7 +6437,7 @@
     "message": "", 
     "event": 271, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_ending_2\").start()\n"
+    "on_fire": "param.set_value(\"spouse4\", param.get_value(\"cadette\"))\nif param.get_value(\"spouse1\")==folks[1]:\n  param.set_value(\"spouse2\", param.get_value(\"ainee\"))\nparam.next_event(\"tuto_diplomacy_ending_2\").start()\n"
   }
 },
 {
@@ -6470,7 +6470,7 @@
     "message": "", 
     "event": 272, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_soeurette\").start()\n"
+    "on_fire": "if param.get_value(\"spouse1\", kingdom.get_value(\"soeurette\")):\n  param.next_event(\"tuto_diplomacy_lastchat_soeurette\").start()\nelse:\n  param.next_event(\"tuto_diplomacy_marriage\").start()\n"
   }
 },
 {
@@ -6481,18 +6481,18 @@
     "message": "", 
     "event": 272, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_soeurette\").start()"
+    "on_fire": "if param.get_value(\"spouse1\") == kingdom.get_value(\"soeurette\"):\n  param.next_event(\"tuto_diplomacy_lastchat_soeurette\").start()\nelif param.get_value(\"spouse1\")== folks[1]:\n  param.next_event(\"tuto_diplomacy_lastchat_fils\").start()\nelse:\n  param.next_event(\"tuto_diplomacy_lastchat_fille\").start()\n"
   }
 },
 {
   "pk": 367, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\"Leur place est \u00e0 vos c\u00f4t\u00e9s. Ils vous suivront \u00e0 {{tuto_PNJ}}.\"", 
+    "text": "\"Leur place est \u00e0 vos c\u00f4t\u00e9s. Ils vous suivront \u00e0 {{kingdom.values.tuto_PNJ}}.\"", 
     "message": "", 
     "event": 275, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_soeurette_2\").start()\n"
+    "on_fire": "param.set_value(\"mioche_part\", True)\nparam.set_value(\"chiard_part\", True)\nparam.next_event(\"tuto_diplomacy_lastchat_soeurette_2\").start()\n"
   }
 },
 {
@@ -6558,7 +6558,7 @@
     "message": "", 
     "event": 280, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_soeurette_5\").start()"
+    "on_fire": "if param.get_value(\"chiard\").sex==Folk.MALE:\n  param.set_value(\"chiard_part\" == False)\n  param.set_value(\"mioche_part\" == True)\nelse:\n  param.set_value(\"chiard_part\" == True)\n  param.set_value(\"mioche_part\" == False)\nparam.next_event(\"tuto_diplomacy_lastchat_soeurette_5\").start()"
   }
 },
 {
@@ -6569,7 +6569,7 @@
     "message": "", 
     "event": 280, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_lastchat_soeurette_2\").start()"
+    "on_fire": "param.set_value(\"chiard_part\" == False)\nparam.set_value(\"mioche_part\" == True)\nparam.next_event(\"tuto_diplomacy_lastchat_soeurette_2\").start()"
   }
 },
 {
@@ -6777,7 +6777,7 @@
     "text": "Je me l\u00e8ve {% if title.chatelain.diplomacy >= 12 %}avec grace{% endif %} et pr\u00e9sente ma main \u00e0 {{spouse4.first_name}}, l'invitant \u00e0 danser.", 
     "message": "", 
     "event": 290, 
-    "condition": "\n", 
+    "condition": "if param.get_value(\"spouse3\") == folks[0]:\n  stop()\n", 
     "on_fire": "param.next_event(\"tuto_diplomacy_mariage_danse\").start()"
   }
 },
@@ -6807,7 +6807,7 @@
   "pk": 396, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Je la racompagne \u00e0 notre table.", 
+    "text": "Sa main sur mon bras, j(e la racompagne \u00e0 notre table.", 
     "message": "", 
     "event": 291, 
     "condition": "\n", 
