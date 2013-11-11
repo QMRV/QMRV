@@ -188,12 +188,12 @@
   "model": "mission.mission", 
   "fields": {
     "name": "Mariage", 
-    "target_list": "\n", 
+    "target_list": null, 
     "text": "Si une personne de votre dynastie est mari\u00e9e, le banquet qui s'ensuit est \u00e0 votre charge et coute 5 \u00e9cus par personne pr\u00e9sente dans votre cour au moment o\u00f9 le mariage est c\u00e9l\u00e9br\u00e9.", 
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": "if (grids['mari'][0].last_name == kingdom.user.username or grids['femme'][0].last_name == kingdom.user.username):\n  prix = 5*folks.filter(mission__isnull=True).count()\n  if kingdom.money < prix:\n    stop(\"Vous n'avez pas assez d'argent pour payer le banquet\")\n\n  kingdom.money -= prix\n  kingdom.save()\n\ngrids['mari'][0].spouse = grids['femme'][0]\ngrids['femme'][0].spouse = grids['mari'][0]\ngrids['mari'][0].save()\ngrids['femme'][0].save()\nif grids['mari'][0]==folks[3] and grids['femme'][0]==folks[2]:\n  kingdom.set_value(\"tuto_mariage_fait\",True)\n  pe=kingdom.create_pending_event(\"banquet\")\n  pe.set_value(\"banquet_mariage_tuto\",True)\n  pe.start()\n  \n", 
+    "on_start": "\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 3, 
@@ -203,7 +203,7 @@
     "duration": 0, 
     "on_cancel": "\n", 
     "slug": "marier", 
-    "on_init": " "
+    "on_init": "prix = 5*folks.filter(mission__isnull=True).count()\nif kingdom.money < prix:\n  stop(\"Vous n'avez pas assez d'argent pour payer le banquet\")\n\nkingdom.money -= prix\nkingdom.save()\n\ngrids['mari'][0].spouse = grids['femme'][0]\ngrids['femme'][0].spouse = grids['mari'][0]\ngrids['mari'][0].save()\ngrids['femme'][0].save()\nif grids['mari'][0]==folks[3] and grids['femme'][0]==folks[2]:\n  kingdom.set_value(\"tuto_mariage_fait\",True)\n  pe=kingdom.create_pending_event(\"banquet\")\n  pe.set_value(\"banquet_mariage_tuto\",True)\n  pe.start()\n\n"
   }
 },
 {
@@ -912,7 +912,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "mari", 
-    "condition": "if folk.age < C.MAJORITE : \n  stop(S.TOO_YOUNG)\nelif folk.sex == Folk.FEMALE :\n  stop(\"Le mari doit \u00eatre un homme\")\nelif folk.has_quality(\"pretre\") :\n  stop(\"Un pr\u00eatre ne peut pas se marier\")\nelif (kingdom.get_value(\"in_tuto\") == True and folk==folks[0]):\n  stop(\"Il est encore trop tot pour songer \u00e0 marier votre chatelain\")\nelif (kingdom.get_value(\"passage_proposition_mariage\", False) and  folk==folks[1]):\n  stop(\"Il est encore trop tot pour songer \u00e0 marier votre fils\")\nelif folk.spouse != None and folk.spouse.death == None:\n  stop(\"Cette personne est d\u00e9j\u00e0 mari\u00e9e\")\n"
+    "condition": "if folk.age < C.MAJORITE : \n  stop(S.TOO_YOUNG)\nelif folk.sex == Folk.FEMALE :\n  stop(\"Le mari doit \u00eatre un homme\")\nelif folk.has_quality(\"pretre\") :\n  stop(\"Un pr\u00eatre ne peut pas se marier\")\nelif (kingdom.get_value(\"in_tuto\") == True and folk==folks[0]):\n  stop(\"Il est encore trop tot pour songer \u00e0 marier votre chatelain\")\nelif (kingdom.get_value(\"passage_proposition_mariage\", False) and  folk==folks[1]):\n  stop(\"Il est encore trop tot pour songer \u00e0 marier votre fils\")\nelif folk.spouse != None:\n  stop(\"Cette personne est d\u00e9j\u00e0 mari\u00e9e\")\n"
   }
 },
 {
@@ -925,7 +925,7 @@
     "length": 1, 
     "allow_empty": false, 
     "slug": "femme", 
-    "condition": "if folk.age < C.MAJORITE:\n  stop(S.TOO_YOUNG)\nelif folk.sex == Folk.MALE:\n  stop(\"La mari\u00e9e doit \u00eatre une femme\")\nelif folk.spouse != None and folk.spouse.death == None:\n  stop(\"Cette personne est d\u00e9j\u00e0 mari\u00e9e\")\n"
+    "condition": "if folk.age < C.MAJORITE:\n  stop(S.TOO_YOUNG)\nelif folk.sex == Folk.MALE:\n  stop(\"La mari\u00e9e doit \u00eatre une femme\")\nelif folk.spouse != None:\n  stop(\"Cette personne est d\u00e9j\u00e0 mari\u00e9e\")\n"
   }
 },
 {

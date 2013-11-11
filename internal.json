@@ -1567,7 +1567,7 @@
   "fields": {
     "name": "Education", 
     "delay": 96, 
-    "kingdom_list": "param=Kingdom.objects.filter(_kingdomVariable__name='in_tuto')", 
+    "kingdom_list": "param=Kingdom.objects.filter(_kingdomvariable__name='in_tuto')", 
     "on_fire": "f('education',kingdom=kingdom)", 
     "slug": "education", 
     "description": "Calcule les augmentations de caract\u00e9ristiques des enfants entre 6 et 16 ans.\r\nLa fr\u00e9quence est toutes les 16h."

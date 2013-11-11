@@ -587,9 +587,9 @@
     "weight": 1, 
     "text": "Son visage s'illumine, alors qu'il se redresse avec maladresse. \"Merci, sire! Mille fois mercis! Dame {{folks.2.first_name}} va \u00eatre transport\u00e9e de joie!\". R\u00e9v\u00e9rence pleine de gratitude, avant de se diriger vers la porte d'un pas rapide.", 
     "image": "events/407_2.jpg", 
-    "on_fire": "  ", 
+    "on_fire": "\n", 
     "slug": "tuto_scandale_fille_3", 
-    "condition": "  "
+    "condition": "\n"
   }
 },
 {
@@ -1357,9 +1357,9 @@
     "weight": 1, 
     "text": " ", 
     "image": "", 
-    "on_fire": "titres = [vs.title.slug for vs in AvailableTitle.objects.filter(kingdom=kingdom)]\n\nif \"cure\" not in titres:\n  kingdom.start_pending_event(\"tuto_pretre_eveche\")\nelif \"ambassadeur\" not in titres:\n  kingdom.start_pending_event(\"tuto_toofewcourtisans\")\nelif \"tresorier\" not in titres:\n  kingdom.start_pending_event(\"tuto_toomuchecus\")\nelse:\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_forcertitre_random\")\n  \nstop(S.GHOST_EVENT)\n", 
+    "on_fire": "titres = [vs.title.slug for vs in AvailableTitle.objects.filter(kingdom=kingdom)]\n\nif \"cure\" not in titres:\n  kingdom.start_pending_event(\"tuto_pretre_eveche\")\nelif \"ambassadeur\" not in titres:\n  kingdom.start_pending_event(\"tuto_toofewcourtisans\")\nelif \"tresorier\" not in titres:\n  kingdom.start_pending_event(\"tuto_toomuchecus\")\nelse:\n  call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_forcertitre_random_fantome\")\n  \nstop(S.GHOST_EVENT)\n", 
     "slug": "tuto_forcertitre_random_fantome", 
-    "condition": " "
+    "condition": "\n"
   }
 },
 {
@@ -1959,7 +1959,7 @@
     "weight": 1, 
     "text": "Sire {{mari}} me lance un regard glacial, ses poings sont serr\u00e9s et je peux sentir sa col\u00e8re. \"S'en est finit de mes illusions, messire. Vous n'avez aucune intention de me c\u00e9der la main de dame {{mariee.first_name}}\". Avant que je ne puisse r\u00e9pondre, il se d\u00e9tourne, et sort en claquant la porte.\r\n\r\n    -40 de loyaut\u00e9 pour {{mari}} et {{mariee}}.\r\n", 
     "image": "events/102.jpg", 
-    "on_fire": "param.get_value(\"mari\").loyalty-=40\nmari.save()\nparam.get_value(\"mariee\").loyalty-=40\nmariee.save()\n", 
+    "on_fire": "mari = param.get_value(\"mari\")\nmari.loyalty -= 40\nmari.save()\n\nmariee = param.get_value(\"mariee\")\nmariee.loyalty -= 40\nmariee.save()\n", 
     "slug": "demandemariage_terminated", 
     "condition": "\n"
   }
@@ -2407,7 +2407,7 @@
     "weight": 1, 
     "text": "Le coup du chevalier reste suspendu dans les airs, et je peux sentir tous les regards point\u00e9s sur moi. \"Baissez votre arme, je vous l'ordonne!\" Une moue d\u00e9daigneuse sur le visage, je chevalier s\u2019ex\u00e9cute. Il se tourne lentement vers moi, et crache par  terre. Sans un mot de plus, il s'\u00e9loigne d'un pas furieux. {{folks.2.first_name}} se pr\u00e9cipite aux cot\u00e9s de son fr\u00e8re, et le  serre fort dans ses bras. Je croise le regard d\u00e9pit\u00e9 de mon fils avant qu'il ne baisse  les  yeux, le  visage tordu par la honte. J'apprendrai plus tard, sans surprise, que {{facheux}} a quitt\u00e9 ma cour pour ne jamais revenir.\r\n\r\n   {% if duelist_lessfight == folks.1 %}-15{% else %}-5{% endif %} de Loyaut\u00e9 tous vos courtisans except\u00e9 vos enfants. {{folks.1}} re\u00e7oit le Trait Amer.", 
     "image": "events/716_12.jpg", 
-    "on_fire": "if param.get_value(\"duelist_lessfight\") == folks[1]:\n  f(\"perte_loyaute_general\", kingdom=kingdom, perte_min=15, perte_max=15)\nelse :\n  f(\"perte_loyaute_general\", kingdom=kingdom, perte_min=5, perte_max=5)\nfolks[1].add_quality(\"amer\")\n", 
+    "on_fire": "if param.get_value(\"duelist_lessfight\") == folks[1]:\n  f(\"perte_loyaute_general\", kingdom=kingdom, perte_min=15, perte_max=15)\n  folks[1].loyalty += 15\n  folks[1].save()\n  folks[2].loyalty += 15\n  folks[2].save()\nelse :\n  f(\"perte_loyaute_general\", kingdom=kingdom, perte_min=5, perte_max=5)\n  folks[1].loyalty += 5\n  folks[1].save()\n  folks[2].loyalty += 5\n  folks[2].save()\n  \nfolks[1].add_quality(\"amer\")\n", 
     "slug": "tuto_facheux_duel_interrupt", 
     "condition": "\n"
   }
@@ -3984,8 +3984,8 @@
     "text": "Il va falloir s'occuper des pr\u00e9paratifs... '''Nouvelle mission'''", 
     "message": "Mon vieil ami {{folks.3}} m'a demand\u00e9 la main de ma fille, et je la lui ai accord\u00e9. Le cur\u00e9 devra les [unir devant Dieu](mission).", 
     "event": 56, 
-    "condition": "  ", 
-    "on_fire": "param.set_value(\"mari\", folks[3])\nparam.set_value(\"mariee\", folks[2])\npm=kingdom.create_pending_mission(\"marier\")\nkingdom.unlock_mission(\"marier\")\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mari\"), mission_grid=MissionGrid.objects.get(slug=\"mari\", mission=pm.mission)).save()\nPendingMissionAffectation(pending_mission=pm, folk=param.get_value(\"mariee\"), mission_grid=MissionGrid.objects.get(slug=\"femme\", mission=pm.mission)).save()\nif kingdom.availabletitle_set.filter(title__slug=\"cure\").exists():\n  #param.pending_event.next_event(\"tuto_mariage_fille_accepte_fantome\").start()\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_mariage_fille_accepte_fantome\")\n  pe.start()\nelse:\n  param.pending_event.next_event(\"tuto_mariagepreparatifs\").start()\n"
+    "condition": "\n", 
+    "on_fire": "param.set_value(\"mari\", folks[3])\nparam.set_value(\"mariee\", folks[2])\nkingdom.unlock_mission(\"marier\")\n\nif kingdom.availabletitle_set.filter(title__slug=\"cure\").exists():\n  #param.pending_event.next_event(\"tuto_mariage_fille_accepte_fantome\").start()\n  pe=param.next_event(\"_tuto_timewarp\")\n  pe.set_value('slug',\"tuto_mariage_fille_accepte_fantome\")\n  pe.start()\nelse:\n  param.pending_event.next_event(\"tuto_mariagepreparatifs\").start()\n"
   }
 },
 {
@@ -5643,10 +5643,10 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Si seulement {{folks.1.first_name}} avait \u00e9t\u00e9 raisonnable...", 
-    "message": "Mon fils a perdu son duel contre {{facheux}}. Le chevalier a quitt\u00e9 ma court.\r\n ```{% if duelist_lessfight == folk1 %}-15{% else %}-5{% endif %} de Loyaut\u00e9 tous vos courtisans except\u00e9 vos enfants. {{folks.1}} re\u00e7oit le Trait Amer.```", 
+    "message": "Mon fils a perdu son duel contre {{facheux}}. Le chevalier a quitt\u00e9 ma court.\r\n ```{% if duelist_lessfight == folks.1 %}-15{% else %}-5{% endif %} de Loyaut\u00e9 tous vos courtisans except\u00e9 vos enfants. {{folks.1}} re\u00e7oit le Trait Amer.```", 
     "event": 215, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")\n"
   }
 },
 {
@@ -5654,10 +5654,10 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Si seulement {{folks.1.first_name}} s'\u00e9tait battu comme un homme....", 
-    "message": "Mon fils a perdu son duel contre {{facheux}}. Le chevalier a quitt\u00e9 ma court.\r\n ```{% if duelist_lessfight == folk1 %}-15{% else %}-5{% endif %} de Loyaut\u00e9 pour {{courtisans|list}}. {{folks.1}} re\u00e7oit le Trait Amer.```", 
+    "message": "Mon fils a perdu son duel contre {{facheux}}. Le chevalier a quitt\u00e9 ma court.\r\n ```{% if duelist_lessfight == folks.1 %}-15{% else %}-5{% endif %} de Loyaut\u00e9 pour tous vos courtisans except\u00e9 vos enfants. {{folks.1}} re\u00e7oit le Trait Amer.```", 
     "event": 215, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")\n"
   }
 },
 {
@@ -5668,7 +5668,7 @@
     "message": "", 
     "event": 212, 
     "condition": "if param.get_value(\"duelist_lessfight\") == folks[1]:\n  stop(\"error\")\n", 
-    "on_fire": "\n"
+    "on_fire": "param.set_value(\"detourne\", True)\nparam.next_event(\"tuto_facheux_duel_interrupt\").start()\n"
   }
 },
 {
