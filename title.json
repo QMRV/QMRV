@@ -58,7 +58,7 @@
     "name": "Ma\u00eetre espion", 
     "on_defect": "folk.loyalty -= 6\nfolk.save()", 
     "on_affect": "folk.loyalty += 5\nfolk.save()", 
-    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un ma\u00eetre espion.\")\nkingdom.unlock_mission(\"compromettre\")", 
+    "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un ma\u00eetre espion.\")\n", 
     "slug": "maitre_espion", 
     "condition": "\n", 
     "description": "Le ma\u00eetre espion vous tient inform\u00e9 des ragots de votre cour et des machinations de vos rivaux. Il s'occupe \u00e9galement des basses besognes qui demandent de la discr\u00e9tion et du doigt\u00e9.\r\n\r\nUn ma\u00eetre espion a besoin d'une haute Intrigue pour \u00eatre efficace."
