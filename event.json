@@ -225,7 +225,7 @@
     "image": "events/753.jpg", 
     "on_fire": "param.set_value(\"fils\", folks[1])\n", 
     "slug": "tuto_caissesvides", 
-    "condition": " "
+    "condition": "\n"
   }
 },
 {
@@ -1386,7 +1386,7 @@
     "text": "\"Ma s\u0153ur? Ici? mais...\" Le garde m'observe depuis le pied de mon tr\u00f4ne, alors que j'essaie de dissimuler mon trouble. Je n'ai pas vu ma s\u0153ur depuis plus de quinze ans. Notre derni\u00e8re rencontre, {% if random <= 33 %}\u00e0 l'enterrement de notre p\u00e8re, {% elif random <= 66 %}juste avant mon d\u00e9part pour la cour du Roi, {% else %} alors qu'elle partait pour la cour du Duc de Bretagne, {% endif %}ne s'est pas termin\u00e9e dans les meilleurs termes... Que fait-elle chez moi, et pourquoi n'a-t-elle pas annonc\u00e9e sa visite ? Le garde attend toujours mes instructions \"Fais-l\u00e0 entrer, et veille \u00e0 ce que l'on ne nous d\u00e9range pas\". Je me redresse sur mon si\u00e8ge, intrigu\u00e9 et nerveux.", 
     "image": "events/361_1.jpg", 
     "on_fire": "random = random_value(1, 100)\nparam.set_value(\"random\", random)\n\nsoeur = call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = 32, kingdom = None, trait = \"fier\", sex = Folk.FEMALE, last_name = kingdom.user.username, father = kingdom.get_folk_in_title(\"chatelain\").father, mother = kingdom.get_folk_in_title(\"chatelain\").mother, birth = datetime.now()-timedelta(days=35))\nparam.set_value(\"soeur\", soeur)\n\nmari = call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = 32, kingdom = None, sex = Folk.MALE)\n\nrandomgender = random_value(1, 2)\nif randomgender == 1:                     \n  mioche = call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = 20, kingdom = None, sex = Folk.MALE, last_name = kingdom.user.username, father = mari, mother = soeur, birth = datetime.now()-timedelta(days=10))\n  param.set_value(\"mioche\", mioche)\n   \n  bebe=call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = random_value(13,18), kingdom = None, sex = Folk.FEMALE, last_name = kingdom.user.username, father = mari, mother = soeur, birth = datetime.now()-timedelta(days=1))               \n  param.set_value(\"chiard\", bebe)\n      \n\nelse:\n                     \n  mioche = call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = 20, kingdom = None, sex = Folk.FEMALE, last_name = kingdom.user.username, father = mari, mother = soeur, birth = datetime.now()-timedelta(days=10))\n  param.set_value(\"mioche\", mioche)\n  bebe=call_function(\"creer_folk\", fight_min = 1, plot_min = 1, scholarship_min = 1, diplomacy_min = 1, loyalty = 65, max_carac = random_value(13,18), kingdom = None, sex = Folk.MALE, last_name = kingdom.user.username, father = mari, mother = soeur, birth = datetime.now()-timedelta(days=1))              \n  param.set_value(\"chiard\", bebe)", 
-    "slug": "tuto_soeurette", 
+    "slug": "tuto_soeurette_1", 
     "condition": "\n"
   }
 },
@@ -2461,7 +2461,7 @@
     "category": 2, 
     "name": "Le temps passe...", 
     "weight": 1, 
-    "text": "Il n'y a pas d'urgence \u00e0 g\u00e9rer en ce moment. \r\n\r\n    N'h\u00e9sitez pas \u00e0 utiliser cette pause narrative pour aller voir ce que vous pouvez faire dans l'onglet mission !", 
+    "text": "Il n'y a pas d'urgence \u00e0 g\u00e9rer en ce moment. \r\nprochain event: {{slug}}\r\n\r\n    N'h\u00e9sitez pas \u00e0 utiliser cette pause narrative pour aller voir ce que vous pouvez faire dans l'onglet mission !", 
     "image": "events/800.jpg", 
     "on_fire": "\n", 
     "slug": "_tuto_timewarp", 
@@ -2757,7 +2757,7 @@
     "weight": 1, 
     "text": "bla", 
     "image": "", 
-    "on_fire": "\n", 
+    "on_fire": "stop(S.GHOST_EVENT)", 
     "slug": "tuto_bastard_soeurette", 
     "condition": "\n"
   }
@@ -2995,7 +2995,7 @@
     "weight": 1, 
     "text": "Je les ai convoqu\u00e9s dans mes appartements ; mon fils {{folks.1.first_name}}, ma fille {{folks.2.first_name}}{% if soeurette %}, ma s\u0153ur {{soeurette.first_name}}{% endif %} et mon fid\u00e8le {{folks.3.first_name}}. Nous entrons imm\u00e9diatement dans le vif du sujet.\r\n\r\n\"En affrontant le seigneur {{kingdom.values.tuto_dynasty_PNJ}}, nous avons prouv\u00e9 que {{dynasty}} n\u2019\u00e9tait pas une proie facile. Le conflit, cependant, nous coute cher. Je pense qu\u2019il est temps d\u2019y mettre fin, de n\u00e9gocier une paix pendant que nous avons l\u2019avantage.\"\r\n\r\nIl peuvent sentir que je p\u00e8se chacun de mes mots.\r\n\r\n\"La seule mani\u00e8re d\u2019obtenir une alliance durable est d\u2019unir nos familles par le sang. {{kingdom.values.tuto_adversaire}} et sa prog\u00e9niture sont dans le c\u00e9libat. Il saura que nous sommes s\u00e9rieux si nous lui proposons non pas un mais deux mariages... Chacun de nous doit accueillir un membre de la famille de l'autre dans sa cour.\"\r\n\r\nMon fils se racle la gorge.\r\n\r\n\"Un \u00e9change d\u2019otage, en somme.\"\r\n\r\nJ\u2019opine.\r\n\r\n\"J\u2019ai longuement r\u00e9fl\u00e9chis \u00e0 la question\u2026\"\r\n\r\n     Marier votre fille \u00e0 une famille r\u00e9gnante vous coute une dot de 15 \u00e9cus mais vous rapporte 15 points de prestige.\r\n     \u00c9pouser une fille du seigneur {{kingdom.values.tuto_adversaire}} vous rapporterait une dot de 15 \u00e9cus.'", 
     "image": "events/451_4_1.jpg", 
-    "on_fire": "param.set_value(\"ainee\", f(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=28, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.get_value(\"tuto_dynasty_PNJ\"),  birth=datetime.now() - timedelta(days=18), trait=\"pieux\", ))\nparam.set_value(\"fiston\", f(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE, last_name=kingdom.get_value(\"tuto_dynasty_PNJ\"),  birth=datetime.now() - timedelta(days=17), trait=\"intrepide\", ))\n\nparam.set_value(\"soeurette\", kingdom.get_value(\"tuto_soeurette\"))\n", 
+    "on_fire": "param.set_value(\"ainee\", f(\"creer_folk\", kingdom=None, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=28, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.get_value(\"tuto_dynasty_PNJ\"),  birth=datetime.now() - timedelta(days=18), trait=\"pieux\", ))\nparam.set_value(\"fiston\", f(\"creer_folk\", kingdom=None, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=80, sex=Folk.MALE, last_name=kingdom.get_value(\"tuto_dynasty_PNJ\"),  birth=datetime.now() - timedelta(days=17), trait=\"intrepide\", ))\n\nparam.set_value(\"soeurette\", kingdom.get_value(\"tuto_soeurette\"))\n", 
     "slug": "tuto_diplomacy_ending", 
     "condition": "\n"
   }
@@ -3005,7 +3005,7 @@
   "model": "event.event", 
   "fields": {
     "category": null, 
-    "name": "ergersgzd", 
+    "name": "tuto_diplomacy_ending_fils", 
     "weight": 1, 
     "text": "\"Je\u2026 renoncer \u00e0 {{dynasty}}, p\u00e8re?\"\r\n\r\nMon fils accuse le coup. Le regard qu\u2019il me lance est bless\u00e9, {% if  folks.1.loyalty >= 80 %}d\u00e9sempar\u00e9{% else %}rageur{% endif %}, mais je le coupe avant qu\u2019il n'ai l'audace de protester.\r\n\r\n\"Tu accompliras ton devoir, mon fils. Pour l\u2019avenir de notre famille.\"\r\n\r\nJe me d\u00e9tourne, dissimulant au mieux mes propres \u00e9motions.\r\n\r\n\"En ce qui concerne le second mariage\u2026\"", 
     "image": "events/451_4_11.jpg", 
@@ -3037,7 +3037,7 @@
     "weight": 1, 
     "text": "Un silence prolong\u00e9, que mon fid\u00e8le {{folks.3}} rompt d\u2019un ton mesur\u00e9.\r\n\r\n\"A laquelle des deux filles allez-vous vous unir, mon seigneur ?\"", 
     "image": "events/451_4_3.jpg", 
-    "on_fire": "param.set_value(\"cadette\", f(\"creer_folk\", kingdom=kingdom, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=28, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.get_value(\"tuto_dynasty_PNJ\"),  birth=datetime.now() - timedelta(days=16), trait=\"galant\", ))\n\n", 
+    "on_fire": "param.set_value(\"cadette\", f(\"creer_folk\", kingdom=None, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=28, loyalty=80, sex=Folk.FEMALE, last_name=kingdom.get_value(\"tuto_dynasty_PNJ\"),  birth=datetime.now() - timedelta(days=16), trait=\"galant\", ))\n\n", 
     "slug": "tuto_diplomacy_ending_chatelain", 
     "condition": "\n"
   }
@@ -3273,7 +3273,7 @@
     "category": null, 
     "name": "tuto_diplomacy_mariage_2", 
     "weight": 1, 
-    "text": "La f\u00eate bat son plein, l\u2019atmosph\u00e8re est satur\u00e9e de musique, de rires et de tintement de coupes. Les convives ripaillent de bon c\u0153ur, alors qu'une arm\u00e9e de servant fait tourner les plats.\r\n{% if folks.1 == spouse1 %}Du coin de l\u2019\u0153il, j'observe mon fils {{folks.1.first_name}} danser avec {{spouse2.first_name}}, sa nouvelle \u00e9pouse. \r\n{% if spouse2 == ainee %}Sa robe est tr\u00e8s chaste, mais son sourire semble sinc\u00e8re.\r\n{% else %}Sa robe un rien provocante et sa silhouette gracile attirent des regards envieux, et mon fils semble hypnotis\u00e9 par son sourire \u00e9clatant. Le jeune coq semble avoir tout oubli\u00e9 de ses objections...{% endif %}{% endif %} \r\n{% if folks.1 == spouse3 %}Du coin de l\u2019\u0153il, j'observe mon fils {{folks.1.first_name}} qui danse avec {{spouse4.first_name}}, sa nouvelle \u00e9pouse. \r\n{% if spouse4 == ainee %}Sa robe est tr\u00e8s chaste, mais son sourire semble sinc\u00e8re.\r\n{% else %}Sa robe un rien provocante et sa silhouette gracile attirent des regards envieux, et mon fils semble hypnotis\u00e9 par son sourire \u00e9clatant. Le jeune coq semble avoir tout oubli\u00e9 de ses objections...{% endif %}{% endif %} \r\n{% if spouse2 == adversaire %}Attabl\u00e9e aux cot\u00e9s d{{adversaire|elide}}, son nouvel \u00e9poux, j\u2019aper\u00e7ois {{spouse1}} dans sa robe de mari\u00e9e. Elle essaye de faire la conversation au barbon, qui semble davantage pr\u00e9occup\u00e9 par le contenu de son assiette.{% endif %}\r\n{% if fiston == spouse2 %}{{spouse1.first_name}}{% if folks.1 == spouse1 or folks.1 == spouse3 or spouse2 == adversaire %}, elle,{% endif %} partage une coupe de vin avec le fringuant {{fiston}}, qui ne lui a presque pas l\u00e2ch\u00e9 la main depuis que le cur\u00e9 les a uni.{% endif %}\r\n{% if fiston == spouse4 %}{{spouse3.first_name}}{% if folks.1 == spouse1 or folks.1 == spouse3 or spouse2 == adversaire %}, elle,{% endif %} partage une coupe de vin avec le fringuant {{fiston}}, qui ne lui a presque pas l\u00e2ch\u00e9 la main depuis que le cur\u00e9 les a uni.{% endif %}\r\n\r\n{% if spouse3 == title.chatelain %}Je bois une gorg\u00e9e de vin, et me tourne vers {{spouse4}}, ma jeune et fraiche \u00e9pouse. {% if spouse4 == ainee %}Elle m'offre un sourire timide, baisse les yeux et rougit quelque peu.\r\n{% else %}Elle m'offre un sourire charmeur, d\u00e9voilant une dentition parfaite. Peu farouche, pour son age.{% endif %}\r\n{% else %}Assis \u00e0 ma table, serr\u00e9 au milieu des courtisans avin\u00e9s, j'adresse un sourire amus\u00e9 \u00e0 mon fid\u00e8le {{folks.3}}{% endif %}", 
+    "text": "La f\u00eate bat son plein, l\u2019atmosph\u00e8re est satur\u00e9e de musique, de rires et de tintement de coupes. Les convives ripaillent de bon c\u0153ur, alors qu'une arm\u00e9e de servant fait tourner les plats.\r\n{% if folks.1 == spouse1 %}Du coin de l\u2019\u0153il, j'observe mon fils {{folks.1.first_name}} danser avec {{spouse2.first_name}}, sa nouvelle \u00e9pouse. \r\n{% if spouse2 == ainee %}Sa robe est tr\u00e8s chaste, mais son sourire semble sinc\u00e8re.\r\n{% else %}Sa robe un rien provocante et sa silhouette gracile attirent des regards envieux, et mon fils semble hypnotis\u00e9 par son sourire \u00e9clatant. Le jeune coq semble avoir tout oubli\u00e9 de ses objections...{% endif %}{% endif %} \r\n{% if folks.1 == spouse3 %}Du coin de l\u2019\u0153il, j'observe mon fils {{folks.1.first_name}} qui danse avec {{spouse4.first_name}}, sa nouvelle \u00e9pouse. \r\n{% if spouse4 == ainee %}Sa robe est tr\u00e8s chaste, mais son sourire semble sinc\u00e8re.\r\n{% else %}Sa robe un rien provocante et sa silhouette gracile attirent des regards envieux, et mon fils semble hypnotis\u00e9 par son sourire \u00e9clatant. Le jeune coq semble avoir tout oubli\u00e9 de ses objections...{% endif %}{% endif %} \r\n{% if spouse2 == kingdom.values.tuto_adversaire %}Attabl\u00e9e aux cot\u00e9s d{{kingdom.values.tuto_adversaire|elide}}, son nouvel \u00e9poux, j\u2019aper\u00e7ois {{spouse1}} dans sa robe de mari\u00e9e. Elle essaye de faire la conversation au barbon, qui semble davantage pr\u00e9occup\u00e9 par le contenu de son assiette.{% endif %}\r\n{% if fiston == spouse2 %}{{spouse1.first_name}}{% if folks.1 == spouse1 or folks.1 == spouse3 or spouse2 == adversaire %}, elle,{% endif %} partage une coupe de vin avec le fringuant {{fiston}}, qui ne lui a presque pas l\u00e2ch\u00e9 la main depuis que le cur\u00e9 les a uni.{% endif %}\r\n{% if fiston == spouse4 %}{{spouse3.first_name}}{% if folks.1 == spouse1 or folks.1 == spouse3 or spouse2 == adversaire %}, elle,{% endif %} partage une coupe de vin avec le fringuant {{fiston}}, qui ne lui a presque pas l\u00e2ch\u00e9 la main depuis que le cur\u00e9 les a uni.{% endif %}\r\n\r\n{% if spouse3 == title.chatelain %}Je bois une gorg\u00e9e de vin, et me tourne vers {{spouse4}}, ma jeune et fraiche \u00e9pouse. {% if spouse4 == ainee %}Elle m'offre un sourire timide, baisse les yeux et rougit quelque peu.\r\n{% else %}Elle m'offre un sourire charmeur, d\u00e9voilant une dentition parfaite. Peu farouche, pour son age.{% endif %}\r\n{% else %}Assis \u00e0 ma table, serr\u00e9 au milieu des courtisans avin\u00e9s, j'adresse un sourire amus\u00e9 \u00e0 mon fid\u00e8le {{folks.3}}{% endif %}", 
     "image": "events/88_22.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_mariage_2", 
@@ -3295,16 +3295,30 @@
   }
 },
 {
-  "pk": 292, 
+  "pk": 293, 
   "model": "event.event", 
   "fields": {
     "category": null, 
-    "name": "jhbk", 
+    "name": "tuto_diplomacy_mariage_conversation", 
     "weight": 1, 
-    "text": "jhg", 
+    "text": "Alors que la f\u00eate se poursuit, j\u2019entreprends d{% if maxcarac == fight %}e' \u00e9galer les convives \u00e0 ma table de quelques anecdotes militaires r\u00e9colt\u00e9es au service du roi de France. Mes suivants {{convive1}} et {{convive2}} semblent impressionn\u00e9{% if convive1.sex == 'f' and convive2.sex == 'f'  %}e{%  endif %}s{% elif maxcarac == diplomacy %}e charmer les convives \u00e0 ma table gr\u00e2ce \u00e0 quelques bons mots et plaisanteries. Mes suivants {{convive1}} et {{convive2}} rient aux \u00e9clats{% elif maxcarac == plot %}e r\u00e9galer les convives \u00e0 ma table des ragots de ma cour. Mes suivants {{convive1}} et {{convive2}} rient aux \u00e9clats{% else %}'initier les convives \u00e0 ma table aux myst\u00e8res de l'astronomie. Mes suivants {{convive1}} et {{convive2}} semblent impressionn\u00e9{% if convive1.sex == 'f' and convive2.sex == 'f'  %}e{%  endif %}s par l'\u00e9tendue de mon savoir\r\n{% if spouse3 == title.chatelain %}, de m\u00eame que ma nouvelle \u00e9pouse {{spouse4.first_name}}{% endif %}.\r\n\r\n    {% if spouse3 == title.chatelain %}{{spouse4}}, {% endif %}{{convive1}} et {{convive2}} gagne {% if title.chatelain.diplomacy >= 12 %}+4{% elif title.chatelain.diplomacy >= 10 %}+3{% else %}+2{% endif %} de Loyaut\u00e9.", 
     "image": "", 
-    "on_fire": "convives = Folk.objects.filter(kingdom=kingdom, birth__lte=datetime.now()-timedelta(days=C.MAJORITE))\nconvives = convives.exclude(id=folks[0].id)\nconvives = convives.exclude(id=folks[1].id)\nconvives = convives.exclude(id=folks[2].id)\nconvives = convives.exclude(id=folks[3].id)\nconvives = convives.order_by('?')[0:2]\n\n", 
+    "on_fire": "convives = Folk.objects.filter(kingdom=kingdom, birth__lte=datetime.now()-timedelta(days=C.MAJORITE))\nconvives = convives.exclude(id=folks[0].id)\nconvives = convives.exclude(id=folks[1].id)\nconvives = convives.exclude(id=folks[2].id)\nconvives = convives.exclude(id=folks[3].id)\nconvives = convives.order_by('?')\nparam.set_values(\"convive1\", convives[0])\nparam.set_values(\"convive2\", convives[1])\nif folks[0].diplomacy >= 12 :\n  if param.get_value(\"spouse3\") == folk[0]:\n    param.get_value(\"spouse4\").loyalty +=4\n  param.get_value(\"convive1\").loyalty +=4\n  param.get_value(\"convive2\").loyalty +=4\nelif folks[0].diplomacy >= 10 :\n  if param.get_value(\"spouse3\") == folk[0]:\n    param.get_value(\"spouse4\").loyalty +=3\n  param.get_value(\"convive1\").loyalty +=3\n  param.get_value(\"convive2\").loyalty +=3\nelse :\n  if param.get_value(\"spouse3\") == folk[0]:\n    param.get_value(\"spouse4\").loyalty +=2\n  param.get_value(\"convive1\").loyalty +=2\n  param.get_value(\"convive2\").loyalty +=2\nparam.get_value(\"spouse4\").save()\nparam.get_value(\"convive1\").save()\nparam.get_value(\"sconvive2\").save()\n\n", 
     "slug": "tuto_diplomacy_mariage_conversation", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 294, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "tuto_diplomacy_mariage_beuverie", 
+    "weight": 1, 
+    "text": "{% if spouse3 == title.chatelain%}L\u00e2chant une br\u00e8ve excuse dans l'oreille de mon \u00e9pouse, j{% else %}Fatigu\u00e9 des ronds de jambe des convives \u00e0 ma table, j{% endif %}e me l\u00e8ve pour aller me laisser tomber au c\u00f4t\u00e9 d'un grand gaillard en train de faire un sort \u00e0 un tonnelet de vin. Il est plus que ravis de m\u2019accueillir, et nous trinquons de bon c\u0153ur.\r\n\r\nCe premier verre de vin me r\u00e9chauffe agr\u00e9ablement les entrailles.\r\n\r\n    {% if spouse3 == title.chatelain%}-2 de Loyaut\u00e9 pour {{spouse4}}.{% endif %}", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "tuto_diplomacy_mariage_beuverie", 
     "condition": "\n"
   }
 },
@@ -3491,8 +3505,8 @@
     "text": "Je vais demander \u00e0 {{title.tresorier}} d\u2019\u00e9tudier la question.  ", 
     "message": "", 
     "event": 18, 
-    "condition": "if kingdom.get_folk_in_title(\"tresorier\") is None:\n  stop(\"n'a pas de tr\u00e9sorier\")\n", 
-    "on_fire": "\npe = kingdom.create_pending_event(\"tuto_caissesvides_2\")\npe.started = datetime.now() + timedelta(minutes=2)\npe.start()\n"
+    "condition": "if kingdom.get_folk_in_title(\"tresorier\") is None:\n  stop(\"n'a pas de tresorier\")\n", 
+    "on_fire": "pe = kingdom.create_pending_event(\"tuto_caissesvides_2\")\npe.started = datetime.now() + timedelta(minutes=2)\npe.start()\n"
   }
 },
 {
@@ -4085,7 +4099,7 @@
     "text": "Je vais nommer un tr\u00e9sorier pour optimiser mes d\u00e9penses et trouver de nouvelles sources de revenu.", 
     "message": "Il est urgent de charger un [tr\u00e9sorier](#title) de r\u00e9gler nos probl\u00e8mes d'argent", 
     "event": 18, 
-    "condition": "if kingdom.get_folk_in_title(\"tresorier\") is not None:\n  stop(\"a d\u00e9j\u00e0 un tr\u00e9sorier\")\n", 
+    "condition": "if kingdom.get_folk_in_title(\"tresorier\") is not None:\n  stop(\"a deja un tresorier\")\n", 
     "on_fire": "kingdom.unlock_title(\"tresorier\")\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_caissesvides\")\n"
   }
 },
@@ -5318,7 +5332,7 @@
     "message": "Je dois [d\u00e9signer un mentor](mission) pour s'occuper de l'\u00e9ducation de {{mioche}}.", 
     "event": 174, 
     "condition": "\n", 
-    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_soeurette\")\n"
+    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_soeurette_1\")\n"
   }
 },
 {
@@ -6066,7 +6080,7 @@
     "message": "", 
     "event": 246, 
     "condition": "\n", 
-    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_soeurette\")"
+    "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_soeurette_1\")"
   }
 },
 {
@@ -6374,7 +6388,7 @@
     "message": "", 
     "event": 269, 
     "condition": "if folks[2].spouse is not None:\n  stop(\"est mari\u00e9e\")\n", 
-    "on_fire": "param.set_value(\"spouse3\", folks[2])\nparam.set_value(\"spouse4\", param.get_value(\"fiston\"))\nparam.next_event(\"tuto_diplomacy_ending_2\").start()\n"
+    "on_fire": "param.set_value(\"spouse2\", param.get_value(\"ainee\"))\nparam.set_value(\"spouse3\", folks[2])\nparam.set_value(\"spouse4\", param.get_value(\"fiston\"))\nparam.next_event(\"tuto_diplomacy_ending_2\").start()\n"
   }
 },
 {
@@ -6385,7 +6399,7 @@
     "message": "", 
     "event": 269, 
     "condition": "if kingdom.get_value(\"soeurette\") is None:\n  stop(\"n'existe pas\")\nelif kingdom.get_value(\"soeurette\").spouse is not None:\n  stop(\"est mari\u00e9e\")\n", 
-    "on_fire": "param.set_value(\"spouse3\", soeurette)\nparam.set_value(\"spouse4\", param.get_value(\"fiston\"))\nparam.next_event(\"tuto_diplomacy_ending_2\").start()\n"
+    "on_fire": "param.set_value(\"spouse2\", param.get_value(\"ainee\"))\nparam.set_value(\"spouse3\", soeurette)\nparam.set_value(\"spouse4\", param.get_value(\"fiston\"))\nparam.next_event(\"tuto_diplomacy_ending_2\").start()\n"
   }
 },
 {
@@ -6612,7 +6626,7 @@
   "pk": 377, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "\"Tu l'es,' fils.\" Sourire triste. \"...Mais les circonstance ont chang\u00e9es. Pardonne moi, mais le futur {{dynasty}} demande que tu partes.\"", 
+    "text": "\"Tu l'es, fils.\" Sourire triste. \"...Mais les circonstance ont chang\u00e9es. Pardonne moi, mais le futur {{dynasty}} demande que tu fasses ce sacrifice.\"", 
     "message": "", 
     "event": 282, 
     "condition": "\n", 
@@ -6623,7 +6637,7 @@
   "pk": 378, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Je soupire, aterr\u00e9, et d\u00e9tourne le regard. \"Tu te comporte comme un enfant, {{folks.1}}. Va. Tu r\u00e9alisera un jour que j'ai agit au mieux.\"", 
+    "text": "Je soupire, aterr\u00e9, et d\u00e9tourne le regard. \"Tu te comportes comme un enfant, {{folks.1}}. Va. Tu r\u00e9aliseras un jour que j'ai agit au mieux.\"", 
     "message": "", 
     "event": 282, 
     "condition": "\n", 
@@ -6826,6 +6840,39 @@
     "event": 291, 
     "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_diplomacy_mariage_finish\").start()"
+  }
+},
+{
+  "pk": 397, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Un bon seigneur doit savoir gagner l'amiti\u00e9 de ses gens.", 
+    "message": "", 
+    "event": 293, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_diplomacy_mariage_finish\").start()"
+  }
+},
+{
+  "pk": 398, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "\"Ravis d'avoir fait ta connaissance, l'ami, mais je ferai mieu de {% if spouse3 == title.chatelain %}rejoindre mon \u00e9pouse{% else %}rejoindre mes gens.\"", 
+    "message": "", 
+    "event": 294, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_diplomacy_mariage_finish\").start()"
+  }
+},
+{
+  "pk": 399, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Je tends mon verre pour qu'il me le remplisse \u00e0 nouveau.", 
+    "message": "", 
+    "event": 294, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_diplomacy_mariage_beuverie_2\").start()"
   }
 }
 ]

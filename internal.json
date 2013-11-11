@@ -7,8 +7,8 @@
     "description": "Initialise les comptes", 
     "prestige_threshold": 0, 
     "fired": [
-      157, 
       129, 
+      162, 
       150, 
       154
     ], 
@@ -1893,14 +1893,6 @@
   "model": "internal.firstname", 
   "fields": {
     "name": "Benoit", 
-    "sex": "m"
-  }
-},
-{
-  "pk": 33, 
-  "model": "internal.firstname", 
-  "fields": {
-    "name": "B\u00e9ranger\u00a0", 
     "sex": "m"
   }
 },
@@ -35812,7 +35804,7 @@
   "fields": {
     "params": "kingdom:Kingdom le kingdom sur lequel tourne ce tuto\r\nslug_event:str l'\u00e9v\u00e8nement qui vient d'\u00eatre d\u00e9clench\u00e9.", 
     "slug": "tuto_moteur", 
-    "on_fire": "try:\n  kingdom.set_value(slug_event, True)\nexcept:\n  pass\n\nevents = {\n  'tuto_scandale_fantome': lambda k: True,\n  'tuto_bandits_fantome': lambda k: k.get_folk_in_title(\"cure\") is not None or k.get_folk_in_title(\"maitre_espion\") is not None or k.get_folk_in_title(\"chambellan\") is not None or k.get_folk_in_title(\"connetable\") is not None,\n  'tuto_soeurette': lambda k: True,\n  'tuto_facheux_fantome': lambda k: True,\n  'tuto_caissesvides': lambda k: not k.availabletitle_set.filter(title__slug=\"tresorier\").exists(),\n  'tuto_toofewpopulation': lambda k: not k.availabletitle_set.filter(title__slug=\"cure\").exists(),\n  'tuto_toofewcourtisans': lambda k: not k.availabletitle_set.filter(title__slug=\"ambassadeur\").exists(),\n  'tuto_cour_basse_fantome': lambda k: True,\n}\n\nalready_done = [key for key in kingdom.get_values().keys() if key.startswith('tuto_')]\n\n# Doit-on lancer l'\u00e9v\u00e8nement final du tuto ?\nmandatories = (u'tuto_scandale_fantome', u'tuto_facheux_fantome', u'tuto_soeurette', u'tuto_bandits_fantome')\nif set(mandatories) <= set(already_done):\n  # La liste already_done contient toutes les entr\u00e9es du tableau mandatories (l'op\u00e9rateur <= correspond \u00e0 \"est un sous ensemble\")\n  # On va maintenant rentrer dans la seconde partie du tuto.\n  pe = kingdom.create_pending_event(\"_tuto_timewarp\")\n  pe.set_value('slug', 'tuto_ambition')\n  pe.start()\nelse:\n  # S\u00e9lectionner un \u00e9v\u00e8nement au hasard et le lancer.\n  import random\n  all_event_slugs = events.keys()\n  events_slugs = [slug for slug in all_event_slugs if slug not in already_done]\n  random.shuffle(events_slugs)\n\n  for event_slug in events_slugs:\n    if events[event_slug](kingdom):\n      pe = kingdom.create_pending_event(\"_tuto_timewarp\")\n      pe.set_value('slug', event_slug)\n      pe.start()\n      break\n", 
+    "on_fire": "try:\n  kingdom.set_value(slug_event, True)\nexcept:\n  pass\n\nevents = {\n  'tuto_scandale_fantome': lambda k: True,\n  'tuto_bandits_fantome': lambda k: k.get_folk_in_title(\"cure\") is not None or k.get_folk_in_title(\"maitre_espion\") is not None or k.get_folk_in_title(\"chambellan\") is not None or k.get_folk_in_title(\"connetable\") is not None,\n  'tuto_soeurette_1': lambda k: True,\n  'tuto_facheux_fantome': lambda k: True,\n  'tuto_caissesvides': lambda k: not k.availabletitle_set.filter(title__slug=\"tresorier\").exists(),\n  'tuto_toofewpopulation': lambda k: not k.availabletitle_set.filter(title__slug=\"cure\").exists(),\n  'tuto_toofewcourtisans': lambda k: not k.availabletitle_set.filter(title__slug=\"ambassadeur\").exists(),\n  'tuto_cour_basse_fantome': lambda k: True,\n}\n\nalready_done = [key for key in kingdom.get_values().keys() if key.startswith('tuto_')]\n\n# Doit-on lancer l'\u00e9v\u00e8nement final du tuto ?\nmandatories = (u'tuto_scandale_fantome', u'tuto_facheux_fantome', u'tuto_soeurette', u'tuto_bandits_fantome')\nif set(mandatories) <= set(already_done):\n  # La liste already_done contient toutes les entr\u00e9es du tableau mandatories (l'op\u00e9rateur <= correspond \u00e0 \"est un sous ensemble\")\n  # On va maintenant rentrer dans la seconde partie du tuto.\n  pe = kingdom.create_pending_event(\"_tuto_timewarp\")\n  pe.set_value('slug', 'tuto_ambition')\n  pe.start()\nelse:\n  # S\u00e9lectionner un \u00e9v\u00e8nement au hasard et le lancer.\n  import random\n  all_event_slugs = events.keys()\n  events_slugs = [slug for slug in all_event_slugs if slug not in already_done]\n  random.shuffle(events_slugs)\n\n  for event_slug in events_slugs:\n    if events[event_slug](kingdom):\n      pe = kingdom.create_pending_event(\"_tuto_timewarp\")\n      pe.set_value('slug', event_slug)\n      pe.start()\n      break\n", 
     "description": "Moteur de la premi\u00e8re partie du tutoriel (avant l'attaque du PNJ)."
   }
 },
