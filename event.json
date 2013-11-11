@@ -1371,9 +1371,9 @@
     "weight": 1, 
     "text": " ", 
     "image": "", 
-    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchoose_banquet = random_value(1,3)\ndanseuses = Folk.objects.filter(mission = None,\n                                kingdom=kingdom,\n                                sex=Folk.FEMALE,\n                                birth__lte=datetime.now() - timedelta(days=C.MAJORITE)).count()\n#recherche des possibilit\u00e9s de suite\nchatelain=kingdom.get_folk_in_title(\"chatelain\")\ntoast = False\nfuckers = Folk.objects.filter(kingdom=kingdom,\n                              mission=None,\n                              birth__lte=datetime.now() - timedelta(days=C.MAJORITE),\n                              sex=Folk.MALE,\n                              loyalty__lte=20).order_by('?')\nloyaux = Folk.objects.filter(kingdom=kingdom,\n                             mission=None,\n                             birth__lte=datetime.now() - timedelta(days=C.MAJORITE),\n                             sex=Folk.MALE,\n                             loyalty__gte=80).exclude(id=chatelain.id)\n\nif chatelain.diplomacy >=9 or fuckers.count() >= 1 or loyaux.count() >= 1:\n  toast = True\n\nif choose_banquet == 1 and danseuses != 0:\n  kingdom.create_pending_event(\"banquet_danse\").start()\nelif choose_banquet <= 2 and toast == True:\n  nb_folk_actuels = Folk.objects.filter(kingdom=kingdom,\n                                     mission=None,\n                                     birth__lte=datetime.now() - timedelta(days=C.MAJORITE),\n                                     ).count()\n  choose_toast = random_value (1, nb_folk_actuels)\n  if choose_toast > fuckers and choose_toast < loyaux:\n    kingdom.create_pending_event(\"banquet_toast_chatelain\").start()\n  elif choose_toast <= fuckers.count():\n    pe = kingdom.create_pending_event(\"banquet_toast_fucker\")\n    pe.set_value(\"fucker\", fuckers[0])\n    pe.start()\n  else:\n    pe = kingdom.create_pending_event(\"banquet_toast_loyaliste\")\n    pe.set_value(\"loyaliste\", loyaux[0])\n    pe.start()           \nelse:\n  kingdom.create_pending_event(\"banquet_beuverie\").start()\nstop(S.GHOST_EVENT)\n", 
+    "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchoose_banquet = random_value(1,3)\ndanseuses = Folk.objects.filter(mission = None,\n                                kingdom=kingdom,\n                                sex=Folk.FEMALE,\n                                birth__lte=datetime.now() - timedelta(days=C.MAJORITE)).count()\n#recherche des possibilit\u00e9s de suite\nchatelain=kingdom.get_folk_in_title(\"chatelain\")\ntoast = False\nfuckers = Folk.objects.filter(kingdom=kingdom,\n                              mission=None,\n                              birth__lte=datetime.now() - timedelta(days=C.MAJORITE),\n                              sex=Folk.MALE,\n                              loyalty__lte=20).order_by('?')\nloyaux = Folk.objects.filter(kingdom=kingdom,\n                             mission=None,\n                             birth__lte=datetime.now() - timedelta(days=C.MAJORITE),\n                             sex=Folk.MALE,\n                             loyalty__gte=80).exclude(id=chatelain.id).order_by('?')\n\nif chatelain.diplomacy >=9 or fuckers.count() >= 1 or loyaux.count() >= 1:\n  toast = True\n\nif choose_banquet == 1 and danseuses != 0:\n  kingdom.create_pending_event(\"banquet_danse\").start()\nelif choose_banquet <= 2 and toast == True:\n  nb_folk_actuels = Folk.objects.filter(kingdom=kingdom,\n                                     mission=None,\n                                     birth__lte=datetime.now() - timedelta(days=C.MAJORITE),\n                                     ).count()\n  choose_toast = random_value (1, nb_folk_actuels)\n  if choose_toast > fuckers and choose_toast < loyaux:\n    kingdom.create_pending_event(\"banquet_toast_chatelain\").start()\n  elif choose_toast <= fuckers.count():\n    pe = kingdom.create_pending_event(\"banquet_toast_fucker\")\n    pe.set_value(\"fucker\", fuckers[0])\n    pe.start()\n  else:\n    pe = kingdom.create_pending_event(\"banquet_toast_loyaliste\")\n    if len(loyaux)==0:\n      loyaliste = Folk.objects.filter(kingdom=kingdom,\n                              mission=None,\n                              birth__lte=datetime.now() - timedelta(days=C.MAJORITE),\n                              sex=Folk.MALE).order_by('?')\n    else:\n      loyaliste=loyaux[0]\n    pe.set_value(\"loyaliste\", loyaliste)\n    pe.start()           \nelse:\n  kingdom.create_pending_event(\"banquet_beuverie\").start()\nstop(S.GHOST_EVENT)\n", 
     "slug": "banquet_fantome", 
-    "condition": " "
+    "condition": "\n"
   }
 },
 {
@@ -1775,7 +1775,7 @@
     "category": null, 
     "name": "Facheux", 
     "weight": 1, 
-    "text": "Sur mon ordre, mon fils {{folks.2.first_name}} et le chevalier {{facheux.last_name}} se sont assis dans deux fauteuils de ma chambre. J'ignore les regards venimeux qu'ils se lancent, et sers patiemment trois verres de vin. Voyant que {{folks.1.first_name}} s'appr\u00eate \u00e0 faire une remarque, le l\u00e8ve une main apaisante. \"Je vais d\u2019abord \u00e9couter la version du chevalier\". Il se renfrogne, mais demeure silencieux alors que {{facheux.first_name}} me relate les injures que mon fils lui a lanc\u00e9es \u00e0 la figure. Il ne dissimule rien de sa col\u00e8re, et affirme \u00eatre pr\u00eat  \u00e0 d\u00e9fendre son honneur l'arme \u00e0 la main.\"", 
+    "text": "Sur mon ordre, mon fils {{folks.1.first_name}} et le chevalier {{facheux.last_name}} se sont assis dans deux fauteuils de ma chambre. J'ignore les regards venimeux qu'ils se lancent, et sers patiemment trois verres de vin. Voyant que {{folks.1.first_name}} s'appr\u00eate \u00e0 faire une remarque, le l\u00e8ve une main apaisante. \"Je vais d\u2019abord \u00e9couter la version du chevalier\". Il se renfrogne, mais demeure silencieux alors que {{facheux.first_name}} me relate les injures que mon fils lui a lanc\u00e9es \u00e0 la figure. Il ne dissimule rien de sa col\u00e8re, et affirme \u00eatre pr\u00eat  \u00e0 d\u00e9fendre son honneur l'arme \u00e0 la main.\"", 
     "image": "events/408_6.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_facheux_settle", 
@@ -1971,11 +1971,11 @@
     "category": null, 
     "name": "Mariage", 
     "weight": 1, 
-    "text": "Le grand  jour est  arriv\u00e9. Dame {{mariee}} et sire {{mari}} avancent dignement dans l'\u00e9glise, sous les regards de la cour rassembl\u00e9e. La mari\u00e9e tient un bouquet dans ses mains, et la lueur des cierges \u00e9claire sa robe d'un blanc imacul\u00e9. Son futur conjoint porte sa plus belle tunique, et son visage est empreint d'une gravit\u00e9 de circonstance. Il prend la main de sa promise, et la conduit jusque devant l'autel, o\u00f9 le p\u00e8re {{title.cure.first_name}} attend patiement de pronnoncer les paroles d'usage. \"...devant Dieu et les hommmes, je vous d\u00e9clare mari et femme. Sire {{mari}} vous pouvez \u00e0 pr\u00e9sent embrasser la mari\u00e9e!\". Leur baiser fait monter une ovation dans l'\u00e9glise.", 
+    "text": "Le grand  jour est  arriv\u00e9. Dame {{femme}} et sire {{mari}} avancent dignement dans l'\u00e9glise, sous les regards de la cour rassembl\u00e9e. La mari\u00e9e tient un bouquet dans ses mains, et la lueur des cierges \u00e9claire sa robe d'un blanc immacul\u00e9. Son futur conjoint porte sa plus belle tunique, et son visage est empreint d'une gravit\u00e9 de circonstance. Il prend la main de sa promise, et la conduit jusque devant l'autel, o\u00f9 le p\u00e8re {{title.cure.first_name}} attend patiemment de prononcer les paroles d'usage. \"...devant Dieu et les hommes, je vous d\u00e9clare mari et femme. Sire {{mari}} vous pouvez \u00e0 pr\u00e9sent embrasser la mari\u00e9e!\". Leur baiser fait monter une ovation dans l'\u00e9glise.", 
     "image": "events/89_2.jpg", 
-    "on_fire": null, 
+    "on_fire": "\n", 
     "slug": "mariage", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -1985,7 +1985,7 @@
     "category": null, 
     "name": "Mariage fille", 
     "weight": 1, 
-    "text": "Ma fille se tient devant moi, v\u00eatue de sa somptueuse robe de mar\u00e9e, et je peine \u00e0 contenir mon \u00e9motion. Elle a grandit si vite... Je m'approche et prends ses mains dans les miennes \"Es-tu heureuse, ma douce {{mariee.first_name}}?\" {% if filleamoureuse  == 1 %}Elle me sourit avec tendresse, et hoche la t\u00eate. \"Oui, p\u00e8re. Je ne pourrais r\u00eaver d'un homme meilleur. Mon c\u0153ur est combl\u00e9\". Je la serre contre moi. \"Alors le mien l'est aussi\". {% elif mariee.loyalty <= 40 %}Son visage se ferme \"Je... comment pouvez-vous me poser cette question?\" elle secoue la t\u00eate, r\u00e9sign\u00e9e. \"Je ferai mon devoir, p\u00e8re. Mais vous ne pouvez pas me forcer \u00e0 en  tirer plaisir\". Je me rembrunit. \"Non, en effet\". {% else %}Elle baisse les yeux et rougit. \"Je... oui, p\u00e8re. Je sais que ce mariage vous tien \u00e0 c\u0153ur. {{mari}} semble \u00eatre un homme respectable, et...\" Avec tendresse, je repousse une m\u00e8che de cheveux derri\u00e8re son oreille. \"Allons, sourit. Aujourd'hui tu devient une femme\".{% endif %}", 
+    "text": "Ma fille se tient devant moi, v\u00eatue de sa somptueuse robe de mar\u00e9e, et je peine \u00e0 contenir mon \u00e9motion. Elle a grandit si vite... Je m'approche et prends ses mains dans les miennes \"Es-tu heureuse, ma douce {{femme.first_name}}?\" {% if kingdoms.values.in_tuto %}Elle me sourit avec tendresse, et hoche la t\u00eate. \"Oui, p\u00e8re. Je ne pourrais r\u00eaver d'un homme meilleur. Mon c\u0153ur est combl\u00e9\". Je la serre contre moi. \"Alors le mien l'est aussi\". {% elif femme.loyalty <= 40 %}Son visage se ferme \"Je... comment pouvez-vous me poser cette question?\" elle secoue la t\u00eate, r\u00e9sign\u00e9e. \"Je ferai mon devoir, p\u00e8re. Mais vous ne pouvez pas me forcer \u00e0 en  tirer plaisir\". Je me rembrunit. \"Non, en effet\". {% else %}Elle baisse les yeux et rougit. \"Je... oui, p\u00e8re. Je sais que ce mariage vous tien \u00e0 c\u0153ur. {{mari}} semble \u00eatre un homme respectable, et...\" Avec tendresse, je repousse une m\u00e8che de cheveux derri\u00e8re son oreille. \"Allons, sourit. Aujourd'hui tu devient une femme\".{% endif %}", 
     "image": "events/106.jpg", 
     "on_fire": "\n", 
     "slug": "mariagefille", 
@@ -5103,7 +5103,7 @@
   "pk": 228, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Je me tourne vers {{folks.2.first_name}}, et lui indique qu'il peut prendre la parole.", 
+    "text": "Je me tourne vers {{folks.1.first_name}}, et lui indique qu'il peut prendre la parole.", 
     "message": "", 
     "event": 161, 
     "condition": "\n", 
@@ -5258,9 +5258,9 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Au banquet, mes amis!", 
-    "message": "{{mari}} et {{mariee}} ont \u00e9t\u00e9 unis devant Dieu.", 
+    "message": "{{mari}} et {{femme}} ont \u00e9t\u00e9 unis devant Dieu.", 
     "event": 177, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "param.next_event(\"banquet\").start()"
   }
 },

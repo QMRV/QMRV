@@ -193,7 +193,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": "\n", 
+    "on_start": "prix = 5*folks.filter(mission__isnull=True).count()\nif kingdom.money < prix:\n  stop(\"Vous n'avez pas assez d'argent pour payer le banquet\")\n\nkingdom.money -= prix\nkingdom.save()\n\ngrids['mari'][0].spouse = grids['femme'][0]\ngrids['femme'][0].spouse = grids['mari'][0]\ngrids['mari'][0].save()\ngrids['femme'][0].save()\nif grids['mari'][0]==folks[3] and grids['femme'][0]==folks[2]:\n  kingdom.set_value(\"tuto_mariage_fait\",True)\n  pe=kingdom.create_pending_event(\"mariagefille\")\n  pe.set_value(\"banquet_mariage_tuto\",True)\n  pe.set_value(\"mari\",grids['mari'][0])\n  pe.set_value(\"femme\",grids['femme'][0])\n  pe.start()\n\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 3, 
@@ -203,7 +203,7 @@
     "duration": 0, 
     "on_cancel": "\n", 
     "slug": "marier", 
-    "on_init": "prix = 5*folks.filter(mission__isnull=True).count()\nif kingdom.money < prix:\n  stop(\"Vous n'avez pas assez d'argent pour payer le banquet\")\n\nkingdom.money -= prix\nkingdom.save()\n\ngrids['mari'][0].spouse = grids['femme'][0]\ngrids['femme'][0].spouse = grids['mari'][0]\ngrids['mari'][0].save()\ngrids['femme'][0].save()\nif grids['mari'][0]==folks[3] and grids['femme'][0]==folks[2]:\n  kingdom.set_value(\"tuto_mariage_fait\",True)\n  pe=kingdom.create_pending_event(\"banquet\")\n  pe.set_value(\"banquet_mariage_tuto\",True)\n  pe.start()\n\n"
+    "on_init": "\n"
   }
 },
 {
