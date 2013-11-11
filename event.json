@@ -39,11 +39,11 @@
     "category": null, 
     "name": "Introduction", 
     "weight": 1, 
-    "text": "En arrivant au sommet de la cr\u00eate, nous tirons sur nos brides et nous nous autorisons enfin une pause, afin de contempler le ch\u00e2teau qui se dessine en contrebas. {{ fille.first_name }}, \u00e0 ma droite, a les joues rougies par le froid de l\u2019hiver. \r\n\u201cEst-ce celui-ci, p\u00e8re? Sommes-nous arriv\u00e9s ?\u201d. Sa voix n\u2019est qu\u2019un murmure dans lequel perce l'excitation de la jeunesse. \r\n\u201cOui, ma fille. La terre de nos a\u00efeux. Le domaine revenant de droit \u00e0 la maison {{dynasty}}.\u201d \r\nSans un regard en arri\u00e8re, je guide mon cheval sur le sentier qui serpente jusque dans la vall\u00e9e. {{fille.first_name}} m'embo\u00eete le pas, suivie de pr\u00e8s par son fr\u00e8re {{fils.first_name}} et par {{compagnon.first_name}}, mon compagnon de toujours qui garde sa main sur le pommeau de son \u00e9p\u00e9e.\r\n\r\nNotre long voyage s'ach\u00e8ve.", 
+    "text": "En arrivant au sommet de la cr\u00eate, nous tirons sur nos brides et nous autorisons enfin une pause, afin de contempler le ch\u00e2teau qui se dessine en contrebas. {{ fille.first_name }}, \u00e0 ma droite, a les joues rougies par le froid de l\u2019hiver. \r\n\u201cEst-ce celui-ci, p\u00e8re? Sommes-nous arriv\u00e9s ?\u201d. Sa voix n\u2019est qu\u2019un murmure dans lequel perce l'excitation de la jeunesse. \r\n\u201cOui, ma fille. La terre de nos a\u00efeux. Le domaine revenant de droit \u00e0 la maison {{dynasty}}.\u201d \r\nSans un regard en arri\u00e8re, je guide mon cheval sur le sentier qui serpente jusque dans la vall\u00e9e. {{fille.first_name}} m'embo\u00eete le pas, suivie de pr\u00e8s par son fr\u00e8re {{fils.first_name}} et par {{compagnon.first_name}}, mon compagnon de toujours qui garde sa main sur le pommeau de son \u00e9p\u00e9e.\r\n\r\nNotre long voyage s'ach\u00e8ve.", 
     "image": "events/543.jpg", 
-    "on_fire": "\n\n", 
+    "on_fire": null, 
     "slug": "tuto_intro", 
-    "condition": " "
+    "condition": null
   }
 },
 {
@@ -67,11 +67,11 @@
     "category": null, 
     "name": "Au travail", 
     "weight": 1, 
-    "text": "Printemps. Nos terres sont couvertes de fleurs et dans les champs les labours ont d\u00e9marr\u00e9s. \r\n\r\nAssis sur un tr\u00f4ne fra\u00eechement install\u00e9, je contemple d\u2019un \u0153il satisfait les r\u00e9parations que les ma\u00e7ons ont apport\u00e9 aux murs de la grande salle. Le toit demande encore quelques planches et l\u2019aile ouest du ch\u00e2teau n\u2019a toujours pas \u00e9t\u00e9 d\u00e9blay\u00e9e mais les travaux avancent \u00e0 grands pas. Les serviteurs qui s\u2019aff\u00e8rent de toute part ont \u00e9t\u00e9 engag\u00e9s par {{compagnon.first_name}} dans le village voisin qui fr\u00e9mit toujours de la nouvelle du retour de ma famille. Du moins notre r\u00e9sidence est de nouveau vivable. \r\n\r\nNotre argent est presque \u00e9puis\u00e9, et nous allons avoir grand besoin de l\u2019ob\u00e9issance de ces gueux. Notre nom et la lettre du roi seront des atouts pr\u00e9cieux, mais je devrais utiliser les \u00e9cus qui me reste pour mettre toutes les chances de notre c\u00f4t\u00e9...\r\n\r\n+  Le ch\u00e2teau de {{dynasty}} est en partie remis en \u00e9tat mais cela m'a cout\u00e9 85 \u00e9cus\r\n", 
+    "text": "Printemps. Nos terres sont couvertes de fleurs et dans les champs les labours ont d\u00e9marr\u00e9s. \r\n\r\nAssis sur un tr\u00f4ne fra\u00eechement install\u00e9, je contemple d\u2019un \u0153il satisfait les r\u00e9parations que les ma\u00e7ons ont apport\u00e9 aux murs de la grande salle. Le toit demande encore quelques planches et l\u2019aile ouest du ch\u00e2teau n\u2019a toujours pas \u00e9t\u00e9 d\u00e9blay\u00e9e mais les travaux avancent \u00e0 grands pas. Les serviteurs qui s\u2019aff\u00e8rent de toute part ont \u00e9t\u00e9 engag\u00e9s par {{compagnon.first_name}} dans le village voisin qui fr\u00e9mit toujours de la nouvelle du retour de ma famille. Notre r\u00e9sidence est de nouveau vivable. \r\n\r\nNotre argent est presque \u00e9puis\u00e9, cependant, et nous allons avoir grand besoin de l\u2019ob\u00e9issance de la populace. Notre nom et la lettre du roi seront des atouts pr\u00e9cieux, mais je devrais utiliser les \u00e9cus qui me reste pour mettre toutes les chances de notre c\u00f4t\u00e9...\r\n\r\n+  Le ch\u00e2teau de {{dynasty}} est en partie remis en \u00e9tat mais cela m'a cout\u00e9 85 \u00e9cus\r\n", 
     "image": "events/362.jpg", 
-    "on_fire": "\n", 
+    "on_fire": null, 
     "slug": "tuto_intro_3", 
-    "condition": "\n"
+    "condition": null
   }
 },
 {
@@ -179,11 +179,11 @@
     "category": null, 
     "name": "Rassembler l'arm\u00e9e", 
     "weight": 1, 
-    "text": "J\u2019ai envoy\u00e9 {{title.connetable.first_name}} et ses hommes, arm\u00e9s de pied en cap, parcourir la campagne et porter la nouvelle du renouveau de {{dynasty}}. Il a fait savoir aux paysans qu\u2019ils sont sous ma protection tant qu\u2019ils m\u2019offriront l\u2019ob\u00e9issance due \u00e0 leur suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eates d\u00e9sormais le seigneur de {{kingdom.population}} paysans et {{kingdom.soldiers}} soldats.", 
+    "text": "J\u2019ai envoy\u00e9 {{title.connetable.first_name}} et ses hommes, arm\u00e9s de pied en cap, parcourir la campagne et porter la nouvelle du renouveau de {{dynasty}}. Il a fait savoir aux paysans qu\u2019ils sont sous ma protection tant qu\u2019ils m\u2019offriront l\u2019ob\u00e9issance due \u00e0 leur suzerain l\u00e9gitime.\r\n\r\n    -12 \u00e9cus.\r\n    Vous \u00eates d\u00e9sormais le seigneur de {{kingdom.population}} paysans et {{kingdom.soldiers}} soldats.", 
     "image": "events/17.jpg", 
-    "on_fire": "kingdom.population=C.NB_PAYSAN_INIT\nkingdom.soldiers=C.NB_SOLDATS_INIT\nkingdom.set_value('total_soldats',C.NB_SOLDATS_INIT)\nkingdom.save()\n", 
+    "on_fire": "kingdom.money-=12\nkingdom.population=C.NB_PAYSAN_INIT\nkingdom.soldiers=C.NB_SOLDATS_INIT\nkingdom.set_value('total_soldats',C.NB_SOLDATS_INIT)\nkingdom.save()\n", 
     "slug": "tuto_recrutement_4", 
-    "condition": " "
+    "condition": null
   }
 },
 {
@@ -389,11 +389,11 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "Les gueux ripaillent, rient et dansent au son de la musique. Ils ont \u00e9t\u00e9 plusieurs \u00e0 lever haut leurs coupes \u00e0 ma sant\u00e9 et \u00e0 celle de la maison {{dynasty}}. Ils ont l\u2019air profond\u00e9ment soulag\u00e9s de d\u00e9couvrir leur nouveau seigneur si affable et g\u00e9n\u00e9reux et le vin commence \u00e0 leurs monter \u00e0 la t\u00eate. L'atmosph\u00e8re est \u00e0 l\u2019optimisme et l'all\u00e9gresse, les langues se d\u00e9lient et les m\u0153urs se rel\u00e2chent. \r\n\r\n{{folks.2.first_name}} danse sagement avec {{folks.3.first_name}}, mais {{folks.1.first_name}} rie aux \u00e9clats avec une femme qui pique mon int\u00e9r\u00eat. Sa robe est cousue de fils de soie, et ses mani\u00e8res la d\u00e9marque nettement des paysannes mal d\u00e9grossies qui se sont jet\u00e9es sur le buffet.\r\n", 
+    "text": "Les gueux ripaillent, rient et dansent au son de la musique. Ils ont \u00e9t\u00e9 plusieurs \u00e0 lever haut leurs coupes \u00e0 ma sant\u00e9 et \u00e0 celle de la maison {{dynasty}}. Ils ont l\u2019air profond\u00e9ment soulag\u00e9s de d\u00e9couvrir leur nouveau seigneur si affable et g\u00e9n\u00e9reux et le vin commence \u00e0 leurs monter \u00e0 la t\u00eate. L'atmosph\u00e8re est \u00e0 l\u2019optimisme et l'all\u00e9gresse, les langues se d\u00e9lient et les m\u0153urs se rel\u00e2chent. \r\n\r\n{{folks.2.first_name}} danse sagement avec {{folks.3.first_name}}, mais {{folks.1.first_name}} rie aux \u00e9clats avec une femme qui pique mon int\u00e9r\u00eat. Sa robe est cousue de fils d'argent, et ses mani\u00e8res la d\u00e9marque nettement des paysannes mal d\u00e9grossies qui se sont jet\u00e9es sur le buffet.", 
     "image": "events/000.jpg", 
-    "on_fire": " \n", 
+    "on_fire": null, 
     "slug": "tuto_banquet_2", 
-    "condition": " "
+    "condition": null
   }
 },
 {
@@ -403,11 +403,11 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "A mon approche, elle se l\u00e8ve et m\u2019offre une petite r\u00e9v\u00e9rence. Je discute un moment avec elle et apprend qu\u2019elle se nomme {{lady.first_name}} {{lady.last_name}} et qu\u2019elle est la cadette d\u2019un petit seigneur de province. Elle est de retour d\u2019un p\u00e8lerinage \u00e0 Sainte Madeleine, mais confesse en rougissant qu\u2019elle n\u2019est en rien press\u00e9e de rejoindre le domaine de son p\u00e8re qui, selon elle, entend l\u2019envoyer au couvent plut\u00f4t que de payer sa dot. Lorsque je lui propose de rester pour un temps au ch\u00e2teau, elle sourit et accepte de bon c\u0153ur.\r\n```\r\n{{lady}} a rejoint ma cour\r\n```", 
+    "text": "A mon approche, elle se l\u00e8ve et m\u2019offre une petite r\u00e9v\u00e9rence. Je discute un moment avec elle et apprend qu\u2019elle se nomme {{lady.first_name}} {{lady.last_name}} et qu\u2019elle est la cadette d\u2019un petit seigneur de province. Elle est de retour d\u2019un p\u00e8lerinage \u00e0 Sainte Madeleine, mais confesse en rougissant qu\u2019elle n\u2019est en rien press\u00e9e de rejoindre le domaine de son p\u00e8re qui, selon elle, entend l\u2019envoyer au couvent plut\u00f4t que de payer sa dot. Lorsque je lui propose de rester pour un temps au ch\u00e2teau, elle sourit et accepte de bon c\u0153ur.\r\n\r\n    {{lady}} a rejoint ma cour.\r\n", 
     "image": "events/000_1.jpg", 
     "on_fire": "#Cr\u00e9ation de la dame\nlady = call_function(\"creer_folk\", kingdom=kingdom, fight_min=6, plot_min=6, diplomacy_min=6, scholarship_min=6, max_carac=32, loyalty=50, sex=Folk.FEMALE, birth=datetime.now() - timedelta(days=25))\n\nparam.set_value(\"lady\", lady)\n", 
     "slug": "tuto_banquet_3", 
-    "condition": " "
+    "condition": null
   }
 },
 {
@@ -417,11 +417,11 @@
     "category": null, 
     "name": "Pot de vin", 
     "weight": 1, 
-    "text": "    -12 ecus\r\n\r\nLes jours suivants, {{title.maitre_espion.first_name}} a rencontr\u00e9 en secret les gueux les plus influents et leur a vers\u00e9 de g\u00e9n\u00e9reux pots de vin en \u00e9change de leur soutien. Sous leur influence, la population m\u2019a accept\u00e9 comme suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eates d\u00e9sormais le seigneur de {{ kingdom.population }} paysans.", 
+    "text": "Les jours suivants, {{title.maitre_espion.first_name}} a rencontr\u00e9 en secret les gueux les plus influents et leur a vers\u00e9 de g\u00e9n\u00e9reux pots de vin en \u00e9change de leur soutien. Sous leur influence, la population m\u2019a accept\u00e9 comme suzerain l\u00e9gitime.\r\n\r\n    -12 ecus\r\n    Vous \u00eates d\u00e9sormais le seigneur de {{ kingdom.population }} paysans.", 
     "image": "", 
     "on_fire": "kingdom.money-=12\nkingdom.population=C.NB_PAYSAN_INIT\nkingdom.save()", 
     "slug": "tuto_potsdevin_5", 
-    "condition": " "
+    "condition": null
   }
 },
 {
@@ -431,11 +431,11 @@
     "category": null, 
     "name": "Banquet", 
     "weight": 1, 
-    "text": "La f\u00eate s\u2019est termin\u00e9e dans la gaiet\u00e9, et les paysans ont \u00e9t\u00e9 h\u00e9berg\u00e9s dans les pi\u00e8ces vides du ch\u00e2teau. Il sont repartis au matin, titubant mais ravis et ont rependu sur mes terres le r\u00e9cit de ma bienveillance. Ces braves gueux m\u2019ont accept\u00e9 sans r\u00e9serve comme leur suzerain l\u00e9gitime.\r\n\r\n    Vous \u00eatre d\u00e9sormais le seigneur de {{ kingdom.population }} paysans.", 
-    "image": "events/127.jpg", 
-    "on_fire": "kingdom.population=C.NB_PAYSAN_INIT\nkingdom.save()\n", 
+    "text": "La f\u00eate s\u2019est termin\u00e9e dans la gaiet\u00e9, et les paysans ont \u00e9t\u00e9 h\u00e9berg\u00e9s dans les pi\u00e8ces vides du ch\u00e2teau. Il sont repartis au matin, titubant mais ravis et ont rependu sur mes terres le r\u00e9cit de ma bienveillance. Ces braves gueux m\u2019ont accept\u00e9 sans r\u00e9serve comme leur suzerain l\u00e9gitime.\r\n\r\n    -12 \u00e9cus.\r\n    Vous \u00eatre d\u00e9sormais le seigneur de {{ kingdom.population }} paysans.", 
+    "image": "events/5645.jpg", 
+    "on_fire": "kingdom.money-=12\nkingdom.population=C.NB_PAYSAN_INIT\nkingdom.save()\n", 
     "slug": "tuto_banquet_4", 
-    "condition": " "
+    "condition": null
   }
 },
 {
@@ -809,11 +809,11 @@
     "category": null, 
     "name": "Scandale", 
     "weight": 1, 
-    "text": "Sans un mot, il se rel\u00e8ve, me contemple, puis se d\u00e9tourne. Alors que la porte se referme dans un bruit sourd, je prends conscience que m\u00eame si {{folks.3.first_name}} continuera \u00e0 remplir son devoir, notre relation ne sera plus jamais la m\u00eame.\r\n\r\n```-10 de Loyaut\u00e9 pour {{folks.3.first_name}}.```", 
+    "text": "Sans un mot, il se rel\u00e8ve, me contemple, puis se d\u00e9tourne. Alors que la porte se referme dans un bruit sourd, je prends conscience que m\u00eame si {{folks.3.first_name}} continuera \u00e0 remplir son devoir, notre relation ne sera plus jamais la m\u00eame.\r\n\r\n    -10 de Loyaut\u00e9 pour {{folks.3.first_name}}.", 
     "image": "events/407_3.jpg", 
     "on_fire": "folks[3].loyalty -= 10\nfolks[3].save()\n", 
     "slug": "tuto_scandale_fille_4", 
-    "condition": " "
+    "condition": null
   }
 },
 {
@@ -2031,7 +2031,7 @@
     "image": "events/716_5.jpg", 
     "on_fire": "chevalier = call_function(\"creer_folk\", kingdom=None, fight_min=4, plot_min=4, diplomacy_min=4, scholarship_min=4, max_carac=32, loyalty=60, sex=Folk.MALE,  birth=datetime.now() - timedelta(days=35), trait=\"colerique\")\nparam.set_value(\"facheux\", chevalier)\n\n", 
     "slug": "tuto_facheux_chevalier", 
-    "condition": "\n"
+    "condition": null
   }
 },
 {
@@ -3343,7 +3343,7 @@
     "text": "Une nouvelle histoire commence. ", 
     "message": "", 
     "event": 3, 
-    "condition": " ", 
+    "condition": null, 
     "on_fire": "param.next_event(\"tuto_intro_2\").start()\n"
   }
 },
@@ -3365,7 +3365,7 @@
     "text": "Les gueux respectent la force. Je vais faire armer une petite troupe de soldats.", 
     "message": "Grace au soutien du Roi de France, ma famille s'est install\u00e9e \u00e0 {{dynasty}}, la demeure de mes anc\u00eatres. J'ai d\u00e9bours\u00e9 85 \u00e9cus pour entamer des r\u00e9parations et recruter des serviteurs.", 
     "event": 6, 
-    "condition": " ", 
+    "condition": null, 
     "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchatelain.fight += 1\nchatelain.save()\n\nparam.next_event(\"tuto_intro_choixcombat\").start()\n"
   }
 },
@@ -3376,7 +3376,7 @@
     "text": "Les gueux aiment l\u2019argent. Je vais soudoyer les notables du village pour qu\u2019ils fassent basculer la population de mon c\u00f4t\u00e9.", 
     "message": "Grace au soutien du Roi de France, ma famille s'est install\u00e9e \u00e0 {{dynasty}}, la demeure de mes anc\u00eatres. J'ai d\u00e9bours\u00e9 85 \u00e9cus pour entamer des r\u00e9parations et recruter des serviteurs.", 
     "event": 6, 
-    "condition": " ", 
+    "condition": null, 
     "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchatelain.plot += 1\nchatelain.save()\n\nparam.next_event(\"tuto_intro_choixintrigue\").start()"
   }
 },
@@ -3384,10 +3384,10 @@
   "pk": 10, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Je vais essayer la mani\u00e8re douce, et offrir au village un grand banquet pour f\u00eater la renaissance de {{dynasty}}.", 
+    "text": "Je vais essayer la mani\u00e8re douce, offrir au village un grand banquet pour f\u00eater la renaissance de {{dynasty}}.", 
     "message": "Grace au soutien du Roi de France, ma famille s'est install\u00e9e \u00e0 {{dynasty}}, la demeure de mes anc\u00eatres. J'ai d\u00e9bours\u00e9 85 \u00e9cus pour entamer des r\u00e9parations et recruter des serviteurs.", 
     "event": 6, 
-    "condition": " ", 
+    "condition": null, 
     "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchatelain.diplomacy += 1\nchatelain.save()\n\nparam.next_event(\"tuto_intro_choixdiplomatie\").start()"
   }
 },
@@ -3398,7 +3398,7 @@
     "text": "{{folks.1.first_name}} m\u2019a dit que l\u2019\u00e9glise du village \u00e9tait en mauvais \u00e9tat. Je vais la faire enti\u00e8rement r\u00e9parer.", 
     "message": "Grace au soutien du Roi de France, ma famille s'est install\u00e9e \u00e0 {{dynasty}}, la demeure de mes anc\u00eatres. J'ai d\u00e9bours\u00e9 85 \u00e9cus pour entamer des r\u00e9parations et recruter des serviteurs.", 
     "event": 6, 
-    "condition": " ", 
+    "condition": null, 
     "on_fire": "chatelain = kingdom.get_folk_in_title(\"chatelain\")\nchatelain.scholarship += 1\nchatelain.save()\n\nparam.next_event(\"tuto_intro_choixerudition\").start()\n"
   }
 },
@@ -3486,7 +3486,7 @@
     "text": "A pr\u00e9sent, je suis seigneur v\u00e9ritable de ces terres.", 
     "message": "J'ai mit sur pied un petit bataillon, et accept\u00e9 l'all\u00e9geance du chevalier {{knight.last_name}}. Les gueux me reconnaissent maintenant comme leur seigneur et ma\u00eetre.", 
     "event": 15, 
-    "condition": " ", 
+    "condition": null, 
     "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_recrutement\")"
   }
 },
@@ -3651,7 +3651,7 @@
     "text": "Je ferais bien d\u2019aller me pr\u00e9senter...", 
     "message": "", 
     "event": 33, 
-    "condition": " ", 
+    "condition": null, 
     "on_fire": "param.next_event(\"tuto_banquet_3\").start()  "
   }
 },
@@ -3662,7 +3662,7 @@
     "text": "Quelque chose me dit qu\u2019elle restera aussi longtemps que je le lui permettrai.", 
     "message": "", 
     "event": 34, 
-    "condition": " ", 
+    "condition": null, 
     "on_fire": "param.next_event(\"tuto_banquet_4\").start()  "
   }
 },
@@ -3673,7 +3673,7 @@
     "text": "L\u2019argent ouvre toutes les portes.", 
     "message": "{{knight}} a rejoint ma cour, et les pots de vin de {{title.maitre_espion.first_name}} ont port\u00e9 leur fruits. Je suis le souverain incontest\u00e9 des gueux de {{dynastie}}.", 
     "event": 35, 
-    "condition": " ", 
+    "condition": null, 
     "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_potsdevin\")\n"
   }
 },
@@ -3684,7 +3684,7 @@
     "text": "Une affaire rondement men\u00e9e.", 
     "message": "{{lady}} a rejoint ma cour, et le banquets m'a apport\u00e9 la loyaut\u00e9 des paysans.", 
     "event": 36, 
-    "condition": " ", 
+    "condition": null, 
     "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_banquet\")"
   }
 },
@@ -4102,7 +4102,7 @@
     "text": "Je vais rester ici un moment...", 
     "message": "J'ai pr\u00e9f\u00e9r\u00e9 refuser \u00e0 {{folks.3}} la main de ma fille. ```-10 de Loyaut\u00e9.```", 
     "event": 85, 
-    "condition": " ", 
+    "condition": null, 
     "on_fire": "call_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_scandale_fantome\")\n"
   }
 },
@@ -5464,9 +5464,9 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Je ris de bon coeur. \"Vous me plaisez, mon ami ! soyez le bienvenu \u00e0 {{dynasty}}.\" `Sire {{facheux.first_name}} rejoint votre cour`", 
-    "message": "Le chevalier {{chevalier}} a rejoint ma cour.", 
+    "message": "Le chevalier {{facheux}} a rejoint ma cour.", 
     "event": 181, 
-    "condition": "\n", 
+    "condition": null, 
     "on_fire": "facheux = param.get_value(\"facheux\")\nfacheux.kingdom = kingdom\nfacheux.save()\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"Aucun_event_fini_moteur\")"
   }
 },
@@ -5497,9 +5497,9 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "\"Non merci, chevalier, je n'ai que faire d'un suivant de votre impatience.\"", 
-    "message": "Je n'ai pas voulu du chevalier {{chevalier}} dans ma cour.", 
+    "message": "Je n'ai pas voulu du chevalier {{facheux}} dans ma cour.", 
     "event": 181, 
-    "condition": "\n", 
+    "condition": null, 
     "on_fire": "facheux.delete()\nkingdom.set_value(\"tuto_facheux_refus\", True)\n\ncall_function(\"tuto_moteur\", kingdom=kingdom, slug_event=\"tuto_facheux_fantome\")\n"
   }
 },
