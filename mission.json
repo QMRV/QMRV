@@ -258,7 +258,7 @@
   "fields": {
     "name": "Lib\u00e9rer un prisonnier", 
     "target_list": null, 
-    "text": "Le prisonnier a plus que payer pour son tord. Il est temps de le lib\u00e9rer.", 
+    "text": "Le prisonnier a plus que payer pour son tord. Il est temps de le lib\u00e9rer.\r\n\r\n    Cette mission est instantan\u00e9e et n'a qu'un co\u00fbt, celui de devoir subir \u00e0 nouveau la pr\u00e9sence entre vos murs de cet individu horripilant. L'odeur en plus.\r\n    Pour compenser, les courtisans de votre ch\u00e2teaux sont agr\u00e9ablement soulag\u00e9s \u00e0 l'id\u00e9e que l'on puisse sortir vivant de vos cellules. Ils regagnent un peu de loyaut\u00e9 envers vous. Beaucoup si la cible est admir\u00e9e ou respect\u00e9e, moins si elle est m\u00e9pris\u00e9e et peu si elle est d\u00e9test\u00e9e. ", 
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "Valeur :", 
@@ -303,10 +303,10 @@
   "model": "mission.mission", 
   "fields": {
     "name": "D\u00e9signer un mentor", 
-    "target_list": " ", 
-    "text": "Je veux qu'un enfant ait la meilleure \u00e9ducation possible", 
+    "target_list": null, 
+    "text": "Un enfant ayant un mentor aura tendance \u00e0 aligner ses caract\u00e9ristiques sur celui-ci lors de sa croissance.\r\n\r\n    Cette mission instantan\u00e9e sans co\u00fbt ne rend pas le mentor indisponible. Il fait \u00e7a sur son temps libre.", 
     "has_value": false, 
-    "on_resolution": " ", 
+    "on_resolution": "\n", 
     "value_description": "Valeur :", 
     "on_start": "grids['enfant'][0].mentor = grids['mentor'][0]\ngrids['enfant'][0].save()\n\npe = kingdom.create_pending_event(\"education\")\npe.set_value('pupil', grids['enfant'][0])\npe.set_value('mentor', grids['mentor'][0])\npe.start()\n", 
     "has_target": false, 
@@ -318,7 +318,7 @@
     "duration": 0, 
     "on_cancel": "\n", 
     "slug": "nommer_mentor", 
-    "on_init": " "
+    "on_init": "\n"
   }
 },
 {
@@ -327,7 +327,7 @@
   "fields": {
     "name": "Raid", 
     "target_list": null, 
-    "text": "Allons attaquer !", 
+    "text": "Raider un autre joueur permet de voler quelques ressources aux limites de ses terres. Mais gare aux cons\u00e9quences.\r\n\r\n    L'adversaire gagne un Casus Belli \u00e0 votre encontre actif imm\u00e9diatement\r\n    Vous remportez quelques \u00e9cus.\r\n    Si vous attaquez un joueur qui a d\u00e9j\u00e0 un Casus Belli \u00e0 votre encontre ou qui est plus faible que vous, vous perdez du prestige.\r\n    ", 
     "has_value": false, 
     "on_resolution": "try:\n  if len(param.get_value(\"morts_attaquant\")) > 0:\n    for perso in param.get_value(\"morts_attaquant\"):\n      f(\"tuer_folk\", condamne=perso)\nexcept:\n  stop()\n", 
     "value_description": "Valeur :", 
@@ -372,19 +372,19 @@
   "model": "mission.mission", 
   "fields": {
     "name": "Banquet", 
-    "target_list": "\n", 
-    "text": "Organisons un joyeux \u00e9v\u00e9nement !", 
+    "target_list": null, 
+    "text": "Un banquet permet de raffermir l'esprit de famille du ch\u00e2teau. C'est une occasion de passer un petit moment avec les autres sans qu'ils vous parlent de probl\u00e8mes.\r\n\r\n    Il est fort \u00e0 parier que vos convives vous seront plus loyaux apr\u00e8s cela.\r\n    L'organisation d'un tel \u00e9v\u00e8nement rend indisponible les organisateurs pendant un mois (2heures)\r\n    Le banquet coute 5 \u00e9cus par convive (courtisans pas en mission)", 
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": "nb_convives = folks.filter(mission=None).count()\nif kingdom.money < nb_convives * 2:\n  stop(\"Vous n'avez pas les moyens d'organiser un banquet de cette envergure.\")\nif sum_stats(grids[\"organisateurs\"], \"diplomacy\") < 19:\n  stop(\"Il vous faudra davantages de personnes pour organiser un banquet de cette envergure.\")\nkingdom.money -= nb_convives * 2\nkingdom.save()\n\npe = kingdom.create_pending_event(\"banquet\")\npe.set_value(\"raison\", \"initiative\")\npe.start()\n", 
+    "on_start": "cout = folks.filter(mission=None).count() * 5\nif kingdom.money < cout:\n  stop(\"Vous n'avez pas les moyens d'organiser un banquet de cette envergure, il vous couterait :\"+unicode(cout))\nif sum_stats(grids[\"organisateurs\"], \"diplomacy\") < 19:\n  stop(\"Il vous faudra davantages de personnes pour organiser un banquet de cette envergure.\")\nkingdom.money -= cout\nkingdom.save()\n\npe = kingdom.create_pending_event(\"banquet\")\npe.set_value(\"raison\", \"initiative\")\npe.start()\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 4, 
     "target_description": " ", 
     "timeout": null, 
     "is_cancellable": true, 
-    "duration": 5, 
+    "duration": 120, 
     "on_cancel": "\n", 
     "slug": "organiser_banquet", 
     "on_init": "\n"
@@ -580,7 +580,7 @@
   "fields": {
     "name": "D\u00e9finir sa d\u00e9fense", 
     "target_list": null, 
-    "text": "D\u00e9finir les personnes qui prendront la d\u00e9fense de mon ch\u00e2teau en cas de besoin", 
+    "text": "D\u00e9finir les personnes qui prendront la d\u00e9fense de mon ch\u00e2teau en cas d'attaque. Les bless\u00e9s ne seront pas pris en compte tant qu'ils ne seront pas soign\u00e9s, toute personne qui ira dans une mission sera retir\u00e9e de cette liste. ", 
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "", 
