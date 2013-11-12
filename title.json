@@ -21,7 +21,7 @@
     "on_affect": "folk.loyalty += 5\nfolk.save()", 
     "on_unlock": "kingdom.message(\"Vous pouvez d\u00e9sormais nommer un conn\u00e9table.\")\n# AvailableMission(kingdom=kingdom, mission=Mission.objects.get(slug=\"chasse\")).save()\nkingdom.unlock_mission(\"chasse\")\nkingdom.unlock_mission(\"recruter_troupes\")\nkingdom.unlock_mission(\"renvoyer\")", 
     "slug": "connetable", 
-    "condition": "if folk.sex==Folk.FEMALE:\n  stop(\"Un homme est attendu \u00e0 ce poste\")\n  \nif folk.age()<C.MAJORITE:\n  stop(S.TOO_YOUNG)\n", 
+    "condition": "if folk.sex == Folk.FEMALE:\n  stop(\"Un homme est attendu \u00e0 ce poste\")\n\nif folk.age() < C.MAJORITE:\n  stop(S.TOO_YOUNG)\n", 
     "description": "En tant que premier conseiller militaire, le conn\u00e9table supervise le recrutement et l'entra\u00eenement de vos hommes d'arme.\r\n\r\nUn conn\u00e9table a besoin d'un haut Combat pour \u00eatre efficace."
   }
 },
@@ -34,7 +34,7 @@
     "on_affect": "folk.loyalty += 5\nfolk.save()", 
     "on_unlock": "kingdom.unlock_mission(\"charite\")\nkingdom.unlock_mission(\"recruter_pretre\")", 
     "slug": "cure", 
-    "condition": "if folk.sex == Folk.FEMALE:\n  stop(\"Un homme est attendu \u00e0 ce poste\")\n  \nif not folk.has_quality(\"pretre\"):\n  stop(\"Un pr\u00eatre est attendu \u00e0 ce poste\")\n", 
+    "condition": "if folk.sex == Folk.FEMALE:\n  stop(\"Un homme est attendu \u00e0 ce poste\")\n\nif not folk.has_quality(\"pretre\"):\n  stop(\"Un pr\u00eatre est attendu \u00e0 ce poste\")\n", 
     "description": "Cet homme d'\u00e9glise s'occupe de toutes les affaires religieuses de votre cour.\r\n\r\nUn cur\u00e9 a besoin d'une haute \u00c9rudition pour \u00eatre efficace."
   }
 },
@@ -73,7 +73,7 @@
     "on_affect": "folk.loyalty += 5\nfolk.save()", 
     "on_unlock": "kingdom.unlock_mission(\"recruter_dame\")\nkingdom.unlock_mission(\"recruter_chevalier\")\n", 
     "slug": "ambassadeur", 
-    "condition": "if folk.sex == Folk.FEMALE:\n  stop(\"Un homme est attendu \u00e0 ce poste\")\n  \nif folk.age() < C.MAJORITE:\n  stop(S.TOO_YOUNG)", 
+    "condition": "if folk.sex == Folk.FEMALE:\n  stop(\"Un homme est attendu \u00e0 ce poste\")\n\nif folk.age() < C.MAJORITE:\n  stop(S.TOO_YOUNG)\n", 
     "description": "L'ambassadeur est responsable des relations diplomatiques avec le reste du royaume.\r\n\r\nUn ambassadeur a besoin d'une haute Diplomatie pour \u00eatre efficace."
   }
 },
