@@ -5368,7 +5368,7 @@
     "message": "{{mari}} attend impatiemment son mariage avec {{mariee}}.", 
     "event": 175, 
     "condition": "\n", 
-    "on_fire": "pe = param.next_event(\"_tuto_timewarp\")\npe.set_value('slug', \"tuto_mariage_fille_accepte_fantome_2\")\npe.start()\n# param.next_event(\"demandemariage_terminated\").start()\n\n"
+    "on_fire": "param.next_event(\"tuto_mariage_fille_accepte_fantome_2\").start()\n\n\n"
   }
 },
 {
