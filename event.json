@@ -2657,7 +2657,7 @@
     "category": null, 
     "name": "Terminer le conflit", 
     "weight": 1, 
-    "text": "Pr\u00e9sentation de la mission pour aller tuer le seigneur voisin", 
+    "text": "Le seigneur {{target.dynasty}} vient de subir une nouvelle d\u00e9faite cinglante. Leurs troupes ont \u00e9t\u00e9 saign\u00e9es par nos pr\u00e9c\u00e9dents succ\u00e8s et leur moral est au plus bas. De notre c\u00f4t\u00e9 les hommes sont fatigu\u00e9s mais nos pr\u00e9c\u00e9dentes victoires ont gonfl\u00e9 leur moral et la providence apparait du c\u00f4t\u00e9 de la dynastie {{kingdom.dynasty}}. \r\n\r\nIl semble d\u00e9sormais possible de mettre un terme \u00e0 ce conflit en portant \u00e0 l'adversaire un coup fatal. La mort du seigneur {{target.dynasty}} enl\u00e8verait \u00e0 nos ennemis toute raison de se battre et nous permettrait de faire passer leurs domaines sous notre influence. ", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "tuto_achever_voisin", 
@@ -6171,7 +6171,7 @@
     "message": "", 
     "event": 257, 
     "condition": "if not param.get_value(\"tuto\"):\n  stop(\"not_in_tuto\")\n", 
-    "on_fire": "if not param.get_value(\"attaquant\"):\n  pe = param.next_event(\"tuto_escarmouche_misasac\").start()\nelif param.get_value(\"attaquant\") == False and not kingdom.get_value(\"tuto_rapport_espion\", False) and kingdom.prestige > 150:\n  kingdom.set_value(\"tuto_rapport_espion\", True)\n  pe = param.next_event(\"tuto_espionnage\").start()\n\nelif param.get_value(\"attaquant\") and not kingdom.get_value(\"tuto_firstbattle_defense\", False):\n  pe = param.next_event(\"tuto_pnjescaladeconflit\").start()\n\n# si prestige > 200\nelif kingdom.prestige > 200:\n  kingdom.create_pending_event(\"tuto_achever_voisin\")\n# si conflit\nelse:\n  # kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  if not PendingEvent.objects.filter(event__slug=\"_tuto_timewarp\", kingdom=kingdom).exists():\n    pe = param.next_event(\"_tuto_timewarp\")\n    pe.set_value('slug', \"tuto_scanjoueur_fantome\")\n    pe.start()\n"
+    "on_fire": "if not param.get_value(\"attaquant\"):\n  pe = param.next_event(\"tuto_escarmouche_misasac\").start()\nelif param.get_value(\"attaquant\") == False and not kingdom.get_value(\"tuto_rapport_espion\", False) and kingdom.prestige > 150:\n  kingdom.set_value(\"tuto_rapport_espion\", True)\n  pe = param.next_event(\"tuto_espionnage\").start()\n\nelif param.get_value(\"attaquant\") and not kingdom.get_value(\"tuto_firstbattle_defense\", False):\n  pe = param.next_event(\"tuto_pnjescaladeconflit\").start()\n\n# si conflit\nelse:\n  # kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  if not PendingEvent.objects.filter(event__slug=\"_tuto_timewarp\", kingdom=kingdom).exists():\n    pe = param.next_event(\"_tuto_timewarp\")\n    pe.set_value('slug', \"tuto_scanjoueur_fantome\")\n    pe.start()\n"
   }
 },
 {
