@@ -3329,11 +3329,25 @@
     "category": null, 
     "name": "tuto_diplomacy_mariage_beuverie_2", 
     "weight": 1, 
-    "text": "Nous discutons un moment, et j\u2019apprends qu'il s'appelle {{soiffard}}, et qu'il est, d'apr\u00e8s lui, le meileur combatant de {{kingdom.values.tuto_PNJ}}.", 
+    "text": "Nous discutons un moment, et j\u2019apprends qu'il s'appelle {{soiffard}} et qu'il est, d'apr\u00e8s lui, le meileur combatant de {{kingdom.values.tuto_PNJ}}. Sans aucune g\u00e8ne, il d\u00e9vie la conversation sur les derni\u00e8res batailles entre nos deux maisons. Plusieurs chopines sont vid\u00e9es de part et d'autre, alors qu'il attribue toutes nos victoires \u00e0 la chances ou \u00e0 la traitrise, et affirme que nous aurions \u00e9t\u00e9 batus \u00e0 platte couture si son seigneur avait suivit ses conseil.\r\n\r\nJe d\u00e9fends avec v\u00e9hemence la valeur de mes chevaliers, mais l'alcool commence \u00e0 me monter serieusement \u00e0 la t\u00eate. Il faut dire que le bougre a une sacr\u00e9e descente...\r\n\r\n{% if spouse3 == title.chatelain%}En relevant les yeux, j'aper\u00e7oit la mine embarass\u00e9e de mon \u00e9pouse.\r\n\r\n-5 de Loyaut\u00e9 pour {{spouse4}}.{% endif %}", 
     "image": "events/88_24.jpg", 
-    "on_fire": "\n", 
+    "on_fire": null, 
     "slug": "tuto_diplomacy_mariage_beuverie_2", 
-    "condition": "\n"
+    "condition": null
+  }
+},
+{
+  "pk": 296, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "tuto_diplomacy_mariage_beuverie_3", 
+    "weight": 1, 
+    "text": "Alors que j'ach\u00e8ve une longue tirade sur la molesse et la couardise des {{tuto_dynasty_pnj}}, {{soifard.first_name}} \u00e9clate de rire et me donne une grande claque dans le dos.\r\n\r\n\"Vous avez du cran, vot' altesse, j'aime \u00e7a! Si je m'\u00e9coutais, je laisserai tomber cette cour de bons \u00e0 rien et je m'mettrai \u00e0 votre service!\"", 
+    "image": "", 
+    "on_fire": null, 
+    "slug": "tuto_diplomacy_mariage_beuverie_3", 
+    "condition": null
   }
 },
 {
@@ -6893,22 +6907,44 @@
   "pk": 400, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "erg", 
+    "text": "Continuer \u00e0 boire et \u00e0 argumenter.", 
     "message": "", 
     "event": 295, 
-    "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_mariage_finish\").start()"
+    "condition": null, 
+    "on_fire": "param.next_event(\"tuto_diplomacy_mariage_beuverie_3\").start()"
   }
 },
 {
   "pk": 401, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "rdg", 
+    "text": "Etre raisonable, et s'\u00e9loigner en titubant.", 
     "message": "", 
     "event": 295, 
-    "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_diplomacy_mariage_beuverie_3\").start()"
+    "condition": null, 
+    "on_fire": "param.next_event(\"tuto_diplomacy_mariage_finish\").start()"
+  }
+},
+{
+  "pk": 402, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "\"Je te prends au mot, l'ami!\"", 
+    "message": "", 
+    "event": 296, 
+    "condition": null, 
+    "on_fire": "param.next_event(\"tuto_diplomacy_mariage_finish\").start()"
+  }
+},
+{
+  "pk": 403, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "\"Hors de question! Ce serait rendre un trop grand service \u00e0 la maison {{tuto_dynasty_pnj}}!\"", 
+    "message": "", 
+    "event": 296, 
+    "condition": null, 
+    "on_fire": "param.next_event(\"tuto_diplomacy_mariage_finish\").start()"
   }
 }
 ]
