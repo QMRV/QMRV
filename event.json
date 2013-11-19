@@ -3275,9 +3275,9 @@
     "weight": 1, 
     "text": "La f\u00eate bat son plein, l\u2019atmosph\u00e8re est satur\u00e9e de musique, de rires et de tintement de coupes. Les convives ripaillent de bon c\u0153ur, alors qu'une arm\u00e9e de servant fait tourner les plats.\r\n{% if folks.1 == spouse1 %}Du coin de l\u2019\u0153il, j'observe mon fils {{folks.1.first_name}} danser avec {{spouse2.first_name}}, sa nouvelle \u00e9pouse. \r\n{% if spouse2 == ainee %}Sa robe est tr\u00e8s chaste, mais son sourire semble sinc\u00e8re.\r\n{% else %}Sa robe un rien provocante et sa silhouette gracile attirent des regards envieux, et mon fils semble hypnotis\u00e9 par son sourire \u00e9clatant. Le jeune coq semble avoir tout oubli\u00e9 de ses objections...{% endif %}{% endif %} \r\n{% if folks.1 == spouse3 %}Du coin de l\u2019\u0153il, j'observe mon fils {{folks.1.first_name}} qui danse avec {{spouse4.first_name}}, sa nouvelle \u00e9pouse. \r\n{% if spouse4 == ainee %}Sa robe est tr\u00e8s chaste, mais son sourire semble sinc\u00e8re.\r\n{% else %}Sa robe un rien provocante et sa silhouette gracile attirent des regards envieux, et mon fils semble hypnotis\u00e9 par son sourire \u00e9clatant. Le jeune coq semble avoir tout oubli\u00e9 de ses objections...{% endif %}{% endif %} \r\n{% if spouse2 == kingdom.values.tuto_adversaire %}Attabl\u00e9e aux cot\u00e9s d{{kingdom.values.tuto_adversaire|elide}}, son nouvel \u00e9poux, j\u2019aper\u00e7ois {{spouse1}} dans sa robe de mari\u00e9e. Elle essaye de faire la conversation au barbon, qui semble davantage pr\u00e9occup\u00e9 par le contenu de son assiette.{% endif %}\r\n{% if fiston == spouse2 %}{{spouse1.first_name}}{% if folks.1 == spouse1 or folks.1 == spouse3 or spouse2 == adversaire %}, elle,{% endif %} partage une coupe de vin avec le fringuant {{fiston}}, qui ne lui a presque pas l\u00e2ch\u00e9 la main depuis que le cur\u00e9 les a uni.{% endif %}\r\n{% if fiston == spouse4 %}{{spouse3.first_name}}{% if folks.1 == spouse1 or folks.1 == spouse3 or spouse2 == adversaire %}, elle,{% endif %} partage une coupe de vin avec le fringuant {{fiston}}, qui ne lui a presque pas l\u00e2ch\u00e9 la main depuis que le cur\u00e9 les a uni.{% endif %}\r\n\r\n{% if spouse3 == title.chatelain %}Je bois une gorg\u00e9e de vin, et me tourne vers {{spouse4}}, ma jeune et fraiche \u00e9pouse. {% if spouse4 == ainee %}Elle m'offre un sourire timide, baisse les yeux et rougit quelque peu.\r\n{% else %}Elle m'offre un sourire charmeur, d\u00e9voilant une dentition parfaite. Peu farouche, pour son age.{% endif %}\r\n{% else %}Assis \u00e0 ma table, serr\u00e9 au milieu des courtisans avin\u00e9s, j'adresse un sourire amus\u00e9 \u00e0 mon fid\u00e8le {{folks.3}}{% endif %}", 
     "image": "events/88_22.jpg", 
-    "on_fire": "\n", 
+    "on_fire": null, 
     "slug": "tuto_diplomacy_mariage_2", 
-    "condition": "\n"
+    "condition": null
   }
 },
 {
@@ -3287,11 +3287,11 @@
     "category": null, 
     "name": "tuto_diplomacy_mariage_danse", 
     "weight": 1, 
-    "text": "{% if spouse4 == ainee %}Apr\u00e8s un bref moment d'h\u00e9sitation,{% else %}Sans h\u00e9siter,{% endif %} elle place sa main dans la mienne et me suit au milieu des danseurs. Elle me laisse mener, {% if title.chatelain.diplomacy >= 12 %}et nous tournoyons bient\u00f4t sur un air endiabl\u00e9e que je dompte avec l'aisance du connaisseur. Son souffle se fait court et ses joues rosissent joliment. A la mani\u00e8re dont elle me regarde, je sais que mon charme ne la laisse pas indiff\u00e9rente.{% elif title.chatelain.diplomacy >= 10 %}et nous tournoyons bient\u00f4t sur un air enjou\u00e9, nous reposant chacun sur le sens du rythme de notre partenaire. Lorsque la musique s'arr\u00eate, elle effectue une r\u00e9v\u00e9rence de circonstance.\r\n\r\n    {% if title.chatelain.diplomacy >= 12 %}+6{% elif title.chatelain.diplomacy >= 10 %}+4{% else %}+2{% endif %} de Loyaut\u00e9 pour {{spouse4}}", 
+    "text": "{% if spouse4 == ainee %}Apr\u00e8s un bref moment d'h\u00e9sitation,{% else %}Sans h\u00e9siter,{% endif %} elle place sa main dans la mienne et me suit au milieu des danseurs. Elle me laisse mener, {% if title.chatelain.diplomacy >= 12 %}et nous tournoyons bient\u00f4t sur un air endiabl\u00e9e que je dompte avec l'aisance du connaisseur. Son souffle se fait court et ses joues rosissent joliment. A la mani\u00e8re dont elle me regarde, je sais que mon charme ne la laisse pas indiff\u00e9rente.{% else %}et nous tournoyons bient\u00f4t sur un air enjou\u00e9, nous reposant chacun sur le sens du rythme de notre partenaire. Lorsque la musique s'arr\u00eate, elle effectue une r\u00e9v\u00e9rence de circonstance.{% endif %}\r\n\r\n    {% if title.chatelain.diplomacy >= 12 %}+6{% elif title.chatelain.diplomacy >= 10 %}+4{% else %}+2{% endif %} de Loyaut\u00e9 pour {{spouse4}}", 
     "image": "events/88_27.jpg", 
     "on_fire": "if folks[0].diplomacy >= 12:\n  param.get_value(\"spouse4\").loyalty += 6\nelif folks[0].diplomacy >= 10:\n  param.get_value(\"spouse4\").loyalty += 4\nelse:\n  param.get_value(\"spouse4\").loyalty += 2\nparam.get_value(\"spouse4\").save()\n", 
     "slug": "tuto_diplomacy_mariage_danse", 
-    "condition": "\n"
+    "condition": null
   }
 },
 {
@@ -3301,11 +3301,11 @@
     "category": null, 
     "name": "tuto_diplomacy_mariage_conversation", 
     "weight": 1, 
-    "text": "Alors que la f\u00eate se poursuit, j\u2019entreprends d{% if maxcarac == fight %}e' \u00e9galer les convives \u00e0 ma table de quelques anecdotes militaires r\u00e9colt\u00e9es au service du roi de France. Mes suivants {{convive1}} et {{convive2}} semblent impressionn\u00e9{% if convive1.sex == 'f' and convive2.sex == 'f'  %}e{%  endif %}s{% elif maxcarac == diplomacy %}e charmer les convives \u00e0 ma table gr\u00e2ce \u00e0 quelques bons mots et plaisanteries. Mes suivants {{convive1}} et {{convive2}} rient aux \u00e9clats{% elif maxcarac == plot %}e r\u00e9galer les convives \u00e0 ma table des ragots de ma cour. Mes suivants {{convive1}} et {{convive2}} rient aux \u00e9clats{% else %}'initier les convives \u00e0 ma table aux myst\u00e8res de l'astronomie. Mes suivants {{convive1}} et {{convive2}} semblent impressionn\u00e9{% if convive1.sex == 'f' and convive2.sex == 'f'  %}e{%  endif %}s par l'\u00e9tendue de mon savoir\r\n{% if spouse3 == title.chatelain %}, de m\u00eame que ma nouvelle \u00e9pouse {{spouse4.first_name}}{% endif %}.\r\n\r\n    {% if spouse3 == title.chatelain %}{{spouse4}}, {% endif %}{{convive1}} et {{convive2}} gagne {% if title.chatelain.diplomacy >= 12 %}+4{% elif title.chatelain.diplomacy >= 10 %}+3{% else %}+2{% endif %} de Loyaut\u00e9.", 
+    "text": "Alors que la f\u00eate se poursuit, j\u2019entreprends d{% if maxcarac == fight %}e' \u00e9galer les convives \u00e0 ma table de quelques anecdotes militaires r\u00e9colt\u00e9es au service du roi de France. Mes suivants {{convive1}} et {{convive2}} semblent impressionn\u00e9{% if convive1.sex == 'f' and convive2.sex == 'f'  %}e{%  endif %}s{% elif maxcarac == diplomacy %}e charmer les convives \u00e0 ma table gr\u00e2ce \u00e0 quelques bons mots et plaisanteries. Mes suivants {{convive1}} et {{convive2}} rient aux \u00e9clats{% elif maxcarac == plot %}e r\u00e9galer les convives \u00e0 ma table des ragots de ma cour. Mes suivants {{convive1}} et {{convive2}} rient aux \u00e9clats{% else %}'initier les convives \u00e0 ma table aux myst\u00e8res de l'astronomie. Mes suivants {{convive1}} et {{convive2}} semblent impressionn\u00e9s{% if convive1.sex == 'f' and convive2.sex == 'f'  %}e{%  endif %}s par l'\u00e9tendue de mon savoir\r\n{% if spouse3 == title.chatelain %}, de m\u00eame que ma nouvelle \u00e9pouse {{spouse4.first_name}}{% endif %}.\r\n\r\n    {% if spouse3 == title.chatelain %}{{spouse4}}, {% endif %}{{convive1}} et {{convive2}} gagne {% if title.chatelain.diplomacy >= 12 %}+4{% elif title.chatelain.diplomacy >= 10 %}+3{% else %}+2{% endif %} de Loyaut\u00e9.", 
     "image": "events/88_25.jpg", 
     "on_fire": "convives = Folk.objects.filter(kingdom=kingdom, birth__lte=datetime.now() - timedelta(days=C.MAJORITE))\nconvives = convives.exclude(id=folks[0].id)\nconvives = convives.exclude(id=folks[1].id)\nconvives = convives.exclude(id=folks[2].id)\nconvives = convives.exclude(id=folks[3].id)\nconvives = convives.order_by('?')\nparam.set_values(\"convive1\", convives[0])\nparam.set_values(\"convive2\", convives[1])\nif folks[0].diplomacy >= 12:\n  if param.get_value(\"spouse3\") == folk[0]:\n    param.get_value(\"spouse4\").loyalty += 4\n  param.get_value(\"convive1\").loyalty += 4\n  param.get_value(\"convive2\").loyalty += 4\nelif folks[0].diplomacy >= 10:\n  if param.get_value(\"spouse3\") == folk[0]:\n    param.get_value(\"spouse4\").loyalty += 3\n  param.get_value(\"convive1\").loyalty += 3\n  param.get_value(\"convive2\").loyalty += 3\nelse:\n  if param.get_value(\"spouse3\") == folk[0]:\n    param.get_value(\"spouse4\").loyalty += 2\n  param.get_value(\"convive1\").loyalty += 2\n  param.get_value(\"convive2\").loyalty += 2\nparam.get_value(\"spouse4\").save()\nparam.get_value(\"convive1\").save()\nparam.get_value(\"sconvive2\").save()\n", 
     "slug": "tuto_diplomacy_mariage_conversation", 
-    "condition": "\n"
+    "condition": null
   }
 },
 {
@@ -6346,7 +6346,7 @@
     "text": "\"\u2026{{folks.2.first_name}}, ma fille, je vais offrir ta main \u00e0 {{kingdom.values.tuto_adversaire}}.\"", 
     "message": "", 
     "event": 268, 
-    "condition": "if folks[2].spouse is not None:\n  stop(\"Votre fille est d\u00e9j\u00e0 mari\u00e9e\")\n", 
+    "condition": "if folks[2].spouse is not None:\n  stop(\"Votre fille est deja mariee\")\n", 
     "on_fire": "param.set_value(\"spouse1\", folks[2])\nparam.set_value(\"spouse2\", kingdom.get_value(\"tuto_adversaire\"))\nparam.next_event(\"tuto_diplomacy_ending_femme\").start()\n"
   }
 },
@@ -6357,7 +6357,7 @@
     "text": "\"\u2026{{soeurette.first_name}}, ma s\u0153ur, tu dois partir pour {{kingdom.values.tuto_PNJ}} et \u00e9pouserle seigneur des lieux.\"", 
     "message": "", 
     "event": 268, 
-    "condition": "if param.get_value(\"soeurette\") is None:\n  stop(\"n'existe pas\")\nelif param.get_value(\"soeurette\").spouse is None:\n  stop(\"est mari\u00e9e\")\n", 
+    "condition": "if param.get_value(\"soeurette\") is None:\n  stop(\"n'existe pas\")\nelif param.get_value(\"soeurette\").spouse is None:\n  stop(\"est mariee\")\n", 
     "on_fire": "param.set_value(\"spouse1\", param.get_value(\"soeurette\"))\nparam.set_value(\"spouse2\", kingdom.get_value(\"tuto_adversaire\"))\nparam.next_event(\"tuto_diplomacy_ending_femme\").start()\n"
   }
 },
@@ -6830,7 +6830,7 @@
     "text": "Je vais entamer une discution avec mes voisins de table.", 
     "message": "", 
     "event": 290, 
-    "condition": "\n", 
+    "condition": null, 
     "on_fire": "param.next_event(\"tuto_diplomacy_mariage_conversation\").start()"
   }
 },
@@ -6841,7 +6841,7 @@
     "text": "Trouvons-nous plut\u00f4t un compagnon de beuverie !", 
     "message": "", 
     "event": 290, 
-    "condition": "\n", 
+    "condition": null, 
     "on_fire": "param.next_event(\"tuto_diplomacy_mariage_beuverie\").start()"
   }
 },
@@ -6852,7 +6852,7 @@
     "text": "Sa main sur mon bras, j(e la racompagne \u00e0 notre table.", 
     "message": "", 
     "event": 291, 
-    "condition": "\n", 
+    "condition": null, 
     "on_fire": "param.next_event(\"tuto_diplomacy_mariage_finish\").start()"
   }
 },
@@ -6863,7 +6863,7 @@
     "text": "Un bon seigneur doit savoir gagner l'amiti\u00e9 de ses gens.", 
     "message": "", 
     "event": 293, 
-    "condition": "\n", 
+    "condition": null, 
     "on_fire": "param.next_event(\"tuto_diplomacy_mariage_finish\").start()"
   }
 },
