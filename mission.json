@@ -193,7 +193,7 @@
     "has_value": false, 
     "on_resolution": "\n", 
     "value_description": "Valeur :", 
-    "on_start": "prix = 5 * folks.filter(mission__isnull=True).count()\nif kingdom.money < prix:\n  stop(\"Vous n'avez pas assez d'argent pour payer le banquet\")\n\nkingdom.money -= prix\nkingdom.save()\n\ngrids['mari'][0].spouse = grids['femme'][0]\ngrids['femme'][0].spouse = grids['mari'][0]\ngrids['mari'][0].save()\ngrids['femme'][0].save()\nif grids['mari'][0] == folks[3] and grids['femme'][0] == folks[2]:\n  kingdom.set_value(\"tuto_mariage_fait\", True)\n  pe = kingdom.create_pending_event(\"mariagefille\")\n  pe.set_value(\"banquet_mariage_tuto\", True)\n  pe.set_value(\"mari\", grids['mari'][0])\n  pe.set_value(\"femme\", grids['femme'][0])\n  pe.start()\n", 
+    "on_start": "prix = 1 * folks.filter(mission__isnull=True).count()\nif kingdom.money < prix:\n  stop(\"Vous n'avez pas assez d'argent pour payer le banquet\")\n\nkingdom.money -= prix\nkingdom.save()\n\ngrids['mari'][0].spouse = grids['femme'][0]\ngrids['femme'][0].spouse = grids['mari'][0]\ngrids['mari'][0].save()\ngrids['femme'][0].save()\nif grids['mari'][0] == folks[3] and grids['femme'][0] == folks[2]:\n  kingdom.set_value(\"tuto_mariage_fait\", True)\n  pe = kingdom.create_pending_event(\"mariagefille\")\n  pe.set_value(\"banquet_mariage_tuto\", True)\n  pe.set_value(\"mari\", grids['mari'][0])\n  pe.set_value(\"femme\", grids['femme'][0])\n  pe.start()\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 3, 
@@ -341,29 +341,6 @@
     "duration": 1, 
     "on_cancel": "\n", 
     "slug": "organiser_raid", 
-    "on_init": "\n"
-  }
-},
-{
-  "pk": 27, 
-  "model": "mission.mission", 
-  "fields": {
-    "name": "Espionner une seigneurerie", 
-    "target_list": "param = Kingdom.objects.filter(offended_set__offender=kingdom)", 
-    "text": "OLD : A SUPPRIMER\r\n\r\n\r\nRechercher combien cet adversaire potentiel a d'archers, de piquiers, de cavaliers, d'\u00e9cus et de population. Plus l'attaque est \u00e9lev\u00e9e par rapport \u00e0 la d\u00e9fense, plus les informations sont pr\u00e9cises et justes.\r\n\r\n    cout 10,\r\n    la d\u00e9fense de l'espionnage d\u00e9pend de l'intrigue du royaume que vous visez.\r\n    La d\u00e9fense est compos\u00e9e \u00e0 :\r\n    -6% : diplomatie du ch\u00e2telain\r\n    -24% : diplomatie de l'ambassadeur\r\n    -70% : moyenne des diplomatie des courtisans qui ne sont pas dans des missions\r\n    attaque = moyenne des diplomatie des courtisans dans la mission\r\n    dur\u00e9e de la mission : 1 mois (2heures de temps r\u00e9el)", 
-    "has_value": false, 
-    "on_resolution": "cout = 10\nif kingdom.money < cout:\n  stop(\"Vous n'avez pas assez d'argent pour lancer cette mission, elle coute \" + unicode(cout))\nkingdom.money -= cout\nkingdom.save()\n\na = avg_stat(grids['espion'])\nif kingdom.get_folk_in_title(\"maitre_espion\") in grids['espion']:\n  a += 2  # bonus maitre_espion\n\n\nd = 0\ntry:\n  d += target.get_folk_in_title(\"maitre_espion\").diplomacy * 4\nexcept:\n  pass\ntry:\n  d += target.get_folk_in_title(\"chatelain\").diplomacy\nexcept:\n  pass\nd *= 0.2 * 0.3\nd += 0.7 * avg_stats(target.folk_set.filter(mission=None, birth__gte=datetime.now() - timedelta(days=C.MAJORITE)) , 'plot')\n\nmarge = min(100, 100 * 4 / float(3) * 1 / float(2) * (1 + ((a - d) / float((a + d)))))\n\nmoney = target.money + max(-target.money, target.money * random_value(-(100 - marge) * (100 - marge) / float(100), (100 - marge) * (100 - marge) / float(100)))\n\nincertitude = (100 + random_value(-(100 - marge) * (100 - marge) / float(100), (100 - marge) * (100 - marge) / float(100))) / float(100)\nfolk = max(5, min(target.folk_set.count() * incertitude, target.prestige / 10))\n\nincertitude = (100 + random_value(-(100 - marge) * (100 - marge) / float(100), (100 - marge) * (100 - marge) / float(100))) / float(100)\npopulation = max(5, min(target.population * incertitude, call_function(\"population_max\", kingdom=target)))\n\nincertitude = (100 + random_value(-(100 - marge) * (100 - marge) / float(100), (100 - marge) * (100 - marge) / float(100))) / float(100)\narchers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"archer\").count() * incertitude, folk * 2 / 3))\n\nincertitude = (100 + random_value(-(100 - marge) * (100 - marge) / float(100), (100 - marge) * (100 - marge) / float(100))) / float(100)\npiquiers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"piquier\").count() * incertitude, folk * 2 / 3))\n\nincertitude = (100 + random_value(-(100 - marge) * (100 - marge) / float(100), (100 - marge) * (100 - marge) / float(100))) / float(100)\ncavaliers = max(0, min(Folk.objects.filter(kingdom=target, quality_set__name=\"cavalier\").count() * incertitude, folk * 2 / 3))\n\npe = kingdom.create_pending_event(\"rapport_espionnage\")\npe.set_value(\"money\", money)\npe.set_value(\"folk\", folk)\npe.set_value(\"population\", population)\npe.set_value(\"piquiers\", piquiers)\npe.set_value(\"cavaliers\", cavaliers)\npe.set_value(\"archers\", archers)\npe.set_value(\"target\", target)\npe.start()\n", 
-    "value_description": " ", 
-    "on_start": "\n", 
-    "has_target": true, 
-    "is_team": false, 
-    "title": 5, 
-    "target_description": "Chateau \u00e0 observer", 
-    "timeout": null, 
-    "is_cancellable": true, 
-    "duration": 60, 
-    "on_cancel": "\n", 
-    "slug": "espionner", 
     "on_init": "\n"
   }
 },
@@ -1027,19 +1004,6 @@
     "allow_empty": false, 
     "slug": "agents", 
     "condition": "\n"
-  }
-},
-{
-  "pk": 23, 
-  "model": "mission.missiongrid", 
-  "fields": {
-    "allow_disabled": false, 
-    "name": "Espion", 
-    "mission": 27, 
-    "length": 3, 
-    "allow_empty": false, 
-    "slug": "espion", 
-    "condition": "if PendingMissionAffectation.objects.filter(pending_mission=param.pending_mission, mission_grid=param.mission_grid).count() > kingdom.prestige / 10:\n  stop(\"Vous ne pouvez plus rajouter de personne \u00e0 cette mission\")\nif folk.age < C.MAJORITE:\n  stop(\"Un enfant ne peut pas effectuer cette mission\")\n\n"
   }
 },
 {

@@ -2461,7 +2461,7 @@
     "category": 2, 
     "name": "Le temps passe...", 
     "weight": 1, 
-    "text": "Il n'y a pas d'urgence \u00e0 g\u00e9rer en ce moment. \r\nprochain event: {{slug}}\r\n\r\n    N'h\u00e9sitez pas \u00e0 utiliser cette pause narrative pour aller voir ce que vous pouvez faire dans l'onglet mission !", 
+    "text": "Il n'y a pas d'urgence \u00e0 g\u00e9rer en ce moment. \r\n\r\nprochain event: {{slug}}\r\n\r\n    N'h\u00e9sitez pas \u00e0 utiliser cette pause narrative pour aller voir ce que vous pouvez faire dans l'onglet mission !", 
     "image": "events/800.jpg", 
     "on_fire": "\n", 
     "slug": "_tuto_timewarp", 
@@ -3189,11 +3189,11 @@
     "category": null, 
     "name": "tuto_diplomacy_mariage", 
     "weight": 1, 
-    "text": "\"A LA SANT\u00c9 DE {{dynasty|upper}} !\"\r\n\r\nLa voix de t\u00e9nor de {{kingdom.values.tuto_adversaire}} couvre sans peine la musique. Il l\u00e8ve bien haut sa coupe, imit\u00e9 par mes suivants comme ceux de {{kingdom.values.tuto_PNJ}}, et avale une lamp\u00e9e de vin. A son sourire, je devine qu'il est aussi heureux que moi que nos n\u00e9gociations soient parvenu \u00e0 leur terme, mettant enfin fin aux combats. L'accord a \u00e9t\u00e9 sign\u00e9 ce matin, les v\u0153ux prononc\u00e9s \u00e0 midi et la f\u00eate a commenc\u00e9 d\u00e8s la tomb\u00e9 de la nuit. Nos deux maisons ont mit en commun leurs victuailles, et fraternisent gaiement comme si elles ne s'\u00e9taient jamais \u00e9trip\u00e9 sur le champs de bataille.\r\n\r\nV\u00eatu de mes plus beaux v\u00eatement, je me redresse et l\u00e8ve mon verre \u00e0 mon tour.", 
+    "text": "\"A LA SANT\u00c9 DE {{dynasty|upper}} !\"\r\n\r\nLa voix de t\u00e9nor de {{kingdom.values.tuto_adversaire}} couvre sans peine la musique. Il l\u00e8ve bien haut sa coupe, imit\u00e9 par mes suivants comme ceux de {{kingdom.values.tuto_PNJ}}, et avale une lamp\u00e9e de vin. A son sourire, je devine qu'il est aussi heureux que moi que nos n\u00e9gociations soient parvenu \u00e0 leur terme, mettant enfin fin aux combats. L'accord a \u00e9t\u00e9 sign\u00e9 ce matin, les v\u0153ux prononc\u00e9s \u00e0 midi et la f\u00eate a commenc\u00e9 d\u00e8s la tomb\u00e9 de la nuit. Nos deux maisons ont mit en commun leurs victuailles, et fraternisent gaiement comme si elles ne s'\u00e9taient jamais \u00e9trip\u00e9 sur le champs de bataille.\r\n\r\nV\u00eatu de mes plus beaux v\u00eatements, je me redresse et l\u00e8ve mon verre \u00e0 mon tour.", 
     "image": "events/6541.jpg", 
-    "on_fire": "\n", 
+    "on_fire": null, 
     "slug": "tuto_diplomacy_mariage", 
-    "condition": "\n"
+    "condition": null
   }
 },
 {
@@ -6808,7 +6808,7 @@
     "text": "\"A la sant\u00e9 de {{kingdom.values.tuto_PNJ}} !\"", 
     "message": "", 
     "event": 284, 
-    "condition": "\n", 
+    "condition": null, 
     "on_fire": "param.next_event(\"tuto_diplomacy_mariage_2\").start()"
   }
 },
