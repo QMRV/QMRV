@@ -3351,6 +3351,20 @@
   }
 },
 {
+  "pk": 297, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "Conseil de guerre", 
+    "weight": 1, 
+    "text": "L'ensemble des personnes d'importance de ma cour est r\u00e9unie dans la salle du conseil, \u00e9coutant attentivement pendant que j'expose mon projet d'en finir une bonne fois pour toute avec le seigneur adverse. Apr\u00e8s avoir termin\u00e9 mon discours et observant les visages concentr\u00e9s et graves de mes subordonn\u00e9s je d\u00e9clare : \r\n\" Que proposez vous pour conclure le conflit rapidement ?\"\r\nMon conn\u00e9table prend imm\u00e9diatement la parole : \r\n\"Seigneur, votre premi\u00e8re impulsion est la bonne. Ce conflit s'est d\u00e9roul\u00e9 dans le sang, ainsi doit il se terminer. Il n'y a pas d'autre voie honorable pour un chevalier. Nous devons marcher sur le ch\u00e2teau de nos ennemis pour briser d\u00e9finitivement leurs forces et nous rendre ma\u00eetre du seigneur \".\r\nIl se rassied visiblement confiant apr\u00e8s son allocution et l'espace d'une seconde la salle reste silencieuse lorsque la voix de , mon maitre espion se fait entendre : \r\n\" Sire l'option que d\u00e9fend sire \"\" serait tr\u00e8s couteuse du sang de vos hommes ainsi que des ducats de \"\". L'ennemi est affaibli mais son ch\u00e2teau reste bien d\u00e9fendu et nous ne pouvons esp\u00e9rer en venir \u00e0 bout sans de couteuses armes de si\u00e8ge. Cependant il y a peut \u00eatre un autre moyen de venir \u00e0 bout du seigneur adverse avec beaucoup plus d\u2019\u00e9conomies.\"\r\nInt\u00e9ressant me dis-je. \r\n\" Et quel est il ?\" \r\n- Le seigneur adverse est d\u00e9sempar\u00e9 par ses d\u00e9faites, certains de ses plus anciens et fid\u00e8les lieutenants sont morts ou ont \u00e9t\u00e9 gravement bless\u00e9s et son domaine est \u00e0 feu et \u00e0 sang... Feignons de lui proposer une tr\u00eave et il ne refusera probablement pas cette offre dans sa situation. Nous pourrons alors lui proposer de conclure l'accord \u00e0 la fronti\u00e8re entre nos domaines ... et lui tendre une embuscade dont il ne s\u2019\u00e9chappera pas.\"\r\nIl se rassied un sourire discret aux l\u00e8vres mais de l'autre c\u00f4t\u00e9 de la table sieur mon diplomate s'est lev\u00e9 d'un coup et d\u00e9clare d'une voix forte : \r\n\"Intol\u00e9rable, cette action serait infamante pour nous !!! Si cela vient \u00e0 s\u2019\u00e9bruiter la r\u00e9putation et le prestige de {{dynasty}} en serait consid\u00e9rablement terni et plus jamais nos voisins ne nous feraient confiance.  Seigneur, je vous en conjure nous ne pouvons nous d\u00e9grader \u00e0 ce point. Cette guerre a cout\u00e9 cher \u00e0 tous mais il y a encore un moyen de la terminer pacifiquement. Vous le savez. Et si...\"\r\nTout d'un coup il se tait et se rassied devant mon regard dur. Hors de question pour moi de paraitre trop influenc\u00e9 par l'un ou l'autre de mes vassaux. \r\n\r\n\"Je crois que chacun a pu exposer son point de vue de mani\u00e8re claire. Mais j'ai pris ma d\u00e9cision, nous allons ... \"", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "choix_achever_voisin", 
+    "condition": "\n"
+  }
+},
+{
   "pk": 5, 
   "model": "event.eventaction", 
   "fields": {
@@ -6956,6 +6970,39 @@
     "event": 239, 
     "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_timewarp\").start()"
+  }
+},
+{
+  "pk": 405, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "..marcher sur le chateau du seigneur et le contraindre \u00e0 la soumission.", 
+    "message": "", 
+    "event": 297, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 406, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "..lui tendre une embuscade et decapiter une bonne fois pour toute la t\u00eate de notre ennemi. ", 
+    "message": "", 
+    "event": 297, 
+    "condition": "\n", 
+    "on_fire": "\n"
+  }
+},
+{
+  "pk": 407, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "..arreter l'efusion de sang et regler le conflit pacifiquement", 
+    "message": "", 
+    "event": 297, 
+    "condition": "\n", 
+    "on_fire": "\n"
   }
 }
 ]
