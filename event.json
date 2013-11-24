@@ -3365,6 +3365,20 @@
   }
 },
 {
+  "pk": 298, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "decision prise", 
+    "weight": 1, 
+    "text": "\"Ma d\u00e9cision est irr\u00e9vocable {% if choix === 0 %} Nous marcherons sur le chateau ennemi. {% elif choix ==1 %}Faisons mine au seigneur adverse de proposer une paix et tendons lui une embuscade.{% else %}Reglons la solution pacifiquement et faisons la paix. {% endif %}", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "choix_achever_voisin2", 
+    "condition": "\n"
+  }
+},
+{
   "pk": 5, 
   "model": "event.eventaction", 
   "fields": {
@@ -6980,7 +6994,7 @@
     "message": "", 
     "event": 297, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "param.set_value(\"choix\",0)\nparam.next_event(\"choix_achever_voisin2\").start()"
   }
 },
 {
@@ -6991,18 +7005,29 @@
     "message": "", 
     "event": 297, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "param.set_value(\"choix\",1)\nparam.next_event(\"choix_achever_voisin2\").start()"
   }
 },
 {
   "pk": 407, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "..arreter l'efusion de sang et regler le conflit pacifiquement", 
+    "text": "..arreter l'\u00e9fusion de sang et regler le conflit pacifiquement", 
     "message": "", 
     "event": 297, 
     "condition": "\n", 
-    "on_fire": "\n"
+    "on_fire": "param.set_value(\"choix\",2)\nparam.next_event(\"choix_achever_voisin2\").start()"
+  }
+},
+{
+  "pk": 408, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Il en sera selon ce que j'ai d\u00e9cid\u00e9. ", 
+    "message": "{% if choix == 0 %}Nouvelle mission disponible : aller assi\u00e9ger le ch\u00e2teau du seigneur adverse.{% elif choix ==1 %}Nouvelle mission disponible : proposer une paix fictive et embusquer le seigneur ennemi. {% else %Regler la solution diplomatiquement.{% endif %}", 
+    "event": 298, 
+    "condition": "\n", 
+    "on_fire": "if param.get_value(\"choix\") == 0:\n  kingdom.unlock_mission(\"tuto_achever_adversaire_siege\")\nelif param.get_value(\"choix\") == 1:\n  kingdom.unlock_mission(\"tuto_achever_adversaire_embuscade\")\nelse:\n  truc=1 \n  # boucler avec le choix diplomatique\ntruc=1   \n  \n  \n"
   }
 }
 ]

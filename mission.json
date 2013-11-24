@@ -851,6 +851,52 @@
   }
 },
 {
+  "pk": 57, 
+  "model": "mission.mission", 
+  "fields": {
+    "name": "Achever le PNJ du tuto", 
+    "target_list": null, 
+    "text": "achever_siege_prov", 
+    "has_value": false, 
+    "on_resolution": "\n", 
+    "value_description": "", 
+    "on_start": "\n", 
+    "has_target": false, 
+    "is_team": false, 
+    "title": null, 
+    "target_description": "", 
+    "timeout": null, 
+    "is_cancellable": true, 
+    "duration": 5, 
+    "on_cancel": "\n", 
+    "slug": "tuto_achever_adversaire_siege", 
+    "on_init": "\n"
+  }
+},
+{
+  "pk": 58, 
+  "model": "mission.mission", 
+  "fields": {
+    "name": "tuto_achever_adversaire_embuscade", 
+    "target_list": null, 
+    "text": "tuto_achever_adversaire_embuscade", 
+    "has_value": false, 
+    "on_resolution": "\n", 
+    "value_description": "", 
+    "on_start": "\n", 
+    "has_target": false, 
+    "is_team": false, 
+    "title": null, 
+    "target_description": "", 
+    "timeout": null, 
+    "is_cancellable": true, 
+    "duration": 5, 
+    "on_cancel": "\n", 
+    "slug": "tuto_achever_adversaire_embuscade", 
+    "on_init": "\n"
+  }
+},
+{
   "pk": 3, 
   "model": "mission.missiongrid", 
   "fields": {
