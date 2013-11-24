@@ -529,29 +529,6 @@
   }
 },
 {
-  "pk": 42, 
-  "model": "mission.mission", 
-  "fields": {
-    "name": "Achever votre adversaire", 
-    "target_list": null, 
-    "text": "On a localis\u00e9 les toilettes favorites du seigneur adverse !\r\nOn se cache derri\u00e8re la porte avec une hache....\r\n\r\n\r\n\r\n... ET BIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIM", 
-    "has_value": false, 
-    "on_resolution": "\n", 
-    "value_description": "", 
-    "on_start": "if kingdom.get_folk_in_title(\"chatelain\") not in grids[\"attaquants\"]:\n  stop(\"Le ch\u00e2telain doit faire partie de la mission\")\n\nkingdom.start_pending_event(\"tuto_fin_tuto\")\n", 
-    "has_target": false, 
-    "is_team": false, 
-    "title": 2, 
-    "target_description": "", 
-    "timeout": null, 
-    "is_cancellable": false, 
-    "duration": 0, 
-    "on_cancel": "\n", 
-    "slug": "tuto_achever_voisin", 
-    "on_init": "\n"
-  }
-},
-{
   "pk": 43, 
   "model": "mission.mission", 
   "fields": {
@@ -856,14 +833,14 @@
   "fields": {
     "name": "Achever le PNJ du tuto", 
     "target_list": null, 
-    "text": "achever_siege_prov", 
+    "text": "Tenter d'\u00e9craser d\u00e9finitivement le PNJ en assi\u00e9geant son ch\u00e2teau et en le for\u00e7ant \u00e0 la reddition. ", 
     "has_value": false, 
-    "on_resolution": "\n", 
+    "on_resolution": "pe = kingdom.create_pending_event(\"tuto_siege1\")\n\nkingdom.save()\npe.start()\n", 
     "value_description": "", 
-    "on_start": "\n", 
+    "on_start": "if kingdom.get_folk_in_title(\"chatelain\") not in grids[\"attaquants\"]:\n  stop(\"Le chatelain doit faire partie de cette glorieuse bataille qui s'annonce.\")\n", 
     "has_target": false, 
     "is_team": false, 
-    "title": null, 
+    "title": 2, 
     "target_description": "", 
     "timeout": null, 
     "is_cancellable": true, 
@@ -1209,19 +1186,6 @@
   }
 },
 {
-  "pk": 43, 
-  "model": "mission.missiongrid", 
-  "fields": {
-    "allow_disabled": false, 
-    "name": "sneaky bitches", 
-    "mission": 42, 
-    "length": 20, 
-    "allow_empty": false, 
-    "slug": "attaquants", 
-    "condition": "\n"
-  }
-},
-{
   "pk": 44, 
   "model": "mission.missiongrid", 
   "fields": {
@@ -1440,6 +1404,19 @@
     "allow_empty": false, 
     "slug": "diplomates", 
     "condition": "if folk.age() < C.MAJORITE:\n  stop(S.TOO_YOUNG)\n"
+  }
+},
+{
+  "pk": 62, 
+  "model": "mission.missiongrid", 
+  "fields": {
+    "allow_disabled": false, 
+    "name": "Combattants", 
+    "mission": 57, 
+    "length": 5, 
+    "allow_empty": false, 
+    "slug": "combattants", 
+    "condition": "\n"
   }
 }
 ]

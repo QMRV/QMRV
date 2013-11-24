@@ -2660,7 +2660,7 @@
     "text": "Notre adversaire, le seigneur {{tuto_adversaire}} vient de subir une nouvelle d\u00e9faite cinglante. Leurs troupes ont \u00e9t\u00e9 saign\u00e9es par nos pr\u00e9c\u00e9dents succ\u00e8s et leur moral est au plus bas. De notre c\u00f4t\u00e9 les hommes sont fatigu\u00e9s mais nos pr\u00e9c\u00e9dentes victoires ont gonfl\u00e9 leur moral et le sort des armes apparait du c\u00f4t\u00e9 de la dynastie {{dynasty}}. \r\n\r\nIl semble d\u00e9sormais possible de mettre un terme \u00e0 ce conflit en portant \u00e0 l'adversaire un coup fatal. La mort du seigneur d'{{tuto_PNJ}} enl\u00e8verait \u00e0 nos ennemis toute raison de se battre et nous permettrait de faire passer leurs domaines sous notre influence. ", 
     "image": "", 
     "on_fire": "\n", 
-    "slug": "tuto_achever_voisin", 
+    "slug": "tuto_achever_adversaire", 
     "condition": "\n"
   }
 },
@@ -3360,7 +3360,7 @@
     "text": "L'ensemble des personnes d'importance de ma cour est r\u00e9unie dans la salle du conseil, \u00e9coutant attentivement pendant que j'expose mon projet d'en finir une bonne fois pour toute avec le seigneur adverse. Apr\u00e8s avoir termin\u00e9 mon discours et observant les visages concentr\u00e9s et graves de mes subordonn\u00e9s je d\u00e9clare : \r\n\r\n\" Que proposez vous pour conclure le conflit rapidement ?\"\r\n\r\nMon conn\u00e9table prend imm\u00e9diatement la parole : \r\n\r\n\"Seigneur, votre premi\u00e8re impulsion est la bonne. Ce conflit s'est d\u00e9roul\u00e9 dans le sang, ainsi doit il se terminer. Il n'y a pas d'autre voie honorable pour un chevalier. Nous devons marcher sur le ch\u00e2teau de nos ennemis pour briser d\u00e9finitivement leurs forces et nous rendre ma\u00eetre du seigneur \".\r\n\r\nIl se rassied visiblement confiant apr\u00e8s son allocution et l'espace d'une seconde la salle reste silencieuse lorsque la voix de , mon maitre espion se fait entendre : \r\n\r\n\" Sire l'option que d\u00e9fend sire \"\" serait tr\u00e8s couteuse du sang de vos hommes ainsi que des ducats de \"\". L'ennemi est affaibli mais son ch\u00e2teau reste bien d\u00e9fendu et nous ne pouvons esp\u00e9rer en venir \u00e0 bout sans de couteuses armes de si\u00e8ge. Cependant il y a peut \u00eatre un autre moyen de venir \u00e0 bout du seigneur adverse avec beaucoup plus d\u2019\u00e9conomies.\"\r\nInt\u00e9ressant me dis-je. \r\n\r\n\" Et quel est il ?\" \r\n\r\n- Le seigneur adverse est d\u00e9sempar\u00e9 par ses d\u00e9faites, certains de ses plus anciens et fid\u00e8les lieutenants sont morts ou ont \u00e9t\u00e9 gravement bless\u00e9s et son domaine est \u00e0 feu et \u00e0 sang... Feignons de lui proposer une tr\u00eave et il ne refusera probablement pas cette offre dans sa situation. Nous pourrons alors lui proposer de conclure l'accord \u00e0 la fronti\u00e8re entre nos domaines ... et lui tendre une embuscade dont il ne s\u2019\u00e9chappera pas.\"\r\n\r\nIl se rassied un sourire discret aux l\u00e8vres mais de l'autre c\u00f4t\u00e9 de la table sieur mon diplomate s'est lev\u00e9 d'un coup et d\u00e9clare d'une voix forte : \r\n\r\n\"Intol\u00e9rable, cette action serait infamante pour nous !!! Si cela vient \u00e0 s\u2019\u00e9bruiter la r\u00e9putation et le prestige de {{dynasty}} en serait consid\u00e9rablement terni et plus jamais nos voisins ne nous feraient confiance.  Seigneur, je vous en conjure nous ne pouvons nous d\u00e9grader \u00e0 ce point. Cette guerre a cout\u00e9 cher \u00e0 tous mais il y a encore un moyen de la terminer pacifiquement. Vous le savez. Et si...\"\r\n\r\nTout d'un coup il se tait et se rassied devant mon regard dur. Hors de question pour moi de paraitre trop influenc\u00e9 par l'un ou l'autre de mes vassaux. \r\n\r\nApr\u00e8s quelques minutes de r\u00e9flexion je reprend : \r\n\r\n\"Je crois que chacun a pu exposer son point de vue de mani\u00e8re claire. Mais j'ai pris ma d\u00e9cision, nous allons ... \"", 
     "image": "events/kaamelott-dies-irae-29.jpg", 
     "on_fire": "\n", 
-    "slug": "choix_achever_voisin", 
+    "slug": "choix_achever_adversaire", 
     "condition": "\n"
   }
 },
@@ -3374,7 +3374,35 @@
     "text": "\"Ma d\u00e9cision est irr\u00e9vocable {% if choix == 0 %} Nous marcherons sur le ch\u00e2teau ennemi. {% elif choix == 1 %}Faisons mine au seigneur adverse de proposer une paix et tendons lui une embuscade.{% else %}Reglons la solution pacifiquement et faisons la paix. {% endif %}", 
     "image": "events/kaamelott-dies-irae-29_1.jpg", 
     "on_fire": "\n", 
-    "slug": "choix_achever_voisin2", 
+    "slug": "choix_achever_adversaire2", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 299, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "siege1", 
+    "weight": 1, 
+    "text": "Mon \u00e9cuyer termine d'ajuster ma c\u00f4te de maille tandis qu'en contrebas les palefreniers pr\u00e9parent harnachement des chevaux.  La basse cour du ch\u00e2teau est remplie de caisses et sacs divers, les provisions et le mat\u00e9riel pour le si\u00e8ge qui s'annonce. 3 grands chariots contiennent les pi\u00e8ces d\u00e9tach\u00e9es d'un b\u00e9lier et les peaux qui, humidifi\u00e9es lui permettront de r\u00e9sister aux fl\u00e8ches et projectiles enflamm\u00e9s . Cette \u00e9quip\u00e9e a cout\u00e9\" cher \u00e0 {{dynasty}} mais le jeu en vaut la chandelle me dis-je. \r\n\r\n- -40 \u00e9cus pour les pr\u00e9paratifs du si\u00e8ge. ", 
+    "image": "", 
+    "on_fire": "kingdom.money -= 40 # le cout de l'expedition\nkingdom.save()\n", 
+    "slug": "tuto_siege1", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 300, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "siege2", 
+    "weight": 1, 
+    "text": "En chemin ", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "tuto_siege2", 
     "condition": "\n"
   }
 },
@@ -5883,7 +5911,7 @@
     "message": "", 
     "event": 225, 
     "condition": "\n", 
-    "on_fire": "# multiplicateur de gain tuto\nmultiplicateur_tuto = 3  # sauf sur gain thune\n\n# Terminer les missions en cours\npending_missions = kingdom.pendingmission_set.filter(started__isnull=False)\nfor pending_mission in pending_missions:\n  pending_mission.resolve()\n\n# Simuler un mois de temps sur le Kingdom sur les persos\nfor folk in folks:\n  folk.birth -= timedelta(hours=2)\n  folk.save()\n\n# Appeller la fonction qui fait grandir les m\u00f4mes\nnb_passage_timewarp = kingdom.get_value('tuto_nb_passage_timewarp', random_value(0, 7))\nkingdom.set_value('tuto_nb_passage_timewarp', nb_passage_timewarp + 1)\nif nb_passage_timewarp % 8 == 0:\n  f('education', kingdom=kingdom)\n\n# gain de population\nchatelain = kingdom.get_folk_in_title(\"chatelain\")\nif chatelain is None:\n  erudition_chatelain = 0\nelse:\n  erudition_chatelain = chatelain.scholarship\ncure = kingdom.get_folk_in_title(\"cure\")\nif cure is None:\n  erudition_cure = 5\nelse:\n  erudition_cure = cure.scholarship\np_max = call_function(\"get_max_population\", kingdom=kingdom)\nvirgule = kingdom.get_value('virgule_population', 0)\ngain_pop = min(multiplicateur_tuto * 10 / 100 * p_max / 12 * ((erudition_chatelain + 4 * erudition_cure) / 100) ** 0.5 + virgule, p_max - kingdom.population - kingdom.get_value('total_soldats'))\ngain = int(gain_pop)\nkingdom.set_value('virgule_population', gain_pop - int(gain_pop))\ngain_pop = int(gain)\nkingdom.population += gain\n\n\n# print \"pop_max = \"\n# print p_max\n# print \"erudition_chatelain = \"\n# print erudition_chatelain\n# print \"\u00e9rudition cur\u00e9 = \"\n# print erudition_cure\n# print \"gain pop = \"\n# print gain_pop\n\nnouveaux_soldats = 0\n# transformation pop_en_soldats\npourcentage_actuel = call_function('get_pourcentage_soldats_population', kingdom=kingdom)\n# print \"POURCENTAGE_MAX_SOLDATS_PASSIF = \"\n# print C.POURCENTAGE_MAX_SOLDATS_PASSIF\n# print \"C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO= \"\n# print C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO\n# print \"pourcentage_actuel = \"\n# print pourcentage_actuel\nif pourcentage_actuel < C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  virgule = kingdom.get_value('virgule_soldiers', 0)\n  # print \"ancienne virgule=\"\n  # print virgule\n  nouveaux_soldats = min(multiplicateur_tuto * C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO / 100 / 12 * p_max + virgule, int(C.POURCENTAGE_MAX_SOLDATS_PASSIF / 100 * p_max - pourcentage_actuel / 100 * p_max), kingdom.population)\n  kingdom.soldiers += int(nouveaux_soldats)\n  kingdom.population -= int(nouveaux_soldats)\n  kingdom.set_value('total_soldats', kingdom.get_value('total_soldats') + int(nouveaux_soldats))\n  kingdom.set_value('virgule_soldiers', nouveaux_soldats - int(nouveaux_soldats))\n  # print \"nouvelle virgule=\"\n  # print str(nouveaux_soldats-int(nouveaux_soldats))\n  # print \"nouveaux_soldats = \"\n  # print nouveaux_soldats\ngain_soldats = int(nouveaux_soldats)\n\n\n# gain de thunes1\ntresorier = kingdom.get_folk_in_title(\"tresorier\")\nif tresorier is None:\n  erudition_tresorier = 5\nelse:\n  erudition_tresorier = tresorier.scholarship\n# print \"erudition tresorier = \"\n# print erudition_tresorier\nvirgule = kingdom.get_value('virgule_thune', 0)\nif pourcentage_actuel <= C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  gain = 2 / 3 * (kingdom.population * (((erudition_chatelain + 4 * erudition_tresorier) / 100) ** 0.5 * 2 / 3) - kingdom.get_value('total_soldats')) / 12 + virgule\nelse:\n  gain = 1 / 3 * (kingdom.population * (((erudition_chatelain + 4 * erudition_tresorier) / 100) ** 0.5 * 2 / 3) - kingdom.get_value('total_soldats') * 2) / 12 + virgule\nkingdom.set_value('virgule_thune', gain - int(gain))\nkingdom.money += int(gain)\ngain_thunes = int(gain)\n# print \"gain thune\"\n# print gain\n\nkingdom.save()\n\n# Gestion des bl\u00e9ss\u00e9s\nfor i in range(0, 4):\n  Recurring.objects.get(slug=\"gestion_blesses\").fire(kingdom)\n\n# Cour maximum\nRecurring.objects.get(slug=\"cour_max\").fire(kingdom)\n\n# creer un message\nkingdom.message(\"Un mois s'est \u00e9coul\u00e9. Votre domaine compte %s paysans de plus. Vous recevez %s \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes. %s paysans sont maintenant des soldats.\" % (int(gain_pop), int(gain_thunes), int(gain_soldats)))\n\n# si on a assez de prestige et que la mission achever voisin n'est pas debloqu\u00e9e on a l'evenement qui propose d'achever le voisin\nif kingdom.prestige > 200:\n  param.next_event('tuto_achever_voisin').start()\n  \n\n# Lancer l'\u00e9v\u00e8nement en next_event\n# Les variables seront automatiquement transmises aussi.\nparam.next_event(param.get_value('slug')).start()\n"
+    "on_fire": "# multiplicateur de gain tuto\nmultiplicateur_tuto = 3  # sauf sur gain thune\n\n# Terminer les missions en cours\npending_missions = kingdom.pendingmission_set.filter(started__isnull=False)\nfor pending_mission in pending_missions:\n  pending_mission.resolve()\n\n# Simuler un mois de temps sur le Kingdom sur les persos\nfor folk in folks:\n  folk.birth -= timedelta(hours=2)\n  folk.save()\n\n# Appeller la fonction qui fait grandir les m\u00f4mes\nnb_passage_timewarp = kingdom.get_value('tuto_nb_passage_timewarp', random_value(0, 7))\nkingdom.set_value('tuto_nb_passage_timewarp', nb_passage_timewarp + 1)\nif nb_passage_timewarp % 8 == 0:\n  f('education', kingdom=kingdom)\n\n# gain de population\nchatelain = kingdom.get_folk_in_title(\"chatelain\")\nif chatelain is None:\n  erudition_chatelain = 0\nelse:\n  erudition_chatelain = chatelain.scholarship\ncure = kingdom.get_folk_in_title(\"cure\")\nif cure is None:\n  erudition_cure = 5\nelse:\n  erudition_cure = cure.scholarship\np_max = call_function(\"get_max_population\", kingdom=kingdom)\nvirgule = kingdom.get_value('virgule_population', 0)\ngain_pop = min(multiplicateur_tuto * 10 / 100 * p_max / 12 * ((erudition_chatelain + 4 * erudition_cure) / 100) ** 0.5 + virgule, p_max - kingdom.population - kingdom.get_value('total_soldats'))\ngain = int(gain_pop)\nkingdom.set_value('virgule_population', gain_pop - int(gain_pop))\ngain_pop = int(gain)\nkingdom.population += gain\n\n\n# print \"pop_max = \"\n# print p_max\n# print \"erudition_chatelain = \"\n# print erudition_chatelain\n# print \"\u00e9rudition cur\u00e9 = \"\n# print erudition_cure\n# print \"gain pop = \"\n# print gain_pop\n\nnouveaux_soldats = 0\n# transformation pop_en_soldats\npourcentage_actuel = call_function('get_pourcentage_soldats_population', kingdom=kingdom)\n# print \"POURCENTAGE_MAX_SOLDATS_PASSIF = \"\n# print C.POURCENTAGE_MAX_SOLDATS_PASSIF\n# print \"C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO= \"\n# print C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO\n# print \"pourcentage_actuel = \"\n# print pourcentage_actuel\nif pourcentage_actuel < C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  virgule = kingdom.get_value('virgule_soldiers', 0)\n  # print \"ancienne virgule=\"\n  # print virgule\n  nouveaux_soldats = min(multiplicateur_tuto * C.POURCENTAGE_GAIN_SOLDATS_PASSIF_AUTO / 100 / 12 * p_max + virgule, int(C.POURCENTAGE_MAX_SOLDATS_PASSIF / 100 * p_max - pourcentage_actuel / 100 * p_max), kingdom.population)\n  kingdom.soldiers += int(nouveaux_soldats)\n  kingdom.population -= int(nouveaux_soldats)\n  kingdom.set_value('total_soldats', kingdom.get_value('total_soldats') + int(nouveaux_soldats))\n  kingdom.set_value('virgule_soldiers', nouveaux_soldats - int(nouveaux_soldats))\n  # print \"nouvelle virgule=\"\n  # print str(nouveaux_soldats-int(nouveaux_soldats))\n  # print \"nouveaux_soldats = \"\n  # print nouveaux_soldats\ngain_soldats = int(nouveaux_soldats)\n\n\n# gain de thunes1\ntresorier = kingdom.get_folk_in_title(\"tresorier\")\nif tresorier is None:\n  erudition_tresorier = 5\nelse:\n  erudition_tresorier = tresorier.scholarship\n# print \"erudition tresorier = \"\n# print erudition_tresorier\nvirgule = kingdom.get_value('virgule_thune', 0)\nif pourcentage_actuel <= C.POURCENTAGE_MAX_SOLDATS_PASSIF:\n  gain = 2 / 3 * (kingdom.population * (((erudition_chatelain + 4 * erudition_tresorier) / 100) ** 0.5 * 2 / 3) - kingdom.get_value('total_soldats')) / 12 + virgule\nelse:\n  gain = 1 / 3 * (kingdom.population * (((erudition_chatelain + 4 * erudition_tresorier) / 100) ** 0.5 * 2 / 3) - kingdom.get_value('total_soldats') * 2) / 12 + virgule\nkingdom.set_value('virgule_thune', gain - int(gain))\nkingdom.money += int(gain)\ngain_thunes = int(gain)\n# print \"gain thune\"\n# print gain\n\nkingdom.save()\n\n# Gestion des bl\u00e9ss\u00e9s\nfor i in range(0, 4):\n  Recurring.objects.get(slug=\"gestion_blesses\").fire(kingdom)\n\n# Cour maximum\nRecurring.objects.get(slug=\"cour_max\").fire(kingdom)\n\n# creer un message\nkingdom.message(\"Un mois s'est \u00e9coul\u00e9. Votre domaine compte %s paysans de plus. Vous recevez %s \u00e9cus de vos paysans apr\u00e8s entretien de vos troupes. %s paysans sont maintenant des soldats.\" % (int(gain_pop), int(gain_thunes), int(gain_soldats)))\n\nconseil_fait = kingdom.get_value(\"conseil_fait\", False) or AvailableMission.objects.filter(mission__slug=\"tuto_achever_adversaire_siege\",kingdom=kingdom).exists() \nconseil_fait = conseil_fait or AvailableMission.objects.filter(mission__slug=\"tuto_achever_adversaire_embuscade\",kingdom=kingdom).exists()\nconseil_fait = conseil_fait or AvailableMission.objects.filter(mission__slug=\"tuto_diplomacy_ending\",kingdom=kingdom).exists()\n\n# si on a assez de prestige et que la mission achever voisin n'est pas debloqu\u00e9e on a l'evenement qui propose d'achever le voisin\nif not(conseil_fait) and kingdom.prestige > 200:\n  pe_conseil = kingdom.create_pending_event(\"tuto_achever_adversaire\").start()\n  \n\n# Lancer l'\u00e9v\u00e8nement en next_event\n# Les variables seront automatiquement transmises aussi.\nparam.next_event(param.get_value('slug')).start()\n"
   }
 },
 {
@@ -5982,7 +6010,7 @@
     "message": "", 
     "event": 236, 
     "condition": "\n", 
-    "on_fire": "if (param.get_value(\"attaquant\") == False and kingdom.get_value(\"tuto_rapport_espion\", None) == None and kingdom.prestige > 150):\n  pe = param.next_event(\"tuto_espionnage\").start()\n  kingdom.set_value(\"tuto_rapport_espion\", True)\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_firstbattle_defense\", None) is None):\n  pe = param.next_event(\"tuto_pnjescaladeconflit\").start()\n# si prestige > 200\nelif kingdom.prestige > 200:\n  kingdom.create_pending_event(\"tuto_achever_voisin\").start()\n# si conflit\nelse:\n  # kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  if not PendingEvent.objects.filter(event__slug=\"_tuto_timewarp\", kingdom=kingdom).exists():\n    pe = param.next_event(\"_tuto_timewarp\")\n    pe.set_value('slug', \"tuto_scanjoueur_fantome\")\n    pe.start()\n"
+    "on_fire": "if (param.get_value(\"attaquant\") == False and kingdom.get_value(\"tuto_rapport_espion\", None) == None and kingdom.prestige > 150):\n  pe = param.next_event(\"tuto_espionnage\").start()\n  kingdom.set_value(\"tuto_rapport_espion\", True)\nelif (param.get_value(\"attaquant\") and kingdom.get_value(\"tuto_firstbattle_defense\", None) is None):\n  pe = param.next_event(\"tuto_pnjescaladeconflit\").start()\nelse:\n  # kingdom.create_pending_event(\"tuto_scanjoueur_fantome\")\n  if not PendingEvent.objects.filter(event__slug=\"_tuto_timewarp\", kingdom=kingdom).exists():\n    pe = param.next_event(\"_tuto_timewarp\")\n    pe.set_value('slug', \"tuto_scanjoueur_fantome\")\n    pe.start()\n"
   }
 },
 {
@@ -6037,7 +6065,7 @@
     "message": "La mission achever le PNJ du tuto est d\u00e9sormais possible. ", 
     "event": 239, 
     "condition": "\n", 
-    "on_fire": "param.set_value(\"test\",5)\nparam.next_event(\"choix_achever_voisin\").start()\n"
+    "on_fire": "param.set_value(\"test\",5)\nparam.next_event(\"choix_achever_adversaire\").start()\n"
   }
 },
 {
@@ -6994,7 +7022,7 @@
     "message": "", 
     "event": 297, 
     "condition": "\n", 
-    "on_fire": "param.set_value(\"choix\",0)\nparam.next_event(\"choix_achever_voisin2\").start()"
+    "on_fire": "param.set_value(\"choix\",0)\nparam.next_event(\"choix_achever_adversaire2\").start()"
   }
 },
 {
@@ -7005,7 +7033,7 @@
     "message": "", 
     "event": 297, 
     "condition": "\n", 
-    "on_fire": "param.set_value(\"choix\",1)\nparam.next_event(\"choix_achever_voisin2\").start()"
+    "on_fire": "param.set_value(\"choix\",1)\nparam.next_event(\"choix_achever_adversaire2\").start()"
   }
 },
 {
@@ -7016,7 +7044,7 @@
     "message": "", 
     "event": 297, 
     "condition": "\n", 
-    "on_fire": "param.set_value(\"choix\",2)\nparam.next_event(\"choix_achever_voisin2\").start()"
+    "on_fire": "param.set_value(\"choix\",2)\nparam.next_event(\"choix_achever_adversaire2\").start()"
   }
 },
 {
@@ -7027,7 +7055,18 @@
     "message": "{% if choix == 0 %}Nouvelle mission disponible : aller assi\u00e9ger le ch\u00e2teau du seigneur adverse.{% elif choix == 1 %}Nouvelle mission disponible : proposer une paix fictive et embusquer le seigneur ennemi. {% else %} Regler la solution diplomatiquement.{% endif %}", 
     "event": 298, 
     "condition": "\n", 
-    "on_fire": "if param.get_value(\"choix\") == 0:\n  kingdom.unlock_mission(\"tuto_achever_adversaire_siege\")\nelif param.get_value(\"choix\") == 1:\n  kingdom.unlock_mission(\"tuto_achever_adversaire_embuscade\")\nelse:\n  truc=1 \n  # boucler avec le choix diplomatique\nparam.set_value('slug','tuto_scanjoueur_fantome') \nparam.next_event(\"_tuto_timewarp\").start()  \n  \n"
+    "on_fire": "if param.get_value(\"choix\") == 0:\n  kingdom.unlock_mission(\"tuto_achever_adversaire_siege\")\nelif param.get_value(\"choix\") == 1:\n  kingdom.unlock_mission(\"tuto_achever_adversaire_embuscade\")\nelse:\n  kingdom.unlock_mission(\"tuto_diplomacy_ending\")\n\n  \n"
+  }
+},
+{
+  "pk": 409, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Et maintenant en avant vers la gloire ! ", 
+    "message": "Les pr\u00e9paratifs pour le si\u00e8ge sont termin\u00e9s. Il en a cout\u00e9 40 \u00e9cus \u00e0 notre domaine. ", 
+    "event": 299, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_siege2\").start()"
   }
 }
 ]
