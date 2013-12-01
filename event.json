@@ -3443,7 +3443,7 @@
     "weight": 1, 
     "text": "Un autre des mes hommes vient de s\u2019\u00e9crouler frapp\u00e9 par un carreau lanc\u00e9 depuis les remparts du ch\u00e2teau ennemi. Cependant en face la r\u00e9sistance de la porte faiblit face de butoir aux coups du b\u00e9lier et enfin un dernier coup formidable d\u00e9fonce les poutres principales formidable fait voler en \u00e9clat les poutres transverses de son ossature. D\u00e9j\u00e0 des trous consid\u00e9rables apparaissent et je vois enfin les yeux de nos ennemis ... Ils sont emplis de peur !!! \r\n\r\n\"Archers, tirez dans l'embrasure, man\u0153uvres d\u00e9blayez le b\u00e9lier ! \"\r\n\r\nMes archers qui \u00e9taient jusqu'ici rest\u00e9s \u00e0 l'abri sous la structure protectrice du b\u00e9lier se mettent rapidement en ligne et lancent une premi\u00e8re salve. plusieurs silhouettes de l'autre c\u00f4t\u00e9 semblent chanceler d'un coup. L'ennemi r\u00e9plique faiblement et semble d\u00e9sorganis\u00e9.  Il est temps de s\u2019\u00e9lancer ! \r\n\r\n\"Spadassins, avec moi !\"\r\n\r\nFon\u00e7ant \u00e0 travers ce qui reste de la porte je m'\u00e9lance pour trouver une premier soldat ennemi, paniqu\u00e9 que je transperce d'un seul coup \u00e0 la jugulaire puis je me pr\u00e9cipite sur la petite ligne de fortune que tentent de constituer mes adversaires, frappant de tous c\u00f4t\u00e9s. Le corps \u00e0 corps qui s\u2019ensuit est bref mais bient\u00f4t il n'y a plus personne devant nous. Nos ennemis sont morts, bless\u00e9s ou en fuite.   \r\n\r\nLa porte est notre et le flot furieux des soldats de {{dynasty}} se r\u00e9pand dans la cour. ", 
     "image": "", 
-    "on_fire": "param.next_event(\"tuto_siege_victoire_2\").start()", 
+    "on_fire": "\n", 
     "slug": "tuto_siege_victoire_1", 
     "condition": "\n"
   }
@@ -3469,7 +3469,7 @@
     "category": null, 
     "name": "siege_victoire3", 
     "weight": 1, 
-    "text": "Nous nous \u00e9loignons tous les deux pour reprendre notre souffle. Quelques uns de mes hommes font mine d'approcher mais d'un signe je leur intime l'ordre de ne pas intervenir. \r\n\r\n\"N'approchez pas ! C'est une affaire d'honneur !\"\r\n\r\nLa douleur me vrille les tempes un instant mais je parviens \u00e0 la chasser. La blessure n'est pas tr\u00e8s profonde mais, assez large, elle saigne abondamment. Et combin\u00e9e \u00e0 la fatigue du combat pr\u00e9c\u00e9dent elle me met dans une situation dangereuse. Il faut que j'en finisse vite. \r\n\r\n\"Alors, on n'a pas la force de ses ambitions, on dirait ? \"\r\n\r\nVite il faut que le combat reprenne. J'observe sa position mais il fait encore preuve d'une vitalit\u00e9 et d'une technique surprenantes pour un homme de son age. Soudain j'y pense, ces armoiries il y avait les m\u00eames sur l'armure d'un des ennemis morts \u00e0 la porte tout \u00e0 l'heure. Mais alors ? ce ne serait pas ... tans pis ...  c'est peut \u00eatre mon dernier coup \u00e0 jouer, il faut que je le tente ! \r\n\r\n\" Une parole surprenante de la part d'un homme qui n'a m\u00eame pas eu la force de prot\u00e9ger son fils ! \"\r\n\r\nDans un sanglot il s'\u00e9lance violemment vers moi. Son \u00e9nergie est f\u00e9roce et je manque de peu de perdre mon \u00e9p\u00e9e sur son coup d'estocade mais je parviens finalement \u00e0 le d\u00e9vier et tandis qu'entrain\u00e9 par son \u00e9lan il passe derri\u00e8re moi je me retourne et avec toute ma force, lui ass\u00e8ne un coup tranchant dans sur toute la largeur du dos. \r\n\r\nCette fois c'est la fin. Avec une telle blessure mon adversaire ne pourra pas continuer le combat plus de quelques minutes. Je pare facilement sa derni\u00e8re attaque d\u00e9sesp\u00e9r\u00e9e et contre attaque par un coup d'estoc qui s'enfonce profond\u00e9ment dans son ventre. Il rend son dernier souffle teint\u00e9 de d\u00e9sespoir tandis que je sors mon \u00e9p\u00e9e de son abdomen. \r\n\r\n\r\n\r\n{{target_dynasty}} est mort.\r\n\r\n", 
+    "text": "Nous nous \u00e9loignons tous les deux pour reprendre notre souffle. Quelques uns de mes hommes font mine d'approcher mais d'un signe je leur intime l'ordre de ne pas intervenir. \r\n\r\n\"N'approchez pas ! C'est une affaire d'honneur !\"\r\n\r\nLa douleur me vrille les tempes un instant mais je parviens \u00e0 la chasser. La blessure n'est pas tr\u00e8s profonde mais, assez large, elle saigne abondamment. Et combin\u00e9e \u00e0 la fatigue du combat pr\u00e9c\u00e9dent elle me met dans une situation dangereuse. Il faut que j'en finisse vite. \r\n\r\n\"Alors, on n'a pas la force de ses ambitions, on dirait ? \"\r\n\r\nVite il faut que le combat reprenne. J'observe sa position mais il fait encore preuve d'une vitalit\u00e9 et d'une technique surprenante pour un homme de son age. Soudain j'y pense, ces armoiries il y avait les m\u00eames sur l'armure d'un des ennemis morts \u00e0 la porte tout \u00e0 l'heure. Mais alors ? ce ne serait pas ... tans pis ...  c'est peut \u00eatre mon dernier coup \u00e0 jouer, il faut que je le tente ! \r\n\r\n\" Une parole surprenante de la part d'un homme qui n'a m\u00eame pas eu la force de prot\u00e9ger son fils ! \"\r\n\r\nDans un sanglot il s'\u00e9lance violemment vers moi. Son \u00e9nergie est f\u00e9roce et je manque de peu de perdre mon \u00e9p\u00e9e sur son coup d'estocade mais je parviens finalement \u00e0 le d\u00e9vier et tandis qu'entrain\u00e9 par son \u00e9lan il passe derri\u00e8re moi je me retourne et avec toute ma force, lui ass\u00e8ne un terrible coup tranchant dans sur toute la largeur du dos. \r\n\r\nCette fois c'est la fin. Avec une telle blessure mon adversaire ne pourra pas continuer le combat plus de quelques minutes. Je pare facilement sa derni\u00e8re attaque d\u00e9sesp\u00e9r\u00e9e et contre attaque par un coup d'estoc qui s'enfonce profond\u00e9ment dans son ventre. Il rend son dernier souffle teint\u00e9 de d\u00e9sespoir tandis que je sors mon \u00e9p\u00e9e de son abdomen. \r\n\r\n\r\n\r\n{{target_dynasty}} est mort.\r\n\r\n", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "tuto_siege_victoire_3", 
@@ -7180,7 +7180,7 @@
     "message": "", 
     "event": 304, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_siege_victoire_3\")"
+    "on_fire": "param.next_event(\"tuto_siege_victoire_3\").start()"
   }
 },
 {
@@ -7192,6 +7192,17 @@
     "event": 305, 
     "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_siege_victoire_4\").start()"
+  }
+},
+{
+  "pk": 415, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Le chateau est notre ! ", 
+    "message": "", 
+    "event": 303, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_siege_victoire_2\").start()"
   }
 }
 ]
