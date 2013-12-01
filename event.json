@@ -3399,10 +3399,38 @@
     "category": null, 
     "name": "siege2", 
     "weight": 1, 
-    "text": "En chemin ", 
+    "text": "Mon arm\u00e9e vient de franchir la ligne bois\u00e9e qui marque la fronti\u00e8re entre mon domaine et celui de notre adversaire. Ce soir nous allons bivouaqu\u00e9 sur une petite colline qui devrait constituer un endroit s\u00fbr pour passer la nuit. \r\n\r\nPlus tard depuis ma tente je contemple notre camp. {{moi.troupes}} soldats sont rassembl\u00e9s sous ma banni\u00e8re. C'est une force importante, bien plus que tout ce que {{moi.dynasty}} a pu rassembl\u00e9 depuis plus d'un si\u00e8cle. Est ce le d\u00e9but d'une nouvelle \u00e9poque pour notre famille ?\r\n\r\nMais le temps pr\u00e9sent n'est pas aux r\u00eaveries et je retourne dans ma tente ou mes capitaines, rassembl\u00e9s autour d'une carte discutent bruyamment sur la suite de la campagne. ", 
+    "image": "", 
+    "on_fire": "param.next_event(\"tuto_siege3\").start()", 
+    "slug": "tuto_siege2", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 301, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "siege3", 
+    "weight": 1, 
+    "text": "Nous y voila, le ch\u00e2teau du seigneur de {{target_dynasty}}. Au loin le tocsin du bourg attenant sonne. Nos forces \u00e9taient bien trop importantes et trop lente, avec le mat\u00e9riel de si\u00e8ge pour passer inaper\u00e7ues. Ils se pr\u00e9parent \u00e0 un si\u00e8ge en bonne et d\u00fb forme. \r\n\r\nTr\u00e8s bien vous savez ce que vous avez \u00e0 faire dis-je \u00e0 mes lieutenants. Puis tirant sur la bride de mon cheval et me retournant je fais face \u00e0 mon arm\u00e9e. \r\n\"Soldats ! Dans les prochains jours nous combattrons pour la derni\u00e8re fois nos ennemis. Donnons leurs une le\u00e7on dont ils se souviendront ! \"\r\n\r\nLa clameur rugissante qui s'empare de ma troupe couvre l'espace d'un instant l'\u00e9cho du tocsin. ", 
+    "image": "", 
+    "on_fire": "param.next_event(\"tuto_siege4\").start()", 
+    "slug": "tuto_siege3", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 302, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "siege4", 
+    "weight": 1, 
+    "text": "Cela fait 5 jours que la citadelle de {{target_dynasty}} est entour\u00e9e par mes troupes. Le gros des forces sous mon commandement a occup\u00e9 la route principale du c\u00f4t\u00e9 du bourg tandis que la deuxi\u00e8me voie de sortie du chateau est bloqu\u00e9e par une petite partie de mes troupes sous le commandement de ... \r\n\r\nL'assemblage du b\u00e9lier est termin\u00e9. Demain nous attaquerons le ch\u00e2teau. ", 
     "image": "", 
     "on_fire": "\n", 
-    "slug": "tuto_siege2", 
+    "slug": "tuto_siege4", 
     "condition": "\n"
   }
 },
