@@ -3387,7 +3387,7 @@
     "weight": 1, 
     "text": "Mon \u00e9cuyer termine d'ajuster ma c\u00f4te de maille tandis qu'en contrebas les palefreniers pr\u00e9parent harnachement des chevaux.  La basse cour du ch\u00e2teau est remplie de caisses et sacs divers, les provisions et le mat\u00e9riel pour le si\u00e8ge qui s'annonce. 3 grands chariots contiennent les pi\u00e8ces d\u00e9tach\u00e9es d'un b\u00e9lier et les peaux qui, humidifi\u00e9es lui permettront de r\u00e9sister aux fl\u00e8ches et projectiles enflamm\u00e9s . Cette \u00e9quip\u00e9e a cout\u00e9\" cher \u00e0 {{dynasty}} mais le jeu en vaut la chandelle me dis-je. \r\n\r\n- -40 \u00e9cus pour les pr\u00e9paratifs du si\u00e8ge. ", 
     "image": "", 
-    "on_fire": "kingdom.money -= 40 # le cout de l'expedition\nkingdom.save()\n", 
+    "on_fire": "\n", 
     "slug": "tuto_siege1", 
     "condition": "\n"
   }
@@ -3399,9 +3399,9 @@
     "category": null, 
     "name": "siege2", 
     "weight": 1, 
-    "text": "Mon arm\u00e9e vient de franchir la ligne bois\u00e9e qui marque la fronti\u00e8re entre mon domaine et celui de notre adversaire. Ce soir nous allons bivouaqu\u00e9 sur une petite colline qui devrait constituer un endroit s\u00fbr pour passer la nuit. \r\n\r\nPlus tard depuis ma tente je contemple notre camp. {{moi.troupes}} soldats sont rassembl\u00e9s sous ma banni\u00e8re. C'est une force importante, bien plus que tout ce que {{moi.dynasty}} a pu rassembl\u00e9 depuis plus d'un si\u00e8cle. Est ce le d\u00e9but d'une nouvelle \u00e9poque pour notre famille ?\r\n\r\nMais le temps pr\u00e9sent n'est pas aux r\u00eaveries et je retourne dans ma tente ou mes capitaines, rassembl\u00e9s autour d'une carte discutent bruyamment sur la suite de la campagne. ", 
+    "text": "Mon arm\u00e9e vient de franchir la ligne bois\u00e9e qui marque la fronti\u00e8re entre mon domaine et celui de notre adversaire. Ce soir nous allons bivouaqu\u00e9 sur une petite colline qui devrait constituer un endroit s\u00fbr pour passer la nuit. \r\n\r\nPlus tard depuis ma tente je contemple notre camp. {{moi.troupes}} soldats sont rassembl\u00e9s sous ma banni\u00e8re. C'est une force importante, bien plus que tout ce que {{dynasty}} a pu rassembl\u00e9 depuis plus d'un si\u00e8cle. Est ce le d\u00e9but d'une nouvelle \u00e9poque pour notre famille ?\r\n\r\nMais le temps pr\u00e9sent n'est pas aux r\u00eaveries et je retourne dans ma tente ou mes capitaines, rassembl\u00e9s autour d'une carte discutent bruyamment sur la suite de la campagne. ", 
     "image": "", 
-    "on_fire": "param.next_event(\"tuto_siege3\").start()", 
+    "on_fire": "\n", 
     "slug": "tuto_siege2", 
     "condition": "\n"
   }
@@ -3415,7 +3415,7 @@
     "weight": 1, 
     "text": "Nous y voila, le ch\u00e2teau du seigneur de {{target_dynasty}}. Au loin le tocsin du bourg attenant sonne. Nos forces \u00e9taient bien trop importantes et trop lente, avec le mat\u00e9riel de si\u00e8ge pour passer inaper\u00e7ues. Ils se pr\u00e9parent \u00e0 un si\u00e8ge en bonne et d\u00fb forme. \r\n\r\nTr\u00e8s bien vous savez ce que vous avez \u00e0 faire dis-je \u00e0 mes lieutenants. Puis tirant sur la bride de mon cheval et me retournant je fais face \u00e0 mon arm\u00e9e. \r\n\"Soldats ! Dans les prochains jours nous combattrons pour la derni\u00e8re fois nos ennemis. Donnons leurs une le\u00e7on dont ils se souviendront ! \"\r\n\r\nLa clameur rugissante qui s'empare de ma troupe couvre l'espace d'un instant l'\u00e9cho du tocsin. ", 
     "image": "", 
-    "on_fire": "param.next_event(\"tuto_siege4\").start()", 
+    "on_fire": "\n", 
     "slug": "tuto_siege3", 
     "condition": "\n"
   }
@@ -3427,10 +3427,24 @@
     "category": null, 
     "name": "siege4", 
     "weight": 1, 
-    "text": "Cela fait 5 jours que la citadelle de {{target_dynasty}} est entour\u00e9e par mes troupes. Le gros des forces sous mon commandement a occup\u00e9 la route principale du c\u00f4t\u00e9 du bourg tandis que la deuxi\u00e8me voie de sortie du chateau est bloqu\u00e9e par une petite partie de mes troupes sous le commandement de ... \r\n\r\nL'assemblage du b\u00e9lier est termin\u00e9. Demain nous attaquerons le ch\u00e2teau. ", 
+    "text": "Cela fait 5 jours que la citadelle de {{target_dynasty}} est entour\u00e9e par mes troupes. Le gros des forces sous mon commandement a occup\u00e9 la route principale du c\u00f4t\u00e9 du bourg tandis que la deuxi\u00e8me voie de sortie du ch\u00e2teau est bloqu\u00e9e par une petite partie de mes troupes sous le commandement de ... \r\n\r\nL'assemblage du b\u00e9lier est termin\u00e9. Demain nous attaquerons le ch\u00e2teau. ", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "tuto_siege4", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 303, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "siege_victoire1", 
+    "weight": 1, 
+    "text": "Un autre des mes hommes vient de s\u2019\u00e9crouler frapp\u00e9 par un carreau lanc\u00e9 depuis les remparts du ch\u00e2teau ennemi. Cependant en face la r\u00e9sistance de la porte faiblit face de butoir aux coups du b\u00e9lier et enfin un dernier coup formidable d\u00e9fonce les poutres principales formidable fait voler en \u00e9clat les poutres transverses de son ossature. D\u00e9j\u00e0 des trous consid\u00e9rables apparaissent et je vois enfin les yeux de nos ennemis ... Ils sont emplis de peur !!! \r\n\r\n\"Archers, tirez dans l'embrasure, man\u0153uvres d\u00e9blayez le b\u00e9lier ! \"\r\n\r\nMes archers qui \u00e9taient jusqu'ici rest\u00e9s \u00e0 l'abri sous la structure protectrice du b\u00e9lier se mettent rapidement en ligne et lancent une premi\u00e8re salve. plusieurs silhouettes de l'autre c\u00f4t\u00e9 semblent chanceler d'un coup. L'ennemi r\u00e9plique faiblement et semble d\u00e9sorganis\u00e9.  Il est temps de s\u2019\u00e9lancer ! \r\n\r\n\"Spadassins, avec moi !\"\r\n\r\nFon\u00e7ant \u00e0 travers ce qui reste de la porte je m'\u00e9lance pour trouver une premier soldat ennemi, paniqu\u00e9 que je transperce d'un seul coup \u00e0 la jugulaire puis je me pr\u00e9cipite sur la petite ligne de fortune que tentent de constituer mes adversaires, frappant de tous c\u00f4t\u00e9s. Le corps \u00e0 corps qui s\u2019ensuit est bref mais bient\u00f4t il n'y a plus personne devant nous. Nos ennemis sont morts, bless\u00e9s ou en fuite.   \r\n\r\nLa porte est notre et le flot furieux des soldats de {{dynasty}} se r\u00e9pand dans la cour. ", 
+    "image": "", 
+    "on_fire": "param.next_event(\"tuto_siege_victoire_2\").start()", 
+    "slug": "tuto_siege_victoire_1", 
     "condition": "\n"
   }
 },
@@ -7094,7 +7108,40 @@
     "message": "Les pr\u00e9paratifs pour le si\u00e8ge sont termin\u00e9s. Il en a cout\u00e9 40 \u00e9cus \u00e0 notre domaine. ", 
     "event": 299, 
     "condition": "\n", 
-    "on_fire": "param.next_event(\"tuto_siege2\").start()"
+    "on_fire": "kingdom.money -= 40 # le cout de l'expedition\nkingdom.save()\nparam.next_event(\"tuto_siege2\").start()"
+  }
+},
+{
+  "pk": 410, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Faisons ainsi.", 
+    "message": "", 
+    "event": 300, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_siege3\").start()"
+  }
+},
+{
+  "pk": 411, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Encerclons ces rats ! ", 
+    "message": "", 
+    "event": 301, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_siege4\").start()"
+  }
+},
+{
+  "pk": 412, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "\"A L'ATTAQUE !\"", 
+    "message": "", 
+    "event": 302, 
+    "condition": "\n", 
+    "on_fire": "if param.get_value(\"is_victory\"):\n  param.next_event(\"tuto_siege_victoire_1\").start()\nelse:\n  param.next_event(\"tuto_siege_defaite_1\").start()  \n"
   }
 }
 ]
