@@ -3291,7 +3291,7 @@
     "image": "events/88_27.jpg", 
     "on_fire": "if folks[0].diplomacy >= 12:\n  param.get_value(\"spouse4\").loyalty += 6\nelif folks[0].diplomacy >= 10:\n  param.get_value(\"spouse4\").loyalty += 4\nelse:\n  param.get_value(\"spouse4\").loyalty += 2\nparam.get_value(\"spouse4\").save()\n", 
     "slug": "tuto_diplomacy_mariage_danse", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -6989,10 +6989,10 @@
   "pk": 396, 
   "model": "event.eventaction", 
   "fields": {
-    "text": "Sa main sur mon bras, j(e la racompagne \u00e0 notre table.", 
+    "text": "Sa main sur mon bras, je la racompagne \u00e0 notre table.", 
     "message": "", 
     "event": 291, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_diplomacy_mariage_finish\").start()"
   }
 },
