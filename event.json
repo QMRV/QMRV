@@ -3315,7 +3315,7 @@
     "category": null, 
     "name": "tuto_diplomacy_mariage_beuverie", 
     "weight": 1, 
-    "text": "{% if spouse3 == title.chatelain%}L\u00e2chant une br\u00e8ve excuse dans l'oreille de mon \u00e9pouse, j{% else %}Fatigu\u00e9 des ronds de jambe des convives \u00e0 ma table, j{% endif %}e me l\u00e8ve pour aller me laisser tomber au c\u00f4t\u00e9 d'un grand gaillard en train de faire un sort \u00e0 un tonnelet de vin. Il est plus que ravis de m\u2019accueillir, et nous trinquons de bon c\u0153ur.\r\n\r\nCe premier verre de vin me r\u00e9chauffe agr\u00e9ablement les entrailles.\r\n\r\n    {% if spouse3 == title.chatelain%}-2 de Loyaut\u00e9 pour {{spouse4}}.{% endif %}", 
+    "text": "{% if spouse3 == title.chatelain%}L\u00e2chant une br\u00e8ve excuse dans l'oreille de mon \u00e9pouse, {% else %}fatigu\u00e9 des ronds de jambe des convives \u00e0 ma table, {% endif %}je me l\u00e8ve pour aller me laisser tomber au c\u00f4t\u00e9 d'un grand gaillard en train de faire un sort \u00e0 un tonnelet de vin. Il est plus que ravis de m\u2019accueillir, et nous trinquons de bon c\u0153ur.\r\n\r\nCe premier verre de vin me r\u00e9chauffe agr\u00e9ablement les entrailles.\r\n\r\n    {% if spouse3 == title.chatelain %}-2 de Loyaut\u00e9 pour {{spouse4}}.{% endif %}", 
     "image": "events/88_23.jpg", 
     "on_fire": "\n", 
     "slug": "tuto_diplomacy_mariage_beuverie", 
@@ -3343,8 +3343,8 @@
     "category": null, 
     "name": "tuto_diplomacy_mariage_beuverie_3", 
     "weight": 1, 
-    "text": "Alors que j'ach\u00e8ve une longue tirade sur la molesse et la couardise des {{tuto_dynasty_pnj}}, {{soifard.first_name}} \u00e9clate de rire et me donne une grande claque dans le dos.\r\n\r\n\"Vous avez du cran, vot' altesse, j'aime \u00e7a! Si je m'\u00e9coutais, je laisserai tomber cette cour de bons \u00e0 rien et je m'mettrai \u00e0 votre service!\"", 
-    "image": "", 
+    "text": "Alors que j'ach\u00e8ve une longue tirade sur la mollesse et la couardise des {{tuto_dynasty_pnj}}, {{soifard.first_name}} \u00e9clate de rire et me donne une grande claque dans le dos.\r\n\r\n\"Vous avez du cran, vot' altesse, j'aime \u00e7a! Si je m'\u00e9coutais, je laisserai tomber cette cour de bons \u00e0 rien et je m'mettrai \u00e0 votre service!\"", 
+    "image": "events/88_5_1.jpg", 
     "on_fire": null, 
     "slug": "tuto_diplomacy_mariage_beuverie_3", 
     "condition": null
@@ -7073,7 +7073,7 @@
     "message": "", 
     "event": 296, 
     "condition": null, 
-    "on_fire": "param.next_event(\"tuto_diplomacy_mariage_finish\").start()"
+    "on_fire": "param.next_event(\"tuto_diplomacy_mariage_beuverie_4\").start()"
   }
 },
 {
@@ -7084,7 +7084,7 @@
     "message": "", 
     "event": 296, 
     "condition": null, 
-    "on_fire": "param.next_event(\"tuto_diplomacy_mariage_finish\").start()"
+    "on_fire": "param.next_event(\"tuto_diplomacy_mariage_beuverie_5\").start()"
   }
 },
 {
