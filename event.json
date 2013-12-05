@@ -3441,7 +3441,7 @@
     "category": null, 
     "name": "siege_victoire1", 
     "weight": 1, 
-    "text": "Un autre des mes hommes vient de s\u2019\u00e9crouler frapp\u00e9 par un carreau lanc\u00e9 depuis les remparts du ch\u00e2teau ennemi. Cependant en face la r\u00e9sistance de la porte faiblit face de butoir aux coups du b\u00e9lier et enfin un dernier coup formidable d\u00e9fonce les poutres principales formidable fait voler en \u00e9clat les poutres transverses de son ossature. D\u00e9j\u00e0 des trous consid\u00e9rables apparaissent et je vois enfin les yeux de nos ennemis ... Ils sont emplis de peur !!! \r\n\r\n\"Archers, tirez dans l'embrasure, man\u0153uvres d\u00e9blayez le b\u00e9lier ! \"\r\n\r\nMes archers qui \u00e9taient jusqu'ici rest\u00e9s \u00e0 l'abri sous la structure protectrice du b\u00e9lier se mettent rapidement en ligne et lancent une premi\u00e8re salve. plusieurs silhouettes de l'autre c\u00f4t\u00e9 semblent chanceler d'un coup. L'ennemi r\u00e9plique faiblement et semble d\u00e9sorganis\u00e9.  Il est temps de s\u2019\u00e9lancer ! \r\n\r\n\"Spadassins, avec moi !\"\r\n\r\nFon\u00e7ant \u00e0 travers ce qui reste de la porte je m'\u00e9lance pour trouver une premier soldat ennemi, paniqu\u00e9 que je transperce d'un seul coup \u00e0 la jugulaire puis je me pr\u00e9cipite sur la petite ligne de fortune que tentent de constituer mes adversaires, frappant de tous c\u00f4t\u00e9s. Le corps \u00e0 corps qui s\u2019ensuit est bref mais bient\u00f4t il n'y a plus personne devant nous. Nos ennemis sont morts, bless\u00e9s ou en fuite.   \r\n\r\nLa porte est notre et le flot furieux des soldats de {{dynasty}} se r\u00e9pand dans la cour. ", 
+    "text": "Un autre des mes hommes vient de s\u2019\u00e9crouler frapp\u00e9 par un carreau lanc\u00e9 depuis les remparts du ch\u00e2teau ennemi. Cependant en face la r\u00e9sistance de la porte faiblit face aux coups de butoir du b\u00e9lier et enfin une derni\u00e8re pouss\u00e9e formidable d\u00e9fonce les poutres principales les poutres transverses de son ossature, faisant voler en \u00e9clat des \u00e9clats de bois bris\u00e9s. D\u00e9j\u00e0 des trous consid\u00e9rables apparaissent et je vois enfin les yeux de nos ennemis ... Ils sont emplis de peur !!! \r\n\r\n\"Archers, tirez dans l'embrasure, man\u0153uvres d\u00e9blayez le b\u00e9lier ! \"\r\n\r\nMes archers qui \u00e9taient jusqu'ici rest\u00e9s \u00e0 l'abri sous la structure protectrice du b\u00e9lier se mettent rapidement en ligne et lancent une premi\u00e8re salve. plusieurs silhouettes de l'autre c\u00f4t\u00e9 semblent chanceler d'un coup. L'ennemi r\u00e9plique faiblement et semble d\u00e9sorganis\u00e9.  Il est temps de s\u2019\u00e9lancer ! \r\n\r\n\"Spadassins, avec moi !\"\r\n\r\nFon\u00e7ant \u00e0 travers ce qui reste de la porte je m'\u00e9lance pour trouver une premier soldat ennemi, paniqu\u00e9 que je transperce d'un seul coup \u00e0 la jugulaire puis je me pr\u00e9cipite sur la petite ligne de fortune que tentent de constituer mes adversaires, frappant de tous c\u00f4t\u00e9s. Le corps \u00e0 corps qui s\u2019ensuit est bref mais bient\u00f4t il n'y a plus personne devant nous. Nos ennemis sont morts, bless\u00e9s ou en fuite.   \r\n\r\nLa porte est notre et le flot furieux des soldats de {{dynasty}} se r\u00e9pand dans la cour. ", 
     "image": "", 
     "on_fire": "\n", 
     "slug": "tuto_siege_victoire_1", 
@@ -3473,6 +3473,20 @@
     "image": "", 
     "on_fire": "\n", 
     "slug": "tuto_siege_victoire_3", 
+    "condition": "\n"
+  }
+},
+{
+  "pk": 306, 
+  "model": "event.event", 
+  "fields": {
+    "category": null, 
+    "name": "siege_defaite1", 
+    "weight": 1, 
+    "text": "Un autre des mes hommes vient de s\u2019\u00e9crouler frapp\u00e9 par un carreau lanc\u00e9 depuis les remparts du ch\u00e2teau ennemi. En face la porte du ch\u00e2teau adverse a subi de nombreux coups mais reste solide. \r\n\r\n\"Attention !!! en l'air !!! \"\r\n\r\nJ'ai \u00e0 peine le temps de lever la t\u00eate pour voir une \u00e9norme pierre lanc\u00e9e depuis les remparts arriver droit sur nous. \r\n\r\n\"\u00c9cartez vous ! \"\r\n\r\nJe met lance sur le c\u00f4t\u00e9 et ai juste le temps d'apercevoir le projectile traverser les peaux de protection du b\u00e9lier comme une soie fragile avant fracasser une des poutres de soutien de sa charpente. Dans un bruit horrible de bois trop tendu celui-ci bascule compl\u00e9tement sur le c\u00f4t\u00e9 \u00e9crasant vif un de mes malheureux soldats.  \r\n\r\n\"Retournez \u00e0 couvert des protections, vite !!, remettez le b\u00e9lier d'aplomb ! \"\r\n\r\nSous une pluie de fl\u00e8che et de cailloux mes soldats tentent de s'abriter sous les protections restantes du b\u00e9lier. Nous tentons avec tout notre poids de le basculer de nouveau mais soudain la porte du ch\u00e2teau commence \u00e0 s'ouvrir. \r\n\r\n\"Soldats, une sortie, en ligne vite ! \"\r\n\r\nLes hommes de {{target_dynasty}} s'\u00e9lancent plein d'audace et de confiance sur notre troupe d\u00e9sorganis\u00e9e et fatigu\u00e9e. Je transperce de mon \u00e9p\u00e9e un des assaillants mais ma ligne s'effrite rapidement et mes hommes commencent \u00e0 fuir. La mort dans l\u2019\u00e2me je retraite \u00e9galement.\r\n", 
+    "image": "", 
+    "on_fire": "\n", 
+    "slug": "tuto_siege_defaite_1", 
     "condition": "\n"
   }
 },
@@ -7203,6 +7217,17 @@
     "event": 303, 
     "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_siege_victoire_2\").start()"
+  }
+},
+{
+  "pk": 416, 
+  "model": "event.eventaction", 
+  "fields": {
+    "text": "Laches !!! ", 
+    "message": "", 
+    "event": 306, 
+    "condition": "\n", 
+    "on_fire": "param.next_event(\"tuto_siege_defaite_2\").start()"
   }
 }
 ]
