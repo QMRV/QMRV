@@ -3303,9 +3303,9 @@
     "weight": 1, 
     "text": "Alors que la f\u00eate se poursuit, j\u2019entreprends d{% if maxcarac == fight %}e' \u00e9galer les convives \u00e0 ma table de quelques anecdotes militaires r\u00e9colt\u00e9es au service du roi de France. Mes suivants {{convive1}} et {{convive2}} semblent impressionn\u00e9{% if convive1.sex == 'f' and convive2.sex == 'f'  %}e{%  endif %}s{% elif maxcarac == diplomacy %}e charmer les convives \u00e0 ma table gr\u00e2ce \u00e0 quelques bons mots et plaisanteries. Mes suivants {{convive1}} et {{convive2}} rient aux \u00e9clats{% elif maxcarac == plot %}e r\u00e9galer les convives \u00e0 ma table des ragots de ma cour. Mes suivants {{convive1}} et {{convive2}} rient aux \u00e9clats{% else %}'initier les convives \u00e0 ma table aux myst\u00e8res de l'astronomie. Mes suivants {{convive1}} et {{convive2}} semblent impressionn\u00e9s{% if convive1.sex == 'f' and convive2.sex == 'f'  %}e{%  endif %}s par l'\u00e9tendue de mon savoir\r\n{% if spouse3 == title.chatelain %}, de m\u00eame que ma nouvelle \u00e9pouse {{spouse4.first_name}}{% endif %}.\r\n\r\n    {% if spouse3 == title.chatelain %}{{spouse4}}, {% endif %}{{convive1}} et {{convive2}} gagne {% if title.chatelain.diplomacy >= 12 %}+4{% elif title.chatelain.diplomacy >= 10 %}+3{% else %}+2{% endif %} de Loyaut\u00e9.", 
     "image": "events/88_25.jpg", 
-    "on_fire": "convives = Folk.objects.filter(kingdom=kingdom, birth__lte=datetime.now() - timedelta(days=C.MAJORITE))\nconvives = convives.exclude(id=folks[0].id)\nconvives = convives.exclude(id=folks[1].id)\nconvives = convives.exclude(id=folks[2].id)\nconvives = convives.exclude(id=folks[3].id)\nconvives = convives.order_by('?')\nparam.set_values(\"convive1\", convives[0])\nparam.set_values(\"convive2\", convives[1])\nif folks[0].diplomacy >= 12:\n  if param.get_value(\"spouse3\") == folk[0]:\n    param.get_value(\"spouse4\").loyalty += 4\n  param.get_value(\"convive1\").loyalty += 4\n  param.get_value(\"convive2\").loyalty += 4\nelif folks[0].diplomacy >= 10:\n  if param.get_value(\"spouse3\") == folk[0]:\n    param.get_value(\"spouse4\").loyalty += 3\n  param.get_value(\"convive1\").loyalty += 3\n  param.get_value(\"convive2\").loyalty += 3\nelse:\n  if param.get_value(\"spouse3\") == folk[0]:\n    param.get_value(\"spouse4\").loyalty += 2\n  param.get_value(\"convive1\").loyalty += 2\n  param.get_value(\"convive2\").loyalty += 2\nparam.get_value(\"spouse4\").save()\nparam.get_value(\"convive1\").save()\nparam.get_value(\"sconvive2\").save()\n", 
+    "on_fire": "convives = Folk.objects.filter(kingdom=kingdom, birth__lte=datetime.now() - timedelta(days=C.MAJORITE))\nconvives = convives.exclude(id=folks[0].id)\nconvives = convives.exclude(id=folks[1].id)\nconvives = convives.exclude(id=folks[2].id)\nconvives = convives.exclude(id=folks[3].id)\nconvives = convives.order_by('?')\nparam.set_values(\"convive1\", convives[0])\nparam.set_values(\"convive2\", convives[1])\nif folks[0].diplomacy >= 12:\n  if param.get_value(\"spouse3\") == folk[0]:\n    param.get_value(\"spouse4\").loyalty += 4\n  param.get_value(\"convive1\").loyalty += 4\n  param.get_value(\"convive2\").loyalty += 4\nelif folks[0].diplomacy >= 10:\n  if param.get_value(\"spouse3\") == folk[0]:\n    param.get_value(\"spouse4\").loyalty += 3\n  param.get_value(\"convive1\").loyalty += 3\n  param.get_value(\"convive2\").loyalty += 3\nelse:\n  if param.get_value(\"spouse3\") == folk[0]:\n    param.get_value(\"spouse4\").loyalty += 2\n  param.get_value(\"convive1\").loyalty += 2\n  param.get_value(\"convive2\").loyalty += 2\nparam.get_value(\"spouse4\").save()\nparam.get_value(\"convive1\").save()\nparam.get_value(\"convive2\").save()\n", 
     "slug": "tuto_diplomacy_mariage_conversation", 
-    "condition": null
+    "condition": "\n"
   }
 },
 {
@@ -7017,7 +7017,7 @@
     "text": "Un bon seigneur doit savoir gagner l'amiti\u00e9 de ses gens.", 
     "message": "", 
     "event": 293, 
-    "condition": null, 
+    "condition": "\n", 
     "on_fire": "param.next_event(\"tuto_diplomacy_mariage_finish\").start()"
   }
 },

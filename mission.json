@@ -418,8 +418,8 @@
   "model": "mission.mission", 
   "fields": {
     "name": "Recruter des hommes d'arme", 
-    "target_list": "\n", 
-    "text": "Recruter des soldats (fait perdre des paysans)", 
+    "target_list": null, 
+    "text": "Envoyer des braves hommes recruter parmi les paysans. Un soldat est recrut\u00e9 par tranche de 3 de combat parmi les hommes en mission. L'entrainement de chaque soldat co\u00fbte 1 \u00e9cus. Les paysans partent en entrainement maintenant et reviennent soldats 6 heures apr\u00e8s.", 
     "has_value": false, 
     "on_resolution": "delta = param.get_value(\"delta\")\nkingdom.soldiers += delta\nkingdom.save\nkingdom.message(\"%s soldats ont rejoint votre cour. Vous \u00eates maintenant \u00e0 la t\u00eate d'une arm\u00e9e de %s soldats.\" % (delta, kingdom.soldiers))\n", 
     "value_description": "", 
@@ -431,9 +431,9 @@
     "timeout": null, 
     "is_cancellable": true, 
     "duration": 360, 
-    "on_cancel": "\n", 
+    "on_cancel": null, 
     "slug": "recruter_troupes", 
-    "on_init": "\n"
+    "on_init": null
   }
 },
 {
@@ -603,7 +603,7 @@
   "fields": {
     "name": "Recruter un chevalier", 
     "target_list": null, 
-    "text": "D\u00e9signer un maximum de 3 personnes avec pour mission de ramener un chevalier au ch\u00e2teau.\r\n\r\n    Seuil 24\r\n    Cout 15+10/personne dans la mission\r\n    La loyaut\u00e9 de ce nouveau venu d\u00e9pend de la diplomatie des personnages en mission", 
+    "text": "D\u00e9signer un maximum de 3 personnes avec pour mission de ramener un chevalier au ch\u00e2teau. La loyaut\u00e9 de ce nouveau venu d\u00e9pend de la diplomatie des personnages en mission.\r\n    Seuil 24\r\n    Cout 15+10/personne dans la mission\r\n", 
     "has_value": false, 
     "on_resolution": "age = random_gauss(16, 40)\n\nmax_carac = 32 + int((age - 16) / 5)\n# liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nqualities.append(random_in([\"archer\", \"cavalier\", \"piquier\"]))\n# liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\nloyalty = 50 + 30 * int((sum_stats(affected, \"diplomacy\") - 23) / 37) + random_value(-10, 10)\nchevalier = f(\"creer_folk\", kingdom=None, fight_min=7, plot_min=1, diplomacy_min=1, scholarship_min=1, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits=no_qualities)\npe = kingdom.create_pending_event(\"allegeance_chevalier\")\npe.set_value(\"chevalier\", chevalier)\npe.start()\n", 
     "value_description": "", 
@@ -615,9 +615,9 @@
     "timeout": null, 
     "is_cancellable": true, 
     "duration": 360, 
-    "on_cancel": "\n", 
+    "on_cancel": null, 
     "slug": "recruter_chevalier", 
-    "on_init": "\n"
+    "on_init": null
   }
 },
 {
@@ -626,9 +626,9 @@
   "fields": {
     "name": "Demander un pr\u00eatre", 
     "target_list": null, 
-    "text": "Mander un pr\u00eatre \u00e0 l'\u00e9v\u00e9ch\u00e9\r\n", 
+    "text": "Mander un pr\u00eatre \u00e0 l'\u00e9v\u00e9ch\u00e9. Vous enloyez une escorte d'un maximum de 3 personnes. La loyaut\u00e9 de cette nouvelle recrue d\u00e9pend de la diplomatie des personnages en mission\r\n    Seuil 24 \r\n    Cout 15+10/personne dans la mission ", 
     "has_value": false, 
-    "on_resolution": "\n", 
+    "on_resolution": null, 
     "value_description": "", 
     "on_start": "cout = 10 + 5 * len(affected)\nif kingdom.money < cout:\n  stop(\"Vous n'avez pas les moyens de lancer cette mission.\")\n\nkingdom.money -= cout\nkingdom.save()\nbonus = 0\n\nif kingdom.get_folk_in_title(\"cure\") in affected:\n  bonus += 4\nif sum_stats(affected, \"scholarship\") + bonus < 22:\n  stop(\"Un plus grand score d'erudition est necessaire pour convaincre l'\u00e9v\u00each\u00e9.\")\n\nage = random_gauss(16, 40)\nmax_carac = 32 + int((age - 16) / 5)\n# liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nqualities.append(\"pretre\")\n# liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\nloyalty = 50 + 30 * int((sum_stats(affected, \"scholarship\") - 23) / 37) + random_value(-10, 10)\n\npretre = f(\"creer_folk\", kingdom=None, fight_min=2, plot_min=4, diplomacy_min=4, scholarship_min=7, loyalty=loyalty, max_carac=max_carac, sex=Folk.MALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits=no_qualities)\n\npe = kingdom.create_pending_event(\"allegeance_pretre\")\npe.set_value(\"pretre\", pretre)\npe.start()\n", 
     "has_target": false, 
@@ -638,9 +638,9 @@
     "timeout": null, 
     "is_cancellable": true, 
     "duration": 60, 
-    "on_cancel": "\n", 
+    "on_cancel": null, 
     "slug": "recruter_pretre", 
-    "on_init": "\n"
+    "on_init": null
   }
 },
 {
@@ -648,8 +648,8 @@
   "model": "mission.mission", 
   "fields": {
     "name": "Querir une noble dame", 
-    "target_list": "\n", 
-    "text": "Partir recruter une dame", 
+    "target_list": null, 
+    "text": "Vous sollicitez un maximum de 3 personnes pour qu\u00e9rir une noble dame. La loyaut\u00e9 de cette nouvelle recrue d\u00e9pend de la diplomatie des personnages en mission\r\n    Seuil 24 \r\n    Cout 15+10/personne dans la mission ", 
     "has_value": false, 
     "on_resolution": "age = random_gauss(16, 40)\nmax_carac = 32 + int((age - 16) / 5)\n# liste des traits qu'il poss\u00e8de (en plus des traits random)\nqualities = []\nchoix_baisee = (40 - age) / 24 * 100\nif choix_baisee <= random_value(1, 100):\n  qualities.append(\"jouvancelle\")\n# liste des traits qu'il ne peut pas avoir\nno_qualities = []\n\n\nloyalty = 50 + 30 * int((sum_stats(affected, \"diplomacy\") - 23) / 37) + random_value(-10, 10)\n\ndame = f(\"creer_folk\", kingdom=None, fight_min=2, plot_min=2, diplomacy_min=2, scholarship_min=2, loyalty=loyalty, max_carac=max_carac, sex=Folk.FEMALE, birth=datetime.now() - timedelta(days=age), traits=qualities, notraits=no_qualities)\n\npe = kingdom.create_pending_event(\"allegeance_dame\")\npe.set_value(\"dame\", dame)\npe.start()\n", 
     "value_description": "", 
@@ -661,9 +661,9 @@
     "timeout": null, 
     "is_cancellable": true, 
     "duration": 360, 
-    "on_cancel": "\n", 
+    "on_cancel": null, 
     "slug": "recruter_dame", 
-    "on_init": "\n"
+    "on_init": null
   }
 },
 {
@@ -1364,7 +1364,7 @@
     "length": 20, 
     "allow_empty": false, 
     "slug": "recruteurs", 
-    "condition": "\n"
+    "condition": null
   }
 },
 {
