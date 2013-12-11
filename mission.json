@@ -419,7 +419,7 @@
   "fields": {
     "name": "Recruter des hommes d'arme", 
     "target_list": null, 
-    "text": "Envoyer des braves hommes recruter parmi les paysans. Un soldat est recrut\u00e9 par tranche de 3 de combat parmi les hommes en mission. L'entrainement de chaque soldat co\u00fbte 1 \u00e9cus. Les paysans partent en entrainement maintenant et reviennent soldats 6 heures apr\u00e8s.", 
+    "text": "Envoyer des braves hommes recruter parmi les paysans. Un soldat est recrut\u00e9 par tranche de 3 de combat parmi les hommes en mission. L'entrainement de chaque soldat co\u00fbte 1 \u00e9cus. Les paysans partent en entrainement maintenant et reviennent en tant que soldats 6 heures apr\u00e8s.", 
     "has_value": false, 
     "on_resolution": "delta = param.get_value(\"delta\")\nkingdom.soldiers += delta\nkingdom.save\nkingdom.message(\"%s soldats ont rejoint votre cour. Vous \u00eates maintenant \u00e0 la t\u00eate d'une arm\u00e9e de %s soldats.\" % (delta, kingdom.soldiers))\n", 
     "value_description": "", 
@@ -441,12 +441,12 @@
   "model": "mission.mission", 
   "fields": {
     "name": "Renvoyer des hommes d'arme", 
-    "target_list": "\n", 
-    "text": "Renvoyer des soldats. Ils deviendront paysans.", 
+    "target_list": null, 
+    "text": "Renvoyer des soldats. Ils (re)deviendront paysans. Cette mission est gratuite et instantan\u00e9e. Elle transforme un soldat pour chaque tranche complete de 3 d'\u00e9rudition parmi les hommes que vous avez envoy\u00e9s. Ces hommes seront indiponible pendant  5 jours. (20 minutes en temmps r\u00e9el)", 
     "has_value": false, 
-    "on_resolution": "\n", 
+    "on_resolution": null, 
     "value_description": "", 
-    "on_start": "POURCENTAGE_MAX_MISSION_RECRUTEMENT = 5\ndelta = sum_stats(affected, 'scholarship') / 3\n\n# On ne peut pas avoir un nombre n\u00e9gatif de soldats !\ndelta = min(delta, kingdom.soldiers)\n\nkingdom.soldiers -= delta\nkingdom.population += delta\nkingdom.save()\n\nkingdom.message(\"%s soldats ont l\u00e2ch\u00e9s leurs armes pour se reconvertir en paysans. Vous \u00eates maintenant \u00e0 la t\u00eate d'une arm\u00e9e de %s soldats.\" % (delta, kingdom.soldiers))\n\n", 
+    "on_start": "POURCENTAGE_MAX_MISSION_RECRUTEMENT = 5\ndelta = int(sum_stats(affected, 'scholarship') / 3)\n\n# On ne peut pas avoir un nombre n\u00e9gatif de soldats !\ndelta = min(delta, kingdom.soldiers)\n\nkingdom.soldiers -= delta\nkingdom.population += delta\nkingdom.save()\n\nkingdom.message(\"%s soldats ont l\u00e2ch\u00e9s leurs armes pour se reconvertir en paysans. Vous \u00eates maintenant \u00e0 la t\u00eate d'une arm\u00e9e de %s soldats.\" % (delta, kingdom.soldiers))\n\n", 
     "has_target": false, 
     "is_team": false, 
     "title": 2, 
@@ -454,9 +454,9 @@
     "timeout": null, 
     "is_cancellable": true, 
     "duration": 20, 
-    "on_cancel": "\n", 
+    "on_cancel": null, 
     "slug": "renvoyer", 
-    "on_init": "\n"
+    "on_init": null
   }
 },
 {
@@ -741,9 +741,9 @@
   "fields": {
     "name": "Jurer allegeance", 
     "target_list": "param = Kingdom.objects.all()\n", 
-    "text": "Jurer all\u00e9geance \u00e0 un royaume et en faire mon suzerain.", 
+    "text": "Jurer all\u00e9geance \u00e0 un royaume et en faire mon suzerain. Vous appartiendrez au cercle ferm\u00e9 des serviteurs de votre nouveau suzerain et par extention vous serez aussi l'humble serviteur des suzerains de votre suzerain.\r\n\r\n    Le seul impact pour le moment est le nom du souverain le plus haut dans la branche qui est visible et qui indique une sorte d'alliance.", 
     "has_value": false, 
-    "on_resolution": "\n", 
+    "on_resolution": null, 
     "value_description": "", 
     "on_start": "if param.target == kingdom:\n  # Selecting yourself means no master.\n  kingdom.set_value('suzerain', None)\n  pe = kingdom.start_pending_event('annuler_allegeance')\nelse:\n  kingdom.set_value('suzerain', param.target)\n  pe = kingdom.create_pending_event('jurer_allegeance')\n  pe.set_value('suzerain', param.target)\n  pe.start()\n", 
     "has_target": true, 
@@ -753,7 +753,7 @@
     "timeout": null, 
     "is_cancellable": true, 
     "duration": 0, 
-    "on_cancel": "\n", 
+    "on_cancel": null, 
     "slug": "allegeance", 
     "on_init": "param.target = kingdom.get_value('suzerain')\n"
   }
@@ -1130,7 +1130,7 @@
     "length": 20, 
     "allow_empty": false, 
     "slug": "responsables", 
-    "condition": "\n"
+    "condition": null
   }
 },
 {
