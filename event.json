@@ -277,11 +277,11 @@
     "category": null, 
     "name": "Couper les vivres", 
     "weight": 1, 
-    "text": "Ma d\u00e9cision de puiser dans les bourses des gentilshommes et gentes-dames de ma cour a \u00e9t\u00e9 accueillie avec un froid polaire. Sur mon passage, ces nobles personnes froncent les sourcils et murmurent \u00e0 l\u2019oreille de leur voisin.\r\n\r\n\u2018\u2019\u2019-5 de Loyaut\u00e9 g\u00e9n\u00e9rale.\r\n+50 \u00e9cus.\u2019\u2019\u2019", 
+    "text": "Ma d\u00e9cision de puiser dans les bourses des gentilshommes et gentes-dames de ma cour a \u00e9t\u00e9 accueillie avec un froid polaire. Sur mon passage, ces nobles personnes froncent les sourcils et murmurent \u00e0 l\u2019oreille de leur voisin.\r\n\r\n    -5 de Loyaut\u00e9 g\u00e9n\u00e9rale\r\n    + {{gain_money}}  \u00e9cus", 
     "image": "events/66_1.jpg", 
-    "on_fire": "for folk in folks:\n  folk.loyalty -= 5\n  folk.save()\nkingdom.money += 50\nkingdom.save()\n", 
+    "on_fire": null, 
     "slug": "taxecour", 
-    "condition": " "
+    "condition": null
   }
 },
 {
@@ -3715,10 +3715,10 @@
   "model": "event.eventaction", 
   "fields": {
     "text": "Les ingrats!", 
-    "message": "En r\u00e9duisant les d\u00e9pense du ch\u00e2teau, {{title.tresorier.first_name}} a mit de c\u00f4t\u00e9 50 \u00e9cus.  Ma cour en est irrit\u00e9. ```-5 de loyaut\u00e9 g\u00e9n\u00e9rale```", 
+    "message": "En r\u00e9duisant les d\u00e9pense du ch\u00e2teau, {{title.tresorier.first_name}} a mis de c\u00f4t\u00e9 {{gain_money}} \u00e9cus.  Ma cour en est irrit\u00e9. \r\n    -5 de loyaut\u00e9 g\u00e9n\u00e9rale", 
     "event": 25, 
-    "condition": " ", 
-    "on_fire": " "
+    "condition": null, 
+    "on_fire": null
   }
 },
 {
