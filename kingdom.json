@@ -1,1 +1,901 @@
 [
+{
+  "pk": 1, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il tire le maximum des circonstances, souvent au d\u00e9triment d'autrui.\r\n\r\n+1 en Intrigue, -15 en Loyaut\u00e9", 
+    "on_defect": "folk.plot -= 1\nfolk.loyalty += 5\nfolk.save()\n", 
+    "female_description": "Elle tire le maximum des circonstances, souvent au d\u00e9triment d'autrui.\r\n\r\n+1 en Intrigue, -15 en Loyaut\u00e9", 
+    "on_affect": "folk.plot += 1\nfolk.loyalty -= 15\nfolk.save()\n", 
+    "female_name": "Opportuniste", 
+    "incompatible_qualities": [
+      9, 
+      14
+    ], 
+    "slug": "opportuniste", 
+    "name": "Opportuniste"
+  }
+},
+{
+  "pk": 2, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Un ambitieux se r\u00eave une grande destin\u00e9e, et ne recule devant aucun sacrifice pour la voir s'accomplir.\r\n\r\n+2 en Combat, Diplomatie, Intrigue et \u00c9rudition, -30 en Loyaut\u00e9", 
+    "on_defect": "folk.fight -= 2\nfolk.diplomacy -= 2\nfolk.plot -= 2\nfolk.scholarship -= 2\nfolk.loyalty += 15\nfolk.save()\n", 
+    "female_description": "Elle ignore ceux qui lui disent qu'une femme doit savoir rester \u00e0 sa place, et n'h\u00e9site pas \u00e0 se fixer les buts les plus difficiles.\r\n\r\n+2 en Combat, Diplomatie, Intrigue et \u00c9rudition, -30 en Loyaut\u00e9", 
+    "on_affect": "folk.fight += 2\nfolk.diplomacy += 2\nfolk.plot += 2\nfolk.scholarship += 2\nfolk.loyalty -= 30\nfolk.save()\n", 
+    "female_name": "Ambitieuse", 
+    "incompatible_qualities": [
+      6, 
+      14, 
+      21, 
+      23, 
+      32
+    ], 
+    "slug": "ambitieux", 
+    "name": "Ambitieux"
+  }
+},
+{
+  "pk": 3, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il ne supporte pas les critiques, et se fait un devoir de r\u00e9pondre au moindre affront.\r\n\r\n+1 en Combat", 
+    "on_defect": "folk.fight -= 1\nfolk.save()\n", 
+    "female_description": "Elle ne supporte pas les critiques, et se fait un devoir de r\u00e9pondre au moindre affront.\r\n\r\n+1 en Combat", 
+    "on_affect": "folk.fight += 1\nfolk.save()\n", 
+    "female_name": "Fi\u00e8re", 
+    "incompatible_qualities": [
+      6, 
+      21
+    ], 
+    "slug": "fier", 
+    "name": "Fier"
+  }
+},
+{
+  "pk": 4, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il a renonc\u00e9 aux illusions de la morale, de la pi\u00e9t\u00e9 et de l'honneur.\r\n\r\nIntrigue +2, -20 de Loyaut\u00e9", 
+    "on_defect": "folk.plot -= 2\nfolk.loyalty -= 10\nfolk.save()\n", 
+    "female_description": "Elle a renonc\u00e9 aux illusions de la morale, de la pi\u00e9t\u00e9 et de l'honneur.\r\n\r\nIntrigue +2, -20 de Loyaut\u00e9", 
+    "on_affect": "folk.plot += 2\nfolk.loyalty -= 20\nfolk.save()\n", 
+    "female_name": "Cynique", 
+    "incompatible_qualities": [
+      9, 
+      14, 
+      17, 
+      32
+    ], 
+    "slug": "cynique", 
+    "name": "Cynique"
+  }
+},
+{
+  "pk": 5, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il r\u00e9pugne \u00e0 d\u00e9penser la moindre pi\u00e9cette, pr\u00e9f\u00e9rant accumuler son argent \u00e0 l\u2019abri des regards.\r\n\r\n-10 de Loyaut\u00e9, +2 pour g\u00e9rer la tr\u00e9sorerie.", 
+    "on_defect": "folk.loyalty += 5\nfolk.save()\n", 
+    "female_description": "Elle r\u00e9pugne \u00e0 d\u00e9penser la moindre pi\u00e9cette, pr\u00e9f\u00e9rant accumuler son argent \u00e0 l\u2019abri des regards.\r\n\r\n-10 de Loyaut\u00e9, +2 pour g\u00e9rer la tr\u00e9sorerie.", 
+    "on_affect": "folk.loyalty -= 10\nfolk.save()\n", 
+    "female_name": "Avare", 
+    "incompatible_qualities": [
+      7
+    ], 
+    "slug": "avare", 
+    "name": "Avare"
+  }
+},
+{
+  "pk": 6, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "La pr\u00e9sence d'inconnus le met mal \u00e0 l'aise, et il a souvent peur de faire le premier pas.\r\n\r\n-2 en diplomatie +10 en loyaut\u00e9\r\n", 
+    "on_defect": "folk.diplomacy += 2\nfolk.loyalty -= 5\nfolk.save()\n", 
+    "female_description": "Elle n'aime pas que l'on fasse attention \u00e0 elle.\r\n\r\n-2 en diplomatie +10 en loyaut\u00e9", 
+    "on_affect": "folk.diplomacy -= 2\nfolk.loyalty += 10\nfolk.save()\n", 
+    "female_name": "Timide", 
+    "incompatible_qualities": [
+      2, 
+      3, 
+      15, 
+      19, 
+      20, 
+      10
+    ], 
+    "slug": "timide", 
+    "name": "Timide"
+  }
+},
+{
+  "pk": 7, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il ressent une compassion r\u00e9elle pour ceux moins fortun\u00e9s que lui, et n'h\u00e9site pas \u00e0 donner de son temps et de son argent pour leur venir en aide.\r\n\r\n+1 en Diplomatie, +2 pour la pr\u00eatrise, -2 pour g\u00e9rer la tr\u00e9sorerie", 
+    "on_defect": "folk.diplomacy -= 1\nfolk.save()\n", 
+    "female_description": "Elle est facilement \u00e9mue par le malheur des pauvres, et aime passez du temps \u00e0 soulager leurs maux.\r\n\r\n+1 en Diplomatie, +2 pour la pr\u00eatrise, -2 pour g\u00e9rer la tr\u00e9sorerie", 
+    "on_affect": "folk.diplomacy += 1\nfolk.save()\n", 
+    "female_name": "Charitable", 
+    "incompatible_qualities": [
+      16, 
+      5, 
+      18
+    ], 
+    "slug": "charitable", 
+    "name": "Charitable"
+  }
+},
+{
+  "pk": 8, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Un sens prononc\u00e9 de l'\u00e9quit\u00e9 et de morale, et un refus d'accepter les abus des puissants.\r\n\r\n+2 en diplomatie, -2 en intrigue\r\n", 
+    "on_defect": "folk.diplomacy -= 2\nfolk.plot += 2\nfolk.save()\n", 
+    "female_description": "Un sens prononc\u00e9 de l'\u00e9quit\u00e9 et de morale, et un refus d'accepter les abus des puissants.\r\n\r\n+2 en diplomatie, -2 en intrigue", 
+    "on_affect": "folk.diplomacy += 2\nfolk.plot -= 2\nfolk.save()\n", 
+    "female_name": "Juste", 
+    "incompatible_qualities": [
+      16, 
+      18
+    ], 
+    "slug": "juste", 
+    "name": "Juste"
+  }
+},
+{
+  "pk": 9, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Ce personnage a suit \u00e0 la lettre les pr\u00e9ceptes de loyaut\u00e9, de bravoure et d'honneur que pr\u00f4ne la chevalerie.\r\n\r\n+1 en Combat, +2 en diplomatie, -4 en intrigue, +30 en loyaut\u00e9.", 
+    "on_defect": "folk.fight -= 1\nfolk.diplomacy -= 2\nfolk.plot += 4\nfolk.loyalty -= 15\nfolk.save() \n", 
+    "female_description": "pas possible pour les femmes.", 
+    "on_affect": "folk.fight += 1\nfolk.diplomacy += 2\nfolk.plot -= 4\nfolk.loyalty += 30\nfolk.save()\n", 
+    "female_name": "none", 
+    "incompatible_qualities": [
+      1, 
+      4, 
+      18
+    ], 
+    "slug": "honorable", 
+    "name": "Honorable"
+  }
+},
+{
+  "pk": 10, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Pour un rien, il hausse le ton et frappe du poing sur la table.\r\n\r\n+1 en combat, -1 en diplomatie.", 
+    "on_defect": "folk.fight -= 1\nfolk.diplomacy += 1\nfolk.save()\n", 
+    "female_description": "Elle s'emporte souvent et pour un rien.\r\n\r\n+1 en combat, -1 en diplomatie.", 
+    "on_affect": "folk.fight += 1\nfolk.diplomacy -= 1\nfolk.save()\n", 
+    "female_name": "Col\u00e9rique", 
+    "incompatible_qualities": [
+      6, 
+      13, 
+      23
+    ], 
+    "slug": "colerique", 
+    "name": "Col\u00e9rique"
+  }
+},
+{
+  "pk": 11, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il est particuli\u00e8rement soucieux de la propret\u00e9 de ses cheveux et de la coupe de ses v\u00eatements.\r\n\r\n+1 en Diplomatie.", 
+    "on_defect": "folk.diplomacy -= 1\nfolk.save()\n", 
+    "female_description": "Elle passe \u00e9norm\u00e9ment de temps \u00e0 choisir ses robes, et \u00e0 y assortir ses bijoux.\r\n\r\n+1 en Diplomatie.", 
+    "on_affect": "folk.diplomacy += 1\nfolk.save()\n", 
+    "female_name": "Coqu\u00e8te", 
+    "incompatible_qualities": [
+      21
+    ], 
+    "slug": "coquet", 
+    "name": "Coquet"
+  }
+},
+{
+  "pk": 12, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Un guerrier courageux, qui se rue vers le danger sans un instant d'h\u00e9sitation.\r\n\r\n+2 en Combat, +10 de Loyaut\u00e9", 
+    "on_defect": "folk.fight -= 2\nfolk.loyalty += 5\nfolk.save()\n", 
+    "female_description": "nope", 
+    "on_affect": "folk.fight += 2\nfolk.loyalty += 10\nfolk.save()\n", 
+    "female_name": "nope", 
+    "incompatible_qualities": [
+      23
+    ], 
+    "slug": "intrepide", 
+    "name": "Intr\u00e9pide"
+  }
+},
+{
+  "pk": 13, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "D'une politesse irr\u00e9prochable, m\u00eame face \u00e0 un ennemi vocif\u00e9rant.\r\n\r\n+2 en Diplomatie.", 
+    "on_defect": "folk.diplomacy -= 2\nfolk.save()\n", 
+    "female_description": "Elle ma\u00eetrise \u00e0 la perfection l'art de \u00e9tiquette.\r\n\r\n+2 en Diplomatie.", 
+    "on_affect": "folk.diplomacy += 2\nfolk.save()\n", 
+    "female_name": "Courtoise", 
+    "incompatible_qualities": [
+      19, 
+      10, 
+      32
+    ], 
+    "slug": "courtois", 
+    "name": "Courtois"
+  }
+},
+{
+  "pk": 14, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il est un brin naif, et a tendance a croire tout ce qu'on lui raconte.\r\n\r\n-1 en Diplomatie, -2 en Intrigue, +10 en Loyaut\u00e9", 
+    "on_defect": "folk.diplomacy += 1\nfolk.plot += 2\nfolk.loyalty -= 5\nfolk.save()\n", 
+    "female_description": "Elle est un brin na\u00efve, et a tendance a croire tout ce qu'on lui raconte.\r\n\r\n-1 en Diplomatie, -2 en Intrigue, +10 en Loyaut\u00e9", 
+    "on_affect": "folk.diplomacy -= 1\nfolk.plot -= 2\nfolk.loyalty += 10\nfolk.save()\n", 
+    "female_name": "Cr\u00e9dule", 
+    "incompatible_qualities": [
+      1, 
+      2, 
+      4
+    ], 
+    "slug": "credule", 
+    "name": "Cr\u00e9dule"
+  }
+},
+{
+  "pk": 15, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Un rien d\u00e9bauch\u00e9, port\u00e9 sur la bonne chair, le vin et les chanson.\r\n\r\n* +1 en Diplomatie,\r\n* -2 en \u00c9rudition.", 
+    "on_defect": "folk.diplomacy -= 1\nfolk.scholarship += 2\nfolk.save()\n", 
+    "female_description": "Elle s'\u00e9panouie dans les banquets, o\u00f9 elle ne s'arr\u00eate que rarement au premier verre.\r\n\r\n* +1 en Diplomatie,\r\n* -2 en \u00c9rudition.", 
+    "on_affect": "folk.diplomacy += 1\nfolk.scholarship -= 2\nfolk.save()\n", 
+    "female_name": "F\u00eatarde", 
+    "incompatible_qualities": [
+      6, 
+      33
+    ], 
+    "slug": "fetard", 
+    "name": "F\u00eatard"
+  }
+},
+{
+  "pk": 16, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Son int\u00e9r\u00eat personnel est sa toute premi\u00e8re priorit\u00e9.\r\n\r\n* -20 en Loyaut\u00e9", 
+    "on_defect": "folk.loyalty += 10\nfolk.save()\n", 
+    "female_description": "Son int\u00e9r\u00eat personnel est sa toute premi\u00e8re priorit\u00e9.\r\n\r\n* -20 en Loyaut\u00e9", 
+    "on_affect": "folk.loyalty -= 20\nfolk.save()\n", 
+    "female_name": "Ego\u00efste", 
+    "incompatible_qualities": [
+      7, 
+      8
+    ], 
+    "slug": "egoiste", 
+    "name": "Ego\u00efste"
+  }
+},
+{
+  "pk": 17, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il prie souvent et passe des nuits enti\u00e8res \u00e0 \u00e9tudier les \u00c9critures, anim\u00e9e d'une d\u00e9votion passionn\u00e9e.\r\n\r\n* +2 en \u00c9rudition\r\n* +10 en Loyaut\u00e9", 
+    "on_defect": "folk.scholarship -= 2\nfolk.loyalty -= 5\nfolk.save()\n", 
+    "female_description": "Elle passe \u00e9norm\u00e9ment de temps \u00e0 l'\u00e9glise et la confesse, et est capable de r\u00e9citer des passages entiers de la Bible.\r\n\r\n* +2 en \u00c9rudition\r\n* +10 en Loyaut\u00e9", 
+    "on_affect": "folk.scholarship += 2\nfolk.loyalty += 10\nfolk.save()\n", 
+    "female_name": "Pieuse", 
+    "incompatible_qualities": [
+      4
+    ], 
+    "slug": "pieux", 
+    "name": "Pieux"
+  }
+},
+{
+  "pk": 18, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il tire satisfaction de la souffrance d'autrui, plus encore s'il est celui qui l'a provoqu\u00e9e.\r\n\r\n* +1 en Combat\r\n* -1 en Diplomatie", 
+    "on_defect": "folk.fight -= 1\nfolk.diplomacy += 1\nfolk.save() \n", 
+    "female_description": "Elle aime voir les autres ramper devant elle, et souffrir de son importance.\r\n\r\n* +1 en Combat\r\n* -1 en Diplomatie", 
+    "on_affect": "folk.fight += 1\nfolk.diplomacy -= 1\nfolk.save()\n", 
+    "female_name": "Cru\u00e8le", 
+    "incompatible_qualities": [
+      7, 
+      8, 
+      9
+    ], 
+    "slug": "cruel", 
+    "name": "Cruel"
+  }
+},
+{
+  "pk": 19, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Un app\u00e9tit f\u00e9roce pour la furie des combats.\r\n\r\n* +2 en Combat\r\n* -1 en Diplomatie\r\n* -1 en Intrigue\r\n", 
+    "on_defect": "folk.fight -= 2\nfolk.diplomacy += 1\nfolk.plot += 1\nfolk.save()\n", 
+    "female_description": "Elle aime l'action, le danger et la confrontation.\r\n\r\n* +2 en Combat\r\n* -1 en Diplomatie\r\n* -1 en Intrigue", 
+    "on_affect": "folk.fight += 2\nfolk.diplomacy -= 1\nfolk.plot -= 1\nfolk.save()\n", 
+    "female_name": "Violente", 
+    "incompatible_qualities": [
+      6, 
+      13
+    ], 
+    "slug": "violent", 
+    "name": "Violent"
+  }
+},
+{
+  "pk": 20, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Un s\u00e9ducteur exp\u00e9riment\u00e9, souvent entreprenant envers les personnes du sexe oppos\u00e9.\r\n\r\n* +2 en Diplomatie", 
+    "on_defect": "folk.diplomacy -= 2\nfolk.save()\n", 
+    "female_description": "Elle rit souvent aux plaisanteries des hommes, et sait comment les mettre \u00e0 l'aise. Elle semble parfois c\u00e9der \u00e0 leurs avances...\r\n\r\n* +2 en Diplomatie", 
+    "on_affect": "folk.diplomacy += 2\nfolk.save()\n", 
+    "female_name": "Galante", 
+    "incompatible_qualities": [
+      6, 
+      33
+    ], 
+    "slug": "galant", 
+    "name": "Galant"
+  }
+},
+{
+  "pk": 21, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il ne se vante jamais, ne se met jamais en avant.\r\n\r\n* +1 en Diplomatie\r\n* +10 en Loyaut\u00e9", 
+    "on_defect": "folk.diplomacy -= 1\nfolk.loyalty -= 5\nfolk.save()\n", 
+    "female_description": "Elle ne se vante jamais, ne se met jamais en avant.\r\n\r\n* +1 en Diplomatie\r\n* +10 en Loyaut\u00e9", 
+    "on_affect": "folk.diplomacy += 1\nfolk.loyalty += 10\nfolk.save()\n", 
+    "female_name": "Modeste", 
+    "incompatible_qualities": [
+      2, 
+      3, 
+      11
+    ], 
+    "slug": "modeste", 
+    "name": "Modeste"
+  }
+},
+{
+  "pk": 22, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il ne se laisse brusquer ni par ses d\u00e9sirs ni par les \u00e9v\u00e9nements.\r\n\r\n* +1 en Diplomatie\r\n* +1 en Intrigue\r\n* +1 pour la pr\u00eatrise", 
+    "on_defect": "folk.diplomacy -= 1\nfolk.plot -= 1\nfolk.save()\n", 
+    "female_description": "Elle ne se laisse brusquer ni par ses d\u00e9sirs ni par les \u00e9v\u00e9nements.\r\n\r\n* +1 en Diplomatie\r\n* +1 en Intrigue\r\n* +1 pour la pr\u00eatrise", 
+    "on_affect": "folk.diplomacy += 1\nfolk.plot += 1\nfolk.save()\n", 
+    "female_name": "Patiente", 
+    "incompatible_qualities": [
+      47
+    ], 
+    "slug": "patient", 
+    "name": "Patient"
+  }
+},
+{
+  "pk": 23, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il tremble et transpire \u00e0 l'approche du danger, et pr\u00e9f\u00e8re prendre ses jambes \u00e0 son cou plut\u00f4t que de l'affronter en face.\r\n\r\n* -2 en Combat\r\n* -1 en Intrigue", 
+    "on_defect": "folk.fight += 2\nfolk.plot += 1\nfolk.save()\n", 
+    "female_description": "Elle fr\u00e9mit \u00e0 l'id\u00e9e m\u00eame d'une confrontation.\r\n\r\n* -2 en Combat\r\n* -1 en Intrigue", 
+    "on_affect": "folk.fight -= 2\nfolk.plot -= 1\nfolk.save()\n", 
+    "female_name": "Couarde", 
+    "incompatible_qualities": [
+      2, 
+      12, 
+      10
+    ], 
+    "slug": "couard", 
+    "name": "Couard"
+  }
+},
+{
+  "pk": 24, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 1, 
+    "description": "Visage harmonieux, cheveux soyeux, dentition compl\u00e8te et \u0153il p\u00e9n\u00e9trant.\r\n\r\n* +2 en diplomatie", 
+    "on_defect": "folk.diplomacy -= 2\nfolk.save() \n", 
+    "female_description": "Visage harmonieux, cheveux soyeux, dentition compl\u00e8te et \u0153il p\u00e9n\u00e9trant.\r\n\r\n* +2 en diplomatie", 
+    "on_affect": "folk.diplomacy += 2\nfolk.save() \n", 
+    "female_name": "Belle", 
+    "incompatible_qualities": [
+      25
+    ], 
+    "slug": "beau", 
+    "name": "Beau"
+  }
+},
+{
+  "pk": 25, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 1, 
+    "description": "Un faci\u00e8s d\u00e9plaisant qui provoque des rires ou des moues de d\u00e9gout\u00e9es.\r\n\r\n* -2 en Diplomatie", 
+    "on_defect": "folk.diplomacy += 2\nfolk.save()\n", 
+    "female_description": "Un faci\u00e8s d\u00e9plaisant qui provoque des rires ou des moues de d\u00e9gout\u00e9es.\r\n\r\n* -2 en Diplomatie", 
+    "on_affect": "folk.diplomacy -= 2\nfolk.save()\n", 
+    "female_name": "Laide", 
+    "incompatible_qualities": [
+      24
+    ], 
+    "slug": "laid", 
+    "name": "Laid"
+  }
+},
+{
+  "pk": 26, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 1, 
+    "description": "Large carrure et muscles d'aciers.\r\n\r\n* +2 en Combat", 
+    "on_defect": "folk.fight -= 2\nfolk.save()\n", 
+    "female_description": "Large carrure et muscles d'aciers.\r\n\r\n* +2 en Combat", 
+    "on_affect": "folk.fight += 2\nfolk.save() \n", 
+    "female_name": "Costaude", 
+    "incompatible_qualities": [
+      27
+    ], 
+    "slug": "costaud", 
+    "name": "Costaud"
+  }
+},
+{
+  "pk": 27, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 1, 
+    "description": "Il est ch\u00e9tif, faible de ses bras et tombe souvent malade.\r\n\r\n* -2 en Combat", 
+    "on_defect": " ", 
+    "female_description": "Elle est ch\u00e9tive, faible de ses bras et tombe souvent malade.\r\n\r\n* -2 en Combat", 
+    "on_affect": " ", 
+    "female_name": "Fr\u00e8le", 
+    "incompatible_qualities": [
+      26
+    ], 
+    "slug": "frele", 
+    "name": "Fr\u00e8le"
+  }
+},
+{
+  "pk": 28, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 1, 
+    "description": "La d\u00e9marche est souple et silencieuses, les r\u00e9flexes aiguis\u00e9s et le geste pr\u00e9cis.\r\n\r\n* +2 en combat", 
+    "on_defect": "folk.fight -= 2\nfolk.save()\n", 
+    "female_description": "La d\u00e9marche est souple et silencieuses, les r\u00e9flexes aiguis\u00e9s et le geste pr\u00e9cis.\r\n\r\n* +2 en combat", 
+    "on_affect": "folk.fight += 2\nfolk.save()\n", 
+    "female_name": "F\u00e9line", 
+    "incompatible_qualities": [
+      29, 
+      32
+    ], 
+    "slug": "felin", 
+    "name": "F\u00e9lin"
+  }
+},
+{
+  "pk": 29, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 1, 
+    "description": "Sa lenteur et son manque de coordination lui font souvent manquer sa cible et laisser tomber des objets.\r\n\r\n*-2 Combat", 
+    "on_defect": "folk.fight += 2\nfolk.save()\n", 
+    "female_description": "Sa lenteur et son manque de coordination lui font souvent reverser des verres et laisser tomber des objets.\r\n\r\n*-2 Combat", 
+    "on_affect": "folk.fight -= 2\nfolk.save()\n", 
+    "female_name": "Maladroite", 
+    "incompatible_qualities": [
+      28
+    ], 
+    "slug": "maladroit", 
+    "name": "Maladroit"
+  }
+},
+{
+  "pk": 30, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 1, 
+    "description": "Une bonne m\u00e9moire et un \u0153il per\u00e7ant, qui ne laisse passer aucun d\u00e9tail.\r\n\r\n* +2 en intrigue\r\n* +1 en \u00e9rudition", 
+    "on_defect": "folk.plot -= 2\nfolk.scholarship -= 1\nfolk.save()\n", 
+    "female_description": "Une bonne m\u00e9moire et un \u0153il per\u00e7ant, qui ne laisse passer aucun d\u00e9tail.\r\n\r\n* +2 en intrigue\r\n* +1 en \u00e9rudition", 
+    "on_affect": "folk.plot += 2\nfolk.scholarship += 1\nfolk.save() \n", 
+    "female_name": "Perspicace", 
+    "incompatible_qualities": [
+      32
+    ], 
+    "slug": "perspicace", 
+    "name": "Perspicace"
+  }
+},
+{
+  "pk": 31, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 1, 
+    "description": "Capable d'ordonner ses pens\u00e9es avec vitesse et clart\u00e9.\r\n\r\n*+2 en \u00c9rudition\r\n* +1 en Intrigue", 
+    "on_defect": "folk.plot -= 1\nfolk.scholarship -= 2\nfolk.save()\n", 
+    "female_description": "Capable d'ordonner ses pens\u00e9es avec vitesse et clart\u00e9.\r\n\r\n*+2 en \u00c9rudition\r\n* +1 en Intrigue", 
+    "on_affect": "folk.plot += 1\nfolk.scholarship += 2\nfolk.save()\n", 
+    "female_name": "Esprit vif", 
+    "incompatible_qualities": [
+      32, 
+      45
+    ], 
+    "slug": "esprit_vif", 
+    "name": "Esprit vif"
+  }
+},
+{
+  "pk": 32, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 1, 
+    "description": "Son esprit est lent et malhabile, ses paroles confuses et son regard vitreux.\r\n\r\n* -2 en Combat\r\n* -3 en Intrigue et Diplomatie\r\n* -4 en \u00c9rudition", 
+    "on_defect": "folk.fight += 2\nfolk.diplomacy += 3\nfolk.plot += 3\nfolk.scholarship += 4\nfolk.save()\n", 
+    "female_description": "Son esprit est lent et malhabile, ses paroles confuses et son regard vitreux.\r\n\r\n* -2 en Combat\r\n* -3 en Intrigue et Diplomatie\r\n* -4 en \u00c9rudition", 
+    "on_affect": "folk.fight -= 2\nfolk.diplomacy -= 3\nfolk.plot -= 3\nfolk.scholarship -= 4\nfolk.save()\n", 
+    "female_name": "Demeur\u00e9e", 
+    "incompatible_qualities": [
+      45, 
+      30, 
+      2, 
+      4, 
+      13, 
+      28, 
+      31
+    ], 
+    "slug": "demeure", 
+    "name": "Demeur\u00e9"
+  }
+},
+{
+  "pk": 33, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Il est frugal dans ses repas, et se refuse les exc\u00e8s de la boisson et de la galanterie.\r\n\r\n*+1 en Erudition\r\n*+2 en pr\u00eatrise.", 
+    "on_defect": "folk.scholarship -= 1\nfolk.save()\n", 
+    "female_description": "Elle est frugale dans ses repas, et se refuse toute forme d'exc\u00e8s.\r\n\r\n*+1 en Erudition\r\n*+2 en pr\u00eatrise.", 
+    "on_affect": "folk.scholarship += 1\nfolk.save()\n", 
+    "female_name": "Ascete", 
+    "incompatible_qualities": [
+      15, 
+      20
+    ], 
+    "slug": "ascete", 
+    "name": "Ascete"
+  }
+},
+{
+  "pk": 36, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 4, 
+    "description": "d\u00e9signe ceux qui peuvent recevoir le titre de cur\u00e9", 
+    "on_defect": " ", 
+    "female_description": "description f\u00e9minine", 
+    "on_affect": " ", 
+    "female_name": "nope", 
+    "incompatible_qualities": [], 
+    "slug": "pretre", 
+    "name": "Pr\u00eatre"
+  }
+},
+{
+  "pk": 37, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 4, 
+    "description": "Doit \u00eatre soign\u00e9 au plus t\u00f4t.", 
+    "on_defect": "folk.disabled = False\nfolk.save()\n", 
+    "female_description": "Doit \u00eatre soign\u00e9e au plus t\u00f4t.", 
+    "on_affect": "folk.disabled = True\nfolk.save()\n", 
+    "female_name": "Bless\u00e9e", 
+    "incompatible_qualities": [], 
+    "slug": "blesse", 
+    "name": "Bless\u00e9"
+  }
+},
+{
+  "pk": 38, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 3, 
+    "description": "Un lancier a un avantage de +4 en combat contre les cavaliers.", 
+    "on_defect": " ", 
+    "female_description": "description f\u00e9minine", 
+    "on_affect": " ", 
+    "female_name": "-", 
+    "incompatible_qualities": [], 
+    "slug": "piquier", 
+    "name": "Lancier"
+  }
+},
+{
+  "pk": 39, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 3, 
+    "description": "Les cavaliers ont un bonus de plus +1 en combat contre tous, et un bonus suppl\u00e9mentaire +1 contre les archers.", 
+    "on_defect": "folk.fight -= 1\nfolk.save()\n", 
+    "female_description": "description f\u00e9minine", 
+    "on_affect": "folk.fight += 1\nfolk.save()\n", 
+    "female_name": "nope", 
+    "incompatible_qualities": [], 
+    "slug": "cavalier", 
+    "name": "Cavalier"
+  }
+},
+{
+  "pk": 40, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 3, 
+    "description": "Les archers ont un bonus de +3 contre les lanciers.", 
+    "on_defect": " ", 
+    "female_description": "description f\u00e9minine", 
+    "on_affect": " ", 
+    "female_name": "Archer", 
+    "incompatible_qualities": [], 
+    "slug": "archer", 
+    "name": "Archer"
+  }
+},
+{
+  "pk": 41, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 6, 
+    "description": "Un de ses membres a \u00e9t\u00e9 amput\u00e9.", 
+    "on_defect": "\n", 
+    "female_description": "Un de ses membres a \u00e9t\u00e9 amput\u00e9.", 
+    "on_affect": "folk.fight /= 2\nfolk.diplomacy -= 2\nfolk.save()\n", 
+    "female_name": "Estropi\u00e9e", 
+    "incompatible_qualities": [], 
+    "slug": "estropie", 
+    "name": "Estropi\u00e9"
+  }
+},
+{
+  "pk": 42, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 4, 
+    "description": "Aux fers au plus profond de vos cachots.", 
+    "on_defect": "folk.disabled = False\nfolk.save()\n", 
+    "female_description": "Aux fers au plus profond de vos cachots.", 
+    "on_affect": "if folk.loyalty > 15:\n  folk.loyalty = 15\nelse:\n  folk.loyalty -= 5\n\nfolk.disabled = True\nfolk.save()\nfolk.remove_title()\n", 
+    "female_name": "Prisonni\u00e8re", 
+    "incompatible_qualities": [], 
+    "slug": "prisonnier", 
+    "name": "Prisonnier"
+  }
+},
+{
+  "pk": 43, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 4, 
+    "description": "none", 
+    "on_defect": null, 
+    "female_description": "Elle attend toujours de trouver un mari.\r\n\r\nLes jouvencelles de votre dynastie vous rapportent du prestige si elles se marient avec un homme d'une autre dynastie r\u00e9gnante.", 
+    "on_affect": null, 
+    "female_name": "Jouvencelle", 
+    "incompatible_qualities": [], 
+    "slug": "jouvencelle", 
+    "name": "jouvencelle"
+  }
+},
+{
+  "pk": 44, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 5, 
+    "description": "Ce gar\u00e7on est n\u00e9 d'une union en dehors du cadre du mariage.", 
+    "on_defect": "\n", 
+    "female_description": "Cette fille est n\u00e9e en dehors du cadre du mariage.", 
+    "on_affect": "\n", 
+    "female_name": "B\u00e2tarde", 
+    "incompatible_qualities": [], 
+    "slug": "batard", 
+    "name": "B\u00e2tard"
+  }
+},
+{
+  "pk": 45, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 1, 
+    "description": "Son esprit est un peu plus lent, plus gourd que la moyenne.\r\n\r\n    -2 en \u00c9rudition, -1 en Intrigue et Diplomatie", 
+    "on_defect": "folk.plot += 1\nfolk.diplomacy += 1\nfolk.scholarship += 2\nfolk.save()\n", 
+    "female_description": "Son esprit est un peu plus lent, plus gourd que la moyenne.\r\n\r\n    -2 en \u00c9rudition, -1 en Intrigue et Diplomatie", 
+    "on_affect": "folk.plot -= 1\nfolk.diplomacy -= 1\nfolk.scholarship -= 2\nfolk.save()\n", 
+    "female_name": "Idiote", 
+    "incompatible_qualities": [
+      32, 
+      31
+    ], 
+    "slug": "idiot", 
+    "name": "Idiot"
+  }
+},
+{
+  "pk": 47, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 2, 
+    "description": "Le souvenir d'un \u00e9chec le hante, et le rend irritable.\r\n\r\n*-2 en diplomatie\r\n*-5 en Loyaut\u00e9", 
+    "on_defect": "folk.diplomacy -= 2\nfolk.loyalty -= 5\nfolk.save()\n", 
+    "female_description": "Le souvenir d'un \u00e9chec le hante, et le rend irritable.\r\n\r\n*-2 en diplomatie\r\n*-5 en Loyaut\u00e9", 
+    "on_affect": "folk.diplomacy -= 2\nfolk.loyalty -= 5\nfolk.save()\n", 
+    "female_name": "Am\u00e8re", 
+    "incompatible_qualities": [
+      22
+    ], 
+    "slug": "amer", 
+    "name": "Amer"
+  }
+},
+{
+  "pk": 49, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 5, 
+    "description": "Les nobles du royaume le consid\u00e8rent comme un v\u00e9ritable mod\u00e8le pour sa g\u00e9n\u00e9ration.\r\n\r\n    Le bannir, l'emprisonner ou l'ex\u00e9cuter aura de tr\u00e8s graves r\u00e9percussions sur le Loyaut\u00e9 de vos sujets.", 
+    "on_defect": "\n", 
+    "female_description": "Les nobles du royaume la consid\u00e8rent comme un v\u00e9ritable mod\u00e8le pour sa g\u00e9n\u00e9ration.\r\n\r\n    La bannir, l'emprisonner ou l'ex\u00e9cuter aura de tr\u00e8s graves r\u00e9percussions sur le Loyaut\u00e9 de vos sujets.", 
+    "on_affect": "\n", 
+    "female_name": "Admir\u00e9e", 
+    "incompatible_qualities": [
+      52, 
+      51, 
+      50
+    ], 
+    "slug": "admire", 
+    "name": "Admir\u00e9"
+  }
+},
+{
+  "pk": 50, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 5, 
+    "description": "Il a gagn\u00e9 l'approbation de ses pairs.\r\n\r\n    Le bannir, l'emprisonner ou l'ex\u00e9cuter sera vu d'un mauvais oeil par vos sujets.", 
+    "on_defect": "\n", 
+    "female_description": "Elle a gagn\u00e9 l'approbation de ses pairs.\r\n\r\n    La bannir, l'emprisonner ou l'ex\u00e9cuter sera vu d'un mauvais oeil par vos sujets.", 
+    "on_affect": "\n", 
+    "female_name": "Respect\u00e9e", 
+    "incompatible_qualities": [
+      49, 
+      52, 
+      51
+    ], 
+    "slug": "respecte", 
+    "name": "Respect\u00e9"
+  }
+},
+{
+  "pk": 51, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 5, 
+    "description": "On s'accorde \u00e0 dire qu'il n'est pas digne de son rang.\r\n\r\n    Le bannir, l'emprisonner ou l'ex\u00e9cuter sera accept\u00e9 par vos sujets avec une relative indulgence.", 
+    "on_defect": "\n", 
+    "female_description": "On s'accorde \u00e0 dire qu'elle n'est pas digne de son rang.\r\n\r\n    La bannir, l'emprisonner ou l'ex\u00e9cuter sera accept\u00e9 par vos sujets avec une relative indulgence.", 
+    "on_affect": "\n", 
+    "female_name": "M\u00e9pris\u00e9e", 
+    "incompatible_qualities": [
+      49, 
+      52, 
+      50
+    ], 
+    "slug": "meprise", 
+    "name": "M\u00e9pris\u00e9"
+  }
+},
+{
+  "pk": 52, 
+  "model": "kingdom.quality", 
+  "fields": {
+    "category": 5, 
+    "description": "Il est consid\u00e9r\u00e9 par tous comme la lie de la noblesse.\r\n\r\n    Le bannir, l'emprisonner ou l'ex\u00e9cuter sera accept\u00e9 sans broncher par vos sujets.", 
+    "on_defect": "\n", 
+    "female_description": "Elle est consid\u00e9r\u00e9e par tous comme la lie de la noblesse.\r\n\r\n    La bannir, l'emprisonner ou l'ex\u00e9cuter sera accept\u00e9 sans broncher par vos sujets.", 
+    "on_affect": "\n", 
+    "female_name": "D\u00e9test\u00e9e", 
+    "incompatible_qualities": [
+      49, 
+      51, 
+      50
+    ], 
+    "slug": "deteste", 
+    "name": "D\u00e9test\u00e9"
+  }
+},
+{
+  "pk": 1, 
+  "model": "kingdom.qualitycategory", 
+  "fields": {
+    "name": "G\u00e9n\u00e9tique", 
+    "description": "Traits g\u00e9n\u00e9tiques"
+  }
+},
+{
+  "pk": 2, 
+  "model": "kingdom.qualitycategory", 
+  "fields": {
+    "name": "Caract\u00e8re", 
+    "description": "traits de caract\u00e8re"
+  }
+},
+{
+  "pk": 3, 
+  "model": "kingdom.qualitycategory", 
+  "fields": {
+    "name": "Talent", 
+    "description": "sdf"
+  }
+},
+{
+  "pk": 4, 
+  "model": "kingdom.qualitycategory", 
+  "fields": {
+    "name": "\u00c9tat", 
+    "description": "szf"
+  }
+},
+{
+  "pk": 5, 
+  "model": "kingdom.qualitycategory", 
+  "fields": {
+    "name": "Social", 
+    "description": "Traits impos\u00e9 par la soci\u00e9t\u00e9"
+  }
+},
+{
+  "pk": 6, 
+  "model": "kingdom.qualitycategory", 
+  "fields": {
+    "name": "Handicap", 
+    "description": "Les handicap possibles"
+  }
+}
+]
